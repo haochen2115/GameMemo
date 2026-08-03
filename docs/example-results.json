@@ -1,0 +1,23 @@
+{
+  "kind": "deterministic_contract_fixture",
+  "results": [
+    {
+      "experience_gain": 0.0,
+      "instance_leakage": 0.0,
+      "policy": "no_memory",
+      "pseudo_generalization": 0.0
+    },
+    {
+      "experience_gain": 0.5,
+      "instance_leakage": 1.0,
+      "policy": "pooled_raw",
+      "pseudo_generalization": 0.5
+    },
+    {
+      "experience_gain": 1.0,
+      "instance_leakage": 0.0,
+      "policy": "quorum",
+      "pseudo_generalization": 0.0
+    }
+  ]
+}
