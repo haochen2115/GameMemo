@@ -36,7 +36,7 @@ Personal memory asks whether the system remembers one user accurately. Shared me
 | Tenant isolation | Keep every concrete customer instance local | Instance leakage |
 | Scope correctness | Apply a learned rule only where its conditions hold | Pseudo-generalization |
 
-![Shared Memory Is Harder overview](docs/assets/shared-memory-overview.png)
+![Shared Memory Is Harder overview](docs/assets/shared-memory-overview-v2.png)
 
 *QUORUM turns tenant-local successes into conditional shared rules only after sanitization and independent cross-tenant support.*
 
