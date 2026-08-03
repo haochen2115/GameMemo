@@ -36,22 +36,9 @@ Personal memory asks whether the system remembers one user accurately. Shared me
 | Tenant isolation | Keep every concrete customer instance local | Instance leakage |
 | Scope correctness | Apply a learned rule only where its conditions hold | Pseudo-generalization |
 
-```mermaid
-flowchart LR
-    A["Tenant A<br/>private episode"] --> PA["Private plane A"]
-    B["Tenant B<br/>private episode"] --> PB["Private plane B"]
-    C["Tenant C<br/>private episode"] --> PC["Private plane C"]
-    PA -->|"generalized candidate + outcome"| Q{"QUORUM<br/>distinct support?"}
-    PB -->|"generalized candidate + outcome"| Q
-    PC -->|"generalized candidate + outcome"| Q
-    Q -->|"not yet"| W["Candidate ledger<br/>hashed provenance"]
-    Q -->|"promote"| S["Shared conditional rule"]
-    S --> R["New tenant context"]
-    PN["New tenant<br/>private plane"] --> R
-    style Q fill:#7c3aed,color:#fff,stroke:#5b21b6
-    style S fill:#16a34a,color:#fff,stroke:#166534
-    style W fill:#f59e0b,color:#111,stroke:#b45309
-```
+![Shared Memory Is Harder overview](docs/assets/shared-memory-overview.png)
+
+*QUORUM turns tenant-local successes into conditional shared rules only after sanitization and independent cross-tenant support.*
 
 Raw interactions never enter the shared plane. The shared plane receives only a structured candidate — task, conditions, generalized action, outcome — and promotes it only after independent tenant support.
 
