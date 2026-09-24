@@ -23,6 +23,7 @@ from typing import Callable, Dict, List, Optional, Sequence, Tuple
 
 from ..llm import LLMClient, parse_json
 from . import prompts
+from .consolidate import consolidate as consolidate_versions
 from .embed import Embedder
 from .model import MemoryRecord, clamp_importance, fmt_time
 from .retrieval import HybridRetriever, RetrievalConfig, ScoredMemory
@@ -37,6 +38,7 @@ class IngestReport:
     deleted: List[MemoryRecord] = field(default_factory=list)
     noop: int = 0
     rejected: List[Tuple[Dict, str]] = field(default_factory=list)  # (op, why)
+    consolidated: List[MemoryRecord] = field(default_factory=list)  # retired by consolidation
 
     @property
     def changed(self) -> int:
@@ -81,7 +83,8 @@ class PersonalMemory:
                  max_output_tokens: int = 1024,
                  episodes: bool = True,
                  promises: bool = True,
-                 recall_modes: bool = True):
+                 recall_modes: bool = True,
+                 consolidate: bool = False):
         """
         write_mode: "ops" = extract facts, then the LLM decides
             ADD/UPDATE/DELETE/NOOP against related memories; "slots" = facts
@@ -101,6 +104,8 @@ class PersonalMemory:
             (the assistant's own autobiographical memory).
         recall_modes: route "last time" / "promised" / "how did it change"
             questions to the matching kind of recall.
+        consolidate: after each write, link successive values of closed-set
+            attributes (rank, device) into version chains (consolidate.py).
         """
         if write_mode not in ("ops", "slots"):
             raise ValueError(f"unknown write_mode {write_mode!r}")
@@ -112,6 +117,7 @@ class PersonalMemory:
         self.episodes = episodes
         self.promises = promises
         self.recall_modes = recall_modes
+        self.consolidate = consolidate
         self.user_id = user_id
         self.llm = llm
         self.clock = clock
@@ -264,6 +270,11 @@ class PersonalMemory:
             self._write_episode(text, report)
         if source == "chat" and self.promises:
             self._write_promises(raw, report)
+        if self.consolidate:
+            report.consolidated = consolidate_versions(self.store.all(), self.store.history,
+                                                       fmt_time(self.clock()))
+            if report.consolidated:
+                self.store.save()
         return report
 
     def _write_episode(self, text: str, report: IngestReport) -> None:
