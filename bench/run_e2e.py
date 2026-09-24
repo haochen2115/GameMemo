@@ -234,6 +234,50 @@ def save(args, results) -> None:
                    "results": results}, f, ensure_ascii=False, indent=1)
 
 
+READ_VARIANTS = {
+    # name -> PersonalMemory read-side options applied on replay
+    "as-written": {},
+    "pref-gate": {"retrieval_config_kw": {"require_specific": True, "min_dense_alone": 0.30,
+                                          "generic_terms": "PREFERENCE_TERMS"}},
+}
+
+
+def replay(path: str, data_path: str, system: str, variant: str, show_errors: bool) -> Dict:
+    """Re-run only the read path on memories stored by an earlier run (no
+    LLM): evaluates retrieval changes on e2e data in seconds."""
+    from gamememo.personal import PersonalMemory
+    from gamememo.personal import retrieval as R
+    from gamememo.personal.model import MemoryRecord
+
+    with open(path, encoding="utf-8") as f:
+        saved = json.load(f)
+    with open(data_path, encoding="utf-8") as f:
+        players = {p["id"]: p for p in json.load(f)["players"]}
+    opts = dict(READ_VARIANTS[variant])
+    kw = dict(opts.pop("retrieval_config_kw", {}))
+    if kw.get("generic_terms") == "PREFERENCE_TERMS":
+        kw["generic_terms"] = R.PREFERENCE_TERMS
+    res = saved["results"][system]
+    rows = []
+    for key, mems in res["memories"].items():
+        pid, seed = key.split("@")
+        p = players[pid]
+        ask = parse_time(p["ask_at"])
+        mem = PersonalMemory("replay", storage_dir=tempfile.mkdtemp(prefix="replay_"), embedder=jina(),
+                             clock=lambda: ask,
+                             retrieval_config=R.RetrievalConfig.for_embedder(jina(), **kw))
+        mem.store.extend(MemoryRecord.from_dict(m) for m in mems)
+        for q in p["questions"]:
+            ev = [mem.describe(r) for r in mem.retrieve(q["query"], top_k=K, touch=False)]
+            success, stale = judge(q, ev)
+            rows.append({"id": q["id"], "player": pid, "seed": int(seed), "type": q["type"],
+                         "query": q["query"], "answer_any": q["answer_any"] or q.get("answer_all", []),
+                         "evidence": ev, "success": success, "stale": stale})
+    out = {f"{system}/{variant}": dict(summarize(rows), rows=rows)}
+    print_results(out, f"replay of {os.path.basename(path)}", show_errors)
+    return out
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", default=DATA)
@@ -246,12 +290,18 @@ def main(argv=None):
     ap.add_argument("--out", default=None)
     ap.add_argument("--keep", default=None, help="directory to keep each run's memory files")
     ap.add_argument("--show-errors", action="store_true")
+    ap.add_argument("--replay", default=None, help="re-run the read path on memories stored in a results file")
+    ap.add_argument("--read-variant", default="as-written", choices=sorted(READ_VARIANTS))
     ap.add_argument("--rejudge", default=None,
                     help="re-score a saved results file with the current judge and answer keys (no LLM)")
     args = ap.parse_args(argv)
 
     if args.rejudge:
         return rejudge(args.rejudge, args.data, args.show_errors)
+    if args.replay:
+        return {k: v for name in args.systems.split(",")
+                for k, v in replay(args.replay, args.data, name.strip(), args.read_variant,
+                                   args.show_errors).items()}
 
     if not OllamaClient(base_url=args.base_url).is_available():
         sys.exit(f"Ollama is not reachable at {args.base_url}")
