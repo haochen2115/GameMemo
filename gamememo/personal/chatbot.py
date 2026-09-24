@@ -48,13 +48,15 @@ class MemoryChatBot:
     def chat(self, user_input: str, temperature: float = 0.8) -> ChatTurn:
         self._user_turns += 1
         profile = self.memory.core_profile()
+        promises = self.memory.pending_promises()
+        shown = {r.id for r in profile + promises}
         retrieved = [r for r in self.memory.retrieve(self._query(user_input), top_k=self.top_k)
-                     if r.id not in {p.id for p in profile}]
+                     if r.id not in shown]
 
         self.messages.append({"role": "user", "content": user_input})
         errors: List[str] = []
         try:
-            reply = self.llm.chat(system=self._system_prompt(profile, retrieved),
+            reply = self.llm.chat(system=self._system_prompt(profile, retrieved, promises),
                                   messages=self.messages[-2 * self.history_turns:],
                                   temperature=temperature)
         except Exception as e:  # a model hiccup must not kill the conversation
@@ -94,7 +96,8 @@ class MemoryChatBot:
         names = {"user": "玩家", "assistant": "助手"}
         return "\n".join(f"{names[m['role']]}: {m['content']}" for m in self.messages[start:end])
 
-    def _system_prompt(self, profile: List[MemoryRecord], retrieved: List[MemoryRecord]) -> str:
+    def _system_prompt(self, profile: List[MemoryRecord], retrieved: List[MemoryRecord],
+                       promises: List[MemoryRecord] = ()) -> str:
         now = self.memory.clock()
         parts = [prompts.CHAT_PERSONA,
                  f"现在是{now.strftime('%Y-%m-%d %H:%M')}，星期{WEEKDAYS[now.weekday()]}。"]
@@ -102,6 +105,9 @@ class MemoryChatBot:
             parts.append("【玩家档案】\n" + self.memory.format_for_prompt(profile))
         if retrieved:
             parts.append("【与当前话题相关的记忆】\n" + self.memory.format_for_prompt(retrieved))
-        if profile or retrieved:
+        if promises:
+            parts.append("【你答应过玩家的事】（合适的时候主动兑现或提起）\n"
+                         + self.memory.format_for_prompt(promises))
+        if profile or retrieved or promises:
             parts.append(prompts.CHAT_MEMORY_RULES)
         return "\n\n".join(parts)

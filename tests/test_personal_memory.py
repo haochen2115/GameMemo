@@ -220,3 +220,143 @@ def test_chatbot_survives_llm_failures_and_retries_extraction(tmp_path):
     extract_prompt = [c["prompt"] for c in llm.calls if "值得长期记住" in c["prompt"]][-1]
     assert "我主玩打野" in extract_prompt            # the failed turn was retried
     assert [r.content for r in mem.active()] == ["玩家主玩打野"]
+
+
+# ------------------------------------------------------------------ slot mode / history
+
+def slot_llm(facts):
+    return FakeLLM(lambda p, s: {"facts": facts})
+
+
+def test_slots_supersede_single_valued_aspects_without_second_call(tmp_path):
+    mem = make(tmp_path, write_mode="slots", episodes=False, promises=False)
+    mem.llm = slot_llm([{"aspect": "当前段位", "statement": "玩家段位是铂金", "keywords": ["段位", "铂金"],
+                         "event_date": "2026-07-05"},
+                        {"aspect": "游戏伙伴", "statement": "玩家常和老公双排", "keywords": ["老公"]}])
+    rep = mem.ingest("玩家: 我铂金了，和老公双排")
+    assert len(rep.added) == 2 and len(mem.llm.calls) == 1
+    assert mem.llm.calls[0]["json_schema"]["properties"]["facts"]["items"]["properties"]["aspect"]["enum"]
+
+    mem.llm = slot_llm([{"aspect": "当前段位", "statement": "玩家上了钻石", "keywords": ["段位", "钻石"],
+                         "event_date": "not a date"},
+                        {"aspect": "游戏伙伴", "statement": "玩家的好友阿杰玩射手", "keywords": ["阿杰"]}])
+    rep = mem.ingest("玩家: 我上钻石了，阿杰玩射手")
+    (old, new), = rep.updated
+    assert old.content == "玩家段位是铂金" and not old.is_active and new.event_time is None
+    assert sorted(r.content for r in mem.active()) == ["玩家上了钻石", "玩家常和老公双排", "玩家的好友阿杰玩射手"]
+
+
+def test_player_only_drops_assistant_lines(tmp_path):
+    mem = make(tmp_path, write_mode="slots", player_only=True)
+    mem.llm = slot_llm([])
+    mem.ingest("玩家: 我是护士\n助手: 你可以多练练站位\n玩家: 好的")
+    prompt = mem.llm.calls[0]["prompt"]
+    assert "我是护士" in prompt and "多练练站位" not in prompt
+
+
+def test_history_recall_answers_questions_about_the_past(tmp_path):
+    mem = make(tmp_path, write_mode="slots", history_recall=True)
+    mem.llm = slot_llm([{"aspect": "当前段位", "statement": "玩家升到了铂金段位", "keywords": ["段位", "铂金"],
+                         "event_date": "2026-07-05"}])
+    mem.ingest("...")
+    mem.llm = slot_llm([{"aspect": "当前段位", "statement": "玩家升到了钻石段位", "keywords": ["段位", "钻石"],
+                         "event_date": "2026-09-01"}])
+    mem.ingest("...")
+
+    now_q = [r.content for r in mem.retrieve("我现在什么段位")]
+    assert now_q == ["玩家升到了钻石段位"]
+    past = mem.retrieve("我什么时候升的铂金")
+    assert past[0].content == "玩家升到了铂金段位" and not past[0].is_active
+    text = mem.format_for_prompt(past)
+    assert "2026-07-05" in text and "已过时" in text
+
+
+def test_per_turn_extraction_reads_each_player_line(tmp_path):
+    llm = FakeLLM(lambda p, s: {"facts": []} if "值得长期记住" in p else {"operations": []})
+    mem = make(tmp_path, llm, per_turn=True, episodes=False, promises=False)
+    mem.ingest("玩家: 我是护士\n助手: 辛苦了\n玩家: 我主玩瑶")
+    prompts_seen = [c["prompt"] for c in llm.calls]
+    assert len(prompts_seen) == 2
+    assert "我是护士" in prompts_seen[0] and "我主玩瑶" not in prompts_seen[0]
+
+
+def test_candidate_retrieval_stays_recall_oriented():
+    from gamememo.personal.retrieval import RetrievalConfig
+
+    strict = RetrievalConfig(require_specific=True, min_dense_alone=0.4)
+    loose = strict.for_candidates()
+    assert not loose.require_specific and loose.min_lexical_coverage == 0.0
+
+
+# ------------------------------------------------------------------ P1: episodes, promises, recall modes
+
+def p1_llm(facts=(), ops=(), summary="", promises=()):
+    def handler(prompt, system):
+        if "【新提取的事实】" in prompt:
+            return {"operations": list(ops)}
+        if "概括这次聊天" in prompt:
+            return {"summary": summary, "keywords": ["生日"]}
+        if "答应玩家" in prompt:
+            return {"promises": list(promises)}
+        if "值得长期记住" in prompt:
+            return {"facts": list(facts)}
+        return "好的"
+    return FakeLLM(handler)
+
+
+def test_episode_and_promise_are_written_per_conversation(tmp_path):
+    mem = make(tmp_path, episodes=True, promises=True)
+    mem.llm = p1_llm(facts=["玩家今天生日"], ops=[{"op": "ADD", "content": "玩家今天生日", "keywords": ["生日"]}],
+                     summary="玩家说今天是生日，用狄仁杰拿了五杀",
+                     promises=["助手答应下次帮玩家复盘", "祝你生日快乐"])
+    rep = mem.ingest("玩家: 今天我生日，拿了五杀\n助手: 生日快乐！下次我帮你复盘")
+    kinds = sorted(r.kind for r in rep.added)
+    assert kinds == ["episode", "fact", "promise"]            # the greeting is not a promise
+    ep = next(r for r in mem.active() if r.kind == "episode")
+    assert ep.event_time == "2026-09-01" and "（2026-09-01 的聊天）" in mem.describe(ep)
+    # the promise prompt sees the assistant's words even with player_only
+    assert "下次我帮你复盘" in [c["prompt"] for c in mem.llm.calls if "答应玩家" in c["prompt"]][0]
+    # episodes and promises never become UPDATE targets or core profile
+    assert all(r.kind == "fact" for r in mem.core_profile())
+
+
+def test_recall_modes(tmp_path):
+    mem = make(tmp_path, recall_modes=True)
+    old = mem.add("玩家段位是黄金", ["段位", "黄金"], 4)
+    mid = MemoryRecord(content="玩家升到了铂金", keywords=["段位", "铂金"], created_at="2026-07-01 10:00:00")
+    new = MemoryRecord(content="玩家上了钻石", keywords=["段位", "钻石"], created_at="2026-09-01 10:00:00")
+    PersonalMemory._supersede(old, mid, "2026-07-01 10:00:00")
+    PersonalMemory._supersede(mid, new, "2026-09-01 10:00:00")
+    mem.store.extend([mid, new])
+    for i, day in enumerate(["2026-08-01", "2026-08-20"]):
+        mem.store.put(MemoryRecord(content=f"玩家聊了第{i + 1}件事", kind="episode", event_time=day,
+                                   created_at=day + " 10:00:00"))
+    mem.store.put(MemoryRecord(content="助手答应下次帮玩家复盘", kind="promise", created_at="2026-08-01 10:00:00"))
+
+    assert [r.content for r in mem.retrieve("我的段位是怎么一路变化的")] == \
+        ["玩家段位是黄金", "玩家升到了铂金", "玩家上了钻石"]
+    assert [r.content for r in mem.retrieve("上次我们聊了什么")] == ["玩家聊了第2件事"]
+    assert [r.content for r in mem.retrieve("你答应过我什么")] == ["助手答应下次帮玩家复盘"]
+    assert [r.content for r in mem.retrieve("我现在什么段位")] == ["玩家上了钻石"]
+
+
+def test_episodes_only_answer_questions_about_a_time(tmp_path):
+    mem = make(tmp_path, recall_modes=True)
+    mem.add("玩家段位是钻石", ["段位", "钻石"], 4)
+    mem.store.put(MemoryRecord(content="玩家说自己段位是黄金，还拿了五杀", keywords=["段位", "五杀"],
+                               kind="episode", event_time="2026-03-02", created_at="2026-03-02 10:00:00"))
+    assert [r.content for r in mem.retrieve("我现在什么段位")] == ["玩家段位是钻石"]
+    assert any(r.kind == "episode" for r in mem.retrieve("我拿五杀那天发生了什么"))
+
+
+def test_promises_are_kept_in_mind_not_in_ordinary_search(tmp_path):
+    mem = make(tmp_path, recall_modes=True)
+    mem.add("玩家最近在练镜", ["镜", "练习"], 3)
+    mem.store.put(MemoryRecord(content="助手答应每周帮玩家总结一次战绩", keywords=["战绩", "总结"],
+                               kind="promise", created_at="2026-08-01 10:00:00"))
+    assert all(r.kind != "promise" for r in mem.retrieve("我最近在练什么英雄，战绩怎么样"))
+    llm = scripted(reply="好")
+    bot = MemoryChatBot(mem, llm)
+    bot.chat("在吗")
+    assert "【你答应过玩家的事】" in llm.calls[-1]["system"]
+    assert "总结一次战绩" in llm.calls[-1]["system"]

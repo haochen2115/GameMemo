@@ -3081,6 +3081,74 @@
    "type": "negative",
    "gold": [],
    "split": "test"
+  },
+  {
+   "id": "a_h01",
+   "player": "p_archer",
+   "query": "我喜欢什么颜色",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_h02",
+   "player": "p_archer",
+   "query": "我喜欢吃什么",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_h03",
+   "player": "p_archer",
+   "query": "我喜欢什么运动",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_h04",
+   "player": "p_archer",
+   "query": "我讨厌吃什么",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_h05",
+   "player": "p_archer",
+   "query": "我喜欢看什么电影",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_h06",
+   "player": "p_archer",
+   "query": "我想去哪里旅游",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_h07",
+   "player": "p_archer",
+   "query": "我最喜欢哪个英雄",
+   "type": "direct",
+   "gold": [
+    "m05"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_h08",
+   "player": "p_archer",
+   "query": "我讨厌什么样的队友",
+   "type": "direct",
+   "gold": [
+    "m22"
+   ],
+   "split": "dev"
   }
  ]
 }

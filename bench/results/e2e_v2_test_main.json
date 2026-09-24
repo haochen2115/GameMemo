@@ -1,0 +1,2319 @@
+{
+ "dataset": "../../../../../../home/user/GameMemo/bench/data/e2e_v2.json",
+ "split": "test",
+ "model": "qwen2.5:3b",
+ "seeds": "0,1,2",
+ "generated_at": "2026-09-24 14:50:30",
+ "results": {
+  "v2": {
+   "E2EScore": 0.4483,
+   "Answer@3": 0.3913,
+   "StaleRate": 0.2222,
+   "Abstain": 0.6667,
+   "by_type": {
+    "episodic": 0.0667,
+    "fact": 0.8333,
+    "negative": 0.6667,
+    "promise": 0.0,
+    "temporal": 0.5,
+    "trajectory": 0.0,
+    "update": 0.3333
+   },
+   "n": 87,
+   "minutes": 15.6,
+   "ingest_errors": [],
+   "rows": [
+    {
+     "id": "e_mid_q01",
+     "player": "e_mid",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "王者"
+     ],
+     "evidence": [
+      "玩家一模考得不错，年级前五十",
+      "玩家最近压力大，基本不玩游戏",
+      "玩家上星耀了"
+     ],
+     "success": 0.0,
+     "stale": true,
+     "seed": 0
+    },
+    {
+     "id": "e_mid_q02",
+     "player": "e_mid",
+     "type": "fact",
+     "query": "我考上了哪所大学",
+     "answer_any": [
+      "浙江大学"
+     ],
+     "evidence": [
+      "玩家被浙江大学录取了（2026-07-01）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_mid_q03",
+     "player": "e_mid",
+     "type": "fact",
+     "query": "我主玩什么位置",
+     "answer_any": [
+      "中路"
+     ],
+     "evidence": [
+      "玩家打算上大学后加入电竞社",
+      "玩家最近压力大，基本不玩游戏",
+      "玩家上星耀了"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_mid_q04",
+     "player": "e_mid",
+     "type": "update",
+     "query": "我最近在练哪个英雄",
+     "answer_any": [
+      "上官婉儿"
+     ],
+     "evidence": [
+      "玩家最喜欢貂蝉",
+      "玩家最近压力大，基本不玩游戏",
+      "玩家今天在家打游戏"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_mid_q05",
+     "player": "e_mid",
+     "type": "temporal",
+     "query": "我什么时候高考结束的",
+     "answer_any": [
+      "2026-06",
+      "6月"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_mid_q06",
+     "player": "e_mid",
+     "type": "trajectory",
+     "query": "我的段位是怎么一步步上来的",
+     "answer_any": [
+      "钻石",
+      "星耀",
+      "王者"
+     ],
+     "evidence": [
+      "玩家一模考得不错，年级前五十",
+      "玩家最近压力大，基本不玩游戏",
+      "玩家上星耀了"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_mid_q07",
+     "player": "e_mid",
+     "type": "promise",
+     "query": "你答应过我什么",
+     "answer_any": [
+      "冲王者"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_mid_q08",
+     "player": "e_mid",
+     "type": "episodic",
+     "query": "情人节那天我在干嘛",
+     "answer_any": [
+      "打游戏",
+      "超神",
+      "一个人"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_mid_q09",
+     "player": "e_mid",
+     "type": "episodic",
+     "query": "我哪次说压力大不玩了",
+     "answer_any": [
+      "2026-04",
+      "4月",
+      "一模"
+     ],
+     "evidence": [
+      "玩家最近压力大，基本不玩游戏"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_mid_q10",
+     "player": "e_mid",
+     "type": "fact",
+     "query": "我上大学打算做什么",
+     "answer_any": [
+      "电竞社"
+     ],
+     "evidence": [
+      "玩家被浙江大学录取了（2026-07-01）",
+      "玩家打算上大学后加入电竞社"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_mid_q11",
+     "player": "e_mid",
+     "type": "episodic",
+     "query": "上次我们聊了什么",
+     "answer_any": [
+      "王者",
+      "电竞社"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_mid_q12",
+     "player": "e_mid",
+     "type": "negative",
+     "query": "我喜欢什么动物",
+     "answer_any": [],
+     "evidence": [
+      "玩家最喜欢貂蝉"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_mid_q13",
+     "player": "e_mid",
+     "type": "negative",
+     "query": "我会做饭吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_mid_q14",
+     "player": "e_mid",
+     "type": "negative",
+     "query": "我父母是做什么工作的",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_support_q01",
+     "player": "e_support",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "黄金一"
+     ],
+     "evidence": [
+      "玩家现在黄金一（2026-07-28）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_support_q02",
+     "player": "e_support",
+     "type": "fact",
+     "query": "我多大年纪",
+     "answer_any": [
+      "六十",
+      "60"
+     ],
+     "evidence": [
+      "玩家今年六十岁"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_support_q03",
+     "player": "e_support",
+     "type": "fact",
+     "query": "谁教我玩的游戏",
+     "answer_any": [
+      "孙子"
+     ],
+     "evidence": [
+      "玩家孙子放暑假回来了",
+      "玩家跟老伴一起玩，她玩蔡文姬",
+      "玩家今年六十岁"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_support_q04",
+     "player": "e_support",
+     "type": "fact",
+     "query": "我孙子在哪上学",
+     "answer_any": [
+      "上海"
+     ],
+     "evidence": [
+      "玩家孙子放暑假回来了",
+      "玩家孙子在上海读大学（2026-03-25）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_support_q05",
+     "player": "e_support",
+     "type": "temporal",
+     "query": "我什么时候第一次拿MVP",
+     "answer_any": [
+      "2026-03-25",
+      "3月25"
+     ],
+     "evidence": [
+      "玩家今天第一次拿了MVP（2026-03-25）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_support_q06",
+     "player": "e_support",
+     "type": "trajectory",
+     "query": "我的段位是怎么升上来的",
+     "answer_any": [
+      "青铜",
+      "白银",
+      "黄金"
+     ],
+     "evidence": [
+      "玩家现在黄金一（2026-07-28）",
+      "玩家主要玩辅助位置，选择庄周",
+      "玩家开始玩孙膑"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_support_q07",
+     "player": "e_support",
+     "type": "promise",
+     "query": "你答应过提醒我什么",
+     "answer_any": [
+      "休息",
+      "两局"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_support_q08",
+     "player": "e_support",
+     "type": "promise",
+     "query": "你说过要教我什么",
+     "answer_any": [
+      "小地图"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_support_q09",
+     "player": "e_support",
+     "type": "fact",
+     "query": "我身体有什么不舒服",
+     "answer_any": [
+      "腰",
+      "眼睛"
+     ],
+     "evidence": [
+      "玩家最近腰不好，打一会儿就要起来走走"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_support_q10",
+     "player": "e_support",
+     "type": "fact",
+     "query": "我老伴玩什么英雄",
+     "answer_any": [
+      "蔡文姬"
+     ],
+     "evidence": [
+      "玩家跟老伴一起玩，她玩蔡文姬"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_support_q11",
+     "player": "e_support",
+     "type": "episodic",
+     "query": "我腰不好那阵子在练什么英雄",
+     "answer_any": [
+      "孙膑"
+     ],
+     "evidence": [
+      "玩家最近腰不好，打一会儿就要起来走走"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_support_q12",
+     "player": "e_support",
+     "type": "episodic",
+     "query": "上次我们聊了什么",
+     "answer_any": [
+      "孙子",
+      "暑假",
+      "上分"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_support_q13",
+     "player": "e_support",
+     "type": "negative",
+     "query": "我喜欢喝什么茶",
+     "answer_any": [],
+     "evidence": [
+      "玩家喜欢把字体调大"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_support_q14",
+     "player": "e_support",
+     "type": "negative",
+     "query": "我以前是做什么工作的",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_support_q15",
+     "player": "e_support",
+     "type": "negative",
+     "query": "我住在哪个城市",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "e_mid_q01",
+     "player": "e_mid",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "王者"
+     ],
+     "evidence": [
+      "玩家最近压力大，基本不玩游戏",
+      "玩家考得不错，年级前五十",
+      "玩家打算上大学后加入电竞社"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_mid_q02",
+     "player": "e_mid",
+     "type": "fact",
+     "query": "我考上了哪所大学",
+     "answer_any": [
+      "浙江大学"
+     ],
+     "evidence": [
+      "玩家被浙江大学录取了"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_mid_q03",
+     "player": "e_mid",
+     "type": "fact",
+     "query": "我主玩什么位置",
+     "answer_any": [
+      "中路"
+     ],
+     "evidence": [
+      "玩家最近压力大，基本不玩游戏",
+      "玩家打算上大学后加入电竞社"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_mid_q04",
+     "player": "e_mid",
+     "type": "update",
+     "query": "我最近在练哪个英雄",
+     "answer_any": [
+      "上官婉儿"
+     ],
+     "evidence": [
+      "玩家最喜欢貂蝉",
+      "玩家最近压力大，基本不玩游戏"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_mid_q05",
+     "player": "e_mid",
+     "type": "temporal",
+     "query": "我什么时候高考结束的",
+     "answer_any": [
+      "2026-06",
+      "6月"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_mid_q06",
+     "player": "e_mid",
+     "type": "trajectory",
+     "query": "我的段位是怎么一步步上来的",
+     "answer_any": [
+      "钻石",
+      "星耀",
+      "王者"
+     ],
+     "evidence": [
+      "玩家最近压力大，基本不玩游戏",
+      "玩家考得不错，年级前五十"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_mid_q07",
+     "player": "e_mid",
+     "type": "promise",
+     "query": "你答应过我什么",
+     "answer_any": [
+      "冲王者"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_mid_q08",
+     "player": "e_mid",
+     "type": "episodic",
+     "query": "情人节那天我在干嘛",
+     "answer_any": [
+      "打游戏",
+      "超神",
+      "一个人"
+     ],
+     "evidence": [
+      "玩家今天是2月14日情人节（2026-02-14）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_mid_q09",
+     "player": "e_mid",
+     "type": "episodic",
+     "query": "我哪次说压力大不玩了",
+     "answer_any": [
+      "2026-04",
+      "4月",
+      "一模"
+     ],
+     "evidence": [
+      "玩家最近压力大，基本不玩游戏"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_mid_q10",
+     "player": "e_mid",
+     "type": "fact",
+     "query": "我上大学打算做什么",
+     "answer_any": [
+      "电竞社"
+     ],
+     "evidence": [
+      "玩家被浙江大学录取了",
+      "玩家打算上大学后加入电竞社"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_mid_q11",
+     "player": "e_mid",
+     "type": "episodic",
+     "query": "上次我们聊了什么",
+     "answer_any": [
+      "王者",
+      "电竞社"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_mid_q12",
+     "player": "e_mid",
+     "type": "negative",
+     "query": "我喜欢什么动物",
+     "answer_any": [],
+     "evidence": [
+      "玩家最喜欢貂蝉"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_mid_q13",
+     "player": "e_mid",
+     "type": "negative",
+     "query": "我会做饭吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_mid_q14",
+     "player": "e_mid",
+     "type": "negative",
+     "query": "我父母是做什么工作的",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_support_q01",
+     "player": "e_support",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "黄金一"
+     ],
+     "evidence": [
+      "玩家现在黄金一"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_support_q02",
+     "player": "e_support",
+     "type": "fact",
+     "query": "我多大年纪",
+     "answer_any": [
+      "六十",
+      "60"
+     ],
+     "evidence": [
+      "玩家是六十岁"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_support_q03",
+     "player": "e_support",
+     "type": "fact",
+     "query": "谁教我玩的游戏",
+     "answer_any": [
+      "孙子"
+     ],
+     "evidence": [
+      "玩家是六十岁",
+      "玩家孙子放暑假回来了",
+      "玩家和他的老伴一起玩，老伴玩蔡文姬"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_support_q04",
+     "player": "e_support",
+     "type": "fact",
+     "query": "我孙子在哪上学",
+     "answer_any": [
+      "上海"
+     ],
+     "evidence": [
+      "玩家孙子放暑假回来了",
+      "玩家的孙子在上海读大学"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_support_q05",
+     "player": "e_support",
+     "type": "temporal",
+     "query": "我什么时候第一次拿MVP",
+     "answer_any": [
+      "2026-03-25",
+      "3月25"
+     ],
+     "evidence": [
+      "玩家今天第一次拿了MVP（2026-03-25）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_support_q06",
+     "player": "e_support",
+     "type": "trajectory",
+     "query": "我的段位是怎么升上来的",
+     "answer_any": [
+      "青铜",
+      "白银",
+      "黄金"
+     ],
+     "evidence": [
+      "玩家现在黄金一",
+      "玩家主要玩辅助位置，选择庄周"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_support_q07",
+     "player": "e_support",
+     "type": "promise",
+     "query": "你答应过提醒我什么",
+     "answer_any": [
+      "休息",
+      "两局"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_support_q08",
+     "player": "e_support",
+     "type": "promise",
+     "query": "你说过要教我什么",
+     "answer_any": [
+      "小地图"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_support_q09",
+     "player": "e_support",
+     "type": "fact",
+     "query": "我身体有什么不舒服",
+     "answer_any": [
+      "腰",
+      "眼睛"
+     ],
+     "evidence": [
+      "玩家最近腰不好，打一会儿就要起来走走"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_support_q10",
+     "player": "e_support",
+     "type": "fact",
+     "query": "我老伴玩什么英雄",
+     "answer_any": [
+      "蔡文姬"
+     ],
+     "evidence": [
+      "玩家和他的老伴一起玩，老伴玩蔡文姬"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_support_q11",
+     "player": "e_support",
+     "type": "episodic",
+     "query": "我腰不好那阵子在练什么英雄",
+     "answer_any": [
+      "孙膑"
+     ],
+     "evidence": [
+      "玩家最近腰不好，打一会儿就要起来走走"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_support_q12",
+     "player": "e_support",
+     "type": "episodic",
+     "query": "上次我们聊了什么",
+     "answer_any": [
+      "孙子",
+      "暑假",
+      "上分"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_support_q13",
+     "player": "e_support",
+     "type": "negative",
+     "query": "我喜欢喝什么茶",
+     "answer_any": [],
+     "evidence": [
+      "玩家喜欢把字体调大"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_support_q14",
+     "player": "e_support",
+     "type": "negative",
+     "query": "我以前是做什么工作的",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_support_q15",
+     "player": "e_support",
+     "type": "negative",
+     "query": "我住在哪个城市",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "e_mid_q01",
+     "player": "e_mid",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "王者"
+     ],
+     "evidence": [
+      "玩家上星耀了",
+      "玩家最近压力大，基本不玩游戏",
+      "玩家打算上大学后加入电竞社"
+     ],
+     "success": 0.0,
+     "stale": true,
+     "seed": 2
+    },
+    {
+     "id": "e_mid_q02",
+     "player": "e_mid",
+     "type": "fact",
+     "query": "我考上了哪所大学",
+     "answer_any": [
+      "浙江大学"
+     ],
+     "evidence": [
+      "玩家被浙江大学录取了"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_mid_q03",
+     "player": "e_mid",
+     "type": "fact",
+     "query": "我主玩什么位置",
+     "answer_any": [
+      "中路"
+     ],
+     "evidence": [
+      "玩家上星耀了",
+      "玩家打算上大学后加入电竞社",
+      "玩家最近压力大，基本不玩游戏"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_mid_q04",
+     "player": "e_mid",
+     "type": "update",
+     "query": "我最近在练哪个英雄",
+     "answer_any": [
+      "上官婉儿"
+     ],
+     "evidence": [
+      "玩家最喜欢貂蝉",
+      "玩家最近压力大，基本不玩游戏",
+      "玩家上星耀了"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_mid_q05",
+     "player": "e_mid",
+     "type": "temporal",
+     "query": "我什么时候高考结束的",
+     "answer_any": [
+      "2026-06",
+      "6月"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_mid_q06",
+     "player": "e_mid",
+     "type": "trajectory",
+     "query": "我的段位是怎么一步步上来的",
+     "answer_any": [
+      "钻石",
+      "星耀",
+      "王者"
+     ],
+     "evidence": [
+      "玩家上星耀了",
+      "玩家最近压力大，基本不玩游戏"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_mid_q07",
+     "player": "e_mid",
+     "type": "promise",
+     "query": "你答应过我什么",
+     "answer_any": [
+      "冲王者"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_mid_q08",
+     "player": "e_mid",
+     "type": "episodic",
+     "query": "情人节那天我在干嘛",
+     "answer_any": [
+      "打游戏",
+      "超神",
+      "一个人"
+     ],
+     "evidence": [
+      "玩家今天是2026-02-14情人节独自在家打游戏（2026-02-14）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_mid_q09",
+     "player": "e_mid",
+     "type": "episodic",
+     "query": "我哪次说压力大不玩了",
+     "answer_any": [
+      "2026-04",
+      "4月",
+      "一模"
+     ],
+     "evidence": [
+      "玩家最近压力大，基本不玩游戏"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_mid_q10",
+     "player": "e_mid",
+     "type": "fact",
+     "query": "我上大学打算做什么",
+     "answer_any": [
+      "电竞社"
+     ],
+     "evidence": [
+      "玩家被浙江大学录取了",
+      "玩家打算上大学后加入电竞社"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_mid_q11",
+     "player": "e_mid",
+     "type": "episodic",
+     "query": "上次我们聊了什么",
+     "answer_any": [
+      "王者",
+      "电竞社"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_mid_q12",
+     "player": "e_mid",
+     "type": "negative",
+     "query": "我喜欢什么动物",
+     "answer_any": [],
+     "evidence": [
+      "玩家最喜欢貂蝉"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_mid_q13",
+     "player": "e_mid",
+     "type": "negative",
+     "query": "我会做饭吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_mid_q14",
+     "player": "e_mid",
+     "type": "negative",
+     "query": "我父母是做什么工作的",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_support_q01",
+     "player": "e_support",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "黄金一"
+     ],
+     "evidence": [
+      "玩家现在黄金一"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_support_q02",
+     "player": "e_support",
+     "type": "fact",
+     "query": "我多大年纪",
+     "answer_any": [
+      "六十",
+      "60"
+     ],
+     "evidence": [
+      "玩家今年六十岁"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_support_q03",
+     "player": "e_support",
+     "type": "fact",
+     "query": "谁教我玩的游戏",
+     "answer_any": [
+      "孙子"
+     ],
+     "evidence": [
+      "玩家现在黄金一",
+      "玩家孙子放暑假回来了",
+      "玩家今年六十岁"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_support_q04",
+     "player": "e_support",
+     "type": "fact",
+     "query": "我孙子在哪上学",
+     "answer_any": [
+      "上海"
+     ],
+     "evidence": [
+      "玩家孙子放暑假回来了",
+      "玩家的孙子在上海读大学（2026-03-25）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_support_q05",
+     "player": "e_support",
+     "type": "temporal",
+     "query": "我什么时候第一次拿MVP",
+     "answer_any": [
+      "2026-03-25",
+      "3月25"
+     ],
+     "evidence": [
+      "玩家今天第一次拿了MVP（2026-03-25）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_support_q06",
+     "player": "e_support",
+     "type": "trajectory",
+     "query": "我的段位是怎么升上来的",
+     "answer_any": [
+      "青铜",
+      "白银",
+      "黄金"
+     ],
+     "evidence": [
+      "玩家现在黄金一",
+      "玩家主要玩辅助位置，选择庄周",
+      "玩家主要玩辅助位置，选择庄周"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_support_q07",
+     "player": "e_support",
+     "type": "promise",
+     "query": "你答应过提醒我什么",
+     "answer_any": [
+      "休息",
+      "两局"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_support_q08",
+     "player": "e_support",
+     "type": "promise",
+     "query": "你说过要教我什么",
+     "answer_any": [
+      "小地图"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_support_q09",
+     "player": "e_support",
+     "type": "fact",
+     "query": "我身体有什么不舒服",
+     "answer_any": [
+      "腰",
+      "眼睛"
+     ],
+     "evidence": [
+      "玩家最近腰不好，打一会儿就要起来走走"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_support_q10",
+     "player": "e_support",
+     "type": "fact",
+     "query": "我老伴玩什么英雄",
+     "answer_any": [
+      "蔡文姬"
+     ],
+     "evidence": [
+      "玩家今年六十岁",
+      "玩家主要玩辅助位置，选择庄周",
+      "玩家主要玩辅助位置，选择庄周"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_support_q11",
+     "player": "e_support",
+     "type": "episodic",
+     "query": "我腰不好那阵子在练什么英雄",
+     "answer_any": [
+      "孙膑"
+     ],
+     "evidence": [
+      "玩家最近腰不好，打一会儿就要起来走走"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_support_q12",
+     "player": "e_support",
+     "type": "episodic",
+     "query": "上次我们聊了什么",
+     "answer_any": [
+      "孙子",
+      "暑假",
+      "上分"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_support_q13",
+     "player": "e_support",
+     "type": "negative",
+     "query": "我喜欢喝什么茶",
+     "answer_any": [],
+     "evidence": [
+      "玩家喜欢把字体调大"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_support_q14",
+     "player": "e_support",
+     "type": "negative",
+     "query": "我以前是做什么工作的",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "e_support_q15",
+     "player": "e_support",
+     "type": "negative",
+     "query": "我住在哪个城市",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    }
+   ],
+   "memories": {
+    "e_mid@0": [
+     {
+      "content": "玩家最喜欢貂蝉",
+      "keywords": [
+       "貂蝉"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "id": "mem_28cced1b",
+      "created_at": "2026-01-15 21:00:00",
+      "updated_at": "2026-01-15 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家今天在家打游戏",
+      "keywords": [
+       "2026-02-14",
+       "在家",
+       "打游戏"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_57f87ff2",
+      "created_at": "2026-02-14 21:00:00",
+      "updated_at": "2026-02-14 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近压力大，基本不玩游戏",
+      "keywords": [
+       "压力大",
+       "不玩游戏"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "id": "mem_29b5b367",
+      "created_at": "2026-04-20 22:00:00",
+      "updated_at": "2026-04-20 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家一模考得不错，年级前五十",
+      "keywords": [
+       "一模考得不错",
+       "年级前五十"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "id": "mem_a55a7de5",
+      "created_at": "2026-04-20 22:00:00",
+      "updated_at": "2026-04-20 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家上星耀了",
+      "keywords": [
+       "星耀"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_bbfeafca",
+      "created_at": "2026-07-01 21:00:00",
+      "updated_at": "2026-07-01 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家被浙江大学录取了",
+      "keywords": [
+       "浙江大学"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "id": "mem_1d17a9d8",
+      "created_at": "2026-07-01 21:00:00",
+      "updated_at": "2026-07-01 21:00:00",
+      "event_time": "2026-07-01",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家打算上大学后加入电竞社",
+      "keywords": [
+       "电竞社"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_b9752bf3",
+      "created_at": "2026-08-05 22:00:00",
+      "updated_at": "2026-08-05 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "e_support@0": [
+     {
+      "content": "玩家今年六十岁",
+      "keywords": [
+       "六十岁"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "id": "mem_56b9e97e",
+      "created_at": "2026-03-03 10:00:00",
+      "updated_at": "2026-03-03 10:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家主要玩辅助位置，选择庄周",
+      "keywords": [
+       "庄周",
+       "辅助"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "id": "mem_695db147",
+      "created_at": "2026-03-03 10:00:00",
+      "updated_at": "2026-03-03 10:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家今天第一次拿了MVP",
+      "keywords": [
+       "MVP"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "id": "mem_04f88839",
+      "created_at": "2026-03-25 15:00:00",
+      "updated_at": "2026-03-25 15:00:00",
+      "event_time": "2026-03-25",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家孙子在上海读大学",
+      "keywords": [
+       "上海",
+       "大学"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_bb524d35",
+      "created_at": "2026-03-25 15:00:00",
+      "updated_at": "2026-03-25 15:00:00",
+      "event_time": "2026-03-25",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家喜欢把字体调大",
+      "keywords": [
+       "字体",
+       "调大"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "id": "mem_5724b20d",
+      "created_at": "2026-04-18 16:00:00",
+      "updated_at": "2026-04-18 16:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家升白银了",
+      "keywords": [
+       "白银"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_d74b4355",
+      "created_at": "2026-04-18 16:00:00",
+      "updated_at": "2026-06-30 15:00:00",
+      "event_time": null,
+      "valid_to": "2026-06-30 15:00:00",
+      "superseded_by": "mem_2f0a4fb4",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近腰不好，打一会儿就要起来走走",
+      "keywords": [
+       "腰不好",
+       "走走"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_2813e5f9",
+      "created_at": "2026-05-20 10:30:00",
+      "updated_at": "2026-05-20 10:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家开始玩孙膑",
+      "keywords": [
+       "孙膑"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_e4c736de",
+      "created_at": "2026-05-20 10:30:00",
+      "updated_at": "2026-05-20 10:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家升黄金了",
+      "keywords": [
+       "玩家",
+       "黄金"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "id": "mem_2f0a4fb4",
+      "created_at": "2026-06-30 15:00:00",
+      "updated_at": "2026-07-28 16:00:00",
+      "event_time": "2026-06-30",
+      "valid_to": "2026-07-28 16:00:00",
+      "superseded_by": "mem_6e45b7fe",
+      "supersedes": "mem_d74b4355",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家跟老伴一起玩，她玩蔡文姬",
+      "keywords": [
+       "玩家",
+       "老伴",
+       "蔡文姬"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_6511e613",
+      "created_at": "2026-06-30 15:00:00",
+      "updated_at": "2026-06-30 15:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家孙子放暑假回来了",
+      "keywords": [
+       "孙子",
+       "暑假"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_e623f219",
+      "created_at": "2026-07-28 16:00:00",
+      "updated_at": "2026-07-28 16:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家现在黄金一",
+      "keywords": [
+       "黄金"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "id": "mem_6e45b7fe",
+      "created_at": "2026-07-28 16:00:00",
+      "updated_at": "2026-07-28 16:00:00",
+      "event_time": "2026-07-28",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_2f0a4fb4",
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "e_mid@1": [
+     {
+      "content": "玩家最喜欢貂蝉",
+      "keywords": [
+       "貂蝉"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "id": "mem_a0128719",
+      "created_at": "2026-01-15 21:00:00",
+      "updated_at": "2026-01-15 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家今天是2月14日情人节",
+      "keywords": [
+       "2月14日",
+       "情人节"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "id": "mem_89aeafbe",
+      "created_at": "2026-02-14 21:00:00",
+      "updated_at": "2026-02-14 21:00:00",
+      "event_time": "2026-02-14",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近压力大，基本不玩游戏",
+      "keywords": [
+       "压力大",
+       "基本不玩游戏"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "id": "mem_3796ad69",
+      "created_at": "2026-04-20 22:00:00",
+      "updated_at": "2026-04-20 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家一模考得不错，年级前五十",
+      "keywords": [
+       "一模考得不错",
+       "年级前五十"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "id": "mem_d288c3a2",
+      "created_at": "2026-04-20 22:00:00",
+      "updated_at": "2026-07-01 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-07-01 21:00:00",
+      "superseded_by": "mem_92e2cf39",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家考得不错，年级前五十",
+      "keywords": [
+       "考得不错"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_92e2cf39",
+      "created_at": "2026-07-01 21:00:00",
+      "updated_at": "2026-07-01 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_d288c3a2",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家被浙江大学录取了",
+      "keywords": [
+       "浙江大学"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "id": "mem_59b4bfd2",
+      "created_at": "2026-07-01 21:00:00",
+      "updated_at": "2026-07-01 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家打算上大学后加入电竞社",
+      "keywords": [
+       "电竞社"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_64e327d2",
+      "created_at": "2026-08-05 22:00:00",
+      "updated_at": "2026-08-05 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "e_support@1": [
+     {
+      "content": "玩家今年六十岁",
+      "keywords": [
+       "年龄"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "id": "mem_69f0114a",
+      "created_at": "2026-03-03 10:00:00",
+      "updated_at": "2026-06-30 15:00:00",
+      "event_time": null,
+      "valid_to": "2026-06-30 15:00:00",
+      "superseded_by": "mem_00a1ecbb",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家主要玩辅助位置，选择庄周",
+      "keywords": [
+       "庄周",
+       "辅助"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "id": "mem_509febb2",
+      "created_at": "2026-03-03 10:00:00",
+      "updated_at": "2026-03-03 10:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家今天第一次拿了MVP",
+      "keywords": [
+       "MVP"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "id": "mem_e32f7681",
+      "created_at": "2026-03-25 15:00:00",
+      "updated_at": "2026-03-25 15:00:00",
+      "event_time": "2026-03-25",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的孙子在上海读大学",
+      "keywords": [
+       "上海",
+       "大学"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_afc01473",
+      "created_at": "2026-03-25 15:00:00",
+      "updated_at": "2026-03-25 15:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家喜欢把字体调大",
+      "keywords": [
+       "字体",
+       "调大"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "id": "mem_f2c9d9d8",
+      "created_at": "2026-04-18 16:00:00",
+      "updated_at": "2026-04-18 16:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近腰不好，打一会儿就要起来走走",
+      "keywords": [
+       "腰"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_c8a028a7",
+      "created_at": "2026-05-20 10:30:00",
+      "updated_at": "2026-05-20 10:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家开始玩孙膑",
+      "keywords": [
+       "孙膑"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_ad258d18",
+      "created_at": "2026-05-20 10:30:00",
+      "updated_at": "2026-05-20 10:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家是六十岁",
+      "keywords": [
+       "六十岁"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "id": "mem_00a1ecbb",
+      "created_at": "2026-06-30 15:00:00",
+      "updated_at": "2026-06-30 15:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_69f0114a",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家升到黄金段位了",
+      "keywords": [
+       "黄金段位"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_8c411ee3",
+      "created_at": "2026-06-30 15:00:00",
+      "updated_at": "2026-07-28 16:00:00",
+      "event_time": "2026-06-30",
+      "valid_to": "2026-07-28 16:00:00",
+      "superseded_by": "mem_160496a3",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家和他的老伴一起玩，老伴玩蔡文姬",
+      "keywords": [
+       "蔡文姬",
+       "老伴"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_cf18c4e9",
+      "created_at": "2026-06-30 15:00:00",
+      "updated_at": "2026-06-30 15:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家孙子放暑假回来了",
+      "keywords": [
+       "放暑假",
+       "孙子"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_d08b94c9",
+      "created_at": "2026-07-28 16:00:00",
+      "updated_at": "2026-07-28 16:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家现在黄金一",
+      "keywords": [
+       "黄金一"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_160496a3",
+      "created_at": "2026-07-28 16:00:00",
+      "updated_at": "2026-07-28 16:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_8c411ee3",
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "e_mid@2": [
+     {
+      "content": "玩家最喜欢貂蝉",
+      "keywords": [
+       "貂蝉"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "id": "mem_00a048b3",
+      "created_at": "2026-01-15 21:00:00",
+      "updated_at": "2026-01-15 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家今天是2026-02-14情人节独自在家打游戏",
+      "keywords": [
+       "2026-02-14",
+       "情人节",
+       "独自在家",
+       "打游戏"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_beb1d6fb",
+      "created_at": "2026-02-14 21:00:00",
+      "updated_at": "2026-02-14 21:00:00",
+      "event_time": "2026-02-14",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近压力大，基本不玩游戏",
+      "keywords": [
+       "压力大",
+       "不玩游戏"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "id": "mem_819c3f23",
+      "created_at": "2026-04-20 22:00:00",
+      "updated_at": "2026-04-20 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家被浙江大学录取了",
+      "keywords": [
+       "浙江大学"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "id": "mem_628e8e7f",
+      "created_at": "2026-07-01 21:00:00",
+      "updated_at": "2026-07-01 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家上星耀了",
+      "keywords": [
+       "星耀"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "id": "mem_e4ccf3e8",
+      "created_at": "2026-07-01 21:00:00",
+      "updated_at": "2026-07-01 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家打算上大学后加入电竞社",
+      "keywords": [
+       "电竞社"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_c8b2d5b4",
+      "created_at": "2026-08-05 22:00:00",
+      "updated_at": "2026-08-05 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "e_support@2": [
+     {
+      "content": "玩家今年六十岁",
+      "keywords": [
+       "60岁"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "id": "mem_8595ed1e",
+      "created_at": "2026-03-03 10:00:00",
+      "updated_at": "2026-03-03 10:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家主要玩辅助位置，选择庄周",
+      "keywords": [
+       "庄周",
+       "辅助"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "id": "mem_e3aba6b1",
+      "created_at": "2026-03-03 10:00:00",
+      "updated_at": "2026-03-03 10:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家今天第一次拿了MVP",
+      "keywords": [
+       "MVP"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "id": "mem_9f0a51f4",
+      "created_at": "2026-03-25 15:00:00",
+      "updated_at": "2026-03-25 15:00:00",
+      "event_time": "2026-03-25",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的孙子在上海读大学",
+      "keywords": [
+       "上海",
+       "大学"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_b5dc1725",
+      "created_at": "2026-03-25 15:00:00",
+      "updated_at": "2026-03-25 15:00:00",
+      "event_time": "2026-03-25",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家喜欢把字体调大",
+      "keywords": [
+       "喜欢把字体调大"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "id": "mem_364bec87",
+      "created_at": "2026-04-18 16:00:00",
+      "updated_at": "2026-04-18 16:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家升白银了",
+      "keywords": [
+       "升白银"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_51efc29d",
+      "created_at": "2026-04-18 16:00:00",
+      "updated_at": "2026-06-30 15:00:00",
+      "event_time": "2026-04-18",
+      "valid_to": "2026-06-30 15:00:00",
+      "superseded_by": "mem_ceb97a8f",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近腰不好，打一会儿就要起来走走",
+      "keywords": [
+       "腰不好"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_711f4cd8",
+      "created_at": "2026-05-20 10:30:00",
+      "updated_at": "2026-05-20 10:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家开始玩孙膑",
+      "keywords": [
+       "孙膑"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_c24a527d",
+      "created_at": "2026-05-20 10:30:00",
+      "updated_at": "2026-06-30 15:00:00",
+      "event_time": null,
+      "valid_to": "2026-06-30 15:00:00",
+      "superseded_by": "mem_b9c35456",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家升黄金了",
+      "keywords": [
+       "玩家",
+       "黄金"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "id": "mem_ceb97a8f",
+      "created_at": "2026-06-30 15:00:00",
+      "updated_at": "2026-07-28 16:00:00",
+      "event_time": "2026-06-30",
+      "valid_to": "2026-07-28 16:00:00",
+      "superseded_by": "mem_b923c7f3",
+      "supersedes": "mem_51efc29d",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家主要玩辅助位置，选择庄周",
+      "keywords": [
+       "玩家",
+       "辅助位置",
+       "庄周"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "id": "mem_b9c35456",
+      "created_at": "2026-06-30 15:00:00",
+      "updated_at": "2026-06-30 15:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_c24a527d",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家孙子放暑假回来了",
+      "keywords": [
+       "放暑假",
+       "孙子"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "id": "mem_9a392d59",
+      "created_at": "2026-07-28 16:00:00",
+      "updated_at": "2026-07-28 16:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家现在黄金一",
+      "keywords": [
+       "黄金一"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "id": "mem_b923c7f3",
+      "created_at": "2026-07-28 16:00:00",
+      "updated_at": "2026-07-28 16:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_ceb97a8f",
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ]
+   }
+  }
+ }
+}

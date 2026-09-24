@@ -80,8 +80,38 @@ test 集的两位玩家在提交 `e2d9bce` 中封存，那时还没有任何系�
 |---|---|---|---|---|
 | 2026-09-24 | v0-keyword | retrieval_v2 | 0.750 | `archive/v0-keyword-baseline` |
 | 2026-09-24 | **v2-hybrid** | retrieval_v2 | **0.892** | `research/personal-memory-foundation` |
+| 2026-09-24 | **P1**（检索持平 0.892；e2e_v2 test 0.448 → 0.759） | retrieval_v2 + e2e_v2 | 0.892 | `research/personal-memory-write-path` |
+
+## 端到端评测：e2e（写入 + 检索）
+
+`bench/run_e2e.py`：用真实 LLM（本地 Ollama，默认 `qwen2.5:3b`）按日期依次写入多段对话，再在固定日期提问。检索到的前 3 条记忆（带事件日期、记录日期和"已过时"标记）作为证据，用确定性规则判分，不用 LLM 当裁判：
+
+- fact / update / temporal / episodic / promise：证据中包含任一 `answer_any` 即算答对；ISO 日期也会展开成"M月D日"再匹配。
+- update：如果证据里还出现过时的值（`stale_any`），也算错。
+- trajectory：`answer_all` 里的每个状态都要出现。
+- negative（从没提过的事）：必须什么都不返回。
+
+主指标 `E2EScore` 是所有题目成功率的平均；另外报告 `Answer@3`、`StaleRate`（更新题里返回过时值的比例）和 `Abstain`。每个系统都跑 seed 0、1、2，结果合并。复现：`python -m bench.run_e2e --split test --seeds 0,1,2`；如果只改了判分规则，可以用 `--rejudge <结果文件>` 离线重算。
+
+| 数据集 | dev | test（封存提交） | 题型 |
+|---|---|---|---|
+| `e2e_v1` | p_support、p_mage2 | p_tank、p_marksman2（`c58c35a`） | fact / update / temporal / negative |
+| `e2e_v2` | e_marks、e_jungle | e_mid、e_support（`eb8add4`） | 以上四类 + episodic / trajectory / promise |
+
+### e2e 记录
+
+| 日期 | 系统 | 数据 | E2EScore | Abstain | StaleRate | 结论 |
+|---|---|---|---|---|---|---|
+| 2026-09-24 | v0-pipeline | e2e_v1 test | 0.219 | 1.000 | 0.000 | 小模型下几乎写不进记忆 |
+| 2026-09-24 | main v2 | e2e_v1 test | 0.583 | 0.778 | 0.259 | e2e 基线（`bench/baseline_e2e.json`） |
+| 2026-09-24 | v2 + 只读玩家 + 历史召回 | e2e_v1 test | 0.594 | 0.667 | 0.148 | **未通过**（+0.010 < +0.03，拒答率下降 0.11） |
+| 2026-09-24 | main v2 | e2e_v2 test | 0.448 | 0.667 | 0.222 | e2e_v2 基线（`bench/baseline_e2e.json`） |
+| 2026-09-24 | **P1** | e2e_v2 test | **0.759** | 0.667 | **0.111** | **通过**：+0.310，95% CI [+0.138, +0.483]，合入 main（`bench/sota_e2e.json`） |
+
+P1 在 e2e_v2 test 上分题型的结果（main → P1）：情景 0.067 → 1.000，承诺 0.000 → 0.667，时间 0.500 → 1.000，更新 0.333 → 0.778，事实 0.833 → 0.792，轨迹 0.000 → 0.167，负例 0.667 → 0.667。
+
+实验过程和失败分析见 [EXPERIMENTS.md](EXPERIMENTS.md)。
 
 ## 计划中的评测
 
-- `e2e_v1`：端到端评测。多轮会话 → 写入 → 问答，用 LLM 评分，题型包括单事实、多跳、时间推理、知识更新、拒答，用来衡量写入链路（抽取和 ADD/UPDATE 决策）的质量。本机已经可以跑 Ollama + qwen2.5:3b / qwen3:4b。
 - `retrieval_v3`：更多玩家，加入"需要总结多条记忆"和"抽象问法"类查询（v2 暴露出的弱点）。
