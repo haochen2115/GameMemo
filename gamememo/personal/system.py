@@ -24,7 +24,7 @@ from typing import Callable, Dict, List, Optional, Sequence, Tuple
 from ..llm import LLMClient, parse_json
 from . import prompts
 from .consolidate import consolidate as consolidate_versions
-from .consolidate import detect as detect_values
+from .consolidate import base_value, detect as detect_values
 from .embed import Embedder
 from .model import MemoryRecord, clamp_importance, fmt_time
 from .retrieval import HybridRetriever, RetrievalConfig, ScoredMemory
@@ -81,7 +81,7 @@ def _grounded(content: str, source_text: str) -> bool:
     appear in the text it was written from."""
     probe = MemoryRecord(content=content)
     low = source_text.lower()
-    return all(value.lower() in low for _, value in detect_values(probe))
+    return all(base_value(value).lower() in low for _, value in detect_values(probe))
 
 
 def _norm(text: str) -> str:

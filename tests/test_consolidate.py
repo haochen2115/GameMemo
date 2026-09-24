@@ -9,7 +9,7 @@ def rec(content, day, **kw):
 
 
 def test_detect_rank_and_device():
-    assert detect(rec("玩家段位是白银一", "2026-01-01")) == [("段位", "白银")]
+    assert detect(rec("玩家段位是白银一", "2026-01-01")) == [("段位", "白银一")]
     assert detect(rec("玩家从黄金升到了钻石", "2026-01-01")) == [("段位", "钻石")]
     assert detect(rec("玩家的目标是冲王者", "2026-01-01")) == []          # a wish, not a rank
     assert detect(rec("玩家很喜欢王者荣耀", "2026-01-01")) == []          # the game's name
@@ -73,3 +73,24 @@ def test_trajectory_recall_collapses_repeated_values(tmp_path):
     mem.store.extend(chain)
     got = [r.content for r in mem.retrieve("我的段位这半年是怎么变的", top_k=3)]
     assert got == ["玩家段位是白银一", "玩家段位是黄金三", "玩家段位是铂金"]
+
+
+def test_rank_values_keep_sub_tier():
+    assert detect(rec("玩家升到钻石一了", "2026-01-01")) == [("段位", "钻石一")]
+    assert detect(rec("玩家段位是星耀三星", "2026-01-01")) == [("段位", "星耀三星")]
+    assert detect(rec("玩家上王者了", "2026-01-01")) == [("段位", "王者")]
+
+
+def test_composite_facts_are_not_retired(tmp_path):
+    store = JsonMemoryStore(str(tmp_path / "m.json"))
+    first = rec("玩家是大一新生，在武汉读书，段位黄金一", "2026-02-05")
+    plat = rec("玩家升铂金了", "2026-03-10")
+    store.extend([first, plat])
+    assert consolidate(store.all(), store.history, "2026-04-01 00:00:00") == []
+    assert first.is_active and plat.is_active
+
+
+def test_grounding_ignores_sub_tier_phrasing():
+    from gamememo.personal.system import _grounded
+    assert _grounded("玩家段位是钻石三星", "玩家: 我升到钻石三了")
+    assert not _grounded("玩家段位是星耀", "玩家: 我升到钻石三了")

@@ -29,17 +29,26 @@ class Attribute:
     exclude: Pattern            # statements about wishes/goals are not the current value
     strip: Tuple[str, ...] = ()  # substrings removed before matching (e.g. the game's name)
     require: Optional[Pattern] = None
+    suffix: Optional[Pattern] = None  # sub-level kept in the value: 钻石 + 三 -> 钻石三
 
 
 _WISH = re.compile(r"目标|想|打算|冲|希望|准备|梦想|争取|计划")
 
 ATTRIBUTES: Tuple[Attribute, ...] = (
     Attribute("段位", ("青铜", "白银", "黄金", "铂金", "钻石", "星耀", "王者"),
-              exclude=_WISH, strip=("王者荣耀", "荣耀王者")),
+              exclude=_WISH, strip=("王者荣耀", "荣耀王者"), suffix=re.compile(r"[一二三四五六七八九十0-9]+星?")),
     Attribute("设备", ("iPhone", "iPad", "华为", "小米", "红米", "OPPO", "vivo", "一加", "三星", "Redmi"),
               exclude=re.compile(r"想买|打算买|准备买|想换|打算换"),
               require=re.compile(r"手机|设备|平板|用|换|iPhone|iPad", re.I)),
 )
+
+
+_SUB = re.compile(r"[一二三四五六七八九十0-9]+星?$")
+
+
+def base_value(value: str) -> str:
+    """钻石三 / 钻石三星 -> 钻石 (sub-levels are phrased inconsistently)."""
+    return _SUB.sub("", value)
 
 
 def detect(rec: MemoryRecord, attributes: Sequence[Attribute] = ATTRIBUTES) -> List[Tuple[str, str]]:
@@ -52,10 +61,26 @@ def detect(rec: MemoryRecord, attributes: Sequence[Attribute] = ATTRIBUTES) -> L
             text = text.replace(s, "")
         if attr.exclude.search(text) or (attr.require and not attr.require.search(text)):
             continue
-        hits = [(text.lower().rfind(v.lower()), v) for v in attr.values if v.lower() in text.lower()]
+        low = text.lower()
+        hits = [(low.rfind(v.lower()), v) for v in attr.values if v.lower() in low]
         if hits:
-            found.append((attr.name, max(hits)[1]))
+            pos, value = max(hits)
+            if attr.suffix:
+                m = attr.suffix.match(text, pos + len(value))
+                if m:
+                    value += m.group(0)
+            found.append((attr.name, value))
     return found
+
+
+_CLAUSE = re.compile(r"[，,；;、]|并且|而且|同时")
+
+
+def single_attribute(rec: MemoryRecord) -> bool:
+    """Only short, single-clause facts are retired by consolidation: a
+    composite fact ("玩家是大一新生，在武汉，段位黄金一") also carries other
+    information that must not be forgotten when the rank changes."""
+    return not _CLAUSE.search(rec.content) and len(rec.content) <= 24
 
 
 def _when(r: MemoryRecord) -> Tuple[str, str]:
@@ -76,13 +101,14 @@ def consolidate(records: Sequence[MemoryRecord], history: Callable[[str], List[M
             by_attr.setdefault(name, []).append(r)
 
     retired = []
+    # Composite facts may be the newest value but are never retired.
     for recs in by_attr.values():
         if len(recs) < 2:
             continue
         recs.sort(key=_when)
         newest = recs[-1]
         for old in recs[:-1]:
-            if not old.is_active or history(old.id)[-1].id == newest.id:
+            if not old.is_active or not single_attribute(old) or history(old.id)[-1].id == newest.id:
                 continue
             _insert(old, history(newest.id), now)
             retired.append(old)
