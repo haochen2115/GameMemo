@@ -229,7 +229,7 @@ def slot_llm(facts):
 
 
 def test_slots_supersede_single_valued_aspects_without_second_call(tmp_path):
-    mem = make(tmp_path, write_mode="slots")
+    mem = make(tmp_path, write_mode="slots", episodes=False, promises=False)
     mem.llm = slot_llm([{"aspect": "当前段位", "statement": "玩家段位是铂金", "keywords": ["段位", "铂金"],
                          "event_date": "2026-07-05"},
                         {"aspect": "游戏伙伴", "statement": "玩家常和老公双排", "keywords": ["老公"]}])
