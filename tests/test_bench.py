@@ -100,3 +100,31 @@ def test_gate_rules():
     assert not check({"S": 0.6, "A": 0.8, "St": 0.1}, sota)[0]       # guard dropped
     assert not check({"S": 0.6, "A": 0.9, "St": 0.2}, sota)[0]       # stale rate rose
     assert check({"S": 0.6, "A": 0.9, "St": 0.0}, sota)[0]           # stale rate fell: fine
+
+
+def test_gate_hold_mode_and_candidate_file(tmp_path):
+    import json
+
+    from bench.gate import check, main
+
+    sota = {"primary": "S", "min_gain": 0.02, "hold_tol": 0.02, "metrics": {"S": 0.5}, "guards": {}}
+    assert check({"S": 0.49}, sota, "hold")[0]
+    assert not check({"S": 0.47}, sota, "hold")[0]
+    assert not check({"S": 0.51}, sota, "improve")[0]
+
+    # A candidate that only "holds" everything is not promotable.
+    rec = {"system": "base", "ref": "x", "dataset": "d.json", "split": "test", "primary": "S",
+           "min_gain": 0.02, "metrics": {"S": 0.5}, "guards": {}}
+    base = tmp_path / "base"
+    base.mkdir()
+    (base / "sota.json").write_text(json.dumps(rec))
+    (tmp_path / "r.json").write_text(json.dumps({"dataset": "d.json", "split": "test",
+                                                 "results": {"sys": {"S": 0.5}}}))
+    (tmp_path / "c.json").write_text(json.dumps({"retrieval": {"system": "sys", "mode": "hold"}}))
+    argv = ["--candidate", str(tmp_path / "c.json"), "--retrieval-results", str(tmp_path / "r.json"),
+            "--base-dir", str(base)]
+    assert main(argv) == 1
+    (tmp_path / "c.json").write_text(json.dumps({"retrieval": {"system": "sys", "mode": "improve"}}))
+    (tmp_path / "r.json").write_text(json.dumps({"dataset": "d.json", "split": "test",
+                                                 "results": {"sys": {"S": 0.6}}}))
+    assert main(argv) == 0

@@ -1,0 +1,5 @@
+{
+  "_note": "Pre-registered candidate for promotion to main. Committed before any test run of this branch.",
+  "retrieval": {"system": "memory-default", "mode": "hold"},
+  "e2e": {"system": "v2+po+history", "mode": "improve", "results": "bench/results/e2e_v1_test.json"}
+}

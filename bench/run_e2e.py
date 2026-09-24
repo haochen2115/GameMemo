@@ -84,7 +84,9 @@ class V2System:
 
     def evidence(self, query: str, when: datetime) -> List[str]:
         self.now = when
-        return [self.mem.describe(r) for r in self.mem.retrieve(query, top_k=K, touch=False)]
+        describe = getattr(self.mem, "describe", None)  # absent on older mains
+        return [describe(r) if describe else r.content + (f"（{r.event_time}）" if r.event_time else "")
+                for r in self.mem.retrieve(query, top_k=K, touch=False)]
 
     def dump(self) -> List[Dict]:
         return [r.to_dict() for r in self.mem.store.all()]
@@ -211,7 +213,7 @@ def save(args, results) -> None:
     os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
     with open(args.out, "w", encoding="utf-8") as f:
         json.dump({"dataset": os.path.relpath(os.path.abspath(args.data), ROOT), "split": args.split,
-                   "model": args.model, "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                   "model": args.model, "seeds": args.seeds, "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                    "results": results}, f, ensure_ascii=False, indent=1)
 
 
@@ -222,6 +224,8 @@ def main(argv=None):
     ap.add_argument("--systems", default="v0-pipeline,v2")
     ap.add_argument("--model", default="qwen2.5:3b")
     ap.add_argument("--base-url", default="http://localhost:11434")
+    ap.add_argument("--seeds", default="0", help="comma-separated LLM seeds for v2 systems; "
+                    "rows of all seeds are pooled, so metrics are seed-averaged")
     ap.add_argument("--out", default=None)
     ap.add_argument("--keep", default=None, help="directory to keep each run's memory files")
     ap.add_argument("--show-errors", action="store_true")
@@ -238,18 +242,23 @@ def main(argv=None):
         data = json.load(f)
     players = [p for p in data["players"] if args.split == "all" or p["split"] == args.split]
 
+    seeds = [int(x) for x in args.seeds.split(",")]
     results = {}
     for name in [s.strip() for s in args.systems.split(",") if s.strip()]:
         rows, dumps, errors, t0 = [], {}, [], time.time()
-        for p in players:
-            wd = tempfile.mkdtemp(prefix=f"e2e_{name}_")
-            system = SYSTEMS[name](args.model, args.base_url, wd)
-            rows.extend(run_player(system, p, errors))
-            dumps[p["id"]] = system.dump()
-            if args.keep:
-                dst = os.path.join(args.keep, name, p["id"])
-                shutil.copytree(wd, dst, dirs_exist_ok=True)
-            shutil.rmtree(wd, ignore_errors=True)
+        for seed in seeds:
+            for p in players:
+                wd = tempfile.mkdtemp(prefix=f"e2e_{name}_")
+                system = SYSTEMS[name](args.model, args.base_url, wd)
+                if isinstance(system, V2System):
+                    system.mem.llm.seed = seed
+                rows.extend(dict(r, seed=seed) for r in run_player(system, p, errors))
+                dumps[f"{p['id']}@{seed}"] = system.dump()
+                if args.keep:
+                    shutil.copytree(wd, os.path.join(args.keep, name, f"{p['id']}@{seed}"), dirs_exist_ok=True)
+                shutil.rmtree(wd, ignore_errors=True)
+            if not isinstance(system, V2System):
+                break  # v0 has no seed control; one run
         res = summarize(rows)
         res["minutes"] = round((time.time() - t0) / 60, 1)
         res["ingest_errors"] = errors

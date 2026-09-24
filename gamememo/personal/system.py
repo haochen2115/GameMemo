@@ -65,8 +65,8 @@ class PersonalMemory:
                  max_candidates: int = 15,
                  duplicate_ratio: float = 0.9,
                  write_mode: str = "ops",
-                 player_only: bool = False,
-                 history_recall: bool = False,
+                 player_only: bool = True,
+                 history_recall: bool = True,
                  per_turn: bool = False,
                  max_output_tokens: int = 1024):
         """
