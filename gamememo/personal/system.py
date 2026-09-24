@@ -120,7 +120,8 @@ class PersonalMemory:
                  promises: bool = True,
                  recall_modes: bool = True,
                  consolidate: bool = False,
-                 attribute_recall: bool = True):
+                 attribute_recall: bool = True,
+                 episode_fallback: bool = False):
         """
         write_mode: "ops" = extract facts, then the LLM decides
             ADD/UPDATE/DELETE/NOOP against related memories; "slots" = facts
@@ -144,6 +145,8 @@ class PersonalMemory:
             attributes (rank, device) into version chains (consolidate.py).
         attribute_recall: answer "现在…段位" / "段位怎么变的" / "换过哪些手机"
             from every dated mention of that attribute in facts and episodes.
+        episode_fallback: when an ordinary question finds no fact, look in
+            episodes (the answer may only have been summarised there).
         """
         if write_mode not in ("ops", "slots"):
             raise ValueError(f"unknown write_mode {write_mode!r}")
@@ -157,6 +160,7 @@ class PersonalMemory:
         self.recall_modes = recall_modes
         self.consolidate = consolidate
         self.attribute_recall = attribute_recall
+        self.episode_fallback = episode_fallback
         self.user_id = user_id
         self.llm = llm
         self.clock = clock
@@ -181,13 +185,18 @@ class PersonalMemory:
         if include_history is None:
             include_history = self.history_recall and bool(PAST_INTENT.search(query))
         records = self.store.all() if include_history else self.store.active()
-        if not EPISODIC_INTENT.search(query):
+        episodic = bool(EPISODIC_INTENT.search(query))
+        if not episodic:
             records = [r for r in records if r.kind != "episode"]
         # Promises are recalled when asked about, and shown to the chatbot via
         # pending_promises(); in ordinary search they only crowd out facts.
         records = [r for r in records if r.kind != "promise" or not self.recall_modes]
-        return self.retriever.search(query, records, top_k=top_k, now=self.clock(),
+        hits = self.retriever.search(query, records, top_k=top_k, now=self.clock(),
                                      include_inactive=include_history)
+        if not hits and not episodic and self.episode_fallback:
+            episodes = [r for r in self.store.active() if r.kind == "episode"]
+            hits = self.retriever.search(query, episodes, top_k=top_k, now=self.clock())
+        return hits
 
     def _recall_mode(self, query: str, top_k: int) -> List[ScoredMemory]:
         now = self.clock()

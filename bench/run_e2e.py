@@ -244,6 +244,10 @@ READ_VARIANTS = {
     # from the LLM's run-to-run variation (same memories in both arms)
     "consolidated": {"consolidate_after_load": True},
     "no-attribute-recall": {"attribute_recall": False},
+    "concepts": {"retrieval_config_kw": {"concept_tags": True}},
+    "concepts+dense": {"retrieval_config_kw": {"concept_tags": True, "concept_dense": True}},
+    "ep-fallback": {"episode_fallback": True},
+    "concepts+ep-fallback": {"episode_fallback": True, "retrieval_config_kw": {"concept_tags": True}},
     "pref-gate": {"retrieval_config_kw": {"require_specific": True, "min_dense_alone": 0.30,
                                           "generic_terms": "PREFERENCE_TERMS"}},
 }
