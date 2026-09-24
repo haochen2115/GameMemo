@@ -119,6 +119,8 @@ SYSTEMS: Dict[str, Callable[..., object]] = {
     "v2+po+history-nospec": lambda model, url, wd: V2System(
         model, url, wd, embedder=jina(), player_only=True, history_recall=True,
         retrieval_config=_nospec()),
+    "p1": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True, history_recall=True,
+                                          episodes=True, promises=True, recall_modes=True),
     "v2+history": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), history_recall=True),
     "v2-slots": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), write_mode="slots"),
     "v2-slots+history": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), write_mode="slots",

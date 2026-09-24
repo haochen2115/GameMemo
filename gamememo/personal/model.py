@@ -48,6 +48,7 @@ class MemoryRecord:
     source: str = "chat"
     importance: int = 3
     aspect: Optional[str] = None      # e.g. "当前段位"; single-valued aspects supersede
+    kind: str = "fact"                # "fact" | "episode" (one per conversation) | "promise" (by the assistant)
     id: str = field(default_factory=new_id)
     created_at: str = ""
     updated_at: str = ""

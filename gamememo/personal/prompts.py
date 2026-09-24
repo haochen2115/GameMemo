@@ -143,3 +143,43 @@ SLOTS_SCHEMA = {
     },
     "required": ["facts"],
 }
+
+
+# ---------------------------------------------------------------- P1: episodes & promises
+
+EPISODE = """今天是{today}。
+
+下面是玩家和游戏助手今天的一段对话。请用一到两句话概括这次聊天里【玩家】讲了什么、发生了什么，写成第三人称，以"玩家"开头。
+- 保留关键的事件、人物、英雄、段位和数字；
+- 不写助手的建议和客套话；
+- 不要编造对话里没有的内容。
+
+对话：
+{text}
+
+返回 JSON：{{"summary": "玩家……", "keywords": ["...", "..."]}}"""
+
+EPISODE_SCHEMA = {
+    "type": "object",
+    "properties": {"summary": {"type": "string"},
+                   "keywords": {"type": "array", "items": {"type": "string"}}},
+    "required": ["summary"],
+}
+
+PROMISES = """今天是{today}。
+
+下面是玩家和游戏助手的一段对话。请找出【助手】明确答应玩家、将来要去做的事（承诺），比如"下次帮你复盘""每天提醒你休息"。
+- 每条写成以"助手答应"开头的一句话，写清楚要为玩家做什么；
+- 只算助手明确说出口的承诺，建议、祝福、客套话都不算；
+- 没有承诺就返回空列表。
+
+对话：
+{text}
+
+返回 JSON：{{"promises": ["助手答应……"]}}"""
+
+PROMISES_SCHEMA = {
+    "type": "object",
+    "properties": {"promises": {"type": "array", "items": {"type": "string"}}},
+    "required": ["promises"],
+}

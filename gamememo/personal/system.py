@@ -47,6 +47,12 @@ _NORM = re.compile(r"[\s\W_]+", re.UNICODE)
 _DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 # Questions about the past ("什么时候升的铂金") need superseded versions too.
 PAST_INTENT = re.compile(r"什么时候|哪天|以前|之前|原来|曾经|上次|当时|那时|第一次")
+# Recall modes (P1). A person answers these by recalling differently:
+# "上次聊了什么" -> the latest conversation; "你答应过我什么" -> own promises;
+# "我段位是怎么变的" -> the whole story of one attribute, not its current value.
+RECENT_TALK = re.compile(r"(上次|上一次|最近一次|刚才|前几天).{0,6}(聊|说|讲)")
+PROMISE_INTENT = re.compile(r"答应|承诺|说过要|说好|保证过")
+TRAJECTORY_INTENT = re.compile(r"怎么变|变化|一路|一步步|这几个月|历程|怎么升|怎么上来|成长")
 
 
 def _norm(text: str) -> str:
@@ -68,7 +74,10 @@ class PersonalMemory:
                  player_only: bool = True,
                  history_recall: bool = True,
                  per_turn: bool = False,
-                 max_output_tokens: int = 1024):
+                 max_output_tokens: int = 1024,
+                 episodes: bool = False,
+                 promises: bool = False,
+                 recall_modes: bool = False):
         """
         write_mode: "ops" = extract facts, then the LLM decides
             ADD/UPDATE/DELETE/NOOP against related memories; "slots" = facts
@@ -82,6 +91,12 @@ class PersonalMemory:
             inputs help small models), then decide operations once.
         max_output_tokens: cap on every write-path LLM reply; small models
             can loop forever inside structured output without it.
+        episodes: also store a one-sentence summary of every conversation
+            (episodic memory: "what happened that day").
+        promises: also store what the assistant promised the player
+            (the assistant's own autobiographical memory).
+        recall_modes: route "last time" / "promised" / "how did it change"
+            questions to the matching kind of recall.
         """
         if write_mode not in ("ops", "slots"):
             raise ValueError(f"unknown write_mode {write_mode!r}")
@@ -90,6 +105,9 @@ class PersonalMemory:
         self.history_recall = history_recall
         self.per_turn = per_turn
         self.max_output_tokens = max_output_tokens
+        self.episodes = episodes
+        self.promises = promises
+        self.recall_modes = recall_modes
         self.user_id = user_id
         self.llm = llm
         self.clock = clock
@@ -107,11 +125,42 @@ class PersonalMemory:
 
     def search(self, query: str, top_k: int = 5,
                include_history: Optional[bool] = None) -> List[ScoredMemory]:
+        if self.recall_modes:
+            routed = self._recall_mode(query, top_k)
+            if routed:
+                return routed
         if include_history is None:
             include_history = self.history_recall and bool(PAST_INTENT.search(query))
         records = self.store.all() if include_history else self.store.active()
         return self.retriever.search(query, records, top_k=top_k, now=self.clock(),
                                      include_inactive=include_history)
+
+    def _recall_mode(self, query: str, top_k: int) -> List[ScoredMemory]:
+        now = self.clock()
+        if PROMISE_INTENT.search(query):
+            promises = [r for r in self.store.active() if r.kind == "promise"]
+            hits = self.retriever.search(query, promises, top_k=top_k, now=now)
+            if not hits:  # "你答应过我什么" names no topic: recall them all, newest first
+                promises.sort(key=lambda r: r.created_at, reverse=True)
+                hits = [ScoredMemory(r, 1.0) for r in promises[:top_k]]
+            return hits
+        if RECENT_TALK.search(query):
+            episodes = sorted((r for r in self.store.active() if r.kind == "episode"),
+                              key=lambda r: (r.event_time or "", r.created_at), reverse=True)
+            if episodes:
+                return [ScoredMemory(episodes[0], 1.0)]
+        if TRAJECTORY_INTENT.search(query):
+            facts = [r for r in self.store.all() if r.kind == "fact"]
+            # Finding the attribute is a recall problem: use the loose retriever.
+            hits = self.candidate_retriever.search(query, facts, top_k=top_k, now=now,
+                                                   include_inactive=True)
+            if hits:
+                chain = self.store.history(hits[0].record.id)
+                if len(chain) > 1:  # the attribute's versions, oldest first
+                    return [ScoredMemory(r, 1.0) for r in chain[-top_k:]]
+                hits.sort(key=lambda h: h.record.event_time or h.record.created_at)
+                return hits
+        return []
 
     def retrieve(self, query: str, top_k: int = 5, touch: bool = True,
                  include_history: Optional[bool] = None) -> List[MemoryRecord]:
@@ -126,7 +175,7 @@ class PersonalMemory:
 
     def core_profile(self, limit: int = 6) -> List[MemoryRecord]:
         """Identity-level facts (importance 5) that always go in the prompt."""
-        core = [r for r in self.store.active() if r.importance >= 5]
+        core = [r for r in self.store.active() if r.importance >= 5 and r.kind == "fact"]
         core.sort(key=lambda r: r.updated_at or r.created_at, reverse=True)
         return core[:limit]
 
@@ -139,6 +188,8 @@ class PersonalMemory:
     @staticmethod
     def describe(r: MemoryRecord) -> str:
         """One memory as text for a prompt, with its date and staleness."""
+        if r.kind == "episode":
+            return f"（{r.event_time or r.created_at[:10]} 的聊天）{r.content}"
         notes = []
         if r.event_time:
             notes.append(r.event_time)
@@ -170,24 +221,70 @@ class PersonalMemory:
     # =============================================================== write
 
     def ingest(self, text: str, source: str = "chat") -> IngestReport:
-        """Extract facts from a conversation or trajectory and store them."""
+        """Extract facts from a conversation or trajectory and store them.
+        For chats, optionally also an episode and the assistant's promises."""
+        raw = text
         if source == "chat" and self.player_only:
             text = "\n".join(l for l in text.splitlines()
                              if not l.lstrip().startswith(("助手:", "助手：")))
         if source == "chat" and self.write_mode == "slots":
-            return self._ingest_slots(text, source)
-        if source == "chat" and self.per_turn:
-            lines = [l for l in text.splitlines() if l.lstrip().startswith(("玩家:", "玩家："))]
-            facts = list(dict.fromkeys(f for l in lines for f in self.extract_facts(l, source)))
+            report = self._ingest_slots(text, source)
         else:
-            facts = self.extract_facts(text, source)
-        report = IngestReport(facts=facts)
-        if not facts:
-            return report
-        candidates = self._related(facts)
-        ops = self._decide(facts, candidates)
-        self.apply(ops, candidates, source, report)
+            if source == "chat" and self.per_turn:
+                lines = [l for l in text.splitlines() if l.lstrip().startswith(("玩家:", "玩家："))]
+                facts = list(dict.fromkeys(f for l in lines for f in self.extract_facts(l, source)))
+            else:
+                facts = self.extract_facts(text, source)
+            report = IngestReport(facts=facts)
+            if facts:
+                candidates = self._related(facts)
+                ops = self._decide(facts, candidates)
+                self.apply(ops, candidates, source, report)
+        if source == "chat" and self.episodes:
+            self._write_episode(text, report)
+        if source == "chat" and self.promises:
+            self._write_promises(raw, report)
         return report
+
+    def _write_episode(self, text: str, report: IngestReport) -> None:
+        today = self.clock()
+        data = parse_json(self.llm.chat(
+            prompt=prompts.EPISODE.format(text=text.strip(), today=today.strftime("%Y-%m-%d")),
+            system=prompts.SYSTEM_JSON, temperature=0.1, json_schema=prompts.EPISODE_SCHEMA,
+            max_tokens=self.max_output_tokens))
+        summary = str(data.get("summary") or "").strip() if isinstance(data, dict) else ""
+        if not summary:
+            return
+        now = fmt_time(today)
+        rec = MemoryRecord(content=summary, keywords=[str(k) for k in (data.get("keywords") or [])][:6],
+                           source="chat", importance=2, kind="episode", created_at=now, updated_at=now,
+                           event_time=today.strftime("%Y-%m-%d"))
+        self.store.put(rec)
+        self.store.save()
+        report.added.append(rec)
+
+    def _write_promises(self, text: str, report: IngestReport) -> None:
+        if not any(l.lstrip().startswith(("助手:", "助手：")) for l in text.splitlines()):
+            return
+        today = self.clock()
+        data = parse_json(self.llm.chat(
+            prompt=prompts.PROMISES.format(text=text.strip(), today=today.strftime("%Y-%m-%d")),
+            system=prompts.SYSTEM_JSON, temperature=0.1, json_schema=prompts.PROMISES_SCHEMA,
+            max_tokens=self.max_output_tokens))
+        items = data.get("promises", []) if isinstance(data, dict) else []
+        now = fmt_time(today)
+        changed = False
+        for p in items:
+            content = str(p).strip() if isinstance(p, str) else ""
+            if not content.startswith("助手") or self._find_duplicate(content, kind="promise"):
+                continue
+            rec = MemoryRecord(content=content, source="chat", importance=4, kind="promise",
+                               created_at=now, updated_at=now)
+            self.store.put(rec)
+            report.added.append(rec)
+            changed = True
+        if changed:
+            self.store.save()
 
     def extract_facts(self, text: str, source: str = "chat") -> List[str]:
         self._need_llm()
@@ -339,7 +436,7 @@ class PersonalMemory:
 
     def _related(self, facts: Sequence[str]) -> List[MemoryRecord]:
         seen: Dict[str, MemoryRecord] = {}
-        active = self.store.active()
+        active = [r for r in self.store.active() if r.kind == "fact"]
         for fact in facts:
             for s in self.candidate_retriever.search(fact, active, top_k=self.related_per_fact,
                                                     now=self.clock()):
@@ -368,9 +465,11 @@ class PersonalMemory:
             return None
         return candidates[idx - 1] if 1 <= idx <= len(candidates) else None
 
-    def _find_duplicate(self, content: str) -> Optional[MemoryRecord]:
+    def _find_duplicate(self, content: str, kind: str = "fact") -> Optional[MemoryRecord]:
         key = _norm(content)
         for r in self.store.active():
+            if r.kind != kind:
+                continue
             other = _norm(r.content)
             if key == other or SequenceMatcher(None, key, other).ratio() >= self.duplicate_ratio:
                 return r

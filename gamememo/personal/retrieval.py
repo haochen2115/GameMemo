@@ -31,8 +31,10 @@ from .text import add_words, tokenize
 # a lot by model. ``min_dense_alone`` applies with ``require_specific``: a
 # memory that shares no specific word with the query needs this similarity.
 CALIBRATED_DENSE = {
-    "jina-embeddings-v2-base-zh": {"min_dense": 0.25, "dense_margin": 0.15,
-                                   "require_specific": True, "min_dense_alone": 0.40},
+    # require_specific / min_dense_alone=0.40 helped retrieval dev but cost
+    # recall on e2e dev with LLM-written memories (docs/EXPERIMENTS.md, E2);
+    # kept as an option, off by default.
+    "jina-embeddings-v2-base-zh": {"min_dense": 0.25, "dense_margin": 0.15},
     "bge-small-zh-v1.5": {"min_dense": 0.38, "dense_margin": 0.12},
     "bge-m3": {"min_dense": 0.50, "dense_margin": 0.12},
 }

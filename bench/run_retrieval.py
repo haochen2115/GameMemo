@@ -120,7 +120,7 @@ SYSTEMS: Dict[str, Factory] = {
     "v1-dense": v1_factory(BGE_ZH, use_lexical=False),
     "v1-hybrid": v1_factory(BGE_ZH),                 # bge-small-zh, P0 thresholds
     "v2-hybrid": v1_factory(JINA_ZH, require_specific=False),  # jina-v2-base-zh, as promoted
-    "v3-hybrid": v1_factory(JINA_ZH),                # + specific-term gate (current preset)
+    "v2-hybrid+specific": v1_factory(JINA_ZH, require_specific=True, min_dense_alone=0.40),
     "v2-hybrid+rerank": v1_factory(BGE_ZH, rr=BGE_RR, min_rerank=-1.0, rerank_pool=5),
     "memory-default": memory_factory(),
     "memory-history": memory_factory(history_recall=True),

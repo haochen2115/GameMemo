@@ -286,3 +286,55 @@ def test_candidate_retrieval_stays_recall_oriented():
     strict = RetrievalConfig(require_specific=True, min_dense_alone=0.4)
     loose = strict.for_candidates()
     assert not loose.require_specific and loose.min_lexical_coverage == 0.0
+
+
+# ------------------------------------------------------------------ P1: episodes, promises, recall modes
+
+def p1_llm(facts=(), ops=(), summary="", promises=()):
+    def handler(prompt, system):
+        if "【新提取的事实】" in prompt:
+            return {"operations": list(ops)}
+        if "概括这次聊天" in prompt:
+            return {"summary": summary, "keywords": ["生日"]}
+        if "答应玩家" in prompt:
+            return {"promises": list(promises)}
+        if "值得长期记住" in prompt:
+            return {"facts": list(facts)}
+        return "好的"
+    return FakeLLM(handler)
+
+
+def test_episode_and_promise_are_written_per_conversation(tmp_path):
+    mem = make(tmp_path, episodes=True, promises=True)
+    mem.llm = p1_llm(facts=["玩家今天生日"], ops=[{"op": "ADD", "content": "玩家今天生日", "keywords": ["生日"]}],
+                     summary="玩家说今天是生日，用狄仁杰拿了五杀",
+                     promises=["助手答应下次帮玩家复盘", "祝你生日快乐"])
+    rep = mem.ingest("玩家: 今天我生日，拿了五杀\n助手: 生日快乐！下次我帮你复盘")
+    kinds = sorted(r.kind for r in rep.added)
+    assert kinds == ["episode", "fact", "promise"]            # the greeting is not a promise
+    ep = next(r for r in mem.active() if r.kind == "episode")
+    assert ep.event_time == "2026-09-01" and "（2026-09-01 的聊天）" in mem.describe(ep)
+    # the promise prompt sees the assistant's words even with player_only
+    assert "下次我帮你复盘" in [c["prompt"] for c in mem.llm.calls if "答应玩家" in c["prompt"]][0]
+    # episodes and promises never become UPDATE targets or core profile
+    assert all(r.kind == "fact" for r in mem.core_profile())
+
+
+def test_recall_modes(tmp_path):
+    mem = make(tmp_path, recall_modes=True)
+    old = mem.add("玩家段位是黄金", ["段位", "黄金"], 4)
+    mid = MemoryRecord(content="玩家升到了铂金", keywords=["段位", "铂金"], created_at="2026-07-01 10:00:00")
+    new = MemoryRecord(content="玩家上了钻石", keywords=["段位", "钻石"], created_at="2026-09-01 10:00:00")
+    PersonalMemory._supersede(old, mid, "2026-07-01 10:00:00")
+    PersonalMemory._supersede(mid, new, "2026-09-01 10:00:00")
+    mem.store.extend([mid, new])
+    for i, day in enumerate(["2026-08-01", "2026-08-20"]):
+        mem.store.put(MemoryRecord(content=f"玩家聊了第{i + 1}件事", kind="episode", event_time=day,
+                                   created_at=day + " 10:00:00"))
+    mem.store.put(MemoryRecord(content="助手答应下次帮玩家复盘", kind="promise", created_at="2026-08-01 10:00:00"))
+
+    assert [r.content for r in mem.retrieve("我的段位是怎么一路变化的")] == \
+        ["玩家段位是黄金", "玩家升到了铂金", "玩家上了钻石"]
+    assert [r.content for r in mem.retrieve("上次我们聊了什么")] == ["玩家聊了第2件事"]
+    assert [r.content for r in mem.retrieve("你答应过我什么")] == ["助手答应下次帮玩家复盘"]
+    assert [r.content for r in mem.retrieve("我现在什么段位")] == ["玩家上了钻石"]
