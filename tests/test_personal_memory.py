@@ -338,3 +338,12 @@ def test_recall_modes(tmp_path):
     assert [r.content for r in mem.retrieve("上次我们聊了什么")] == ["玩家聊了第2件事"]
     assert [r.content for r in mem.retrieve("你答应过我什么")] == ["助手答应下次帮玩家复盘"]
     assert [r.content for r in mem.retrieve("我现在什么段位")] == ["玩家上了钻石"]
+
+
+def test_episodes_only_answer_questions_about_a_time(tmp_path):
+    mem = make(tmp_path, recall_modes=True)
+    mem.add("玩家段位是钻石", ["段位", "钻石"], 4)
+    mem.store.put(MemoryRecord(content="玩家说自己段位是黄金，还拿了五杀", keywords=["段位", "五杀"],
+                               kind="episode", event_time="2026-03-02", created_at="2026-03-02 10:00:00"))
+    assert [r.content for r in mem.retrieve("我现在什么段位")] == ["玩家段位是钻石"]
+    assert any(r.kind == "episode" for r in mem.retrieve("我拿五杀那天发生了什么"))

@@ -52,6 +52,10 @@ PAST_INTENT = re.compile(r"什么时候|哪天|以前|之前|原来|曾经|上�
 # "我段位是怎么变的" -> the whole story of one attribute, not its current value.
 RECENT_TALK = re.compile(r"(上次|上一次|最近一次|刚才|前几天).{0,6}(聊|说|讲)")
 PROMISE_INTENT = re.compile(r"答应|承诺|说过要|说好|保证过")
+# Episodes describe the state *at that time*; "我现在什么段位" must be answered
+# from semantic memory, so episodes are searched only for questions about a
+# particular time or event.
+EPISODIC_INTENT = re.compile(r"那天|那次|那阵子|那段时间|那时候|发生了什么|哪次|当时|上次|什么时候|聊过|说过")
 TRAJECTORY_INTENT = re.compile(r"怎么变|变化|一路|一步步|这几个月|历程|怎么升|怎么上来|成长")
 
 
@@ -132,6 +136,8 @@ class PersonalMemory:
         if include_history is None:
             include_history = self.history_recall and bool(PAST_INTENT.search(query))
         records = self.store.all() if include_history else self.store.active()
+        if not EPISODIC_INTENT.search(query):
+            records = [r for r in records if r.kind != "episode"]
         return self.retriever.search(query, records, top_k=top_k, now=self.clock(),
                                      include_inactive=include_history)
 
@@ -158,8 +164,13 @@ class PersonalMemory:
                 chain = self.store.history(hits[0].record.id)
                 if len(chain) > 1:  # the attribute's versions, oldest first
                     return [ScoredMemory(r, 1.0) for r in chain[-top_k:]]
-                hits.sort(key=lambda h: h.record.event_time or h.record.created_at)
-                return hits
+            # No version chain (the model ADDed instead of UPDATEd): rebuild the
+            # story from facts and episodes of different times, in time order.
+            pool = facts + [r for r in self.store.active() if r.kind == "episode"]
+            hits = self.candidate_retriever.search(query, pool, top_k=top_k, now=now,
+                                                   include_inactive=True)
+            hits.sort(key=lambda h: h.record.event_time or h.record.created_at[:10])
+            return hits
         return []
 
     def retrieve(self, query: str, top_k: int = 5, touch: bool = True,
