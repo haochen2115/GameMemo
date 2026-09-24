@@ -19,7 +19,7 @@ Long-term, human-like memory for game AI assistants. It remembers who the player
 ## 快速开始
 
 ```bash
-pip install -e '.[dev]'          # 含 pytest 和本地向量模型 fastembed
+pip install -e '.[dev]'          # 含 pytest 和本地向量模型 fastembed（默认 jina-v2-base-zh）
 pytest                           # 单元测试，不需要 LLM
 python -m bench.run_retrieval    # 离线检索评测，不需要 LLM
 ```
@@ -54,7 +54,7 @@ print(bot.chat("今天是我生日！").reply)
 
 ## 评测与分支
 
-- 评测集、指标和结果见 [docs/BENCHMARK.md](docs/BENCHMARK.md)。当前 v1 混合检索在 test 上 Recall@3 为 0.912（v0 为 0.765），但拒答率回退，所以还没进 `main`。
+- 评测集、指标和结果见 [docs/BENCHMARK.md](docs/BENCHMARK.md)。在封存的 test 集（两位新玩家、102 条查询）上，当前 SOTA `v2-hybrid` 的 MemScore@3 为 0.892，v0 为 0.750（95% CI [+0.049, +0.235]）；召回和拒答都更好，而且检索不再调用 LLM。
 - `main` 只放当前 SOTA。分支命名和门禁规则见 [docs/BRANCHING.md](docs/BRANCHING.md)。
 - 类人记忆的路线图见 [docs/ROADMAP.md](docs/ROADMAP.md)：情景记忆、遗忘曲线、离线巩固、程序性记忆……
 

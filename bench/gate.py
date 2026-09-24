@@ -2,9 +2,13 @@
 """SOTA gate: may a candidate system replace what is on ``main``?
 
     python -m bench.run_retrieval --out bench/results/candidate.json
-    python -m bench.gate bench/results/candidate.json --system v1-hybrid
+    python -m bench.gate bench/results/candidate.json --system v2-hybrid \
+        --sota <the SOTA record of the branch you want to enter>
 
-Rules (``bench/sota.json``):
+In CI the record comes from the base branch (``git show origin/main:bench/sota.json``),
+because a promoting PR updates its own ``bench/sota.json`` to the new numbers.
+
+Rules:
 - the primary metric must beat the recorded SOTA by at least ``min_gain``;
 - no guard metric may drop by more than its tolerance.
 Exit code 0 = promotable, 1 = not.
@@ -42,14 +46,16 @@ def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("results")
     ap.add_argument("--system", required=True)
+    ap.add_argument("--sota", default=SOTA)
     args = ap.parse_args(argv)
 
-    with open(SOTA, encoding="utf-8") as f:
+    with open(args.sota, encoding="utf-8") as f:
         sota = json.load(f)
     with open(args.results, encoding="utf-8") as f:
         results = json.load(f)
-    if results.get("split") != sota["split"]:
-        sys.exit(f"results are for split={results.get('split')!r}, gate needs {sota['split']!r}")
+    if results.get("split") != sota["split"] or results.get("dataset") != sota["dataset"]:
+        sys.exit(f"results are for {results.get('dataset')}:{results.get('split')}, "
+                 f"gate needs {sota['dataset']}:{sota['split']}")
 
     ok, lines = check(results["results"][args.system], sota)
     print(f"candidate: {args.system}   vs SOTA: {sota['system']} ({sota['ref']})")

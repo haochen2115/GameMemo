@@ -1,6 +1,6 @@
 {
-  "system": "v2-hybrid",
-  "ref": "research/personal-memory-foundation -> main",
+  "system": "v0-keyword",
+  "ref": "archive/v0-keyword-baseline (main @ 3a866ba)",
   "dataset": "bench/data/retrieval_v2.json",
   "split": "test",
   "primary": "MemScore@3",
@@ -11,9 +11,9 @@
     "Abstain": 0.05
   },
   "metrics": {
-    "MemScore@3": 0.8922,
-    "Recall@3": 0.9028,
-    "MRR": 0.8056,
-    "Abstain": 0.8667
+    "MemScore@3": 0.75,
+    "Recall@3": 0.7153,
+    "MRR": 0.6782,
+    "Abstain": 0.8333
   }
 }

@@ -35,10 +35,16 @@ class OllamaClient:
     def __init__(self,
                  model: str = "deepseek-v3.1:671b-cloud",
                  base_url: str = "http://localhost:11434",
-                 timeout: int = 120):
+                 timeout: int = 120,
+                 seed: Optional[int] = None,
+                 think: Optional[bool] = None):
+        """``seed`` makes sampling reproducible; ``think=False`` turns off the
+        reasoning trace of thinking models such as qwen3."""
         self.model = model
         self.base_url = base_url.rstrip("/")
         self.timeout = timeout
+        self.seed = seed
+        self.think = think
 
     def chat(self,
              prompt: Optional[str] = None,
@@ -71,6 +77,10 @@ class OllamaClient:
         }
         if max_tokens:
             payload["options"]["num_predict"] = max_tokens
+        if self.seed is not None:
+            payload["options"]["seed"] = self.seed
+        if self.think is not None:
+            payload["think"] = self.think
         if json_schema is not None:
             payload["format"] = json_schema
 

@@ -2,7 +2,7 @@
 
 目标：让游戏助手像一个长期陪伴的朋友那样记住玩家，包括一起经历过的事、玩家的变化过程，以及和他相处的方式，而不只是一张事实表。每一步都要在 `docs/BENCHMARK.md` 的评测上证明有效，才能进入 `main`（见 `docs/BRANCHING.md`）。
 
-## P0 基础（`research/personal-memory-foundation`，进行中）
+## P0 基础（已完成，2026-09-24 合入 main）
 
 - [x] 包结构 `gamememo/personal/`，LLM 通过接口注入，测试用 FakeLLM
 - [x] 混合检索：jieba + BM25 + 向量（fastembed / Ollama）+ RRF；检索不调用 LLM
@@ -12,8 +12,9 @@
 - [x] 时间感知：prompt 注入今天的日期，相对时间换算成绝对日期；记忆带 `event_time`
 - [x] 结构化输出（Ollama JSON schema）、原子写入、兼容读取 v0 格式、彻底删除（隐私）
 - [x] 离线检索评测 + SOTA 门禁 + CI
-- [ ] **修复拒答回退**（当前挡在门禁外的唯一原因）。候选方案都只在 dev 上验证：换 bge-m3 或 jina-zh、加轻量 reranker、按查询类型动态设门槛
-- [ ] `retrieval_v2` 数据集（多个玩家 + 封存的 test split）
+- [x] 修复拒答回退：换成 jina-v2-base-zh，并按模型校准阈值（bge-m3 和 reranker 在 dev 上对比后放弃）
+- [x] `retrieval_v2` 数据集（3 个玩家，test 为两位封存的新玩家）
+- [x] 本机 Ollama 环境（qwen2.5:3b / qwen3:4b / bge-m3），用于写入链路的真实测试
 - [ ] 删除根目录的 v0 脚本（`game_memory.py` 等），目前保留是为了让评测直接对比真实的 v0 代码
 
 ## P1 类人记忆主体

@@ -1,69 +1,87 @@
 # 评测
 
-## retrieval_v1：离线记忆检索
+## 当前门禁：retrieval_v2（离线记忆检索）
 
-`bench/data/retrieval_v1.json`：一个虚构的王者荣耀玩家，共 42 条记忆，其中 3 条已被新事实取代（段位、目标、手机）；另有 60 条查询。
+`bench/data/retrieval_v2.json`，三个虚构的王者荣耀玩家：
 
-| 查询类型 | 含义 | dev | test |
-|---|---|---|---|
-| direct | 查询和记忆有明显的字面重合 | 9 | 19 |
-| paraphrase | 换一种说法（"开不开麦" ↔ "语音"） | 5 | 10 |
-| update | 需要返回最新值，不能返回旧值 | 1 | 3 |
-| multi | 需要同时找到 2 条记忆 | 1 | 2 |
-| negative | 和玩家无关，应当什么都不返回 | 4 | 6 |
+| 玩家 | 画像 | 记忆（已被取代） | 查询 | 用途 |
+|---|---|---|---|---|
+| `p_archer` | 射手，大学生（即 v1 的玩家） | 42（3） | 70，其中负例 20 | **dev**，只在这里调参 |
+| `p_mage` | 中路法师，程序员 | 37（3） | 52，其中负例 15 | **test** |
+| `p_jungle` | 打野，高中生 | 34（3） | 50，其中负例 15 | **test** |
+
+test 集的两位玩家在提交 `e2d9bce` 中封存，那时还没有任何系统在上面跑过。候选系统在 `3bbf901` 中预登记，之后才跑了一次 test。
+
+**查询类型**：
+- direct：查询和记忆有字面重合
+- paraphrase：换了一种说法（"开不开麦" ↔ "语音"）
+- update：必须返回最新值（段位、手机、昵称的变化）
+- multi：需要同时找到 2 条记忆
+- negative：和玩家无关，应当什么都不返回
 
 **指标**（k=3，和聊天机器人每轮注入的记忆条数一致）
-- `MemScore@3`（主指标）：对所有查询取平均。有 gold 的查询计 recall@3；负例查询返回空计 1，否则计 0。它同时奖励"找得到"和"该闭嘴时闭嘴"。
+- `MemScore@3`（主指标）：对所有查询取平均。有 gold 的查询计 recall@3；负例返回空计 1，否则计 0。
 - `Recall@3`、`MRR`：只在有 gold 的查询上计算。
-- `Abstain`：负例查询中正确返回空的比例。
-- `LLM/q`：每次检索需要调用多少次 LLM，这决定了回复延迟。
+- `Abstain`：负例中正确返回空的比例。
 
-复现：
-```bash
-pip install -e '.[dev]'
-python -m bench.run_retrieval --split test --show-errors
-```
+复现：`python -m bench.run_retrieval --split test --systems v0-keyword,v1-hybrid,v2-hybrid`
 
-### 结果（test split，40 条查询）
+### test 结果（102 条查询）
 
-| 系统 | MemScore@3 | Recall@3 | MRR | Abstain | LLM/q | paraphrase |
+| 系统 | MemScore@3 | Recall@3 | MRR | Abstain | paraphrase | ms/查询 |
 |---|---|---|---|---|---|---|
-| v0-keyword（main，当前 SOTA） | 0.800 | 0.765 | 0.730 | **1.000** | 1 | 0.300 |
-| v1-lexical（jieba + BM25） | 0.775 | 0.735 | 0.686 | 1.000 | 0 | 0.200 |
-| v1-dense（bge-small-zh） | 0.850 | 0.912 | 0.804 | 0.500 | 0 | 0.800 |
-| **v1-hybrid**（BM25 + 向量 + RRF） | **0.850** | **0.912** | **0.838** | 0.500 | **0** | **0.800** |
+| v0-keyword（原 main） | 0.750 | 0.715 | 0.678 | 0.833 | 0.379 | 8 + 1 次 LLM 调用 |
+| v1-lexical（jieba + BM25） | 0.735 | 0.667 | 0.600 | **0.900** | 0.276 | 0.3 |
+| v1-hybrid（+ bge-small-zh） | 0.843 | 0.875 | 0.778 | 0.767 | 0.724 | 7 |
+| **v2-hybrid（+ jina-v2-base-zh）** | **0.892** | **0.903** | 0.806 | 0.867 | **0.793** | 37 |
+| v2-hybrid+rerank（bge-reranker） | 0.877 | 0.882 | **0.850** | 0.867 | 0.759 | 103 |
 
-门禁结论：`v1-hybrid` **暂不能进 main**。主指标 +0.05、召回 +0.15，而且检索不再需要调用 LLM；但 `Abstain` 从 1.0 掉到 0.5，超出了容忍度。6 条负例中有 3 条误召回：
-- "1+1等于几" → 目标记忆
-- "现在几点了" → 段位 / 活跃时段
-- "世界杯谁夺冠了" → 战绩 / 连胜
+与 v2-hybrid 的配对 bootstrap（10k 次，按查询重采样）：
 
-误召回全部来自向量相似度门槛（0.38，在 dev 上校准）。bge-small-zh 在这类"语义擦边"的查询上分不开。
+| 对比 | ΔMemScore | 95% CI | 胜 / 负 |
+|---|---|---|---|
+| v2-hybrid − v0-keyword | +0.142 | [+0.049, +0.235] | 20 / 5 |
+| v2-hybrid − v1-hybrid | +0.049 | [−0.010, +0.118] | 8 / 3 |
+| v2-hybrid − v2-hybrid+rerank | +0.015 | [−0.049, +0.078] | 7 / 5 |
+
+**结论**：v2-hybrid 在所有指标上都超过 v0，且显著。门禁判定 PROMOTABLE，已合入 main。相对 v1-hybrid 和 rerank 版本还不显著，所以更轻的 v1-hybrid 是可以接受的替代方案。
+
+**v2-hybrid 仍然会错的地方**：
+- 负例误召回："你是机器人吗""王者荣耀是哪家公司做的""你喜欢什么颜色"
+- 抽象问法："我打游戏说话多吗" ↔ "经常开麦指挥"，"我喜欢反野吗" ↔ "入侵对方野区"
+- 需要总结多条记忆的问题："我打野有什么特点"
+
+### dev 调参记录（p_archer，70 条）
+
+| 实验 | 最好的 MemScore@3 | 备注 |
+|---|---|---|
+| v0-keyword | 0.814 | 基线 |
+| v1-hybrid（bge-small-zh，P0 阈值） | 0.871 | Abstain 0.75 |
+| bge-small-zh + bge-reranker（阈值 −1，pool 5） | 0.871 | 慢 12 倍，multi 类下降 |
+| bge-small-zh + jina-reranker | 0.393 | 正负分数大面积重叠，放弃 |
+| bge-m3（Ollama） | 0.914 | Abstain 最多 0.85；需要额外起服务 |
+| **jina-v2-base-zh** | **0.929** | `min_dense` 0.22–0.28、`margin` 0.15 这一段结果完全相同；取中间值 0.25 |
+
+各向量模型的余弦尺度差别很大（负例最高分：bge-small 0.5、jina 0.37、bge-m3 0.63），所以阈值按模型分别校准，见 `RetrievalConfig.for_embedder` 和 `CALIBRATED_DENSE`。
 
 ### 如实说明
 
-- **v0 的关键词抽取是近似替代。** v0 每次检索前会让 LLM 抽 2–5 个关键词。离线评测里用 jieba TF-IDF 的 top-5 代替。真实 LLM 可能会给出同义词，让 v0 在 paraphrase 类上表现更好，所以 v0 的真实分数可能被低估。
-- **数据集很小。** test 只有 40 条，0.05 的差距只相当于 2 条查询，统计上不算显著。数据由维护者手写，存在作者偏差。
-- **test split 已被看过一次**（2026-09-24，就是上表）。之后任何针对"拒答"的改进，即使只在 dev 上调参，也难免受到这次观察的影响。因此下一个数据版本 `retrieval_v2` 会新增一个在调参前就封存的 test split。
+- v0 用 LLM 抽关键词的那一步，离线评测用 jieba TF-IDF 代替，v0 的分数可能被低估。
+- 所有数据由维护者手写，存在作者偏差。test 虽然封存了，但写数据和做系统的是同一个人。
+- 每个 test 玩家只有 50 条左右的查询，置信区间较宽。
 
-### dev split（用于调参，20 条）
+## 历史：retrieval_v1
 
-| 系统 | MemScore@3 | Recall@3 | MRR | Abstain |
+单个玩家、60 条查询，已被 v2 取代，结果保存在 `bench/results/retrieval_v1_test.json`。在 v1 test 上，v1-hybrid 的 MemScore 为 0.850，v0 为 0.800，但拒答率从 1.0 掉到 0.5，当时没有通过门禁。v2 的做法就是从这次教训来的：先封存 test、预登记候选、按模型校准阈值。
+
+## 排行榜（main 的 SOTA 历史）
+
+| 日期 | 系统 | 数据 | MemScore@3 (test) | ref |
 |---|---|---|---|---|
-| v0-keyword | 0.750 | 0.688 | 0.656 | 1.000 |
-| v1-lexical | 0.800 | 0.750 | 0.688 | 1.000 |
-| v1-dense | 0.900 | 0.875 | 0.812 | 1.000 |
-| v1-hybrid | 0.950 | 0.938 | 0.844 | 1.000 |
-
-调参范围：`bigrams ∈ {on,off}`、`min_lexical_coverage ∈ {0.2,0.34,0.5}`、`min_dense ∈ {0.36,0.38,0.40}`、`dense_margin ∈ {0.08,0.12,0.2}`。混合检索在大部分组合下都是 0.95，说明结果不依赖某个特定参数值。
-
-## 排行榜（进入 main 的历史）
-
-| 日期 | 系统 | 分支 / ref | MemScore@3 (test) |
-|---|---|---|---|
-| 2026-09-24 | v0-keyword | `archive/v0-keyword-baseline` | 0.800 |
+| 2026-09-24 | v0-keyword | retrieval_v2 | 0.750 | `archive/v0-keyword-baseline` |
+| 2026-09-24 | **v2-hybrid** | retrieval_v2 | **0.892** | `research/personal-memory-foundation` |
 
 ## 计划中的评测
 
-- `retrieval_v2`：多个玩家、更多负例和时间类查询，以及一个封存的 test split。
-- `e2e_v1`：端到端评测。多轮会话 → 写入 → 问答，用 LLM 评分，参考 LongMemEval 的题型：单事实、多跳、时间推理、知识更新、拒答。需要 Ollama 才能运行。
+- `e2e_v1`：端到端评测。多轮会话 → 写入 → 问答，用 LLM 评分，题型包括单事实、多跳、时间推理、知识更新、拒答，用来衡量写入链路（抽取和 ADD/UPDATE 决策）的质量。本机已经可以跑 Ollama + qwen2.5:3b / qwen3:4b。
+- `retrieval_v3`：更多玩家，加入"需要总结多条记忆"和"抽象问法"类查询（v2 暴露出的弱点）。

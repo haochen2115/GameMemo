@@ -28,16 +28,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
       - uses: actions/cache@v4
         with:
-          path: ~/.cache/fastembed
-          key: fastembed-bge-small-zh-v1.5
+          path: /home/runner/.cache/fastembed
+          key: fastembed-jina-v2-base-zh-bge-small-zh
       - run: python -m pip install -e '.[dev]'
-      - run: python -m bench.run_retrieval --split test --out bench/results/candidate.json
+      - name: SOTA record on the base branch
+        run: |
+          git show "origin/${{ github.base_ref }}:bench/sota.json" > /tmp/sota.json \
+            || cp bench/baseline_v0.json /tmp/sota.json   # first promotion: base predates the benchmark
+          cat /tmp/sota.json
+      - run: python -m bench.run_retrieval --split test --systems "$CANDIDATE" --out bench/results/candidate.json
         env:
           FASTEMBED_CACHE_PATH: /home/runner/.cache/fastembed
-      - run: python -m bench.gate bench/results/candidate.json --system "${SOTA_CANDIDATE:-v1-hybrid}"
+          CANDIDATE: v2-hybrid
+      - run: python -m bench.gate bench/results/candidate.json --system v2-hybrid --sota /tmp/sota.json
