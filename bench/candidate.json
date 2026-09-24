@@ -1,5 +1,5 @@
 {
-  "_note": "Pre-registered candidate P1 (episodic memory, assistant promises, recall modes on top of player-only extraction + history recall). Committed before any test run of this candidate.",
+  "_note": "Pre-registered candidate P2: attribute-aware recall (E6) + preference gate (E4) + write-path grounding/restatement fixes (E5) on top of P1; consolidation off. Committed before any test run of this candidate.",
   "retrieval": {"system": "memory-default", "mode": "hold"},
-  "e2e": {"system": "p1", "mode": "improve", "results": "bench/results/e2e_v2_test.json"}
+  "e2e": {"system": "p2", "mode": "improve", "results": "bench/results/e2e_v4_test.json"}
 }

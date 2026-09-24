@@ -26,26 +26,34 @@ from .model import MemoryRecord, parse_time
 from .text import add_words, tokenize
 
 
-# Dense-gate settings per embedding model, tuned on the retrieval_v2 dev
-# split only (docs/BENCHMARK.md, docs/EXPERIMENTS.md). Cosine scales differ
-# a lot by model. ``min_dense_alone`` applies with ``require_specific``: a
-# memory that shares no specific word with the query needs this similarity.
-CALIBRATED_DENSE = {
-    # require_specific / min_dense_alone=0.40 helped retrieval dev but cost
-    # recall on e2e dev with LLM-written memories (docs/EXPERIMENTS.md, E2);
-    # kept as an option, off by default.
-    "jina-embeddings-v2-base-zh": {"min_dense": 0.25, "dense_margin": 0.15},
-    "bge-small-zh-v1.5": {"min_dense": 0.38, "dense_margin": 0.12},
-    "bge-m3": {"min_dense": 0.50, "dense_margin": 0.12},
-}
-
-
 # Predicates and fillers that say *how* the player relates to something but
 # not *what* it is. "我喜欢什么颜色" must not match "玩家最喜欢英雄是项羽"
 # through "喜欢" alone, so these terms cannot open the gate on their own.
 GENERIC_TERMS = frozenset(
     "喜欢 最喜欢 讨厌 最讨厌 爱 爱玩 想 想要 打算 准备 觉得 经常 常 常用 一般 平时 最近 玩 打 用 "
     "喜不喜欢 会 不会 能 可以 知道 记得 告诉 说 说过 什么样 怎么样 多少 哪些".split())
+
+
+# Narrow variant: only preference predicates. "我喜欢什么动物" sharing just
+# "喜欢" with "玩家最喜欢貂蝉" is no evidence; other function-ish words are
+# left alone because blocking them cost recall on real memories.
+PREFERENCE_TERMS = frozenset("喜欢 最喜欢 讨厌 最讨厌 爱 喜不喜欢 讨不讨厌".split())
+
+
+# Dense-gate settings per embedding model, tuned on the retrieval_v2 dev
+# split only (docs/BENCHMARK.md, docs/EXPERIMENTS.md). Cosine scales differ
+# a lot by model. With ``require_specific``, a memory whose only word overlap
+# with the query is a ``generic_terms`` word needs ``min_dense_alone``.
+CALIBRATED_DENSE = {
+    # Preference gate (docs/EXPERIMENTS.md, E4): a memory sharing only a
+    # preference predicate with the query ("喜欢") needs cosine >= 0.30.
+    # The broad GENERIC_TERMS version (E2) cost recall and stays off.
+    "jina-embeddings-v2-base-zh": {"min_dense": 0.25, "dense_margin": 0.15,
+                                   "require_specific": True, "min_dense_alone": 0.30,
+                                   "generic_terms": PREFERENCE_TERMS},
+    "bge-small-zh-v1.5": {"min_dense": 0.38, "dense_margin": 0.12},
+    "bge-m3": {"min_dense": 0.50, "dense_margin": 0.12},
+}
 
 
 @dataclass
@@ -60,8 +68,9 @@ class RetrievalConfig:
     rrf_k: int = 60
     min_lexical_coverage: float = 0.34  # idf-weighted share of query terms matched
     generic_weight: float = 1.0         # idf multiplier for GENERIC_TERMS
-    require_specific: bool = False      # gate needs a non-generic term match ...
-    min_dense_alone: float = 0.0        # ... unless dense similarity reaches this
+    require_specific: bool = False      # lexical gate needs a non-generic term; a memory
+    min_dense_alone: float = 0.0        # matching only generic terms needs this dense sim
+    generic_terms: frozenset = GENERIC_TERMS
     min_dense: float = 0.25             # cosine floor (default embedder: jina-v2-base-zh)
     dense_margin: float = 0.15          # also require being near the best match
     w_importance: float = 0.10
@@ -152,8 +161,11 @@ class HybridRetriever:
             # memories close to the best match so weak ones don't pad the prompt.
             floor = max(cfg.min_dense, max(dense) - cfg.dense_margin)
             for i in range(n):
-                gate[i] |= dense[i] >= floor and (
-                    specific[i] or not cfg.require_specific or dense[i] >= cfg.min_dense_alone)
+                # A memory whose only word overlap is a generic term ("喜欢")
+                # needs stronger semantic evidence; pure paraphrases (no
+                # overlap at all) keep the normal floor.
+                generic_only = cfg.require_specific and lex[i] > 0 and not specific[i]
+                gate[i] |= dense[i] >= floor and (not generic_only or dense[i] >= cfg.min_dense_alone)
         if not lists:
             return []
 
@@ -227,7 +239,8 @@ class HybridRetriever:
             df.update(set(d))
         q_terms = list(dict.fromkeys(tokenize(query, bigrams=cfg.bigrams)))
         idf = {t: math.log(1 + (n - df[t] + 0.5) / (df[t] + 0.5)) for t in q_terms}
-        weight = {t: idf[t] * (cfg.generic_weight if t in GENERIC_TERMS else 1.0) for t in q_terms}
+        generic = cfg.generic_terms
+        weight = {t: idf[t] * (cfg.generic_weight if t in generic else 1.0) for t in q_terms}
         q_mass = sum(weight.values()) or 1.0
 
         scores, coverage, specific = [], [], []
@@ -241,7 +254,7 @@ class HybridRetriever:
                 if not f:
                     continue
                 matched += weight[t]
-                spec |= t not in GENERIC_TERMS
+                spec |= t not in generic
                 s += weight[t] * f * (cfg.bm25_k1 + 1) / (
                     f + cfg.bm25_k1 * (1 - cfg.bm25_b + cfg.bm25_b * len(d) / avgdl))
             scores.append(s)

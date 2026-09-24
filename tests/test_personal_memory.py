@@ -134,7 +134,7 @@ def test_retrieval_skips_superseded(tmp_path):
     mem = make(tmp_path)
     old, = seed(mem, ("玩家段位是星耀三星", ["段位"], 4))
     mem.llm = scripted(facts=["玩家段位升到王者"], ops=[{"op": "UPDATE", "target": 1, "content": "玩家段位是王者", "keywords": ["段位"]}])
-    mem.ingest("...")
+    mem.ingest("玩家: 我段位升到王者了")
     assert [r.content for r in mem.retrieve("我现在什么段位")] == ["玩家段位是王者"]
 
 
@@ -323,6 +323,7 @@ def test_episode_and_promise_are_written_per_conversation(tmp_path):
 def test_recall_modes(tmp_path):
     mem = make(tmp_path, recall_modes=True)
     old = mem.add("玩家段位是黄金", ["段位", "黄金"], 4)
+    old.created_at = "2026-06-01 10:00:00"
     mid = MemoryRecord(content="玩家升到了铂金", keywords=["段位", "铂金"], created_at="2026-07-01 10:00:00")
     new = MemoryRecord(content="玩家上了钻石", keywords=["段位", "钻石"], created_at="2026-09-01 10:00:00")
     PersonalMemory._supersede(old, mid, "2026-07-01 10:00:00")
@@ -360,3 +361,13 @@ def test_promises_are_kept_in_mind_not_in_ordinary_search(tmp_path):
     bot.chat("在吗")
     assert "【你答应过玩家的事】" in llm.calls[-1]["system"]
     assert "总结一次战绩" in llm.calls[-1]["system"]
+
+
+def test_attribute_recall_merges_vague_and_precise_phrasings(tmp_path):
+    mem = make(tmp_path)
+    for text, day in [("玩家段位是黄金二", "2026-02-01"), ("玩家升到了铂金", "2026-04-01"),
+                      ("玩家说自己现在是铂金一", "2026-04-20"), ("玩家上钻石了", "2026-06-01")]:
+        mem.store.put(MemoryRecord(content=text, created_at=day + " 10:00:00"))
+    got = [r.content for r in mem.retrieve("我的段位是怎么一路变化的", top_k=3)]
+    assert got == ["玩家段位是黄金二", "玩家说自己现在是铂金一", "玩家上钻石了"]
+    assert [r.content for r in mem.retrieve("我现在什么段位")] == ["玩家上钻石了"]

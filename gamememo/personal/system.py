@@ -23,6 +23,8 @@ from typing import Callable, Dict, List, Optional, Sequence, Tuple
 
 from ..llm import LLMClient, parse_json
 from . import prompts
+from .consolidate import consolidate as consolidate_versions
+from .consolidate import base_value, detect as detect_values
 from .embed import Embedder
 from .model import MemoryRecord, clamp_importance, fmt_time
 from .retrieval import HybridRetriever, RetrievalConfig, ScoredMemory
@@ -37,6 +39,7 @@ class IngestReport:
     deleted: List[MemoryRecord] = field(default_factory=list)
     noop: int = 0
     rejected: List[Tuple[Dict, str]] = field(default_factory=list)  # (op, why)
+    consolidated: List[MemoryRecord] = field(default_factory=list)  # retired by consolidation
 
     @property
     def changed(self) -> int:
@@ -56,7 +59,41 @@ PROMISE_INTENT = re.compile(r"答应|承诺|说过要|说好|保证过")
 # from semantic memory, so episodes are searched only for questions about a
 # particular time or event.
 EPISODIC_INTENT = re.compile(r"那天|那次|那阵子|那段时间|那时候|发生了什么|哪次|当时|上次|什么时候|聊过|说过")
+# Closed-set attributes named by a question, for attribute-aware recall.
+ATTRIBUTE_QUERY = (("段位", re.compile(r"段位|段|排位|星耀|钻石|王者|铂金|黄金")),
+                   ("设备", re.compile(r"手机|设备|平板")))
+CURRENT_INTENT = re.compile(r"现在|目前|当前|最新")
 TRAJECTORY_INTENT = re.compile(r"怎么变|变化|一路|一步步|这几个月|历程|怎么升|怎么上来|成长")
+
+
+def _same_state(a: str, b: str) -> bool:
+    """钻石 / 钻石二 are one state (one phrasing lacks the sub-level);
+    钻石四 / 钻石一 are two."""
+    if a == b:
+        return True
+    return base_value(a) == base_value(b) and (a == base_value(a) or b == base_value(b))
+
+
+def _distinct_versions(chain: List[MemoryRecord]) -> List[MemoryRecord]:
+    """Drop versions that repeat the previous value, keeping the earliest
+    (when it first became true): 白银→黄金→铂金→铂金 tells 白银→黄金→铂金."""
+    out: List[MemoryRecord] = []
+    for r in chain:
+        if out:
+            prev = out[-1]
+            same_value = detect_values(r) and detect_values(r) == detect_values(prev)
+            if same_value or SequenceMatcher(None, _norm(r.content), _norm(prev.content)).ratio() >= 0.9:
+                continue
+        out.append(r)
+    return out
+
+
+def _grounded(content: str, source_text: str) -> bool:
+    """Closed-set values (rank tier, device brand) in a new memory must
+    appear in the text it was written from."""
+    probe = MemoryRecord(content=content)
+    low = source_text.lower()
+    return all(base_value(value).lower() in low for _, value in detect_values(probe))
 
 
 def _norm(text: str) -> str:
@@ -81,7 +118,9 @@ class PersonalMemory:
                  max_output_tokens: int = 1024,
                  episodes: bool = True,
                  promises: bool = True,
-                 recall_modes: bool = True):
+                 recall_modes: bool = True,
+                 consolidate: bool = False,
+                 attribute_recall: bool = True):
         """
         write_mode: "ops" = extract facts, then the LLM decides
             ADD/UPDATE/DELETE/NOOP against related memories; "slots" = facts
@@ -101,6 +140,10 @@ class PersonalMemory:
             (the assistant's own autobiographical memory).
         recall_modes: route "last time" / "promised" / "how did it change"
             questions to the matching kind of recall.
+        consolidate: after each write, link successive values of closed-set
+            attributes (rank, device) into version chains (consolidate.py).
+        attribute_recall: answer "现在…段位" / "段位怎么变的" / "换过哪些手机"
+            from every dated mention of that attribute in facts and episodes.
         """
         if write_mode not in ("ops", "slots"):
             raise ValueError(f"unknown write_mode {write_mode!r}")
@@ -112,6 +155,8 @@ class PersonalMemory:
         self.episodes = episodes
         self.promises = promises
         self.recall_modes = recall_modes
+        self.consolidate = consolidate
+        self.attribute_recall = attribute_recall
         self.user_id = user_id
         self.llm = llm
         self.clock = clock
@@ -158,13 +203,23 @@ class PersonalMemory:
                               key=lambda r: (r.event_time or "", r.created_at), reverse=True)
             if episodes:
                 return [ScoredMemory(episodes[0], 1.0)]
+        attr = next((name for name, pat in ATTRIBUTE_QUERY if pat.search(query)), None) \
+            if self.attribute_recall else None
+        if attr and (TRAJECTORY_INTENT.search(query) or re.search(r"换过|哪些", query)):
+            states = self._attribute_states(attr)
+            if len(states) > 1:
+                return [ScoredMemory(r, 1.0) for r in states[-top_k:]]
+        if attr and CURRENT_INTENT.search(query):
+            states = self._attribute_states(attr)
+            if states:
+                return [ScoredMemory(states[-1], 1.0)]
         if TRAJECTORY_INTENT.search(query):
             facts = [r for r in self.store.all() if r.kind == "fact"]
             # Finding the attribute is a recall problem: use the loose retriever.
             hits = self.candidate_retriever.search(query, facts, top_k=top_k, now=now,
                                                    include_inactive=True)
             if hits:
-                chain = self.store.history(hits[0].record.id)
+                chain = _distinct_versions(self.store.history(hits[0].record.id))
                 if len(chain) > 1:  # the attribute's versions, oldest first
                     return [ScoredMemory(r, 1.0) for r in chain[-top_k:]]
             # No version chain (the model ADDed instead of UPDATEd): rebuild the
@@ -192,6 +247,30 @@ class PersonalMemory:
         core = [r for r in self.store.active() if r.importance >= 5 and r.kind == "fact"]
         core.sort(key=lambda r: r.updated_at or r.created_at, reverse=True)
         return core[:limit]
+
+    def _attribute_states(self, attr: str) -> List[MemoryRecord]:
+        """Every value a closed-set attribute (rank, device) took, oldest
+        first, one record per change, gathered from facts *and* episodes:
+        episodes reliably mention "段位钻石一" even when the fact was merged
+        away or never written."""
+        dated = []
+        for r in self.store.all():
+            if r.kind not in ("fact", "episode"):
+                continue
+            for name, value in detect_values(r):
+                if name == attr:
+                    dated.append(((r.event_time or r.created_at[:10]), r.created_at, r, value))
+        dated.sort(key=lambda x: (x[0], x[1]))
+        states: List[MemoryRecord] = []
+        values: List[str] = []
+        for _, _, r, value in dated:
+            if values and _same_state(values[-1], value):
+                if len(value) > len(values[-1]):  # "钻石" then "钻石二": keep the precise one
+                    states[-1], values[-1] = r, value
+                continue
+            states.append(r)
+            values.append(value)
+        return states
 
     def pending_promises(self, limit: int = 3) -> List[MemoryRecord]:
         """The assistant's most recent promises, kept in mind like a to-do list."""
@@ -259,11 +338,16 @@ class PersonalMemory:
             if facts:
                 candidates = self._related(facts)
                 ops = self._decide(facts, candidates)
-                self.apply(ops, candidates, source, report)
+                self.apply(ops, candidates, source, report, source_text=text)
         if source == "chat" and self.episodes:
             self._write_episode(text, report)
         if source == "chat" and self.promises:
             self._write_promises(raw, report)
+        if self.consolidate:
+            report.consolidated = consolidate_versions(self.store.all(), self.store.history,
+                                                       fmt_time(self.clock()))
+            if report.consolidated:
+                self.store.save()
         return report
 
     def _write_episode(self, text: str, report: IngestReport) -> None:
@@ -320,9 +404,12 @@ class PersonalMemory:
         return [f.strip() for f in facts if isinstance(f, str) and f.strip()]
 
     def apply(self, ops: Sequence[Dict], candidates: Sequence[MemoryRecord],
-              source: str = "chat", report: Optional[IngestReport] = None) -> IngestReport:
+              source: str = "chat", report: Optional[IngestReport] = None,
+              source_text: Optional[str] = None) -> IngestReport:
         """Validate and execute operations. ``target`` is a 1-based index into
-        ``candidates`` — the only memories the model was shown."""
+        ``candidates`` — the only memories the model was shown. With
+        ``source_text``, a rank/device value the text never mentions is
+        rejected as invented."""
         report = report or IngestReport()
         now = fmt_time(self.clock())
         touched: set = set()
@@ -345,6 +432,10 @@ class PersonalMemory:
             if kind in ("ADD", "UPDATE") and not content:
                 report.rejected.append((op, "empty content"))
                 continue
+            known = source_text if kind == "ADD" or target is None else f"{source_text}\n{target.content}"
+            if kind in ("ADD", "UPDATE") and source_text is not None and not _grounded(content, known):
+                report.rejected.append((op, "states a value the conversation never mentions"))
+                continue
 
             if kind == "ADD":
                 dup = self._find_duplicate(content)
@@ -355,8 +446,9 @@ class PersonalMemory:
                 self.store.put(rec)
                 report.added.append(rec)
             elif kind == "UPDATE":
-                if _norm(content) == _norm(target.content):
-                    report.noop += 1
+                a, b = _norm(content), _norm(target.content)
+                if a == b or SequenceMatcher(None, a, b).ratio() >= self.duplicate_ratio:
+                    report.noop += 1  # a restatement ("玩家的段位是铂金") is not a new version
                     continue
                 rec = self._new_record(op, content, source, now)
                 self._supersede(target, rec, now)

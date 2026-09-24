@@ -1,0 +1,5567 @@
+{
+ "dataset": "bench/data/e2e_v3.json",
+ "split": "test",
+ "model": "qwen2.5:3b",
+ "seeds": "0,1,2",
+ "generated_at": "2026-09-24 18:39:21",
+ "results": {
+  "p1+consolidate": {
+   "E2EScore": 0.6667,
+   "Answer@3": 0.5278,
+   "StaleRate": 0.1389,
+   "Abstain": 1.0,
+   "by_type": {
+    "episodic": 0.8889,
+    "fact": 0.4444,
+    "negative": 1.0,
+    "promise": 0.3333,
+    "temporal": 1.0,
+    "trajectory": 0.0556,
+    "update": 0.5556
+   },
+   "n": 153,
+   "minutes": 26.0,
+   "ingest_errors": [],
+   "rows": [
+    {
+     "id": "v3_mage_q01",
+     "player": "v3_mage",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "星耀"
+     ],
+     "evidence": [
+      "玩家段位是星耀一（记于2026-06-05）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_mage_q02",
+     "player": "v3_mage",
+     "type": "trajectory",
+     "query": "我的段位是怎么一步步变的",
+     "answer_any": [
+      "钻石四",
+      "钻石一",
+      "星耀"
+     ],
+     "evidence": [
+      "玩家段位钻石四（记于2026-03-01；已过时，2026-03-28被新信息取代）",
+      "玩家段位是星耀一（记于2026-06-05）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_mage_q03",
+     "player": "v3_mage",
+     "type": "update",
+     "query": "我现在用什么手机",
+     "answer_any": [
+      "一加"
+     ],
+     "evidence": [
+      "玩家用的是加星手机（记于2026-06-05）",
+      "玩家用的是红米K70（记于2026-03-28）"
+     ],
+     "success": 0.0,
+     "stale": true,
+     "seed": 0
+    },
+    {
+     "id": "v3_mage_q04",
+     "player": "v3_mage",
+     "type": "trajectory",
+     "query": "我换过哪些手机",
+     "answer_any": [
+      "红米",
+      "一加"
+     ],
+     "evidence": [
+      "玩家用的是加星手机（记于2026-06-05）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_mage_q05",
+     "player": "v3_mage",
+     "type": "update",
+     "query": "我现在在做什么",
+     "answer_any": [
+      "成人本科",
+      "辞职"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_mage_q06",
+     "player": "v3_mage",
+     "type": "update",
+     "query": "我玩得最多的英雄是哪个",
+     "answer_any": [
+      "嫦娥"
+     ],
+     "evidence": [
+      "玩家主玩英雄是嫦娥（记于2026-07-18）",
+      "玩家最近开始玩周瑜（记于2026-08-25）",
+      "玩家最近在练嫦娥（记于2026-04-22）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_mage_q07",
+     "player": "v3_mage",
+     "type": "update",
+     "query": "我最近开始玩什么英雄",
+     "answer_any": [
+      "周瑜"
+     ],
+     "evidence": [
+      "玩家主玩英雄是嫦娥（记于2026-07-18）",
+      "玩家最近开始玩周瑜（记于2026-08-25）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_mage_q08",
+     "player": "v3_mage",
+     "type": "temporal",
+     "query": "我什么时候上的星耀",
+     "answer_any": [
+      "2026-06",
+      "6月"
+     ],
+     "evidence": [
+      "玩家段位是星耀一（记于2026-06-05）",
+      "（2026-06-05 的聊天）玩家宣布自己上星耀，并且提到新换了一加13手机，用于打团游戏时不会掉帧。"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_mage_q09",
+     "player": "v3_mage",
+     "type": "fact",
+     "query": "我在哪个城市",
+     "answer_any": [
+      "杭州"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_mage_q10",
+     "player": "v3_mage",
+     "type": "promise",
+     "query": "你答应过帮我看什么",
+     "answer_any": [
+      "技能衔接",
+      "嫦娥"
+     ],
+     "evidence": [
+      "助手答应以后赛季末帮你盯着冲分节奏。（记于2026-03-01）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_mage_q11",
+     "player": "v3_mage",
+     "type": "episodic",
+     "query": "我升店长那次还聊了什么",
+     "answer_any": [
+      "嫦娥",
+      "王昭君"
+     ],
+     "evidence": [
+      "玩家在加星升了店长（记于2026-06-05）",
+      "（2026-04-22 的聊天）玩家提到最近在练习嫦娥英雄，并表示王昭君已经玩腻了。此外，玩家还透露自己在奶茶店升为了店长。"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_mage_q12",
+     "player": "v3_mage",
+     "type": "episodic",
+     "query": "暑假那阵子我为什么玩得少",
+     "answer_any": [
+      "忙"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_mage_q13",
+     "player": "v3_mage",
+     "type": "negative",
+     "query": "我喜欢什么颜色",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_mage_q14",
+     "player": "v3_mage",
+     "type": "negative",
+     "query": "我最喜欢的明星是谁",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_mage_q15",
+     "player": "v3_mage",
+     "type": "negative",
+     "query": "我讨厌吃香菜吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_mage_q16",
+     "player": "v3_mage",
+     "type": "negative",
+     "query": "我会游泳吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_mage_q17",
+     "player": "v3_mage",
+     "type": "negative",
+     "query": "我有几个兄弟姐妹",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_jungle_q01",
+     "player": "v3_jungle",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "钻石"
+     ],
+     "evidence": [
+      "玩家已经是钻石段位（记于2026-07-08）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_jungle_q02",
+     "player": "v3_jungle",
+     "type": "trajectory",
+     "query": "我的段位是怎么变的",
+     "answer_any": [
+      "黄金",
+      "铂金",
+      "钻石"
+     ],
+     "evidence": [
+      "玩家升到了铂金段位（2026-03-10；已过时，2026-07-08被新信息取代）",
+      "玩家升到了钻石段位（记于2026-07-08；已过时，2026-07-08被新信息取代）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_jungle_q03",
+     "player": "v3_jungle",
+     "type": "update",
+     "query": "我现在用什么手机",
+     "answer_any": [
+      "iPhone"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_jungle_q04",
+     "player": "v3_jungle",
+     "type": "trajectory",
+     "query": "我换过哪些手机",
+     "answer_any": [
+      "华为",
+      "iPhone"
+     ],
+     "evidence": [
+      "玩家换成了iPhone 16（2026-08-18）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_jungle_q05",
+     "player": "v3_jungle",
+     "type": "update",
+     "query": "我的本命英雄是谁",
+     "answer_any": [
+      "澜"
+     ],
+     "evidence": [
+      "玩家的本命英雄是澜（记于2026-07-08）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_jungle_q06",
+     "player": "v3_jungle",
+     "type": "fact",
+     "query": "我为什么不玩李白了",
+     "answer_any": [
+      "削"
+     ],
+     "evidence": [
+      "玩家最近基本不玩游戏（记于2026-05-20）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_jungle_q07",
+     "player": "v3_jungle",
+     "type": "fact",
+     "query": "我在哪上大学",
+     "answer_any": [
+      "武汉"
+     ],
+     "evidence": [
+      "玩家是大一新生，在武汉读书（记于2026-02-05）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_jungle_q08",
+     "player": "v3_jungle",
+     "type": "fact",
+     "query": "我加入了什么社团",
+     "answer_any": [
+      "电竞社"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_jungle_q09",
+     "player": "v3_jungle",
+     "type": "temporal",
+     "query": "我什么时候升的铂金",
+     "answer_any": [
+      "2026-03",
+      "3月"
+     ],
+     "evidence": [
+      "玩家最近基本不玩游戏（记于2026-05-20）",
+      "（2026-03-10 的聊天）玩家今天宣布自己在游戏中的段位提升到了铂金，并且加入了学校的电竞社。",
+      "玩家升到了铂金段位（2026-03-10；已过时，2026-07-08被新信息取代）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_jungle_q10",
+     "player": "v3_jungle",
+     "type": "promise",
+     "query": "你答应过帮我做什么",
+     "answer_any": [
+      "打野路线"
+     ],
+     "evidence": [
+      "助手答应下次社团比赛前我帮你整理打野路线。（记于2026-03-10）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_jungle_q11",
+     "player": "v3_jungle",
+     "type": "episodic",
+     "query": "期末那阵子我在干嘛",
+     "answer_any": [
+      "复习",
+      "不玩",
+      "挂科"
+     ],
+     "evidence": [
+      "（2026-05-20 的聊天）玩家因为期末复习，最近基本不玩游戏，特别是数学挂科需要补考"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_jungle_q12",
+     "player": "v3_jungle",
+     "type": "episodic",
+     "query": "暑假那次聊了什么",
+     "answer_any": [
+      "老家",
+      "钻石",
+      "澜"
+     ],
+     "evidence": [
+      "（2026-07-08 的聊天）玩家提到暑假期间天天玩游戏，已经达到了钻石段位，并且表示澜是他当前最喜爱的英雄。"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_jungle_q13",
+     "player": "v3_jungle",
+     "type": "negative",
+     "query": "我喜欢什么运动",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_jungle_q14",
+     "player": "v3_jungle",
+     "type": "negative",
+     "query": "我最喜欢的电影是什么",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_jungle_q15",
+     "player": "v3_jungle",
+     "type": "negative",
+     "query": "我讨厌什么动物",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_jungle_q16",
+     "player": "v3_jungle",
+     "type": "negative",
+     "query": "我女朋友叫什么",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_jungle_q17",
+     "player": "v3_jungle",
+     "type": "negative",
+     "query": "我的生日是哪天",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_support_q01",
+     "player": "v3_support",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "铂金"
+     ],
+     "evidence": [
+      "玩家达到了铂金段位（记于2026-05-10）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_support_q02",
+     "player": "v3_support",
+     "type": "trajectory",
+     "query": "我的段位是怎么升的",
+     "answer_any": [
+      "白银",
+      "黄金",
+      "铂金"
+     ],
+     "evidence": [
+      "玩家升到了黄金段位（2026-02-18；已过时，2026-05-10被新信息取代）",
+      "玩家达到了铂金段位（记于2026-05-10）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_support_q03",
+     "player": "v3_support",
+     "type": "update",
+     "query": "我现在用什么手机",
+     "answer_any": [
+      "小米"
+     ],
+     "evidence": [
+      "玩家使用OPPO Find X7（记于2026-03-25）"
+     ],
+     "success": 0.0,
+     "stale": true,
+     "seed": 0
+    },
+    {
+     "id": "v3_support_q04",
+     "player": "v3_support",
+     "type": "trajectory",
+     "query": "我换过哪些手机",
+     "answer_any": [
+      "OPPO",
+      "小米"
+     ],
+     "evidence": [
+      "玩家使用OPPO Find X7（记于2026-03-25）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_support_q05",
+     "player": "v3_support",
+     "type": "update",
+     "query": "我玩得最多的英雄是哪个",
+     "answer_any": [
+      "大乔"
+     ],
+     "evidence": [
+      "玩家常用瑶作为辅助角色（记于2026-01-20）",
+      "玩家开始练大乔（记于2026-03-25）",
+      "玩家上周玩了大乔和瑶的对比（记于2026-06-28）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_support_q06",
+     "player": "v3_support",
+     "type": "update",
+     "query": "我最近为什么玩得少",
+     "answer_any": [
+      "暑假"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_support_q07",
+     "player": "v3_support",
+     "type": "episodic",
+     "query": "过年那阵子我干了什么",
+     "answer_any": [
+      "娘家",
+      "表妹"
+     ],
+     "evidence": [
+      "（2026-02-18 的聊天）玩家春节期间与表妹一起开黑游戏，提升了黄金段位。"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_support_q08",
+     "player": "v3_support",
+     "type": "episodic",
+     "query": "母亲节那天发生了什么",
+     "answer_any": [
+      "贺卡"
+     ],
+     "evidence": [
+      "玩家母亲节收到了孩子的贺卡（2026-05-10）",
+      "（2026-05-10 的聊天）玩家在母亲节收到了孩子制作的贺卡，并且在游戏中的段位从铂金提升到了某个更高段位。"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_support_q09",
+     "player": "v3_support",
+     "type": "promise",
+     "query": "你答应过提醒我什么",
+     "answer_any": [
+      "二技能",
+      "传送"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_support_q10",
+     "player": "v3_support",
+     "type": "temporal",
+     "query": "我什么时候上的铂金",
+     "answer_any": [
+      "2026-05",
+      "5月"
+     ],
+     "evidence": [
+      "玩家达到了铂金段位（记于2026-05-10）",
+      "（2026-05-10 的聊天）玩家在母亲节收到了孩子制作的贺卡，并且在游戏中的段位从铂金提升到了某个更高段位。"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_support_q11",
+     "player": "v3_support",
+     "type": "fact",
+     "query": "我每周几上瑜伽课",
+     "answer_any": [
+      "周三"
+     ],
+     "evidence": [
+      "玩家报了每周三上课的瑜伽班（记于2026-06-28）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_support_q12",
+     "player": "v3_support",
+     "type": "fact",
+     "query": "我是做什么的",
+     "answer_any": [
+      "全职妈妈"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_support_q13",
+     "player": "v3_support",
+     "type": "negative",
+     "query": "我喜欢什么水果",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_support_q14",
+     "player": "v3_support",
+     "type": "negative",
+     "query": "我最喜欢的电视剧是什么",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_support_q15",
+     "player": "v3_support",
+     "type": "negative",
+     "query": "我讨厌什么颜色",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_support_q16",
+     "player": "v3_support",
+     "type": "negative",
+     "query": "我老公做什么工作",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_support_q17",
+     "player": "v3_support",
+     "type": "negative",
+     "query": "我住在哪个城市",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v3_mage_q01",
+     "player": "v3_mage",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "星耀"
+     ],
+     "evidence": [
+      "玩家段位是星耀一（记于2026-06-05）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_mage_q02",
+     "player": "v3_mage",
+     "type": "trajectory",
+     "query": "我的段位是怎么一步步变的",
+     "answer_any": [
+      "钻石四",
+      "钻石一",
+      "星耀"
+     ],
+     "evidence": [
+      "玩家段位钻石四（记于2026-03-01；已过时，2026-03-28被新信息取代）",
+      "玩家段位是星耀一（记于2026-06-05）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_mage_q03",
+     "player": "v3_mage",
+     "type": "update",
+     "query": "我现在用什么手机",
+     "answer_any": [
+      "一加"
+     ],
+     "evidence": [
+      "玩家用的是加星手机（记于2026-06-05）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_mage_q04",
+     "player": "v3_mage",
+     "type": "trajectory",
+     "query": "我换过哪些手机",
+     "answer_any": [
+      "红米",
+      "一加"
+     ],
+     "evidence": [
+      "玩家用的是加星手机（记于2026-06-05）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_mage_q05",
+     "player": "v3_mage",
+     "type": "update",
+     "query": "我现在在做什么",
+     "answer_any": [
+      "成人本科",
+      "辞职"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_mage_q06",
+     "player": "v3_mage",
+     "type": "update",
+     "query": "我玩得最多的英雄是哪个",
+     "answer_any": [
+      "嫦娥"
+     ],
+     "evidence": [
+      "玩家主玩法师，最喜欢王昭君（记于2026-03-01）",
+      "玩家最近开始玩周瑜（记于2026-08-25）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_mage_q07",
+     "player": "v3_mage",
+     "type": "update",
+     "query": "我最近开始玩什么英雄",
+     "answer_any": [
+      "周瑜"
+     ],
+     "evidence": [
+      "玩家最近开始玩周瑜（记于2026-08-25）",
+      "玩家主玩法师，最喜欢王昭君（记于2026-03-01）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_mage_q08",
+     "player": "v3_mage",
+     "type": "temporal",
+     "query": "我什么时候上的星耀",
+     "answer_any": [
+      "2026-06",
+      "6月"
+     ],
+     "evidence": [
+      "玩家段位是星耀一（记于2026-06-05）",
+      "（2026-06-05 的聊天）玩家宣布自己上星耀，并且提到新换了一加13手机，用于打团游戏时不会掉帧。"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_mage_q09",
+     "player": "v3_mage",
+     "type": "fact",
+     "query": "我在哪个城市",
+     "answer_any": [
+      "杭州"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_mage_q10",
+     "player": "v3_mage",
+     "type": "promise",
+     "query": "你答应过帮我看什么",
+     "answer_any": [
+      "技能衔接",
+      "嫦娥"
+     ],
+     "evidence": [
+      "助手答应以后赛季末帮你盯着冲分节奏。（记于2026-03-01）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_mage_q11",
+     "player": "v3_mage",
+     "type": "episodic",
+     "query": "我升店长那次还聊了什么",
+     "answer_any": [
+      "嫦娥",
+      "王昭君"
+     ],
+     "evidence": [
+      "玩家在加星升了店长（记于2026-06-05）",
+      "（2026-04-22 的聊天）玩家提到最近在练习嫦娥英雄，并表示王昭君已经玩腻了。此外，玩家还透露自己在奶茶店升为了店长。"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_mage_q12",
+     "player": "v3_mage",
+     "type": "episodic",
+     "query": "暑假那阵子我为什么玩得少",
+     "answer_any": [
+      "忙"
+     ],
+     "evidence": [
+      "（2026-07-18 的聊天）玩家表示暑假店里太忙，一周只能玩两三次游戏，并提到嫦娥是她玩得最多的英雄之一。",
+      "玩家一周只能玩两三次游戏（记于2026-07-18）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_mage_q13",
+     "player": "v3_mage",
+     "type": "negative",
+     "query": "我喜欢什么颜色",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_mage_q14",
+     "player": "v3_mage",
+     "type": "negative",
+     "query": "我最喜欢的明星是谁",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_mage_q15",
+     "player": "v3_mage",
+     "type": "negative",
+     "query": "我讨厌吃香菜吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_mage_q16",
+     "player": "v3_mage",
+     "type": "negative",
+     "query": "我会游泳吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_mage_q17",
+     "player": "v3_mage",
+     "type": "negative",
+     "query": "我有几个兄弟姐妹",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_jungle_q01",
+     "player": "v3_jungle",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "钻石"
+     ],
+     "evidence": [
+      "玩家升到了钻石段位（记于2026-07-08）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_jungle_q02",
+     "player": "v3_jungle",
+     "type": "trajectory",
+     "query": "我的段位是怎么变的",
+     "answer_any": [
+      "黄金",
+      "铂金",
+      "钻石"
+     ],
+     "evidence": [
+      "玩家升到了铂金段位（2026-03-10；已过时，2026-07-08被新信息取代）",
+      "玩家升到了钻石段位（记于2026-07-08）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_jungle_q03",
+     "player": "v3_jungle",
+     "type": "update",
+     "query": "我现在用什么手机",
+     "answer_any": [
+      "iPhone"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_jungle_q04",
+     "player": "v3_jungle",
+     "type": "trajectory",
+     "query": "我换过哪些手机",
+     "answer_any": [
+      "华为",
+      "iPhone"
+     ],
+     "evidence": [
+      "玩家换成了iPhone 16（记于2026-08-18）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_jungle_q05",
+     "player": "v3_jungle",
+     "type": "update",
+     "query": "我的本命英雄是谁",
+     "answer_any": [
+      "澜"
+     ],
+     "evidence": [
+      "玩家的本命英雄是澜（记于2026-07-08）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_jungle_q06",
+     "player": "v3_jungle",
+     "type": "fact",
+     "query": "我为什么不玩李白了",
+     "answer_any": [
+      "削"
+     ],
+     "evidence": [
+      "玩家最近基本不玩游戏（记于2026-05-20）",
+      "玩家最近不玩游戏（记于2026-07-08）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_jungle_q07",
+     "player": "v3_jungle",
+     "type": "fact",
+     "query": "我在哪上大学",
+     "answer_any": [
+      "武汉"
+     ],
+     "evidence": [
+      "玩家是大一新生，在武汉读书（记于2026-02-05）",
+      "玩家加入了学校的电竞社（2026-03-10）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_jungle_q08",
+     "player": "v3_jungle",
+     "type": "fact",
+     "query": "我加入了什么社团",
+     "answer_any": [
+      "电竞社"
+     ],
+     "evidence": [
+      "玩家加入了学校的电竞社（2026-03-10）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_jungle_q09",
+     "player": "v3_jungle",
+     "type": "temporal",
+     "query": "我什么时候升的铂金",
+     "answer_any": [
+      "2026-03",
+      "3月"
+     ],
+     "evidence": [
+      "玩家升到了钻石段位（记于2026-07-08）",
+      "玩家最近基本不玩游戏（记于2026-05-20）",
+      "（2026-03-10 的聊天）玩家今天宣布自己在游戏中的段位提升到了铂金，并且加入了学校的电竞社。"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_jungle_q10",
+     "player": "v3_jungle",
+     "type": "promise",
+     "query": "你答应过帮我做什么",
+     "answer_any": [
+      "打野路线"
+     ],
+     "evidence": [
+      "助手答应下次社团比赛前我帮你整理打野路线。（记于2026-03-10）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_jungle_q11",
+     "player": "v3_jungle",
+     "type": "episodic",
+     "query": "期末那阵子我在干嘛",
+     "answer_any": [
+      "复习",
+      "不玩",
+      "挂科"
+     ],
+     "evidence": [
+      "（2026-05-20 的聊天）玩家因为期末复习，最近基本不玩游戏，特别是数学挂科需要补考"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_jungle_q12",
+     "player": "v3_jungle",
+     "type": "episodic",
+     "query": "暑假那次聊了什么",
+     "answer_any": [
+      "老家",
+      "钻石",
+      "澜"
+     ],
+     "evidence": [
+      "（2026-07-08 的聊天）玩家提到暑假回老家后，通过频繁游戏提升了自己的段位至钻石，并且表示澜是他的本命英雄。"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_jungle_q13",
+     "player": "v3_jungle",
+     "type": "negative",
+     "query": "我喜欢什么运动",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_jungle_q14",
+     "player": "v3_jungle",
+     "type": "negative",
+     "query": "我最喜欢的电影是什么",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_jungle_q15",
+     "player": "v3_jungle",
+     "type": "negative",
+     "query": "我讨厌什么动物",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_jungle_q16",
+     "player": "v3_jungle",
+     "type": "negative",
+     "query": "我女朋友叫什么",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_jungle_q17",
+     "player": "v3_jungle",
+     "type": "negative",
+     "query": "我的生日是哪天",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_support_q01",
+     "player": "v3_support",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "铂金"
+     ],
+     "evidence": [
+      "玩家达到了铂金段位（记于2026-05-10）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_support_q02",
+     "player": "v3_support",
+     "type": "trajectory",
+     "query": "我的段位是怎么升的",
+     "answer_any": [
+      "白银",
+      "黄金",
+      "铂金"
+     ],
+     "evidence": [
+      "玩家升到了黄金段位（2026-02-18；已过时，2026-05-10被新信息取代）",
+      "玩家达到了铂金段位（记于2026-05-10）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_support_q03",
+     "player": "v3_support",
+     "type": "update",
+     "query": "我现在用什么手机",
+     "answer_any": [
+      "小米"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_support_q04",
+     "player": "v3_support",
+     "type": "trajectory",
+     "query": "我换过哪些手机",
+     "answer_any": [
+      "OPPO",
+      "小米"
+     ],
+     "evidence": [
+      "玩家换成了小米14（记于2026-08-12）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_support_q05",
+     "player": "v3_support",
+     "type": "update",
+     "query": "我玩得最多的英雄是哪个",
+     "answer_any": [
+      "大乔"
+     ],
+     "evidence": [
+      "玩家常用瑶作为辅助角色（记于2026-01-20）",
+      "玩家开始练大乔（记于2026-03-25）",
+      "玩家上周玩了大乔和瑶的对比（记于2026-06-28）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_support_q06",
+     "player": "v3_support",
+     "type": "update",
+     "query": "我最近为什么玩得少",
+     "answer_any": [
+      "暑假"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_support_q07",
+     "player": "v3_support",
+     "type": "episodic",
+     "query": "过年那阵子我干了什么",
+     "answer_any": [
+      "娘家",
+      "表妹"
+     ],
+     "evidence": [
+      "（2026-02-18 的聊天）玩家春节期间与表妹一起开黑游戏，目前段位为黄金"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_support_q08",
+     "player": "v3_support",
+     "type": "episodic",
+     "query": "母亲节那天发生了什么",
+     "answer_any": [
+      "贺卡"
+     ],
+     "evidence": [
+      "玩家母亲节收到了孩子的贺卡（2026-05-10）",
+      "（2026-05-10 的聊天）玩家在母亲节收到了孩子制作的贺卡，并且在游戏中的段位从铂金提升到了某个更高段位。"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_support_q09",
+     "player": "v3_support",
+     "type": "promise",
+     "query": "你答应过提醒我什么",
+     "answer_any": [
+      "二技能",
+      "传送"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_support_q10",
+     "player": "v3_support",
+     "type": "temporal",
+     "query": "我什么时候上的铂金",
+     "answer_any": [
+      "2026-05",
+      "5月"
+     ],
+     "evidence": [
+      "玩家达到了铂金段位（记于2026-05-10）",
+      "（2026-05-10 的聊天）玩家在母亲节收到了孩子制作的贺卡，并且在游戏中的段位从铂金提升到了某个更高段位。"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_support_q11",
+     "player": "v3_support",
+     "type": "fact",
+     "query": "我每周几上瑜伽课",
+     "answer_any": [
+      "周三"
+     ],
+     "evidence": [
+      "玩家报了每周三上课的瑜伽班（记于2026-06-28）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_support_q12",
+     "player": "v3_support",
+     "type": "fact",
+     "query": "我是做什么的",
+     "answer_any": [
+      "全职妈妈"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_support_q13",
+     "player": "v3_support",
+     "type": "negative",
+     "query": "我喜欢什么水果",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_support_q14",
+     "player": "v3_support",
+     "type": "negative",
+     "query": "我最喜欢的电视剧是什么",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_support_q15",
+     "player": "v3_support",
+     "type": "negative",
+     "query": "我讨厌什么颜色",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_support_q16",
+     "player": "v3_support",
+     "type": "negative",
+     "query": "我老公做什么工作",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_support_q17",
+     "player": "v3_support",
+     "type": "negative",
+     "query": "我住在哪个城市",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v3_mage_q01",
+     "player": "v3_mage",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "星耀"
+     ],
+     "evidence": [
+      "玩家段位是星耀一（2026-06-05）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_mage_q02",
+     "player": "v3_mage",
+     "type": "trajectory",
+     "query": "我的段位是怎么一步步变的",
+     "answer_any": [
+      "钻石四",
+      "钻石一",
+      "星耀"
+     ],
+     "evidence": [
+      "玩家段位钻石四（记于2026-03-01；已过时，2026-03-28被新信息取代）",
+      "玩家段位是星耀一（2026-06-05）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_mage_q03",
+     "player": "v3_mage",
+     "type": "update",
+     "query": "我现在用什么手机",
+     "answer_any": [
+      "一加"
+     ],
+     "evidence": [
+      "玩家用的是红米K70（记于2026-03-28）"
+     ],
+     "success": 0.0,
+     "stale": true,
+     "seed": 2
+    },
+    {
+     "id": "v3_mage_q04",
+     "player": "v3_mage",
+     "type": "trajectory",
+     "query": "我换过哪些手机",
+     "answer_any": [
+      "红米",
+      "一加"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_mage_q05",
+     "player": "v3_mage",
+     "type": "update",
+     "query": "我现在在做什么",
+     "answer_any": [
+      "成人本科",
+      "辞职"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_mage_q06",
+     "player": "v3_mage",
+     "type": "update",
+     "query": "我玩得最多的英雄是哪个",
+     "answer_any": [
+      "嫦娥"
+     ],
+     "evidence": [
+      "玩家主玩法师，最喜欢王昭君（记于2026-03-01）",
+      "玩家最近开始玩周瑜（记于2026-08-25）",
+      "玩家最近在练嫦娥（记于2026-04-22）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_mage_q07",
+     "player": "v3_mage",
+     "type": "update",
+     "query": "我最近开始玩什么英雄",
+     "answer_any": [
+      "周瑜"
+     ],
+     "evidence": [
+      "玩家最近开始玩周瑜（记于2026-08-25）",
+      "玩家主玩法师，最喜欢王昭君（记于2026-03-01）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_mage_q08",
+     "player": "v3_mage",
+     "type": "temporal",
+     "query": "我什么时候上的星耀",
+     "answer_any": [
+      "2026-06",
+      "6月"
+     ],
+     "evidence": [
+      "玩家段位是星耀一（2026-06-05）",
+      "（2026-06-05 的聊天）玩家宣布自己上星耀，并且提到新换了一加13手机，用于打团游戏时不会掉帧。"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_mage_q09",
+     "player": "v3_mage",
+     "type": "fact",
+     "query": "我在哪个城市",
+     "answer_any": [
+      "杭州"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_mage_q10",
+     "player": "v3_mage",
+     "type": "promise",
+     "query": "你答应过帮我看什么",
+     "answer_any": [
+      "技能衔接",
+      "嫦娥"
+     ],
+     "evidence": [
+      "助手答应以后赛季末帮你盯着冲分节奏。（记于2026-03-01）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_mage_q11",
+     "player": "v3_mage",
+     "type": "episodic",
+     "query": "我升店长那次还聊了什么",
+     "answer_any": [
+      "嫦娥",
+      "王昭君"
+     ],
+     "evidence": [
+      "玩家在加星店长（记于2026-06-05）",
+      "（2026-04-22 的聊天）玩家提到最近在练习嫦娥英雄，并表示王昭君已经玩腻了。此外，玩家还透露自己在奶茶店升为了店长。",
+      "（2026-03-01 的聊天）玩家告诉助手，他在杭州一家奶茶店打工，最喜欢玩法师中的王昭君，并透露了自己的段位是钻石四。"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_mage_q12",
+     "player": "v3_mage",
+     "type": "episodic",
+     "query": "暑假那阵子我为什么玩得少",
+     "answer_any": [
+      "忙"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_mage_q13",
+     "player": "v3_mage",
+     "type": "negative",
+     "query": "我喜欢什么颜色",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_mage_q14",
+     "player": "v3_mage",
+     "type": "negative",
+     "query": "我最喜欢的明星是谁",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_mage_q15",
+     "player": "v3_mage",
+     "type": "negative",
+     "query": "我讨厌吃香菜吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_mage_q16",
+     "player": "v3_mage",
+     "type": "negative",
+     "query": "我会游泳吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_mage_q17",
+     "player": "v3_mage",
+     "type": "negative",
+     "query": "我有几个兄弟姐妹",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_jungle_q01",
+     "player": "v3_jungle",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "钻石"
+     ],
+     "evidence": [
+      "玩家已经钻石了（记于2026-07-08）",
+      "玩家是大一新生，在武汉读书，玩家主玩的英雄是李白（记于2026-05-20）",
+      "玩家最近基本不玩游戏（记于2026-05-20）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_jungle_q02",
+     "player": "v3_jungle",
+     "type": "trajectory",
+     "query": "我的段位是怎么变的",
+     "answer_any": [
+      "黄金",
+      "铂金",
+      "钻石"
+     ],
+     "evidence": [
+      "（2026-02-05 的聊天）玩家是大一新生，在武汉读书，主玩打野位置，最常用英雄为李白，当前段位为黄金一。",
+      "（2026-03-10 的聊天）玩家今天宣布自己在游戏中的段位提升到了铂金，并且加入了学校的电竞社。",
+      "（2026-07-08 的聊天）玩家提到暑假期间天天玩游戏，已经达到了钻石段位，并且表示澜是他的本命英雄。"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_jungle_q03",
+     "player": "v3_jungle",
+     "type": "update",
+     "query": "我现在用什么手机",
+     "answer_any": [
+      "iPhone"
+     ],
+     "evidence": [
+      "玩家用的是华为Mate 60（记于2026-04-15）"
+     ],
+     "success": 0.0,
+     "stale": true,
+     "seed": 2
+    },
+    {
+     "id": "v3_jungle_q04",
+     "player": "v3_jungle",
+     "type": "trajectory",
+     "query": "我换过哪些手机",
+     "answer_any": [
+      "华为",
+      "iPhone"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_jungle_q05",
+     "player": "v3_jungle",
+     "type": "update",
+     "query": "我的本命英雄是谁",
+     "answer_any": [
+      "澜"
+     ],
+     "evidence": [
+      "玩家的本命英雄是澜（记于2026-07-08）",
+      "玩家主玩的英雄是李白（记于2026-03-10）",
+      "玩家是大一新生，在武汉读书，玩家主玩的英雄是李白（记于2026-05-20）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_jungle_q06",
+     "player": "v3_jungle",
+     "type": "fact",
+     "query": "我为什么不玩李白了",
+     "answer_any": [
+      "削"
+     ],
+     "evidence": [
+      "玩家主玩的英雄是李白（记于2026-03-10）",
+      "玩家是大一新生，在武汉读书，玩家主玩的英雄是李白（记于2026-05-20）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_jungle_q07",
+     "player": "v3_jungle",
+     "type": "fact",
+     "query": "我在哪上大学",
+     "answer_any": [
+      "武汉"
+     ],
+     "evidence": [
+      "玩家加入了学校的电竞社（2026-03-10）",
+      "玩家是大一新生，在武汉读书，玩家主玩的英雄是李白（记于2026-05-20）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_jungle_q08",
+     "player": "v3_jungle",
+     "type": "fact",
+     "query": "我加入了什么社团",
+     "answer_any": [
+      "电竞社"
+     ],
+     "evidence": [
+      "玩家加入了学校的电竞社（2026-03-10）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_jungle_q09",
+     "player": "v3_jungle",
+     "type": "temporal",
+     "query": "我什么时候升的铂金",
+     "answer_any": [
+      "2026-03",
+      "3月"
+     ],
+     "evidence": [
+      "（2026-03-10 的聊天）玩家今天宣布自己在游戏中的段位提升到了铂金，并且加入了学校的电竞社。",
+      "玩家已经钻石了（记于2026-07-08）",
+      "（2026-07-08 的聊天）玩家提到暑假期间天天玩游戏，已经达到了钻石段位，并且表示澜是他的本命英雄。"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_jungle_q10",
+     "player": "v3_jungle",
+     "type": "promise",
+     "query": "你答应过帮我做什么",
+     "answer_any": [
+      "打野路线"
+     ],
+     "evidence": [
+      "助手答应下次社团比赛前我帮你整理打野路线。（记于2026-03-10）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_jungle_q11",
+     "player": "v3_jungle",
+     "type": "episodic",
+     "query": "期末那阵子我在干嘛",
+     "answer_any": [
+      "复习",
+      "不玩",
+      "挂科"
+     ],
+     "evidence": [
+      "（2026-05-20 的聊天）玩家因为期末复习，最近基本不玩游戏，特别是数学挂科需要补考",
+      "玩家最近基本不玩游戏（记于2026-05-20）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_jungle_q12",
+     "player": "v3_jungle",
+     "type": "episodic",
+     "query": "暑假那次聊了什么",
+     "answer_any": [
+      "老家",
+      "钻石",
+      "澜"
+     ],
+     "evidence": [
+      "（2026-07-08 的聊天）玩家提到暑假期间天天玩游戏，已经达到了钻石段位，并且表示澜是他的本命英雄。"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_jungle_q13",
+     "player": "v3_jungle",
+     "type": "negative",
+     "query": "我喜欢什么运动",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_jungle_q14",
+     "player": "v3_jungle",
+     "type": "negative",
+     "query": "我最喜欢的电影是什么",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_jungle_q15",
+     "player": "v3_jungle",
+     "type": "negative",
+     "query": "我讨厌什么动物",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_jungle_q16",
+     "player": "v3_jungle",
+     "type": "negative",
+     "query": "我女朋友叫什么",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_jungle_q17",
+     "player": "v3_jungle",
+     "type": "negative",
+     "query": "我的生日是哪天",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_support_q01",
+     "player": "v3_support",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "铂金"
+     ],
+     "evidence": [
+      "玩家达到了铂金段位（记于2026-05-10）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_support_q02",
+     "player": "v3_support",
+     "type": "trajectory",
+     "query": "我的段位是怎么升的",
+     "answer_any": [
+      "白银",
+      "黄金",
+      "铂金"
+     ],
+     "evidence": [
+      "玩家升到了黄金段位（2026-02-18；已过时，2026-05-10被新信息取代）",
+      "玩家达到了铂金段位（记于2026-05-10）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_support_q03",
+     "player": "v3_support",
+     "type": "update",
+     "query": "我现在用什么手机",
+     "answer_any": [
+      "小米"
+     ],
+     "evidence": [
+      "玩家使用OPPO Find X7（记于2026-03-25）"
+     ],
+     "success": 0.0,
+     "stale": true,
+     "seed": 2
+    },
+    {
+     "id": "v3_support_q04",
+     "player": "v3_support",
+     "type": "trajectory",
+     "query": "我换过哪些手机",
+     "answer_any": [
+      "OPPO",
+      "小米"
+     ],
+     "evidence": [
+      "玩家使用OPPO Find X7（记于2026-03-25）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_support_q05",
+     "player": "v3_support",
+     "type": "update",
+     "query": "我玩得最多的英雄是哪个",
+     "answer_any": [
+      "大乔"
+     ],
+     "evidence": [
+      "玩家常用瑶作为辅助角色（记于2026-01-20）",
+      "玩家开始练大乔（记于2026-03-25）",
+      "玩家上周玩了大乔和瑶的对比（记于2026-06-28）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_support_q06",
+     "player": "v3_support",
+     "type": "update",
+     "query": "我最近为什么玩得少",
+     "answer_any": [
+      "暑假"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_support_q07",
+     "player": "v3_support",
+     "type": "episodic",
+     "query": "过年那阵子我干了什么",
+     "answer_any": [
+      "娘家",
+      "表妹"
+     ],
+     "evidence": [
+      "（2026-02-18 的聊天）玩家春节期间与表妹一起开黑游戏，提升了至黄金段位。"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_support_q08",
+     "player": "v3_support",
+     "type": "episodic",
+     "query": "母亲节那天发生了什么",
+     "answer_any": [
+      "贺卡"
+     ],
+     "evidence": [
+      "玩家母亲节收到了孩子的贺卡（2026-05-10）",
+      "（2026-05-10 的聊天）玩家在母亲节收到了孩子制作的贺卡，并且在游戏中的段位从铂金提升到了某个更高段位。"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_support_q09",
+     "player": "v3_support",
+     "type": "promise",
+     "query": "你答应过提醒我什么",
+     "answer_any": [
+      "二技能",
+      "传送"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_support_q10",
+     "player": "v3_support",
+     "type": "temporal",
+     "query": "我什么时候上的铂金",
+     "answer_any": [
+      "2026-05",
+      "5月"
+     ],
+     "evidence": [
+      "玩家达到了铂金段位（记于2026-05-10）",
+      "（2026-05-10 的聊天）玩家在母亲节收到了孩子制作的贺卡，并且在游戏中的段位从铂金提升到了某个更高段位。"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_support_q11",
+     "player": "v3_support",
+     "type": "fact",
+     "query": "我每周几上瑜伽课",
+     "answer_any": [
+      "周三"
+     ],
+     "evidence": [
+      "玩家报了每周三上课的瑜伽班（记于2026-06-28）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_support_q12",
+     "player": "v3_support",
+     "type": "fact",
+     "query": "我是做什么的",
+     "answer_any": [
+      "全职妈妈"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_support_q13",
+     "player": "v3_support",
+     "type": "negative",
+     "query": "我喜欢什么水果",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_support_q14",
+     "player": "v3_support",
+     "type": "negative",
+     "query": "我最喜欢的电视剧是什么",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_support_q15",
+     "player": "v3_support",
+     "type": "negative",
+     "query": "我讨厌什么颜色",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_support_q16",
+     "player": "v3_support",
+     "type": "negative",
+     "query": "我老公做什么工作",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v3_support_q17",
+     "player": "v3_support",
+     "type": "negative",
+     "query": "我住在哪个城市",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    }
+   ],
+   "memories": {
+    "v3_mage@0": [
+     {
+      "content": "玩家在杭州打工",
+      "keywords": [
+       "杭州"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_5544cd30",
+      "created_at": "2026-03-01 21:00:00",
+      "updated_at": "2026-04-22 22:00:00",
+      "event_time": null,
+      "valid_to": "2026-04-22 22:00:00",
+      "superseded_by": "mem_5381320e",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家主玩法师，最喜欢王昭君",
+      "keywords": [
+       "法师",
+       "王昭君"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_8ac546fe",
+      "created_at": "2026-03-01 21:00:00",
+      "updated_at": "2026-07-18 22:30:00",
+      "event_time": null,
+      "valid_to": "2026-07-18 22:30:00",
+      "superseded_by": "mem_48e48ecd",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位钻石四",
+      "keywords": [
+       "钻石四"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_eb22df00",
+      "created_at": "2026-03-01 21:00:00",
+      "updated_at": "2026-03-28 22:00:00",
+      "event_time": null,
+      "valid_to": "2026-03-28 22:00:00",
+      "superseded_by": "mem_42c7acaf",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家告诉助手他在杭州一家奶茶店打工，并表示他主玩法师，最喜欢王昭君，当前段位为钻石四。",
+      "keywords": [
+       "杭州",
+       "奶茶店",
+       "法师",
+       "王昭君",
+       "钻石四"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_c8d81303",
+      "created_at": "2026-03-01 21:00:00",
+      "updated_at": "2026-03-01 21:00:00",
+      "event_time": "2026-03-01",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "助手答应以后赛季末帮你盯着冲分节奏。",
+      "keywords": [],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "promise",
+      "id": "mem_fecf2ef8",
+      "created_at": "2026-03-01 21:00:00",
+      "updated_at": "2026-03-01 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是钻石一",
+      "keywords": [
+       "钻石一"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_42c7acaf",
+      "created_at": "2026-03-28 22:00:00",
+      "updated_at": "2026-06-05 22:00:00",
+      "event_time": null,
+      "valid_to": "2026-06-05 22:00:00",
+      "superseded_by": "mem_15f2b1c9",
+      "supersedes": "mem_eb22df00",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家用的是红米K70",
+      "keywords": [
+       "红米K70"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_92a56c27",
+      "created_at": "2026-03-28 22:00:00",
+      "updated_at": "2026-03-28 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家宣布自己在游戏中的段位提升到了钻石一，并使用了红米K70作为游戏设备",
+      "keywords": [
+       "钻石一",
+       "红米K70"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_47d32f35",
+      "created_at": "2026-03-28 22:00:00",
+      "updated_at": "2026-03-28 22:00:00",
+      "event_time": "2026-03-28",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近在练嫦娥",
+      "keywords": [
+       "嫦娥",
+       "法师"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_731a6d9a",
+      "created_at": "2026-04-22 22:00:00",
+      "updated_at": "2026-04-22 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家在奶茶店升了店长",
+      "keywords": [
+       "奶茶店"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_5381320e",
+      "created_at": "2026-04-22 22:00:00",
+      "updated_at": "2026-06-05 22:00:00",
+      "event_time": null,
+      "valid_to": "2026-06-05 22:00:00",
+      "superseded_by": "mem_f67cbcd1",
+      "supersedes": "mem_5544cd30",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到最近在练习嫦娥英雄，并表示王昭君已经玩腻了。此外，玩家还透露自己在奶茶店升为了店长。",
+      "keywords": [
+       "嫦娥",
+       "王昭君",
+       "奶茶店",
+       "店长"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_0a98a7cd",
+      "created_at": "2026-04-22 22:00:00",
+      "updated_at": "2026-04-22 22:00:00",
+      "event_time": "2026-04-22",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是星耀一",
+      "keywords": [
+       "星耀一"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_15f2b1c9",
+      "created_at": "2026-06-05 22:00:00",
+      "updated_at": "2026-06-05 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_42c7acaf",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家在加星升了店长",
+      "keywords": [
+       "加星"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_f67cbcd1",
+      "created_at": "2026-06-05 22:00:00",
+      "updated_at": "2026-06-05 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_5381320e",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家用的是加星手机",
+      "keywords": [
+       "一加13",
+       "加星"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_dcafb1fb",
+      "created_at": "2026-06-05 22:00:00",
+      "updated_at": "2026-06-05 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家宣布自己上星耀，并且提到新换了一加13手机，用于打团游戏时不会掉帧。",
+      "keywords": [
+       "上星耀",
+       "一加13",
+       "打团不掉帧"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_31fb9533",
+      "created_at": "2026-06-05 22:00:00",
+      "updated_at": "2026-06-05 22:00:00",
+      "event_time": "2026-06-05",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家主玩英雄是嫦娥",
+      "keywords": [
+       "嫦娥",
+       "法师"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_48e48ecd",
+      "created_at": "2026-07-18 22:30:00",
+      "updated_at": "2026-07-18 22:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_8ac546fe",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家一周只能玩两三次游戏",
+      "keywords": [
+       "一周",
+       "玩两三次"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_7b28351e",
+      "created_at": "2026-07-18 22:30:00",
+      "updated_at": "2026-07-18 22:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家表示暑假期间店里太忙，一周只能玩两三次游戏，并且嫦娥已经成为了他玩得最多的英雄之一。",
+      "keywords": [
+       "玩家",
+       "暑假",
+       "嫦娥",
+       "最多英雄"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_03f838a9",
+      "created_at": "2026-07-18 22:30:00",
+      "updated_at": "2026-07-18 22:30:00",
+      "event_time": "2026-07-18",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近开始玩周瑜",
+      "keywords": [
+       "周瑜"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_e3d29239",
+      "created_at": "2026-08-25 21:00:00",
+      "updated_at": "2026-08-25 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家宣布辞职准备读成人本科，并表示最近开始玩周瑜",
+      "keywords": [
+       "辞职",
+       "成人本科",
+       "周瑜"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_d25fb936",
+      "created_at": "2026-08-25 21:00:00",
+      "updated_at": "2026-08-25 21:00:00",
+      "event_time": "2026-08-25",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "v3_jungle@0": [
+     {
+      "content": "玩家是大一新生，在武汉读书",
+      "keywords": [
+       "大一新生",
+       "武汉"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_4814b19a",
+      "created_at": "2026-02-05 21:00:00",
+      "updated_at": "2026-02-05 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家主玩打野，最常用英雄为李白",
+      "keywords": [
+       "李白",
+       "打野"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_f1ffee0e",
+      "created_at": "2026-02-05 21:00:00",
+      "updated_at": "2026-03-10 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-03-10 21:00:00",
+      "superseded_by": "mem_3457465b",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家是大一新生，在武汉读书，主玩打野位置，最常用英雄为李白，当前段位为黄金一。",
+      "keywords": [
+       "大一新生",
+       "武汉",
+       "打野",
+       "李白",
+       "黄金一"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_fc1f276b",
+      "created_at": "2026-02-05 21:00:00",
+      "updated_at": "2026-02-05 21:00:00",
+      "event_time": "2026-02-05",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家主玩的英雄是李白",
+      "keywords": [
+       "李白"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_3457465b",
+      "created_at": "2026-03-10 21:00:00",
+      "updated_at": "2026-04-15 22:00:00",
+      "event_time": null,
+      "valid_to": "2026-04-15 22:00:00",
+      "superseded_by": "mem_deea7001",
+      "supersedes": "mem_f1ffee0e",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家升到了铂金段位",
+      "keywords": [
+       "铂金"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_5a48cbd7",
+      "created_at": "2026-03-10 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": "2026-03-10",
+      "valid_to": "2026-07-08 21:00:00",
+      "superseded_by": "mem_6ac83343",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家加入了学校的电竞社",
+      "keywords": [
+       "电竞社"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_d4708bf5",
+      "created_at": "2026-03-10 21:00:00",
+      "updated_at": "2026-05-20 22:00:00",
+      "event_time": "2026-03-10",
+      "valid_to": "2026-05-20 22:00:00",
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家今天宣布自己在游戏中的段位提升到了铂金，并且加入了学校的电竞社。",
+      "keywords": [
+       "铂金",
+       "学校电竞社"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_da9074b4",
+      "created_at": "2026-03-10 21:00:00",
+      "updated_at": "2026-03-10 21:00:00",
+      "event_time": "2026-03-10",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "助手答应下次社团比赛前我帮你整理打野路线。",
+      "keywords": [],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "promise",
+      "id": "mem_6e88eaee",
+      "created_at": "2026-03-10 21:00:00",
+      "updated_at": "2026-03-10 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家主玩的英雄是澜",
+      "keywords": [
+       "李白",
+       "澜"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_deea7001",
+      "created_at": "2026-04-15 22:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-07-08 21:00:00",
+      "superseded_by": "mem_4988e4e4",
+      "supersedes": "mem_3457465b",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家用的是华为Mate 60",
+      "keywords": [
+       "华为Mate 60"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_f8ecdee3",
+      "created_at": "2026-04-15 22:00:00",
+      "updated_at": "2026-08-18 21:00:00",
+      "event_time": "2026-04-15",
+      "valid_to": "2026-08-18 21:00:00",
+      "superseded_by": "mem_7e1c99d4",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到李白英雄被削弱，决定改玩澜，并且提到自己使用的手机是华为Mate 60",
+      "keywords": [
+       "李白被削",
+       "改玩澜",
+       "华为Mate 60"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_36d05017",
+      "created_at": "2026-04-15 22:00:00",
+      "updated_at": "2026-04-15 22:00:00",
+      "event_time": "2026-04-15",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近基本不玩游戏",
+      "keywords": [
+       "铂金",
+       "澜"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_9b934bb7",
+      "created_at": "2026-05-20 22:00:00",
+      "updated_at": "2026-05-20 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家数学挂科了，要补考",
+      "keywords": [
+       "数学"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_4e47d3bc",
+      "created_at": "2026-05-20 22:00:00",
+      "updated_at": "2026-08-18 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-08-18 21:00:00",
+      "superseded_by": "mem_e5e29882",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家因为期末复习，最近基本不玩游戏，特别是数学挂科需要补考",
+      "keywords": [
+       "期末复习",
+       "数学挂科",
+       "补考"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_b8d04caf",
+      "created_at": "2026-05-20 22:00:00",
+      "updated_at": "2026-05-20 22:00:00",
+      "event_time": "2026-05-20",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家升到了钻石段位",
+      "keywords": [
+       "钻石",
+       "铂金"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_6ac83343",
+      "created_at": "2026-07-08 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-07-08 21:00:00",
+      "superseded_by": "mem_8dbde42f",
+      "supersedes": "mem_5a48cbd7",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的本命英雄是澜",
+      "keywords": [
+       "澜"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_4988e4e4",
+      "created_at": "2026-07-08 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_deea7001",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家已经是钻石段位",
+      "keywords": [
+       "钻石"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_8dbde42f",
+      "created_at": "2026-07-08 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_6ac83343",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到暑假期间天天玩游戏，已经达到了钻石段位，并且表示澜是他当前最喜爱的英雄。",
+      "keywords": [
+       "钻石",
+       "澜",
+       "暑假"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_c3d86b56",
+      "created_at": "2026-07-08 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": "2026-07-08",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家数学挂科了，要补考 -> 玩家补考过了",
+      "keywords": [
+       "补考"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_e5e29882",
+      "created_at": "2026-08-18 21:00:00",
+      "updated_at": "2026-08-18 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_4e47d3bc",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家换成了iPhone 16",
+      "keywords": [
+       "iPhone 16"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_7e1c99d4",
+      "created_at": "2026-08-18 21:00:00",
+      "updated_at": "2026-08-18 21:00:00",
+      "event_time": "2026-08-18",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_f8ecdee3",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家在聊天中宣布自己通过了补考，并透露自己更换了iPhone 16手机。",
+      "keywords": [
+       "补考",
+       "iPhone 16"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_309a66af",
+      "created_at": "2026-08-18 21:00:00",
+      "updated_at": "2026-08-18 21:00:00",
+      "event_time": "2026-08-18",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "v3_support@0": [
+     {
+      "content": "玩家是全职妈妈",
+      "keywords": [
+       "全职妈妈"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_713fc3ea",
+      "created_at": "2026-01-20 14:00:00",
+      "updated_at": "2026-01-20 14:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家常用瑶作为辅助角色",
+      "keywords": [
+       "瑶"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_26b72b90",
+      "created_at": "2026-01-20 14:00:00",
+      "updated_at": "2026-01-20 14:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家是一名全职妈妈，孩子上幼儿园后才有空玩游戏，她主玩辅助英雄瑶，当前段位为白银三。",
+      "keywords": [
+       "全职妈妈",
+       "白银三",
+       "瑶"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_4e959fb9",
+      "created_at": "2026-01-20 14:00:00",
+      "updated_at": "2026-01-20 14:00:00",
+      "event_time": "2026-01-20",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家升到了黄金段位",
+      "keywords": [
+       "黄金段位"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_2b046e85",
+      "created_at": "2026-02-18 21:00:00",
+      "updated_at": "2026-05-10 20:00:00",
+      "event_time": "2026-02-18",
+      "valid_to": "2026-05-10 20:00:00",
+      "superseded_by": "mem_3058200d",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家和表妹一起开黑",
+      "keywords": [
+       "表妹"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_22a90850",
+      "created_at": "2026-02-18 21:00:00",
+      "updated_at": "2026-02-18 21:00:00",
+      "event_time": "2026-02-18",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家春节期间与表妹一起开黑游戏，提升了黄金段位。",
+      "keywords": [
+       "春节期间",
+       "与表妹一起开黑",
+       "提升黄金段位"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_1aee7e77",
+      "created_at": "2026-02-18 21:00:00",
+      "updated_at": "2026-02-18 21:00:00",
+      "event_time": "2026-02-18",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家开始练大乔",
+      "keywords": [
+       "大乔"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_52299a17",
+      "created_at": "2026-03-25 14:00:00",
+      "updated_at": "2026-03-25 14:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家使用OPPO Find X7",
+      "keywords": [
+       "OPPO Find X7"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_81d66bd7",
+      "created_at": "2026-03-25 14:00:00",
+      "updated_at": "2026-03-25 14:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家表示他们开始练习大乔，并且使用的手机是OPPO Find X7。",
+      "keywords": [
+       "大乔",
+       "OPPO Find X7"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_72d2a795",
+      "created_at": "2026-03-25 14:00:00",
+      "updated_at": "2026-03-25 14:00:00",
+      "event_time": "2026-03-25",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家达到了铂金段位",
+      "keywords": [
+       "铂金"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_3058200d",
+      "created_at": "2026-05-10 20:00:00",
+      "updated_at": "2026-05-10 20:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_2b046e85",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家母亲节收到了孩子的贺卡",
+      "keywords": [
+       "母亲节"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_c6d01939",
+      "created_at": "2026-05-10 20:00:00",
+      "updated_at": "2026-05-10 20:00:00",
+      "event_time": "2026-05-10",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家在母亲节收到了孩子制作的贺卡，并且在游戏中的段位从铂金提升到了某个更高段位。",
+      "keywords": [
+       "母亲节",
+       "铂金",
+       "..."
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_c1f7b0fa",
+      "created_at": "2026-05-10 20:00:00",
+      "updated_at": "2026-05-10 20:00:00",
+      "event_time": "2026-05-10",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家上周玩了大乔和瑶的对比",
+      "keywords": [
+       "大乔",
+       "瑶",
+       "对比"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_f889469d",
+      "created_at": "2026-06-28 14:00:00",
+      "updated_at": "2026-06-28 14:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家报了每周三上课的瑜伽班",
+      "keywords": [
+       "瑜伽班"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_5a320c18",
+      "created_at": "2026-06-28 14:00:00",
+      "updated_at": "2026-06-28 14:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到大乔已经比瑶玩得多了，并且报了一个瑜伽班，每周三上课。",
+      "keywords": [
+       "大乔",
+       "瑶",
+       "瑜伽班",
+       "每周三"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_4f72b6ae",
+      "created_at": "2026-06-28 14:00:00",
+      "updated_at": "2026-06-28 14:00:00",
+      "event_time": "2026-06-28",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的孩子在2026-08-12放暑假",
+      "keywords": [
+       "2026-08-12",
+       "放暑假"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_d22d9488",
+      "created_at": "2026-08-12 21:00:00",
+      "updated_at": "2026-08-12 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到孩子因为暑假在家玩得少了，同时透露自己换了一部小米14手机。",
+      "keywords": [
+       "孩子放暑假",
+       "玩得少了",
+       "小米14"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_0d143ee8",
+      "created_at": "2026-08-12 21:00:00",
+      "updated_at": "2026-08-12 21:00:00",
+      "event_time": "2026-08-12",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "v3_mage@1": [
+     {
+      "content": "玩家在杭州打工",
+      "keywords": [
+       "杭州"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_225377b1",
+      "created_at": "2026-03-01 21:00:00",
+      "updated_at": "2026-04-22 22:00:00",
+      "event_time": null,
+      "valid_to": "2026-04-22 22:00:00",
+      "superseded_by": "mem_ed14b9d8",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家主玩法师，最喜欢王昭君",
+      "keywords": [
+       "法师",
+       "王昭君"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_c1b56ed0",
+      "created_at": "2026-03-01 21:00:00",
+      "updated_at": "2026-03-01 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位钻石四",
+      "keywords": [
+       "钻石四"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_65599976",
+      "created_at": "2026-03-01 21:00:00",
+      "updated_at": "2026-03-28 22:00:00",
+      "event_time": null,
+      "valid_to": "2026-03-28 22:00:00",
+      "superseded_by": "mem_9693f71b",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家告诉助手，他在杭州一家奶茶店打工，最喜欢玩法师中的王昭君，并透露了自己的段位是钻石四。",
+      "keywords": [
+       "杭州",
+       "奶茶店",
+       "王昭君",
+       "钻石四"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_92340eca",
+      "created_at": "2026-03-01 21:00:00",
+      "updated_at": "2026-03-01 21:00:00",
+      "event_time": "2026-03-01",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "助手答应以后赛季末帮你盯着冲分节奏。",
+      "keywords": [],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "promise",
+      "id": "mem_e74d6aa6",
+      "created_at": "2026-03-01 21:00:00",
+      "updated_at": "2026-03-01 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是钻石一",
+      "keywords": [
+       "钻石一"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_9693f71b",
+      "created_at": "2026-03-28 22:00:00",
+      "updated_at": "2026-06-05 22:00:00",
+      "event_time": null,
+      "valid_to": "2026-06-05 22:00:00",
+      "superseded_by": "mem_b6b90919",
+      "supersedes": "mem_65599976",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家用的是红米K70",
+      "keywords": [
+       "红米K70"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_2e94bae1",
+      "created_at": "2026-03-28 22:00:00",
+      "updated_at": "2026-06-05 22:00:00",
+      "event_time": null,
+      "valid_to": "2026-06-05 22:00:00",
+      "superseded_by": "mem_3b569610",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家宣布自己在游戏中的段位提升到了钻石一，并使用了红米K70作为游戏设备",
+      "keywords": [
+       "钻石一",
+       "红米K70"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_7f1f91af",
+      "created_at": "2026-03-28 22:00:00",
+      "updated_at": "2026-03-28 22:00:00",
+      "event_time": "2026-03-28",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近在练嫦娥",
+      "keywords": [
+       "嫦娥",
+       "法师"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_ac14c004",
+      "created_at": "2026-04-22 22:00:00",
+      "updated_at": "2026-04-22 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家在奶茶店升了店长",
+      "keywords": [
+       "奶茶店"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_ed14b9d8",
+      "created_at": "2026-04-22 22:00:00",
+      "updated_at": "2026-06-05 22:00:00",
+      "event_time": null,
+      "valid_to": "2026-06-05 22:00:00",
+      "superseded_by": "mem_e5052253",
+      "supersedes": "mem_225377b1",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到最近在练习嫦娥英雄，并表示王昭君已经玩腻了。此外，玩家还透露自己在奶茶店升为了店长。",
+      "keywords": [
+       "嫦娥",
+       "王昭君",
+       "奶茶店",
+       "店长"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_8ba2d4a6",
+      "created_at": "2026-04-22 22:00:00",
+      "updated_at": "2026-04-22 22:00:00",
+      "event_time": "2026-04-22",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是星耀一",
+      "keywords": [
+       "星耀一"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_b6b90919",
+      "created_at": "2026-06-05 22:00:00",
+      "updated_at": "2026-06-05 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_9693f71b",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家在加星升了店长",
+      "keywords": [
+       "加星"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_e5052253",
+      "created_at": "2026-06-05 22:00:00",
+      "updated_at": "2026-06-05 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_ed14b9d8",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家用的是加星手机",
+      "keywords": [
+       "加星"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_3b569610",
+      "created_at": "2026-06-05 22:00:00",
+      "updated_at": "2026-06-05 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_2e94bae1",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家宣布自己上星耀，并且提到新换了一加13手机，用于打团游戏时不会掉帧。",
+      "keywords": [
+       "上星耀",
+       "一加13",
+       "打团不掉帧"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_d2c57f48",
+      "created_at": "2026-06-05 22:00:00",
+      "updated_at": "2026-06-05 22:00:00",
+      "event_time": "2026-06-05",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家一周只能玩两三次游戏",
+      "keywords": [
+       "一周",
+       "两次"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_8246ee59",
+      "created_at": "2026-07-18 22:30:00",
+      "updated_at": "2026-07-18 22:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家表示暑假店里太忙，一周只能玩两三次游戏，并提到嫦娥是她玩得最多的英雄之一。",
+      "keywords": [
+       "暑假店",
+       "一周两三次",
+       "嫦娥",
+       "最多英雄"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_c756e339",
+      "created_at": "2026-07-18 22:30:00",
+      "updated_at": "2026-07-18 22:30:00",
+      "event_time": "2026-07-18",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近开始玩周瑜",
+      "keywords": [
+       "周瑜"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_da9efcb9",
+      "created_at": "2026-08-25 21:00:00",
+      "updated_at": "2026-08-25 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家宣布辞职准备读成人本科，并表示最近开始玩周瑜",
+      "keywords": [
+       "辞职",
+       "成人本科",
+       "周瑜"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_7a0dd010",
+      "created_at": "2026-08-25 21:00:00",
+      "updated_at": "2026-08-25 21:00:00",
+      "event_time": "2026-08-25",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "v3_jungle@1": [
+     {
+      "content": "玩家是大一新生，在武汉读书",
+      "keywords": [
+       "大一新生",
+       "武汉"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_1e3dde76",
+      "created_at": "2026-02-05 21:00:00",
+      "updated_at": "2026-02-05 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家主玩打野，最常用英雄为李白",
+      "keywords": [
+       "李白",
+       "打野"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_8c6cdd8f",
+      "created_at": "2026-02-05 21:00:00",
+      "updated_at": "2026-03-10 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-03-10 21:00:00",
+      "superseded_by": "mem_b6946955",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家是大一新生，在武汉读书，主玩打野位置，最常用英雄为李白，当前段位为黄金一。",
+      "keywords": [
+       "大一新生",
+       "武汉",
+       "打野",
+       "李白",
+       "黄金一"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_1476f0f2",
+      "created_at": "2026-02-05 21:00:00",
+      "updated_at": "2026-02-05 21:00:00",
+      "event_time": "2026-02-05",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家主玩的英雄是李白",
+      "keywords": [
+       "李白"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_b6946955",
+      "created_at": "2026-03-10 21:00:00",
+      "updated_at": "2026-04-15 22:00:00",
+      "event_time": null,
+      "valid_to": "2026-04-15 22:00:00",
+      "superseded_by": "mem_a10691ac",
+      "supersedes": "mem_8c6cdd8f",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家升到了铂金段位",
+      "keywords": [
+       "铂金"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_b8bfdaed",
+      "created_at": "2026-03-10 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": "2026-03-10",
+      "valid_to": "2026-07-08 21:00:00",
+      "superseded_by": "mem_07279391",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家加入了学校的电竞社",
+      "keywords": [
+       "电竞社"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_311ed6aa",
+      "created_at": "2026-03-10 21:00:00",
+      "updated_at": "2026-03-10 21:00:00",
+      "event_time": "2026-03-10",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家今天宣布自己在游戏中的段位提升到了铂金，并且加入了学校的电竞社。",
+      "keywords": [
+       "铂金",
+       "学校电竞社"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_88ffba2b",
+      "created_at": "2026-03-10 21:00:00",
+      "updated_at": "2026-03-10 21:00:00",
+      "event_time": "2026-03-10",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "助手答应下次社团比赛前我帮你整理打野路线。",
+      "keywords": [],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "promise",
+      "id": "mem_5114b325",
+      "created_at": "2026-03-10 21:00:00",
+      "updated_at": "2026-03-10 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家主玩的英雄是澜",
+      "keywords": [
+       "李白",
+       "澜"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_a10691ac",
+      "created_at": "2026-04-15 22:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-07-08 21:00:00",
+      "superseded_by": "mem_d386e635",
+      "supersedes": "mem_b6946955",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家用的是华为Mate 60",
+      "keywords": [
+       "华为Mate 60"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_c340a572",
+      "created_at": "2026-04-15 22:00:00",
+      "updated_at": "2026-08-18 21:00:00",
+      "event_time": "2026-04-15",
+      "valid_to": "2026-08-18 21:00:00",
+      "superseded_by": "mem_ecd623ae",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到李白英雄被削弱，决定改玩澜，并且告知游戏助手自己使用的手机是华为Mate 60",
+      "keywords": [
+       "李白被削",
+       "改玩澜",
+       "华为Mate 60"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_c239a117",
+      "created_at": "2026-04-15 22:00:00",
+      "updated_at": "2026-04-15 22:00:00",
+      "event_time": "2026-04-15",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近基本不玩游戏",
+      "keywords": [
+       "铂金",
+       "澜"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_ad9bc71d",
+      "created_at": "2026-05-20 22:00:00",
+      "updated_at": "2026-05-20 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家因为期末复习，最近基本不玩游戏，特别是数学挂科需要补考",
+      "keywords": [
+       "期末复习",
+       "数学挂科",
+       "补考"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_1549a699",
+      "created_at": "2026-05-20 22:00:00",
+      "updated_at": "2026-05-20 22:00:00",
+      "event_time": "2026-05-20",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家升到了钻石段位",
+      "keywords": [
+       "钻石",
+       "铂金"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_07279391",
+      "created_at": "2026-07-08 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_b8bfdaed",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的本命英雄是澜",
+      "keywords": [
+       "澜"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_d386e635",
+      "created_at": "2026-07-08 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_a10691ac",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近不玩游戏",
+      "keywords": [
+       "不玩游戏"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_78db8f5d",
+      "created_at": "2026-07-08 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到暑假回老家后，通过频繁游戏提升了自己的段位至钻石，并且表示澜是他的本命英雄。",
+      "keywords": [
+       "钻石",
+       "本命英雄",
+       "暑假回老家"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_95414b98",
+      "created_at": "2026-07-08 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": "2026-07-08",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家补考过了",
+      "keywords": [
+       "补考"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_97f71754",
+      "created_at": "2026-08-18 21:00:00",
+      "updated_at": "2026-08-18 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家换成了iPhone 16",
+      "keywords": [
+       "iPhone 16"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_ecd623ae",
+      "created_at": "2026-08-18 21:00:00",
+      "updated_at": "2026-08-18 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_c340a572",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家在聊天中宣布自己通过了补考，并透露自己换了一部iPhone 16手机。",
+      "keywords": [
+       "补考",
+       "iPhone 16"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_958fd4f9",
+      "created_at": "2026-08-18 21:00:00",
+      "updated_at": "2026-08-18 21:00:00",
+      "event_time": "2026-08-18",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "v3_support@1": [
+     {
+      "content": "玩家是全职妈妈",
+      "keywords": [
+       "全职妈妈"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_82b149f0",
+      "created_at": "2026-01-20 14:00:00",
+      "updated_at": "2026-01-20 14:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家常用瑶作为辅助角色",
+      "keywords": [
+       "瑶"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_f4e26556",
+      "created_at": "2026-01-20 14:00:00",
+      "updated_at": "2026-01-20 14:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家是一名全职妈妈，孩子上幼儿园后才有空玩游戏，她主玩辅助英雄瑶，当前段位为白银三。",
+      "keywords": [
+       "全职妈妈",
+       "白银三",
+       "瑶"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_69670599",
+      "created_at": "2026-01-20 14:00:00",
+      "updated_at": "2026-01-20 14:00:00",
+      "event_time": "2026-01-20",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家升到了黄金段位",
+      "keywords": [
+       "黄金段位"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_5c8e8066",
+      "created_at": "2026-02-18 21:00:00",
+      "updated_at": "2026-05-10 20:00:00",
+      "event_time": "2026-02-18",
+      "valid_to": "2026-05-10 20:00:00",
+      "superseded_by": "mem_888cb5c7",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家和表妹一起开黑",
+      "keywords": [
+       "表妹"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_c4cc14c8",
+      "created_at": "2026-02-18 21:00:00",
+      "updated_at": "2026-02-18 21:00:00",
+      "event_time": "2026-02-18",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家春节期间与表妹一起开黑游戏，目前段位为黄金",
+      "keywords": [
+       "春节期间",
+       "黄金",
+       "开黑"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_c3580cc4",
+      "created_at": "2026-02-18 21:00:00",
+      "updated_at": "2026-02-18 21:00:00",
+      "event_time": "2026-02-18",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家开始练大乔",
+      "keywords": [
+       "大乔"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_d055267d",
+      "created_at": "2026-03-25 14:00:00",
+      "updated_at": "2026-03-25 14:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家使用OPPO Find X7",
+      "keywords": [
+       "OPPO Find X7"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_adc7ab6e",
+      "created_at": "2026-03-25 14:00:00",
+      "updated_at": "2026-08-12 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-08-12 21:00:00",
+      "superseded_by": "mem_4a2fd4ac",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家表示他们开始练习大乔，并且使用的手机是OPPO Find X7。",
+      "keywords": [
+       "大乔",
+       "OPPO Find X7"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_b0609dbb",
+      "created_at": "2026-03-25 14:00:00",
+      "updated_at": "2026-03-25 14:00:00",
+      "event_time": "2026-03-25",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家达到了铂金段位",
+      "keywords": [
+       "铂金"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_888cb5c7",
+      "created_at": "2026-05-10 20:00:00",
+      "updated_at": "2026-05-10 20:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_5c8e8066",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家母亲节收到了孩子的贺卡",
+      "keywords": [
+       "母亲节"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_20f07cf1",
+      "created_at": "2026-05-10 20:00:00",
+      "updated_at": "2026-05-10 20:00:00",
+      "event_time": "2026-05-10",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家在母亲节收到了孩子制作的贺卡，并且在游戏中的段位从铂金提升到了某个更高段位。",
+      "keywords": [
+       "母亲节",
+       "铂金",
+       "..."
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_ce338a0b",
+      "created_at": "2026-05-10 20:00:00",
+      "updated_at": "2026-05-10 20:00:00",
+      "event_time": "2026-05-10",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家上周玩了大乔和瑶的对比",
+      "keywords": [
+       "大乔",
+       "瑶"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_e0fb48de",
+      "created_at": "2026-06-28 14:00:00",
+      "updated_at": "2026-06-28 14:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家报了每周三上课的瑜伽班",
+      "keywords": [
+       "瑜伽班"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_777fea76",
+      "created_at": "2026-06-28 14:00:00",
+      "updated_at": "2026-06-28 14:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到大乔已经比瑶玩得多了，并且报了一个瑜伽班，每周三上课。",
+      "keywords": [
+       "大乔",
+       "瑶",
+       "瑜伽班",
+       "每周三"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_6bb9aedb",
+      "created_at": "2026-06-28 14:00:00",
+      "updated_at": "2026-06-28 14:00:00",
+      "event_time": "2026-06-28",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的孩子在2026-08-12放暑假",
+      "keywords": [
+       "放暑假"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_72b8e57a",
+      "created_at": "2026-08-12 21:00:00",
+      "updated_at": "2026-08-12 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家换成了小米14",
+      "keywords": [
+       "小米14"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_4a2fd4ac",
+      "created_at": "2026-08-12 21:00:00",
+      "updated_at": "2026-08-12 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_adc7ab6e",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到孩子因为暑假在家玩得少了，并且更换了手机为小米14。",
+      "keywords": [
+       "孩子放暑假",
+       "玩得少了",
+       "更换小米14"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_46f498c4",
+      "created_at": "2026-08-12 21:00:00",
+      "updated_at": "2026-08-12 21:00:00",
+      "event_time": "2026-08-12",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "v3_mage@2": [
+     {
+      "content": "玩家在杭州打工",
+      "keywords": [
+       "杭州"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_213cb609",
+      "created_at": "2026-03-01 21:00:00",
+      "updated_at": "2026-04-22 22:00:00",
+      "event_time": null,
+      "valid_to": "2026-04-22 22:00:00",
+      "superseded_by": "mem_54496a5c",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家主玩法师，最喜欢王昭君",
+      "keywords": [
+       "法师",
+       "王昭君"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_d56654e2",
+      "created_at": "2026-03-01 21:00:00",
+      "updated_at": "2026-03-01 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位钻石四",
+      "keywords": [
+       "钻石四"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_272738d2",
+      "created_at": "2026-03-01 21:00:00",
+      "updated_at": "2026-03-28 22:00:00",
+      "event_time": null,
+      "valid_to": "2026-03-28 22:00:00",
+      "superseded_by": "mem_e48d3258",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家告诉助手，他在杭州一家奶茶店打工，最喜欢玩法师中的王昭君，并透露了自己的段位是钻石四。",
+      "keywords": [
+       "杭州",
+       "奶茶店",
+       "王昭君",
+       "钻石四"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_68875b2f",
+      "created_at": "2026-03-01 21:00:00",
+      "updated_at": "2026-03-01 21:00:00",
+      "event_time": "2026-03-01",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "助手答应以后赛季末帮你盯着冲分节奏。",
+      "keywords": [],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "promise",
+      "id": "mem_1c615a2f",
+      "created_at": "2026-03-01 21:00:00",
+      "updated_at": "2026-03-01 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是钻石一",
+      "keywords": [
+       "钻石一"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_e48d3258",
+      "created_at": "2026-03-28 22:00:00",
+      "updated_at": "2026-06-05 22:00:00",
+      "event_time": null,
+      "valid_to": "2026-06-05 22:00:00",
+      "superseded_by": "mem_db67f0da",
+      "supersedes": "mem_272738d2",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家用的是红米K70",
+      "keywords": [
+       "红米K70"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_0c995c6c",
+      "created_at": "2026-03-28 22:00:00",
+      "updated_at": "2026-03-28 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家宣布自己在游戏中的段位提升到了钻石一，并使用了红米K70作为游戏设备",
+      "keywords": [
+       "钻石一",
+       "红米K70"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_f33f8231",
+      "created_at": "2026-03-28 22:00:00",
+      "updated_at": "2026-03-28 22:00:00",
+      "event_time": "2026-03-28",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近在练嫦娥",
+      "keywords": [
+       "嫦娥",
+       "王昭君"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_5e082b64",
+      "created_at": "2026-04-22 22:00:00",
+      "updated_at": "2026-04-22 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家在奶茶店升了店长",
+      "keywords": [
+       "奶茶店"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_54496a5c",
+      "created_at": "2026-04-22 22:00:00",
+      "updated_at": "2026-06-05 22:00:00",
+      "event_time": null,
+      "valid_to": "2026-06-05 22:00:00",
+      "superseded_by": "mem_e63aef86",
+      "supersedes": "mem_213cb609",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到最近在练习嫦娥英雄，并表示王昭君已经玩腻了。此外，玩家还透露自己在奶茶店升为了店长。",
+      "keywords": [
+       "嫦娥",
+       "王昭君",
+       "奶茶店",
+       "店长"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_87a28c8a",
+      "created_at": "2026-04-22 22:00:00",
+      "updated_at": "2026-04-22 22:00:00",
+      "event_time": "2026-04-22",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是星耀一",
+      "keywords": [
+       "星耀一"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_db67f0da",
+      "created_at": "2026-06-05 22:00:00",
+      "updated_at": "2026-06-05 22:00:00",
+      "event_time": "2026-06-05",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_e48d3258",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家在加星店长",
+      "keywords": [
+       "加星店长"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_e63aef86",
+      "created_at": "2026-06-05 22:00:00",
+      "updated_at": "2026-06-05 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_54496a5c",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家宣布自己上星耀，并且提到新换了一加13手机，用于打团游戏时不会掉帧。",
+      "keywords": [
+       "上星耀",
+       "一加13",
+       "打团不掉帧"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_e9a63213",
+      "created_at": "2026-06-05 22:00:00",
+      "updated_at": "2026-06-05 22:00:00",
+      "event_time": "2026-06-05",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家一周只能玩两三次游戏",
+      "keywords": [
+       "一周",
+       "玩两三次"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_0d49a127",
+      "created_at": "2026-07-18 22:30:00",
+      "updated_at": "2026-07-18 22:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家表示暑假店里太忙，一周只能玩两三次游戏，并提到嫦娥是她玩得最多的英雄之一。",
+      "keywords": [
+       "玩家",
+       "暑假店",
+       "一周两三次",
+       "嫦娥",
+       "最多英雄"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_7729f7a5",
+      "created_at": "2026-07-18 22:30:00",
+      "updated_at": "2026-07-18 22:30:00",
+      "event_time": "2026-07-18",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近开始玩周瑜",
+      "keywords": [
+       "周瑜"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_57e53d78",
+      "created_at": "2026-08-25 21:00:00",
+      "updated_at": "2026-08-25 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家宣布辞职准备读成人本科，并表示最近开始玩周瑜",
+      "keywords": [
+       "辞职",
+       "成人本科",
+       "周瑜"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_8e24daf8",
+      "created_at": "2026-08-25 21:00:00",
+      "updated_at": "2026-08-25 21:00:00",
+      "event_time": "2026-08-25",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "v3_jungle@2": [
+     {
+      "content": "玩家是大一新生，在武汉读书",
+      "keywords": [
+       "大一新生",
+       "武汉"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_545a67f5",
+      "created_at": "2026-02-05 21:00:00",
+      "updated_at": "2026-05-20 22:00:00",
+      "event_time": null,
+      "valid_to": "2026-05-20 22:00:00",
+      "superseded_by": "mem_9666dcc1",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家主玩打野，最常用英雄为李白",
+      "keywords": [
+       "打野",
+       "李白"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_165d7fee",
+      "created_at": "2026-02-05 21:00:00",
+      "updated_at": "2026-03-10 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-03-10 21:00:00",
+      "superseded_by": "mem_d1c78f72",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家是大一新生，在武汉读书，主玩打野位置，最常用英雄为李白，当前段位为黄金一。",
+      "keywords": [
+       "大一新生",
+       "武汉",
+       "打野",
+       "李白",
+       "黄金一"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_8c7cf9c6",
+      "created_at": "2026-02-05 21:00:00",
+      "updated_at": "2026-02-05 21:00:00",
+      "event_time": "2026-02-05",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家主玩的英雄是李白",
+      "keywords": [
+       "李白"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_d1c78f72",
+      "created_at": "2026-03-10 21:00:00",
+      "updated_at": "2026-03-10 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_165d7fee",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家加入了学校的电竞社",
+      "keywords": [
+       "电竞社"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_0de09dcf",
+      "created_at": "2026-03-10 21:00:00",
+      "updated_at": "2026-03-10 21:00:00",
+      "event_time": "2026-03-10",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家今天宣布自己在游戏中的段位提升到了铂金，并且加入了学校的电竞社。",
+      "keywords": [
+       "铂金",
+       "电竞社"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_935eaeec",
+      "created_at": "2026-03-10 21:00:00",
+      "updated_at": "2026-03-10 21:00:00",
+      "event_time": "2026-03-10",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "助手答应下次社团比赛前我帮你整理打野路线。",
+      "keywords": [],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "promise",
+      "id": "mem_4c79201d",
+      "created_at": "2026-03-10 21:00:00",
+      "updated_at": "2026-03-10 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家用的是华为Mate 60",
+      "keywords": [
+       "华为Mate 60"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_60f03390",
+      "created_at": "2026-04-15 22:00:00",
+      "updated_at": "2026-04-15 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到李白英雄被削弱，决定改玩澜，并且告知游戏助手其使用的手机型号为华为Mate 60",
+      "keywords": [
+       "李白被削",
+       "改玩澜",
+       "华为Mate 60"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_cf41dac6",
+      "created_at": "2026-04-15 22:00:00",
+      "updated_at": "2026-04-15 22:00:00",
+      "event_time": "2026-04-15",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近基本不玩游戏",
+      "keywords": [
+       "最近",
+       "不玩游戏"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_b93619c3",
+      "created_at": "2026-05-20 22:00:00",
+      "updated_at": "2026-05-20 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家是大一新生，在武汉读书，玩家主玩的英雄是李白",
+      "keywords": [
+       "大一新生",
+       "武汉",
+       "李白"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_9666dcc1",
+      "created_at": "2026-05-20 22:00:00",
+      "updated_at": "2026-05-20 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_545a67f5",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家数学挂科了，要补考",
+      "keywords": [
+       "数学",
+       "挂科",
+       "补考"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_b0d1150f",
+      "created_at": "2026-05-20 22:00:00",
+      "updated_at": "2026-05-20 22:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家因为期末复习，最近基本不玩游戏，特别是数学挂科需要补考",
+      "keywords": [
+       "期末复习",
+       "数学挂科",
+       "补考"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_15401537",
+      "created_at": "2026-05-20 22:00:00",
+      "updated_at": "2026-05-20 22:00:00",
+      "event_time": "2026-05-20",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家已经钻石了",
+      "keywords": [
+       "钻石"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_3f4d200b",
+      "created_at": "2026-07-08 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的本命英雄是澜",
+      "keywords": [
+       "澜"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_e5923d64",
+      "created_at": "2026-07-08 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到暑假期间天天玩游戏，已经达到了钻石段位，并且表示澜是他的本命英雄。",
+      "keywords": [
+       "钻石",
+       "本命英雄",
+       "暑假"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_d91cf1fa",
+      "created_at": "2026-07-08 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": "2026-07-08",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家已经补考过了",
+      "keywords": [
+       "补考"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_9e96fb91",
+      "created_at": "2026-08-18 21:00:00",
+      "updated_at": "2026-08-18 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家在聊天中宣布自己通过了补考，并透露自己换了一部新的iPhone 16手机。",
+      "keywords": [
+       "补考",
+       "iPhone 16"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_9404f7d0",
+      "created_at": "2026-08-18 21:00:00",
+      "updated_at": "2026-08-18 21:00:00",
+      "event_time": "2026-08-18",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "v3_support@2": [
+     {
+      "content": "玩家是全职妈妈",
+      "keywords": [
+       "全职妈妈"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_79971f94",
+      "created_at": "2026-01-20 14:00:00",
+      "updated_at": "2026-01-20 14:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家常用瑶作为辅助角色",
+      "keywords": [
+       "瑶"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_b26d8b13",
+      "created_at": "2026-01-20 14:00:00",
+      "updated_at": "2026-01-20 14:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家是一名全职妈妈，孩子上幼儿园后才有空玩，她主玩辅助英雄瑶，当前段位为白银三。",
+      "keywords": [
+       "全职妈妈",
+       "白银三",
+       "瑶"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_448275fe",
+      "created_at": "2026-01-20 14:00:00",
+      "updated_at": "2026-01-20 14:00:00",
+      "event_time": "2026-01-20",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家升到了黄金段位",
+      "keywords": [
+       "黄金段位"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_69815265",
+      "created_at": "2026-02-18 21:00:00",
+      "updated_at": "2026-05-10 20:00:00",
+      "event_time": "2026-02-18",
+      "valid_to": "2026-05-10 20:00:00",
+      "superseded_by": "mem_7f231647",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家和表妹一起开黑",
+      "keywords": [
+       "表妹"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_82e74dc0",
+      "created_at": "2026-02-18 21:00:00",
+      "updated_at": "2026-02-18 21:00:00",
+      "event_time": "2026-02-18",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家春节期间与表妹一起开黑游戏，提升了至黄金段位。",
+      "keywords": [
+       "春节期间",
+       "与表妹一起开黑",
+       "提升至黄金段位"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_1c4e9157",
+      "created_at": "2026-02-18 21:00:00",
+      "updated_at": "2026-02-18 21:00:00",
+      "event_time": "2026-02-18",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家开始练大乔",
+      "keywords": [
+       "大乔"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_589251d1",
+      "created_at": "2026-03-25 14:00:00",
+      "updated_at": "2026-03-25 14:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家使用OPPO Find X7",
+      "keywords": [
+       "OPPO Find X7"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_79a0fe02",
+      "created_at": "2026-03-25 14:00:00",
+      "updated_at": "2026-03-25 14:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家表示他们开始练习大乔，并且使用的是OPPO Find X7手机进行游戏。",
+      "keywords": [
+       "大乔",
+       "OPPO Find X7"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_9a5d87e4",
+      "created_at": "2026-03-25 14:00:00",
+      "updated_at": "2026-03-25 14:00:00",
+      "event_time": "2026-03-25",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家达到了铂金段位",
+      "keywords": [
+       "铂金"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_7f231647",
+      "created_at": "2026-05-10 20:00:00",
+      "updated_at": "2026-05-10 20:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_69815265",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家母亲节收到了孩子的贺卡",
+      "keywords": [
+       "母亲节",
+       "贺卡"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_1082a60d",
+      "created_at": "2026-05-10 20:00:00",
+      "updated_at": "2026-05-10 20:00:00",
+      "event_time": "2026-05-10",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家在母亲节收到了孩子制作的贺卡，并且在游戏中的段位从铂金提升到了某个更高段位。",
+      "keywords": [
+       "母亲节",
+       "铂金",
+       "..."
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_714a43be",
+      "created_at": "2026-05-10 20:00:00",
+      "updated_at": "2026-05-10 20:00:00",
+      "event_time": "2026-05-10",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家上周玩了大乔和瑶的对比",
+      "keywords": [
+       "大乔",
+       "瑶",
+       "对比"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_bcf30ac1",
+      "created_at": "2026-06-28 14:00:00",
+      "updated_at": "2026-06-28 14:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家报了每周三上课的瑜伽班",
+      "keywords": [
+       "瑜伽班"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_fd1d515b",
+      "created_at": "2026-06-28 14:00:00",
+      "updated_at": "2026-06-28 14:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到大乔已经比瑶玩得多了，并且报了一个瑜伽班，每周三上课。",
+      "keywords": [
+       "大乔",
+       "瑶",
+       "瑜伽班",
+       "每周三"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_8e153235",
+      "created_at": "2026-06-28 14:00:00",
+      "updated_at": "2026-06-28 14:00:00",
+      "event_time": "2026-06-28",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的孩子在2026-08-12放暑假",
+      "keywords": [
+       "2026-08-12",
+       "放暑假"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_81358c19",
+      "created_at": "2026-08-12 21:00:00",
+      "updated_at": "2026-08-12 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到孩子因为暑假在家玩得少了，并且更换了手机为小米14。",
+      "keywords": [
+       "孩子放暑假",
+       "玩得少了",
+       "更换小米14"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_bfd89ae8",
+      "created_at": "2026-08-12 21:00:00",
+      "updated_at": "2026-08-12 21:00:00",
+      "event_time": "2026-08-12",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ]
+   }
+  }
+ }
+}
