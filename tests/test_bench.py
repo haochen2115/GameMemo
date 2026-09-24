@@ -43,21 +43,28 @@ def test_lexical_retriever_runs_without_embeddings():
     assert res["Abstain"] > 0.8
 
 
-def test_e2e_dataset_and_judge():
+@pytest.mark.parametrize("name", ["e2e_v1.json", "e2e_v2.json"])
+def test_e2e_dataset_integrity(name):
     import json
 
-    from bench.run_e2e import DATA, judge, transcript
+    from bench.run_e2e import transcript
 
-    with open(DATA, encoding="utf-8") as f:
+    with open(os.path.join(ROOT, "bench", "data", name), encoding="utf-8") as f:
         data = json.load(f)
-    splits = {p["split"] for p in data["players"]}
-    assert splits == {"dev", "test"}
+    assert {p["split"] for p in data["players"]} == {"dev", "test"}
+    ids = [q["id"] for p in data["players"] for q in p["questions"]]
+    assert len(ids) == len(set(ids))
     for p in data["players"]:
         dates = [s["date"] for s in p["sessions"]]
         assert dates == sorted(dates) and dates[-1] < p["ask_at"]
         assert transcript(p["sessions"][0]).startswith("玩家: ")
         for q in p["questions"]:
-            assert bool(q["answer_any"]) == (q["type"] != "negative")
+            has_key = bool(q["answer_any"] or q.get("answer_all"))
+            assert has_key == (q["type"] != "negative")
+
+
+def test_e2e_judge():
+    from bench.run_e2e import judge
 
     upd = {"type": "update", "answer_any": ["钻石"], "stale_any": ["铂金"]}
     assert judge(upd, ["玩家段位是钻石"]) == (1.0, False)
@@ -65,6 +72,9 @@ def test_e2e_dataset_and_judge():
     assert judge({"type": "fact", "answer_any": ["护士"]}, ["玩家是护士"])[0] == 1.0
     assert judge({"type": "negative", "answer_any": []}, [])[0] == 1.0
     assert judge({"type": "negative", "answer_any": []}, ["x"])[0] == 0.0
+    traj = {"type": "trajectory", "answer_any": [], "answer_all": ["黄金", "钻石"]}
+    assert judge(traj, ["玩家升到黄金", "玩家上了钻石"])[0] == 1.0
+    assert judge(traj, ["玩家上了钻石"])[0] == 0.0
 
 
 def test_e2e_judge_accepts_iso_dates_for_chinese_keys():
@@ -73,21 +83,23 @@ def test_e2e_judge_accepts_iso_dates_for_chinese_keys():
     assert judge({"type": "temporal", "answer_any": ["2026-07"]}, ["玩家升到铂金（2026-07-05）"])[0] == 1.0
 
 
-# SHA-256 of the test players in bench/data/e2e_v1.json as sealed in c58c35a.
-E2E_V1_TEST_SHA256 = "a841901abee86647f7454dce0cfeb23daaaaa777478e06f8f3a835ac54a583fa"
+# SHA-256 of each dataset's test players as sealed (e2e_v1: c58c35a, e2e_v2: eb8add4).
+SEALED_TEST_SHA256 = {
+    "e2e_v1.json": "a841901abee86647f7454dce0cfeb23daaaaa777478e06f8f3a835ac54a583fa",
+    "e2e_v2.json": "7af43f5752f334ce7227663478132049c42b352eb0869690d6043597eb7dc7a9",
+}
 
 
-def test_e2e_test_split_is_unchanged_since_sealing():
+@pytest.mark.parametrize("name", sorted(SEALED_TEST_SHA256))
+def test_e2e_test_split_is_unchanged_since_sealing(name):
     import hashlib
     import json
 
-    from bench.run_e2e import DATA
-
-    with open(DATA, encoding="utf-8") as f:
+    with open(os.path.join(ROOT, "bench", "data", name), encoding="utf-8") as f:
         data = json.load(f)
     test = [p for p in data["players"] if p["split"] == "test"]
     digest = hashlib.sha256(json.dumps(test, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
-    assert digest == E2E_V1_TEST_SHA256
+    assert digest == SEALED_TEST_SHA256[name]
 
 
 def test_gate_rules():

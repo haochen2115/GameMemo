@@ -1,0 +1,3234 @@
+{
+ "dataset": "bench/data/e2e_v1.json",
+ "split": "test",
+ "model": "qwen2.5:3b",
+ "seeds": "0,1,2",
+ "generated_at": "2026-09-24 12:23:38",
+ "results": {
+  "v2+po+history": {
+   "E2EScore": 0.5938,
+   "Answer@3": 0.5769,
+   "StaleRate": 0.1481,
+   "Abstain": 0.6667,
+   "by_type": {
+    "fact": 0.6944,
+    "negative": 0.6667,
+    "temporal": 0.6,
+    "update": 0.4074
+   },
+   "n": 96,
+   "minutes": 16.7,
+   "ingest_errors": [],
+   "rows": [
+    {
+     "id": "p_tank_q01",
+     "player": "p_tank",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "铂金"
+     ],
+     "evidence": [
+      "玩家段位是铂金（记于2026-09-05）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q02",
+     "player": "p_tank",
+     "type": "update",
+     "query": "我现在做什么工作",
+     "answer_any": [
+      "分拣",
+      "快递站"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q03",
+     "player": "p_tank",
+     "type": "update",
+     "query": "我一般几点上线",
+     "answer_any": [
+      "八点半",
+      "8点半",
+      "20:30"
+     ],
+     "evidence": [
+      "玩家在深圳的快递站做分拣，下班时间变成晚上八点（记于2026-09-05）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q04",
+     "player": "p_tank",
+     "type": "fact",
+     "query": "我在哪个城市",
+     "answer_any": [
+      "深圳"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q05",
+     "player": "p_tank",
+     "type": "temporal",
+     "query": "我生日是哪天",
+     "answer_any": [
+      "6月2",
+      "06-02"
+     ],
+     "evidence": [
+      "玩家生日在2026-05-31（2026-05-31；已过时，2026-09-05被新信息取代）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q06",
+     "player": "p_tank",
+     "type": "fact",
+     "query": "我今年多大",
+     "answer_any": [
+      "26"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q07",
+     "player": "p_tank",
+     "type": "temporal",
+     "query": "我什么时候拿的五杀",
+     "answer_any": [
+      "5月31",
+      "2026-05-31"
+     ],
+     "evidence": [
+      "玩家前天用项羽拿了个五杀（2026-06-01）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q08",
+     "player": "p_tank",
+     "type": "update",
+     "query": "我现在主玩哪个英雄",
+     "answer_any": [
+      "廉颇"
+     ],
+     "evidence": [
+      "玩家最喜欢英雄是项羽（记于2026-05-10）",
+      "玩家现在主要玩廉颇（记于2026-08-15）",
+      "玩家前天用项羽拿了个五杀（2026-06-01）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q09",
+     "player": "p_tank",
+     "type": "fact",
+     "query": "阿豪为什么不玩了",
+     "answer_any": [
+      "考研"
+     ],
+     "evidence": [
+      "玩家的朋友阿豪去考研了（记于2026-08-15）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q10",
+     "player": "p_tank",
+     "type": "update",
+     "query": "我现在单排还是双排",
+     "answer_any": [
+      "单排"
+     ],
+     "evidence": [
+      "玩家段位是铂金（记于2026-09-05）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q11",
+     "player": "p_tank",
+     "type": "fact",
+     "query": "我用什么手机",
+     "answer_any": [
+      "OPPO"
+     ],
+     "evidence": [
+      "玩家用的是OPPO手机（记于2026-07-01）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q12",
+     "player": "p_tank",
+     "type": "fact",
+     "query": "我主玩什么位置",
+     "answer_any": [
+      "坦克"
+     ],
+     "evidence": [
+      "玩家段位是铂金（记于2026-09-05）",
+      "玩家前天用项羽拿了个五杀（2026-06-01）",
+      "玩家现在主要玩廉颇（记于2026-08-15）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q13",
+     "player": "p_tank",
+     "type": "temporal",
+     "query": "我什么时候上的铂金",
+     "answer_any": [
+      "2026-09",
+      "9月"
+     ],
+     "evidence": [
+      "玩家段位是铂金（记于2026-09-05）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q14",
+     "player": "p_tank",
+     "type": "negative",
+     "query": "我有没有养宠物",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q15",
+     "player": "p_tank",
+     "type": "negative",
+     "query": "我喜欢什么颜色",
+     "answer_any": [],
+     "evidence": [
+      "玩家最喜欢英雄是项羽（记于2026-05-10）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q16",
+     "player": "p_tank",
+     "type": "negative",
+     "query": "我大学学的什么专业",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q01",
+     "player": "p_marksman2",
+     "type": "update",
+     "query": "我现在读几年级",
+     "answer_any": [
+      "高一"
+     ],
+     "evidence": [
+      "玩家现在是高一学生（记于2026-09-06）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q02",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "我在哪所学校",
+     "answer_any": [
+      "市一中"
+     ],
+     "evidence": [
+      "玩家现在是高一学生（记于2026-09-06）",
+      "玩家中考在2026-06-15考上了市一中（2026-06-15）",
+      "玩家和小林分到了同一个班级（记于2026-09-06）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q03",
+     "player": "p_marksman2",
+     "type": "update",
+     "query": "我什么时候能玩游戏",
+     "answer_any": [
+      "周末"
+     ],
+     "evidence": [
+      "玩家暑假可以每天玩一会儿游戏（记于2026-07-02；已过时，2026-08-08被新信息取代）",
+      "玩家的生日是2026-09-05（记于2026-09-06）",
+      "玩家中考在2026-06-15考上了市一中（2026-06-15）"
+     ],
+     "success": 0.0,
+     "stale": true,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q04",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "我生日是哪天",
+     "answer_any": [
+      "4月20"
+     ],
+     "evidence": [
+      "玩家的生日是2026-09-05（记于2026-09-06）",
+      "玩家的生日是2026-04-20（记于2026-08-08；已过时，2026-09-06被新信息取代）",
+      "玩家生日是2026-04-20（记于2026-04-03；已过时，2026-08-08被新信息取代）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q05",
+     "player": "p_marksman2",
+     "type": "update",
+     "query": "我现在最常玩的英雄",
+     "answer_any": [
+      "公孙离"
+     ],
+     "evidence": [
+      "玩家最喜欢英雄是孙尚香（记于2026-04-03）",
+      "玩家最近迷上了公孙离（记于2026-08-08）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q06",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "我孙尚香胜率多少",
+     "answer_any": [
+      "六成",
+      "60%"
+     ],
+     "evidence": [
+      "玩家最喜欢英雄是孙尚香（记于2026-04-03）",
+      "玩家胜率有六成（记于2026-04-03）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q07",
+     "player": "p_marksman2",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "星耀三"
+     ],
+     "evidence": [
+      "玩家中考在2026-06-15考上了市一中（2026-06-15）",
+      "玩家胜率有六成（记于2026-04-03）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q08",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "小林玩什么位置",
+     "answer_any": [
+      "法师"
+     ],
+     "evidence": [
+      "玩家和小林分到了同一个班级（记于2026-09-06）",
+      "玩家同桌小林玩法师（记于2026-05-16）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q09",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "小林和我是什么关系",
+     "answer_any": [
+      "同桌",
+      "同一个班",
+      "同班"
+     ],
+     "evidence": [
+      "玩家和小林分到了同一个班级（记于2026-09-06）",
+      "玩家同桌小林玩法师（记于2026-05-16）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q10",
+     "player": "p_marksman2",
+     "type": "temporal",
+     "query": "我中考什么时候",
+     "answer_any": [
+      "6月"
+     ],
+     "evidence": [
+      "玩家中考在2026-06-15考上了市一中（2026-06-15）",
+      "玩家中考在2026-06-15（2026-06-15；已过时，2026-07-02被新信息取代）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q11",
+     "player": "p_marksman2",
+     "type": "temporal",
+     "query": "我什么时候掉到钻石的",
+     "answer_any": [
+      "2026-08",
+      "8月"
+     ],
+     "evidence": [
+      "玩家现在段位掉到钻石一（记于2026-08-08；已过时，2026-09-06被新信息取代）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q12",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "我买了谁的皮肤",
+     "answer_any": [
+      "公孙离"
+     ],
+     "evidence": [
+      "玩家购买了公孙离的新皮肤（记于2026-08-08）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q13",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "我中考考得怎么样",
+     "answer_any": [
+      "市一中"
+     ],
+     "evidence": [
+      "玩家中考在2026-06-15考上了市一中（2026-06-15）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q14",
+     "player": "p_marksman2",
+     "type": "negative",
+     "query": "我的身高多少",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q15",
+     "player": "p_marksman2",
+     "type": "negative",
+     "query": "我喜欢什么运动",
+     "answer_any": [],
+     "evidence": [
+      "玩家最喜欢英雄是孙尚香（记于2026-04-03）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q16",
+     "player": "p_marksman2",
+     "type": "negative",
+     "query": "我爸妈做什么工作",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q01",
+     "player": "p_tank",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "铂金"
+     ],
+     "evidence": [
+      "玩家段位是铂金一（记于2026-09-05）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_tank_q02",
+     "player": "p_tank",
+     "type": "update",
+     "query": "我现在做什么工作",
+     "answer_any": [
+      "分拣",
+      "快递站"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_tank_q03",
+     "player": "p_tank",
+     "type": "update",
+     "query": "我一般几点上线",
+     "answer_any": [
+      "八点半",
+      "8点半",
+      "20:30"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_tank_q04",
+     "player": "p_tank",
+     "type": "fact",
+     "query": "我在哪个城市",
+     "answer_any": [
+      "深圳"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_tank_q05",
+     "player": "p_tank",
+     "type": "temporal",
+     "query": "我生日是哪天",
+     "answer_any": [
+      "6月2",
+      "06-02"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_tank_q06",
+     "player": "p_tank",
+     "type": "fact",
+     "query": "我今年多大",
+     "answer_any": [
+      "26"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_tank_q07",
+     "player": "p_tank",
+     "type": "temporal",
+     "query": "我什么时候拿的五杀",
+     "answer_any": [
+      "5月31",
+      "2026-05-31"
+     ],
+     "evidence": [
+      "玩家段位是铂金一（记于2026-09-05）",
+      "玩家有一个游戏好友叫阿豪（记于2026-06-02）",
+      "玩家段位是黄金一（记于2026-07-01；已过时，2026-09-05被新信息取代）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_tank_q08",
+     "player": "p_tank",
+     "type": "update",
+     "query": "我现在主玩哪个英雄",
+     "answer_any": [
+      "廉颇"
+     ],
+     "evidence": [
+      "玩家最喜欢英雄是廉颇（记于2026-07-01）",
+      "玩家现在主要玩廉颇（记于2026-08-15）",
+      "玩家段位是铂金一（记于2026-09-05）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_tank_q09",
+     "player": "p_tank",
+     "type": "fact",
+     "query": "阿豪为什么不玩了",
+     "answer_any": [
+      "考研"
+     ],
+     "evidence": [
+      "玩家有一个游戏好友叫阿豪（记于2026-06-02）",
+      "玩家的队友阿豪最近去考研了（2026-08-15）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_tank_q10",
+     "player": "p_tank",
+     "type": "update",
+     "query": "我现在单排还是双排",
+     "answer_any": [
+      "单排"
+     ],
+     "evidence": [
+      "玩家段位是铂金一（记于2026-09-05）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_tank_q11",
+     "player": "p_tank",
+     "type": "fact",
+     "query": "我用什么手机",
+     "answer_any": [
+      "OPPO"
+     ],
+     "evidence": [
+      "玩家用的是OPPO手机（记于2026-07-01）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_tank_q12",
+     "player": "p_tank",
+     "type": "fact",
+     "query": "我主玩什么位置",
+     "answer_any": [
+      "坦克"
+     ],
+     "evidence": [
+      "玩家职业是深圳快递分拣员（记于2026-09-05）",
+      "玩家段位是铂金一（记于2026-09-05）",
+      "玩家现在主要玩廉颇（记于2026-08-15）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_tank_q13",
+     "player": "p_tank",
+     "type": "temporal",
+     "query": "我什么时候上的铂金",
+     "answer_any": [
+      "2026-09",
+      "9月"
+     ],
+     "evidence": [
+      "玩家段位是铂金一（记于2026-09-05）",
+      "玩家段位是黄金一（记于2026-07-01；已过时，2026-09-05被新信息取代）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_tank_q14",
+     "player": "p_tank",
+     "type": "negative",
+     "query": "我有没有养宠物",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_tank_q15",
+     "player": "p_tank",
+     "type": "negative",
+     "query": "我喜欢什么颜色",
+     "answer_any": [],
+     "evidence": [
+      "玩家最喜欢英雄是廉颇（记于2026-07-01）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_tank_q16",
+     "player": "p_tank",
+     "type": "negative",
+     "query": "我大学学的什么专业",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_marksman2_q01",
+     "player": "p_marksman2",
+     "type": "update",
+     "query": "我现在读几年级",
+     "answer_any": [
+      "高一"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_marksman2_q02",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "我在哪所学校",
+     "answer_any": [
+      "市一中"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_marksman2_q03",
+     "player": "p_marksman2",
+     "type": "update",
+     "query": "我什么时候能玩游戏",
+     "answer_any": [
+      "周末"
+     ],
+     "evidence": [
+      "玩家计划在2026-09-06每天玩一会儿游戏（记于2026-09-06）",
+      "玩家计划在暑假每天玩一会儿游戏（记于2026-07-02；已过时，2026-09-06被新信息取代）",
+      "玩家的游戏段位是星耀四（记于2026-07-02；已过时，2026-08-08被新信息取代）"
+     ],
+     "success": 0.0,
+     "stale": true,
+     "seed": 1
+    },
+    {
+     "id": "p_marksman2_q04",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "我生日是哪天",
+     "answer_any": [
+      "4月20"
+     ],
+     "evidence": [
+      "玩家的生日是2026-04-20（记于2026-04-03）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_marksman2_q05",
+     "player": "p_marksman2",
+     "type": "update",
+     "query": "我现在最常玩的英雄",
+     "answer_any": [
+      "公孙离"
+     ],
+     "evidence": [
+      "玩家最近迷上了公孙离（记于2026-08-08）",
+      "玩家最喜欢的游戏角色是孙尚香（记于2026-04-03）",
+      "玩家的胜率在使用孙尚香时为六成（记于2026-04-03）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_marksman2_q06",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "我孙尚香胜率多少",
+     "answer_any": [
+      "六成",
+      "60%"
+     ],
+     "evidence": [
+      "玩家的胜率在使用孙尚香时为六成（记于2026-04-03）",
+      "玩家最喜欢的游戏角色是孙尚香（记于2026-04-03）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_marksman2_q07",
+     "player": "p_marksman2",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "星耀三"
+     ],
+     "evidence": [
+      "玩家现在段位掉到钻石一（2026-08-08）"
+     ],
+     "success": 0.0,
+     "stale": true,
+     "seed": 1
+    },
+    {
+     "id": "p_marksman2_q08",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "小林玩什么位置",
+     "answer_any": [
+      "法师"
+     ],
+     "evidence": [
+      "玩家同桌小林玩法师（记于2026-05-16）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_marksman2_q09",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "小林和我是什么关系",
+     "answer_any": [
+      "同桌",
+      "同一个班",
+      "同班"
+     ],
+     "evidence": [
+      "玩家同桌小林玩法师（记于2026-05-16）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_marksman2_q10",
+     "player": "p_marksman2",
+     "type": "temporal",
+     "query": "我中考什么时候",
+     "answer_any": [
+      "6月"
+     ],
+     "evidence": [
+      "玩家中考在2026-06-15（记于2026-05-16）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_marksman2_q11",
+     "player": "p_marksman2",
+     "type": "temporal",
+     "query": "我什么时候掉到钻石的",
+     "answer_any": [
+      "2026-08",
+      "8月"
+     ],
+     "evidence": [
+      "玩家现在段位掉到钻石一（2026-08-08）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_marksman2_q12",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "我买了谁的皮肤",
+     "answer_any": [
+      "公孙离"
+     ],
+     "evidence": [
+      "玩家购买了公孙离的新皮肤（记于2026-08-08）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_marksman2_q13",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "我中考考得怎么样",
+     "answer_any": [
+      "市一中"
+     ],
+     "evidence": [
+      "玩家中考在2026-06-15（记于2026-05-16）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_marksman2_q14",
+     "player": "p_marksman2",
+     "type": "negative",
+     "query": "我的身高多少",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_marksman2_q15",
+     "player": "p_marksman2",
+     "type": "negative",
+     "query": "我喜欢什么运动",
+     "answer_any": [],
+     "evidence": [
+      "玩家最喜欢的游戏角色是孙尚香（记于2026-04-03）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_marksman2_q16",
+     "player": "p_marksman2",
+     "type": "negative",
+     "query": "我爸妈做什么工作",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "p_tank_q01",
+     "player": "p_tank",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "铂金"
+     ],
+     "evidence": [
+      "玩家段位是铂金一（记于2026-09-05）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_tank_q02",
+     "player": "p_tank",
+     "type": "update",
+     "query": "我现在做什么工作",
+     "answer_any": [
+      "分拣",
+      "快递站"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_tank_q03",
+     "player": "p_tank",
+     "type": "update",
+     "query": "我一般几点上线",
+     "answer_any": [
+      "八点半",
+      "8点半",
+      "20:30"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_tank_q04",
+     "player": "p_tank",
+     "type": "fact",
+     "query": "我在哪个城市",
+     "answer_any": [
+      "深圳"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_tank_q05",
+     "player": "p_tank",
+     "type": "temporal",
+     "query": "我生日是哪天",
+     "answer_any": [
+      "6月2",
+      "06-02"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_tank_q06",
+     "player": "p_tank",
+     "type": "fact",
+     "query": "我今年多大",
+     "answer_any": [
+      "26"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_tank_q07",
+     "player": "p_tank",
+     "type": "temporal",
+     "query": "我什么时候拿的五杀",
+     "answer_any": [
+      "5月31",
+      "2026-05-31"
+     ],
+     "evidence": [
+      "玩家段位是铂金一（记于2026-09-05）",
+      "玩家有一个游戏好友叫阿豪（记于2026-06-02）",
+      "玩家段位是黄金一（记于2026-07-01；已过时，2026-09-05被新信息取代）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_tank_q08",
+     "player": "p_tank",
+     "type": "update",
+     "query": "我现在主玩哪个英雄",
+     "answer_any": [
+      "廉颇"
+     ],
+     "evidence": [
+      "玩家最喜欢英雄是廉颇（记于2026-07-01）",
+      "玩家现在主要玩廉颇（记于2026-08-15）",
+      "玩家段位是铂金一（记于2026-09-05）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_tank_q09",
+     "player": "p_tank",
+     "type": "fact",
+     "query": "阿豪为什么不玩了",
+     "answer_any": [
+      "考研"
+     ],
+     "evidence": [
+      "玩家有一个游戏好友叫阿豪（记于2026-06-02）",
+      "玩家的队友阿豪最近去考研了（2026-08-15）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_tank_q10",
+     "player": "p_tank",
+     "type": "update",
+     "query": "我现在单排还是双排",
+     "answer_any": [
+      "单排"
+     ],
+     "evidence": [
+      "玩家段位是铂金一（记于2026-09-05）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_tank_q11",
+     "player": "p_tank",
+     "type": "fact",
+     "query": "我用什么手机",
+     "answer_any": [
+      "OPPO"
+     ],
+     "evidence": [
+      "玩家用的是OPPO手机（记于2026-07-01）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_tank_q12",
+     "player": "p_tank",
+     "type": "fact",
+     "query": "我主玩什么位置",
+     "answer_any": [
+      "坦克"
+     ],
+     "evidence": [
+      "玩家职业是深圳快递分拣员（记于2026-09-05）",
+      "玩家段位是铂金一（记于2026-09-05）",
+      "玩家现在主要玩廉颇（记于2026-08-15）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_tank_q13",
+     "player": "p_tank",
+     "type": "temporal",
+     "query": "我什么时候上的铂金",
+     "answer_any": [
+      "2026-09",
+      "9月"
+     ],
+     "evidence": [
+      "玩家段位是铂金一（记于2026-09-05）",
+      "玩家段位是黄金一（记于2026-07-01；已过时，2026-09-05被新信息取代）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_tank_q14",
+     "player": "p_tank",
+     "type": "negative",
+     "query": "我有没有养宠物",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_tank_q15",
+     "player": "p_tank",
+     "type": "negative",
+     "query": "我喜欢什么颜色",
+     "answer_any": [],
+     "evidence": [
+      "玩家最喜欢英雄是廉颇（记于2026-07-01）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_tank_q16",
+     "player": "p_tank",
+     "type": "negative",
+     "query": "我大学学的什么专业",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_marksman2_q01",
+     "player": "p_marksman2",
+     "type": "update",
+     "query": "我现在读几年级",
+     "answer_any": [
+      "高一"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_marksman2_q02",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "我在哪所学校",
+     "answer_any": [
+      "市一中"
+     ],
+     "evidence": [
+      "玩家的中考成绩优秀，考上了市一中（记于2026-07-02）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_marksman2_q03",
+     "player": "p_marksman2",
+     "type": "update",
+     "query": "我什么时候能玩游戏",
+     "answer_any": [
+      "周末"
+     ],
+     "evidence": [
+      "玩家暑假可以每天玩一会儿游戏（记于2026-07-02）",
+      "玩家的段位是星耀三（2026-09-06）",
+      "玩家的生日是2026-04-20（记于2026-04-03）"
+     ],
+     "success": 0.0,
+     "stale": true,
+     "seed": 2
+    },
+    {
+     "id": "p_marksman2_q04",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "我生日是哪天",
+     "answer_any": [
+      "4月20"
+     ],
+     "evidence": [
+      "玩家的生日是2026-04-20（记于2026-04-03）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_marksman2_q05",
+     "player": "p_marksman2",
+     "type": "update",
+     "query": "我现在最常玩的英雄",
+     "answer_any": [
+      "公孙离"
+     ],
+     "evidence": [
+      "玩家最近迷上了公孙离（记于2026-08-08）",
+      "玩家最喜欢的游戏角色是孙尚香（记于2026-04-03）",
+      "玩家的胜率在使用孙尚香时达到六成（记于2026-04-03）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_marksman2_q06",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "我孙尚香胜率多少",
+     "answer_any": [
+      "六成",
+      "60%"
+     ],
+     "evidence": [
+      "玩家的胜率在使用孙尚香时达到六成（记于2026-04-03）",
+      "玩家最喜欢的游戏角色是孙尚香（记于2026-04-03）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_marksman2_q07",
+     "player": "p_marksman2",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "星耀三"
+     ],
+     "evidence": [
+      "玩家的段位是星耀三（2026-09-06）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_marksman2_q08",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "小林玩什么位置",
+     "answer_any": [
+      "法师"
+     ],
+     "evidence": [
+      "玩家同桌小林玩法师（记于2026-05-16）",
+      "玩家的段位是星耀三（2026-09-06）",
+      "玩家暑假可以每天玩一会儿游戏（记于2026-07-02）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_marksman2_q09",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "小林和我是什么关系",
+     "answer_any": [
+      "同桌",
+      "同一个班",
+      "同班"
+     ],
+     "evidence": [
+      "玩家同桌小林玩法师（记于2026-05-16）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_marksman2_q10",
+     "player": "p_marksman2",
+     "type": "temporal",
+     "query": "我中考什么时候",
+     "answer_any": [
+      "6月"
+     ],
+     "evidence": [
+      "玩家中考在2026-06-15（2026-06-15）",
+      "玩家的中考成绩优秀，考上了市一中（记于2026-07-02）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_marksman2_q11",
+     "player": "p_marksman2",
+     "type": "temporal",
+     "query": "我什么时候掉到钻石的",
+     "answer_any": [
+      "2026-08",
+      "8月"
+     ],
+     "evidence": [
+      "玩家的段位是钻石一（2026-08-08；已过时，2026-09-06被新信息取代）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_marksman2_q12",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "我买了谁的皮肤",
+     "answer_any": [
+      "公孙离"
+     ],
+     "evidence": [
+      "玩家购买了公孙离的新皮肤（记于2026-08-08）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_marksman2_q13",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "我中考考得怎么样",
+     "answer_any": [
+      "市一中"
+     ],
+     "evidence": [
+      "玩家的中考成绩优秀，考上了市一中（记于2026-07-02）",
+      "玩家中考在2026-06-15（2026-06-15）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_marksman2_q14",
+     "player": "p_marksman2",
+     "type": "negative",
+     "query": "我的身高多少",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_marksman2_q15",
+     "player": "p_marksman2",
+     "type": "negative",
+     "query": "我喜欢什么运动",
+     "answer_any": [],
+     "evidence": [
+      "玩家最喜欢的游戏角色是孙尚香（记于2026-04-03）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "p_marksman2_q16",
+     "player": "p_marksman2",
+     "type": "negative",
+     "query": "我爸妈做什么工作",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    }
+   ],
+   "memories": {
+    "p_tank@0": [
+     {
+      "content": "玩家最喜欢英雄是项羽",
+      "keywords": [
+       "项羽"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_a7fb5a19",
+      "created_at": "2026-05-10 20:00:00",
+      "updated_at": "2026-05-10 20:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家在深圳做外卖骑手",
+      "keywords": [
+       "深圳"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_bfeac16a",
+      "created_at": "2026-05-10 20:00:00",
+      "updated_at": "2026-09-05 22:50:00",
+      "event_time": null,
+      "valid_to": "2026-09-05 22:50:00",
+      "superseded_by": "mem_9a733d5d",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是白银一",
+      "keywords": [
+       "白银一"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_4fd93080",
+      "created_at": "2026-05-10 20:00:00",
+      "updated_at": "2026-07-01 23:00:00",
+      "event_time": null,
+      "valid_to": "2026-07-01 23:00:00",
+      "superseded_by": "mem_9ec53155",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家生日在2026-05-31",
+      "keywords": [
+       "2026-05-31"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "id": "mem_262262ea",
+      "created_at": "2026-06-02 22:30:00",
+      "updated_at": "2026-09-05 22:50:00",
+      "event_time": "2026-05-31",
+      "valid_to": "2026-09-05 22:50:00",
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家前天用项羽拿了个五杀",
+      "keywords": [
+       "项羽",
+       "五杀"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "id": "mem_a5bf001a",
+      "created_at": "2026-06-02 22:30:00",
+      "updated_at": "2026-06-02 22:30:00",
+      "event_time": "2026-06-01",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是黄金一",
+      "keywords": [
+       "黄金一",
+       "白银一"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_9ec53155",
+      "created_at": "2026-07-01 23:00:00",
+      "updated_at": "2026-09-05 22:50:00",
+      "event_time": null,
+      "valid_to": "2026-09-05 22:50:00",
+      "superseded_by": "mem_68edd0fe",
+      "supersedes": "mem_4fd93080",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近开始练廉颇",
+      "keywords": [
+       "廉颇"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "id": "mem_0d604e38",
+      "created_at": "2026-07-01 23:00:00",
+      "updated_at": "2026-08-15 22:40:00",
+      "event_time": null,
+      "valid_to": "2026-08-15 22:40:00",
+      "superseded_by": "mem_84c4bf66",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家用的是OPPO手机",
+      "keywords": [
+       "OPPO"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "id": "mem_a1390af3",
+      "created_at": "2026-07-01 23:00:00",
+      "updated_at": "2026-07-01 23:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家现在主要玩廉颇",
+      "keywords": [
+       "廉颇"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_84c4bf66",
+      "created_at": "2026-08-15 22:40:00",
+      "updated_at": "2026-08-15 22:40:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_0d604e38",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的朋友阿豪去考研了",
+      "keywords": [
+       "阿豪",
+       "考研"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "id": "mem_76bb1bac",
+      "created_at": "2026-08-15 22:40:00",
+      "updated_at": "2026-08-15 22:40:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是铂金",
+      "keywords": [
+       "铂金"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_68edd0fe",
+      "created_at": "2026-09-05 22:50:00",
+      "updated_at": "2026-09-05 22:50:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_9ec53155",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家在深圳的快递站做分拣，下班时间变成晚上八点",
+      "keywords": [
+       "深圳",
+       "快递站",
+       "晚上八点"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_9a733d5d",
+      "created_at": "2026-09-05 22:50:00",
+      "updated_at": "2026-09-05 22:50:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_bfeac16a",
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "p_marksman2@0": [
+     {
+      "content": "玩家最喜欢英雄是孙尚香",
+      "keywords": [
+       "孙尚香"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_43fdafb7",
+      "created_at": "2026-04-03 19:30:00",
+      "updated_at": "2026-04-03 19:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家生日是2026-04-20",
+      "keywords": [
+       "2026-04-20"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "id": "mem_f7e06f43",
+      "created_at": "2026-04-03 19:30:00",
+      "updated_at": "2026-08-08 20:30:00",
+      "event_time": null,
+      "valid_to": "2026-08-08 20:30:00",
+      "superseded_by": "mem_184bdb70",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家胜率有六成",
+      "keywords": [
+       "六成"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_4b308a2e",
+      "created_at": "2026-04-03 19:30:00",
+      "updated_at": "2026-04-03 19:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家是初三学生",
+      "keywords": [
+       "初三"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "id": "mem_0d29ab5e",
+      "created_at": "2026-04-03 19:30:00",
+      "updated_at": "2026-09-06 19:00:00",
+      "event_time": null,
+      "valid_to": "2026-09-06 19:00:00",
+      "superseded_by": "mem_8914a5fd",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家中考在2026-06-15",
+      "keywords": [
+       "中考"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_1c40ff34",
+      "created_at": "2026-05-16 20:00:00",
+      "updated_at": "2026-07-02 21:00:00",
+      "event_time": "2026-06-15",
+      "valid_to": "2026-07-02 21:00:00",
+      "superseded_by": "mem_7dd164cb",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家同桌小林玩法师",
+      "keywords": [
+       "小林",
+       "法师"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "id": "mem_5234bd70",
+      "created_at": "2026-05-16 20:00:00",
+      "updated_at": "2026-05-16 20:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家暑假可以每天玩一会儿游戏",
+      "keywords": [
+       "暑假",
+       "每天玩一会儿游戏"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_f64e56e0",
+      "created_at": "2026-07-02 21:00:00",
+      "updated_at": "2026-08-08 20:30:00",
+      "event_time": null,
+      "valid_to": "2026-08-08 20:30:00",
+      "superseded_by": "mem_1f5eeac0",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家中考在2026-06-15考上了市一中",
+      "keywords": [
+       "2026-06-15",
+       "市一中"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "id": "mem_7dd164cb",
+      "created_at": "2026-07-02 21:00:00",
+      "updated_at": "2026-07-02 21:00:00",
+      "event_time": "2026-06-15",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_1c40ff34",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近迷上了公孙离",
+      "keywords": [
+       "公孙离"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_77c70a37",
+      "created_at": "2026-08-08 20:30:00",
+      "updated_at": "2026-08-08 20:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家购买了公孙离的新皮肤",
+      "keywords": [
+       "公孙离"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "id": "mem_7ba1fd33",
+      "created_at": "2026-08-08 20:30:00",
+      "updated_at": "2026-08-08 20:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的生日是2026-04-20",
+      "keywords": [
+       "2026-04-20"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "id": "mem_184bdb70",
+      "created_at": "2026-08-08 20:30:00",
+      "updated_at": "2026-09-06 19:00:00",
+      "event_time": null,
+      "valid_to": "2026-09-06 19:00:00",
+      "superseded_by": "mem_1d80b502",
+      "supersedes": "mem_f7e06f43",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家现在段位掉到钻石一",
+      "keywords": [
+       "钻石一"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "id": "mem_1f5eeac0",
+      "created_at": "2026-08-08 20:30:00",
+      "updated_at": "2026-09-06 19:00:00",
+      "event_time": null,
+      "valid_to": "2026-09-06 19:00:00",
+      "superseded_by": "mem_bbabf41a",
+      "supersedes": "mem_f64e56e0",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家现在是高一学生",
+      "keywords": [
+       "高一"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "id": "mem_8914a5fd",
+      "created_at": "2026-09-06 19:00:00",
+      "updated_at": "2026-09-06 19:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_0d29ab5e",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家和小林分到了同一个班级",
+      "keywords": [
+       "小林"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "id": "mem_bbabf41a",
+      "created_at": "2026-09-06 19:00:00",
+      "updated_at": "2026-09-06 19:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_1f5eeac0",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的生日是2026-09-05",
+      "keywords": [
+       "2026-09-05"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "id": "mem_1d80b502",
+      "created_at": "2026-09-06 19:00:00",
+      "updated_at": "2026-09-06 19:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_184bdb70",
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "p_tank@1": [
+     {
+      "content": "玩家最喜欢英雄是项羽",
+      "keywords": [
+       "项羽"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_8a484a14",
+      "created_at": "2026-05-10 20:00:00",
+      "updated_at": "2026-07-01 23:00:00",
+      "event_time": null,
+      "valid_to": "2026-07-01 23:00:00",
+      "superseded_by": "mem_c197b938",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家职业是深圳外卖骑手",
+      "keywords": [
+       "深圳"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_1a650417",
+      "created_at": "2026-05-10 20:00:00",
+      "updated_at": "2026-09-05 22:50:00",
+      "event_time": null,
+      "valid_to": "2026-09-05 22:50:00",
+      "superseded_by": "mem_0db94574",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是白银一",
+      "keywords": [
+       "白银一"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_188b0e78",
+      "created_at": "2026-05-10 20:00:00",
+      "updated_at": "2026-07-01 23:00:00",
+      "event_time": null,
+      "valid_to": "2026-07-01 23:00:00",
+      "superseded_by": "mem_f395f311",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家有一个游戏好友叫阿豪",
+      "keywords": [
+       "阿豪"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "id": "mem_8990dd6d",
+      "created_at": "2026-06-02 22:30:00",
+      "updated_at": "2026-06-02 22:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是黄金一",
+      "keywords": [
+       "黄金一",
+       "白银一"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_f395f311",
+      "created_at": "2026-07-01 23:00:00",
+      "updated_at": "2026-09-05 22:50:00",
+      "event_time": null,
+      "valid_to": "2026-09-05 22:50:00",
+      "superseded_by": "mem_4c84e53a",
+      "supersedes": "mem_188b0e78",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最喜欢英雄是廉颇",
+      "keywords": [
+       "廉颇"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_c197b938",
+      "created_at": "2026-07-01 23:00:00",
+      "updated_at": "2026-07-01 23:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_8a484a14",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家用的是OPPO手机",
+      "keywords": [
+       "OPPO"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "id": "mem_b977bf38",
+      "created_at": "2026-07-01 23:00:00",
+      "updated_at": "2026-07-01 23:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家现在主要玩廉颇",
+      "keywords": [
+       "廉颇"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_b2f98ad6",
+      "created_at": "2026-08-15 22:40:00",
+      "updated_at": "2026-08-15 22:40:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的队友阿豪最近去考研了",
+      "keywords": [
+       "阿豪"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "id": "mem_e1fbf108",
+      "created_at": "2026-08-15 22:40:00",
+      "updated_at": "2026-08-15 22:40:00",
+      "event_time": "2026-08-15",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是铂金一",
+      "keywords": [
+       "铂金一",
+       "黄金一"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_4c84e53a",
+      "created_at": "2026-09-05 22:50:00",
+      "updated_at": "2026-09-05 22:50:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_f395f311",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家职业是深圳快递分拣员",
+      "keywords": [
+       "深圳快递分拣员"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "id": "mem_0db94574",
+      "created_at": "2026-09-05 22:50:00",
+      "updated_at": "2026-09-05 22:50:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_1a650417",
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "p_marksman2@1": [
+     {
+      "content": "玩家最喜欢的游戏角色是孙尚香",
+      "keywords": [
+       "孙尚香"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_8a6fb309",
+      "created_at": "2026-04-03 19:30:00",
+      "updated_at": "2026-04-03 19:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的生日是2026-04-20",
+      "keywords": [
+       "2026-04-20"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "id": "mem_7105147a",
+      "created_at": "2026-04-03 19:30:00",
+      "updated_at": "2026-04-03 19:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的胜率在使用孙尚香时为六成",
+      "keywords": [
+       "孙尚香"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_cfdf9804",
+      "created_at": "2026-04-03 19:30:00",
+      "updated_at": "2026-04-03 19:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家中考在2026-06-15",
+      "keywords": [
+       "2026-06-15",
+       "中考"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_cb0da9d5",
+      "created_at": "2026-05-16 20:00:00",
+      "updated_at": "2026-05-16 20:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家同桌小林玩法师",
+      "keywords": [
+       "小林",
+       "法师"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "id": "mem_9a49ea19",
+      "created_at": "2026-05-16 20:00:00",
+      "updated_at": "2026-05-16 20:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家计划在暑假每天玩一会儿游戏",
+      "keywords": [
+       "暑假",
+       "玩游戏"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_cb9bd183",
+      "created_at": "2026-07-02 21:00:00",
+      "updated_at": "2026-09-06 19:00:00",
+      "event_time": null,
+      "valid_to": "2026-09-06 19:00:00",
+      "superseded_by": "mem_124f15b2",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的游戏段位是星耀四",
+      "keywords": [
+       "星耀四"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_85da678d",
+      "created_at": "2026-07-02 21:00:00",
+      "updated_at": "2026-08-08 20:30:00",
+      "event_time": null,
+      "valid_to": "2026-08-08 20:30:00",
+      "superseded_by": "mem_ad603f80",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近迷上了公孙离",
+      "keywords": [
+       "公孙离"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_6953d505",
+      "created_at": "2026-08-08 20:30:00",
+      "updated_at": "2026-08-08 20:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家购买了公孙离的新皮肤",
+      "keywords": [
+       "公孙离"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "id": "mem_1f850993",
+      "created_at": "2026-08-08 20:30:00",
+      "updated_at": "2026-08-08 20:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家现在段位掉到钻石一",
+      "keywords": [
+       "钻石一"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_ad603f80",
+      "created_at": "2026-08-08 20:30:00",
+      "updated_at": "2026-08-08 20:30:00",
+      "event_time": "2026-08-08",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_85da678d",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家计划在2026-09-06每天玩一会儿游戏",
+      "keywords": [
+       "2026-09-06"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_124f15b2",
+      "created_at": "2026-09-06 19:00:00",
+      "updated_at": "2026-09-06 19:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_cb9bd183",
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "p_tank@2": [
+     {
+      "content": "玩家最喜欢英雄是项羽",
+      "keywords": [
+       "项羽"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_7c97b0db",
+      "created_at": "2026-05-10 20:00:00",
+      "updated_at": "2026-07-01 23:00:00",
+      "event_time": null,
+      "valid_to": "2026-07-01 23:00:00",
+      "superseded_by": "mem_60b52264",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家职业是深圳外卖骑手",
+      "keywords": [
+       "深圳"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_dcc934a0",
+      "created_at": "2026-05-10 20:00:00",
+      "updated_at": "2026-09-05 22:50:00",
+      "event_time": null,
+      "valid_to": "2026-09-05 22:50:00",
+      "superseded_by": "mem_e87d3a46",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是白银一",
+      "keywords": [
+       "白银一"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_803b2489",
+      "created_at": "2026-05-10 20:00:00",
+      "updated_at": "2026-07-01 23:00:00",
+      "event_time": null,
+      "valid_to": "2026-07-01 23:00:00",
+      "superseded_by": "mem_7ccc6e18",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家有一个游戏好友叫阿豪",
+      "keywords": [
+       "阿豪"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "id": "mem_640c8fc5",
+      "created_at": "2026-06-02 22:30:00",
+      "updated_at": "2026-06-02 22:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是黄金一",
+      "keywords": [
+       "黄金一",
+       "白银一"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_7ccc6e18",
+      "created_at": "2026-07-01 23:00:00",
+      "updated_at": "2026-09-05 22:50:00",
+      "event_time": null,
+      "valid_to": "2026-09-05 22:50:00",
+      "superseded_by": "mem_2806129a",
+      "supersedes": "mem_803b2489",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最喜欢英雄是廉颇",
+      "keywords": [
+       "廉颇"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_60b52264",
+      "created_at": "2026-07-01 23:00:00",
+      "updated_at": "2026-07-01 23:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_7c97b0db",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家用的是OPPO手机",
+      "keywords": [
+       "OPPO"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "id": "mem_682c8b4b",
+      "created_at": "2026-07-01 23:00:00",
+      "updated_at": "2026-07-01 23:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家现在主要玩廉颇",
+      "keywords": [
+       "廉颇"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_21125d10",
+      "created_at": "2026-08-15 22:40:00",
+      "updated_at": "2026-08-15 22:40:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的队友阿豪最近去考研了",
+      "keywords": [
+       "阿豪",
+       "考研"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "id": "mem_9355c71c",
+      "created_at": "2026-08-15 22:40:00",
+      "updated_at": "2026-08-15 22:40:00",
+      "event_time": "2026-08-15",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是铂金一",
+      "keywords": [
+       "铂金一",
+       "黄金一"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_2806129a",
+      "created_at": "2026-09-05 22:50:00",
+      "updated_at": "2026-09-05 22:50:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_7ccc6e18",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家职业是深圳快递分拣员",
+      "keywords": [
+       "深圳快递分拣员"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "id": "mem_e87d3a46",
+      "created_at": "2026-09-05 22:50:00",
+      "updated_at": "2026-09-05 22:50:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_dcc934a0",
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "p_marksman2@2": [
+     {
+      "content": "玩家最喜欢的游戏角色是孙尚香",
+      "keywords": [
+       "孙尚香"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_fda80f1f",
+      "created_at": "2026-04-03 19:30:00",
+      "updated_at": "2026-04-03 19:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的生日是2026-04-20",
+      "keywords": [
+       "2026-04-20"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "id": "mem_21df1316",
+      "created_at": "2026-04-03 19:30:00",
+      "updated_at": "2026-04-03 19:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的胜率在使用孙尚香时达到六成",
+      "keywords": [
+       "孙尚香"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_92991a54",
+      "created_at": "2026-04-03 19:30:00",
+      "updated_at": "2026-04-03 19:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家中考在2026-06-15",
+      "keywords": [
+       "2026-06-15",
+       "中考"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_ac30fc9d",
+      "created_at": "2026-05-16 20:00:00",
+      "updated_at": "2026-05-16 20:00:00",
+      "event_time": "2026-06-15",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家同桌小林玩法师",
+      "keywords": [
+       "2026-06-15",
+       "同桌小林",
+       "法师"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "id": "mem_3cc6988c",
+      "created_at": "2026-05-16 20:00:00",
+      "updated_at": "2026-05-16 20:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的中考成绩优秀，考上了市一中",
+      "keywords": [
+       "中考",
+       "市一中"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_c5d101d5",
+      "created_at": "2026-07-02 21:00:00",
+      "updated_at": "2026-07-02 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家暑假可以每天玩一会儿游戏",
+      "keywords": [
+       "暑假",
+       "玩游戏"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_bc2a4957",
+      "created_at": "2026-07-02 21:00:00",
+      "updated_at": "2026-07-02 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是星耀四",
+      "keywords": [
+       "星耀四"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_6cd97c56",
+      "created_at": "2026-07-02 21:00:00",
+      "updated_at": "2026-08-08 20:30:00",
+      "event_time": null,
+      "valid_to": "2026-08-08 20:30:00",
+      "superseded_by": "mem_794e392f",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近迷上了公孙离",
+      "keywords": [
+       "公孙离"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_baed8221",
+      "created_at": "2026-08-08 20:30:00",
+      "updated_at": "2026-08-08 20:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家购买了公孙离的新皮肤",
+      "keywords": [
+       "公孙离"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "id": "mem_dabef425",
+      "created_at": "2026-08-08 20:30:00",
+      "updated_at": "2026-08-08 20:30:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的段位是钻石一",
+      "keywords": [
+       "钻石一"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "id": "mem_794e392f",
+      "created_at": "2026-08-08 20:30:00",
+      "updated_at": "2026-09-06 19:00:00",
+      "event_time": "2026-08-08",
+      "valid_to": "2026-09-06 19:00:00",
+      "superseded_by": "mem_ffce04a8",
+      "supersedes": "mem_6cd97c56",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的段位是星耀三",
+      "keywords": [
+       "段位",
+       "星耀"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "id": "mem_ffce04a8",
+      "created_at": "2026-09-06 19:00:00",
+      "updated_at": "2026-09-06 19:00:00",
+      "event_time": "2026-09-06",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_794e392f",
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ]
+   }
+  },
+  "v0-pipeline": {
+   "E2EScore": 0.2188,
+   "Answer@3": 0.0385,
+   "StaleRate": 0.0,
+   "Abstain": 1.0,
+   "by_type": {
+    "fact": 0.0833,
+    "negative": 1.0,
+    "temporal": 0.0,
+    "update": 0.0
+   },
+   "n": 32,
+   "minutes": 3.8,
+   "ingest_errors": [],
+   "rows": [
+    {
+     "id": "p_tank_q01",
+     "player": "p_tank",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "铂金"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q02",
+     "player": "p_tank",
+     "type": "update",
+     "query": "我现在做什么工作",
+     "answer_any": [
+      "分拣",
+      "快递站"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q03",
+     "player": "p_tank",
+     "type": "update",
+     "query": "我一般几点上线",
+     "answer_any": [
+      "八点半",
+      "8点半",
+      "20:30"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q04",
+     "player": "p_tank",
+     "type": "fact",
+     "query": "我在哪个城市",
+     "answer_any": [
+      "深圳"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q05",
+     "player": "p_tank",
+     "type": "temporal",
+     "query": "我生日是哪天",
+     "answer_any": [
+      "6月2",
+      "06-02"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q06",
+     "player": "p_tank",
+     "type": "fact",
+     "query": "我今年多大",
+     "answer_any": [
+      "26"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q07",
+     "player": "p_tank",
+     "type": "temporal",
+     "query": "我什么时候拿的五杀",
+     "answer_any": [
+      "5月31",
+      "2026-05-31"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q08",
+     "player": "p_tank",
+     "type": "update",
+     "query": "我现在主玩哪个英雄",
+     "answer_any": [
+      "廉颇"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q09",
+     "player": "p_tank",
+     "type": "fact",
+     "query": "阿豪为什么不玩了",
+     "answer_any": [
+      "考研"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q10",
+     "player": "p_tank",
+     "type": "update",
+     "query": "我现在单排还是双排",
+     "answer_any": [
+      "单排"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q11",
+     "player": "p_tank",
+     "type": "fact",
+     "query": "我用什么手机",
+     "answer_any": [
+      "OPPO"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q12",
+     "player": "p_tank",
+     "type": "fact",
+     "query": "我主玩什么位置",
+     "answer_any": [
+      "坦克"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q13",
+     "player": "p_tank",
+     "type": "temporal",
+     "query": "我什么时候上的铂金",
+     "answer_any": [
+      "2026-09",
+      "9月"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q14",
+     "player": "p_tank",
+     "type": "negative",
+     "query": "我有没有养宠物",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q15",
+     "player": "p_tank",
+     "type": "negative",
+     "query": "我喜欢什么颜色",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_tank_q16",
+     "player": "p_tank",
+     "type": "negative",
+     "query": "我大学学的什么专业",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q01",
+     "player": "p_marksman2",
+     "type": "update",
+     "query": "我现在读几年级",
+     "answer_any": [
+      "高一"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q02",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "我在哪所学校",
+     "answer_any": [
+      "市一中"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q03",
+     "player": "p_marksman2",
+     "type": "update",
+     "query": "我什么时候能玩游戏",
+     "answer_any": [
+      "周末"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q04",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "我生日是哪天",
+     "answer_any": [
+      "4月20"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q05",
+     "player": "p_marksman2",
+     "type": "update",
+     "query": "我现在最常玩的英雄",
+     "answer_any": [
+      "公孙离"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q06",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "我孙尚香胜率多少",
+     "answer_any": [
+      "六成",
+      "60%"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q07",
+     "player": "p_marksman2",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "星耀三"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q08",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "小林玩什么位置",
+     "answer_any": [
+      "法师"
+     ],
+     "evidence": [
+      "玩家在高中高一期间打回了星耀三，玩家的同学小林和他分到了同一个班"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q09",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "小林和我是什么关系",
+     "answer_any": [
+      "同桌",
+      "同一个班",
+      "同班"
+     ],
+     "evidence": [
+      "玩家在高中高一期间打回了星耀三，玩家的同学小林和他分到了同一个班"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q10",
+     "player": "p_marksman2",
+     "type": "temporal",
+     "query": "我中考什么时候",
+     "answer_any": [
+      "6月"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q11",
+     "player": "p_marksman2",
+     "type": "temporal",
+     "query": "我什么时候掉到钻石的",
+     "answer_any": [
+      "2026-08",
+      "8月"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q12",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "我买了谁的皮肤",
+     "answer_any": [
+      "公孙离"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q13",
+     "player": "p_marksman2",
+     "type": "fact",
+     "query": "我中考考得怎么样",
+     "answer_any": [
+      "市一中"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q14",
+     "player": "p_marksman2",
+     "type": "negative",
+     "query": "我的身高多少",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q15",
+     "player": "p_marksman2",
+     "type": "negative",
+     "query": "我喜欢什么运动",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "p_marksman2_q16",
+     "player": "p_marksman2",
+     "type": "negative",
+     "query": "我爸妈做什么工作",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    }
+   ],
+   "memories": {
+    "p_tank@0": [],
+    "p_marksman2@0": [
+     {
+      "id": "mem_10bbe7d0",
+      "keywords": "高中高一打回星耀三, 同班同学小林",
+      "content": "玩家在高中高一期间打回了星耀三，玩家的同学小林和他分到了同一个班",
+      "source": "chat",
+      "valid": 1,
+      "priority": 3,
+      "create_time": "2026-09-24 12:23:11",
+      "update_time": "2026-09-24 12:23:11",
+      "access_count": 2,
+      "last_access_time": "2026-09-24 12:23:28"
+     }
+    ]
+   }
+  }
+ }
+}

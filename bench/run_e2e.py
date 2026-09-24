@@ -135,7 +135,10 @@ def judge(q: Dict, evidence: List[str]) -> Tuple[float, bool]:
     text = normalize_dates("\n".join(evidence))
     if q["type"] == "negative":
         return (1.0 if not evidence else 0.0), False
-    hit = any(a in text for a in q["answer_any"])
+    if q.get("answer_all"):  # trajectories: every state must be recalled
+        hit = all(a in text for a in q["answer_all"])
+    else:
+        hit = any(a in text for a in q["answer_any"])
     stale = any(s in text for s in q.get("stale_any", []))
     ok = hit and not (q["type"] == "update" and stale)
     return (1.0 if ok else 0.0), stale
@@ -153,7 +156,7 @@ def run_player(system, player, errors: List[str]) -> List[Dict]:
         ev = system.evidence(q["query"], ask)
         success, stale = judge(q, ev)
         rows.append({"id": q["id"], "player": player["id"], "type": q["type"], "query": q["query"],
-                     "answer_any": q["answer_any"], "evidence": ev, "success": success, "stale": stale})
+                     "answer_any": q["answer_any"] or q.get("answer_all", []), "evidence": ev, "success": success, "stale": stale})
     return rows
 
 
@@ -203,7 +206,8 @@ def rejudge(path: str, data_path: str, show_errors: bool) -> Dict:
         for row in res["rows"]:
             q = qs[row["id"]]
             success, stale = judge(q, row["evidence"])
-            rows.append(dict(row, answer_any=q["answer_any"], success=success, stale=stale))
+            rows.append(dict(row, answer_any=q["answer_any"] or q.get("answer_all", []),
+                             success=success, stale=stale))
         results[name] = dict(summarize(rows), rows=rows)
     print_results(results, f"rejudged {os.path.basename(path)}  model={saved.get('model')}", show_errors)
     return results
