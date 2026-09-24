@@ -73,7 +73,7 @@ class RetrievalConfig:
         """Recall-oriented variant for the write path: any lexical overlap or
         a looser semantic match qualifies, and the LLM decides what to do."""
         return replace(self, min_lexical_coverage=0.0, min_dense=self.min_dense - 0.05,
-                       dense_margin=1.0, w_recency=0.0)
+                       dense_margin=1.0, w_recency=0.0, require_specific=False)
 
     @classmethod
     def for_embedder(cls, embedder, **kw) -> "RetrievalConfig":

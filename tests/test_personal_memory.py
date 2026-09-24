@@ -278,3 +278,11 @@ def test_per_turn_extraction_reads_each_player_line(tmp_path):
     prompts_seen = [c["prompt"] for c in llm.calls]
     assert len(prompts_seen) == 2
     assert "我是护士" in prompts_seen[0] and "我主玩瑶" not in prompts_seen[0]
+
+
+def test_candidate_retrieval_stays_recall_oriented():
+    from gamememo.personal.retrieval import RetrievalConfig
+
+    strict = RetrievalConfig(require_specific=True, min_dense_alone=0.4)
+    loose = strict.for_candidates()
+    assert not loose.require_specific and loose.min_lexical_coverage == 0.0
