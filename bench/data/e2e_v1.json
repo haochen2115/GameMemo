@@ -1,0 +1,902 @@
+{
+ "name": "player_memory_e2e",
+ "version": 1,
+ "description": "End-to-end write+read benchmark. Sessions are ingested in date order with a real LLM; questions are asked at ask_at. A question is answered if a retrieved memory (content+event_time) contains any answer_any string; update questions also check stale_any. dev=p_support, test=p_tank+p_marksman2, committed before any system ran on them.",
+ "players": [
+  {
+   "id": "p_support",
+   "split": "dev",
+   "ask_at": "2026-09-10 20:00:00",
+   "sessions": [
+    {
+     "date": "2026-06-01 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "你好呀，我刚开始玩王者，是被我老公拉进来的"
+      },
+      {
+       "role": "assistant",
+       "content": "欢迎欢迎！你老公也玩吗？"
+      },
+      {
+       "role": "user",
+       "content": "对，他玩打野，我就跟着他玩辅助，主要玩瑶"
+      },
+      {
+       "role": "assistant",
+       "content": "瑶很适合新手，跟着打野一起走很舒服~"
+      },
+      {
+       "role": "user",
+       "content": "我是护士，经常上夜班，所以一般工作日下午玩"
+      },
+      {
+       "role": "assistant",
+       "content": "辛苦啦，下午玩几局放松一下挺好的。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-15 15:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我今天升到黄金了！"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜恭喜！进步好快！"
+      },
+      {
+       "role": "user",
+       "content": "最近在练大乔，感觉二技能传送好难"
+      },
+      {
+       "role": "assistant",
+       "content": "大乔需要多练意识，慢慢来。"
+      },
+      {
+       "role": "user",
+       "content": "对了我生日快到了，6月28号"
+      },
+      {
+       "role": "assistant",
+       "content": "记住啦，到时候给你送祝福！"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-05 16:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我换了新手机，华为Mate 70，打游戏终于不卡了"
+      },
+      {
+       "role": "assistant",
+       "content": "新手机打游戏体验肯定好多了！"
+      },
+      {
+       "role": "user",
+       "content": "昨天和老公双排连赢了十把"
+      },
+      {
+       "role": "assistant",
+       "content": "夫妻双排太强了！"
+      },
+      {
+       "role": "user",
+       "content": "我现在已经铂金了"
+      },
+      {
+       "role": "assistant",
+       "content": "厉害，继续冲！"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-10 14:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "最近不怎么玩大乔了，还是瑶顺手"
+      },
+      {
+       "role": "assistant",
+       "content": "找到顺手的英雄最重要。"
+      },
+      {
+       "role": "user",
+       "content": "我在准备考护师证，这个月玩得少"
+      },
+      {
+       "role": "assistant",
+       "content": "考试加油，游戏可以先放一放。"
+      },
+      {
+       "role": "user",
+       "content": "我最讨厌有人说辅助没用"
+      },
+      {
+       "role": "assistant",
+       "content": "辅助明明超重要的！"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-01 15:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "告诉你个好消息，我上钻石了！"
+      },
+      {
+       "role": "assistant",
+       "content": "哇，从黄金一路打到钻石，太棒了！"
+      },
+      {
+       "role": "user",
+       "content": "接下来我打算学张飞，想当个能开团的辅助"
+      },
+      {
+       "role": "assistant",
+       "content": "张飞开团很强，适合你！"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "query": "我现在什么段位",
+     "type": "update",
+     "answer_any": [
+      "钻石"
+     ],
+     "stale_any": [
+      "黄金",
+      "铂金"
+     ],
+     "id": "p_support_q01"
+    },
+    {
+     "query": "我老公玩什么位置",
+     "type": "fact",
+     "answer_any": [
+      "打野"
+     ],
+     "stale_any": [],
+     "id": "p_support_q02"
+    },
+    {
+     "query": "我是做什么工作的",
+     "type": "fact",
+     "answer_any": [
+      "护士"
+     ],
+     "stale_any": [],
+     "id": "p_support_q03"
+    },
+    {
+     "query": "我一般什么时候玩游戏",
+     "type": "fact",
+     "answer_any": [
+      "下午"
+     ],
+     "stale_any": [],
+     "id": "p_support_q04"
+    },
+    {
+     "query": "我生日是哪天",
+     "type": "fact",
+     "answer_any": [
+      "6月28"
+     ],
+     "stale_any": [],
+     "id": "p_support_q05"
+    },
+    {
+     "query": "我用什么手机",
+     "type": "update",
+     "answer_any": [
+      "华为",
+      "Mate"
+     ],
+     "stale_any": [],
+     "id": "p_support_q06"
+    },
+    {
+     "query": "我和老公双排最多连赢几把",
+     "type": "fact",
+     "answer_any": [
+      "十把",
+      "10把",
+      "连赢"
+     ],
+     "stale_any": [],
+     "id": "p_support_q07"
+    },
+    {
+     "query": "我接下来想学什么英雄",
+     "type": "update",
+     "answer_any": [
+      "张飞"
+     ],
+     "stale_any": [],
+     "id": "p_support_q08"
+    },
+    {
+     "query": "我还在练大乔吗",
+     "type": "update",
+     "answer_any": [
+      "不怎么玩大乔",
+      "瑶顺手",
+      "不玩大乔",
+      "很少玩大乔"
+     ],
+     "stale_any": [],
+     "id": "p_support_q09"
+    },
+    {
+     "query": "我什么时候升的铂金",
+     "type": "temporal",
+     "answer_any": [
+      "2026-07",
+      "7月"
+     ],
+     "stale_any": [],
+     "id": "p_support_q10"
+    },
+    {
+     "query": "我什么时候上的钻石",
+     "type": "temporal",
+     "answer_any": [
+      "2026-09",
+      "9月"
+     ],
+     "stale_any": [],
+     "id": "p_support_q11"
+    },
+    {
+     "query": "我最近为什么玩得少",
+     "type": "fact",
+     "answer_any": [
+      "护师"
+     ],
+     "stale_any": [],
+     "id": "p_support_q12"
+    },
+    {
+     "query": "我最讨厌别人说什么",
+     "type": "fact",
+     "answer_any": [
+      "辅助没用"
+     ],
+     "stale_any": [],
+     "id": "p_support_q13"
+    },
+    {
+     "query": "我的身高是多少",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "p_support_q14"
+    },
+    {
+     "query": "我喜欢吃什么",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "p_support_q15"
+    },
+    {
+     "query": "我家住在哪个城市",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "p_support_q16"
+    }
+   ]
+  },
+  {
+   "id": "p_tank",
+   "split": "test",
+   "ask_at": "2026-09-12 21:00:00",
+   "sessions": [
+    {
+     "date": "2026-05-10 20:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "哈喽，我主玩坦克，最喜欢项羽"
+      },
+      {
+       "role": "assistant",
+       "content": "项羽开团很猛！"
+      },
+      {
+       "role": "user",
+       "content": "我在深圳做外卖骑手，一般晚上收工后十点多才上线"
+      },
+      {
+       "role": "assistant",
+       "content": "辛苦了，晚上放松一下。"
+      },
+      {
+       "role": "user",
+       "content": "我段位是白银一"
+      },
+      {
+       "role": "assistant",
+       "content": "慢慢往上打！"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-02 22:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天是我生日，我26岁了"
+      },
+      {
+       "role": "assistant",
+       "content": "生日快乐！"
+      },
+      {
+       "role": "user",
+       "content": "我前天用项羽拿了个五杀，太爽了"
+      },
+      {
+       "role": "assistant",
+       "content": "坦克五杀，太难得了！"
+      },
+      {
+       "role": "user",
+       "content": "我的游戏好友里有个叫阿豪的，我们经常一起开黑"
+      },
+      {
+       "role": "assistant",
+       "content": "有固定队友真好。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-01 23:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我段位到黄金了"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜！"
+      },
+      {
+       "role": "user",
+       "content": "最近开始练廉颇，项羽被削弱了"
+      },
+      {
+       "role": "assistant",
+       "content": "廉颇也很肉，适合你。"
+      },
+      {
+       "role": "user",
+       "content": "我用的是OPPO手机"
+      },
+      {
+       "role": "assistant",
+       "content": "好的。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-15 22:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我现在廉颇玩得比项羽多了"
+      },
+      {
+       "role": "assistant",
+       "content": "看来廉颇更顺手了。"
+      },
+      {
+       "role": "user",
+       "content": "阿豪最近不玩了，他去考研了"
+      },
+      {
+       "role": "assistant",
+       "content": "那你最近是单排多吗？"
+      },
+      {
+       "role": "user",
+       "content": "对，现在基本单排"
+      },
+      {
+       "role": "assistant",
+       "content": "单排也能练意识。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-05 22:50:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我终于上铂金了！"
+      },
+      {
+       "role": "assistant",
+       "content": "太棒了！"
+      },
+      {
+       "role": "user",
+       "content": "我跳槽了，现在在快递站做分拣，下班时间变成晚上八点"
+      },
+      {
+       "role": "assistant",
+       "content": "那上线时间也会早一些吧？"
+      },
+      {
+       "role": "user",
+       "content": "对，现在一般八点半就上线"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "query": "我现在什么段位",
+     "type": "update",
+     "answer_any": [
+      "铂金"
+     ],
+     "stale_any": [
+      "白银",
+      "黄金"
+     ],
+     "id": "p_tank_q01"
+    },
+    {
+     "query": "我现在做什么工作",
+     "type": "update",
+     "answer_any": [
+      "分拣",
+      "快递站"
+     ],
+     "stale_any": [
+      "外卖"
+     ],
+     "id": "p_tank_q02"
+    },
+    {
+     "query": "我一般几点上线",
+     "type": "update",
+     "answer_any": [
+      "八点半",
+      "8点半",
+      "20:30"
+     ],
+     "stale_any": [
+      "十点"
+     ],
+     "id": "p_tank_q03"
+    },
+    {
+     "query": "我在哪个城市",
+     "type": "fact",
+     "answer_any": [
+      "深圳"
+     ],
+     "stale_any": [],
+     "id": "p_tank_q04"
+    },
+    {
+     "query": "我生日是哪天",
+     "type": "temporal",
+     "answer_any": [
+      "6月2",
+      "06-02"
+     ],
+     "stale_any": [],
+     "id": "p_tank_q05"
+    },
+    {
+     "query": "我今年多大",
+     "type": "fact",
+     "answer_any": [
+      "26"
+     ],
+     "stale_any": [],
+     "id": "p_tank_q06"
+    },
+    {
+     "query": "我什么时候拿的五杀",
+     "type": "temporal",
+     "answer_any": [
+      "5月31",
+      "2026-05-31"
+     ],
+     "stale_any": [],
+     "id": "p_tank_q07"
+    },
+    {
+     "query": "我现在主玩哪个英雄",
+     "type": "update",
+     "answer_any": [
+      "廉颇"
+     ],
+     "stale_any": [],
+     "id": "p_tank_q08"
+    },
+    {
+     "query": "阿豪为什么不玩了",
+     "type": "fact",
+     "answer_any": [
+      "考研"
+     ],
+     "stale_any": [],
+     "id": "p_tank_q09"
+    },
+    {
+     "query": "我现在单排还是双排",
+     "type": "update",
+     "answer_any": [
+      "单排"
+     ],
+     "stale_any": [],
+     "id": "p_tank_q10"
+    },
+    {
+     "query": "我用什么手机",
+     "type": "fact",
+     "answer_any": [
+      "OPPO"
+     ],
+     "stale_any": [],
+     "id": "p_tank_q11"
+    },
+    {
+     "query": "我主玩什么位置",
+     "type": "fact",
+     "answer_any": [
+      "坦克"
+     ],
+     "stale_any": [],
+     "id": "p_tank_q12"
+    },
+    {
+     "query": "我什么时候上的铂金",
+     "type": "temporal",
+     "answer_any": [
+      "2026-09",
+      "9月"
+     ],
+     "stale_any": [],
+     "id": "p_tank_q13"
+    },
+    {
+     "query": "我有没有养宠物",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "p_tank_q14"
+    },
+    {
+     "query": "我喜欢什么颜色",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "p_tank_q15"
+    },
+    {
+     "query": "我大学学的什么专业",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "p_tank_q16"
+    }
+   ]
+  },
+  {
+   "id": "p_marksman2",
+   "split": "test",
+   "ask_at": "2026-09-15 20:00:00",
+   "sessions": [
+    {
+     "date": "2026-04-03 19:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我是初三学生，只有周末能玩"
+      },
+      {
+       "role": "assistant",
+       "content": "学业为重，周末放松一下~"
+      },
+      {
+       "role": "user",
+       "content": "我最喜欢孙尚香，胜率有六成"
+      },
+      {
+       "role": "assistant",
+       "content": "孙尚香很帅！"
+      },
+      {
+       "role": "user",
+       "content": "我生日是4月20日"
+      },
+      {
+       "role": "assistant",
+       "content": "记下啦！"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-16 20:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我中考在6月中旬，这个月开始不玩了"
+      },
+      {
+       "role": "assistant",
+       "content": "中考加油！"
+      },
+      {
+       "role": "user",
+       "content": "我同桌小林也玩，他是法师"
+      },
+      {
+       "role": "assistant",
+       "content": "可以和同学一起玩。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-02 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我中考考完了！考上了市一中"
+      },
+      {
+       "role": "assistant",
+       "content": "太厉害了，恭喜！"
+      },
+      {
+       "role": "user",
+       "content": "暑假可以每天玩一会儿了"
+      },
+      {
+       "role": "assistant",
+       "content": "暑假好好放松！"
+      },
+      {
+       "role": "user",
+       "content": "我段位是星耀四"
+      },
+      {
+       "role": "assistant",
+       "content": "不错不错。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-08 20:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我最近迷上了公孙离，比孙尚香玩得还多"
+      },
+      {
+       "role": "assistant",
+       "content": "公孙离操作上限很高！"
+      },
+      {
+       "role": "user",
+       "content": "我买了公孙离的新皮肤"
+      },
+      {
+       "role": "assistant",
+       "content": "皮肤好看吗？"
+      },
+      {
+       "role": "user",
+       "content": "我现在段位掉到钻石一了，心态有点崩"
+      },
+      {
+       "role": "assistant",
+       "content": "别急，调整状态再冲。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-06 19:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "开学了，高一住校，又只能周末玩了"
+      },
+      {
+       "role": "assistant",
+       "content": "高中生活加油！"
+      },
+      {
+       "role": "user",
+       "content": "小林和我分到同一个班了"
+      },
+      {
+       "role": "assistant",
+       "content": "太巧了！"
+      },
+      {
+       "role": "user",
+       "content": "我打回星耀了，现在星耀三"
+      },
+      {
+       "role": "assistant",
+       "content": "回来了！"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "query": "我现在读几年级",
+     "type": "update",
+     "answer_any": [
+      "高一"
+     ],
+     "stale_any": [
+      "初三"
+     ],
+     "id": "p_marksman2_q01"
+    },
+    {
+     "query": "我在哪所学校",
+     "type": "fact",
+     "answer_any": [
+      "市一中"
+     ],
+     "stale_any": [],
+     "id": "p_marksman2_q02"
+    },
+    {
+     "query": "我什么时候能玩游戏",
+     "type": "update",
+     "answer_any": [
+      "周末"
+     ],
+     "stale_any": [
+      "每天"
+     ],
+     "id": "p_marksman2_q03"
+    },
+    {
+     "query": "我生日是哪天",
+     "type": "fact",
+     "answer_any": [
+      "4月20"
+     ],
+     "stale_any": [],
+     "id": "p_marksman2_q04"
+    },
+    {
+     "query": "我现在最常玩的英雄",
+     "type": "update",
+     "answer_any": [
+      "公孙离"
+     ],
+     "stale_any": [],
+     "id": "p_marksman2_q05"
+    },
+    {
+     "query": "我孙尚香胜率多少",
+     "type": "fact",
+     "answer_any": [
+      "六成",
+      "60%"
+     ],
+     "stale_any": [],
+     "id": "p_marksman2_q06"
+    },
+    {
+     "query": "我现在什么段位",
+     "type": "update",
+     "answer_any": [
+      "星耀三"
+     ],
+     "stale_any": [
+      "星耀四",
+      "钻石"
+     ],
+     "id": "p_marksman2_q07"
+    },
+    {
+     "query": "小林玩什么位置",
+     "type": "fact",
+     "answer_any": [
+      "法师"
+     ],
+     "stale_any": [],
+     "id": "p_marksman2_q08"
+    },
+    {
+     "query": "小林和我是什么关系",
+     "type": "fact",
+     "answer_any": [
+      "同桌",
+      "同一个班",
+      "同班"
+     ],
+     "stale_any": [],
+     "id": "p_marksman2_q09"
+    },
+    {
+     "query": "我中考什么时候",
+     "type": "temporal",
+     "answer_any": [
+      "6月"
+     ],
+     "stale_any": [],
+     "id": "p_marksman2_q10"
+    },
+    {
+     "query": "我什么时候掉到钻石的",
+     "type": "temporal",
+     "answer_any": [
+      "2026-08",
+      "8月"
+     ],
+     "stale_any": [],
+     "id": "p_marksman2_q11"
+    },
+    {
+     "query": "我买了谁的皮肤",
+     "type": "fact",
+     "answer_any": [
+      "公孙离"
+     ],
+     "stale_any": [],
+     "id": "p_marksman2_q12"
+    },
+    {
+     "query": "我中考考得怎么样",
+     "type": "fact",
+     "answer_any": [
+      "市一中"
+     ],
+     "stale_any": [],
+     "id": "p_marksman2_q13"
+    },
+    {
+     "query": "我的身高多少",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "p_marksman2_q14"
+    },
+    {
+     "query": "我喜欢什么运动",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "p_marksman2_q15"
+    },
+    {
+     "query": "我爸妈做什么工作",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "p_marksman2_q16"
+    }
+   ]
+  }
+ ]
+}
