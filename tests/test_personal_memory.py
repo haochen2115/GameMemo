@@ -273,7 +273,7 @@ def test_history_recall_answers_questions_about_the_past(tmp_path):
 
 def test_per_turn_extraction_reads_each_player_line(tmp_path):
     llm = FakeLLM(lambda p, s: {"facts": []} if "值得长期记住" in p else {"operations": []})
-    mem = make(tmp_path, llm, per_turn=True)
+    mem = make(tmp_path, llm, per_turn=True, episodes=False, promises=False)
     mem.ingest("玩家: 我是护士\n助手: 辛苦了\n玩家: 我主玩瑶")
     prompts_seen = [c["prompt"] for c in llm.calls]
     assert len(prompts_seen) == 2
