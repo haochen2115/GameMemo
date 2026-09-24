@@ -1,5 +1,5 @@
 {
-  "_note": "Pre-registered candidate for promotion to main. Committed before any test run of this branch.",
+  "_note": "Pre-registered candidate P1 (episodic memory, assistant promises, recall modes on top of player-only extraction + history recall). Committed before any test run of this candidate.",
   "retrieval": {"system": "memory-default", "mode": "hold"},
-  "e2e": {"system": "v2+po+history", "mode": "improve", "results": "bench/results/e2e_v1_test.json"}
+  "e2e": {"system": "p1", "mode": "improve", "results": "bench/results/e2e_v2_test.json"}
 }

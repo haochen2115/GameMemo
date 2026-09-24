@@ -79,9 +79,9 @@ class PersonalMemory:
                  history_recall: bool = True,
                  per_turn: bool = False,
                  max_output_tokens: int = 1024,
-                 episodes: bool = False,
-                 promises: bool = False,
-                 recall_modes: bool = False):
+                 episodes: bool = True,
+                 promises: bool = True,
+                 recall_modes: bool = True):
         """
         write_mode: "ops" = extract facts, then the LLM decides
             ADD/UPDATE/DELETE/NOOP against related memories; "slots" = facts
@@ -138,6 +138,9 @@ class PersonalMemory:
         records = self.store.all() if include_history else self.store.active()
         if not EPISODIC_INTENT.search(query):
             records = [r for r in records if r.kind != "episode"]
+        # Promises are recalled when asked about, and shown to the chatbot via
+        # pending_promises(); in ordinary search they only crowd out facts.
+        records = [r for r in records if r.kind != "promise" or not self.recall_modes]
         return self.retriever.search(query, records, top_k=top_k, now=self.clock(),
                                      include_inactive=include_history)
 
@@ -189,6 +192,12 @@ class PersonalMemory:
         core = [r for r in self.store.active() if r.importance >= 5 and r.kind == "fact"]
         core.sort(key=lambda r: r.updated_at or r.created_at, reverse=True)
         return core[:limit]
+
+    def pending_promises(self, limit: int = 3) -> List[MemoryRecord]:
+        """The assistant's most recent promises, kept in mind like a to-do list."""
+        promises = [r for r in self.store.active() if r.kind == "promise"]
+        promises.sort(key=lambda r: r.created_at, reverse=True)
+        return promises[:limit]
 
     def active(self) -> List[MemoryRecord]:
         return self.store.active()

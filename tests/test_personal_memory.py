@@ -347,3 +347,16 @@ def test_episodes_only_answer_questions_about_a_time(tmp_path):
                                kind="episode", event_time="2026-03-02", created_at="2026-03-02 10:00:00"))
     assert [r.content for r in mem.retrieve("我现在什么段位")] == ["玩家段位是钻石"]
     assert any(r.kind == "episode" for r in mem.retrieve("我拿五杀那天发生了什么"))
+
+
+def test_promises_are_kept_in_mind_not_in_ordinary_search(tmp_path):
+    mem = make(tmp_path, recall_modes=True)
+    mem.add("玩家最近在练镜", ["镜", "练习"], 3)
+    mem.store.put(MemoryRecord(content="助手答应每周帮玩家总结一次战绩", keywords=["战绩", "总结"],
+                               kind="promise", created_at="2026-08-01 10:00:00"))
+    assert all(r.kind != "promise" for r in mem.retrieve("我最近在练什么英雄，战绩怎么样"))
+    llm = scripted(reply="好")
+    bot = MemoryChatBot(mem, llm)
+    bot.chat("在吗")
+    assert "【你答应过玩家的事】" in llm.calls[-1]["system"]
+    assert "总结一次战绩" in llm.calls[-1]["system"]
