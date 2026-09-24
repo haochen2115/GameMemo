@@ -80,6 +80,7 @@ test 集的两位玩家在提交 `e2d9bce` 中封存，那时还没有任何系�
 |---|---|---|---|---|
 | 2026-09-24 | v0-keyword | retrieval_v2 | 0.750 | `archive/v0-keyword-baseline` |
 | 2026-09-24 | **v2-hybrid** | retrieval_v2 | **0.892** | `research/personal-memory-foundation` |
+| 2026-09-24 | **P1**（检索持平 0.892；e2e_v2 test 0.448 → 0.759） | retrieval_v2 + e2e_v2 | 0.892 | `research/personal-memory-write-path` |
 
 ## 端到端评测：e2e（写入 + 检索）
 
@@ -104,6 +105,10 @@ test 集的两位玩家在提交 `e2d9bce` 中封存，那时还没有任何系�
 | 2026-09-24 | v0-pipeline | e2e_v1 test | 0.219 | 1.000 | 0.000 | 小模型下几乎写不进记忆 |
 | 2026-09-24 | main v2 | e2e_v1 test | 0.583 | 0.778 | 0.259 | e2e 基线（`bench/baseline_e2e.json`） |
 | 2026-09-24 | v2 + 只读玩家 + 历史召回 | e2e_v1 test | 0.594 | 0.667 | 0.148 | **未通过**（+0.010 < +0.03，拒答率下降 0.11） |
+| 2026-09-24 | main v2 | e2e_v2 test | 0.448 | 0.667 | 0.222 | e2e_v2 基线（`bench/baseline_e2e.json`） |
+| 2026-09-24 | **P1** | e2e_v2 test | **0.759** | 0.667 | **0.111** | **通过**：+0.310，95% CI [+0.138, +0.483]，合入 main（`bench/sota_e2e.json`） |
+
+P1 在 e2e_v2 test 上分题型的结果（main → P1）：情景 0.067 → 1.000，承诺 0.000 → 0.667，时间 0.500 → 1.000，更新 0.333 → 0.778，事实 0.833 → 0.792，轨迹 0.000 → 0.167，负例 0.667 → 0.667。
 
 实验过程和失败分析见 [EXPERIMENTS.md](EXPERIMENTS.md)。
 
