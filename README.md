@@ -1,231 +1,81 @@
 # 🎮 GameMemo
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![Ollama](https://img.shields.io/badge/Ollama-Compatible-green.svg)](https://ollama.com/)
 
-An intelligent memory management system for game AI assistants, powered by LLMs through Ollama.
+Long-term, human-like memory for game AI assistants. It remembers who the player is, what they went through, and how they changed over time, and every change is measured on a benchmark before it reaches `main`.
 
-[English](#english) | [中文](#中文)
+给游戏 AI 助手用的长期记忆系统。目标是让助手像老朋友一样记住玩家：玩家是谁、一起经历过什么、这段时间有什么变化。所有改进都要先在评测上证明有效，才能进入 `main`。
 
----
+## 现在能做什么
 
-## English
+- **写入**：从对话或游戏数据中抽取事实（相对时间自动换算成绝对日期）→ 只把相关的旧记忆交给 LLM → 决定 ADD / UPDATE / DELETE / NOOP → 逐条校验后执行。LLM 编造的目标 id 会被拒绝，近似重复的内容会被跳过。
+- **更新保留历史**：段位从星耀升到王者时，旧记录失效但保留，可以回答"我以前什么段位"。
+- **检索不调 LLM**：jieba + BM25 + 中文向量（可选），用 RRF 融合；无关的问题返回空，不往 prompt 里塞凑数的记忆。
+- **聊天机器人**：每轮都带当前日期、玩家档案和相关记忆；只从还没处理过的新对话里抽取，不重复写入。
+- **隐私**：`forget(id, hard=True)` 从磁盘彻底删除一条记忆及其全部历史版本。
 
-### 📖 Overview
-
-GameMemo is a sophisticated memory management system designed for game AI assistants. It automatically extracts, stores, and retrieves player information from conversations and game data, enabling personalized and context-aware interactions.
-
-### ✨ Features
-
-- 🧠 **Smart Memory Extraction** - Automatically extracts key information from conversations and game trajectories
-- 🔄 **Dynamic Updates** - Supports add, update, and delete operations on memories
-- 🔍 **Semantic Retrieval** - Finds relevant memories using keyword and semantic matching
-- 📝 **Detailed Logging** - Tracks all operations for debugging and analysis
-- 🎯 **Priority System** - Organizes memories by importance (core, important, general)
-- 💾 **Persistent Storage** - Saves memories to JSON files for long-term retention
-
-### 🚀 Quick Start
-
-#### Prerequisites
-
-1. **Python 3.8+**
-2. **Ollama** - [Download and install](https://ollama.com/download)
-3. **A language model** - e.g., `deepseek-v3.1:671b-cloud`, `llama3.2:7b`
-
-#### Installation
+## 快速开始
 
 ```bash
-# Clone the repository
-git clone https://github.com/yourusername/GameMemo.git
-cd GameMemo
+pip install -e '.[dev]'          # 含 pytest 和本地向量模型 fastembed（默认 jina-v2-base-zh）
+pytest                           # 单元测试，不需要 LLM
+python -m bench.run_retrieval    # 离线检索评测，不需要 LLM
 ```
 
-#### Running the Demo
+与 Ollama 一起跑：
 
 ```bash
-# Automatic demo (9 conversation turns)
-python chatbot_demo.py
-
-# Interactive mode
-python chatbot_demo.py --interactive
-
-# Run tests
-python test_memory.py
+ollama serve
+python examples/chat.py                         # 9 轮脚本演示
+python examples/chat.py -i --user alice         # 交互模式（/memory /history <id> /forget <id>）
+python examples/chat.py --embedder fastembed    # 打开向量检索
 ```
 
-### 📋 Usage Example
+代码里使用：
 
 ```python
-from game_memory import GameMemory
-from llm_client import OllamaClient
+from gamememo import OllamaClient, PersonalMemory, MemoryChatBot
+from gamememo.personal import FastEmbedEmbedder
 
-# 初始化
-memory_system = GameMemory(
-    user_id="player_001",
-    model="deepseek-v3.1:671b-cloud"
-)
+llm = OllamaClient(model="deepseek-v3.1:671b-cloud")
+mem = PersonalMemory("player_001", llm=llm, embedder=FastEmbedEmbedder())
 
-# 添加对话记忆
-conversation = """
-玩家: 你好，我是新手玩家
-助手: 欢迎！
-玩家: 我的生日是2月12日
-玩家: 我喜欢玩射手英雄
-"""
+report = mem.ingest("玩家: 我生日是2月12日，最近刚上了王者！")
+print([r.content for r in report.added], report.updated)
 
-count = memory_system.update_personal_memory_with_messages(conversation)
-print(f"提取了 {count} 条记忆")
+for r in mem.retrieve("我现在什么段位？"):
+    print(r.content)
 
-# 检索相关记忆
-query = "玩家喜欢什么英雄？"
-memories = memory_system.retrieval_relevant_memory(query, top_k=3)
-for mem in memories:
-    print(f"- {mem.content}")
-
-# 保存
-memory_system.save()
+bot = MemoryChatBot(mem, llm)
+print(bot.chat("今天是我生日！").reply)
 ```
 
-### 🔧 Configuration
+## 评测与分支
 
-You can customize the LLM client:
+- 评测集、指标和结果见 [docs/BENCHMARK.md](docs/BENCHMARK.md)。在封存的 test 集（两位新玩家、102 条查询）上，当前 SOTA `v2-hybrid` 的 MemScore@3 为 0.892，v0 为 0.750（95% CI [+0.049, +0.235]）；召回和拒答都更好，而且检索不再调用 LLM。
+- `main` 只放当前 SOTA。分支命名和门禁规则见 [docs/BRANCHING.md](docs/BRANCHING.md)。
+- 类人记忆的路线图见 [docs/ROADMAP.md](docs/ROADMAP.md)：情景记忆、遗忘曲线、离线巩固、程序性记忆……
 
-```python
-from llm_client import OllamaClient
+## 目录
 
-# Custom Ollama instance
-client = OllamaClient(
-    model="deepseek-v3.1:671b-cloud",
-    base_url="http://localhost:11434",
-    timeout=120
-)
-
-# Use with GameMemory
-memory = GameMemory(
-    user_id="player_001",
-    llm_client=client
-)
+```
+gamememo/
+  llm.py                 LLM 接口：OllamaClient / FakeLLM / JSON 解析
+  personal/
+    system.py            PersonalMemory：写入链路、检索、遗忘
+    retrieval.py         混合检索（BM25 + 向量 + RRF + 相关性门槛）
+    model.py, store.py   记忆记录（双时态字段）与原子写入的 JSON 存储
+    chatbot.py           带记忆的聊天机器人
+    prompts.py, text.py, embed.py
+bench/                   离线评测、数据集、SOTA 门禁（sota.json）
+tests/                   单元测试（FakeLLM，无需联网）
+examples/chat.py         演示
+game_memory.py, llm_client.py, chatbot_demo.py, test_memory.py, mock_data.py
+                         v0 原始实现，保留用于评测对比，后续移除
 ```
 
-### 📊 Memory Priority Levels
+## License
 
-| Priority | Level | Use Case |
-|----------|-------|----------|
-| 1 | Core | Critical information (birthday, username) |
-| 2-3 | Important | Game preferences, frequently used heroes |
-| 4-5 | General | Casual information, temporary notes |
-
----
-
-## 中文
-
-### 📖 概述
-
-GameMemo 是一个为游戏 AI 助手设计的智能记忆管理系统。它能够自动从对话和游戏数据中提取、存储和检索玩家信息，从而实现个性化和上下文感知的交互。
-
-### ✨ 功能特性
-
-- 🧠 **智能记忆提取** - 自动从对话和游戏轨迹中提取关键信息
-- 🔄 **动态更新** - 支持记忆的新增、更新和删除操作
-- 🔍 **语义检索** - 使用关键词和语义匹配查找相关记忆
-- 📝 **详细日志** - 记录所有操作，便于调试和分析
-- 🎯 **优先级系统** - 按重要性组织记忆（核心、重要、一般）
-- 💾 **持久化存储** - 将记忆保存到 JSON 文件，长期保留
-
-### 🚀 快速开始
-
-#### 前置要求
-
-1. **Python 3.8+**
-2. **Ollama** - [下载并安装](https://ollama.com/download)
-3. **语言模型** - 例如 `deepseek-v3.1:671b-cloud`、`llama3.2:7b`
-
-#### 安装
-
-```bash
-# 克隆仓库
-git clone https://github.com/yourusername/GameMemo.git
-cd GameMemo
-```
-
-#### 运行演示
-
-```bash
-# 自动演示（9 轮对话）
-python chatbot_demo.py
-
-# 交互模式
-python chatbot_demo.py --interactive
-
-# 运行测试
-python test_memory.py
-```
-
-### 📋 使用示例
-
-```python
-from game_memory import GameMemory
-from llm_client import OllamaClient
-
-# 初始化
-memory_system = GameMemory(
-    user_id="player_001",
-    model="deepseek-v3.1:671b-cloud"
-)
-
-# 添加对话记忆
-conversation = """
-玩家: 你好，我是新手玩家
-助手: 欢迎！
-玩家: 我的生日是2月12日
-玩家: 我喜欢玩射手英雄
-"""
-
-count = memory_system.update_personal_memory_with_messages(conversation)
-print(f"提取了 {count} 条记忆")
-
-# 检索相关记忆
-query = "玩家喜欢什么英雄？"
-memories = memory_system.retrieval_relevant_memory(query, top_k=3)
-for mem in memories:
-    print(f"- {mem.content}")
-
-# 保存
-memory_system.save()
-```
-
-### 🔧 配置
-
-你可以自定义 LLM 客户端：
-
-```python
-from llm_client import OllamaClient
-
-# 自定义 Ollama 实例
-client = OllamaClient(
-    model="deepseek-v3.1:671b-cloud",
-    base_url="http://localhost:11434",
-    timeout=120
-)
-
-# 与 GameMemory 一起使用
-memory = GameMemory(
-    user_id="player_001",
-    llm_client=client
-)
-```
-
-### 📊 记忆优先级
-
-| 优先级 | 级别 | 使用场景 |
-|--------|------|---------|
-| 1 | 核心 | 关键信息（生日、用户名） |
-| 2-3 | 重要 | 游戏偏好、常用英雄 |
-| 4-5 | 一般 | 临时信息、随意记录 |
-
----
-
-## 📞 Contact
-- Email: haochen2115@gmail.com
-
+MIT

@@ -1,0 +1,19 @@
+{
+  "system": "v0-keyword",
+  "ref": "archive/v0-keyword-baseline (main @ 3a866ba)",
+  "dataset": "bench/data/retrieval_v2.json",
+  "split": "test",
+  "primary": "MemScore@3",
+  "min_gain": 0.02,
+  "guards": {
+    "Recall@3": 0.02,
+    "MRR": 0.02,
+    "Abstain": 0.05
+  },
+  "metrics": {
+    "MemScore@3": 0.75,
+    "Recall@3": 0.7153,
+    "MRR": 0.6782,
+    "Abstain": 0.8333
+  }
+}

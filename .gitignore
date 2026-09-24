@@ -25,6 +25,7 @@ MANIFEST
 
 # Virtual environments
 venv/
+.venv/
 env/
 ENV/
 env.bak/
@@ -47,6 +48,8 @@ memory_data/
 # Keep example files
 !memory_data/.gitkeep
 !example_memory.json
+!bench/**/*.json
+!bench/*.json
 
 # Testing
 .pytest_cache/

@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gamememo"
+version = "0.2.0.dev0"
+description = "Long-term, human-like memory for game AI assistants"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Hao Chen" }]
+dependencies = ["requests>=2.28", "jieba>=0.42"]
+
+[project.optional-dependencies]
+embed = ["fastembed>=0.4"]
+dev = ["pytest>=8.0", "fastembed>=0.4"]
+
+[tool.setuptools.packages.find]
+include = ["gamememo*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning:jieba.*"]

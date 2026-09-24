@@ -1,0 +1,6348 @@
+{
+ "dataset": "bench/data/retrieval_v2.json",
+ "split": "test",
+ "generated_at": "2026-09-24 09:35:43",
+ "results": {
+  "v0-keyword": {
+   "MemScore@3": 0.75,
+   "Recall@3": 0.7153,
+   "MRR": 0.6782,
+   "Abstain": 0.8333,
+   "by_type": {
+    "direct": 0.9697,
+    "multi": 0.25,
+    "negative": 0.8333,
+    "paraphrase": 0.3793,
+    "update": 1.0
+   },
+   "n": 102,
+   "rows": [
+    {
+     "id": "b_q01",
+     "player": "p_mage",
+     "query": "我生日几号？",
+     "type": "direct",
+     "gold": [
+      "b01"
+     ],
+     "got": [
+      "b01"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q02",
+     "player": "p_mage",
+     "query": "我哪天过生日来着",
+     "type": "paraphrase",
+     "gold": [
+      "b01"
+     ],
+     "got": [
+      "b01"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q03",
+     "player": "p_mage",
+     "query": "我是干什么工作的",
+     "type": "paraphrase",
+     "gold": [
+      "b02"
+     ],
+     "got": [
+      "b02"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q04",
+     "player": "p_mage",
+     "query": "我在哪个城市",
+     "type": "paraphrase",
+     "gold": [
+      "b02"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "b_q05",
+     "player": "p_mage",
+     "query": "我一般什么时候玩游戏",
+     "type": "direct",
+     "gold": [
+      "b03"
+     ],
+     "got": [
+      "b03",
+      "b16",
+      "b22"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q06",
+     "player": "p_mage",
+     "query": "我主打哪条路",
+     "type": "paraphrase",
+     "gold": [
+      "b04"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "b_q07",
+     "player": "p_mage",
+     "query": "我用得最多的英雄",
+     "type": "direct",
+     "gold": [
+      "b05"
+     ],
+     "got": [
+      "b06",
+      "b37"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "b_q08",
+     "player": "p_mage",
+     "query": "我胜率最高的是哪个英雄",
+     "type": "direct",
+     "gold": [
+      "b06"
+     ],
+     "got": [
+      "b06",
+      "b07",
+      "b05"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q09",
+     "player": "p_mage",
+     "query": "王昭君我玩得怎么样",
+     "type": "direct",
+     "gold": [
+      "b07"
+     ],
+     "got": [
+      "b07"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q10",
+     "player": "p_mage",
+     "query": "我现在啥段位",
+     "type": "update",
+     "gold": [
+      "b09"
+     ],
+     "got": [
+      "b09"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q11",
+     "player": "p_mage",
+     "query": "我打到星耀了吗",
+     "type": "update",
+     "gold": [
+      "b09"
+     ],
+     "got": [
+      "b09",
+      "b28"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q12",
+     "player": "p_mage",
+     "query": "我对线最怕谁",
+     "type": "paraphrase",
+     "gold": [
+      "b10"
+     ],
+     "got": [
+      "b10"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q13",
+     "player": "p_mage",
+     "query": "兰陵王来抓我怎么办",
+     "type": "direct",
+     "gold": [
+      "b10"
+     ],
+     "got": [
+      "b10"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q14",
+     "player": "p_mage",
+     "query": "我喜欢打排位吗",
+     "type": "direct",
+     "gold": [
+      "b11"
+     ],
+     "got": [
+      "b11",
+      "b16",
+      "b21"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q15",
+     "player": "p_mage",
+     "query": "平时跟谁一起玩",
+     "type": "paraphrase",
+     "gold": [
+      "b12"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "b_q16",
+     "player": "p_mage",
+     "query": "小周玩什么位置",
+     "type": "direct",
+     "gold": [
+      "b12"
+     ],
+     "got": [
+      "b04",
+      "b12"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q17",
+     "player": "p_mage",
+     "query": "我CP叫什么",
+     "type": "paraphrase",
+     "gold": [
+      "b13"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "b_q18",
+     "player": "p_mage",
+     "query": "我还在练打野吗",
+     "type": "update",
+     "gold": [
+      "b15"
+     ],
+     "got": [
+      "b15"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q19",
+     "player": "p_mage",
+     "query": "我用什么设备玩",
+     "type": "direct",
+     "gold": [
+      "b16"
+     ],
+     "got": [
+      "b16"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q20",
+     "player": "p_mage",
+     "query": "我开麦吗",
+     "type": "paraphrase",
+     "gold": [
+      "b17"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "b_q21",
+     "player": "p_mage",
+     "query": "诸葛亮出什么装备",
+     "type": "direct",
+     "gold": [
+      "b18"
+     ],
+     "got": [
+      "b05",
+      "b18",
+      "b19"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q22",
+     "player": "p_mage",
+     "query": "我有哪些诸葛亮皮肤",
+     "type": "direct",
+     "gold": [
+      "b19"
+     ],
+     "got": [
+      "b19",
+      "b05",
+      "b18"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q23",
+     "player": "p_mage",
+     "query": "我什么时候拿的法王",
+     "type": "direct",
+     "gold": [
+      "b20"
+     ],
+     "got": [
+      "b20",
+      "b22"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q24",
+     "player": "p_mage",
+     "query": "最近手感怎么样",
+     "type": "paraphrase",
+     "gold": [
+      "b21"
+     ],
+     "got": [
+      "b21"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q25",
+     "player": "p_mage",
+     "query": "我工作忙的时候还玩吗",
+     "type": "paraphrase",
+     "gold": [
+      "b22"
+     ],
+     "got": [
+      "b02",
+      "b22"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q26",
+     "player": "p_mage",
+     "query": "我喜欢哪个战队",
+     "type": "paraphrase",
+     "gold": [
+      "b23"
+     ],
+     "got": [
+      "b11",
+      "b16",
+      "b23"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q27",
+     "player": "p_mage",
+     "query": "被人骂了好气",
+     "type": "paraphrase",
+     "gold": [
+      "b24"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "b_q28",
+     "player": "p_mage",
+     "query": "我喜欢什么娱乐模式",
+     "type": "direct",
+     "gold": [
+      "b27"
+     ],
+     "got": [
+      "b27",
+      "b11",
+      "b16"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q29",
+     "player": "p_mage",
+     "query": "我今年的目标是什么",
+     "type": "direct",
+     "gold": [
+      "b28"
+     ],
+     "got": [
+      "b28"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q30",
+     "player": "p_mage",
+     "query": "我在游戏里花钱多吗",
+     "type": "paraphrase",
+     "gold": [
+      "b29"
+     ],
+     "got": [
+      "b03",
+      "b13",
+      "b34"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "b_q31",
+     "player": "p_mage",
+     "query": "为什么我喜欢玩貂蝉",
+     "type": "direct",
+     "gold": [
+      "b30"
+     ],
+     "got": [
+      "b30",
+      "b06",
+      "b20"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q32",
+     "player": "p_mage",
+     "query": "我家的猫叫什么",
+     "type": "direct",
+     "gold": [
+      "b31"
+     ],
+     "got": [
+      "b31"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q33",
+     "player": "p_mage",
+     "query": "我游戏ID叫什么",
+     "type": "update",
+     "gold": [
+      "b34"
+     ],
+     "got": [
+      "b34",
+      "b13",
+      "b03"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q34",
+     "player": "p_mage",
+     "query": "我的画面设置有什么习惯",
+     "type": "paraphrase",
+     "gold": [
+      "b35"
+     ],
+     "got": [
+      "b35",
+      "b36"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q35",
+     "player": "p_mage",
+     "query": "我用什么施法方式",
+     "type": "direct",
+     "gold": [
+      "b36"
+     ],
+     "got": [
+      "b36"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q36",
+     "player": "p_mage",
+     "query": "给我推荐一个坦克",
+     "type": "paraphrase",
+     "gold": [
+      "b37"
+     ],
+     "got": [
+      "b37"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q37",
+     "player": "p_mage",
+     "query": "我的法师英雄里哪个最强",
+     "type": "multi",
+     "gold": [
+      "b05",
+      "b06"
+     ],
+     "got": [
+      "b04",
+      "b06",
+      "b18"
+     ],
+     "success": 0.5
+    },
+    {
+     "id": "b_n01",
+     "player": "p_mage",
+     "query": "今天北京下雨吗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n02",
+     "player": "p_mage",
+     "query": "帮我翻译一句英文",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n03",
+     "player": "p_mage",
+     "query": "红烧肉怎么做",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n04",
+     "player": "p_mage",
+     "query": "推荐几本科幻小说",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n05",
+     "player": "p_mage",
+     "query": "明天股市会涨吗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n06",
+     "player": "p_mage",
+     "query": "怎么学好数学",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n07",
+     "player": "p_mage",
+     "query": "感冒了吃什么药",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n08",
+     "player": "p_mage",
+     "query": "地球到月球多远",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n09",
+     "player": "p_mage",
+     "query": "你是机器人吗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n10",
+     "player": "p_mage",
+     "query": "周末去哪里玩好",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n11",
+     "player": "p_mage",
+     "query": "讲个笑话",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n12",
+     "player": "p_mage",
+     "query": "王者荣耀是哪家公司做的",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "b28"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "b_n13",
+     "player": "p_mage",
+     "query": "如何提高睡眠质量",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n14",
+     "player": "p_mage",
+     "query": "汽车保养多久一次",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "b20"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "b_n15",
+     "player": "p_mage",
+     "query": "什么是区块链",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_q01",
+     "player": "p_jungle",
+     "query": "我生日是几号",
+     "type": "direct",
+     "gold": [
+      "c01"
+     ],
+     "got": [
+      "c01"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q02",
+     "player": "p_jungle",
+     "query": "我哪天出生的",
+     "type": "paraphrase",
+     "gold": [
+      "c01"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "c_q03",
+     "player": "p_jungle",
+     "query": "我读几年级",
+     "type": "paraphrase",
+     "gold": [
+      "c02"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "c_q04",
+     "player": "p_jungle",
+     "query": "我什么时候能玩游戏",
+     "type": "paraphrase",
+     "gold": [
+      "c03"
+     ],
+     "got": [
+      "c21"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_q05",
+     "player": "p_jungle",
+     "query": "为什么我平时不能玩",
+     "type": "paraphrase",
+     "gold": [
+      "c03"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "c_q06",
+     "player": "p_jungle",
+     "query": "我打什么位置",
+     "type": "direct",
+     "gold": [
+      "c04"
+     ],
+     "got": [
+      "c04"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q07",
+     "player": "p_jungle",
+     "query": "我的本命英雄是谁",
+     "type": "update",
+     "gold": [
+      "c06"
+     ],
+     "got": [
+      "c06"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q08",
+     "player": "p_jungle",
+     "query": "我还在玩李白吗",
+     "type": "update",
+     "gold": [
+      "c06"
+     ],
+     "got": [
+      "c06"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q09",
+     "player": "p_jungle",
+     "query": "韩信我胜率多少",
+     "type": "direct",
+     "gold": [
+      "c07"
+     ],
+     "got": [
+      "c07",
+      "c19"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q10",
+     "player": "p_jungle",
+     "query": "我巅峰赛最高多少分",
+     "type": "direct",
+     "gold": [
+      "c08"
+     ],
+     "got": [
+      "c08",
+      "c31"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q11",
+     "player": "p_jungle",
+     "query": "我在社团里是什么角色",
+     "type": "paraphrase",
+     "gold": [
+      "c09"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "c_q12",
+     "player": "p_jungle",
+     "query": "我开局一般怎么刷野",
+     "type": "paraphrase",
+     "gold": [
+      "c10"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "c_q13",
+     "player": "p_jungle",
+     "query": "队友一直送好烦",
+     "type": "direct",
+     "gold": [
+      "c11"
+     ],
+     "got": [
+      "c11",
+      "c18"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q14",
+     "player": "p_jungle",
+     "query": "我爸妈对我玩游戏什么态度",
+     "type": "direct",
+     "gold": [
+      "c12"
+     ],
+     "got": [
+      "c12",
+      "c21"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q15",
+     "player": "p_jungle",
+     "query": "我现在用什么手机",
+     "type": "update",
+     "gold": [
+      "c14"
+     ],
+     "got": [
+      "c14",
+      "c06",
+      "c12"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q16",
+     "player": "p_jungle",
+     "query": "我崇拜哪个选手",
+     "type": "paraphrase",
+     "gold": [
+      "c15"
+     ],
+     "got": [
+      "c22",
+      "c15"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q17",
+     "player": "p_jungle",
+     "query": "我拿过什么比赛奖",
+     "type": "paraphrase",
+     "gold": [
+      "c16"
+     ],
+     "got": [
+      "c16"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q18",
+     "player": "p_jungle",
+     "query": "我抢龙厉害吗",
+     "type": "direct",
+     "gold": [
+      "c17"
+     ],
+     "got": [
+      "c17"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q19",
+     "player": "p_jungle",
+     "query": "我打游戏说话多吗",
+     "type": "paraphrase",
+     "gold": [
+      "c18"
+     ],
+     "got": [
+      "c12",
+      "c27",
+      "c34"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_q20",
+     "player": "p_jungle",
+     "query": "兰陵王适合我吗",
+     "type": "direct",
+     "gold": [
+      "c19"
+     ],
+     "got": [
+      "c19"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q21",
+     "player": "p_jungle",
+     "query": "我常和谁双排",
+     "type": "direct",
+     "gold": [
+      "c20"
+     ],
+     "got": [
+      "c20"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q22",
+     "player": "p_jungle",
+     "query": "我期末考试什么时候",
+     "type": "direct",
+     "gold": [
+      "c21"
+     ],
+     "got": [
+      "c21"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q23",
+     "player": "p_jungle",
+     "query": "我以后想干什么",
+     "type": "paraphrase",
+     "gold": [
+      "c22"
+     ],
+     "got": [
+      "c22"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q24",
+     "player": "p_jungle",
+     "query": "我想买什么皮肤",
+     "type": "direct",
+     "gold": [
+      "c23"
+     ],
+     "got": [
+      "c23"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q25",
+     "player": "p_jungle",
+     "query": "我有多少零花钱",
+     "type": "direct",
+     "gold": [
+      "c24"
+     ],
+     "got": [
+      "c24"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q26",
+     "player": "p_jungle",
+     "query": "我的KDA怎么样",
+     "type": "direct",
+     "gold": [
+      "c25"
+     ],
+     "got": [
+      "c25"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q27",
+     "player": "p_jungle",
+     "query": "我喜欢反野吗",
+     "type": "paraphrase",
+     "gold": [
+      "c26"
+     ],
+     "got": [
+      "c33",
+      "c27"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_q28",
+     "player": "p_jungle",
+     "query": "我打游戏喜欢听什么歌",
+     "type": "direct",
+     "gold": [
+      "c27"
+     ],
+     "got": [
+      "c27",
+      "c12",
+      "c33"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q29",
+     "player": "p_jungle",
+     "query": "输了之后我会干嘛",
+     "type": "paraphrase",
+     "gold": [
+      "c28"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "c_q30",
+     "player": "p_jungle",
+     "query": "澜怎么出装",
+     "type": "direct",
+     "gold": [
+      "c29"
+     ],
+     "got": [
+      "c29",
+      "c06",
+      "c23"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q31",
+     "player": "p_jungle",
+     "query": "我巅峰赛的新目标",
+     "type": "update",
+     "gold": [
+      "c31"
+     ],
+     "got": [
+      "c31",
+      "c08"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q32",
+     "player": "p_jungle",
+     "query": "我哪科比较差",
+     "type": "paraphrase",
+     "gold": [
+      "c32"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "c_q33",
+     "player": "p_jungle",
+     "query": "让我去玩辅助行吗",
+     "type": "direct",
+     "gold": [
+      "c33"
+     ],
+     "got": [
+      "c33"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q34",
+     "player": "p_jungle",
+     "query": "手出汗怎么办",
+     "type": "paraphrase",
+     "gold": [
+      "c34"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "c_q35",
+     "player": "p_jungle",
+     "query": "我打野有什么特点",
+     "type": "multi",
+     "gold": [
+      "c17",
+      "c26"
+     ],
+     "got": [
+      "c04",
+      "c10",
+      "c15"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_n01",
+     "player": "p_jungle",
+     "query": "今天是几号",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n02",
+     "player": "p_jungle",
+     "query": "怎么做番茄炒蛋",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n03",
+     "player": "p_jungle",
+     "query": "推荐一部动漫",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n04",
+     "player": "p_jungle",
+     "query": "光速是多少",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n05",
+     "player": "p_jungle",
+     "query": "帮我写个请假条",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n06",
+     "player": "p_jungle",
+     "query": "英语作文怎么写好",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n07",
+     "player": "p_jungle",
+     "query": "世界上最高的山是哪座",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "c08"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_n08",
+     "player": "p_jungle",
+     "query": "猫为什么喜欢纸箱",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "c33",
+      "c27"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_n09",
+     "player": "p_jungle",
+     "query": "牛顿第二定律是什么",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n10",
+     "player": "p_jungle",
+     "query": "火星上有水吗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n11",
+     "player": "p_jungle",
+     "query": "怎么养多肉",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n12",
+     "player": "p_jungle",
+     "query": "你喜欢什么颜色",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "c33",
+      "c27"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_n13",
+     "player": "p_jungle",
+     "query": "明天会下雪吗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n14",
+     "player": "p_jungle",
+     "query": "如何快速入睡",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n15",
+     "player": "p_jungle",
+     "query": "电动车和油车哪个好",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    }
+   ],
+   "latency_ms": 8.45
+  },
+  "v1-lexical": {
+   "MemScore@3": 0.7353,
+   "Recall@3": 0.6667,
+   "MRR": 0.5995,
+   "Abstain": 0.9,
+   "by_type": {
+    "direct": 0.9394,
+    "multi": 0.5,
+    "negative": 0.9,
+    "paraphrase": 0.2759,
+    "update": 1.0
+   },
+   "n": 102,
+   "rows": [
+    {
+     "id": "b_q01",
+     "player": "p_mage",
+     "query": "我生日几号？",
+     "type": "direct",
+     "gold": [
+      "b01"
+     ],
+     "got": [
+      "b01"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q02",
+     "player": "p_mage",
+     "query": "我哪天过生日来着",
+     "type": "paraphrase",
+     "gold": [
+      "b01"
+     ],
+     "got": [
+      "b01"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q03",
+     "player": "p_mage",
+     "query": "我是干什么工作的",
+     "type": "paraphrase",
+     "gold": [
+      "b02"
+     ],
+     "got": [
+      "b02"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q04",
+     "player": "p_mage",
+     "query": "我在哪个城市",
+     "type": "paraphrase",
+     "gold": [
+      "b02"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "b_q05",
+     "player": "p_mage",
+     "query": "我一般什么时候玩游戏",
+     "type": "direct",
+     "gold": [
+      "b03"
+     ],
+     "got": [
+      "b34",
+      "b03",
+      "b16"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q06",
+     "player": "p_mage",
+     "query": "我主打哪条路",
+     "type": "paraphrase",
+     "gold": [
+      "b04"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "b_q07",
+     "player": "p_mage",
+     "query": "我用得最多的英雄",
+     "type": "direct",
+     "gold": [
+      "b05"
+     ],
+     "got": [
+      "b05",
+      "b06",
+      "b37"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q08",
+     "player": "p_mage",
+     "query": "我胜率最高的是哪个英雄",
+     "type": "direct",
+     "gold": [
+      "b06"
+     ],
+     "got": [
+      "b05",
+      "b06",
+      "b07"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q09",
+     "player": "p_mage",
+     "query": "王昭君我玩得怎么样",
+     "type": "direct",
+     "gold": [
+      "b07"
+     ],
+     "got": [
+      "b07"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q10",
+     "player": "p_mage",
+     "query": "我现在啥段位",
+     "type": "update",
+     "gold": [
+      "b09"
+     ],
+     "got": [
+      "b09"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q11",
+     "player": "p_mage",
+     "query": "我打到星耀了吗",
+     "type": "update",
+     "gold": [
+      "b09"
+     ],
+     "got": [
+      "b09"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q12",
+     "player": "p_mage",
+     "query": "我对线最怕谁",
+     "type": "paraphrase",
+     "gold": [
+      "b10"
+     ],
+     "got": [
+      "b10"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q13",
+     "player": "p_mage",
+     "query": "兰陵王来抓我怎么办",
+     "type": "direct",
+     "gold": [
+      "b10"
+     ],
+     "got": [
+      "b10"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q14",
+     "player": "p_mage",
+     "query": "我喜欢打排位吗",
+     "type": "direct",
+     "gold": [
+      "b11"
+     ],
+     "got": [
+      "b11",
+      "b21",
+      "b30"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q15",
+     "player": "p_mage",
+     "query": "平时跟谁一起玩",
+     "type": "paraphrase",
+     "gold": [
+      "b12"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "b_q16",
+     "player": "p_mage",
+     "query": "小周玩什么位置",
+     "type": "direct",
+     "gold": [
+      "b12"
+     ],
+     "got": [
+      "b04",
+      "b12"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q17",
+     "player": "p_mage",
+     "query": "我CP叫什么",
+     "type": "paraphrase",
+     "gold": [
+      "b13"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "b_q18",
+     "player": "p_mage",
+     "query": "我还在练打野吗",
+     "type": "update",
+     "gold": [
+      "b15"
+     ],
+     "got": [
+      "b15"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q19",
+     "player": "p_mage",
+     "query": "我用什么设备玩",
+     "type": "direct",
+     "gold": [
+      "b16"
+     ],
+     "got": [
+      "b16"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q20",
+     "player": "p_mage",
+     "query": "我开麦吗",
+     "type": "paraphrase",
+     "gold": [
+      "b17"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "b_q21",
+     "player": "p_mage",
+     "query": "诸葛亮出什么装备",
+     "type": "direct",
+     "gold": [
+      "b18"
+     ],
+     "got": [
+      "b05",
+      "b18",
+      "b19"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q22",
+     "player": "p_mage",
+     "query": "我有哪些诸葛亮皮肤",
+     "type": "direct",
+     "gold": [
+      "b19"
+     ],
+     "got": [
+      "b05",
+      "b18",
+      "b19"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q23",
+     "player": "p_mage",
+     "query": "我什么时候拿的法王",
+     "type": "direct",
+     "gold": [
+      "b20"
+     ],
+     "got": [
+      "b20"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q24",
+     "player": "p_mage",
+     "query": "最近手感怎么样",
+     "type": "paraphrase",
+     "gold": [
+      "b21"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "b_q25",
+     "player": "p_mage",
+     "query": "我工作忙的时候还玩吗",
+     "type": "paraphrase",
+     "gold": [
+      "b22"
+     ],
+     "got": [
+      "b02"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "b_q26",
+     "player": "p_mage",
+     "query": "我喜欢哪个战队",
+     "type": "paraphrase",
+     "gold": [
+      "b23"
+     ],
+     "got": [
+      "b11",
+      "b30",
+      "b37"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "b_q27",
+     "player": "p_mage",
+     "query": "被人骂了好气",
+     "type": "paraphrase",
+     "gold": [
+      "b24"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "b_q28",
+     "player": "p_mage",
+     "query": "我喜欢什么娱乐模式",
+     "type": "direct",
+     "gold": [
+      "b27"
+     ],
+     "got": [
+      "b27"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q29",
+     "player": "p_mage",
+     "query": "我今年的目标是什么",
+     "type": "direct",
+     "gold": [
+      "b28"
+     ],
+     "got": [
+      "b28"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q30",
+     "player": "p_mage",
+     "query": "我在游戏里花钱多吗",
+     "type": "paraphrase",
+     "gold": [
+      "b29"
+     ],
+     "got": [
+      "b34",
+      "b03",
+      "b13"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "b_q31",
+     "player": "p_mage",
+     "query": "为什么我喜欢玩貂蝉",
+     "type": "direct",
+     "gold": [
+      "b30"
+     ],
+     "got": [
+      "b06",
+      "b20",
+      "b30"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q32",
+     "player": "p_mage",
+     "query": "我家的猫叫什么",
+     "type": "direct",
+     "gold": [
+      "b31"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "b_q33",
+     "player": "p_mage",
+     "query": "我游戏ID叫什么",
+     "type": "update",
+     "gold": [
+      "b34"
+     ],
+     "got": [
+      "b34",
+      "b13",
+      "b03"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q34",
+     "player": "p_mage",
+     "query": "我的画面设置有什么习惯",
+     "type": "paraphrase",
+     "gold": [
+      "b35"
+     ],
+     "got": [
+      "b35",
+      "b36"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q35",
+     "player": "p_mage",
+     "query": "我用什么施法方式",
+     "type": "direct",
+     "gold": [
+      "b36"
+     ],
+     "got": [
+      "b36"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q36",
+     "player": "p_mage",
+     "query": "给我推荐一个坦克",
+     "type": "paraphrase",
+     "gold": [
+      "b37"
+     ],
+     "got": [
+      "b37"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q37",
+     "player": "p_mage",
+     "query": "我的法师英雄里哪个最强",
+     "type": "multi",
+     "gold": [
+      "b05",
+      "b06"
+     ],
+     "got": [
+      "b04",
+      "b05",
+      "b06"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_n01",
+     "player": "p_mage",
+     "query": "今天北京下雨吗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n02",
+     "player": "p_mage",
+     "query": "帮我翻译一句英文",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n03",
+     "player": "p_mage",
+     "query": "红烧肉怎么做",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n04",
+     "player": "p_mage",
+     "query": "推荐几本科幻小说",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n05",
+     "player": "p_mage",
+     "query": "明天股市会涨吗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n06",
+     "player": "p_mage",
+     "query": "怎么学好数学",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n07",
+     "player": "p_mage",
+     "query": "感冒了吃什么药",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n08",
+     "player": "p_mage",
+     "query": "地球到月球多远",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n09",
+     "player": "p_mage",
+     "query": "你是机器人吗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n10",
+     "player": "p_mage",
+     "query": "周末去哪里玩好",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n11",
+     "player": "p_mage",
+     "query": "讲个笑话",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n12",
+     "player": "p_mage",
+     "query": "王者荣耀是哪家公司做的",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n13",
+     "player": "p_mage",
+     "query": "如何提高睡眠质量",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n14",
+     "player": "p_mage",
+     "query": "汽车保养多久一次",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n15",
+     "player": "p_mage",
+     "query": "什么是区块链",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_q01",
+     "player": "p_jungle",
+     "query": "我生日是几号",
+     "type": "direct",
+     "gold": [
+      "c01"
+     ],
+     "got": [
+      "c01"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q02",
+     "player": "p_jungle",
+     "query": "我哪天出生的",
+     "type": "paraphrase",
+     "gold": [
+      "c01"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "c_q03",
+     "player": "p_jungle",
+     "query": "我读几年级",
+     "type": "paraphrase",
+     "gold": [
+      "c02"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "c_q04",
+     "player": "p_jungle",
+     "query": "我什么时候能玩游戏",
+     "type": "paraphrase",
+     "gold": [
+      "c03"
+     ],
+     "got": [
+      "c03",
+      "c21",
+      "c12"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q05",
+     "player": "p_jungle",
+     "query": "为什么我平时不能玩",
+     "type": "paraphrase",
+     "gold": [
+      "c03"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "c_q06",
+     "player": "p_jungle",
+     "query": "我打什么位置",
+     "type": "direct",
+     "gold": [
+      "c04"
+     ],
+     "got": [
+      "c04"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q07",
+     "player": "p_jungle",
+     "query": "我的本命英雄是谁",
+     "type": "update",
+     "gold": [
+      "c06"
+     ],
+     "got": [
+      "c06"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q08",
+     "player": "p_jungle",
+     "query": "我还在玩李白吗",
+     "type": "update",
+     "gold": [
+      "c06"
+     ],
+     "got": [
+      "c06"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q09",
+     "player": "p_jungle",
+     "query": "韩信我胜率多少",
+     "type": "direct",
+     "gold": [
+      "c07"
+     ],
+     "got": [
+      "c07",
+      "c19"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q10",
+     "player": "p_jungle",
+     "query": "我巅峰赛最高多少分",
+     "type": "direct",
+     "gold": [
+      "c08"
+     ],
+     "got": [
+      "c08",
+      "c31"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q11",
+     "player": "p_jungle",
+     "query": "我在社团里是什么角色",
+     "type": "paraphrase",
+     "gold": [
+      "c09"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "c_q12",
+     "player": "p_jungle",
+     "query": "我开局一般怎么刷野",
+     "type": "paraphrase",
+     "gold": [
+      "c10"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "c_q13",
+     "player": "p_jungle",
+     "query": "队友一直送好烦",
+     "type": "direct",
+     "gold": [
+      "c11"
+     ],
+     "got": [
+      "c11",
+      "c18"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q14",
+     "player": "p_jungle",
+     "query": "我爸妈对我玩游戏什么态度",
+     "type": "direct",
+     "gold": [
+      "c12"
+     ],
+     "got": [
+      "c12",
+      "c21"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q15",
+     "player": "p_jungle",
+     "query": "我现在用什么手机",
+     "type": "update",
+     "gold": [
+      "c14"
+     ],
+     "got": [
+      "c12",
+      "c14"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q16",
+     "player": "p_jungle",
+     "query": "我崇拜哪个选手",
+     "type": "paraphrase",
+     "gold": [
+      "c15"
+     ],
+     "got": [
+      "c22",
+      "c15"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q17",
+     "player": "p_jungle",
+     "query": "我拿过什么比赛奖",
+     "type": "paraphrase",
+     "gold": [
+      "c16"
+     ],
+     "got": [
+      "c16"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q18",
+     "player": "p_jungle",
+     "query": "我抢龙厉害吗",
+     "type": "direct",
+     "gold": [
+      "c17"
+     ],
+     "got": [
+      "c17"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q19",
+     "player": "p_jungle",
+     "query": "我打游戏说话多吗",
+     "type": "paraphrase",
+     "gold": [
+      "c18"
+     ],
+     "got": [
+      "c03",
+      "c12",
+      "c27"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_q20",
+     "player": "p_jungle",
+     "query": "兰陵王适合我吗",
+     "type": "direct",
+     "gold": [
+      "c19"
+     ],
+     "got": [
+      "c19"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q21",
+     "player": "p_jungle",
+     "query": "我常和谁双排",
+     "type": "direct",
+     "gold": [
+      "c20"
+     ],
+     "got": [
+      "c20"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q22",
+     "player": "p_jungle",
+     "query": "我期末考试什么时候",
+     "type": "direct",
+     "gold": [
+      "c21"
+     ],
+     "got": [
+      "c21"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q23",
+     "player": "p_jungle",
+     "query": "我以后想干什么",
+     "type": "paraphrase",
+     "gold": [
+      "c22"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "c_q24",
+     "player": "p_jungle",
+     "query": "我想买什么皮肤",
+     "type": "direct",
+     "gold": [
+      "c23"
+     ],
+     "got": [
+      "c23"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q25",
+     "player": "p_jungle",
+     "query": "我有多少零花钱",
+     "type": "direct",
+     "gold": [
+      "c24"
+     ],
+     "got": [
+      "c24"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q26",
+     "player": "p_jungle",
+     "query": "我的KDA怎么样",
+     "type": "direct",
+     "gold": [
+      "c25"
+     ],
+     "got": [
+      "c25"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q27",
+     "player": "p_jungle",
+     "query": "我喜欢反野吗",
+     "type": "paraphrase",
+     "gold": [
+      "c26"
+     ],
+     "got": [
+      "c33",
+      "c27"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_q28",
+     "player": "p_jungle",
+     "query": "我打游戏喜欢听什么歌",
+     "type": "direct",
+     "gold": [
+      "c27"
+     ],
+     "got": [
+      "c03",
+      "c12",
+      "c33"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_q29",
+     "player": "p_jungle",
+     "query": "输了之后我会干嘛",
+     "type": "paraphrase",
+     "gold": [
+      "c28"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "c_q30",
+     "player": "p_jungle",
+     "query": "澜怎么出装",
+     "type": "direct",
+     "gold": [
+      "c29"
+     ],
+     "got": [
+      "c29"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q31",
+     "player": "p_jungle",
+     "query": "我巅峰赛的新目标",
+     "type": "update",
+     "gold": [
+      "c31"
+     ],
+     "got": [
+      "c31",
+      "c08"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q32",
+     "player": "p_jungle",
+     "query": "我哪科比较差",
+     "type": "paraphrase",
+     "gold": [
+      "c32"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "c_q33",
+     "player": "p_jungle",
+     "query": "让我去玩辅助行吗",
+     "type": "direct",
+     "gold": [
+      "c33"
+     ],
+     "got": [
+      "c33"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q34",
+     "player": "p_jungle",
+     "query": "手出汗怎么办",
+     "type": "paraphrase",
+     "gold": [
+      "c34"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "c_q35",
+     "player": "p_jungle",
+     "query": "我打野有什么特点",
+     "type": "multi",
+     "gold": [
+      "c17",
+      "c26"
+     ],
+     "got": [
+      "c04",
+      "c10",
+      "c15"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_n01",
+     "player": "p_jungle",
+     "query": "今天是几号",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n02",
+     "player": "p_jungle",
+     "query": "怎么做番茄炒蛋",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n03",
+     "player": "p_jungle",
+     "query": "推荐一部动漫",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n04",
+     "player": "p_jungle",
+     "query": "光速是多少",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n05",
+     "player": "p_jungle",
+     "query": "帮我写个请假条",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n06",
+     "player": "p_jungle",
+     "query": "英语作文怎么写好",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n07",
+     "player": "p_jungle",
+     "query": "世界上最高的山是哪座",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "c08"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_n08",
+     "player": "p_jungle",
+     "query": "猫为什么喜欢纸箱",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "c33",
+      "c27"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_n09",
+     "player": "p_jungle",
+     "query": "牛顿第二定律是什么",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n10",
+     "player": "p_jungle",
+     "query": "火星上有水吗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n11",
+     "player": "p_jungle",
+     "query": "怎么养多肉",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n12",
+     "player": "p_jungle",
+     "query": "你喜欢什么颜色",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "c33",
+      "c27"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_n13",
+     "player": "p_jungle",
+     "query": "明天会下雪吗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n14",
+     "player": "p_jungle",
+     "query": "如何快速入睡",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n15",
+     "player": "p_jungle",
+     "query": "电动车和油车哪个好",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    }
+   ],
+   "latency_ms": 0.26
+  },
+  "v1-hybrid": {
+   "MemScore@3": 0.8431,
+   "Recall@3": 0.875,
+   "MRR": 0.7778,
+   "Abstain": 0.7667,
+   "by_type": {
+    "direct": 1.0,
+    "multi": 0.5,
+    "negative": 0.7667,
+    "paraphrase": 0.7241,
+    "update": 1.0
+   },
+   "n": 102,
+   "rows": [
+    {
+     "id": "b_q01",
+     "player": "p_mage",
+     "query": "我生日几号？",
+     "type": "direct",
+     "gold": [
+      "b01"
+     ],
+     "got": [
+      "b01",
+      "b03"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q02",
+     "player": "p_mage",
+     "query": "我哪天过生日来着",
+     "type": "paraphrase",
+     "gold": [
+      "b01"
+     ],
+     "got": [
+      "b01"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q03",
+     "player": "p_mage",
+     "query": "我是干什么工作的",
+     "type": "paraphrase",
+     "gold": [
+      "b02"
+     ],
+     "got": [
+      "b02"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q04",
+     "player": "p_mage",
+     "query": "我在哪个城市",
+     "type": "paraphrase",
+     "gold": [
+      "b02"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "b_q05",
+     "player": "p_mage",
+     "query": "我一般什么时候玩游戏",
+     "type": "direct",
+     "gold": [
+      "b03"
+     ],
+     "got": [
+      "b03",
+      "b34",
+      "b22"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q06",
+     "player": "p_mage",
+     "query": "我主打哪条路",
+     "type": "paraphrase",
+     "gold": [
+      "b04"
+     ],
+     "got": [
+      "b04"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q07",
+     "player": "p_mage",
+     "query": "我用得最多的英雄",
+     "type": "direct",
+     "gold": [
+      "b05"
+     ],
+     "got": [
+      "b05",
+      "b06",
+      "b37"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q08",
+     "player": "p_mage",
+     "query": "我胜率最高的是哪个英雄",
+     "type": "direct",
+     "gold": [
+      "b06"
+     ],
+     "got": [
+      "b05",
+      "b06",
+      "b07"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q09",
+     "player": "p_mage",
+     "query": "王昭君我玩得怎么样",
+     "type": "direct",
+     "gold": [
+      "b07"
+     ],
+     "got": [
+      "b07"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q10",
+     "player": "p_mage",
+     "query": "我现在啥段位",
+     "type": "update",
+     "gold": [
+      "b09"
+     ],
+     "got": [
+      "b09",
+      "b28",
+      "b21"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q11",
+     "player": "p_mage",
+     "query": "我打到星耀了吗",
+     "type": "update",
+     "gold": [
+      "b09"
+     ],
+     "got": [
+      "b09"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q12",
+     "player": "p_mage",
+     "query": "我对线最怕谁",
+     "type": "paraphrase",
+     "gold": [
+      "b10"
+     ],
+     "got": [
+      "b10"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q13",
+     "player": "p_mage",
+     "query": "兰陵王来抓我怎么办",
+     "type": "direct",
+     "gold": [
+      "b10"
+     ],
+     "got": [
+      "b10"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q14",
+     "player": "p_mage",
+     "query": "我喜欢打排位吗",
+     "type": "direct",
+     "gold": [
+      "b11"
+     ],
+     "got": [
+      "b11",
+      "b21",
+      "b30"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q15",
+     "player": "p_mage",
+     "query": "平时跟谁一起玩",
+     "type": "paraphrase",
+     "gold": [
+      "b12"
+     ],
+     "got": [
+      "b11",
+      "b12",
+      "b13"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q16",
+     "player": "p_mage",
+     "query": "小周玩什么位置",
+     "type": "direct",
+     "gold": [
+      "b12"
+     ],
+     "got": [
+      "b12",
+      "b04",
+      "b21"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q17",
+     "player": "p_mage",
+     "query": "我CP叫什么",
+     "type": "paraphrase",
+     "gold": [
+      "b13"
+     ],
+     "got": [
+      "b34"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "b_q18",
+     "player": "p_mage",
+     "query": "我还在练打野吗",
+     "type": "update",
+     "gold": [
+      "b15"
+     ],
+     "got": [
+      "b15"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q19",
+     "player": "p_mage",
+     "query": "我用什么设备玩",
+     "type": "direct",
+     "gold": [
+      "b16"
+     ],
+     "got": [
+      "b16"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q20",
+     "player": "p_mage",
+     "query": "我开麦吗",
+     "type": "paraphrase",
+     "gold": [
+      "b17"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "b_q21",
+     "player": "p_mage",
+     "query": "诸葛亮出什么装备",
+     "type": "direct",
+     "gold": [
+      "b18"
+     ],
+     "got": [
+      "b05",
+      "b18",
+      "b19"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q22",
+     "player": "p_mage",
+     "query": "我有哪些诸葛亮皮肤",
+     "type": "direct",
+     "gold": [
+      "b19"
+     ],
+     "got": [
+      "b05",
+      "b18",
+      "b19"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q23",
+     "player": "p_mage",
+     "query": "我什么时候拿的法王",
+     "type": "direct",
+     "gold": [
+      "b20"
+     ],
+     "got": [
+      "b20"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q24",
+     "player": "p_mage",
+     "query": "最近手感怎么样",
+     "type": "paraphrase",
+     "gold": [
+      "b21"
+     ],
+     "got": [
+      "b16",
+      "b35"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "b_q25",
+     "player": "p_mage",
+     "query": "我工作忙的时候还玩吗",
+     "type": "paraphrase",
+     "gold": [
+      "b22"
+     ],
+     "got": [
+      "b02",
+      "b03",
+      "b11"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "b_q26",
+     "player": "p_mage",
+     "query": "我喜欢哪个战队",
+     "type": "paraphrase",
+     "gold": [
+      "b23"
+     ],
+     "got": [
+      "b11",
+      "b30",
+      "b23"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q27",
+     "player": "p_mage",
+     "query": "被人骂了好气",
+     "type": "paraphrase",
+     "gold": [
+      "b24"
+     ],
+     "got": [
+      "b11",
+      "b24",
+      "b17"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q28",
+     "player": "p_mage",
+     "query": "我喜欢什么娱乐模式",
+     "type": "direct",
+     "gold": [
+      "b27"
+     ],
+     "got": [
+      "b27"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q29",
+     "player": "p_mage",
+     "query": "我今年的目标是什么",
+     "type": "direct",
+     "gold": [
+      "b28"
+     ],
+     "got": [
+      "b28"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q30",
+     "player": "p_mage",
+     "query": "我在游戏里花钱多吗",
+     "type": "paraphrase",
+     "gold": [
+      "b29"
+     ],
+     "got": [
+      "b22",
+      "b29"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q31",
+     "player": "p_mage",
+     "query": "为什么我喜欢玩貂蝉",
+     "type": "direct",
+     "gold": [
+      "b30"
+     ],
+     "got": [
+      "b30"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q32",
+     "player": "p_mage",
+     "query": "我家的猫叫什么",
+     "type": "direct",
+     "gold": [
+      "b31"
+     ],
+     "got": [
+      "b31"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q33",
+     "player": "p_mage",
+     "query": "我游戏ID叫什么",
+     "type": "update",
+     "gold": [
+      "b34"
+     ],
+     "got": [
+      "b34",
+      "b13",
+      "b03"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q34",
+     "player": "p_mage",
+     "query": "我的画面设置有什么习惯",
+     "type": "paraphrase",
+     "gold": [
+      "b35"
+     ],
+     "got": [
+      "b35"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q35",
+     "player": "p_mage",
+     "query": "我用什么施法方式",
+     "type": "direct",
+     "gold": [
+      "b36"
+     ],
+     "got": [
+      "b36"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q36",
+     "player": "p_mage",
+     "query": "给我推荐一个坦克",
+     "type": "paraphrase",
+     "gold": [
+      "b37"
+     ],
+     "got": [
+      "b37"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q37",
+     "player": "p_mage",
+     "query": "我的法师英雄里哪个最强",
+     "type": "multi",
+     "gold": [
+      "b05",
+      "b06"
+     ],
+     "got": [
+      "b04",
+      "b05",
+      "b06"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_n01",
+     "player": "p_mage",
+     "query": "今天北京下雨吗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n02",
+     "player": "p_mage",
+     "query": "帮我翻译一句英文",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n03",
+     "player": "p_mage",
+     "query": "红烧肉怎么做",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n04",
+     "player": "p_mage",
+     "query": "推荐几本科幻小说",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n05",
+     "player": "p_mage",
+     "query": "明天股市会涨吗",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "b21",
+      "b25"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "b_n06",
+     "player": "p_mage",
+     "query": "怎么学好数学",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n07",
+     "player": "p_mage",
+     "query": "感冒了吃什么药",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n08",
+     "player": "p_mage",
+     "query": "地球到月球多远",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n09",
+     "player": "p_mage",
+     "query": "你是机器人吗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n10",
+     "player": "p_mage",
+     "query": "周末去哪里玩好",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "b03",
+      "b22"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "b_n11",
+     "player": "p_mage",
+     "query": "讲个笑话",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n12",
+     "player": "p_mage",
+     "query": "王者荣耀是哪家公司做的",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "b28",
+      "b09",
+      "b20"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "b_n13",
+     "player": "p_mage",
+     "query": "如何提高睡眠质量",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n14",
+     "player": "p_mage",
+     "query": "汽车保养多久一次",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n15",
+     "player": "p_mage",
+     "query": "什么是区块链",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_q01",
+     "player": "p_jungle",
+     "query": "我生日是几号",
+     "type": "direct",
+     "gold": [
+      "c01"
+     ],
+     "got": [
+      "c01"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q02",
+     "player": "p_jungle",
+     "query": "我哪天出生的",
+     "type": "paraphrase",
+     "gold": [
+      "c01"
+     ],
+     "got": [
+      "c01"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q03",
+     "player": "p_jungle",
+     "query": "我读几年级",
+     "type": "paraphrase",
+     "gold": [
+      "c02"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "c_q04",
+     "player": "p_jungle",
+     "query": "我什么时候能玩游戏",
+     "type": "paraphrase",
+     "gold": [
+      "c03"
+     ],
+     "got": [
+      "c03",
+      "c12",
+      "c21"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q05",
+     "player": "p_jungle",
+     "query": "为什么我平时不能玩",
+     "type": "paraphrase",
+     "gold": [
+      "c03"
+     ],
+     "got": [
+      "c03",
+      "c12",
+      "c33"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q06",
+     "player": "p_jungle",
+     "query": "我打什么位置",
+     "type": "direct",
+     "gold": [
+      "c04"
+     ],
+     "got": [
+      "c04"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q07",
+     "player": "p_jungle",
+     "query": "我的本命英雄是谁",
+     "type": "update",
+     "gold": [
+      "c06"
+     ],
+     "got": [
+      "c06"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q08",
+     "player": "p_jungle",
+     "query": "我还在玩李白吗",
+     "type": "update",
+     "gold": [
+      "c06"
+     ],
+     "got": [
+      "c06"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q09",
+     "player": "p_jungle",
+     "query": "韩信我胜率多少",
+     "type": "direct",
+     "gold": [
+      "c07"
+     ],
+     "got": [
+      "c07",
+      "c19"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q10",
+     "player": "p_jungle",
+     "query": "我巅峰赛最高多少分",
+     "type": "direct",
+     "gold": [
+      "c08"
+     ],
+     "got": [
+      "c08",
+      "c31"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q11",
+     "player": "p_jungle",
+     "query": "我在社团里是什么角色",
+     "type": "paraphrase",
+     "gold": [
+      "c09"
+     ],
+     "got": [
+      "c09",
+      "c25",
+      "c18"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q12",
+     "player": "p_jungle",
+     "query": "我开局一般怎么刷野",
+     "type": "paraphrase",
+     "gold": [
+      "c10"
+     ],
+     "got": [
+      "c04",
+      "c10"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q13",
+     "player": "p_jungle",
+     "query": "队友一直送好烦",
+     "type": "direct",
+     "gold": [
+      "c11"
+     ],
+     "got": [
+      "c11"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q14",
+     "player": "p_jungle",
+     "query": "我爸妈对我玩游戏什么态度",
+     "type": "direct",
+     "gold": [
+      "c12"
+     ],
+     "got": [
+      "c12",
+      "c21"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q15",
+     "player": "p_jungle",
+     "query": "我现在用什么手机",
+     "type": "update",
+     "gold": [
+      "c14"
+     ],
+     "got": [
+      "c12",
+      "c14"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q16",
+     "player": "p_jungle",
+     "query": "我崇拜哪个选手",
+     "type": "paraphrase",
+     "gold": [
+      "c15"
+     ],
+     "got": [
+      "c22",
+      "c15",
+      "c04"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q17",
+     "player": "p_jungle",
+     "query": "我拿过什么比赛奖",
+     "type": "paraphrase",
+     "gold": [
+      "c16"
+     ],
+     "got": [
+      "c16",
+      "c08",
+      "c31"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q18",
+     "player": "p_jungle",
+     "query": "我抢龙厉害吗",
+     "type": "direct",
+     "gold": [
+      "c17"
+     ],
+     "got": [
+      "c17"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q19",
+     "player": "p_jungle",
+     "query": "我打游戏说话多吗",
+     "type": "paraphrase",
+     "gold": [
+      "c18"
+     ],
+     "got": [
+      "c12",
+      "c03",
+      "c27"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_q20",
+     "player": "p_jungle",
+     "query": "兰陵王适合我吗",
+     "type": "direct",
+     "gold": [
+      "c19"
+     ],
+     "got": [
+      "c19"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q21",
+     "player": "p_jungle",
+     "query": "我常和谁双排",
+     "type": "direct",
+     "gold": [
+      "c20"
+     ],
+     "got": [
+      "c20"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q22",
+     "player": "p_jungle",
+     "query": "我期末考试什么时候",
+     "type": "direct",
+     "gold": [
+      "c21"
+     ],
+     "got": [
+      "c21"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q23",
+     "player": "p_jungle",
+     "query": "我以后想干什么",
+     "type": "paraphrase",
+     "gold": [
+      "c22"
+     ],
+     "got": [
+      "c22"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q24",
+     "player": "p_jungle",
+     "query": "我想买什么皮肤",
+     "type": "direct",
+     "gold": [
+      "c23"
+     ],
+     "got": [
+      "c23"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q25",
+     "player": "p_jungle",
+     "query": "我有多少零花钱",
+     "type": "direct",
+     "gold": [
+      "c24"
+     ],
+     "got": [
+      "c24"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q26",
+     "player": "p_jungle",
+     "query": "我的KDA怎么样",
+     "type": "direct",
+     "gold": [
+      "c25"
+     ],
+     "got": [
+      "c25"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q27",
+     "player": "p_jungle",
+     "query": "我喜欢反野吗",
+     "type": "paraphrase",
+     "gold": [
+      "c26"
+     ],
+     "got": [
+      "c33",
+      "c27",
+      "c04"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_q28",
+     "player": "p_jungle",
+     "query": "我打游戏喜欢听什么歌",
+     "type": "direct",
+     "gold": [
+      "c27"
+     ],
+     "got": [
+      "c12",
+      "c27",
+      "c34"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q29",
+     "player": "p_jungle",
+     "query": "输了之后我会干嘛",
+     "type": "paraphrase",
+     "gold": [
+      "c28"
+     ],
+     "got": [
+      "c12",
+      "c22",
+      "c28"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q30",
+     "player": "p_jungle",
+     "query": "澜怎么出装",
+     "type": "direct",
+     "gold": [
+      "c29"
+     ],
+     "got": [
+      "c29"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q31",
+     "player": "p_jungle",
+     "query": "我巅峰赛的新目标",
+     "type": "update",
+     "gold": [
+      "c31"
+     ],
+     "got": [
+      "c31",
+      "c08"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q32",
+     "player": "p_jungle",
+     "query": "我哪科比较差",
+     "type": "paraphrase",
+     "gold": [
+      "c32"
+     ],
+     "got": [
+      "c32"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q33",
+     "player": "p_jungle",
+     "query": "让我去玩辅助行吗",
+     "type": "direct",
+     "gold": [
+      "c33"
+     ],
+     "got": [
+      "c33"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q34",
+     "player": "p_jungle",
+     "query": "手出汗怎么办",
+     "type": "paraphrase",
+     "gold": [
+      "c34"
+     ],
+     "got": [
+      "c34"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q35",
+     "player": "p_jungle",
+     "query": "我打野有什么特点",
+     "type": "multi",
+     "gold": [
+      "c17",
+      "c26"
+     ],
+     "got": [
+      "c04",
+      "c10",
+      "c15"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_n01",
+     "player": "p_jungle",
+     "query": "今天是几号",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "c01",
+      "c03",
+      "c21"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_n02",
+     "player": "p_jungle",
+     "query": "怎么做番茄炒蛋",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n03",
+     "player": "p_jungle",
+     "query": "推荐一部动漫",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n04",
+     "player": "p_jungle",
+     "query": "光速是多少",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n05",
+     "player": "p_jungle",
+     "query": "帮我写个请假条",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n06",
+     "player": "p_jungle",
+     "query": "英语作文怎么写好",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n07",
+     "player": "p_jungle",
+     "query": "世界上最高的山是哪座",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "c08"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_n08",
+     "player": "p_jungle",
+     "query": "猫为什么喜欢纸箱",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n09",
+     "player": "p_jungle",
+     "query": "牛顿第二定律是什么",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n10",
+     "player": "p_jungle",
+     "query": "火星上有水吗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n11",
+     "player": "p_jungle",
+     "query": "怎么养多肉",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n12",
+     "player": "p_jungle",
+     "query": "你喜欢什么颜色",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "c33",
+      "c27"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_n13",
+     "player": "p_jungle",
+     "query": "明天会下雪吗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n14",
+     "player": "p_jungle",
+     "query": "如何快速入睡",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "c03"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_n15",
+     "player": "p_jungle",
+     "query": "电动车和油车哪个好",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    }
+   ],
+   "latency_ms": 7.16
+  },
+  "v2-hybrid": {
+   "MemScore@3": 0.8922,
+   "Recall@3": 0.9028,
+   "MRR": 0.8056,
+   "Abstain": 0.8667,
+   "by_type": {
+    "direct": 1.0,
+    "multi": 0.5,
+    "negative": 0.8667,
+    "paraphrase": 0.7931,
+    "update": 1.0
+   },
+   "n": 102,
+   "rows": [
+    {
+     "id": "b_q01",
+     "player": "p_mage",
+     "query": "我生日几号？",
+     "type": "direct",
+     "gold": [
+      "b01"
+     ],
+     "got": [
+      "b01",
+      "b20"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q02",
+     "player": "p_mage",
+     "query": "我哪天过生日来着",
+     "type": "paraphrase",
+     "gold": [
+      "b01"
+     ],
+     "got": [
+      "b01"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q03",
+     "player": "p_mage",
+     "query": "我是干什么工作的",
+     "type": "paraphrase",
+     "gold": [
+      "b02"
+     ],
+     "got": [
+      "b02"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q04",
+     "player": "p_mage",
+     "query": "我在哪个城市",
+     "type": "paraphrase",
+     "gold": [
+      "b02"
+     ],
+     "got": [
+      "b02"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q05",
+     "player": "p_mage",
+     "query": "我一般什么时候玩游戏",
+     "type": "direct",
+     "gold": [
+      "b03"
+     ],
+     "got": [
+      "b03",
+      "b22",
+      "b16"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q06",
+     "player": "p_mage",
+     "query": "我主打哪条路",
+     "type": "paraphrase",
+     "gold": [
+      "b04"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "b_q07",
+     "player": "p_mage",
+     "query": "我用得最多的英雄",
+     "type": "direct",
+     "gold": [
+      "b05"
+     ],
+     "got": [
+      "b05",
+      "b06",
+      "b37"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q08",
+     "player": "p_mage",
+     "query": "我胜率最高的是哪个英雄",
+     "type": "direct",
+     "gold": [
+      "b06"
+     ],
+     "got": [
+      "b05",
+      "b06",
+      "b07"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q09",
+     "player": "p_mage",
+     "query": "王昭君我玩得怎么样",
+     "type": "direct",
+     "gold": [
+      "b07"
+     ],
+     "got": [
+      "b07"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q10",
+     "player": "p_mage",
+     "query": "我现在啥段位",
+     "type": "update",
+     "gold": [
+      "b09"
+     ],
+     "got": [
+      "b09",
+      "b28",
+      "b25"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q11",
+     "player": "p_mage",
+     "query": "我打到星耀了吗",
+     "type": "update",
+     "gold": [
+      "b09"
+     ],
+     "got": [
+      "b09",
+      "b28",
+      "b21"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q12",
+     "player": "p_mage",
+     "query": "我对线最怕谁",
+     "type": "paraphrase",
+     "gold": [
+      "b10"
+     ],
+     "got": [
+      "b10"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q13",
+     "player": "p_mage",
+     "query": "兰陵王来抓我怎么办",
+     "type": "direct",
+     "gold": [
+      "b10"
+     ],
+     "got": [
+      "b10"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q14",
+     "player": "p_mage",
+     "query": "我喜欢打排位吗",
+     "type": "direct",
+     "gold": [
+      "b11"
+     ],
+     "got": [
+      "b11",
+      "b21",
+      "b37"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q15",
+     "player": "p_mage",
+     "query": "平时跟谁一起玩",
+     "type": "paraphrase",
+     "gold": [
+      "b12"
+     ],
+     "got": [
+      "b13",
+      "b12",
+      "b11"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q16",
+     "player": "p_mage",
+     "query": "小周玩什么位置",
+     "type": "direct",
+     "gold": [
+      "b12"
+     ],
+     "got": [
+      "b04",
+      "b12"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q17",
+     "player": "p_mage",
+     "query": "我CP叫什么",
+     "type": "paraphrase",
+     "gold": [
+      "b13"
+     ],
+     "got": [
+      "b13"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q18",
+     "player": "p_mage",
+     "query": "我还在练打野吗",
+     "type": "update",
+     "gold": [
+      "b15"
+     ],
+     "got": [
+      "b15"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q19",
+     "player": "p_mage",
+     "query": "我用什么设备玩",
+     "type": "direct",
+     "gold": [
+      "b16"
+     ],
+     "got": [
+      "b16",
+      "b35"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q20",
+     "player": "p_mage",
+     "query": "我开麦吗",
+     "type": "paraphrase",
+     "gold": [
+      "b17"
+     ],
+     "got": [
+      "b17"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q21",
+     "player": "p_mage",
+     "query": "诸葛亮出什么装备",
+     "type": "direct",
+     "gold": [
+      "b18"
+     ],
+     "got": [
+      "b05",
+      "b18",
+      "b19"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q22",
+     "player": "p_mage",
+     "query": "我有哪些诸葛亮皮肤",
+     "type": "direct",
+     "gold": [
+      "b19"
+     ],
+     "got": [
+      "b05",
+      "b18",
+      "b19"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q23",
+     "player": "p_mage",
+     "query": "我什么时候拿的法王",
+     "type": "direct",
+     "gold": [
+      "b20"
+     ],
+     "got": [
+      "b20"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q24",
+     "player": "p_mage",
+     "query": "最近手感怎么样",
+     "type": "paraphrase",
+     "gold": [
+      "b21"
+     ],
+     "got": [
+      "b11",
+      "b15"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "b_q25",
+     "player": "p_mage",
+     "query": "我工作忙的时候还玩吗",
+     "type": "paraphrase",
+     "gold": [
+      "b22"
+     ],
+     "got": [
+      "b02",
+      "b03",
+      "b11"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "b_q26",
+     "player": "p_mage",
+     "query": "我喜欢哪个战队",
+     "type": "paraphrase",
+     "gold": [
+      "b23"
+     ],
+     "got": [
+      "b11",
+      "b30",
+      "b23"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q27",
+     "player": "p_mage",
+     "query": "被人骂了好气",
+     "type": "paraphrase",
+     "gold": [
+      "b24"
+     ],
+     "got": [
+      "b24"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q28",
+     "player": "p_mage",
+     "query": "我喜欢什么娱乐模式",
+     "type": "direct",
+     "gold": [
+      "b27"
+     ],
+     "got": [
+      "b11",
+      "b27",
+      "b37"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q29",
+     "player": "p_mage",
+     "query": "我今年的目标是什么",
+     "type": "direct",
+     "gold": [
+      "b28"
+     ],
+     "got": [
+      "b28"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q30",
+     "player": "p_mage",
+     "query": "我在游戏里花钱多吗",
+     "type": "paraphrase",
+     "gold": [
+      "b29"
+     ],
+     "got": [
+      "b29"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q31",
+     "player": "p_mage",
+     "query": "为什么我喜欢玩貂蝉",
+     "type": "direct",
+     "gold": [
+      "b30"
+     ],
+     "got": [
+      "b30"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q32",
+     "player": "p_mage",
+     "query": "我家的猫叫什么",
+     "type": "direct",
+     "gold": [
+      "b31"
+     ],
+     "got": [
+      "b31"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q33",
+     "player": "p_mage",
+     "query": "我游戏ID叫什么",
+     "type": "update",
+     "gold": [
+      "b34"
+     ],
+     "got": [
+      "b34",
+      "b13",
+      "b03"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q34",
+     "player": "p_mage",
+     "query": "我的画面设置有什么习惯",
+     "type": "paraphrase",
+     "gold": [
+      "b35"
+     ],
+     "got": [
+      "b35"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q35",
+     "player": "p_mage",
+     "query": "我用什么施法方式",
+     "type": "direct",
+     "gold": [
+      "b36"
+     ],
+     "got": [
+      "b36"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q36",
+     "player": "p_mage",
+     "query": "给我推荐一个坦克",
+     "type": "paraphrase",
+     "gold": [
+      "b37"
+     ],
+     "got": [
+      "b37"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q37",
+     "player": "p_mage",
+     "query": "我的法师英雄里哪个最强",
+     "type": "multi",
+     "gold": [
+      "b05",
+      "b06"
+     ],
+     "got": [
+      "b04",
+      "b05",
+      "b06"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_n01",
+     "player": "p_mage",
+     "query": "今天北京下雨吗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n02",
+     "player": "p_mage",
+     "query": "帮我翻译一句英文",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n03",
+     "player": "p_mage",
+     "query": "红烧肉怎么做",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n04",
+     "player": "p_mage",
+     "query": "推荐几本科幻小说",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n05",
+     "player": "p_mage",
+     "query": "明天股市会涨吗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n06",
+     "player": "p_mage",
+     "query": "怎么学好数学",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n07",
+     "player": "p_mage",
+     "query": "感冒了吃什么药",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n08",
+     "player": "p_mage",
+     "query": "地球到月球多远",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n09",
+     "player": "p_mage",
+     "query": "你是机器人吗",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "b02",
+      "b13"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "b_n10",
+     "player": "p_mage",
+     "query": "周末去哪里玩好",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "b03"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "b_n11",
+     "player": "p_mage",
+     "query": "讲个笑话",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n12",
+     "player": "p_mage",
+     "query": "王者荣耀是哪家公司做的",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "b28",
+      "b02",
+      "b20"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "b_n13",
+     "player": "p_mage",
+     "query": "如何提高睡眠质量",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n14",
+     "player": "p_mage",
+     "query": "汽车保养多久一次",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n15",
+     "player": "p_mage",
+     "query": "什么是区块链",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_q01",
+     "player": "p_jungle",
+     "query": "我生日是几号",
+     "type": "direct",
+     "gold": [
+      "c01"
+     ],
+     "got": [
+      "c01"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q02",
+     "player": "p_jungle",
+     "query": "我哪天出生的",
+     "type": "paraphrase",
+     "gold": [
+      "c01"
+     ],
+     "got": [
+      "c01"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q03",
+     "player": "p_jungle",
+     "query": "我读几年级",
+     "type": "paraphrase",
+     "gold": [
+      "c02"
+     ],
+     "got": [
+      "c02",
+      "c32"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q04",
+     "player": "p_jungle",
+     "query": "我什么时候能玩游戏",
+     "type": "paraphrase",
+     "gold": [
+      "c03"
+     ],
+     "got": [
+      "c03",
+      "c12",
+      "c21"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q05",
+     "player": "p_jungle",
+     "query": "为什么我平时不能玩",
+     "type": "paraphrase",
+     "gold": [
+      "c03"
+     ],
+     "got": [
+      "c03",
+      "c12",
+      "c02"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q06",
+     "player": "p_jungle",
+     "query": "我打什么位置",
+     "type": "direct",
+     "gold": [
+      "c04"
+     ],
+     "got": [
+      "c04"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q07",
+     "player": "p_jungle",
+     "query": "我的本命英雄是谁",
+     "type": "update",
+     "gold": [
+      "c06"
+     ],
+     "got": [
+      "c06",
+      "c20",
+      "c15"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q08",
+     "player": "p_jungle",
+     "query": "我还在玩李白吗",
+     "type": "update",
+     "gold": [
+      "c06"
+     ],
+     "got": [
+      "c06"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q09",
+     "player": "p_jungle",
+     "query": "韩信我胜率多少",
+     "type": "direct",
+     "gold": [
+      "c07"
+     ],
+     "got": [
+      "c07",
+      "c19"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q10",
+     "player": "p_jungle",
+     "query": "我巅峰赛最高多少分",
+     "type": "direct",
+     "gold": [
+      "c08"
+     ],
+     "got": [
+      "c08",
+      "c31"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q11",
+     "player": "p_jungle",
+     "query": "我在社团里是什么角色",
+     "type": "paraphrase",
+     "gold": [
+      "c09"
+     ],
+     "got": [
+      "c09"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q12",
+     "player": "p_jungle",
+     "query": "我开局一般怎么刷野",
+     "type": "paraphrase",
+     "gold": [
+      "c10"
+     ],
+     "got": [
+      "c04",
+      "c10"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q13",
+     "player": "p_jungle",
+     "query": "队友一直送好烦",
+     "type": "direct",
+     "gold": [
+      "c11"
+     ],
+     "got": [
+      "c11",
+      "c33"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q14",
+     "player": "p_jungle",
+     "query": "我爸妈对我玩游戏什么态度",
+     "type": "direct",
+     "gold": [
+      "c12"
+     ],
+     "got": [
+      "c12",
+      "c21"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q15",
+     "player": "p_jungle",
+     "query": "我现在用什么手机",
+     "type": "update",
+     "gold": [
+      "c14"
+     ],
+     "got": [
+      "c12",
+      "c14"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q16",
+     "player": "p_jungle",
+     "query": "我崇拜哪个选手",
+     "type": "paraphrase",
+     "gold": [
+      "c15"
+     ],
+     "got": [
+      "c22",
+      "c15",
+      "c20"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q17",
+     "player": "p_jungle",
+     "query": "我拿过什么比赛奖",
+     "type": "paraphrase",
+     "gold": [
+      "c16"
+     ],
+     "got": [
+      "c16"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q18",
+     "player": "p_jungle",
+     "query": "我抢龙厉害吗",
+     "type": "direct",
+     "gold": [
+      "c17"
+     ],
+     "got": [
+      "c17"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q19",
+     "player": "p_jungle",
+     "query": "我打游戏说话多吗",
+     "type": "paraphrase",
+     "gold": [
+      "c18"
+     ],
+     "got": [
+      "c12",
+      "c34",
+      "c27"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_q20",
+     "player": "p_jungle",
+     "query": "兰陵王适合我吗",
+     "type": "direct",
+     "gold": [
+      "c19"
+     ],
+     "got": [
+      "c19"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q21",
+     "player": "p_jungle",
+     "query": "我常和谁双排",
+     "type": "direct",
+     "gold": [
+      "c20"
+     ],
+     "got": [
+      "c20"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q22",
+     "player": "p_jungle",
+     "query": "我期末考试什么时候",
+     "type": "direct",
+     "gold": [
+      "c21"
+     ],
+     "got": [
+      "c21"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q23",
+     "player": "p_jungle",
+     "query": "我以后想干什么",
+     "type": "paraphrase",
+     "gold": [
+      "c22"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "c_q24",
+     "player": "p_jungle",
+     "query": "我想买什么皮肤",
+     "type": "direct",
+     "gold": [
+      "c23"
+     ],
+     "got": [
+      "c23"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q25",
+     "player": "p_jungle",
+     "query": "我有多少零花钱",
+     "type": "direct",
+     "gold": [
+      "c24"
+     ],
+     "got": [
+      "c24"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q26",
+     "player": "p_jungle",
+     "query": "我的KDA怎么样",
+     "type": "direct",
+     "gold": [
+      "c25"
+     ],
+     "got": [
+      "c25"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q27",
+     "player": "p_jungle",
+     "query": "我喜欢反野吗",
+     "type": "paraphrase",
+     "gold": [
+      "c26"
+     ],
+     "got": [
+      "c33",
+      "c27",
+      "c04"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_q28",
+     "player": "p_jungle",
+     "query": "我打游戏喜欢听什么歌",
+     "type": "direct",
+     "gold": [
+      "c27"
+     ],
+     "got": [
+      "c12",
+      "c33",
+      "c27"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q29",
+     "player": "p_jungle",
+     "query": "输了之后我会干嘛",
+     "type": "paraphrase",
+     "gold": [
+      "c28"
+     ],
+     "got": [
+      "c12",
+      "c28"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q30",
+     "player": "p_jungle",
+     "query": "澜怎么出装",
+     "type": "direct",
+     "gold": [
+      "c29"
+     ],
+     "got": [
+      "c29"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q31",
+     "player": "p_jungle",
+     "query": "我巅峰赛的新目标",
+     "type": "update",
+     "gold": [
+      "c31"
+     ],
+     "got": [
+      "c31",
+      "c08"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q32",
+     "player": "p_jungle",
+     "query": "我哪科比较差",
+     "type": "paraphrase",
+     "gold": [
+      "c32"
+     ],
+     "got": [
+      "c32"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q33",
+     "player": "p_jungle",
+     "query": "让我去玩辅助行吗",
+     "type": "direct",
+     "gold": [
+      "c33"
+     ],
+     "got": [
+      "c33"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q34",
+     "player": "p_jungle",
+     "query": "手出汗怎么办",
+     "type": "paraphrase",
+     "gold": [
+      "c34"
+     ],
+     "got": [
+      "c34"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q35",
+     "player": "p_jungle",
+     "query": "我打野有什么特点",
+     "type": "multi",
+     "gold": [
+      "c17",
+      "c26"
+     ],
+     "got": [
+      "c04",
+      "c10",
+      "c15"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_n01",
+     "player": "p_jungle",
+     "query": "今天是几号",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n02",
+     "player": "p_jungle",
+     "query": "怎么做番茄炒蛋",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n03",
+     "player": "p_jungle",
+     "query": "推荐一部动漫",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n04",
+     "player": "p_jungle",
+     "query": "光速是多少",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n05",
+     "player": "p_jungle",
+     "query": "帮我写个请假条",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n06",
+     "player": "p_jungle",
+     "query": "英语作文怎么写好",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n07",
+     "player": "p_jungle",
+     "query": "世界上最高的山是哪座",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n08",
+     "player": "p_jungle",
+     "query": "猫为什么喜欢纸箱",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n09",
+     "player": "p_jungle",
+     "query": "牛顿第二定律是什么",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n10",
+     "player": "p_jungle",
+     "query": "火星上有水吗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n11",
+     "player": "p_jungle",
+     "query": "怎么养多肉",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n12",
+     "player": "p_jungle",
+     "query": "你喜欢什么颜色",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "c33",
+      "c27"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_n13",
+     "player": "p_jungle",
+     "query": "明天会下雪吗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n14",
+     "player": "p_jungle",
+     "query": "如何快速入睡",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n15",
+     "player": "p_jungle",
+     "query": "电动车和油车哪个好",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    }
+   ],
+   "latency_ms": 36.9
+  },
+  "v2-hybrid+rerank": {
+   "MemScore@3": 0.8775,
+   "Recall@3": 0.8819,
+   "MRR": 0.8495,
+   "Abstain": 0.8667,
+   "by_type": {
+    "direct": 1.0,
+    "multi": 0.25,
+    "negative": 0.8667,
+    "paraphrase": 0.7586,
+    "update": 1.0
+   },
+   "n": 102,
+   "rows": [
+    {
+     "id": "b_q01",
+     "player": "p_mage",
+     "query": "我生日几号？",
+     "type": "direct",
+     "gold": [
+      "b01"
+     ],
+     "got": [
+      "b01"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q02",
+     "player": "p_mage",
+     "query": "我哪天过生日来着",
+     "type": "paraphrase",
+     "gold": [
+      "b01"
+     ],
+     "got": [
+      "b01"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q03",
+     "player": "p_mage",
+     "query": "我是干什么工作的",
+     "type": "paraphrase",
+     "gold": [
+      "b02"
+     ],
+     "got": [
+      "b02"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q04",
+     "player": "p_mage",
+     "query": "我在哪个城市",
+     "type": "paraphrase",
+     "gold": [
+      "b02"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "b_q05",
+     "player": "p_mage",
+     "query": "我一般什么时候玩游戏",
+     "type": "direct",
+     "gold": [
+      "b03"
+     ],
+     "got": [
+      "b03",
+      "b22"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q06",
+     "player": "p_mage",
+     "query": "我主打哪条路",
+     "type": "paraphrase",
+     "gold": [
+      "b04"
+     ],
+     "got": [
+      "b04"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q07",
+     "player": "p_mage",
+     "query": "我用得最多的英雄",
+     "type": "direct",
+     "gold": [
+      "b05"
+     ],
+     "got": [
+      "b05",
+      "b06",
+      "b07"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q08",
+     "player": "p_mage",
+     "query": "我胜率最高的是哪个英雄",
+     "type": "direct",
+     "gold": [
+      "b06"
+     ],
+     "got": [
+      "b06",
+      "b05",
+      "b07"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q09",
+     "player": "p_mage",
+     "query": "王昭君我玩得怎么样",
+     "type": "direct",
+     "gold": [
+      "b07"
+     ],
+     "got": [
+      "b07",
+      "b10"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q10",
+     "player": "p_mage",
+     "query": "我现在啥段位",
+     "type": "update",
+     "gold": [
+      "b09"
+     ],
+     "got": [
+      "b09"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q11",
+     "player": "p_mage",
+     "query": "我打到星耀了吗",
+     "type": "update",
+     "gold": [
+      "b09"
+     ],
+     "got": [
+      "b09",
+      "b28"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q12",
+     "player": "p_mage",
+     "query": "我对线最怕谁",
+     "type": "paraphrase",
+     "gold": [
+      "b10"
+     ],
+     "got": [
+      "b10",
+      "b24"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q13",
+     "player": "p_mage",
+     "query": "兰陵王来抓我怎么办",
+     "type": "direct",
+     "gold": [
+      "b10"
+     ],
+     "got": [
+      "b10"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q14",
+     "player": "p_mage",
+     "query": "我喜欢打排位吗",
+     "type": "direct",
+     "gold": [
+      "b11"
+     ],
+     "got": [
+      "b11"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q15",
+     "player": "p_mage",
+     "query": "平时跟谁一起玩",
+     "type": "paraphrase",
+     "gold": [
+      "b12"
+     ],
+     "got": [
+      "b13",
+      "b12",
+      "b11"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q16",
+     "player": "p_mage",
+     "query": "小周玩什么位置",
+     "type": "direct",
+     "gold": [
+      "b12"
+     ],
+     "got": [
+      "b12"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q17",
+     "player": "p_mage",
+     "query": "我CP叫什么",
+     "type": "paraphrase",
+     "gold": [
+      "b13"
+     ],
+     "got": [
+      "b13"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q18",
+     "player": "p_mage",
+     "query": "我还在练打野吗",
+     "type": "update",
+     "gold": [
+      "b15"
+     ],
+     "got": [
+      "b15"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q19",
+     "player": "p_mage",
+     "query": "我用什么设备玩",
+     "type": "direct",
+     "gold": [
+      "b16"
+     ],
+     "got": [
+      "b16"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q20",
+     "player": "p_mage",
+     "query": "我开麦吗",
+     "type": "paraphrase",
+     "gold": [
+      "b17"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "b_q21",
+     "player": "p_mage",
+     "query": "诸葛亮出什么装备",
+     "type": "direct",
+     "gold": [
+      "b18"
+     ],
+     "got": [
+      "b18",
+      "b19",
+      "b05"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q22",
+     "player": "p_mage",
+     "query": "我有哪些诸葛亮皮肤",
+     "type": "direct",
+     "gold": [
+      "b19"
+     ],
+     "got": [
+      "b19",
+      "b18",
+      "b05"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q23",
+     "player": "p_mage",
+     "query": "我什么时候拿的法王",
+     "type": "direct",
+     "gold": [
+      "b20"
+     ],
+     "got": [
+      "b20"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q24",
+     "player": "p_mage",
+     "query": "最近手感怎么样",
+     "type": "paraphrase",
+     "gold": [
+      "b21"
+     ],
+     "got": [
+      "b35"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "b_q25",
+     "player": "p_mage",
+     "query": "我工作忙的时候还玩吗",
+     "type": "paraphrase",
+     "gold": [
+      "b22"
+     ],
+     "got": [
+      "b22"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q26",
+     "player": "p_mage",
+     "query": "我喜欢哪个战队",
+     "type": "paraphrase",
+     "gold": [
+      "b23"
+     ],
+     "got": [
+      "b27",
+      "b23",
+      "b37"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q27",
+     "player": "p_mage",
+     "query": "被人骂了好气",
+     "type": "paraphrase",
+     "gold": [
+      "b24"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "b_q28",
+     "player": "p_mage",
+     "query": "我喜欢什么娱乐模式",
+     "type": "direct",
+     "gold": [
+      "b27"
+     ],
+     "got": [
+      "b27",
+      "b11",
+      "b23"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q29",
+     "player": "p_mage",
+     "query": "我今年的目标是什么",
+     "type": "direct",
+     "gold": [
+      "b28"
+     ],
+     "got": [
+      "b28"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q30",
+     "player": "p_mage",
+     "query": "我在游戏里花钱多吗",
+     "type": "paraphrase",
+     "gold": [
+      "b29"
+     ],
+     "got": [
+      "b29"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q31",
+     "player": "p_mage",
+     "query": "为什么我喜欢玩貂蝉",
+     "type": "direct",
+     "gold": [
+      "b30"
+     ],
+     "got": [
+      "b30",
+      "b06",
+      "b20"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q32",
+     "player": "p_mage",
+     "query": "我家的猫叫什么",
+     "type": "direct",
+     "gold": [
+      "b31"
+     ],
+     "got": [
+      "b31"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q33",
+     "player": "p_mage",
+     "query": "我游戏ID叫什么",
+     "type": "update",
+     "gold": [
+      "b34"
+     ],
+     "got": [
+      "b13",
+      "b34"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q34",
+     "player": "p_mage",
+     "query": "我的画面设置有什么习惯",
+     "type": "paraphrase",
+     "gold": [
+      "b35"
+     ],
+     "got": [
+      "b35",
+      "b36"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q35",
+     "player": "p_mage",
+     "query": "我用什么施法方式",
+     "type": "direct",
+     "gold": [
+      "b36"
+     ],
+     "got": [
+      "b36"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q36",
+     "player": "p_mage",
+     "query": "给我推荐一个坦克",
+     "type": "paraphrase",
+     "gold": [
+      "b37"
+     ],
+     "got": [
+      "b37"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "b_q37",
+     "player": "p_mage",
+     "query": "我的法师英雄里哪个最强",
+     "type": "multi",
+     "gold": [
+      "b05",
+      "b06"
+     ],
+     "got": [
+      "b04",
+      "b18",
+      "b05"
+     ],
+     "success": 0.5
+    },
+    {
+     "id": "b_n01",
+     "player": "p_mage",
+     "query": "今天北京下雨吗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n02",
+     "player": "p_mage",
+     "query": "帮我翻译一句英文",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n03",
+     "player": "p_mage",
+     "query": "红烧肉怎么做",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n04",
+     "player": "p_mage",
+     "query": "推荐几本科幻小说",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "b18"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "b_n05",
+     "player": "p_mage",
+     "query": "明天股市会涨吗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n06",
+     "player": "p_mage",
+     "query": "怎么学好数学",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n07",
+     "player": "p_mage",
+     "query": "感冒了吃什么药",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n08",
+     "player": "p_mage",
+     "query": "地球到月球多远",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n09",
+     "player": "p_mage",
+     "query": "你是机器人吗",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "b02"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "b_n10",
+     "player": "p_mage",
+     "query": "周末去哪里玩好",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "b03"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "b_n11",
+     "player": "p_mage",
+     "query": "讲个笑话",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n12",
+     "player": "p_mage",
+     "query": "王者荣耀是哪家公司做的",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n13",
+     "player": "p_mage",
+     "query": "如何提高睡眠质量",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n14",
+     "player": "p_mage",
+     "query": "汽车保养多久一次",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "b_n15",
+     "player": "p_mage",
+     "query": "什么是区块链",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_q01",
+     "player": "p_jungle",
+     "query": "我生日是几号",
+     "type": "direct",
+     "gold": [
+      "c01"
+     ],
+     "got": [
+      "c01"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q02",
+     "player": "p_jungle",
+     "query": "我哪天出生的",
+     "type": "paraphrase",
+     "gold": [
+      "c01"
+     ],
+     "got": [
+      "c01"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q03",
+     "player": "p_jungle",
+     "query": "我读几年级",
+     "type": "paraphrase",
+     "gold": [
+      "c02"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "c_q04",
+     "player": "p_jungle",
+     "query": "我什么时候能玩游戏",
+     "type": "paraphrase",
+     "gold": [
+      "c03"
+     ],
+     "got": [
+      "c03",
+      "c21"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q05",
+     "player": "p_jungle",
+     "query": "为什么我平时不能玩",
+     "type": "paraphrase",
+     "gold": [
+      "c03"
+     ],
+     "got": [
+      "c12",
+      "c32",
+      "c03"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q06",
+     "player": "p_jungle",
+     "query": "我打什么位置",
+     "type": "direct",
+     "gold": [
+      "c04"
+     ],
+     "got": [
+      "c04",
+      "c10"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q07",
+     "player": "p_jungle",
+     "query": "我的本命英雄是谁",
+     "type": "update",
+     "gold": [
+      "c06"
+     ],
+     "got": [
+      "c06"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q08",
+     "player": "p_jungle",
+     "query": "我还在玩李白吗",
+     "type": "update",
+     "gold": [
+      "c06"
+     ],
+     "got": [
+      "c06"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q09",
+     "player": "p_jungle",
+     "query": "韩信我胜率多少",
+     "type": "direct",
+     "gold": [
+      "c07"
+     ],
+     "got": [
+      "c07",
+      "c19"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q10",
+     "player": "p_jungle",
+     "query": "我巅峰赛最高多少分",
+     "type": "direct",
+     "gold": [
+      "c08"
+     ],
+     "got": [
+      "c08",
+      "c31"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q11",
+     "player": "p_jungle",
+     "query": "我在社团里是什么角色",
+     "type": "paraphrase",
+     "gold": [
+      "c09"
+     ],
+     "got": [
+      "c09"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q12",
+     "player": "p_jungle",
+     "query": "我开局一般怎么刷野",
+     "type": "paraphrase",
+     "gold": [
+      "c10"
+     ],
+     "got": [
+      "c10",
+      "c04",
+      "c26"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q13",
+     "player": "p_jungle",
+     "query": "队友一直送好烦",
+     "type": "direct",
+     "gold": [
+      "c11"
+     ],
+     "got": [
+      "c11",
+      "c18"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q14",
+     "player": "p_jungle",
+     "query": "我爸妈对我玩游戏什么态度",
+     "type": "direct",
+     "gold": [
+      "c12"
+     ],
+     "got": [
+      "c12"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q15",
+     "player": "p_jungle",
+     "query": "我现在用什么手机",
+     "type": "update",
+     "gold": [
+      "c14"
+     ],
+     "got": [
+      "c14"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q16",
+     "player": "p_jungle",
+     "query": "我崇拜哪个选手",
+     "type": "paraphrase",
+     "gold": [
+      "c15"
+     ],
+     "got": [
+      "c15",
+      "c22"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q17",
+     "player": "p_jungle",
+     "query": "我拿过什么比赛奖",
+     "type": "paraphrase",
+     "gold": [
+      "c16"
+     ],
+     "got": [
+      "c16"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q18",
+     "player": "p_jungle",
+     "query": "我抢龙厉害吗",
+     "type": "direct",
+     "gold": [
+      "c17"
+     ],
+     "got": [
+      "c17"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q19",
+     "player": "p_jungle",
+     "query": "我打游戏说话多吗",
+     "type": "paraphrase",
+     "gold": [
+      "c18"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "c_q20",
+     "player": "p_jungle",
+     "query": "兰陵王适合我吗",
+     "type": "direct",
+     "gold": [
+      "c19"
+     ],
+     "got": [
+      "c19"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q21",
+     "player": "p_jungle",
+     "query": "我常和谁双排",
+     "type": "direct",
+     "gold": [
+      "c20"
+     ],
+     "got": [
+      "c20"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q22",
+     "player": "p_jungle",
+     "query": "我期末考试什么时候",
+     "type": "direct",
+     "gold": [
+      "c21"
+     ],
+     "got": [
+      "c21"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q23",
+     "player": "p_jungle",
+     "query": "我以后想干什么",
+     "type": "paraphrase",
+     "gold": [
+      "c22"
+     ],
+     "got": [
+      "c22"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q24",
+     "player": "p_jungle",
+     "query": "我想买什么皮肤",
+     "type": "direct",
+     "gold": [
+      "c23"
+     ],
+     "got": [
+      "c23"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q25",
+     "player": "p_jungle",
+     "query": "我有多少零花钱",
+     "type": "direct",
+     "gold": [
+      "c24"
+     ],
+     "got": [
+      "c24"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q26",
+     "player": "p_jungle",
+     "query": "我的KDA怎么样",
+     "type": "direct",
+     "gold": [
+      "c25"
+     ],
+     "got": [
+      "c25"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q27",
+     "player": "p_jungle",
+     "query": "我喜欢反野吗",
+     "type": "paraphrase",
+     "gold": [
+      "c26"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "c_q28",
+     "player": "p_jungle",
+     "query": "我打游戏喜欢听什么歌",
+     "type": "direct",
+     "gold": [
+      "c27"
+     ],
+     "got": [
+      "c27"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q29",
+     "player": "p_jungle",
+     "query": "输了之后我会干嘛",
+     "type": "paraphrase",
+     "gold": [
+      "c28"
+     ],
+     "got": [
+      "c28"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q30",
+     "player": "p_jungle",
+     "query": "澜怎么出装",
+     "type": "direct",
+     "gold": [
+      "c29"
+     ],
+     "got": [
+      "c29",
+      "c23",
+      "c06"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q31",
+     "player": "p_jungle",
+     "query": "我巅峰赛的新目标",
+     "type": "update",
+     "gold": [
+      "c31"
+     ],
+     "got": [
+      "c31",
+      "c22"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q32",
+     "player": "p_jungle",
+     "query": "我哪科比较差",
+     "type": "paraphrase",
+     "gold": [
+      "c32"
+     ],
+     "got": [
+      "c32"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q33",
+     "player": "p_jungle",
+     "query": "让我去玩辅助行吗",
+     "type": "direct",
+     "gold": [
+      "c33"
+     ],
+     "got": [
+      "c33"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q34",
+     "player": "p_jungle",
+     "query": "手出汗怎么办",
+     "type": "paraphrase",
+     "gold": [
+      "c34"
+     ],
+     "got": [
+      "c34"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "c_q35",
+     "player": "p_jungle",
+     "query": "我打野有什么特点",
+     "type": "multi",
+     "gold": [
+      "c17",
+      "c26"
+     ],
+     "got": [
+      "c04",
+      "c10",
+      "c15"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_n01",
+     "player": "p_jungle",
+     "query": "今天是几号",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "c01",
+      "c03"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "c_n02",
+     "player": "p_jungle",
+     "query": "怎么做番茄炒蛋",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n03",
+     "player": "p_jungle",
+     "query": "推荐一部动漫",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n04",
+     "player": "p_jungle",
+     "query": "光速是多少",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n05",
+     "player": "p_jungle",
+     "query": "帮我写个请假条",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n06",
+     "player": "p_jungle",
+     "query": "英语作文怎么写好",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n07",
+     "player": "p_jungle",
+     "query": "世界上最高的山是哪座",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n08",
+     "player": "p_jungle",
+     "query": "猫为什么喜欢纸箱",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n09",
+     "player": "p_jungle",
+     "query": "牛顿第二定律是什么",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n10",
+     "player": "p_jungle",
+     "query": "火星上有水吗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n11",
+     "player": "p_jungle",
+     "query": "怎么养多肉",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n12",
+     "player": "p_jungle",
+     "query": "你喜欢什么颜色",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n13",
+     "player": "p_jungle",
+     "query": "明天会下雪吗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n14",
+     "player": "p_jungle",
+     "query": "如何快速入睡",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "c_n15",
+     "player": "p_jungle",
+     "query": "电动车和油车哪个好",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    }
+   ],
+   "latency_ms": 102.87
+  }
+ }
+}
