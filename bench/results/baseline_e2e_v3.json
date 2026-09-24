@@ -1,7 +1,7 @@
 {
   "system": "p1 (main @ 28832ed)",
   "ref": "main @ 28832ed, measured with bench/run_e2e.py in a worktree",
-  "dataset": "bench/data/e2e_v4.json",
+  "dataset": "bench/data/e2e_v3.json",
   "split": "test",
   "model": "qwen2.5:3b",
   "seeds": "0,1,2",
@@ -16,9 +16,9 @@
     }
   },
   "metrics": {
-    "E2EScore": 0.6928,
-    "Answer@3": 0.5833,
-    "StaleRate": 0.1,
-    "Abstain": 0.9556
+    "E2EScore": 0.6405,
+    "Answer@3": 0.5463,
+    "StaleRate": 0.1944,
+    "Abstain": 0.8667
   }
 }
