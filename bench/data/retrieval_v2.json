@@ -1,0 +1,3086 @@
+{
+ "name": "player_memory_retrieval",
+ "version": 2,
+ "description": "Three synthetic Honor-of-Kings players. dev = every query of p_archer (the v1 player). test = p_mage + p_jungle, written and committed before any system was run on them.",
+ "players": [
+  {
+   "id": "p_archer",
+   "now": "2026-09-01 12:00:00",
+   "description": "v1 player: marksman main, university student",
+   "memories": [
+    {
+     "id": "m01",
+     "content": "玩家生日是2月12日",
+     "keywords": [
+      "生日",
+      "2月12日"
+     ],
+     "importance": 5,
+     "source": "chat",
+     "created_at": "2026-02-01 21:00:00",
+     "updated_at": "2026-02-01 21:00:00"
+    },
+    {
+     "id": "m02",
+     "content": "玩家是一名大学生，平时晚上才有时间玩游戏",
+     "keywords": [
+      "大学生",
+      "职业",
+      "学生"
+     ],
+     "importance": 4,
+     "source": "chat",
+     "created_at": "2026-02-01 21:00:00",
+     "updated_at": "2026-02-01 21:00:00"
+    },
+    {
+     "id": "m03",
+     "content": "玩家通常在晚上20点到23点玩游戏，21点到22点最活跃",
+     "keywords": [
+      "游戏时间",
+      "晚上",
+      "活跃时段"
+     ],
+     "importance": 3,
+     "source": "trajectory",
+     "created_at": "2026-02-05 21:00:00",
+     "updated_at": "2026-02-05 21:00:00"
+    },
+    {
+     "id": "m04",
+     "content": "玩家平均每天游戏2.5小时，约5到8场",
+     "keywords": [
+      "游戏时长",
+      "每天场次"
+     ],
+     "importance": 2,
+     "source": "trajectory",
+     "created_at": "2026-02-05 21:00:00",
+     "updated_at": "2026-02-05 21:00:00"
+    },
+    {
+     "id": "m05",
+     "content": "玩家最常用鲁班七号，近30天150场，胜率62%",
+     "keywords": [
+      "鲁班七号",
+      "常用英雄",
+      "本命英雄",
+      "胜率"
+     ],
+     "importance": 5,
+     "source": "trajectory",
+     "created_at": "2026-02-05 21:00:00",
+     "updated_at": "2026-02-05 21:00:00"
+    },
+    {
+     "id": "m06",
+     "content": "玩家的后羿使用80场，胜率58%",
+     "keywords": [
+      "后羿",
+      "胜率"
+     ],
+     "importance": 3,
+     "source": "trajectory",
+     "created_at": "2026-02-05 21:00:00",
+     "updated_at": "2026-02-05 21:00:00"
+    },
+    {
+     "id": "m07",
+     "content": "玩家的孙尚香使用45场，胜率55%",
+     "keywords": [
+      "孙尚香",
+      "胜率"
+     ],
+     "importance": 2,
+     "source": "trajectory",
+     "created_at": "2026-02-05 21:00:00",
+     "updated_at": "2026-02-05 21:00:00"
+    },
+    {
+     "id": "m08",
+     "content": "玩家的马可波罗胜率只有45%，是表现最差的英雄",
+     "keywords": [
+      "马可波罗",
+      "胜率低"
+     ],
+     "importance": 2,
+     "source": "trajectory",
+     "created_at": "2026-02-05 21:00:00",
+     "updated_at": "2026-02-05 21:00:00"
+    },
+    {
+     "id": "m09",
+     "content": "玩家想学新英雄，打算练后羿",
+     "keywords": [
+      "后羿",
+      "新英雄",
+      "练习"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-02-03 21:00:00",
+     "updated_at": "2026-02-03 21:00:00"
+    },
+    {
+     "id": "m10",
+     "content": "玩家主玩射手位，占比85%，不擅长辅助和坦克",
+     "keywords": [
+      "射手",
+      "位置",
+      "辅助",
+      "坦克"
+     ],
+     "importance": 4,
+     "source": "chat",
+     "created_at": "2026-02-03 21:00:00",
+     "updated_at": "2026-02-03 21:00:00"
+    },
+    {
+     "id": "m11",
+     "content": "玩家鲁班七号常用出装：末世、攻速鞋、无尽战刃、破晓、宗师之力、碎星锤，偏好暴击攻速流",
+     "keywords": [
+      "出装",
+      "鲁班七号",
+      "暴击",
+      "攻速"
+     ],
+     "importance": 3,
+     "source": "trajectory",
+     "created_at": "2026-02-05 21:00:00",
+     "updated_at": "2026-02-05 21:00:00"
+    },
+    {
+     "id": "m12",
+     "content": "玩家段位是星耀三星",
+     "keywords": [
+      "段位",
+      "星耀"
+     ],
+     "importance": 4,
+     "source": "chat",
+     "created_at": "2026-02-12 21:00:00",
+     "updated_at": "2026-02-12 21:00:00",
+     "valid_to": "2026-08-20 21:00:00",
+     "superseded_by": "m13"
+    },
+    {
+     "id": "m13",
+     "content": "玩家在2026年8月升到了王者段位",
+     "keywords": [
+      "段位",
+      "王者",
+      "上分"
+     ],
+     "importance": 4,
+     "source": "chat",
+     "created_at": "2026-08-20 21:00:00",
+     "updated_at": "2026-08-20 21:00:00",
+     "supersedes": "m12"
+    },
+    {
+     "id": "m14",
+     "content": "玩家的目标是冲上王者段位",
+     "keywords": [
+      "目标",
+      "王者",
+      "冲分"
+     ],
+     "importance": 3,
+     "source": "chat",
+     "created_at": "2026-02-20 21:00:00",
+     "updated_at": "2026-02-20 21:00:00",
+     "valid_to": "2026-08-20 21:00:00",
+     "superseded_by": "m15"
+    },
+    {
+     "id": "m15",
+     "content": "玩家的下一个目标是巅峰赛打到1800分",
+     "keywords": [
+      "目标",
+      "巅峰赛",
+      "1800分"
+     ],
+     "importance": 3,
+     "source": "chat",
+     "created_at": "2026-08-20 21:00:00",
+     "updated_at": "2026-08-20 21:00:00",
+     "supersedes": "m14"
+    },
+    {
+     "id": "m16",
+     "content": "玩家常和一位玩辅助的朋友双排，两人配合时胜率超过70%",
+     "keywords": [
+      "朋友",
+      "双排",
+      "辅助",
+      "组队"
+     ],
+     "importance": 3,
+     "source": "chat",
+     "created_at": "2026-02-25 21:00:00",
+     "updated_at": "2026-02-25 21:00:00"
+    },
+    {
+     "id": "m17",
+     "content": "玩家所在公会是“无敌射手团”，公会贡献2500点",
+     "keywords": [
+      "公会",
+      "无敌射手团"
+     ],
+     "importance": 2,
+     "source": "trajectory",
+     "created_at": "2026-02-06 21:00:00",
+     "updated_at": "2026-02-06 21:00:00"
+    },
+    {
+     "id": "m18",
+     "content": "玩家有38个好友，经常一起组队的有3人",
+     "keywords": [
+      "好友",
+      "社交"
+     ],
+     "importance": 1,
+     "source": "trajectory",
+     "created_at": "2026-02-06 21:00:00",
+     "updated_at": "2026-02-06 21:00:00"
+    },
+    {
+     "id": "m19",
+     "content": "玩家的主要死因是被刺客切入（占45%），其次是团战站位失误（30%）",
+     "keywords": [
+      "死亡原因",
+      "刺客",
+      "站位"
+     ],
+     "importance": 4,
+     "source": "trajectory",
+     "created_at": "2026-02-10 21:00:00",
+     "updated_at": "2026-02-10 21:00:00"
+    },
+    {
+     "id": "m20",
+     "content": "玩家团战经常被切，自认为走位还可以",
+     "keywords": [
+      "团战",
+      "被切",
+      "走位"
+     ],
+     "importance": 3,
+     "source": "chat",
+     "created_at": "2026-02-03 21:00:00",
+     "updated_at": "2026-02-03 21:00:00"
+    },
+    {
+     "id": "m21",
+     "content": "玩家连败后一般会停下来休息",
+     "keywords": [
+      "连败",
+      "休息",
+      "心态"
+     ],
+     "importance": 3,
+     "source": "chat",
+     "created_at": "2026-02-18 21:00:00",
+     "updated_at": "2026-02-18 21:00:00"
+    },
+    {
+     "id": "m22",
+     "content": "玩家最讨厌遇到挂机的队友",
+     "keywords": [
+      "挂机",
+      "讨厌",
+      "队友"
+     ],
+     "importance": 3,
+     "source": "chat",
+     "created_at": "2026-02-18 21:00:00",
+     "updated_at": "2026-02-18 21:00:00"
+    },
+    {
+     "id": "m23",
+     "content": "玩家连胜时更愿意继续玩并开心聊天，连败时容易沮丧",
+     "keywords": [
+      "情绪",
+      "连胜",
+      "连败"
+     ],
+     "importance": 2,
+     "source": "trajectory",
+     "created_at": "2026-02-10 21:00:00",
+     "updated_at": "2026-02-10 21:00:00"
+    },
+    {
+     "id": "m24",
+     "content": "玩家在2026年2月18日连跪了5把，心态有点崩",
+     "keywords": [
+      "连跪",
+      "心态"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-02-18 21:00:00",
+     "updated_at": "2026-02-18 21:00:00"
+    },
+    {
+     "id": "m25",
+     "content": "玩家在2026年2月11日用鲁班七号拿到了五杀",
+     "keywords": [
+      "五杀",
+      "鲁班七号"
+     ],
+     "importance": 3,
+     "source": "chat",
+     "created_at": "2026-02-12 21:00:00",
+     "updated_at": "2026-02-12 21:00:00"
+    },
+    {
+     "id": "m26",
+     "content": "玩家单局最高23杀（鲁班七号），单局最高输出58万",
+     "keywords": [
+      "最高击杀",
+      "纪录",
+      "输出"
+     ],
+     "importance": 2,
+     "source": "trajectory",
+     "created_at": "2026-02-10 21:00:00",
+     "updated_at": "2026-02-10 21:00:00"
+    },
+    {
+     "id": "m27",
+     "content": "玩家最高连胜纪录是12连胜",
+     "keywords": [
+      "连胜",
+      "纪录"
+     ],
+     "importance": 2,
+     "source": "trajectory",
+     "created_at": "2026-02-10 21:00:00",
+     "updated_at": "2026-02-10 21:00:00"
+    },
+    {
+     "id": "m28",
+     "content": "玩家和朋友组队连胜了8局",
+     "keywords": [
+      "连胜",
+      "朋友",
+      "组队"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-02-25 21:00:00",
+     "updated_at": "2026-02-25 21:00:00"
+    },
+    {
+     "id": "m29",
+     "content": "玩家拥有鲁班七号的皮肤：电玩小子、福禄兄弟、星空梦想",
+     "keywords": [
+      "皮肤",
+      "鲁班七号",
+      "电玩小子"
+     ],
+     "importance": 2,
+     "source": "trajectory",
+     "created_at": "2026-02-12 21:00:00",
+     "updated_at": "2026-02-12 21:00:00"
+    },
+    {
+     "id": "m30",
+     "content": "玩家拥有后羿的皮肤：精灵王、黄金射手座",
+     "keywords": [
+      "皮肤",
+      "后羿"
+     ],
+     "importance": 2,
+     "source": "trajectory",
+     "created_at": "2026-02-12 21:00:00",
+     "updated_at": "2026-02-12 21:00:00"
+    },
+    {
+     "id": "m31",
+     "content": "玩家70%的对局是排位赛，15%是巅峰赛，匹配和娱乐模式很少玩",
+     "keywords": [
+      "排位赛",
+      "巅峰赛",
+      "模式"
+     ],
+     "importance": 2,
+     "source": "trajectory",
+     "created_at": "2026-02-10 21:00:00",
+     "updated_at": "2026-02-10 21:00:00"
+    },
+    {
+     "id": "m32",
+     "content": "玩家很少开语音（30%），常用快捷消息（80%）",
+     "keywords": [
+      "语音",
+      "快捷消息",
+      "沟通"
+     ],
+     "importance": 1,
+     "source": "trajectory",
+     "created_at": "2026-02-10 21:00:00",
+     "updated_at": "2026-02-10 21:00:00"
+    },
+    {
+     "id": "m33",
+     "content": "玩家平均APM为185，补刀效率80%，反应速度280ms",
+     "keywords": [
+      "APM",
+      "补刀",
+      "反应速度",
+      "操作"
+     ],
+     "importance": 2,
+     "source": "trajectory",
+     "created_at": "2026-02-10 21:00:00",
+     "updated_at": "2026-02-10 21:00:00"
+    },
+    {
+     "id": "m34",
+     "content": "玩家场均经济12500，分均经济687",
+     "keywords": [
+      "经济"
+     ],
+     "importance": 1,
+     "source": "trajectory",
+     "created_at": "2026-02-10 21:00:00",
+     "updated_at": "2026-02-10 21:00:00"
+    },
+    {
+     "id": "m35",
+     "content": "玩家地图活动：下路55%，打龙参与70%，很少入侵对方野区",
+     "keywords": [
+      "下路",
+      "打龙",
+      "野区"
+     ],
+     "importance": 1,
+     "source": "trajectory",
+     "created_at": "2026-02-10 21:00:00",
+     "updated_at": "2026-02-10 21:00:00"
+    },
+    {
+     "id": "m36",
+     "content": "玩家偏发育型打法，团战参与率78%，KDA为2.8",
+     "keywords": [
+      "打法",
+      "发育",
+      "KDA"
+     ],
+     "importance": 3,
+     "source": "trajectory",
+     "created_at": "2026-02-10 21:00:00",
+     "updated_at": "2026-02-10 21:00:00"
+    },
+    {
+     "id": "m37",
+     "content": "玩家本周42场胜率66.7%，拿了12次MVP",
+     "keywords": [
+      "本周战绩",
+      "MVP"
+     ],
+     "importance": 2,
+     "source": "trajectory",
+     "created_at": "2026-08-28 21:00:00",
+     "updated_at": "2026-08-28 21:00:00"
+    },
+    {
+     "id": "m38",
+     "content": "玩家用安卓手机玩游戏",
+     "keywords": [
+      "手机",
+      "设备",
+      "安卓"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-02-01 21:00:00",
+     "updated_at": "2026-02-01 21:00:00",
+     "valid_to": "2026-07-15 21:00:00",
+     "superseded_by": "m39"
+    },
+    {
+     "id": "m39",
+     "content": "玩家换了iPhone 16玩游戏",
+     "keywords": [
+      "手机",
+      "设备",
+      "iPhone"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-07-15 21:00:00",
+     "updated_at": "2026-07-15 21:00:00",
+     "supersedes": "m38"
+    },
+    {
+     "id": "m40",
+     "content": "玩家偶尔玩法师（约10%），但不太喜欢",
+     "keywords": [
+      "法师",
+      "位置"
+     ],
+     "importance": 2,
+     "source": "trajectory",
+     "created_at": "2026-02-10 21:00:00",
+     "updated_at": "2026-02-10 21:00:00"
+    },
+    {
+     "id": "m41",
+     "content": "玩家说以后想试试打野位",
+     "keywords": [
+      "打野",
+      "位置",
+      "想尝试"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-08-25 21:00:00",
+     "updated_at": "2026-08-25 21:00:00"
+    },
+    {
+     "id": "m42",
+     "content": "玩家考试周会减少游戏时间",
+     "keywords": [
+      "考试",
+      "游戏时间"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-06-10 21:00:00",
+     "updated_at": "2026-06-10 21:00:00"
+    }
+   ]
+  },
+  {
+   "id": "p_mage",
+   "now": "2026-09-01 12:00:00",
+   "description": "mid-lane mage main, office worker",
+   "memories": [
+    {
+     "id": "b01",
+     "content": "玩家生日是11月23日",
+     "keywords": [
+      "生日",
+      "11月23日"
+     ],
+     "importance": 5,
+     "source": "chat",
+     "created_at": "2026-03-02 21:00:00",
+     "updated_at": "2026-03-02 21:00:00"
+    },
+    {
+     "id": "b02",
+     "content": "玩家是一名程序员，在杭州工作",
+     "keywords": [
+      "程序员",
+      "工作",
+      "杭州"
+     ],
+     "importance": 4,
+     "source": "chat",
+     "created_at": "2026-03-02 21:00:00",
+     "updated_at": "2026-03-02 21:00:00"
+    },
+    {
+     "id": "b03",
+     "content": "玩家通常在午休12:30到13:30和地铁通勤时玩游戏",
+     "keywords": [
+      "游戏时间",
+      "午休",
+      "通勤"
+     ],
+     "importance": 3,
+     "source": "trajectory",
+     "created_at": "2026-03-05 21:00:00",
+     "updated_at": "2026-03-05 21:00:00"
+    },
+    {
+     "id": "b04",
+     "content": "玩家主玩中路法师，占比70%",
+     "keywords": [
+      "中路",
+      "法师",
+      "位置"
+     ],
+     "importance": 4,
+     "source": "trajectory",
+     "created_at": "2026-03-05 21:00:00",
+     "updated_at": "2026-03-05 21:00:00"
+    },
+    {
+     "id": "b05",
+     "content": "玩家最常用诸葛亮，近30天胜率57%",
+     "keywords": [
+      "诸葛亮",
+      "常用英雄"
+     ],
+     "importance": 4,
+     "source": "trajectory",
+     "created_at": "2026-03-05 21:00:00",
+     "updated_at": "2026-03-05 21:00:00"
+    },
+    {
+     "id": "b06",
+     "content": "玩家的貂蝉使用60场，胜率61%，是胜率最高的英雄",
+     "keywords": [
+      "貂蝉",
+      "胜率"
+     ],
+     "importance": 3,
+     "source": "trajectory",
+     "created_at": "2026-03-05 21:00:00",
+     "updated_at": "2026-03-05 21:00:00"
+    },
+    {
+     "id": "b07",
+     "content": "玩家的王昭君使用30场，胜率49%",
+     "keywords": [
+      "王昭君",
+      "胜率"
+     ],
+     "importance": 2,
+     "source": "trajectory",
+     "created_at": "2026-03-05 21:00:00",
+     "updated_at": "2026-03-05 21:00:00"
+    },
+    {
+     "id": "b08",
+     "content": "玩家段位是钻石二",
+     "keywords": [
+      "段位",
+      "钻石"
+     ],
+     "importance": 4,
+     "source": "chat",
+     "created_at": "2026-03-02 21:00:00",
+     "updated_at": "2026-03-02 21:00:00",
+     "valid_to": "2026-07-20 21:00:00",
+     "superseded_by": "b09"
+    },
+    {
+     "id": "b09",
+     "content": "玩家在2026年7月升到了星耀五",
+     "keywords": [
+      "段位",
+      "星耀"
+     ],
+     "importance": 4,
+     "source": "chat",
+     "created_at": "2026-07-20 21:00:00",
+     "updated_at": "2026-07-20 21:00:00",
+     "supersedes": "b08"
+    },
+    {
+     "id": "b10",
+     "content": "玩家对线怕被刺客抓，尤其怕兰陵王",
+     "keywords": [
+      "刺客",
+      "兰陵王",
+      "对线"
+     ],
+     "importance": 3,
+     "source": "chat",
+     "created_at": "2026-03-10 21:00:00",
+     "updated_at": "2026-03-10 21:00:00"
+    },
+    {
+     "id": "b11",
+     "content": "玩家不太喜欢打排位，更喜欢和同事开黑打匹配",
+     "keywords": [
+      "排位",
+      "匹配",
+      "同事",
+      "开黑"
+     ],
+     "importance": 3,
+     "source": "chat",
+     "created_at": "2026-03-10 21:00:00",
+     "updated_at": "2026-03-10 21:00:00"
+    },
+    {
+     "id": "b12",
+     "content": "玩家的固定队友是同事小周，小周玩辅助瑶",
+     "keywords": [
+      "同事",
+      "小周",
+      "瑶",
+      "辅助"
+     ],
+     "importance": 3,
+     "source": "chat",
+     "created_at": "2026-03-10 21:00:00",
+     "updated_at": "2026-03-10 21:00:00"
+    },
+    {
+     "id": "b13",
+     "content": "玩家在游戏里有情侣关系，对象的ID叫“星河”",
+     "keywords": [
+      "情侣",
+      "星河",
+      "亲密关系"
+     ],
+     "importance": 3,
+     "source": "chat",
+     "created_at": "2026-04-01 21:00:00",
+     "updated_at": "2026-04-01 21:00:00"
+    },
+    {
+     "id": "b14",
+     "content": "玩家在练习打野位",
+     "keywords": [
+      "打野",
+      "练习"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-04-15 21:00:00",
+     "updated_at": "2026-04-15 21:00:00",
+     "valid_to": "2026-06-01 21:00:00",
+     "superseded_by": "b15"
+    },
+    {
+     "id": "b15",
+     "content": "玩家已经放弃练打野，觉得节奏太难把握",
+     "keywords": [
+      "打野",
+      "放弃"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-06-01 21:00:00",
+     "updated_at": "2026-06-01 21:00:00",
+     "supersedes": "b14"
+    },
+    {
+     "id": "b16",
+     "content": "玩家用iPad玩游戏，喜欢大屏",
+     "keywords": [
+      "iPad",
+      "设备"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-03-02 21:00:00",
+     "updated_at": "2026-03-02 21:00:00"
+    },
+    {
+     "id": "b17",
+     "content": "玩家不喜欢开语音，因为通勤时不方便",
+     "keywords": [
+      "语音",
+      "通勤"
+     ],
+     "importance": 1,
+     "source": "chat",
+     "created_at": "2026-03-12 21:00:00",
+     "updated_at": "2026-03-12 21:00:00"
+    },
+    {
+     "id": "b18",
+     "content": "玩家诸葛亮常用出装：痛苦面具、法师之靴、回响之杖、博学者之怒、虚无法杖、辉月",
+     "keywords": [
+      "出装",
+      "诸葛亮"
+     ],
+     "importance": 3,
+     "source": "trajectory",
+     "created_at": "2026-03-05 21:00:00",
+     "updated_at": "2026-03-05 21:00:00"
+    },
+    {
+     "id": "b19",
+     "content": "玩家收藏了诸葛亮的皮肤“武陵仙君”和“星航指挥官”",
+     "keywords": [
+      "皮肤",
+      "诸葛亮"
+     ],
+     "importance": 2,
+     "source": "trajectory",
+     "created_at": "2026-03-05 21:00:00",
+     "updated_at": "2026-03-05 21:00:00"
+    },
+    {
+     "id": "b20",
+     "content": "玩家在2026年6月18日第一次用貂蝉拿到了法王称号",
+     "keywords": [
+      "法王",
+      "称号",
+      "貂蝉"
+     ],
+     "importance": 3,
+     "source": "chat",
+     "created_at": "2026-06-18 21:00:00",
+     "updated_at": "2026-06-18 21:00:00"
+    },
+    {
+     "id": "b21",
+     "content": "玩家最近一周连输7把，打算暂停排位几天",
+     "keywords": [
+      "连输",
+      "暂停排位"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-08-30 21:00:00",
+     "updated_at": "2026-08-30 21:00:00"
+    },
+    {
+     "id": "b22",
+     "content": "玩家加班多的时候一周只玩两三天",
+     "keywords": [
+      "加班",
+      "游戏频率"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-05-08 21:00:00",
+     "updated_at": "2026-05-08 21:00:00"
+    },
+    {
+     "id": "b23",
+     "content": "玩家喜欢看KPL比赛，支持AG超玩会",
+     "keywords": [
+      "KPL",
+      "比赛",
+      "AG超玩会"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-04-20 21:00:00",
+     "updated_at": "2026-04-20 21:00:00"
+    },
+    {
+     "id": "b24",
+     "content": "玩家讨厌被队友喷，被喷会直接屏蔽聊天",
+     "keywords": [
+      "队友喷",
+      "屏蔽聊天"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-04-20 21:00:00",
+     "updated_at": "2026-04-20 21:00:00"
+    },
+    {
+     "id": "b25",
+     "content": "玩家补刀一般，场均经济在队伍里通常排第三",
+     "keywords": [
+      "补刀",
+      "经济"
+     ],
+     "importance": 1,
+     "source": "trajectory",
+     "created_at": "2026-03-05 21:00:00",
+     "updated_at": "2026-03-05 21:00:00"
+    },
+    {
+     "id": "b26",
+     "content": "玩家法师伤害占比平均32%",
+     "keywords": [
+      "伤害占比"
+     ],
+     "importance": 1,
+     "source": "trajectory",
+     "created_at": "2026-03-05 21:00:00",
+     "updated_at": "2026-03-05 21:00:00"
+    },
+    {
+     "id": "b27",
+     "content": "玩家喜欢玩火焰山大战这个娱乐模式",
+     "keywords": [
+      "娱乐模式",
+      "火焰山大战"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-05-01 21:00:00",
+     "updated_at": "2026-05-01 21:00:00"
+    },
+    {
+     "id": "b28",
+     "content": "玩家希望年底前打到王者",
+     "keywords": [
+      "目标",
+      "王者"
+     ],
+     "importance": 3,
+     "source": "chat",
+     "created_at": "2026-07-20 21:00:00",
+     "updated_at": "2026-07-20 21:00:00"
+    },
+    {
+     "id": "b29",
+     "content": "玩家每月在游戏里消费约100元，主要买战令",
+     "keywords": [
+      "消费",
+      "战令"
+     ],
+     "importance": 2,
+     "source": "trajectory",
+     "created_at": "2026-06-01 21:00:00",
+     "updated_at": "2026-06-01 21:00:00"
+    },
+    {
+     "id": "b30",
+     "content": "玩家喜欢貂蝉是因为操作流畅、团战能收割",
+     "keywords": [
+      "貂蝉",
+      "喜欢的原因"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-06-18 21:00:00",
+     "updated_at": "2026-06-18 21:00:00"
+    },
+    {
+     "id": "b31",
+     "content": "玩家是猫奴，家里养了两只猫",
+     "keywords": [
+      "猫",
+      "宠物"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-04-02 21:00:00",
+     "updated_at": "2026-04-02 21:00:00"
+    },
+    {
+     "id": "b32",
+     "content": "玩家单局最高输出是42万伤害（诸葛亮）",
+     "keywords": [
+      "纪录",
+      "最高输出"
+     ],
+     "importance": 1,
+     "source": "trajectory",
+     "created_at": "2026-03-05 21:00:00",
+     "updated_at": "2026-03-05 21:00:00"
+    },
+    {
+     "id": "b33",
+     "content": "玩家的游戏昵称是“代码写不完”",
+     "keywords": [
+      "昵称",
+      "游戏ID"
+     ],
+     "importance": 3,
+     "source": "chat",
+     "created_at": "2026-03-02 21:00:00",
+     "updated_at": "2026-03-02 21:00:00",
+     "valid_to": "2026-08-10 21:00:00",
+     "superseded_by": "b34"
+    },
+    {
+     "id": "b34",
+     "content": "玩家的游戏昵称改成了“午休不加班”",
+     "keywords": [
+      "昵称",
+      "游戏ID"
+     ],
+     "importance": 3,
+     "source": "chat",
+     "created_at": "2026-08-10 21:00:00",
+     "updated_at": "2026-08-10 21:00:00",
+     "supersedes": "b33"
+    },
+    {
+     "id": "b35",
+     "content": "玩家视力不太好，喜欢把画面亮度调高",
+     "keywords": [
+      "视力",
+      "亮度",
+      "画面设置"
+     ],
+     "importance": 1,
+     "source": "chat",
+     "created_at": "2026-05-15 21:00:00",
+     "updated_at": "2026-05-15 21:00:00"
+    },
+    {
+     "id": "b36",
+     "content": "玩家习惯用轮盘施法而不是指向施法",
+     "keywords": [
+      "施法方式",
+      "轮盘施法"
+     ],
+     "importance": 1,
+     "source": "chat",
+     "created_at": "2026-05-15 21:00:00",
+     "updated_at": "2026-05-15 21:00:00"
+    },
+    {
+     "id": "b37",
+     "content": "玩家不喜欢玩坦克英雄，觉得无聊",
+     "keywords": [
+      "坦克"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-04-10 21:00:00",
+     "updated_at": "2026-04-10 21:00:00"
+    }
+   ]
+  },
+  {
+   "id": "p_jungle",
+   "now": "2026-09-01 12:00:00",
+   "description": "jungle main, high-school student",
+   "memories": [
+    {
+     "id": "c01",
+     "content": "玩家生日是10月3日",
+     "keywords": [
+      "生日",
+      "10月3日"
+     ],
+     "importance": 5,
+     "source": "chat",
+     "created_at": "2026-03-01 21:00:00",
+     "updated_at": "2026-03-01 21:00:00"
+    },
+    {
+     "id": "c02",
+     "content": "玩家是高二学生，在成都上学",
+     "keywords": [
+      "高中生",
+      "学生",
+      "成都"
+     ],
+     "importance": 4,
+     "source": "chat",
+     "created_at": "2026-03-01 21:00:00",
+     "updated_at": "2026-03-01 21:00:00"
+    },
+    {
+     "id": "c03",
+     "content": "玩家受防沉迷限制，只能在周五到周日晚上各玩1小时",
+     "keywords": [
+      "防沉迷",
+      "游戏时间",
+      "周末"
+     ],
+     "importance": 4,
+     "source": "trajectory",
+     "created_at": "2026-03-01 21:00:00",
+     "updated_at": "2026-03-01 21:00:00"
+    },
+    {
+     "id": "c04",
+     "content": "玩家主玩打野位",
+     "keywords": [
+      "打野",
+      "位置"
+     ],
+     "importance": 4,
+     "source": "trajectory",
+     "created_at": "2026-03-03 21:00:00",
+     "updated_at": "2026-03-03 21:00:00"
+    },
+    {
+     "id": "c05",
+     "content": "玩家的本命英雄是李白",
+     "keywords": [
+      "本命英雄",
+      "李白"
+     ],
+     "importance": 4,
+     "source": "chat",
+     "created_at": "2026-03-01 21:00:00",
+     "updated_at": "2026-03-01 21:00:00",
+     "valid_to": "2026-08-01 21:00:00",
+     "superseded_by": "c06"
+    },
+    {
+     "id": "c06",
+     "content": "玩家现在的本命英雄换成了澜，李白玩得少了",
+     "keywords": [
+      "本命英雄",
+      "澜",
+      "李白"
+     ],
+     "importance": 4,
+     "source": "chat",
+     "created_at": "2026-08-01 21:00:00",
+     "updated_at": "2026-08-01 21:00:00",
+     "supersedes": "c05"
+    },
+    {
+     "id": "c07",
+     "content": "玩家的韩信使用50场，胜率54%",
+     "keywords": [
+      "韩信",
+      "胜率"
+     ],
+     "importance": 2,
+     "source": "trajectory",
+     "created_at": "2026-03-03 21:00:00",
+     "updated_at": "2026-03-03 21:00:00"
+    },
+    {
+     "id": "c08",
+     "content": "玩家巅峰赛最高分是2100",
+     "keywords": [
+      "巅峰赛",
+      "分数"
+     ],
+     "importance": 3,
+     "source": "trajectory",
+     "created_at": "2026-08-20 21:00:00",
+     "updated_at": "2026-08-20 21:00:00"
+    },
+    {
+     "id": "c09",
+     "content": "玩家是学校电竞社的队长",
+     "keywords": [
+      "电竞社",
+      "队长",
+      "学校"
+     ],
+     "importance": 3,
+     "source": "chat",
+     "created_at": "2026-03-08 21:00:00",
+     "updated_at": "2026-03-08 21:00:00"
+    },
+    {
+     "id": "c10",
+     "content": "玩家打野习惯先刷红buff再去抓下路",
+     "keywords": [
+      "打野路线",
+      "红buff",
+      "抓下路"
+     ],
+     "importance": 2,
+     "source": "trajectory",
+     "created_at": "2026-03-03 21:00:00",
+     "updated_at": "2026-03-03 21:00:00"
+    },
+    {
+     "id": "c11",
+     "content": "玩家讨厌队友送人头，会忍不住发信号催",
+     "keywords": [
+      "送人头",
+      "队友"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-03-15 21:00:00",
+     "updated_at": "2026-03-15 21:00:00"
+    },
+    {
+     "id": "c12",
+     "content": "玩家的爸妈不太支持打游戏，成绩下滑时会没收手机",
+     "keywords": [
+      "父母",
+      "成绩",
+      "没收手机"
+     ],
+     "importance": 3,
+     "source": "chat",
+     "created_at": "2026-04-02 21:00:00",
+     "updated_at": "2026-04-02 21:00:00"
+    },
+    {
+     "id": "c13",
+     "content": "玩家用红米手机玩游戏",
+     "keywords": [
+      "手机",
+      "设备",
+      "红米"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-03-01 21:00:00",
+     "updated_at": "2026-03-01 21:00:00",
+     "valid_to": "2026-07-10 21:00:00",
+     "superseded_by": "c14"
+    },
+    {
+     "id": "c14",
+     "content": "玩家换成了一加手机，帧率更稳",
+     "keywords": [
+      "手机",
+      "设备",
+      "一加"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-07-10 21:00:00",
+     "updated_at": "2026-07-10 21:00:00",
+     "supersedes": "c13"
+    },
+    {
+     "id": "c15",
+     "content": "玩家的偶像是职业打野选手“清风”",
+     "keywords": [
+      "偶像",
+      "职业选手",
+      "清风"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-04-10 21:00:00",
+     "updated_at": "2026-04-10 21:00:00"
+    },
+    {
+     "id": "c16",
+     "content": "玩家在2026年5月的校内比赛中拿了冠军",
+     "keywords": [
+      "校内比赛",
+      "冠军"
+     ],
+     "importance": 3,
+     "source": "chat",
+     "created_at": "2026-05-20 21:00:00",
+     "updated_at": "2026-05-20 21:00:00"
+    },
+    {
+     "id": "c17",
+     "content": "玩家最擅长抢龙，惩戒时机很准",
+     "keywords": [
+      "抢龙",
+      "惩戒"
+     ],
+     "importance": 2,
+     "source": "trajectory",
+     "created_at": "2026-03-03 21:00:00",
+     "updated_at": "2026-03-03 21:00:00"
+    },
+    {
+     "id": "c18",
+     "content": "玩家经常开麦指挥队友",
+     "keywords": [
+      "语音",
+      "指挥"
+     ],
+     "importance": 2,
+     "source": "trajectory",
+     "created_at": "2026-03-03 21:00:00",
+     "updated_at": "2026-03-03 21:00:00"
+    },
+    {
+     "id": "c19",
+     "content": "玩家的兰陵王胜率只有40%，已经很久不玩了",
+     "keywords": [
+      "兰陵王",
+      "胜率"
+     ],
+     "importance": 1,
+     "source": "trajectory",
+     "created_at": "2026-03-03 21:00:00",
+     "updated_at": "2026-03-03 21:00:00"
+    },
+    {
+     "id": "c20",
+     "content": "玩家的好朋友阿杰玩射手，两人经常一起双排",
+     "keywords": [
+      "阿杰",
+      "射手",
+      "双排"
+     ],
+     "importance": 3,
+     "source": "chat",
+     "created_at": "2026-03-20 21:00:00",
+     "updated_at": "2026-03-20 21:00:00"
+    },
+    {
+     "id": "c21",
+     "content": "玩家的期末考试在2026年7月初，考前一个月不玩游戏",
+     "keywords": [
+      "期末考试"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-05-25 21:00:00",
+     "updated_at": "2026-05-25 21:00:00"
+    },
+    {
+     "id": "c22",
+     "content": "玩家的梦想是以后当职业选手",
+     "keywords": [
+      "梦想",
+      "职业选手"
+     ],
+     "importance": 3,
+     "source": "chat",
+     "created_at": "2026-04-10 21:00:00",
+     "updated_at": "2026-04-10 21:00:00"
+    },
+    {
+     "id": "c23",
+     "content": "玩家想攒钱买澜的皮肤“鲨之猎刃”",
+     "keywords": [
+      "皮肤",
+      "澜",
+      "攒钱"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-08-05 21:00:00",
+     "updated_at": "2026-08-05 21:00:00"
+    },
+    {
+     "id": "c24",
+     "content": "玩家每月零花钱200元",
+     "keywords": [
+      "零花钱"
+     ],
+     "importance": 1,
+     "source": "chat",
+     "created_at": "2026-04-02 21:00:00",
+     "updated_at": "2026-04-02 21:00:00"
+    },
+    {
+     "id": "c25",
+     "content": "玩家平均KDA为4.1，参团率65%",
+     "keywords": [
+      "KDA",
+      "参团率"
+     ],
+     "importance": 2,
+     "source": "trajectory",
+     "created_at": "2026-08-20 21:00:00",
+     "updated_at": "2026-08-20 21:00:00"
+    },
+    {
+     "id": "c26",
+     "content": "玩家前期入侵对方野区的频率很高（40%）",
+     "keywords": [
+      "入侵野区",
+      "野区"
+     ],
+     "importance": 2,
+     "source": "trajectory",
+     "created_at": "2026-03-03 21:00:00",
+     "updated_at": "2026-03-03 21:00:00"
+    },
+    {
+     "id": "c27",
+     "content": "玩家喜欢边打游戏边听周杰伦的歌",
+     "keywords": [
+      "音乐",
+      "周杰伦"
+     ],
+     "importance": 1,
+     "source": "chat",
+     "created_at": "2026-04-12 21:00:00",
+     "updated_at": "2026-04-12 21:00:00"
+    },
+    {
+     "id": "c28",
+     "content": "玩家输了会看回放复盘",
+     "keywords": [
+      "复盘",
+      "回放"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-04-12 21:00:00",
+     "updated_at": "2026-04-12 21:00:00"
+    },
+    {
+     "id": "c29",
+     "content": "玩家澜的常用出装：暗影战斧、抵抗之靴、制裁之刃、破军、名刀",
+     "keywords": [
+      "出装",
+      "澜"
+     ],
+     "importance": 3,
+     "source": "trajectory",
+     "created_at": "2026-08-20 21:00:00",
+     "updated_at": "2026-08-20 21:00:00"
+    },
+    {
+     "id": "c30",
+     "content": "玩家的目标是巅峰赛打到2000分",
+     "keywords": [
+      "目标",
+      "巅峰赛"
+     ],
+     "importance": 3,
+     "source": "chat",
+     "created_at": "2026-03-15 21:00:00",
+     "updated_at": "2026-03-15 21:00:00",
+     "valid_to": "2026-08-20 21:00:00",
+     "superseded_by": "c31"
+    },
+    {
+     "id": "c31",
+     "content": "玩家巅峰赛已经突破2000分，新目标是2200分",
+     "keywords": [
+      "目标",
+      "巅峰赛"
+     ],
+     "importance": 3,
+     "source": "chat",
+     "created_at": "2026-08-20 21:00:00",
+     "updated_at": "2026-08-20 21:00:00",
+     "supersedes": "c30"
+    },
+    {
+     "id": "c32",
+     "content": "玩家数学成绩不好，最近在补课",
+     "keywords": [
+      "数学",
+      "补课"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-04-02 21:00:00",
+     "updated_at": "2026-04-02 21:00:00"
+    },
+    {
+     "id": "c33",
+     "content": "玩家不喜欢玩辅助",
+     "keywords": [
+      "辅助"
+     ],
+     "importance": 2,
+     "source": "chat",
+     "created_at": "2026-03-15 21:00:00",
+     "updated_at": "2026-03-15 21:00:00"
+    },
+    {
+     "id": "c34",
+     "content": "玩家打游戏手汗多，会戴手指套",
+     "keywords": [
+      "手指套",
+      "手汗"
+     ],
+     "importance": 1,
+     "source": "chat",
+     "created_at": "2026-04-12 21:00:00",
+     "updated_at": "2026-04-12 21:00:00"
+    }
+   ]
+  }
+ ],
+ "queries": [
+  {
+   "id": "a_q01",
+   "player": "p_archer",
+   "query": "我生日是哪天？",
+   "type": "direct",
+   "gold": [
+    "m01"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q02",
+   "player": "p_archer",
+   "query": "我是哪天出生的",
+   "type": "paraphrase",
+   "gold": [
+    "m01"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q03",
+   "player": "p_archer",
+   "query": "今天是我的生日，你还记得吗",
+   "type": "direct",
+   "gold": [
+    "m01"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q04",
+   "player": "p_archer",
+   "query": "我平时一般几点上线",
+   "type": "paraphrase",
+   "gold": [
+    "m03"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q05",
+   "player": "p_archer",
+   "query": "我一天大概玩多久",
+   "type": "paraphrase",
+   "gold": [
+    "m04"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q06",
+   "player": "p_archer",
+   "query": "我最拿手的英雄是哪个",
+   "type": "paraphrase",
+   "gold": [
+    "m05"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q07",
+   "player": "p_archer",
+   "query": "鲁班七号我胜率多少",
+   "type": "direct",
+   "gold": [
+    "m05"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q08",
+   "player": "p_archer",
+   "query": "我后羿打得怎么样",
+   "type": "direct",
+   "gold": [
+    "m06"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q09",
+   "player": "p_archer",
+   "query": "马可波罗适合我吗",
+   "type": "direct",
+   "gold": [
+    "m08"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q10",
+   "player": "p_archer",
+   "query": "我主要打什么位置",
+   "type": "paraphrase",
+   "gold": [
+    "m10"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q11",
+   "player": "p_archer",
+   "query": "给我推荐一个辅助英雄",
+   "type": "paraphrase",
+   "gold": [
+    "m10"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q12",
+   "player": "p_archer",
+   "query": "鲁班怎么出装",
+   "type": "direct",
+   "gold": [
+    "m11"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q13",
+   "player": "p_archer",
+   "query": "我现在什么段位",
+   "type": "update",
+   "gold": [
+    "m13"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q14",
+   "player": "p_archer",
+   "query": "我上王者了吗",
+   "type": "update",
+   "gold": [
+    "m13"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q15",
+   "player": "p_archer",
+   "query": "我接下来的目标是什么",
+   "type": "update",
+   "gold": [
+    "m15"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q16",
+   "player": "p_archer",
+   "query": "我常和谁一起开黑",
+   "type": "paraphrase",
+   "gold": [
+    "m16"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q17",
+   "player": "p_archer",
+   "query": "我在哪个公会",
+   "type": "direct",
+   "gold": [
+    "m17"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q18",
+   "player": "p_archer",
+   "query": "我为什么老是死",
+   "type": "paraphrase",
+   "gold": [
+    "m19"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q19",
+   "player": "p_archer",
+   "query": "我怎么总被刺客秒",
+   "type": "direct",
+   "gold": [
+    "m19"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q20",
+   "player": "p_archer",
+   "query": "团战我该站哪里",
+   "type": "multi",
+   "gold": [
+    "m19",
+    "m20"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q21",
+   "player": "p_archer",
+   "query": "输了好几把好烦",
+   "type": "paraphrase",
+   "gold": [
+    "m21"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q22",
+   "player": "p_archer",
+   "query": "又碰到挂机的了气死我了",
+   "type": "direct",
+   "gold": [
+    "m22"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q23",
+   "player": "p_archer",
+   "query": "我的最高击杀纪录是多少",
+   "type": "direct",
+   "gold": [
+    "m26"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q24",
+   "player": "p_archer",
+   "query": "我最多连赢过几把",
+   "type": "paraphrase",
+   "gold": [
+    "m27"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q25",
+   "player": "p_archer",
+   "query": "我有哪些鲁班皮肤",
+   "type": "direct",
+   "gold": [
+    "m29"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q26",
+   "player": "p_archer",
+   "query": "后羿的皮肤我有哪些",
+   "type": "direct",
+   "gold": [
+    "m30"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q27",
+   "player": "p_archer",
+   "query": "我主要玩什么模式",
+   "type": "direct",
+   "gold": [
+    "m31"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q28",
+   "player": "p_archer",
+   "query": "我打游戏开不开麦",
+   "type": "paraphrase",
+   "gold": [
+    "m32"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q29",
+   "player": "p_archer",
+   "query": "我的手速怎么样",
+   "type": "paraphrase",
+   "gold": [
+    "m33"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q30",
+   "player": "p_archer",
+   "query": "我补刀水平如何",
+   "type": "direct",
+   "gold": [
+    "m33"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q31",
+   "player": "p_archer",
+   "query": "我经济怎么样",
+   "type": "direct",
+   "gold": [
+    "m34"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q32",
+   "player": "p_archer",
+   "query": "我喜欢去对面野区吗",
+   "type": "direct",
+   "gold": [
+    "m35"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q33",
+   "player": "p_archer",
+   "query": "我是什么打法风格",
+   "type": "direct",
+   "gold": [
+    "m36"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q34",
+   "player": "p_archer",
+   "query": "这周我战绩如何",
+   "type": "direct",
+   "gold": [
+    "m37"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q35",
+   "player": "p_archer",
+   "query": "我现在用什么手机玩",
+   "type": "update",
+   "gold": [
+    "m39"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q36",
+   "player": "p_archer",
+   "query": "我喜欢玩法师吗",
+   "type": "direct",
+   "gold": [
+    "m40"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q37",
+   "player": "p_archer",
+   "query": "我想换个位置玩玩",
+   "type": "paraphrase",
+   "gold": [
+    "m41"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q38",
+   "player": "p_archer",
+   "query": "下周要考试了",
+   "type": "direct",
+   "gold": [
+    "m42"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q39",
+   "player": "p_archer",
+   "query": "我是做什么的",
+   "type": "paraphrase",
+   "gold": [
+    "m02"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q40",
+   "player": "p_archer",
+   "query": "五杀是哪天拿的",
+   "type": "direct",
+   "gold": [
+    "m25"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q41",
+   "player": "p_archer",
+   "query": "我和朋友组队厉害吗",
+   "type": "multi",
+   "gold": [
+    "m16",
+    "m28"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q42",
+   "player": "p_archer",
+   "query": "我心态容易崩吗",
+   "type": "multi",
+   "gold": [
+    "m21",
+    "m23"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q43",
+   "player": "p_archer",
+   "query": "我打野行不行",
+   "type": "direct",
+   "gold": [
+    "m41"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q44",
+   "player": "p_archer",
+   "query": "我的KDA是多少",
+   "type": "direct",
+   "gold": [
+    "m36"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q45",
+   "player": "p_archer",
+   "query": "我拿过几次MVP",
+   "type": "direct",
+   "gold": [
+    "m37"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q46",
+   "player": "p_archer",
+   "query": "我一般走下路吗",
+   "type": "direct",
+   "gold": [
+    "m35"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q47",
+   "player": "p_archer",
+   "query": "我孙尚香用得多吗",
+   "type": "direct",
+   "gold": [
+    "m07"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q48",
+   "player": "p_archer",
+   "query": "我的反应速度快吗",
+   "type": "direct",
+   "gold": [
+    "m33"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q49",
+   "player": "p_archer",
+   "query": "我好友多吗",
+   "type": "direct",
+   "gold": [
+    "m18"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q50",
+   "player": "p_archer",
+   "query": "上学期间我玩得多吗",
+   "type": "paraphrase",
+   "gold": [
+    "m42"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "a_q51",
+   "player": "p_archer",
+   "query": "今天天气怎么样",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_q52",
+   "player": "p_archer",
+   "query": "帮我写一首关于春天的诗",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_q53",
+   "player": "p_archer",
+   "query": "1+1等于几",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_q54",
+   "player": "p_archer",
+   "query": "你叫什么名字",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_q55",
+   "player": "p_archer",
+   "query": "推荐一部好看的电影",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_q56",
+   "player": "p_archer",
+   "query": "上海有什么好吃的",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_q57",
+   "player": "p_archer",
+   "query": "Python怎么读取文件",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_q58",
+   "player": "p_archer",
+   "query": "现在几点了",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_q59",
+   "player": "p_archer",
+   "query": "世界杯谁夺冠了",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_q60",
+   "player": "p_archer",
+   "query": "你觉得人工智能会取代人类吗",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_n01",
+   "player": "p_archer",
+   "query": "北京到上海坐高铁要多久",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_n02",
+   "player": "p_archer",
+   "query": "怎么煮米饭",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_n03",
+   "player": "p_archer",
+   "query": "推荐几首好听的歌",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_n04",
+   "player": "p_archer",
+   "query": "明天几号",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_n05",
+   "player": "p_archer",
+   "query": "长城有多长",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_n06",
+   "player": "p_archer",
+   "query": "怎么学吉他",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_n07",
+   "player": "p_archer",
+   "query": "咖啡和茶哪个提神",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_n08",
+   "player": "p_archer",
+   "query": "明年是什么年",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_n09",
+   "player": "p_archer",
+   "query": "怎么减肥",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "a_n10",
+   "player": "p_archer",
+   "query": "月亮为什么有圆缺",
+   "type": "negative",
+   "gold": [],
+   "split": "dev"
+  },
+  {
+   "id": "b_q01",
+   "player": "p_mage",
+   "query": "我生日几号？",
+   "type": "direct",
+   "gold": [
+    "b01"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q02",
+   "player": "p_mage",
+   "query": "我哪天过生日来着",
+   "type": "paraphrase",
+   "gold": [
+    "b01"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q03",
+   "player": "p_mage",
+   "query": "我是干什么工作的",
+   "type": "paraphrase",
+   "gold": [
+    "b02"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q04",
+   "player": "p_mage",
+   "query": "我在哪个城市",
+   "type": "paraphrase",
+   "gold": [
+    "b02"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q05",
+   "player": "p_mage",
+   "query": "我一般什么时候玩游戏",
+   "type": "direct",
+   "gold": [
+    "b03"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q06",
+   "player": "p_mage",
+   "query": "我主打哪条路",
+   "type": "paraphrase",
+   "gold": [
+    "b04"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q07",
+   "player": "p_mage",
+   "query": "我用得最多的英雄",
+   "type": "direct",
+   "gold": [
+    "b05"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q08",
+   "player": "p_mage",
+   "query": "我胜率最高的是哪个英雄",
+   "type": "direct",
+   "gold": [
+    "b06"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q09",
+   "player": "p_mage",
+   "query": "王昭君我玩得怎么样",
+   "type": "direct",
+   "gold": [
+    "b07"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q10",
+   "player": "p_mage",
+   "query": "我现在啥段位",
+   "type": "update",
+   "gold": [
+    "b09"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q11",
+   "player": "p_mage",
+   "query": "我打到星耀了吗",
+   "type": "update",
+   "gold": [
+    "b09"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q12",
+   "player": "p_mage",
+   "query": "我对线最怕谁",
+   "type": "paraphrase",
+   "gold": [
+    "b10"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q13",
+   "player": "p_mage",
+   "query": "兰陵王来抓我怎么办",
+   "type": "direct",
+   "gold": [
+    "b10"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q14",
+   "player": "p_mage",
+   "query": "我喜欢打排位吗",
+   "type": "direct",
+   "gold": [
+    "b11"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q15",
+   "player": "p_mage",
+   "query": "平时跟谁一起玩",
+   "type": "paraphrase",
+   "gold": [
+    "b12"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q16",
+   "player": "p_mage",
+   "query": "小周玩什么位置",
+   "type": "direct",
+   "gold": [
+    "b12"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q17",
+   "player": "p_mage",
+   "query": "我CP叫什么",
+   "type": "paraphrase",
+   "gold": [
+    "b13"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q18",
+   "player": "p_mage",
+   "query": "我还在练打野吗",
+   "type": "update",
+   "gold": [
+    "b15"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q19",
+   "player": "p_mage",
+   "query": "我用什么设备玩",
+   "type": "direct",
+   "gold": [
+    "b16"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q20",
+   "player": "p_mage",
+   "query": "我开麦吗",
+   "type": "paraphrase",
+   "gold": [
+    "b17"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q21",
+   "player": "p_mage",
+   "query": "诸葛亮出什么装备",
+   "type": "direct",
+   "gold": [
+    "b18"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q22",
+   "player": "p_mage",
+   "query": "我有哪些诸葛亮皮肤",
+   "type": "direct",
+   "gold": [
+    "b19"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q23",
+   "player": "p_mage",
+   "query": "我什么时候拿的法王",
+   "type": "direct",
+   "gold": [
+    "b20"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q24",
+   "player": "p_mage",
+   "query": "最近手感怎么样",
+   "type": "paraphrase",
+   "gold": [
+    "b21"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q25",
+   "player": "p_mage",
+   "query": "我工作忙的时候还玩吗",
+   "type": "paraphrase",
+   "gold": [
+    "b22"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q26",
+   "player": "p_mage",
+   "query": "我喜欢哪个战队",
+   "type": "paraphrase",
+   "gold": [
+    "b23"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q27",
+   "player": "p_mage",
+   "query": "被人骂了好气",
+   "type": "paraphrase",
+   "gold": [
+    "b24"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q28",
+   "player": "p_mage",
+   "query": "我喜欢什么娱乐模式",
+   "type": "direct",
+   "gold": [
+    "b27"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q29",
+   "player": "p_mage",
+   "query": "我今年的目标是什么",
+   "type": "direct",
+   "gold": [
+    "b28"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q30",
+   "player": "p_mage",
+   "query": "我在游戏里花钱多吗",
+   "type": "paraphrase",
+   "gold": [
+    "b29"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q31",
+   "player": "p_mage",
+   "query": "为什么我喜欢玩貂蝉",
+   "type": "direct",
+   "gold": [
+    "b30"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q32",
+   "player": "p_mage",
+   "query": "我家的猫叫什么",
+   "type": "direct",
+   "gold": [
+    "b31"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q33",
+   "player": "p_mage",
+   "query": "我游戏ID叫什么",
+   "type": "update",
+   "gold": [
+    "b34"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q34",
+   "player": "p_mage",
+   "query": "我的画面设置有什么习惯",
+   "type": "paraphrase",
+   "gold": [
+    "b35"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q35",
+   "player": "p_mage",
+   "query": "我用什么施法方式",
+   "type": "direct",
+   "gold": [
+    "b36"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q36",
+   "player": "p_mage",
+   "query": "给我推荐一个坦克",
+   "type": "paraphrase",
+   "gold": [
+    "b37"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_q37",
+   "player": "p_mage",
+   "query": "我的法师英雄里哪个最强",
+   "type": "multi",
+   "gold": [
+    "b05",
+    "b06"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "b_n01",
+   "player": "p_mage",
+   "query": "今天北京下雨吗",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "b_n02",
+   "player": "p_mage",
+   "query": "帮我翻译一句英文",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "b_n03",
+   "player": "p_mage",
+   "query": "红烧肉怎么做",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "b_n04",
+   "player": "p_mage",
+   "query": "推荐几本科幻小说",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "b_n05",
+   "player": "p_mage",
+   "query": "明天股市会涨吗",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "b_n06",
+   "player": "p_mage",
+   "query": "怎么学好数学",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "b_n07",
+   "player": "p_mage",
+   "query": "感冒了吃什么药",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "b_n08",
+   "player": "p_mage",
+   "query": "地球到月球多远",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "b_n09",
+   "player": "p_mage",
+   "query": "你是机器人吗",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "b_n10",
+   "player": "p_mage",
+   "query": "周末去哪里玩好",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "b_n11",
+   "player": "p_mage",
+   "query": "讲个笑话",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "b_n12",
+   "player": "p_mage",
+   "query": "王者荣耀是哪家公司做的",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "b_n13",
+   "player": "p_mage",
+   "query": "如何提高睡眠质量",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "b_n14",
+   "player": "p_mage",
+   "query": "汽车保养多久一次",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "b_n15",
+   "player": "p_mage",
+   "query": "什么是区块链",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "c_q01",
+   "player": "p_jungle",
+   "query": "我生日是几号",
+   "type": "direct",
+   "gold": [
+    "c01"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q02",
+   "player": "p_jungle",
+   "query": "我哪天出生的",
+   "type": "paraphrase",
+   "gold": [
+    "c01"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q03",
+   "player": "p_jungle",
+   "query": "我读几年级",
+   "type": "paraphrase",
+   "gold": [
+    "c02"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q04",
+   "player": "p_jungle",
+   "query": "我什么时候能玩游戏",
+   "type": "paraphrase",
+   "gold": [
+    "c03"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q05",
+   "player": "p_jungle",
+   "query": "为什么我平时不能玩",
+   "type": "paraphrase",
+   "gold": [
+    "c03"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q06",
+   "player": "p_jungle",
+   "query": "我打什么位置",
+   "type": "direct",
+   "gold": [
+    "c04"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q07",
+   "player": "p_jungle",
+   "query": "我的本命英雄是谁",
+   "type": "update",
+   "gold": [
+    "c06"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q08",
+   "player": "p_jungle",
+   "query": "我还在玩李白吗",
+   "type": "update",
+   "gold": [
+    "c06"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q09",
+   "player": "p_jungle",
+   "query": "韩信我胜率多少",
+   "type": "direct",
+   "gold": [
+    "c07"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q10",
+   "player": "p_jungle",
+   "query": "我巅峰赛最高多少分",
+   "type": "direct",
+   "gold": [
+    "c08"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q11",
+   "player": "p_jungle",
+   "query": "我在社团里是什么角色",
+   "type": "paraphrase",
+   "gold": [
+    "c09"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q12",
+   "player": "p_jungle",
+   "query": "我开局一般怎么刷野",
+   "type": "paraphrase",
+   "gold": [
+    "c10"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q13",
+   "player": "p_jungle",
+   "query": "队友一直送好烦",
+   "type": "direct",
+   "gold": [
+    "c11"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q14",
+   "player": "p_jungle",
+   "query": "我爸妈对我玩游戏什么态度",
+   "type": "direct",
+   "gold": [
+    "c12"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q15",
+   "player": "p_jungle",
+   "query": "我现在用什么手机",
+   "type": "update",
+   "gold": [
+    "c14"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q16",
+   "player": "p_jungle",
+   "query": "我崇拜哪个选手",
+   "type": "paraphrase",
+   "gold": [
+    "c15"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q17",
+   "player": "p_jungle",
+   "query": "我拿过什么比赛奖",
+   "type": "paraphrase",
+   "gold": [
+    "c16"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q18",
+   "player": "p_jungle",
+   "query": "我抢龙厉害吗",
+   "type": "direct",
+   "gold": [
+    "c17"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q19",
+   "player": "p_jungle",
+   "query": "我打游戏说话多吗",
+   "type": "paraphrase",
+   "gold": [
+    "c18"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q20",
+   "player": "p_jungle",
+   "query": "兰陵王适合我吗",
+   "type": "direct",
+   "gold": [
+    "c19"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q21",
+   "player": "p_jungle",
+   "query": "我常和谁双排",
+   "type": "direct",
+   "gold": [
+    "c20"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q22",
+   "player": "p_jungle",
+   "query": "我期末考试什么时候",
+   "type": "direct",
+   "gold": [
+    "c21"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q23",
+   "player": "p_jungle",
+   "query": "我以后想干什么",
+   "type": "paraphrase",
+   "gold": [
+    "c22"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q24",
+   "player": "p_jungle",
+   "query": "我想买什么皮肤",
+   "type": "direct",
+   "gold": [
+    "c23"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q25",
+   "player": "p_jungle",
+   "query": "我有多少零花钱",
+   "type": "direct",
+   "gold": [
+    "c24"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q26",
+   "player": "p_jungle",
+   "query": "我的KDA怎么样",
+   "type": "direct",
+   "gold": [
+    "c25"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q27",
+   "player": "p_jungle",
+   "query": "我喜欢反野吗",
+   "type": "paraphrase",
+   "gold": [
+    "c26"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q28",
+   "player": "p_jungle",
+   "query": "我打游戏喜欢听什么歌",
+   "type": "direct",
+   "gold": [
+    "c27"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q29",
+   "player": "p_jungle",
+   "query": "输了之后我会干嘛",
+   "type": "paraphrase",
+   "gold": [
+    "c28"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q30",
+   "player": "p_jungle",
+   "query": "澜怎么出装",
+   "type": "direct",
+   "gold": [
+    "c29"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q31",
+   "player": "p_jungle",
+   "query": "我巅峰赛的新目标",
+   "type": "update",
+   "gold": [
+    "c31"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q32",
+   "player": "p_jungle",
+   "query": "我哪科比较差",
+   "type": "paraphrase",
+   "gold": [
+    "c32"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q33",
+   "player": "p_jungle",
+   "query": "让我去玩辅助行吗",
+   "type": "direct",
+   "gold": [
+    "c33"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q34",
+   "player": "p_jungle",
+   "query": "手出汗怎么办",
+   "type": "paraphrase",
+   "gold": [
+    "c34"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_q35",
+   "player": "p_jungle",
+   "query": "我打野有什么特点",
+   "type": "multi",
+   "gold": [
+    "c17",
+    "c26"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "c_n01",
+   "player": "p_jungle",
+   "query": "今天是几号",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "c_n02",
+   "player": "p_jungle",
+   "query": "怎么做番茄炒蛋",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "c_n03",
+   "player": "p_jungle",
+   "query": "推荐一部动漫",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "c_n04",
+   "player": "p_jungle",
+   "query": "光速是多少",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "c_n05",
+   "player": "p_jungle",
+   "query": "帮我写个请假条",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "c_n06",
+   "player": "p_jungle",
+   "query": "英语作文怎么写好",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "c_n07",
+   "player": "p_jungle",
+   "query": "世界上最高的山是哪座",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "c_n08",
+   "player": "p_jungle",
+   "query": "猫为什么喜欢纸箱",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "c_n09",
+   "player": "p_jungle",
+   "query": "牛顿第二定律是什么",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "c_n10",
+   "player": "p_jungle",
+   "query": "火星上有水吗",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "c_n11",
+   "player": "p_jungle",
+   "query": "怎么养多肉",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "c_n12",
+   "player": "p_jungle",
+   "query": "你喜欢什么颜色",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "c_n13",
+   "player": "p_jungle",
+   "query": "明天会下雪吗",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "c_n14",
+   "player": "p_jungle",
+   "query": "如何快速入睡",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  },
+  {
+   "id": "c_n15",
+   "player": "p_jungle",
+   "query": "电动车和油车哪个好",
+   "type": "negative",
+   "gold": [],
+   "split": "test"
+  }
+ ]
+}
