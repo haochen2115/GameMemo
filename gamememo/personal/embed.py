@@ -73,13 +73,14 @@ class OllamaEmbedder(_CachedEmbedder):
 class FastEmbedEmbedder(_CachedEmbedder):
     """Local ONNX embeddings via ``fastembed`` (no server, no torch).
 
-    The default ``BAAI/bge-small-zh-v1.5`` is ~100 MB and runs on CPU; it is
-    what the offline benchmark uses so results are reproducible anywhere.
+    The default ``jina-embeddings-v2-base-zh`` (~640 MB, CPU) separated
+    relevant from unrelated queries best on the dev split; it is what the
+    offline benchmark uses so results are reproducible anywhere.
     """
 
     BGE_ZH_QUERY_PREFIX = "为这个句子生成表示以用于检索相关文章："
 
-    def __init__(self, model: str = "BAAI/bge-small-zh-v1.5", query_prefix: Optional[str] = None):
+    def __init__(self, model: str = "jinaai/jina-embeddings-v2-base-zh", query_prefix: Optional[str] = None):
         super().__init__()
         from fastembed import TextEmbedding  # optional dependency
 
@@ -91,3 +92,29 @@ class FastEmbedEmbedder(_CachedEmbedder):
 
     def _embed(self, texts: List[str]) -> List[Vector]:
         return [list(map(float, v)) for v in self.model.embed(texts)]
+
+
+class Reranker(Protocol):
+    name: str
+
+    def score(self, query: str, docs: Sequence[str]) -> List[float]:
+        ...
+
+
+class FastEmbedReranker:
+    """Local cross-encoder via ``fastembed``. Scores are raw logits: higher
+    means more relevant, and a threshold on them decides abstention."""
+
+    def __init__(self, model: str = "BAAI/bge-reranker-base"):
+        from fastembed.rerank.cross_encoder import TextCrossEncoder  # optional dependency
+
+        self.model = TextCrossEncoder(model)
+        self.name = f"fastembed:{model}"
+        self._cache: Dict[tuple, float] = {}
+
+    def score(self, query: str, docs: Sequence[str]) -> List[float]:
+        missing = [d for d in dict.fromkeys(docs) if (query, d) not in self._cache]
+        if missing:
+            for d, s in zip(missing, self.model.rerank(query, missing)):
+                self._cache[(query, d)] = float(s)
+        return [self._cache[(query, d)] for d in docs]

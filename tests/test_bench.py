@@ -1,25 +1,43 @@
 # -*- coding: utf-8 -*-
 """Guards on the benchmark itself (data integrity + lexical smoke run)."""
 
-from bench.run_retrieval import evaluate, load, v1_searcher
+import os
+
+import pytest
+
+from bench.run_retrieval import ROOT, SYSTEMS, load, run_system
+
+DATASETS = ["retrieval_v1.json", "retrieval_v2.json"]
 
 
-def test_dataset_integrity():
-    data, records, now = load()
-    ids = {r.id for r in records}
-    active = {r.id for r in records if r.is_active}
-    assert now is not None
+@pytest.mark.parametrize("name", DATASETS)
+def test_dataset_integrity(name):
+    data, banks = load(os.path.join(ROOT, "bench", "data", name))
+    for pid, (records, now) in banks.items():
+        assert now is not None
+        ids = {r.id for r in records}
+        for r in records:
+            if r.superseded_by:
+                assert r.superseded_by in ids and not r.is_active
+    qids = [q["id"] for q in data["queries"]]
+    assert len(qids) == len(set(qids))
     for q in data["queries"]:
+        active = {r.id for r in banks[q["player"]][0] if r.is_active}
         assert q["split"] in ("dev", "test")
         assert set(q["gold"]) <= active, f"{q['id']} points at a missing or superseded memory"
         assert bool(q["gold"]) == (q["type"] != "negative")
-    for r in records:
-        if r.superseded_by:
-            assert r.superseded_by in ids and not r.is_active
+
+
+def test_v2_test_players_are_disjoint_from_dev():
+    data, _ = load()
+    dev = {q["player"] for q in data["queries"] if q["split"] == "dev"}
+    test = {q["player"] for q in data["queries"] if q["split"] == "test"}
+    assert dev and test and not dev & test
 
 
 def test_lexical_retriever_runs_without_embeddings():
-    data, records, now = load()
-    res = evaluate(v1_searcher(records, now), data["queries"])
-    assert res["Abstain"] == 1.0
+    data, banks = load()
+    dev = [q for q in data["queries"] if q["split"] == "dev"]
+    res = run_system(SYSTEMS["v1-lexical"], banks, dev)
     assert res["Recall@3"] > 0.5
+    assert res["Abstain"] > 0.8

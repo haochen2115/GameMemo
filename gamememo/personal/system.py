@@ -69,7 +69,7 @@ class PersonalMemory:
         self.duplicate_ratio = duplicate_ratio
         self.store = JsonMemoryStore(os.path.join(storage_dir, f"{user_id}_memory.json"))
         if retrieval_config is None:
-            retrieval_config = RetrievalConfig() if embedder else RetrievalConfig.lexical_only()
+            retrieval_config = RetrievalConfig.for_embedder(embedder)
         self.retriever = HybridRetriever(embedder=embedder, config=retrieval_config)
         self.candidate_retriever = HybridRetriever(embedder=embedder,
                                                    config=retrieval_config.for_candidates())

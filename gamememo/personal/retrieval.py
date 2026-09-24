@@ -21,9 +21,18 @@ from dataclasses import dataclass, replace
 from datetime import datetime
 from typing import Dict, List, Optional, Sequence, Tuple
 
-from .embed import Embedder, cosine
+from .embed import Embedder, Reranker, cosine
 from .model import MemoryRecord, parse_time
 from .text import add_words, tokenize
+
+
+# (min_dense, dense_margin) per embedding model, tuned on the retrieval_v2
+# dev split only (docs/BENCHMARK.md). Cosine scales differ a lot by model.
+CALIBRATED_DENSE = {
+    "jina-embeddings-v2-base-zh": (0.25, 0.15),
+    "bge-small-zh-v1.5": (0.38, 0.12),
+    "bge-m3": (0.50, 0.12),
+}
 
 
 @dataclass
@@ -37,17 +46,31 @@ class RetrievalConfig:
     bm25_b: float = 0.75
     rrf_k: int = 60
     min_lexical_coverage: float = 0.34  # idf-weighted share of query terms matched
-    min_dense: float = 0.38             # cosine floor, calibrated for bge-small-zh
-    dense_margin: float = 0.12          # also require being near the best match
+    min_dense: float = 0.25             # cosine floor (default embedder: jina-v2-base-zh)
+    dense_margin: float = 0.15          # also require being near the best match
     w_importance: float = 0.10
     w_recency: float = 0.05
     recency_half_life_days: float = 30.0
+    rerank_pool: int = 10               # top-N by fused rank sent to the reranker
+    min_rerank: float = 0.0             # reranker logit needed to be returned
 
     def for_candidates(self) -> "RetrievalConfig":
         """Recall-oriented variant for the write path: any lexical overlap or
         a looser semantic match qualifies, and the LLM decides what to do."""
         return replace(self, min_lexical_coverage=0.0, min_dense=self.min_dense - 0.05,
                        dense_margin=1.0, w_recency=0.0)
+
+    @classmethod
+    def for_embedder(cls, embedder, **kw) -> "RetrievalConfig":
+        """Config with dense thresholds calibrated for this embedder."""
+        if embedder is None:
+            return cls.lexical_only(**kw)
+        for key, (floor, margin) in CALIBRATED_DENSE.items():
+            if key in getattr(embedder, "name", ""):
+                kw.setdefault("min_dense", floor)
+                kw.setdefault("dense_margin", margin)
+                break
+        return cls(**kw)
 
     @classmethod
     def lexical_only(cls, **kw) -> "RetrievalConfig":
@@ -67,8 +90,10 @@ class ScoredMemory:
 
 class HybridRetriever:
     def __init__(self, embedder: Optional[Embedder] = None,
-                 config: Optional[RetrievalConfig] = None):
+                 config: Optional[RetrievalConfig] = None,
+                 reranker: Optional[Reranker] = None):
         self.embedder = embedder
+        self.reranker = reranker
         self.config = config or RetrievalConfig()
         self._tok_cache: Dict[Tuple[str, str], List[str]] = {}
         self._known_keywords: set = set()
@@ -115,13 +140,24 @@ class HybridRetriever:
                 rrf[i] += 1.0 / (cfg.rrf_k + rank + 1)
 
         now = now or datetime.now()
+        if self.reranker is not None:
+            # The cross-encoder replaces the heuristic gate: it sees the best
+            # fused candidates and decides both order and abstention.
+            pool = sorted((i for i in range(n) if rrf[i] > 0), key=lambda i: -rrf[i])[:cfg.rerank_pool]
+            rr = self.reranker.score(query, [self._doc_text(records[i]) for i in pool])
+            keep = [(i, s) for i, s in zip(pool, rr) if s >= cfg.min_rerank]
+            base = {i: s for i, s in keep}
+        else:
+            base = {i: rrf[i] for i in range(n) if gate[i]}
+
         scored = []
-        for i, rec in enumerate(records):
-            if not gate[i]:
-                continue
+        for i, b in base.items():
+            rec = records[i]
             mod = 1.0 + cfg.w_importance * (rec.importance - 3) / 2.0 \
                 + cfg.w_recency * self._recency(rec, now)
-            scored.append(ScoredMemory(rec, rrf[i] * mod, lex[i], cov[i], dense[i]))
+            # Rerank logits can be negative; modulate the margin above the floor.
+            value = (b - cfg.min_rerank) * mod if self.reranker is not None else b * mod
+            scored.append(ScoredMemory(rec, value, lex[i], cov[i], dense[i]))
         scored.sort(key=lambda s: -s.score)
         return scored[:top_k]
 
