@@ -124,6 +124,9 @@ SYSTEMS: Dict[str, Callable[..., object]] = {
     "p2": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True, history_recall=True,
                                           episodes=True, promises=True, recall_modes=True,
                                           consolidate=False, attribute_recall=True),
+    "p3": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True, history_recall=True,
+                                          episodes=True, promises=True, recall_modes=True, consolidate=False,
+                                          attribute_recall=True, episode_fallback=True),
     "p1+consolidate": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True,
                                                       history_recall=True, episodes=True, promises=True,
                                                       recall_modes=True, consolidate=True),
@@ -244,6 +247,7 @@ READ_VARIANTS = {
     # from the LLM's run-to-run variation (same memories in both arms)
     "consolidated": {"consolidate_after_load": True},
     "no-attribute-recall": {"attribute_recall": False},
+    "p2-read": {"episode_fallback": False, "retrieval_config_kw": {"concept_tags": False}},
     "concepts": {"retrieval_config_kw": {"concept_tags": True}},
     "concepts+dense": {"retrieval_config_kw": {"concept_tags": True, "concept_dense": True}},
     "ep-fallback": {"episode_fallback": True},

@@ -49,9 +49,10 @@ CALIBRATED_DENSE = {
     # Preference gate (docs/EXPERIMENTS.md, E4): a memory sharing only a
     # preference predicate with the query ("喜欢") needs cosine >= 0.30.
     # The broad GENERIC_TERMS version (E2) cost recall and stays off.
+    # Concept tags (E7): bridge category questions to value statements.
     "jina-embeddings-v2-base-zh": {"min_dense": 0.25, "dense_margin": 0.15,
                                    "require_specific": True, "min_dense_alone": 0.30,
-                                   "generic_terms": PREFERENCE_TERMS},
+                                   "generic_terms": PREFERENCE_TERMS, "concept_tags": True},
     "bge-small-zh-v1.5": {"min_dense": 0.38, "dense_margin": 0.12},
     "bge-m3": {"min_dense": 0.50, "dense_margin": 0.12},
 }

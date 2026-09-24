@@ -121,7 +121,7 @@ class PersonalMemory:
                  recall_modes: bool = True,
                  consolidate: bool = False,
                  attribute_recall: bool = True,
-                 episode_fallback: bool = False):
+                 episode_fallback: bool = True):
         """
         write_mode: "ops" = extract facts, then the LLM decides
             ADD/UPDATE/DELETE/NOOP against related memories; "slots" = facts
