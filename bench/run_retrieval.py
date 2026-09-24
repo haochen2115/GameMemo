@@ -97,6 +97,18 @@ def v1_factory(emb: str = None, rr: str = None, **cfg) -> Factory:
     return make
 
 
+def memory_factory(**opts) -> Factory:
+    """The production read path: PersonalMemory.search (history recall etc.)."""
+    def make(records, now):
+        from gamememo.personal import PersonalMemory
+
+        mem = PersonalMemory("bench", storage_dir=tempfile.mkdtemp(prefix="gm_ret_"),
+                             embedder=embedder(JINA_ZH), clock=lambda: now, **opts)
+        mem.store.extend(records)
+        return lambda q: [s.record.id for s in mem.search(q, top_k=K)]
+    return make
+
+
 BGE_ZH = "BAAI/bge-small-zh-v1.5"
 JINA_ZH = "jinaai/jina-embeddings-v2-base-zh"
 BGE_RR = "BAAI/bge-reranker-base"
@@ -109,6 +121,8 @@ SYSTEMS: Dict[str, Factory] = {
     "v1-hybrid": v1_factory(BGE_ZH),                 # bge-small-zh, P0 thresholds
     "v2-hybrid": v1_factory(JINA_ZH),                # jina-v2-base-zh, tuned on v2 dev
     "v2-hybrid+rerank": v1_factory(BGE_ZH, rr=BGE_RR, min_rerank=-1.0, rerank_pool=5),
+    "memory-default": memory_factory(),
+    "memory-history": memory_factory(history_recall=True),
 }
 DEFAULT_SYSTEMS = ["v0-keyword", "v1-lexical", "v1-hybrid", "v2-hybrid"]
 

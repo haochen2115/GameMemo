@@ -88,3 +88,15 @@ def test_e2e_test_split_is_unchanged_since_sealing():
     test = [p for p in data["players"] if p["split"] == "test"]
     digest = hashlib.sha256(json.dumps(test, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
     assert digest == E2E_V1_TEST_SHA256
+
+
+def test_gate_rules():
+    from bench.gate import check
+
+    sota = {"primary": "S", "min_gain": 0.02, "metrics": {"S": 0.5, "A": 0.9, "St": 0.1},
+            "guards": {"A": 0.05, "St": {"tol": 0.05, "lower_is_better": True}}}
+    assert check({"S": 0.6, "A": 0.9, "St": 0.1}, sota)[0]
+    assert not check({"S": 0.51, "A": 0.9, "St": 0.1}, sota)[0]      # gain too small
+    assert not check({"S": 0.6, "A": 0.8, "St": 0.1}, sota)[0]       # guard dropped
+    assert not check({"S": 0.6, "A": 0.9, "St": 0.2}, sota)[0]       # stale rate rose
+    assert check({"S": 0.6, "A": 0.9, "St": 0.0}, sota)[0]           # stale rate fell: fine

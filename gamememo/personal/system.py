@@ -67,7 +67,8 @@ class PersonalMemory:
                  write_mode: str = "ops",
                  player_only: bool = False,
                  history_recall: bool = False,
-                 per_turn: bool = False):
+                 per_turn: bool = False,
+                 max_output_tokens: int = 1024):
         """
         write_mode: "ops" = extract facts, then the LLM decides
             ADD/UPDATE/DELETE/NOOP against related memories; "slots" = facts
@@ -79,6 +80,8 @@ class PersonalMemory:
             versions (ranked lower and marked as outdated).
         per_turn: extract facts from each player line separately (shorter
             inputs help small models), then decide operations once.
+        max_output_tokens: cap on every write-path LLM reply; small models
+            can loop forever inside structured output without it.
         """
         if write_mode not in ("ops", "slots"):
             raise ValueError(f"unknown write_mode {write_mode!r}")
@@ -86,6 +89,7 @@ class PersonalMemory:
         self.player_only = player_only
         self.history_recall = history_recall
         self.per_turn = per_turn
+        self.max_output_tokens = max_output_tokens
         self.user_id = user_id
         self.llm = llm
         self.clock = clock
@@ -138,6 +142,10 @@ class PersonalMemory:
         notes = []
         if r.event_time:
             notes.append(r.event_time)
+        elif r.created_at:
+            # No event date: say when we learned it, as a person would
+            # ("you told me on 08-20 that you reached Starlight").
+            notes.append(f"记于{r.created_at[:10]}")
         if not r.is_active:
             notes.append(f"已过时，{(r.valid_to or '')[:10]}被新信息取代")
         return r.content + (f"（{'；'.join(notes)}）" if notes else "")
@@ -186,9 +194,11 @@ class PersonalMemory:
         today = self.clock()
         template = prompts.EXTRACT_CHAT if source == "chat" else prompts.EXTRACT_TRAJECTORY
         prompt = template.format(text=text.strip(), today=today.strftime("%Y-%m-%d"),
-                                 yesterday=(today - timedelta(days=1)).strftime("%Y-%m-%d"))
+                                 yesterday=(today - timedelta(days=1)).strftime("%Y-%m-%d"),
+                                 before_yesterday=(today - timedelta(days=2)).strftime("%Y-%m-%d"))
         data = parse_json(self.llm.chat(prompt=prompt, system=prompts.SYSTEM_JSON,
-                                        temperature=0.1, json_schema=prompts.FACTS_SCHEMA))
+                                        temperature=0.1, json_schema=prompts.FACTS_SCHEMA,
+                                        max_tokens=self.max_output_tokens))
         facts = data.get("facts", []) if isinstance(data, dict) else []
         return [f.strip() for f in facts if isinstance(f, str) and f.strip()]
 
@@ -278,9 +288,11 @@ class PersonalMemory:
         prompt = prompts.EXTRACT_SLOTS.format(
             text=text.strip(), today=today.strftime("%Y-%m-%d"),
             yesterday=(today - timedelta(days=1)).strftime("%Y-%m-%d"),
+            before_yesterday=(today - timedelta(days=2)).strftime("%Y-%m-%d"),
             aspects="、".join(prompts.ASPECTS))
         data = parse_json(self.llm.chat(prompt=prompt, system=prompts.SYSTEM_JSON,
-                                        temperature=0.1, json_schema=prompts.SLOTS_SCHEMA))
+                                        temperature=0.1, json_schema=prompts.SLOTS_SCHEMA,
+                                        max_tokens=self.max_output_tokens))
         items = data.get("facts", []) if isinstance(data, dict) else []
         items = [f for f in items if isinstance(f, dict) and str(f.get("statement") or "").strip()]
         report = IngestReport(facts=[str(f["statement"]).strip() for f in items])
@@ -343,7 +355,8 @@ class PersonalMemory:
             existing=existing,
             facts="\n".join(f"- {f}" for f in facts))
         data = parse_json(self.llm.chat(prompt=prompt, system=prompts.SYSTEM_JSON,
-                                        temperature=0.1, json_schema=prompts.OPS_SCHEMA))
+                                        temperature=0.1, json_schema=prompts.OPS_SCHEMA,
+                                        max_tokens=self.max_output_tokens))
         ops = data.get("operations", []) if isinstance(data, dict) else []
         return [o for o in ops if isinstance(o, dict)]
 

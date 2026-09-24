@@ -26,6 +26,8 @@ SOTA = os.path.join(ROOT, "bench", "sota.json")
 
 
 def check(candidate: dict, sota: dict):
+    """Guards are ``{metric: tolerance}`` (higher is better) or
+    ``{metric: {"tol": t, "lower_is_better": true}}``."""
     primary = sota["primary"]
     lines, ok = [], True
     gain = candidate[primary] - sota["metrics"][primary]
@@ -33,12 +35,14 @@ def check(candidate: dict, sota: dict):
     ok &= passed
     lines.append(f"{'PASS' if passed else 'FAIL'}  {primary:12s} {sota['metrics'][primary]:.3f} -> "
                  f"{candidate[primary]:.3f}  (need >= +{sota['min_gain']:.3f})")
-    for metric, tol in sota["guards"].items():
-        drop = sota["metrics"][metric] - candidate[metric]
-        passed = drop <= tol
+    for metric, spec in sota["guards"].items():
+        tol = spec["tol"] if isinstance(spec, dict) else spec
+        lower = isinstance(spec, dict) and spec.get("lower_is_better", False)
+        worse = (candidate[metric] - sota["metrics"][metric]) if lower else (sota["metrics"][metric] - candidate[metric])
+        passed = worse <= tol + 1e-9
         ok &= passed
         lines.append(f"{'PASS' if passed else 'FAIL'}  {metric:12s} {sota['metrics'][metric]:.3f} -> "
-                     f"{candidate[metric]:.3f}  (max drop {tol:.3f})")
+                     f"{candidate[metric]:.3f}  (max {'rise' if lower else 'drop'} {tol:.3f})")
     return ok, lines
 
 

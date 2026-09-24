@@ -139,9 +139,12 @@ def judge(q: Dict, evidence: List[str]) -> Tuple[float, bool]:
     return (1.0 if ok else 0.0), stale
 
 
-def run_player(system, player) -> List[Dict]:
+def run_player(system, player, errors: List[str]) -> List[Dict]:
     for s in player["sessions"]:
-        system.ingest(transcript(s), parse_time(s["date"]))
+        try:
+            system.ingest(transcript(s), parse_time(s["date"]))
+        except Exception as e:  # a failed write loses that session, as it would in production
+            errors.append(f"{player['id']} {s['date']}: {e}")
     ask = parse_time(player["ask_at"])
     rows = []
     for q in player["questions"]:
@@ -204,6 +207,14 @@ def rejudge(path: str, data_path: str, show_errors: bool) -> Dict:
     return results
 
 
+def save(args, results) -> None:
+    os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
+    with open(args.out, "w", encoding="utf-8") as f:
+        json.dump({"dataset": os.path.relpath(os.path.abspath(args.data), ROOT), "split": args.split,
+                   "model": args.model, "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                   "results": results}, f, ensure_ascii=False, indent=1)
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", default=DATA)
@@ -229,11 +240,11 @@ def main(argv=None):
 
     results = {}
     for name in [s.strip() for s in args.systems.split(",") if s.strip()]:
-        rows, dumps, t0 = [], {}, time.time()
+        rows, dumps, errors, t0 = [], {}, [], time.time()
         for p in players:
             wd = tempfile.mkdtemp(prefix=f"e2e_{name}_")
             system = SYSTEMS[name](args.model, args.base_url, wd)
-            rows.extend(run_player(system, p))
+            rows.extend(run_player(system, p, errors))
             dumps[p["id"]] = system.dump()
             if args.keep:
                 dst = os.path.join(args.keep, name, p["id"])
@@ -241,19 +252,16 @@ def main(argv=None):
             shutil.rmtree(wd, ignore_errors=True)
         res = summarize(rows)
         res["minutes"] = round((time.time() - t0) / 60, 1)
+        res["ingest_errors"] = errors
         res["rows"], res["memories"] = rows, dumps
         results[name] = res
-        print(f"[{name}] done in {res['minutes']} min", flush=True)
+        print(f"[{name}] done in {res['minutes']} min, {len(errors)} failed sessions", flush=True)
+        if args.out:  # save after every system so a crash never loses finished runs
+            save(args, results)
 
     print_results(results, f"model={args.model}  split={args.split}  "
                            f"questions={results[next(iter(results))]['n']}", args.show_errors)
 
-    if args.out:
-        os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
-        with open(args.out, "w", encoding="utf-8") as f:
-            json.dump({"dataset": os.path.relpath(os.path.abspath(args.data), ROOT), "split": args.split,
-                       "model": args.model, "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                       "results": results}, f, ensure_ascii=False, indent=1)
     return results
 
 
