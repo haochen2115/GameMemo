@@ -94,3 +94,9 @@ def test_grounding_ignores_sub_tier_phrasing():
     from gamememo.personal.system import _grounded
     assert _grounded("玩家段位是钻石三星", "玩家: 我升到钻石三了")
     assert not _grounded("玩家段位是星耀", "玩家: 我升到钻石三了")
+
+
+def test_achievements_with_chong_are_not_wishes():
+    assert detect(rec("玩家暑假冲到星耀四了", "2026-01-01")) == [("段位", "星耀四")]
+    assert detect(rec("玩家冲上王者了", "2026-01-01")) == [("段位", "王者")]
+    assert detect(rec("玩家这赛季要冲王者", "2026-01-01")) == []

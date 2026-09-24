@@ -32,7 +32,8 @@ class Attribute:
     suffix: Optional[Pattern] = None  # sub-level kept in the value: 钻石 + 三 -> 钻石三
 
 
-_WISH = re.compile(r"目标|想|打算|冲|希望|准备|梦想|争取|计划")
+# "冲王者" is a wish; "冲到星耀四了" / "冲上王者" is an achievement.
+_WISH = re.compile(r"目标|想|打算|冲(?![到上进])|希望|准备|梦想|争取|计划")
 
 ATTRIBUTES: Tuple[Attribute, ...] = (
     Attribute("段位", ("青铜", "白银", "黄金", "铂金", "钻石", "星耀", "王者"),

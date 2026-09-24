@@ -121,6 +121,9 @@ SYSTEMS: Dict[str, Callable[..., object]] = {
         retrieval_config=_nospec()),
     "p1": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True, history_recall=True,
                                           episodes=True, promises=True, recall_modes=True),
+    "p2": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True, history_recall=True,
+                                          episodes=True, promises=True, recall_modes=True,
+                                          consolidate=False, attribute_recall=True),
     "p1+consolidate": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True,
                                                       history_recall=True, episodes=True, promises=True,
                                                       recall_modes=True, consolidate=True),
@@ -237,6 +240,10 @@ def save(args, results) -> None:
 READ_VARIANTS = {
     # name -> PersonalMemory read-side options applied on replay
     "as-written": {},
+    # consolidation applied once to the stored memories: isolates its effect
+    # from the LLM's run-to-run variation (same memories in both arms)
+    "consolidated": {"consolidate_after_load": True},
+    "no-attribute-recall": {"attribute_recall": False},
     "pref-gate": {"retrieval_config_kw": {"require_specific": True, "min_dense_alone": 0.30,
                                           "generic_terms": "PREFERENCE_TERMS"}},
 }
@@ -255,6 +262,7 @@ def replay(path: str, data_path: str, system: str, variant: str, show_errors: bo
         players = {p["id"]: p for p in json.load(f)["players"]}
     opts = dict(READ_VARIANTS[variant])
     kw = dict(opts.pop("retrieval_config_kw", {}))
+    consolidate_after_load = opts.pop("consolidate_after_load", False)
     if kw.get("generic_terms") == "PREFERENCE_TERMS":
         kw["generic_terms"] = R.PREFERENCE_TERMS
     res = saved["results"][system]
@@ -264,9 +272,12 @@ def replay(path: str, data_path: str, system: str, variant: str, show_errors: bo
         p = players[pid]
         ask = parse_time(p["ask_at"])
         mem = PersonalMemory("replay", storage_dir=tempfile.mkdtemp(prefix="replay_"), embedder=jina(),
-                             clock=lambda: ask,
+                             clock=lambda: ask, **opts,
                              retrieval_config=R.RetrievalConfig.for_embedder(jina(), **kw))
         mem.store.extend(MemoryRecord.from_dict(m) for m in mems)
+        if consolidate_after_load:
+            from gamememo.personal.consolidate import consolidate
+            consolidate(mem.store.all(), mem.store.history, p["ask_at"])
         for q in p["questions"]:
             ev = [mem.describe(r) for r in mem.retrieve(q["query"], top_k=K, touch=False)]
             success, stale = judge(q, ev)
