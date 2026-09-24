@@ -154,3 +154,15 @@ def test_retrieval_v2_test_split_is_unchanged_since_sealing():
              [p for p in d["players"] if p["id"] != "p_archer"]
     digest = hashlib.sha256(json.dumps(sealed, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
     assert digest == "4763e81c58a336a82149b5e7b543bf697a338d59f6632d193cad2b29c86151ac"
+
+
+def test_gate_falls_back_when_benchmark_moves_to_a_new_dataset(tmp_path):
+    import json
+
+    from bench.gate import load_record
+
+    (tmp_path / "sota_e2e.json").write_text(json.dumps({"dataset": "bench/data/e2e_v1.json", "system": "old"}))
+    rec = load_record("e2e", str(tmp_path), "bench/data/some_new_dataset.json")
+    assert rec["system"] != "old"          # shipped baseline, not the stale record
+    rec = load_record("e2e", str(tmp_path), "bench/data/e2e_v1.json")
+    assert rec["system"] == "old"

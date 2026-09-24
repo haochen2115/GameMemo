@@ -14,7 +14,8 @@ committed before the test run, which doubles as the pre-registration:
 
 ``--base-dir`` holds the base branch's SOTA records (``sota.json``,
 ``sota_e2e.json``); CI extracts them with ``git show origin/main:...``.
-A missing record falls back to the bootstrap baseline in this checkout.
+A missing record, or one measured on a different dataset, falls back to
+the baseline shipped in this checkout (base code on the new dataset).
 
 Rules per benchmark record:
 - improve: primary metric >= SOTA + ``min_gain``;
@@ -61,13 +62,27 @@ def check(candidate: dict, sota: dict, mode: str = "improve"):
     return ok, lines
 
 
-def load_record(bench: str, base_dir: str) -> dict:
+def load_record(bench: str, base_dir: str, dataset: str = "") -> dict:
+    """The base branch's SOTA record for ``bench``. When the base has none,
+    or it was measured on another dataset (the benchmark moved to a fresh
+    sealed test set), fall back to the baseline shipped with this branch,
+    which must be the base code measured on the new dataset."""
     name, fallback = RECORDS[bench]
     path = os.path.join(base_dir, name) if base_dir else os.path.join(ROOT, "bench", name)
-    if not os.path.exists(path) or os.path.getsize(path) == 0:
-        path = os.path.join(ROOT, "bench", fallback)  # base predates this benchmark
+    record = None
+    if os.path.exists(path) and os.path.getsize(path) > 0:
+        with open(path, encoding="utf-8") as f:
+            record = json.load(f)
+    if record is None or (dataset and record.get("dataset") != dataset):
+        with open(os.path.join(ROOT, "bench", fallback), encoding="utf-8") as f:
+            record = json.load(f)
+    return record
+
+
+def _candidate_dataset(bench: str, entry: dict, retrieval_results: str) -> str:
+    path = retrieval_results if bench == "retrieval" else os.path.join(ROOT, entry["results"])
     with open(path, encoding="utf-8") as f:
-        return json.load(f)
+        return json.load(f).get("dataset", "")
 
 
 def candidate_metrics(bench: str, entry: dict, retrieval_results: str, record: dict) -> dict:
@@ -122,7 +137,7 @@ def main(argv=None):
     for bench, entry in cand.items():
         if bench.startswith("_"):
             continue
-        record = load_record(bench, args.base_dir)
+        record = load_record(bench, args.base_dir, _candidate_dataset(bench, entry, args.retrieval_results))
         metrics = candidate_metrics(bench, entry, args.retrieval_results, record)
         ok, lines = check(metrics, record, entry["mode"])
         print(f"[{bench}] candidate {entry['system']} ({entry['mode']})   "

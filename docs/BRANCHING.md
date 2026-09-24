@@ -41,6 +41,7 @@
 4. 合入的同一个 PR 里，更新 `bench/sota.json`（新 SOTA 的数字和 ref），并在 `docs/BENCHMARK.md` 的排行榜追加一行。
 5. 候选系统要在跑 test 之前预登记（`bench/candidate.json` 加上 commit message），一次只登记一个。候选没通过时，不能换一个 test 集重考同一个候选。
 6. e2e 评测需要本地 LLM：基线和候选都跑 3 个 seed 并合并，结果文件提交进仓库，CI 会重新计分。
+7. 评测换到新的封存数据集时，在分支里附上 `bench/baseline_*.json`（base 分支的代码在新数据集上的结果）；base 上的 SOTA 记录如果是另一个数据集的，门禁会自动改用这个基线。
 
 ## 评测纪律
 
