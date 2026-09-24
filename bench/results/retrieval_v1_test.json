@@ -1,0 +1,2011 @@
+{
+ "dataset": "bench/data/retrieval_v1.json",
+ "split": "test",
+ "generated_at": "2026-09-24 09:05:29",
+ "results": {
+  "v0-keyword (baseline)": {
+   "MemScore@3": 0.8,
+   "Recall@3": 0.7647,
+   "MRR": 0.7304,
+   "Abstain": 1.0,
+   "by_type": {
+    "direct": 0.9474,
+    "multi": 1.0,
+    "negative": 1.0,
+    "paraphrase": 0.3,
+    "update": 1.0
+   },
+   "n": 40,
+   "latency_ms": 27.48,
+   "rows": [
+    {
+     "id": "q01",
+     "query": "我生日是哪天？",
+     "type": "direct",
+     "gold": [
+      "m01"
+     ],
+     "got": [
+      "m01"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q02",
+     "query": "我是哪天出生的",
+     "type": "paraphrase",
+     "gold": [
+      "m01"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "q04",
+     "query": "我平时一般几点上线",
+     "type": "paraphrase",
+     "gold": [
+      "m03"
+     ],
+     "got": [
+      "m02",
+      "m21"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "q05",
+     "query": "我一天大概玩多久",
+     "type": "paraphrase",
+     "gold": [
+      "m04"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "q07",
+     "query": "鲁班七号我胜率多少",
+     "type": "direct",
+     "gold": [
+      "m05"
+     ],
+     "got": [
+      "m05",
+      "m06",
+      "m11"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q08",
+     "query": "我后羿打得怎么样",
+     "type": "direct",
+     "gold": [
+      "m06"
+     ],
+     "got": [
+      "m06",
+      "m09",
+      "m30"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q10",
+     "query": "我主要打什么位置",
+     "type": "paraphrase",
+     "gold": [
+      "m10"
+     ],
+     "got": [
+      "m10",
+      "m40",
+      "m41"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q11",
+     "query": "给我推荐一个辅助英雄",
+     "type": "paraphrase",
+     "gold": [
+      "m10"
+     ],
+     "got": [
+      "m10",
+      "m16",
+      "m09"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q13",
+     "query": "我现在什么段位",
+     "type": "update",
+     "gold": [
+      "m13"
+     ],
+     "got": [
+      "m13"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q14",
+     "query": "我上王者了吗",
+     "type": "update",
+     "gold": [
+      "m13"
+     ],
+     "got": [
+      "m13"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q16",
+     "query": "我常和谁一起开黑",
+     "type": "paraphrase",
+     "gold": [
+      "m16"
+     ],
+     "got": [
+      "m18"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "q17",
+     "query": "我在哪个公会",
+     "type": "direct",
+     "gold": [
+      "m17"
+     ],
+     "got": [
+      "m17"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q19",
+     "query": "我怎么总被刺客秒",
+     "type": "direct",
+     "gold": [
+      "m19"
+     ],
+     "got": [
+      "m19"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q20",
+     "query": "团战我该站哪里",
+     "type": "multi",
+     "gold": [
+      "m19",
+      "m20"
+     ],
+     "got": [
+      "m20",
+      "m19",
+      "m36"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q22",
+     "query": "又碰到挂机的了气死我了",
+     "type": "direct",
+     "gold": [
+      "m22"
+     ],
+     "got": [
+      "m22"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q23",
+     "query": "我的最高击杀纪录是多少",
+     "type": "direct",
+     "gold": [
+      "m26"
+     ],
+     "got": [
+      "m26",
+      "m27"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q25",
+     "query": "我有哪些鲁班皮肤",
+     "type": "direct",
+     "gold": [
+      "m29"
+     ],
+     "got": [
+      "m29",
+      "m30",
+      "m05"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q26",
+     "query": "后羿的皮肤我有哪些",
+     "type": "direct",
+     "gold": [
+      "m30"
+     ],
+     "got": [
+      "m30",
+      "m06",
+      "m09"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q28",
+     "query": "我打游戏开不开麦",
+     "type": "paraphrase",
+     "gold": [
+      "m32"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "q29",
+     "query": "我的手速怎么样",
+     "type": "paraphrase",
+     "gold": [
+      "m33"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "q31",
+     "query": "我经济怎么样",
+     "type": "direct",
+     "gold": [
+      "m34"
+     ],
+     "got": [
+      "m34"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q32",
+     "query": "我喜欢去对面野区吗",
+     "type": "direct",
+     "gold": [
+      "m35"
+     ],
+     "got": [
+      "m35",
+      "m40"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q34",
+     "query": "这周我战绩如何",
+     "type": "direct",
+     "gold": [
+      "m37"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "q35",
+     "query": "我现在用什么手机玩",
+     "type": "update",
+     "gold": [
+      "m39"
+     ],
+     "got": [
+      "m39"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q37",
+     "query": "我想换个位置玩玩",
+     "type": "paraphrase",
+     "gold": [
+      "m41"
+     ],
+     "got": [
+      "m10",
+      "m40",
+      "m41"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q38",
+     "query": "下周要考试了",
+     "type": "direct",
+     "gold": [
+      "m42"
+     ],
+     "got": [
+      "m42"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q40",
+     "query": "五杀是哪天拿的",
+     "type": "direct",
+     "gold": [
+      "m25"
+     ],
+     "got": [
+      "m25"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q41",
+     "query": "我和朋友组队厉害吗",
+     "type": "multi",
+     "gold": [
+      "m16",
+      "m28"
+     ],
+     "got": [
+      "m16",
+      "m28",
+      "m18"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q43",
+     "query": "我打野行不行",
+     "type": "direct",
+     "gold": [
+      "m41"
+     ],
+     "got": [
+      "m41"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q44",
+     "query": "我的KDA是多少",
+     "type": "direct",
+     "gold": [
+      "m36"
+     ],
+     "got": [
+      "m36"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q46",
+     "query": "我一般走下路吗",
+     "type": "direct",
+     "gold": [
+      "m35"
+     ],
+     "got": [
+      "m21",
+      "m35"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q47",
+     "query": "我孙尚香用得多吗",
+     "type": "direct",
+     "gold": [
+      "m07"
+     ],
+     "got": [
+      "m07"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q49",
+     "query": "我好友多吗",
+     "type": "direct",
+     "gold": [
+      "m18"
+     ],
+     "got": [
+      "m18"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q50",
+     "query": "上学期间我玩得多吗",
+     "type": "paraphrase",
+     "gold": [
+      "m42"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "q52",
+     "query": "帮我写一首关于春天的诗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "q53",
+     "query": "1+1等于几",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "q55",
+     "query": "推荐一部好看的电影",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "q56",
+     "query": "上海有什么好吃的",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "q58",
+     "query": "现在几点了",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "q59",
+     "query": "世界杯谁夺冠了",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    }
+   ],
+   "llm_calls_per_query": 1
+  },
+  "v1-lexical": {
+   "MemScore@3": 0.775,
+   "Recall@3": 0.7353,
+   "MRR": 0.6863,
+   "Abstain": 1.0,
+   "by_type": {
+    "direct": 0.9474,
+    "multi": 1.0,
+    "negative": 1.0,
+    "paraphrase": 0.2,
+    "update": 1.0
+   },
+   "n": 40,
+   "latency_ms": 0.44,
+   "rows": [
+    {
+     "id": "q01",
+     "query": "我生日是哪天？",
+     "type": "direct",
+     "gold": [
+      "m01"
+     ],
+     "got": [
+      "m01"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q02",
+     "query": "我是哪天出生的",
+     "type": "paraphrase",
+     "gold": [
+      "m01"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "q04",
+     "query": "我平时一般几点上线",
+     "type": "paraphrase",
+     "gold": [
+      "m03"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "q05",
+     "query": "我一天大概玩多久",
+     "type": "paraphrase",
+     "gold": [
+      "m04"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "q07",
+     "query": "鲁班七号我胜率多少",
+     "type": "direct",
+     "gold": [
+      "m05"
+     ],
+     "got": [
+      "m05",
+      "m25",
+      "m11"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q08",
+     "query": "我后羿打得怎么样",
+     "type": "direct",
+     "gold": [
+      "m06"
+     ],
+     "got": [
+      "m06",
+      "m30",
+      "m09"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q10",
+     "query": "我主要打什么位置",
+     "type": "paraphrase",
+     "gold": [
+      "m10"
+     ],
+     "got": [
+      "m10",
+      "m19",
+      "m41"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q11",
+     "query": "给我推荐一个辅助英雄",
+     "type": "paraphrase",
+     "gold": [
+      "m10"
+     ],
+     "got": [
+      "m10",
+      "m05",
+      "m16"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q13",
+     "query": "我现在什么段位",
+     "type": "update",
+     "gold": [
+      "m13"
+     ],
+     "got": [
+      "m13"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q14",
+     "query": "我上王者了吗",
+     "type": "update",
+     "gold": [
+      "m13"
+     ],
+     "got": [
+      "m13"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q16",
+     "query": "我常和谁一起开黑",
+     "type": "paraphrase",
+     "gold": [
+      "m16"
+     ],
+     "got": [
+      "m18"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "q17",
+     "query": "我在哪个公会",
+     "type": "direct",
+     "gold": [
+      "m17"
+     ],
+     "got": [
+      "m17"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q19",
+     "query": "我怎么总被刺客秒",
+     "type": "direct",
+     "gold": [
+      "m19"
+     ],
+     "got": [
+      "m19"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q20",
+     "query": "团战我该站哪里",
+     "type": "multi",
+     "gold": [
+      "m19",
+      "m20"
+     ],
+     "got": [
+      "m19",
+      "m20",
+      "m36"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q22",
+     "query": "又碰到挂机的了气死我了",
+     "type": "direct",
+     "gold": [
+      "m22"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "q23",
+     "query": "我的最高击杀纪录是多少",
+     "type": "direct",
+     "gold": [
+      "m26"
+     ],
+     "got": [
+      "m26",
+      "m27"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q25",
+     "query": "我有哪些鲁班皮肤",
+     "type": "direct",
+     "gold": [
+      "m29"
+     ],
+     "got": [
+      "m05",
+      "m25",
+      "m29"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q26",
+     "query": "后羿的皮肤我有哪些",
+     "type": "direct",
+     "gold": [
+      "m30"
+     ],
+     "got": [
+      "m06",
+      "m30",
+      "m09"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q28",
+     "query": "我打游戏开不开麦",
+     "type": "paraphrase",
+     "gold": [
+      "m32"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "q29",
+     "query": "我的手速怎么样",
+     "type": "paraphrase",
+     "gold": [
+      "m33"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "q31",
+     "query": "我经济怎么样",
+     "type": "direct",
+     "gold": [
+      "m34"
+     ],
+     "got": [
+      "m34"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q32",
+     "query": "我喜欢去对面野区吗",
+     "type": "direct",
+     "gold": [
+      "m35"
+     ],
+     "got": [
+      "m40",
+      "m35"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q34",
+     "query": "这周我战绩如何",
+     "type": "direct",
+     "gold": [
+      "m37"
+     ],
+     "got": [
+      "m37"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q35",
+     "query": "我现在用什么手机玩",
+     "type": "update",
+     "gold": [
+      "m39"
+     ],
+     "got": [
+      "m39"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q37",
+     "query": "我想换个位置玩玩",
+     "type": "paraphrase",
+     "gold": [
+      "m41"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "q38",
+     "query": "下周要考试了",
+     "type": "direct",
+     "gold": [
+      "m42"
+     ],
+     "got": [
+      "m42"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q40",
+     "query": "五杀是哪天拿的",
+     "type": "direct",
+     "gold": [
+      "m25"
+     ],
+     "got": [
+      "m25"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q41",
+     "query": "我和朋友组队厉害吗",
+     "type": "multi",
+     "gold": [
+      "m16",
+      "m28"
+     ],
+     "got": [
+      "m16",
+      "m28",
+      "m18"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q43",
+     "query": "我打野行不行",
+     "type": "direct",
+     "gold": [
+      "m41"
+     ],
+     "got": [
+      "m41"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q44",
+     "query": "我的KDA是多少",
+     "type": "direct",
+     "gold": [
+      "m36"
+     ],
+     "got": [
+      "m36"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q46",
+     "query": "我一般走下路吗",
+     "type": "direct",
+     "gold": [
+      "m35"
+     ],
+     "got": [
+      "m35"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q47",
+     "query": "我孙尚香用得多吗",
+     "type": "direct",
+     "gold": [
+      "m07"
+     ],
+     "got": [
+      "m07"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q49",
+     "query": "我好友多吗",
+     "type": "direct",
+     "gold": [
+      "m18"
+     ],
+     "got": [
+      "m18"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q50",
+     "query": "上学期间我玩得多吗",
+     "type": "paraphrase",
+     "gold": [
+      "m42"
+     ],
+     "got": [],
+     "success": 0.0
+    },
+    {
+     "id": "q52",
+     "query": "帮我写一首关于春天的诗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "q53",
+     "query": "1+1等于几",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "q55",
+     "query": "推荐一部好看的电影",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "q56",
+     "query": "上海有什么好吃的",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "q58",
+     "query": "现在几点了",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "q59",
+     "query": "世界杯谁夺冠了",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    }
+   ],
+   "llm_calls_per_query": 0
+  },
+  "v1-dense": {
+   "MemScore@3": 0.85,
+   "Recall@3": 0.9118,
+   "MRR": 0.8039,
+   "Abstain": 0.5,
+   "by_type": {
+    "direct": 0.9474,
+    "multi": 1.0,
+    "negative": 0.5,
+    "paraphrase": 0.8,
+    "update": 1.0
+   },
+   "n": 40,
+   "latency_ms": 14.86,
+   "rows": [
+    {
+     "id": "q01",
+     "query": "我生日是哪天？",
+     "type": "direct",
+     "gold": [
+      "m01"
+     ],
+     "got": [
+      "m01"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q02",
+     "query": "我是哪天出生的",
+     "type": "paraphrase",
+     "gold": [
+      "m01"
+     ],
+     "got": [
+      "m01"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q04",
+     "query": "我平时一般几点上线",
+     "type": "paraphrase",
+     "gold": [
+      "m03"
+     ],
+     "got": [
+      "m02",
+      "m03",
+      "m15"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q05",
+     "query": "我一天大概玩多久",
+     "type": "paraphrase",
+     "gold": [
+      "m04"
+     ],
+     "got": [
+      "m03",
+      "m04"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q07",
+     "query": "鲁班七号我胜率多少",
+     "type": "direct",
+     "gold": [
+      "m05"
+     ],
+     "got": [
+      "m05",
+      "m25",
+      "m26"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q08",
+     "query": "我后羿打得怎么样",
+     "type": "direct",
+     "gold": [
+      "m06"
+     ],
+     "got": [
+      "m06",
+      "m30",
+      "m09"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q10",
+     "query": "我主要打什么位置",
+     "type": "paraphrase",
+     "gold": [
+      "m10"
+     ],
+     "got": [
+      "m19",
+      "m10",
+      "m41"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q11",
+     "query": "给我推荐一个辅助英雄",
+     "type": "paraphrase",
+     "gold": [
+      "m10"
+     ],
+     "got": [
+      "m05",
+      "m10",
+      "m16"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q13",
+     "query": "我现在什么段位",
+     "type": "update",
+     "gold": [
+      "m13"
+     ],
+     "got": [
+      "m13",
+      "m41",
+      "m20"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q14",
+     "query": "我上王者了吗",
+     "type": "update",
+     "gold": [
+      "m13"
+     ],
+     "got": [
+      "m13"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q16",
+     "query": "我常和谁一起开黑",
+     "type": "paraphrase",
+     "gold": [
+      "m16"
+     ],
+     "got": [
+      "m16"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q17",
+     "query": "我在哪个公会",
+     "type": "direct",
+     "gold": [
+      "m17"
+     ],
+     "got": [
+      "m17"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q19",
+     "query": "我怎么总被刺客秒",
+     "type": "direct",
+     "gold": [
+      "m19"
+     ],
+     "got": [
+      "m19",
+      "m20"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q20",
+     "query": "团战我该站哪里",
+     "type": "multi",
+     "gold": [
+      "m19",
+      "m20"
+     ],
+     "got": [
+      "m19",
+      "m20",
+      "m36"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q22",
+     "query": "又碰到挂机的了气死我了",
+     "type": "direct",
+     "gold": [
+      "m22"
+     ],
+     "got": [
+      "m22"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q23",
+     "query": "我的最高击杀纪录是多少",
+     "type": "direct",
+     "gold": [
+      "m26"
+     ],
+     "got": [
+      "m26",
+      "m27"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q25",
+     "query": "我有哪些鲁班皮肤",
+     "type": "direct",
+     "gold": [
+      "m29"
+     ],
+     "got": [
+      "m11",
+      "m29"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q26",
+     "query": "后羿的皮肤我有哪些",
+     "type": "direct",
+     "gold": [
+      "m30"
+     ],
+     "got": [
+      "m30"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q28",
+     "query": "我打游戏开不开麦",
+     "type": "paraphrase",
+     "gold": [
+      "m32"
+     ],
+     "got": [
+      "m41",
+      "m21",
+      "m23"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "q29",
+     "query": "我的手速怎么样",
+     "type": "paraphrase",
+     "gold": [
+      "m33"
+     ],
+     "got": [
+      "m33",
+      "m39",
+      "m32"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q31",
+     "query": "我经济怎么样",
+     "type": "direct",
+     "gold": [
+      "m34"
+     ],
+     "got": [
+      "m34"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q32",
+     "query": "我喜欢去对面野区吗",
+     "type": "direct",
+     "gold": [
+      "m35"
+     ],
+     "got": [
+      "m41",
+      "m35"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q34",
+     "query": "这周我战绩如何",
+     "type": "direct",
+     "gold": [
+      "m37"
+     ],
+     "got": [
+      "m37"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q35",
+     "query": "我现在用什么手机玩",
+     "type": "update",
+     "gold": [
+      "m39"
+     ],
+     "got": [
+      "m39",
+      "m32"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q37",
+     "query": "我想换个位置玩玩",
+     "type": "paraphrase",
+     "gold": [
+      "m41"
+     ],
+     "got": [
+      "m41"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q38",
+     "query": "下周要考试了",
+     "type": "direct",
+     "gold": [
+      "m42"
+     ],
+     "got": [
+      "m42"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q40",
+     "query": "五杀是哪天拿的",
+     "type": "direct",
+     "gold": [
+      "m25"
+     ],
+     "got": [
+      "m25"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q41",
+     "query": "我和朋友组队厉害吗",
+     "type": "multi",
+     "gold": [
+      "m16",
+      "m28"
+     ],
+     "got": [
+      "m16",
+      "m20",
+      "m28"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q43",
+     "query": "我打野行不行",
+     "type": "direct",
+     "gold": [
+      "m41"
+     ],
+     "got": [
+      "m41",
+      "m35"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q44",
+     "query": "我的KDA是多少",
+     "type": "direct",
+     "gold": [
+      "m36"
+     ],
+     "got": [
+      "m36",
+      "m33",
+      "m04"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q46",
+     "query": "我一般走下路吗",
+     "type": "direct",
+     "gold": [
+      "m35"
+     ],
+     "got": [
+      "m20"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "q47",
+     "query": "我孙尚香用得多吗",
+     "type": "direct",
+     "gold": [
+      "m07"
+     ],
+     "got": [
+      "m07"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q49",
+     "query": "我好友多吗",
+     "type": "direct",
+     "gold": [
+      "m18"
+     ],
+     "got": [
+      "m16",
+      "m28",
+      "m18"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q50",
+     "query": "上学期间我玩得多吗",
+     "type": "paraphrase",
+     "gold": [
+      "m42"
+     ],
+     "got": [
+      "m02",
+      "m23",
+      "m37"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "q52",
+     "query": "帮我写一首关于春天的诗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "q53",
+     "query": "1+1等于几",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "m15"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "q55",
+     "query": "推荐一部好看的电影",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "q56",
+     "query": "上海有什么好吃的",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "q58",
+     "query": "现在几点了",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "m13",
+      "m03",
+      "m15"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "q59",
+     "query": "世界杯谁夺冠了",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "m37",
+      "m27"
+     ],
+     "success": 0.0
+    }
+   ],
+   "llm_calls_per_query": 0
+  },
+  "v1-hybrid": {
+   "MemScore@3": 0.85,
+   "Recall@3": 0.9118,
+   "MRR": 0.8382,
+   "Abstain": 0.5,
+   "by_type": {
+    "direct": 0.9474,
+    "multi": 1.0,
+    "negative": 0.5,
+    "paraphrase": 0.8,
+    "update": 1.0
+   },
+   "n": 40,
+   "latency_ms": 1.31,
+   "rows": [
+    {
+     "id": "q01",
+     "query": "我生日是哪天？",
+     "type": "direct",
+     "gold": [
+      "m01"
+     ],
+     "got": [
+      "m01"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q02",
+     "query": "我是哪天出生的",
+     "type": "paraphrase",
+     "gold": [
+      "m01"
+     ],
+     "got": [
+      "m01"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q04",
+     "query": "我平时一般几点上线",
+     "type": "paraphrase",
+     "gold": [
+      "m03"
+     ],
+     "got": [
+      "m02",
+      "m03",
+      "m15"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q05",
+     "query": "我一天大概玩多久",
+     "type": "paraphrase",
+     "gold": [
+      "m04"
+     ],
+     "got": [
+      "m03",
+      "m04"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q07",
+     "query": "鲁班七号我胜率多少",
+     "type": "direct",
+     "gold": [
+      "m05"
+     ],
+     "got": [
+      "m05",
+      "m25",
+      "m11"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q08",
+     "query": "我后羿打得怎么样",
+     "type": "direct",
+     "gold": [
+      "m06"
+     ],
+     "got": [
+      "m06",
+      "m30",
+      "m09"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q10",
+     "query": "我主要打什么位置",
+     "type": "paraphrase",
+     "gold": [
+      "m10"
+     ],
+     "got": [
+      "m19",
+      "m10",
+      "m41"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q11",
+     "query": "给我推荐一个辅助英雄",
+     "type": "paraphrase",
+     "gold": [
+      "m10"
+     ],
+     "got": [
+      "m05",
+      "m10",
+      "m16"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q13",
+     "query": "我现在什么段位",
+     "type": "update",
+     "gold": [
+      "m13"
+     ],
+     "got": [
+      "m13",
+      "m41",
+      "m20"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q14",
+     "query": "我上王者了吗",
+     "type": "update",
+     "gold": [
+      "m13"
+     ],
+     "got": [
+      "m13"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q16",
+     "query": "我常和谁一起开黑",
+     "type": "paraphrase",
+     "gold": [
+      "m16"
+     ],
+     "got": [
+      "m16"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q17",
+     "query": "我在哪个公会",
+     "type": "direct",
+     "gold": [
+      "m17"
+     ],
+     "got": [
+      "m17"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q19",
+     "query": "我怎么总被刺客秒",
+     "type": "direct",
+     "gold": [
+      "m19"
+     ],
+     "got": [
+      "m19",
+      "m20"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q20",
+     "query": "团战我该站哪里",
+     "type": "multi",
+     "gold": [
+      "m19",
+      "m20"
+     ],
+     "got": [
+      "m19",
+      "m20",
+      "m36"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q22",
+     "query": "又碰到挂机的了气死我了",
+     "type": "direct",
+     "gold": [
+      "m22"
+     ],
+     "got": [
+      "m22"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q23",
+     "query": "我的最高击杀纪录是多少",
+     "type": "direct",
+     "gold": [
+      "m26"
+     ],
+     "got": [
+      "m26",
+      "m27"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q25",
+     "query": "我有哪些鲁班皮肤",
+     "type": "direct",
+     "gold": [
+      "m29"
+     ],
+     "got": [
+      "m05",
+      "m11",
+      "m25"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "q26",
+     "query": "后羿的皮肤我有哪些",
+     "type": "direct",
+     "gold": [
+      "m30"
+     ],
+     "got": [
+      "m06",
+      "m30",
+      "m09"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q28",
+     "query": "我打游戏开不开麦",
+     "type": "paraphrase",
+     "gold": [
+      "m32"
+     ],
+     "got": [
+      "m02",
+      "m39",
+      "m42"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "q29",
+     "query": "我的手速怎么样",
+     "type": "paraphrase",
+     "gold": [
+      "m33"
+     ],
+     "got": [
+      "m33",
+      "m39",
+      "m32"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q31",
+     "query": "我经济怎么样",
+     "type": "direct",
+     "gold": [
+      "m34"
+     ],
+     "got": [
+      "m34"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q32",
+     "query": "我喜欢去对面野区吗",
+     "type": "direct",
+     "gold": [
+      "m35"
+     ],
+     "got": [
+      "m35",
+      "m41"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q34",
+     "query": "这周我战绩如何",
+     "type": "direct",
+     "gold": [
+      "m37"
+     ],
+     "got": [
+      "m37"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q35",
+     "query": "我现在用什么手机玩",
+     "type": "update",
+     "gold": [
+      "m39"
+     ],
+     "got": [
+      "m39",
+      "m32"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q37",
+     "query": "我想换个位置玩玩",
+     "type": "paraphrase",
+     "gold": [
+      "m41"
+     ],
+     "got": [
+      "m41"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q38",
+     "query": "下周要考试了",
+     "type": "direct",
+     "gold": [
+      "m42"
+     ],
+     "got": [
+      "m42"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q40",
+     "query": "五杀是哪天拿的",
+     "type": "direct",
+     "gold": [
+      "m25"
+     ],
+     "got": [
+      "m25"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q41",
+     "query": "我和朋友组队厉害吗",
+     "type": "multi",
+     "gold": [
+      "m16",
+      "m28"
+     ],
+     "got": [
+      "m16",
+      "m28",
+      "m18"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q43",
+     "query": "我打野行不行",
+     "type": "direct",
+     "gold": [
+      "m41"
+     ],
+     "got": [
+      "m41",
+      "m35"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q44",
+     "query": "我的KDA是多少",
+     "type": "direct",
+     "gold": [
+      "m36"
+     ],
+     "got": [
+      "m36",
+      "m33",
+      "m04"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q46",
+     "query": "我一般走下路吗",
+     "type": "direct",
+     "gold": [
+      "m35"
+     ],
+     "got": [
+      "m35",
+      "m20"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q47",
+     "query": "我孙尚香用得多吗",
+     "type": "direct",
+     "gold": [
+      "m07"
+     ],
+     "got": [
+      "m07"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q49",
+     "query": "我好友多吗",
+     "type": "direct",
+     "gold": [
+      "m18"
+     ],
+     "got": [
+      "m18",
+      "m16",
+      "m28"
+     ],
+     "success": 1.0
+    },
+    {
+     "id": "q50",
+     "query": "上学期间我玩得多吗",
+     "type": "paraphrase",
+     "gold": [
+      "m42"
+     ],
+     "got": [
+      "m02",
+      "m23",
+      "m37"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "q52",
+     "query": "帮我写一首关于春天的诗",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "q53",
+     "query": "1+1等于几",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "m15"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "q55",
+     "query": "推荐一部好看的电影",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "q56",
+     "query": "上海有什么好吃的",
+     "type": "negative",
+     "gold": [],
+     "got": [],
+     "success": 1.0
+    },
+    {
+     "id": "q58",
+     "query": "现在几点了",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "m13",
+      "m03",
+      "m15"
+     ],
+     "success": 0.0
+    },
+    {
+     "id": "q59",
+     "query": "世界杯谁夺冠了",
+     "type": "negative",
+     "gold": [],
+     "got": [
+      "m37",
+      "m27"
+     ],
+     "success": 0.0
+    }
+   ],
+   "llm_calls_per_query": 0
+  }
+ }
+}
