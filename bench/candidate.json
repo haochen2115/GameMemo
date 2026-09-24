@@ -1,5 +1,5 @@
 {
-  "_note": "Pre-registered candidate P1 (episodic memory, assistant promises, recall modes on top of player-only extraction + history recall). Committed before any test run of this candidate.",
+  "_note": "Pre-registered candidate: consolidation (rank/device version chains) + preference gate (E4) + write-path grounding and restatement fixes (E5). Committed before any test run of this candidate.",
   "retrieval": {"system": "memory-default", "mode": "hold"},
-  "e2e": {"system": "p1", "mode": "improve", "results": "bench/results/e2e_v2_test.json"}
+  "e2e": {"system": "p1+consolidate", "mode": "improve", "results": "bench/results/e2e_v3_test.json"}
 }

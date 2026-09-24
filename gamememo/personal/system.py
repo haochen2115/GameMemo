@@ -107,7 +107,7 @@ class PersonalMemory:
                  episodes: bool = True,
                  promises: bool = True,
                  recall_modes: bool = True,
-                 consolidate: bool = False):
+                 consolidate: bool = True):
         """
         write_mode: "ops" = extract facts, then the LLM decides
             ADD/UPDATE/DELETE/NOOP against related memories; "slots" = facts
