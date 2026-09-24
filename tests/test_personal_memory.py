@@ -134,7 +134,7 @@ def test_retrieval_skips_superseded(tmp_path):
     mem = make(tmp_path)
     old, = seed(mem, ("玩家段位是星耀三星", ["段位"], 4))
     mem.llm = scripted(facts=["玩家段位升到王者"], ops=[{"op": "UPDATE", "target": 1, "content": "玩家段位是王者", "keywords": ["段位"]}])
-    mem.ingest("...")
+    mem.ingest("玩家: 我段位升到王者了")
     assert [r.content for r in mem.retrieve("我现在什么段位")] == ["玩家段位是王者"]
 
 

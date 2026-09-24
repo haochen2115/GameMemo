@@ -24,6 +24,7 @@ from typing import Callable, Dict, List, Optional, Sequence, Tuple
 from ..llm import LLMClient, parse_json
 from . import prompts
 from .consolidate import consolidate as consolidate_versions
+from .consolidate import detect as detect_values
 from .embed import Embedder
 from .model import MemoryRecord, clamp_importance, fmt_time
 from .retrieval import HybridRetriever, RetrievalConfig, ScoredMemory
@@ -59,6 +60,28 @@ PROMISE_INTENT = re.compile(r"答应|承诺|说过要|说好|保证过")
 # particular time or event.
 EPISODIC_INTENT = re.compile(r"那天|那次|那阵子|那段时间|那时候|发生了什么|哪次|当时|上次|什么时候|聊过|说过")
 TRAJECTORY_INTENT = re.compile(r"怎么变|变化|一路|一步步|这几个月|历程|怎么升|怎么上来|成长")
+
+
+def _distinct_versions(chain: List[MemoryRecord]) -> List[MemoryRecord]:
+    """Drop versions that repeat the previous value, keeping the earliest
+    (when it first became true): 白银→黄金→铂金→铂金 tells 白银→黄金→铂金."""
+    out: List[MemoryRecord] = []
+    for r in chain:
+        if out:
+            prev = out[-1]
+            same_value = detect_values(r) and detect_values(r) == detect_values(prev)
+            if same_value or SequenceMatcher(None, _norm(r.content), _norm(prev.content)).ratio() >= 0.9:
+                continue
+        out.append(r)
+    return out
+
+
+def _grounded(content: str, source_text: str) -> bool:
+    """Closed-set values (rank tier, device brand) in a new memory must
+    appear in the text it was written from."""
+    probe = MemoryRecord(content=content)
+    low = source_text.lower()
+    return all(value.lower() in low for _, value in detect_values(probe))
 
 
 def _norm(text: str) -> str:
@@ -170,7 +193,7 @@ class PersonalMemory:
             hits = self.candidate_retriever.search(query, facts, top_k=top_k, now=now,
                                                    include_inactive=True)
             if hits:
-                chain = self.store.history(hits[0].record.id)
+                chain = _distinct_versions(self.store.history(hits[0].record.id))
                 if len(chain) > 1:  # the attribute's versions, oldest first
                     return [ScoredMemory(r, 1.0) for r in chain[-top_k:]]
             # No version chain (the model ADDed instead of UPDATEd): rebuild the
@@ -265,7 +288,7 @@ class PersonalMemory:
             if facts:
                 candidates = self._related(facts)
                 ops = self._decide(facts, candidates)
-                self.apply(ops, candidates, source, report)
+                self.apply(ops, candidates, source, report, source_text=text)
         if source == "chat" and self.episodes:
             self._write_episode(text, report)
         if source == "chat" and self.promises:
@@ -331,9 +354,12 @@ class PersonalMemory:
         return [f.strip() for f in facts if isinstance(f, str) and f.strip()]
 
     def apply(self, ops: Sequence[Dict], candidates: Sequence[MemoryRecord],
-              source: str = "chat", report: Optional[IngestReport] = None) -> IngestReport:
+              source: str = "chat", report: Optional[IngestReport] = None,
+              source_text: Optional[str] = None) -> IngestReport:
         """Validate and execute operations. ``target`` is a 1-based index into
-        ``candidates`` — the only memories the model was shown."""
+        ``candidates`` — the only memories the model was shown. With
+        ``source_text``, a rank/device value the text never mentions is
+        rejected as invented."""
         report = report or IngestReport()
         now = fmt_time(self.clock())
         touched: set = set()
@@ -356,6 +382,10 @@ class PersonalMemory:
             if kind in ("ADD", "UPDATE") and not content:
                 report.rejected.append((op, "empty content"))
                 continue
+            known = source_text if kind == "ADD" or target is None else f"{source_text}\n{target.content}"
+            if kind in ("ADD", "UPDATE") and source_text is not None and not _grounded(content, known):
+                report.rejected.append((op, "states a value the conversation never mentions"))
+                continue
 
             if kind == "ADD":
                 dup = self._find_duplicate(content)
@@ -366,8 +396,9 @@ class PersonalMemory:
                 self.store.put(rec)
                 report.added.append(rec)
             elif kind == "UPDATE":
-                if _norm(content) == _norm(target.content):
-                    report.noop += 1
+                a, b = _norm(content), _norm(target.content)
+                if a == b or SequenceMatcher(None, a, b).ratio() >= self.duplicate_ratio:
+                    report.noop += 1  # a restatement ("玩家的段位是铂金") is not a new version
                     continue
                 rec = self._new_record(op, content, source, now)
                 self._supersede(target, rec, now)

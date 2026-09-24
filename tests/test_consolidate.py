@@ -42,3 +42,34 @@ def test_consolidate_splices_into_existing_llm_chain(tmp_path):
     consolidate(store.all(), store.history, "2026-06-02 00:00:00")
     assert [r.content for r in store.history(diamond.id)] == ["玩家段位是黄金", "玩家升铂金了", "玩家上钻石了"]
     assert not plat.is_active and diamond.is_active
+
+
+def test_write_path_rejects_invented_values_and_restatements(tmp_path):
+    from datetime import datetime
+    from gamememo.llm import FakeLLM
+    from gamememo.personal import PersonalMemory
+
+    mem = PersonalMemory("p", storage_dir=str(tmp_path), clock=lambda: datetime(2026, 6, 15),
+                         episodes=False, promises=False)
+    old = mem.add("玩家段位是黄金", ["段位"], 4)
+    ops = [{"op": "UPDATE", "target": 1, "content": "玩家的段位是黄金"},     # restatement
+           {"op": "ADD", "content": "玩家的段位是钻石"}]                     # never said
+    mem.llm = FakeLLM(lambda p, s: {"operations": ops} if "【新提取的事实】" in p else {"facts": ["玩家儿子中考结束", "玩家段位是黄金"]})
+    rep = mem.ingest("玩家: 我儿子中考结束了\n助手: 恭喜")
+    assert rep.changed == 0 and rep.noop == 1
+    assert [why for _, why in rep.rejected] == ["states a value the conversation never mentions"]
+    assert [r.content for r in mem.active()] == ["玩家段位是黄金"] and old.is_active
+
+
+def test_trajectory_recall_collapses_repeated_values(tmp_path):
+    from datetime import datetime
+    from gamememo.personal import PersonalMemory
+
+    mem = PersonalMemory("p", storage_dir=str(tmp_path), clock=lambda: datetime(2026, 9, 1))
+    chain = [rec("玩家段位是白银一", "2026-02-01"), rec("玩家段位是黄金三", "2026-02-25"),
+             rec("玩家段位是铂金", "2026-05-06"), rec("玩家的段位是铂金", "2026-08-02")]
+    for old, new in zip(chain, chain[1:]):
+        PersonalMemory._supersede(old, new, new.created_at)
+    mem.store.extend(chain)
+    got = [r.content for r in mem.retrieve("我的段位这半年是怎么变的", top_k=3)]
+    assert got == ["玩家段位是白银一", "玩家段位是黄金三", "玩家段位是铂金"]
