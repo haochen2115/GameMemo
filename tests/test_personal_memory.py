@@ -193,3 +193,30 @@ def test_chatbot_uses_memory_and_extracts_only_new_turns(tmp_path):
 def test_record_roundtrip():
     r = MemoryRecord(content="x", keywords=["a"], importance=9)
     assert MemoryRecord.from_dict(r.to_dict()) == MemoryRecord(**{**r.to_dict(), "importance": 5})
+
+
+def test_chatbot_survives_llm_failures_and_retries_extraction(tmp_path):
+    state = {"fail": True}
+
+    def handler(prompt, system):
+        if state["fail"]:
+            raise RuntimeError("timed out")
+        if "【新提取的事实】" in prompt:
+            return {"operations": [{"op": "ADD", "content": "玩家主玩打野", "keywords": ["打野"]}]}
+        if "值得长期记住" in prompt:
+            return {"facts": ["玩家主玩打野"]}
+        return "好的"
+
+    llm = FakeLLM(handler)
+    mem = make(tmp_path, llm)
+    bot = MemoryChatBot(mem, llm, extract_every=1)
+    t1 = bot.chat("我主玩打野")
+    assert t1.reply == MemoryChatBot.FALLBACK_REPLY
+    assert len(t1.errors) == 2 and t1.report is None
+
+    state["fail"] = False
+    t2 = bot.chat("记住哦")
+    assert t2.errors == []
+    extract_prompt = [c["prompt"] for c in llm.calls if "值得长期记住" in c["prompt"]][-1]
+    assert "我主玩打野" in extract_prompt            # the failed turn was retried
+    assert [r.content for r in mem.active()] == ["玩家主玩打野"]

@@ -35,6 +35,8 @@ SCRIPT = [
 
 
 def show_turn(turn) -> None:
+    for err in turn.errors:
+        print(f"  ⚠️  {err}")
     if turn.retrieved:
         print("  🔍 相关记忆: " + " | ".join(r.content for r in turn.retrieved))
     print(f"🤖 {turn.reply}")
@@ -61,12 +63,13 @@ def main():
     ap.add_argument("--user", default="demo_player")
     ap.add_argument("--model", default="deepseek-v3.1:671b-cloud")
     ap.add_argument("--base-url", default="http://localhost:11434")
+    ap.add_argument("--timeout", type=int, default=300, help="seconds per LLM call (CPU models are slow)")
     ap.add_argument("--embedder", choices=["none", "fastembed", "ollama"], default="none")
     ap.add_argument("--storage", default="./memory_data")
     ap.add_argument("--ingest-trajectory", action="store_true")
     args = ap.parse_args()
 
-    llm = OllamaClient(model=args.model, base_url=args.base_url)
+    llm = OllamaClient(model=args.model, base_url=args.base_url, timeout=args.timeout)
     if not llm.is_available():
         sys.exit(f"Ollama is not reachable at {args.base_url}. Run: ollama serve")
 
@@ -110,9 +113,12 @@ def main():
             else:
                 show_turn(bot.chat(line))
     finally:
-        rep = bot.flush()
-        if rep is not None and rep.changed:
-            print(f"\n会话结束，补充写入 {rep.changed} 条记忆")
+        try:
+            rep = bot.flush()
+            if rep is not None and rep.changed:
+                print(f"\n会话结束，补充写入 {rep.changed} 条记忆")
+        except Exception as e:
+            print(f"\n会话结束时写入记忆失败：{e}")
 
 
 if __name__ == "__main__":

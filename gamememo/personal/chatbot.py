@@ -20,6 +20,7 @@ class ChatTurn:
     profile: List[MemoryRecord] = field(default_factory=list)
     retrieved: List[MemoryRecord] = field(default_factory=list)
     report: Optional[IngestReport] = None  # set on turns that ran extraction
+    errors: List[str] = field(default_factory=list)
 
 
 class MemoryChatBot:
@@ -28,6 +29,8 @@ class MemoryChatBot:
     Extraction only reads turns it has not processed yet, plus a little
     preceding context, so nothing is re-extracted and duplicated.
     """
+
+    FALLBACK_REPLY = "抱歉，我这边刚才卡了一下，你能再说一次吗？"
 
     def __init__(self, memory: PersonalMemory, llm: LLMClient,
                  extract_every: int = 3, history_turns: int = 10,
@@ -49,23 +52,33 @@ class MemoryChatBot:
                      if r.id not in {p.id for p in profile}]
 
         self.messages.append({"role": "user", "content": user_input})
-        reply = self.llm.chat(system=self._system_prompt(profile, retrieved),
-                              messages=self.messages[-2 * self.history_turns:],
-                              temperature=temperature)
+        errors: List[str] = []
+        try:
+            reply = self.llm.chat(system=self._system_prompt(profile, retrieved),
+                                  messages=self.messages[-2 * self.history_turns:],
+                                  temperature=temperature)
+        except Exception as e:  # a model hiccup must not kill the conversation
+            errors.append(f"reply: {e}")
+            reply = self.FALLBACK_REPLY
         self.messages.append({"role": "assistant", "content": reply})
 
-        turn = ChatTurn(reply=reply, profile=profile, retrieved=retrieved)
+        turn = ChatTurn(reply=reply, profile=profile, retrieved=retrieved, errors=errors)
         if self._user_turns % self.extract_every == 0:
-            turn.report = self.flush()
+            try:
+                turn.report = self.flush()
+            except Exception as e:  # unprocessed turns stay pending and are retried
+                errors.append(f"memory: {e}")
         return turn
 
     def flush(self) -> Optional[IngestReport]:
-        """Extract memories from turns not processed yet."""
+        """Extract memories from turns not processed yet. On failure the
+        turns stay pending, so the next flush retries them."""
         if self._extracted_upto >= len(self.messages):
             return None
         start = max(0, self._extracted_upto - 2 * self.context_turns)
-        report = self.memory.ingest(self._transcript(start), source="chat")
-        self._extracted_upto = len(self.messages)
+        end = len(self.messages)
+        report = self.memory.ingest(self._transcript(start, end), source="chat")
+        self._extracted_upto = end
         return report
 
     # ---- helpers ----
@@ -77,9 +90,9 @@ class MemoryChatBot:
             return " ".join(prev + [user_input])
         return user_input
 
-    def _transcript(self, start: int) -> str:
+    def _transcript(self, start: int, end: int) -> str:
         names = {"user": "玩家", "assistant": "助手"}
-        return "\n".join(f"{names[m['role']]}: {m['content']}" for m in self.messages[start:])
+        return "\n".join(f"{names[m['role']]}: {m['content']}" for m in self.messages[start:end])
 
     def _system_prompt(self, profile: List[MemoryRecord], retrieved: List[MemoryRecord]) -> str:
         now = self.memory.clock()
