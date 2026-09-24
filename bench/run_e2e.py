@@ -102,6 +102,11 @@ def jina():
     return _JINA[0]
 
 
+def _nospec():
+    from gamememo.personal.retrieval import RetrievalConfig
+    return RetrievalConfig.for_embedder(jina(), require_specific=False)
+
+
 SYSTEMS: Dict[str, Callable[..., object]] = {
     "v0-pipeline": lambda model, url, wd: V0System(model, url, wd),
     "v2-lexical": lambda model, url, wd: V2System(model, url, wd),
@@ -111,6 +116,9 @@ SYSTEMS: Dict[str, Callable[..., object]] = {
                                                       history_recall=True),
     "v2+po+history+turn": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True,
                                                            history_recall=True, per_turn=True),
+    "v2+po+history-nospec": lambda model, url, wd: V2System(
+        model, url, wd, embedder=jina(), player_only=True, history_recall=True,
+        retrieval_config=_nospec()),
     "v2+history": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), history_recall=True),
     "v2-slots": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), write_mode="slots"),
     "v2-slots+history": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), write_mode="slots",

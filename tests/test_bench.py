@@ -140,3 +140,16 @@ def test_gate_hold_mode_and_candidate_file(tmp_path):
     (tmp_path / "r.json").write_text(json.dumps({"dataset": "d.json", "split": "test",
                                                  "results": {"sys": {"S": 0.6}}}))
     assert main(argv) == 0
+
+
+def test_retrieval_v2_test_split_is_unchanged_since_sealing():
+    """Test queries and test players as sealed in e2d9bce (dev may grow)."""
+    import hashlib
+    import json
+
+    with open(os.path.join(ROOT, "bench", "data", "retrieval_v2.json"), encoding="utf-8") as f:
+        d = json.load(f)
+    sealed = [q for q in d["queries"] if q["split"] == "test"] + \
+             [p for p in d["players"] if p["id"] != "p_archer"]
+    digest = hashlib.sha256(json.dumps(sealed, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+    assert digest == "4763e81c58a336a82149b5e7b543bf697a338d59f6632d193cad2b29c86151ac"

@@ -26,13 +26,24 @@ from .model import MemoryRecord, parse_time
 from .text import add_words, tokenize
 
 
-# (min_dense, dense_margin) per embedding model, tuned on the retrieval_v2
-# dev split only (docs/BENCHMARK.md). Cosine scales differ a lot by model.
+# Dense-gate settings per embedding model, tuned on the retrieval_v2 dev
+# split only (docs/BENCHMARK.md, docs/EXPERIMENTS.md). Cosine scales differ
+# a lot by model. ``min_dense_alone`` applies with ``require_specific``: a
+# memory that shares no specific word with the query needs this similarity.
 CALIBRATED_DENSE = {
-    "jina-embeddings-v2-base-zh": (0.25, 0.15),
-    "bge-small-zh-v1.5": (0.38, 0.12),
-    "bge-m3": (0.50, 0.12),
+    "jina-embeddings-v2-base-zh": {"min_dense": 0.25, "dense_margin": 0.15,
+                                   "require_specific": True, "min_dense_alone": 0.40},
+    "bge-small-zh-v1.5": {"min_dense": 0.38, "dense_margin": 0.12},
+    "bge-m3": {"min_dense": 0.50, "dense_margin": 0.12},
 }
+
+
+# Predicates and fillers that say *how* the player relates to something but
+# not *what* it is. "我喜欢什么颜色" must not match "玩家最喜欢英雄是项羽"
+# through "喜欢" alone, so these terms cannot open the gate on their own.
+GENERIC_TERMS = frozenset(
+    "喜欢 最喜欢 讨厌 最讨厌 爱 爱玩 想 想要 打算 准备 觉得 经常 常 常用 一般 平时 最近 玩 打 用 "
+    "喜不喜欢 会 不会 能 可以 知道 记得 告诉 说 说过 什么样 怎么样 多少 哪些".split())
 
 
 @dataclass
@@ -46,6 +57,9 @@ class RetrievalConfig:
     bm25_b: float = 0.75
     rrf_k: int = 60
     min_lexical_coverage: float = 0.34  # idf-weighted share of query terms matched
+    generic_weight: float = 1.0         # idf multiplier for GENERIC_TERMS
+    require_specific: bool = False      # gate needs a non-generic term match ...
+    min_dense_alone: float = 0.0        # ... unless dense similarity reaches this
     min_dense: float = 0.25             # cosine floor (default embedder: jina-v2-base-zh)
     dense_margin: float = 0.15          # also require being near the best match
     w_importance: float = 0.10
@@ -66,10 +80,10 @@ class RetrievalConfig:
         """Config with dense thresholds calibrated for this embedder."""
         if embedder is None:
             return cls.lexical_only(**kw)
-        for key, (floor, margin) in CALIBRATED_DENSE.items():
+        for key, preset in CALIBRATED_DENSE.items():
             if key in getattr(embedder, "name", ""):
-                kw.setdefault("min_dense", floor)
-                kw.setdefault("dense_margin", margin)
+                for field_name, value in preset.items():
+                    kw.setdefault(field_name, value)
                 break
         return cls(**kw)
 
@@ -121,12 +135,14 @@ class HybridRetriever:
         lists: List[List[int]] = []
         gate = [False] * n
 
+        specific = [False] * n
         if cfg.use_lexical:
-            lex, cov = self._bm25(query, records)
+            lex, cov, specific = self._bm25(query, records)
             # Only documents that matched something get a lexical rank.
             lists.append(sorted((i for i in range(n) if lex[i] > 0), key=lambda i: -lex[i]))
             for i in range(n):
-                gate[i] |= lex[i] > 0 and cov[i] >= cfg.min_lexical_coverage
+                gate[i] |= (lex[i] > 0 and cov[i] >= cfg.min_lexical_coverage
+                            and (specific[i] or not cfg.require_specific))
         if cfg.use_dense and self.embedder is not None:
             dense = self._dense(query, records)
             lists.append(sorted(range(n), key=lambda i: -dense[i]))
@@ -134,7 +150,8 @@ class HybridRetriever:
             # memories close to the best match so weak ones don't pad the prompt.
             floor = max(cfg.min_dense, max(dense) - cfg.dense_margin)
             for i in range(n):
-                gate[i] |= dense[i] >= floor
+                gate[i] |= dense[i] >= floor and (
+                    specific[i] or not cfg.require_specific or dense[i] >= cfg.min_dense_alone)
         if not lists:
             return []
 
@@ -196,7 +213,9 @@ class HybridRetriever:
             self._known_keywords |= new
             self._tok_cache.clear()
 
-    def _bm25(self, query: str, records: Sequence[MemoryRecord]) -> Tuple[List[float], List[float]]:
+    def _bm25(self, query: str, records: Sequence[MemoryRecord]) -> Tuple[List[float], List[float], List[bool]]:
+        """BM25 scores, idf-weighted query coverage, and whether a
+        non-generic query term matched, per record."""
         cfg = self.config
         docs = [self._doc_tokens(r) for r in records]
         n = len(docs)
@@ -206,23 +225,27 @@ class HybridRetriever:
             df.update(set(d))
         q_terms = list(dict.fromkeys(tokenize(query, bigrams=cfg.bigrams)))
         idf = {t: math.log(1 + (n - df[t] + 0.5) / (df[t] + 0.5)) for t in q_terms}
-        q_mass = sum(idf.values()) or 1.0
+        weight = {t: idf[t] * (cfg.generic_weight if t in GENERIC_TERMS else 1.0) for t in q_terms}
+        q_mass = sum(weight.values()) or 1.0
 
-        scores, coverage = [], []
+        scores, coverage, specific = [], [], []
         for d in docs:
             tf = Counter(d)
             s = 0.0
             matched = 0.0
+            spec = False
             for t in q_terms:
                 f = tf.get(t, 0)
                 if not f:
                     continue
-                matched += idf[t]
-                s += idf[t] * f * (cfg.bm25_k1 + 1) / (
+                matched += weight[t]
+                spec |= t not in GENERIC_TERMS
+                s += weight[t] * f * (cfg.bm25_k1 + 1) / (
                     f + cfg.bm25_k1 * (1 - cfg.bm25_b + cfg.bm25_b * len(d) / avgdl))
             scores.append(s)
             coverage.append(matched / q_mass)
-        return scores, coverage
+            specific.append(spec)
+        return scores, coverage, specific
 
     def _dense(self, query: str, records: Sequence[MemoryRecord]) -> List[float]:
         q = self.embedder.embed_query(query)
