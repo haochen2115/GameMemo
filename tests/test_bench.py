@@ -65,3 +65,26 @@ def test_e2e_dataset_and_judge():
     assert judge({"type": "fact", "answer_any": ["护士"]}, ["玩家是护士"])[0] == 1.0
     assert judge({"type": "negative", "answer_any": []}, [])[0] == 1.0
     assert judge({"type": "negative", "answer_any": []}, ["x"])[0] == 0.0
+
+
+def test_e2e_judge_accepts_iso_dates_for_chinese_keys():
+    from bench.run_e2e import judge
+    assert judge({"type": "fact", "answer_any": ["6月28"]}, ["玩家的生日是2026-06-28"])[0] == 1.0
+    assert judge({"type": "temporal", "answer_any": ["2026-07"]}, ["玩家升到铂金（2026-07-05）"])[0] == 1.0
+
+
+# SHA-256 of the test players in bench/data/e2e_v1.json as sealed in c58c35a.
+E2E_V1_TEST_SHA256 = "a841901abee86647f7454dce0cfeb23daaaaa777478e06f8f3a835ac54a583fa"
+
+
+def test_e2e_test_split_is_unchanged_since_sealing():
+    import hashlib
+    import json
+
+    from bench.run_e2e import DATA
+
+    with open(DATA, encoding="utf-8") as f:
+        data = json.load(f)
+    test = [p for p in data["players"] if p["split"] == "test"]
+    digest = hashlib.sha256(json.dumps(test, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+    assert digest == E2E_V1_TEST_SHA256

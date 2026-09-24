@@ -170,7 +170,10 @@ class HybridRetriever:
     # ---- signals ----
 
     def _doc_text(self, rec: MemoryRecord) -> str:
-        return rec.content + " " + " ".join(rec.keywords)
+        # The aspect ("身份职业") bridges questions that name the category
+        # ("做什么工作") to facts that only state the value ("是护士").
+        aspect = f" {rec.aspect}" if rec.aspect and rec.aspect != "其他" else ""
+        return rec.content + " " + " ".join(rec.keywords) + aspect
 
     def _tokens(self, key: str, text: str) -> List[str]:
         k = (key, text)
@@ -182,6 +185,8 @@ class HybridRetriever:
         toks = list(self._tokens("c", rec.content))
         kw = self._tokens("k", " ".join(rec.keywords))
         toks.extend(kw * self.config.keyword_boost)
+        if rec.aspect and rec.aspect != "其他":
+            toks.extend(self._tokens("a", rec.aspect))
         return toks
 
     def _learn_keywords(self, records: Sequence[MemoryRecord]) -> None:

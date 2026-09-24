@@ -269,3 +269,12 @@ def test_history_recall_answers_questions_about_the_past(tmp_path):
     assert past[0].content == "玩家升到了铂金段位" and not past[0].is_active
     text = mem.format_for_prompt(past)
     assert "2026-07-05" in text and "已过时" in text
+
+
+def test_per_turn_extraction_reads_each_player_line(tmp_path):
+    llm = FakeLLM(lambda p, s: {"facts": []} if "值得长期记住" in p else {"operations": []})
+    mem = make(tmp_path, llm, per_turn=True)
+    mem.ingest("玩家: 我是护士\n助手: 辛苦了\n玩家: 我主玩瑶")
+    prompts_seen = [c["prompt"] for c in llm.calls]
+    assert len(prompts_seen) == 2
+    assert "我是护士" in prompts_seen[0] and "我主玩瑶" not in prompts_seen[0]

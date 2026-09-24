@@ -1,7 +1,7 @@
 {
  "name": "player_memory_e2e",
  "version": 1,
- "description": "End-to-end write+read benchmark. Sessions are ingested in date order with a real LLM; questions are asked at ask_at. A question is answered if a retrieved memory (content+event_time) contains any answer_any string; update questions also check stale_any. dev=p_support, test=p_tank+p_marksman2, committed before any system ran on them.",
+ "description": "End-to-end write+read benchmark. Sessions are ingested in date order with a real LLM; questions are asked at ask_at. A question is answered if a retrieved memory (content+event_time) contains any answer_any string; update questions also check stale_any. dev=p_support+p_mage2 (p_mage2 added later; test untouched, see tests), test=p_tank+p_marksman2, committed before any system ran on them.",
  "players": [
   {
    "id": "p_support",
@@ -232,7 +232,9 @@
       "不怎么玩大乔",
       "瑶顺手",
       "不玩大乔",
-      "很少玩大乔"
+      "很少玩大乔",
+      "大乔少了",
+      "大乔玩得少"
      ],
      "stale_any": [],
      "id": "p_support_q09"
@@ -295,6 +297,308 @@
      "answer_any": [],
      "stale_any": [],
      "id": "p_support_q16"
+    }
+   ]
+  },
+  {
+   "id": "p_mage2",
+   "split": "dev",
+   "ask_at": "2026-09-12 21:00:00",
+   "sessions": [
+    {
+     "date": "2026-05-20 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我是大学老师，教物理的"
+      },
+      {
+       "role": "assistant",
+       "content": "哇，物理老师！"
+      },
+      {
+       "role": "user",
+       "content": "我最喜欢玩法师，主要是小乔"
+      },
+      {
+       "role": "assistant",
+       "content": "小乔清线很快~"
+      },
+      {
+       "role": "user",
+       "content": "平时忙，我一般周末晚上玩"
+      },
+      {
+       "role": "assistant",
+       "content": "周末放松一下挺好。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-10 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我段位是钻石三"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      },
+      {
+       "role": "user",
+       "content": "前天用小乔拿了个金牌MVP"
+      },
+      {
+       "role": "assistant",
+       "content": "厉害！"
+      },
+      {
+       "role": "user",
+       "content": "我特别喜欢游戏里英雄的语音包"
+      },
+      {
+       "role": "assistant",
+       "content": "语音包确实很有意思。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-12 20:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "暑假了，我每天都能玩两三个小时"
+      },
+      {
+       "role": "assistant",
+       "content": "暑假愉快！"
+      },
+      {
+       "role": "user",
+       "content": "我开始练西施了"
+      },
+      {
+       "role": "assistant",
+       "content": "西施控制很强。"
+      },
+      {
+       "role": "user",
+       "content": "对了我养了只狗，叫豆豆"
+      },
+      {
+       "role": "assistant",
+       "content": "豆豆好可爱的名字！"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-20 22:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我现在星耀了！"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜上星耀！"
+      },
+      {
+       "role": "user",
+       "content": "我的iPhone摔坏了，现在用小米14玩"
+      },
+      {
+       "role": "assistant",
+       "content": "小米14打游戏也很流畅。"
+      },
+      {
+       "role": "user",
+       "content": "西施我已经玩得比小乔多了"
+      },
+      {
+       "role": "assistant",
+       "content": "看来西施更顺手。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-08 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "开学了，又只能周末玩了"
+      },
+      {
+       "role": "assistant",
+       "content": "老师开学辛苦啦。"
+      },
+      {
+       "role": "user",
+       "content": "我最讨厌队友抢我的蓝buff"
+      },
+      {
+       "role": "assistant",
+       "content": "确实很影响法师发育。"
+      },
+      {
+       "role": "user",
+       "content": "这个赛季我打算冲王者"
+      },
+      {
+       "role": "assistant",
+       "content": "加油，冲！"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "query": "我现在什么段位",
+     "type": "update",
+     "answer_any": [
+      "星耀"
+     ],
+     "stale_any": [
+      "钻石"
+     ],
+     "id": "p_mage2_q01"
+    },
+    {
+     "query": "我是做什么的",
+     "type": "fact",
+     "answer_any": [
+      "老师",
+      "物理"
+     ],
+     "stale_any": [],
+     "id": "p_mage2_q02"
+    },
+    {
+     "query": "我现在一般什么时候玩",
+     "type": "update",
+     "answer_any": [
+      "周末"
+     ],
+     "stale_any": [
+      "每天"
+     ],
+     "id": "p_mage2_q03"
+    },
+    {
+     "query": "我现在主玩哪个英雄",
+     "type": "update",
+     "answer_any": [
+      "西施"
+     ],
+     "stale_any": [],
+     "id": "p_mage2_q04"
+    },
+    {
+     "query": "我用什么手机",
+     "type": "update",
+     "answer_any": [
+      "小米"
+     ],
+     "stale_any": [
+      "iPhone"
+     ],
+     "id": "p_mage2_q05"
+    },
+    {
+     "query": "我的狗叫什么",
+     "type": "fact",
+     "answer_any": [
+      "豆豆"
+     ],
+     "stale_any": [],
+     "id": "p_mage2_q06"
+    },
+    {
+     "query": "我什么时候拿的MVP",
+     "type": "temporal",
+     "answer_any": [
+      "6月8",
+      "2026-06-08"
+     ],
+     "stale_any": [],
+     "id": "p_mage2_q07"
+    },
+    {
+     "query": "我什么时候上的星耀",
+     "type": "temporal",
+     "answer_any": [
+      "2026-08",
+      "8月"
+     ],
+     "stale_any": [],
+     "id": "p_mage2_q08"
+    },
+    {
+     "query": "我讨厌队友干什么",
+     "type": "fact",
+     "answer_any": [
+      "蓝buff"
+     ],
+     "stale_any": [],
+     "id": "p_mage2_q09"
+    },
+    {
+     "query": "我这赛季的目标是什么",
+     "type": "fact",
+     "answer_any": [
+      "王者"
+     ],
+     "stale_any": [],
+     "id": "p_mage2_q10"
+    },
+    {
+     "query": "我主玩什么位置",
+     "type": "fact",
+     "answer_any": [
+      "法师"
+     ],
+     "stale_any": [],
+     "id": "p_mage2_q11"
+    },
+    {
+     "query": "我喜欢游戏里的什么",
+     "type": "fact",
+     "answer_any": [
+      "语音包"
+     ],
+     "stale_any": [],
+     "id": "p_mage2_q12"
+    },
+    {
+     "query": "我什么时候开始练西施的",
+     "type": "temporal",
+     "answer_any": [
+      "2026-07",
+      "7月"
+     ],
+     "stale_any": [],
+     "id": "p_mage2_q13"
+    },
+    {
+     "query": "我的血型是什么",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "p_mage2_q14"
+    },
+    {
+     "query": "我会开车吗",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "p_mage2_q15"
+    },
+    {
+     "query": "我喜欢喝咖啡吗",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "p_mage2_q16"
     }
    ]
   },

@@ -66,7 +66,8 @@ class PersonalMemory:
                  duplicate_ratio: float = 0.9,
                  write_mode: str = "ops",
                  player_only: bool = False,
-                 history_recall: bool = False):
+                 history_recall: bool = False,
+                 per_turn: bool = False):
         """
         write_mode: "ops" = extract facts, then the LLM decides
             ADD/UPDATE/DELETE/NOOP against related memories; "slots" = facts
@@ -76,12 +77,15 @@ class PersonalMemory:
             are dropped before the LLM sees the transcript).
         history_recall: questions about the past also search superseded
             versions (ranked lower and marked as outdated).
+        per_turn: extract facts from each player line separately (shorter
+            inputs help small models), then decide operations once.
         """
         if write_mode not in ("ops", "slots"):
             raise ValueError(f"unknown write_mode {write_mode!r}")
         self.write_mode = write_mode
         self.player_only = player_only
         self.history_recall = history_recall
+        self.per_turn = per_turn
         self.user_id = user_id
         self.llm = llm
         self.clock = clock
@@ -164,7 +168,11 @@ class PersonalMemory:
                              if not l.lstrip().startswith(("助手:", "助手：")))
         if source == "chat" and self.write_mode == "slots":
             return self._ingest_slots(text, source)
-        facts = self.extract_facts(text, source)
+        if source == "chat" and self.per_turn:
+            lines = [l for l in text.splitlines() if l.lstrip().startswith(("玩家:", "玩家："))]
+            facts = list(dict.fromkeys(f for l in lines for f in self.extract_facts(l, source)))
+        else:
+            facts = self.extract_facts(text, source)
         report = IngestReport(facts=facts)
         if not facts:
             return report

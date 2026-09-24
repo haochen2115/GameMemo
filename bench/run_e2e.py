@@ -22,6 +22,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import shutil
 import sys
 import tempfile
@@ -104,6 +105,10 @@ SYSTEMS: Dict[str, Callable[..., object]] = {
     "v2-lexical": lambda model, url, wd: V2System(model, url, wd),
     "v2": lambda model, url, wd: V2System(model, url, wd, embedder=jina()),
     "v2+player-only": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True),
+    "v2+po+history": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True,
+                                                      history_recall=True),
+    "v2+po+history+turn": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True,
+                                                           history_recall=True, per_turn=True),
     "v2+history": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), history_recall=True),
     "v2-slots": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), write_mode="slots"),
     "v2-slots+history": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), write_mode="slots",
@@ -113,8 +118,19 @@ SYSTEMS: Dict[str, Callable[..., object]] = {
 }
 
 
+_ISO = re.compile(r"(\d{4})-(\d{1,2})-(\d{1,2})")
+
+
+def normalize_dates(text: str) -> str:
+    """Append a Chinese spelling of every ISO date so "2026-06-28" also
+    matches an answer key written as "6月28" (grader fix found on dev)."""
+    extra = [f"{int(y)}年{int(m)}月{int(d)}日 {int(m)}月{int(d)}日"
+             for y, m, d in _ISO.findall(text)]
+    return text + ("\n" + " ".join(extra) if extra else "")
+
+
 def judge(q: Dict, evidence: List[str]) -> Tuple[float, bool]:
-    text = "\n".join(evidence)
+    text = normalize_dates("\n".join(evidence))
     if q["type"] == "negative":
         return (1.0 if not evidence else 0.0), False
     hit = any(a in text for a in q["answer_any"])
@@ -154,6 +170,40 @@ def summarize(rows) -> Dict:
     }
 
 
+def print_results(results: Dict, header: str, show_errors: bool) -> None:
+    types = sorted({r["type"] for res in results.values() for r in res["rows"]})
+    print(f"\n{header}\n")
+    print(f"{'system':22s} {'E2EScore':>8s} {'Answer@3':>8s} {'Stale':>6s} {'Abstain':>7s}"
+          + "".join(f" {t[:9]:>9s}" for t in types))
+    for name, r in results.items():
+        print(f"{name:22s} {r['E2EScore']:8.3f} {r['Answer@3']:8.3f} {r['StaleRate']:6.3f} "
+              f"{r['Abstain']:7.3f}" + "".join(f" {r['by_type'].get(t, 0):9.3f}" for t in types))
+    if show_errors:
+        for name, r in results.items():
+            print(f"\n--- misses: {name}")
+            for row in r["rows"]:
+                if row["success"] < 1:
+                    print(f"  {row['id']} [{row['type']}] {row['query']} want={row['answer_any']} "
+                          f"{'STALE ' if row['stale'] else ''}got={row['evidence']}")
+
+
+def rejudge(path: str, data_path: str, show_errors: bool) -> Dict:
+    with open(path, encoding="utf-8") as f:
+        saved = json.load(f)
+    with open(data_path, encoding="utf-8") as f:
+        qs = {q["id"]: q for p in json.load(f)["players"] for q in p["questions"]}
+    results = {}
+    for name, res in saved["results"].items():
+        rows = []
+        for row in res["rows"]:
+            q = qs[row["id"]]
+            success, stale = judge(q, row["evidence"])
+            rows.append(dict(row, answer_any=q["answer_any"], success=success, stale=stale))
+        results[name] = dict(summarize(rows), rows=rows)
+    print_results(results, f"rejudged {os.path.basename(path)}  model={saved.get('model')}", show_errors)
+    return results
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", default=DATA)
@@ -164,7 +214,12 @@ def main(argv=None):
     ap.add_argument("--out", default=None)
     ap.add_argument("--keep", default=None, help="directory to keep each run's memory files")
     ap.add_argument("--show-errors", action="store_true")
+    ap.add_argument("--rejudge", default=None,
+                    help="re-score a saved results file with the current judge and answer keys (no LLM)")
     args = ap.parse_args(argv)
+
+    if args.rejudge:
+        return rejudge(args.rejudge, args.data, args.show_errors)
 
     if not OllamaClient(base_url=args.base_url).is_available():
         sys.exit(f"Ollama is not reachable at {args.base_url}")
@@ -190,21 +245,9 @@ def main(argv=None):
         results[name] = res
         print(f"[{name}] done in {res['minutes']} min", flush=True)
 
-    types = sorted({r["type"] for res in results.values() for r in res["rows"]})
-    print(f"\nmodel={args.model}  split={args.split}  questions={results[next(iter(results))]['n']}\n")
-    print(f"{'system':14s} {'E2EScore':>8s} {'Answer@3':>8s} {'Stale':>6s} {'Abstain':>7s}"
-          + "".join(f" {t[:9]:>9s}" for t in types))
-    for name, r in results.items():
-        print(f"{name:14s} {r['E2EScore']:8.3f} {r['Answer@3']:8.3f} {r['StaleRate']:6.3f} "
-              f"{r['Abstain']:7.3f}" + "".join(f" {r['by_type'].get(t, 0):9.3f}" for t in types))
+    print_results(results, f"model={args.model}  split={args.split}  "
+                           f"questions={results[next(iter(results))]['n']}", args.show_errors)
 
-    if args.show_errors:
-        for name, r in results.items():
-            print(f"\n--- misses: {name}")
-            for row in r["rows"]:
-                if row["success"] < 1:
-                    print(f"  {row['id']} [{row['type']}] {row['query']} want={row['answer_any']} "
-                          f"{'STALE ' if row['stale'] else ''}got={row['evidence']}")
     if args.out:
         os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
         with open(args.out, "w", encoding="utf-8") as f:
