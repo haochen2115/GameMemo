@@ -47,6 +47,7 @@ class MemoryRecord:
     keywords: List[str] = field(default_factory=list)
     source: str = "chat"
     importance: int = 3
+    aspect: Optional[str] = None      # e.g. "当前段位"; single-valued aspects supersede
     id: str = field(default_factory=new_id)
     created_at: str = ""
     updated_at: str = ""

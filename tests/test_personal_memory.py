@@ -220,3 +220,52 @@ def test_chatbot_survives_llm_failures_and_retries_extraction(tmp_path):
     extract_prompt = [c["prompt"] for c in llm.calls if "值得长期记住" in c["prompt"]][-1]
     assert "我主玩打野" in extract_prompt            # the failed turn was retried
     assert [r.content for r in mem.active()] == ["玩家主玩打野"]
+
+
+# ------------------------------------------------------------------ slot mode / history
+
+def slot_llm(facts):
+    return FakeLLM(lambda p, s: {"facts": facts})
+
+
+def test_slots_supersede_single_valued_aspects_without_second_call(tmp_path):
+    mem = make(tmp_path, write_mode="slots")
+    mem.llm = slot_llm([{"aspect": "当前段位", "statement": "玩家段位是铂金", "keywords": ["段位", "铂金"],
+                         "event_date": "2026-07-05"},
+                        {"aspect": "游戏伙伴", "statement": "玩家常和老公双排", "keywords": ["老公"]}])
+    rep = mem.ingest("玩家: 我铂金了，和老公双排")
+    assert len(rep.added) == 2 and len(mem.llm.calls) == 1
+    assert mem.llm.calls[0]["json_schema"]["properties"]["facts"]["items"]["properties"]["aspect"]["enum"]
+
+    mem.llm = slot_llm([{"aspect": "当前段位", "statement": "玩家上了钻石", "keywords": ["段位", "钻石"],
+                         "event_date": "not a date"},
+                        {"aspect": "游戏伙伴", "statement": "玩家的好友阿杰玩射手", "keywords": ["阿杰"]}])
+    rep = mem.ingest("玩家: 我上钻石了，阿杰玩射手")
+    (old, new), = rep.updated
+    assert old.content == "玩家段位是铂金" and not old.is_active and new.event_time is None
+    assert sorted(r.content for r in mem.active()) == ["玩家上了钻石", "玩家常和老公双排", "玩家的好友阿杰玩射手"]
+
+
+def test_player_only_drops_assistant_lines(tmp_path):
+    mem = make(tmp_path, write_mode="slots", player_only=True)
+    mem.llm = slot_llm([])
+    mem.ingest("玩家: 我是护士\n助手: 你可以多练练站位\n玩家: 好的")
+    prompt = mem.llm.calls[0]["prompt"]
+    assert "我是护士" in prompt and "多练练站位" not in prompt
+
+
+def test_history_recall_answers_questions_about_the_past(tmp_path):
+    mem = make(tmp_path, write_mode="slots", history_recall=True)
+    mem.llm = slot_llm([{"aspect": "当前段位", "statement": "玩家升到了铂金段位", "keywords": ["段位", "铂金"],
+                         "event_date": "2026-07-05"}])
+    mem.ingest("...")
+    mem.llm = slot_llm([{"aspect": "当前段位", "statement": "玩家升到了钻石段位", "keywords": ["段位", "钻石"],
+                         "event_date": "2026-09-01"}])
+    mem.ingest("...")
+
+    now_q = [r.content for r in mem.retrieve("我现在什么段位")]
+    assert now_q == ["玩家升到了钻石段位"]
+    past = mem.retrieve("我什么时候升的铂金")
+    assert past[0].content == "玩家升到了铂金段位" and not past[0].is_active
+    text = mem.format_for_prompt(past)
+    assert "2026-07-05" in text and "已过时" in text

@@ -44,6 +44,9 @@ class IngestReport:
 
 
 _NORM = re.compile(r"[\s\W_]+", re.UNICODE)
+_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+# Questions about the past ("什么时候升的铂金") need superseded versions too.
+PAST_INTENT = re.compile(r"什么时候|哪天|以前|之前|原来|曾经|上次|当时|那时|第一次")
 
 
 def _norm(text: str) -> str:
@@ -60,7 +63,25 @@ class PersonalMemory:
                  clock: Callable[[], datetime] = datetime.now,
                  related_per_fact: int = 3,
                  max_candidates: int = 15,
-                 duplicate_ratio: float = 0.9):
+                 duplicate_ratio: float = 0.9,
+                 write_mode: str = "ops",
+                 player_only: bool = False,
+                 history_recall: bool = False):
+        """
+        write_mode: "ops" = extract facts, then the LLM decides
+            ADD/UPDATE/DELETE/NOOP against related memories; "slots" = facts
+            are extracted with an aspect, and a new value of a single-valued
+            aspect supersedes the old one without a second LLM call.
+        player_only: extract from the player's lines only (assistant lines
+            are dropped before the LLM sees the transcript).
+        history_recall: questions about the past also search superseded
+            versions (ranked lower and marked as outdated).
+        """
+        if write_mode not in ("ops", "slots"):
+            raise ValueError(f"unknown write_mode {write_mode!r}")
+        self.write_mode = write_mode
+        self.player_only = player_only
+        self.history_recall = history_recall
         self.user_id = user_id
         self.llm = llm
         self.clock = clock
@@ -76,12 +97,18 @@ class PersonalMemory:
 
     # ================================================================ read
 
-    def search(self, query: str, top_k: int = 5) -> List[ScoredMemory]:
-        return self.retriever.search(query, self.store.active(), top_k=top_k, now=self.clock())
+    def search(self, query: str, top_k: int = 5,
+               include_history: Optional[bool] = None) -> List[ScoredMemory]:
+        if include_history is None:
+            include_history = self.history_recall and bool(PAST_INTENT.search(query))
+        records = self.store.all() if include_history else self.store.active()
+        return self.retriever.search(query, records, top_k=top_k, now=self.clock(),
+                                     include_inactive=include_history)
 
-    def retrieve(self, query: str, top_k: int = 5, touch: bool = True) -> List[MemoryRecord]:
+    def retrieve(self, query: str, top_k: int = 5, touch: bool = True,
+                 include_history: Optional[bool] = None) -> List[MemoryRecord]:
         """Memories relevant to ``query``; empty when nothing is relevant."""
-        recs = [s.record for s in self.search(query, top_k)]
+        recs = [s.record for s in self.search(query, top_k, include_history)]
         if touch and recs:
             now = self.clock()
             for r in recs:
@@ -102,12 +129,18 @@ class PersonalMemory:
         return self.store.history(mem_id)
 
     @staticmethod
-    def format_for_prompt(records: Sequence[MemoryRecord]) -> str:
-        lines = []
-        for r in records:
-            when = f"（{r.event_time}）" if r.event_time else ""
-            lines.append(f"- {r.content}{when}")
-        return "\n".join(lines)
+    def describe(r: MemoryRecord) -> str:
+        """One memory as text for a prompt, with its date and staleness."""
+        notes = []
+        if r.event_time:
+            notes.append(r.event_time)
+        if not r.is_active:
+            notes.append(f"已过时，{(r.valid_to or '')[:10]}被新信息取代")
+        return r.content + (f"（{'；'.join(notes)}）" if notes else "")
+
+    @classmethod
+    def format_for_prompt(cls, records: Sequence[MemoryRecord]) -> str:
+        return "\n".join(f"- {cls.describe(r)}" for r in records)
 
     def stats(self) -> Dict:
         active = self.store.active()
@@ -126,6 +159,11 @@ class PersonalMemory:
 
     def ingest(self, text: str, source: str = "chat") -> IngestReport:
         """Extract facts from a conversation or trajectory and store them."""
+        if source == "chat" and self.player_only:
+            text = "\n".join(l for l in text.splitlines()
+                             if not l.lstrip().startswith(("助手:", "助手：")))
+        if source == "chat" and self.write_mode == "slots":
+            return self._ingest_slots(text, source)
         facts = self.extract_facts(text, source)
         report = IngestReport(facts=facts)
         if not facts:
@@ -186,12 +224,7 @@ class PersonalMemory:
                     report.noop += 1
                     continue
                 rec = self._new_record(op, content, source, now)
-                rec.supersedes = target.id
-                rec.access_count = target.access_count
-                rec.last_accessed_at = target.last_accessed_at
-                target.valid_to = now
-                target.superseded_by = rec.id
-                target.updated_at = now
+                self._supersede(target, rec, now)
                 self.store.put(rec)
                 touched.update({target.id, rec.id})
                 report.updated.append((target, rec))
@@ -231,7 +264,54 @@ class PersonalMemory:
         self.store.save()
         return True
 
+    def _ingest_slots(self, text: str, source: str) -> IngestReport:
+        self._need_llm()
+        today = self.clock()
+        prompt = prompts.EXTRACT_SLOTS.format(
+            text=text.strip(), today=today.strftime("%Y-%m-%d"),
+            yesterday=(today - timedelta(days=1)).strftime("%Y-%m-%d"),
+            aspects="、".join(prompts.ASPECTS))
+        data = parse_json(self.llm.chat(prompt=prompt, system=prompts.SYSTEM_JSON,
+                                        temperature=0.1, json_schema=prompts.SLOTS_SCHEMA))
+        items = data.get("facts", []) if isinstance(data, dict) else []
+        items = [f for f in items if isinstance(f, dict) and str(f.get("statement") or "").strip()]
+        report = IngestReport(facts=[str(f["statement"]).strip() for f in items])
+        now = fmt_time(today)
+
+        for f in items:
+            content = str(f["statement"]).strip()
+            aspect = f.get("aspect") if f.get("aspect") in prompts.ASPECTS else "其他"
+            if self._find_duplicate(content) is not None:
+                report.noop += 1
+                continue
+            event = f.get("event_date")
+            op = {"keywords": f.get("keywords") or [], "importance": f.get("importance", 3),
+                  "event_time": event if isinstance(event, str) and _DATE.match(event) else None}
+            rec = self._new_record(op, content, source, now)
+            rec.aspect = aspect
+            olds = ([r for r in self.store.active() if r.aspect == aspect]
+                    if aspect in prompts.SINGLE_ASPECTS else [])
+            for old in olds:
+                self._supersede(old, rec, now)
+                report.updated.append((old, rec))
+            if not olds:
+                report.added.append(rec)
+            self.store.put(rec)
+
+        if report.changed:
+            self.store.save()
+        return report
+
     # ============================================================ helpers
+
+    @staticmethod
+    def _supersede(old: MemoryRecord, new: MemoryRecord, now: str) -> None:
+        new.supersedes = old.id
+        new.access_count = max(new.access_count, old.access_count)
+        new.last_accessed_at = new.last_accessed_at or old.last_accessed_at
+        old.valid_to = now
+        old.superseded_by = new.id
+        old.updated_at = now
 
     def _need_llm(self) -> None:
         if self.llm is None:

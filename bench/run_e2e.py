@@ -69,13 +69,13 @@ class V0System:
 
 
 class V2System:
-    def __init__(self, model: str, base_url: str, workdir: str, embedder=None, seed: int = 0):
+    def __init__(self, model: str, base_url: str, workdir: str, embedder=None, seed: int = 0, **opts):
         from gamememo.personal import PersonalMemory
 
         self.now = datetime.now()
         self.mem = PersonalMemory("e2e", llm=OllamaClient(model=model, base_url=base_url, timeout=600,
                                                           seed=seed, think=False if "qwen3" in model else None),
-                                  storage_dir=workdir, embedder=embedder, clock=lambda: self.now)
+                                  storage_dir=workdir, embedder=embedder, clock=lambda: self.now, **opts)
 
     def ingest(self, text: str, when: datetime) -> None:
         self.now = when
@@ -83,22 +83,33 @@ class V2System:
 
     def evidence(self, query: str, when: datetime) -> List[str]:
         self.now = when
-        return [r.content + (f"（{r.event_time}）" if r.event_time else "")
-                for r in self.mem.retrieve(query, top_k=K, touch=False)]
+        return [self.mem.describe(r) for r in self.mem.retrieve(query, top_k=K, touch=False)]
 
     def dump(self) -> List[Dict]:
         return [r.to_dict() for r in self.mem.store.all()]
 
 
+_JINA = []
+
+
 def jina():
     from gamememo.personal.embed import FastEmbedEmbedder
-    return FastEmbedEmbedder()
+    if not _JINA:
+        _JINA.append(FastEmbedEmbedder())
+    return _JINA[0]
 
 
 SYSTEMS: Dict[str, Callable[..., object]] = {
     "v0-pipeline": lambda model, url, wd: V0System(model, url, wd),
     "v2-lexical": lambda model, url, wd: V2System(model, url, wd),
     "v2": lambda model, url, wd: V2System(model, url, wd, embedder=jina()),
+    "v2+player-only": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True),
+    "v2+history": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), history_recall=True),
+    "v2-slots": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), write_mode="slots"),
+    "v2-slots+history": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), write_mode="slots",
+                                                         history_recall=True),
+    "v2-slots+po+history": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), write_mode="slots",
+                                                            player_only=True, history_recall=True),
 }
 
 

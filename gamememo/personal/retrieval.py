@@ -51,6 +51,7 @@ class RetrievalConfig:
     w_importance: float = 0.10
     w_recency: float = 0.05
     recency_half_life_days: float = 30.0
+    inactive_penalty: float = 0.7       # superseded versions, when history is searched
     rerank_pool: int = 10               # top-N by fused rank sent to the reranker
     min_rerank: float = 0.0             # reranker logit needed to be returned
 
@@ -102,10 +103,13 @@ class HybridRetriever:
 
     def search(self, query: str, records: Sequence[MemoryRecord],
                top_k: Optional[int] = None,
-               now: Optional[datetime] = None) -> List[ScoredMemory]:
+               now: Optional[datetime] = None,
+               include_inactive: bool = False) -> List[ScoredMemory]:
+        """``include_inactive`` also searches superseded versions (for
+        questions about the past); they rank below current ones."""
         cfg = self.config
         top_k = cfg.top_k if top_k is None else top_k
-        records = [r for r in records if r.is_active and r.content.strip()]
+        records = [r for r in records if (include_inactive or r.is_active) and r.content.strip()]
         if not records or not query.strip():
             return []
         self._learn_keywords(records)
@@ -155,6 +159,8 @@ class HybridRetriever:
             rec = records[i]
             mod = 1.0 + cfg.w_importance * (rec.importance - 3) / 2.0 \
                 + cfg.w_recency * self._recency(rec, now)
+            if not rec.is_active:
+                mod *= cfg.inactive_penalty
             # Rerank logits can be negative; modulate the margin above the floor.
             value = (b - cfg.min_rerank) * mod if self.reranker is not None else b * mod
             scored.append(ScoredMemory(rec, value, lex[i], cov[i], dense[i]))
