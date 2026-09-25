@@ -21,6 +21,7 @@ from dataclasses import dataclass, replace
 from datetime import datetime
 from typing import Dict, List, Optional, Sequence, Tuple
 
+from .concepts import memory_concepts, query_concepts, tag_text
 from .embed import Embedder, Reranker, cosine
 from .model import MemoryRecord, parse_time
 from .text import add_words, tokenize
@@ -48,9 +49,10 @@ CALIBRATED_DENSE = {
     # Preference gate (docs/EXPERIMENTS.md, E4): a memory sharing only a
     # preference predicate with the query ("喜欢") needs cosine >= 0.30.
     # The broad GENERIC_TERMS version (E2) cost recall and stays off.
+    # Concept tags (E7): bridge category questions to value statements.
     "jina-embeddings-v2-base-zh": {"min_dense": 0.25, "dense_margin": 0.15,
                                    "require_specific": True, "min_dense_alone": 0.30,
-                                   "generic_terms": PREFERENCE_TERMS},
+                                   "generic_terms": PREFERENCE_TERMS, "concept_tags": True},
     "bge-small-zh-v1.5": {"min_dense": 0.38, "dense_margin": 0.12},
     "bge-m3": {"min_dense": 0.50, "dense_margin": 0.12},
 }
@@ -71,6 +73,8 @@ class RetrievalConfig:
     require_specific: bool = False      # lexical gate needs a non-generic term; a memory
     min_dense_alone: float = 0.0        # matching only generic terms needs this dense sim
     generic_terms: frozenset = GENERIC_TERMS
+    concept_tags: bool = False          # bridge "做什么工作" <-> "是护士" (concepts.py)
+    concept_dense: bool = False         # also add concept names to the dense texts
     min_dense: float = 0.25             # cosine floor (default embedder: jina-v2-base-zh)
     dense_margin: float = 0.15          # also require being near the best match
     w_importance: float = 0.10
@@ -204,7 +208,10 @@ class HybridRetriever:
         # The aspect ("身份职业") bridges questions that name the category
         # ("做什么工作") to facts that only state the value ("是护士").
         aspect = f" {rec.aspect}" if rec.aspect and rec.aspect != "其他" else ""
-        return rec.content + " " + " ".join(rec.keywords) + aspect
+        concepts = ""
+        if self.config.concept_tags and self.config.concept_dense:
+            concepts = "".join(f" {c}" for c in memory_concepts(rec.content))
+        return rec.content + " " + " ".join(rec.keywords) + aspect + concepts
 
     def _tokens(self, key: str, text: str) -> List[str]:
         k = (key, text)
@@ -218,6 +225,8 @@ class HybridRetriever:
         toks.extend(kw * self.config.keyword_boost)
         if rec.aspect and rec.aspect != "其他":
             toks.extend(self._tokens("a", rec.aspect))
+        if self.config.concept_tags:
+            toks.extend(tag_text(c) for c in memory_concepts(rec.content))
         return toks
 
     def _learn_keywords(self, records: Sequence[MemoryRecord]) -> None:
@@ -238,6 +247,8 @@ class HybridRetriever:
         for d in docs:
             df.update(set(d))
         q_terms = list(dict.fromkeys(tokenize(query, bigrams=cfg.bigrams)))
+        if cfg.concept_tags:
+            q_terms += [tag_text(c) for c in query_concepts(query)]
         idf = {t: math.log(1 + (n - df[t] + 0.5) / (df[t] + 0.5)) for t in q_terms}
         generic = cfg.generic_terms
         weight = {t: idf[t] * (cfg.generic_weight if t in generic else 1.0) for t in q_terms}
@@ -263,6 +274,8 @@ class HybridRetriever:
         return scores, coverage, specific
 
     def _dense(self, query: str, records: Sequence[MemoryRecord]) -> List[float]:
+        if self.config.concept_tags and self.config.concept_dense:
+            query += "".join(f" {c}" for c in query_concepts(query))
         q = self.embedder.embed_query(query)
         docs = self.embedder.embed_documents([self._doc_text(r) for r in records])
         return [cosine(q, d) for d in docs]

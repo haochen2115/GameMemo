@@ -1,0 +1,1305 @@
+{
+ "name": "player_memory_e2e",
+ "version": 5,
+ "description": "Fact-heavy: category-level questions (job, city, role, family, health, plans) whose answers are stated as values, plus updates, trajectories, promises and negatives. dev=v5_d1,v5_d2; test=v5_t1,v5_t2,v5_t3, committed before any system ran on them.",
+ "players": [
+  {
+   "id": "v5_d1",
+   "split": "dev",
+   "ask_at": "2026-09-20 21:00:00",
+   "sessions": [
+    {
+     "date": "2026-04-01 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我是快递员，在郑州送件"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "我主玩射手，最常用伽罗"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      },
+      {
+       "role": "user",
+       "content": "段位铂金四"
+      },
+      {
+       "role": "assistant",
+       "content": "明白了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-06 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我女儿今年上小学了"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "我喜欢晚上十点以后玩"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-10 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我腰椎不好，骑车久了会疼"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "我升钻石了"
+      },
+      {
+       "role": "assistant",
+       "content": "注意身体！下次我帮你挑几个操作简单的射手。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-15 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我老婆是护士，经常值夜班"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "最近在练后羿"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-20 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我换了个站点，现在在二七区送件"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "手机换成了荣耀Magic6"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-12 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我钻石二了"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "中秋准备带女儿回老家洛阳"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "query": "我是做什么工作的",
+     "type": "fact",
+     "answer_any": [
+      "快递"
+     ],
+     "stale_any": [],
+     "id": "v5_d1_q01"
+    },
+    {
+     "query": "我在哪个城市",
+     "type": "fact",
+     "answer_any": [
+      "郑州"
+     ],
+     "stale_any": [],
+     "id": "v5_d1_q02"
+    },
+    {
+     "query": "我主玩什么位置",
+     "type": "fact",
+     "answer_any": [
+      "射手"
+     ],
+     "stale_any": [],
+     "id": "v5_d1_q03"
+    },
+    {
+     "query": "我女儿上几年级",
+     "type": "fact",
+     "answer_any": [
+      "小学"
+     ],
+     "stale_any": [],
+     "id": "v5_d1_q04"
+    },
+    {
+     "query": "我身体有什么毛病",
+     "type": "fact",
+     "answer_any": [
+      "腰椎"
+     ],
+     "stale_any": [],
+     "id": "v5_d1_q05"
+    },
+    {
+     "query": "我老婆做什么的",
+     "type": "fact",
+     "answer_any": [
+      "护士"
+     ],
+     "stale_any": [],
+     "id": "v5_d1_q06"
+    },
+    {
+     "query": "我老家在哪",
+     "type": "fact",
+     "answer_any": [
+      "洛阳"
+     ],
+     "stale_any": [],
+     "id": "v5_d1_q07"
+    },
+    {
+     "query": "我现在什么段位",
+     "type": "update",
+     "answer_any": [
+      "钻石二"
+     ],
+     "stale_any": [
+      "铂金"
+     ],
+     "id": "v5_d1_q08"
+    },
+    {
+     "query": "我的段位是怎么变的",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "铂金四",
+      "钻石",
+      "钻石二"
+     ],
+     "id": "v5_d1_q09"
+    },
+    {
+     "query": "你答应过帮我挑什么",
+     "type": "promise",
+     "answer_any": [
+      "射手"
+     ],
+     "stale_any": [],
+     "id": "v5_d1_q10"
+    },
+    {
+     "query": "我喜欢什么颜色",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "v5_d1_q11"
+    },
+    {
+     "query": "我最喜欢的电影是什么",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "v5_d1_q12"
+    },
+    {
+     "query": "我会弹吉他吗",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "v5_d1_q13"
+    }
+   ]
+  },
+  {
+   "id": "v5_d2",
+   "split": "dev",
+   "ask_at": "2026-09-22 21:00:00",
+   "sessions": [
+    {
+     "date": "2026-03-12 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我是一名会计，在苏州上班"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "我主玩辅助，最喜欢大乔"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-20 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我儿子三岁了，特别调皮"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "我段位白银一"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-28 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我对花粉过敏，春天特别难受"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "我升黄金了"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-02 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我老公是程序员，天天加班"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "最近在练蔡文姬"
+      },
+      {
+       "role": "assistant",
+       "content": "好的！以后我提醒你蔡文姬要跟紧射手。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-15 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我们家搬到了园区"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "我黄金一了"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-18 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我报名了注册会计师考试"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "这个月玩得少"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "query": "我做什么工作",
+     "type": "fact",
+     "answer_any": [
+      "会计"
+     ],
+     "stale_any": [],
+     "id": "v5_d2_q01"
+    },
+    {
+     "query": "我在哪个城市上班",
+     "type": "fact",
+     "answer_any": [
+      "苏州"
+     ],
+     "stale_any": [],
+     "id": "v5_d2_q02"
+    },
+    {
+     "query": "我主玩什么位置",
+     "type": "fact",
+     "answer_any": [
+      "辅助"
+     ],
+     "stale_any": [],
+     "id": "v5_d2_q03"
+    },
+    {
+     "query": "我儿子多大了",
+     "type": "fact",
+     "answer_any": [
+      "三岁"
+     ],
+     "stale_any": [],
+     "id": "v5_d2_q04"
+    },
+    {
+     "query": "我对什么过敏",
+     "type": "fact",
+     "answer_any": [
+      "花粉"
+     ],
+     "stale_any": [],
+     "id": "v5_d2_q05"
+    },
+    {
+     "query": "我老公是做什么的",
+     "type": "fact",
+     "answer_any": [
+      "程序员"
+     ],
+     "stale_any": [],
+     "id": "v5_d2_q06"
+    },
+    {
+     "query": "我最近在准备什么考试",
+     "type": "fact",
+     "answer_any": [
+      "注册会计师"
+     ],
+     "stale_any": [],
+     "id": "v5_d2_q07"
+    },
+    {
+     "query": "我现在什么段位",
+     "type": "update",
+     "answer_any": [
+      "黄金一"
+     ],
+     "stale_any": [
+      "白银"
+     ],
+     "id": "v5_d2_q08"
+    },
+    {
+     "query": "我的段位是怎么升的",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "白银一",
+      "黄金",
+      "黄金一"
+     ],
+     "id": "v5_d2_q09"
+    },
+    {
+     "query": "你答应过提醒我什么",
+     "type": "promise",
+     "answer_any": [
+      "跟紧",
+      "射手"
+     ],
+     "stale_any": [],
+     "id": "v5_d2_q10"
+    },
+    {
+     "query": "我喜欢什么水果",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "v5_d2_q11"
+    },
+    {
+     "query": "我最喜欢的歌手是谁",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "v5_d2_q12"
+    },
+    {
+     "query": "我会游泳吗",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "v5_d2_q13"
+    }
+   ]
+  },
+  {
+   "id": "v5_t1",
+   "split": "test",
+   "ask_at": "2026-09-25 21:00:00",
+   "sessions": [
+    {
+     "date": "2026-04-03 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我是消防员，在重庆"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "我主玩坦克，最常用张飞"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      },
+      {
+       "role": "user",
+       "content": "段位黄金三"
+      },
+      {
+       "role": "assistant",
+       "content": "明白了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-10 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我女朋友是幼儿园老师"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "我升铂金了"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-18 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我膝盖韧带拉伤了，在休养"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "最近在练廉颇"
+      },
+      {
+       "role": "assistant",
+       "content": "好好休养！下次我帮你整理廉颇的出装。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-25 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我的狗叫旺财，是只柯基"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "我铂金一了"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-30 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我考过了驾照"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "手机换成了vivo X100"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-20 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我上钻石了"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "国庆准备和女朋友去成都玩"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "query": "我是做什么工作的",
+     "type": "fact",
+     "answer_any": [
+      "消防"
+     ],
+     "stale_any": [],
+     "id": "v5_t1_q01"
+    },
+    {
+     "query": "我在哪个城市",
+     "type": "fact",
+     "answer_any": [
+      "重庆"
+     ],
+     "stale_any": [],
+     "id": "v5_t1_q02"
+    },
+    {
+     "query": "我主玩什么位置",
+     "type": "fact",
+     "answer_any": [
+      "坦克"
+     ],
+     "stale_any": [],
+     "id": "v5_t1_q03"
+    },
+    {
+     "query": "我女朋友做什么的",
+     "type": "fact",
+     "answer_any": [
+      "幼儿园"
+     ],
+     "stale_any": [],
+     "id": "v5_t1_q04"
+    },
+    {
+     "query": "我受过什么伤",
+     "type": "fact",
+     "answer_any": [
+      "韧带",
+      "膝盖"
+     ],
+     "stale_any": [],
+     "id": "v5_t1_q05"
+    },
+    {
+     "query": "我的狗叫什么",
+     "type": "fact",
+     "answer_any": [
+      "旺财"
+     ],
+     "stale_any": [],
+     "id": "v5_t1_q06"
+    },
+    {
+     "query": "我国庆打算去哪",
+     "type": "fact",
+     "answer_any": [
+      "成都"
+     ],
+     "stale_any": [],
+     "id": "v5_t1_q07"
+    },
+    {
+     "query": "我现在什么段位",
+     "type": "update",
+     "answer_any": [
+      "钻石"
+     ],
+     "stale_any": [
+      "黄金",
+      "铂金"
+     ],
+     "id": "v5_t1_q08"
+    },
+    {
+     "query": "我的段位是怎么变的",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "铂金",
+      "铂金一",
+      "钻石"
+     ],
+     "id": "v5_t1_q09"
+    },
+    {
+     "query": "你答应过帮我整理什么",
+     "type": "promise",
+     "answer_any": [
+      "出装"
+     ],
+     "stale_any": [],
+     "id": "v5_t1_q10"
+    },
+    {
+     "query": "我喜欢什么颜色",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "v5_t1_q11"
+    },
+    {
+     "query": "我最喜欢的球星是谁",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "v5_t1_q12"
+    },
+    {
+     "query": "我会做饭吗",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "v5_t1_q13"
+    },
+    {
+     "query": "我的生日是哪天",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "v5_t1_q14"
+    }
+   ]
+  },
+  {
+   "id": "v5_t2",
+   "split": "test",
+   "ask_at": "2026-09-26 21:00:00",
+   "sessions": [
+    {
+     "date": "2026-03-15 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我是牙医，在厦门开诊所"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "我主玩法师，最喜欢西施"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-22 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我段位星耀五"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "我儿子在上初二"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-30 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我有低血糖，打久了会头晕"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "最近在练沈梦溪"
+      },
+      {
+       "role": "assistant",
+       "content": "注意身体！以后我提醒你每打三局吃点东西。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-08 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我升星耀三了"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "我老婆是银行柜员"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-16 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我诊所新招了两个助理"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "我喜欢周末早上打排位"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-19 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我星耀一了"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "下个月要去上海参加口腔医学会议"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "query": "我是做什么的",
+     "type": "fact",
+     "answer_any": [
+      "牙医"
+     ],
+     "stale_any": [],
+     "id": "v5_t2_q01"
+    },
+    {
+     "query": "我在哪个城市",
+     "type": "fact",
+     "answer_any": [
+      "厦门"
+     ],
+     "stale_any": [],
+     "id": "v5_t2_q02"
+    },
+    {
+     "query": "我主玩什么位置",
+     "type": "fact",
+     "answer_any": [
+      "法师"
+     ],
+     "stale_any": [],
+     "id": "v5_t2_q03"
+    },
+    {
+     "query": "我儿子读几年级",
+     "type": "fact",
+     "answer_any": [
+      "初二"
+     ],
+     "stale_any": [],
+     "id": "v5_t2_q04"
+    },
+    {
+     "query": "我身体有什么问题",
+     "type": "fact",
+     "answer_any": [
+      "低血糖"
+     ],
+     "stale_any": [],
+     "id": "v5_t2_q05"
+    },
+    {
+     "query": "我老婆做什么工作",
+     "type": "fact",
+     "answer_any": [
+      "银行"
+     ],
+     "stale_any": [],
+     "id": "v5_t2_q06"
+    },
+    {
+     "query": "我下个月要去哪开会",
+     "type": "fact",
+     "answer_any": [
+      "上海"
+     ],
+     "stale_any": [],
+     "id": "v5_t2_q07"
+    },
+    {
+     "query": "我现在什么段位",
+     "type": "update",
+     "answer_any": [
+      "星耀一"
+     ],
+     "stale_any": [
+      "星耀五",
+      "星耀三"
+     ],
+     "id": "v5_t2_q08"
+    },
+    {
+     "query": "我的段位是怎么一步步升的",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "星耀五",
+      "星耀三",
+      "星耀一"
+     ],
+     "id": "v5_t2_q09"
+    },
+    {
+     "query": "你答应过提醒我什么",
+     "type": "promise",
+     "answer_any": [
+      "吃点东西",
+      "三局"
+     ],
+     "stale_any": [],
+     "id": "v5_t2_q10"
+    },
+    {
+     "query": "我喜欢什么花",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "v5_t2_q11"
+    },
+    {
+     "query": "我最喜欢的电视剧是什么",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "v5_t2_q12"
+    },
+    {
+     "query": "我会开车吗",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "v5_t2_q13"
+    },
+    {
+     "query": "我养宠物吗",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "v5_t2_q14"
+    }
+   ]
+  },
+  {
+   "id": "v5_t3",
+   "split": "test",
+   "ask_at": "2026-09-27 21:00:00",
+   "sessions": [
+    {
+     "date": "2026-02-10 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我是大二学生，在哈尔滨读书，学的是土木"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "我主玩打野，常用赵云"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      }
+     ]
+    },
+    {
+     "date": "2026-03-18 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "段位钻石四"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "我是学校篮球队的"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-25 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我近视六百度，晚上玩眼睛累"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "最近在练曜"
+      },
+      {
+       "role": "assistant",
+       "content": "好的！下次我帮你看看曜的打野节奏。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-12 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我升钻石一了"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "暑假要去工地实习"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-30 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我妹妹今年高考，考上了武汉大学"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "实习好累，玩得少"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-15 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我上星耀了"
+      },
+      {
+       "role": "assistant",
+       "content": "好的，记住啦。"
+      },
+      {
+       "role": "user",
+       "content": "我当上了班长"
+      },
+      {
+       "role": "assistant",
+       "content": "不错！"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "query": "我读什么专业",
+     "type": "fact",
+     "answer_any": [
+      "土木"
+     ],
+     "stale_any": [],
+     "id": "v5_t3_q01"
+    },
+    {
+     "query": "我在哪个城市上学",
+     "type": "fact",
+     "answer_any": [
+      "哈尔滨"
+     ],
+     "stale_any": [],
+     "id": "v5_t3_q02"
+    },
+    {
+     "query": "我主玩什么位置",
+     "type": "fact",
+     "answer_any": [
+      "打野"
+     ],
+     "stale_any": [],
+     "id": "v5_t3_q03"
+    },
+    {
+     "query": "我参加了什么校队",
+     "type": "fact",
+     "answer_any": [
+      "篮球"
+     ],
+     "stale_any": [],
+     "id": "v5_t3_q04"
+    },
+    {
+     "query": "我眼睛怎么样",
+     "type": "fact",
+     "answer_any": [
+      "近视"
+     ],
+     "stale_any": [],
+     "id": "v5_t3_q05"
+    },
+    {
+     "query": "我妹妹考上了哪",
+     "type": "fact",
+     "answer_any": [
+      "武汉大学"
+     ],
+     "stale_any": [],
+     "id": "v5_t3_q06"
+    },
+    {
+     "query": "我在班里担任什么",
+     "type": "fact",
+     "answer_any": [
+      "班长"
+     ],
+     "stale_any": [],
+     "id": "v5_t3_q07"
+    },
+    {
+     "query": "我现在什么段位",
+     "type": "update",
+     "answer_any": [
+      "星耀"
+     ],
+     "stale_any": [
+      "钻石"
+     ],
+     "id": "v5_t3_q08"
+    },
+    {
+     "query": "我的段位是怎么变的",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "钻石四",
+      "钻石一",
+      "星耀"
+     ],
+     "id": "v5_t3_q09"
+    },
+    {
+     "query": "你答应过帮我看什么",
+     "type": "promise",
+     "answer_any": [
+      "打野节奏",
+      "节奏"
+     ],
+     "stale_any": [],
+     "id": "v5_t3_q10"
+    },
+    {
+     "query": "我喜欢什么动物",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "v5_t3_q11"
+    },
+    {
+     "query": "我最喜欢的明星是谁",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "v5_t3_q12"
+    },
+    {
+     "query": "我会画画吗",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "v5_t3_q13"
+    },
+    {
+     "query": "我有女朋友吗",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": [],
+     "id": "v5_t3_q14"
+    }
+   ]
+  }
+ ]
+}

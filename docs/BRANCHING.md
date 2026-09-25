@@ -19,17 +19,18 @@
 
 | 分支 | 内容 | 状态 |
 |---|---|---|
-| `main` | 个人记忆 P1：混合检索、只读玩家发言、历史召回、情景记忆、助手承诺、回忆模式 | 当前 SOTA（retrieval_v2 0.892；e2e_v2 test 0.759） |
+| `main` | 个人记忆 P3：P2 + 概念标签、情景兜底 | 当前 SOTA（retrieval_v2 0.912；e2e_v5 test 0.825） |
 | `archive/v0-keyword-baseline` | v0 的冻结快照（旧 main @ `3a866ba`） | 只读 |
 | `research/personal-memory-foundation` | v2 检索与写入重构 | 已合入（PR #1） |
 | `research/personal-memory-write-path` | 写入链路 + P1 | 已合入（PR #2） |
-| `research/personal-memory-consolidation` | 变化轨迹巩固、拒答 | 开发中 |
+| `research/personal-memory-consolidation` | P2：按属性回忆、偏好门槛、接地检查 | 已合入（PR #3） |
+| `research/personal-memory-facts` | P3：概念标签、情景兜底 | 已合入（PR #4） |
 | `research/shared-memory-quorum` | 多租户共享记忆（QUORUM / COMMONS） | 研究预览，尚无模型评测 |
 
 ## SOTA 门禁（进入 main 的条件）
 
 1. `pytest` 全部通过。
-2. 在 `bench/candidate.json` 声明的每个评测上（检索看 `bench/sota.json`，端到端看 `bench/sota_e2e.json`；目前分别是 `retrieval_v2` 和 `e2e_v2` 的 **test** split）：
+2. 在 `bench/candidate.json` 声明的每个评测上（检索看 `bench/sota.json`，端到端看 `bench/sota_e2e.json`；目前分别是 `retrieval_v2` 和 `e2e_v5` 的 **test** split）：
    - 至少一个评测标为 `improve`，并且主指标比记录的 SOTA 高 `min_gain`；其余评测标为 `hold`，主指标降幅不超过 `hold_tol`；
    - 所有守护指标（如 `Abstain`、`StaleRate`）变差的幅度都不超过各自的容忍度。
 3. 用脚本检查，不靠人工判断：
