@@ -43,7 +43,7 @@ def test_lexical_retriever_runs_without_embeddings():
     assert res["Abstain"] > 0.8
 
 
-@pytest.mark.parametrize("name", ["e2e_v1.json", "e2e_v2.json", "e2e_v3.json", "e2e_v4.json", "e2e_v5.json"])
+@pytest.mark.parametrize("name", ["e2e_v1.json", "e2e_v2.json", "e2e_v3.json", "e2e_v4.json", "e2e_v5.json", "e2e_v6.json"])
 def test_e2e_dataset_integrity(name):
     import json
 
@@ -83,9 +83,10 @@ def test_e2e_judge_accepts_iso_dates_for_chinese_keys():
     assert judge({"type": "temporal", "answer_any": ["2026-07"]}, ["玩家升到铂金（2026-07-05）"])[0] == 1.0
 
 
-# SHA-256 of each dataset's test players as sealed (e2e_v1: c58c35a, e2e_v2: eb8add4, e2e_v3: b15eccc, e2e_v4: 995e09d, e2e_v5: ddee1cd).
+# SHA-256 of each dataset's test players as sealed (e2e_v1: c58c35a, e2e_v2: eb8add4, e2e_v3: b15eccc, e2e_v4: 995e09d, e2e_v5: ddee1cd, e2e_v6: see git log).
 SEALED_TEST_SHA256 = {
     "e2e_v1.json": "a841901abee86647f7454dce0cfeb23daaaaa777478e06f8f3a835ac54a583fa",
+    "e2e_v6.json": "14656ce8b27ea80a317b9b41a0eee953d8f120f9d0c8b28425fb8801c6072d0a",
     "e2e_v5.json": "16bc16bab9d1f7f88eaa2fe95bfc6f13abd3b0a93849d7af9523ff82389b06bb",
     "e2e_v4.json": "3d28c81e90ff352a9ead28c61498ae52b8719762ad5db837bb97871f95ccf802",
     "e2e_v3.json": "ef2596fb3325c78d3c35c0e162576651d72f219f4d0c358b998926671eede455",
