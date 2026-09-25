@@ -377,8 +377,8 @@ class PersonalMemory:
                 return [ScoredMemory(r, 1.0) for r in states[-top_k:]]
         if attr and CURRENT_INTENT.search(query):
             states = self._attribute_states(attr)
-            if states and self.trajectory_summary:
-                # just the current value: the latest record may also name the old one
+            if states and self.trajectory_summary and self._names_several_values(attr, states[-1]):
+                # "少司缘最近改玩朵莉亚" also names the old value: give the current one alone
                 return [ScoredMemory(self._state_summary(attr, states[-1:], current=True), 1.0)]
             if states:
                 return [ScoredMemory(states[-1], 1.0)]
@@ -441,6 +441,12 @@ class PersonalMemory:
             states.append(r)
             values.append(value)
         return states
+
+    @staticmethod
+    def _names_several_values(attr: str, rec: MemoryRecord) -> bool:
+        spec = next(a for a in RECALL_ATTRIBUTES if a.name == attr)
+        low = rec.content.lower()
+        return sum(1 for v in spec.values if v.lower() in low) > 1
 
     def _state_summary(self, attr: str, states: List[MemoryRecord], current: bool = False) -> MemoryRecord:
         """One line with every state, oldest first: "段位变化：黄金二（2026-01-12）→ …";
@@ -560,7 +566,14 @@ class PersonalMemory:
             max_tokens=self.max_output_tokens))
         items = data.get("promises", []) if isinstance(data, dict) else []
         if self.rule_promises:
-            items = list(items) + promises_from_rules(text)
+            # a pattern-found promise the model already stated ("…帮玩家复盘")
+            # is the same promise: compare what is promised, not the wording
+            known = [str(p) for p in items] + [r.content for r in self.store.active() if r.kind == "promise"]
+            for p in promises_from_rules(text):
+                core = re.split(r"帮你|给你|替你|陪你", p)[-1].strip()[:6]
+                if core and not any(core in k for k in known):
+                    items = list(items) + [p]
+                    known.append(p)
         now = fmt_time(today)
         changed = False
         for p in items:

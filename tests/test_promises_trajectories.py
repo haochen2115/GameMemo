@@ -23,7 +23,10 @@ def test_trajectory_is_one_line_with_every_state(tmp_path):
         m.store.put(MemoryRecord(content=text, created_at=f"{day} 21:00:00", updated_at=f"{day} 21:00:00"))
     first = m.retrieve("我的段位是怎么变的")[0].content
     assert all(v in first for v in ("黄金二", "铂金五", "铂金二", "钻石四"))
-    assert m.retrieve("我现在什么段位")[0].content.startswith("现在的段位：钻石四")
+    assert m.retrieve("我现在什么段位")[0].content == "玩家上了钻石四"   # a real memory when it is unambiguous
+    m.store.put(MemoryRecord(content="玩家从钻石四掉回铂金一了", created_at="2026-09-01 21:00:00",
+                             updated_at="2026-09-01 21:00:00"))
+    assert m.retrieve("我现在什么段位")[0].content.startswith("现在的段位：铂金一")
 
 
 def test_main_hero_changes_are_tracked(tmp_path):

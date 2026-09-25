@@ -336,6 +336,7 @@ READ_VARIANTS = {
     "current-latest": {"current_latest": True},
     "rule-promises": {"rule_promises": True, "rule_promises_after_load": True},
     "trajectory-summary": {"trajectory_summary": True},
+    "p5b-read": {"rule_promises": False, "trajectory_summary": False},
     "promises+trajectory": {"rule_promises": True, "rule_promises_after_load": True, "trajectory_summary": True},
     "concept-fallback": {"concept_fallback": True},
     "cover+fallback": {"concept_fallback": True, "retrieval_config_kw": {"concept_cover": True}},

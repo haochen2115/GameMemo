@@ -65,7 +65,8 @@ def test_trajectory_recall_collapses_repeated_values(tmp_path):
     from datetime import datetime
     from gamememo.personal import PersonalMemory
 
-    mem = PersonalMemory("p", storage_dir=str(tmp_path), clock=lambda: datetime(2026, 9, 1))
+    mem = PersonalMemory("p", storage_dir=str(tmp_path), clock=lambda: datetime(2026, 9, 1),
+                         trajectory_summary=False)  # one memory per state
     chain = [rec("玩家段位是白银一", "2026-02-01"), rec("玩家段位是黄金三", "2026-02-25"),
              rec("玩家段位是铂金", "2026-05-06"), rec("玩家的段位是铂金", "2026-08-02")]
     for old, new in zip(chain, chain[1:]):
