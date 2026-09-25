@@ -83,7 +83,7 @@ def test_e2e_judge_accepts_iso_dates_for_chinese_keys():
     assert judge({"type": "temporal", "answer_any": ["2026-07"]}, ["玩家升到铂金（2026-07-05）"])[0] == 1.0
 
 
-# SHA-256 of each dataset's test players as sealed (e2e_v1: c58c35a, e2e_v2: eb8add4, e2e_v3: b15eccc, e2e_v4: 995e09d, e2e_v5: ddee1cd, e2e_v6: c259842, e2e_v7: e212511, e2e_v8: see the commit adding it).
+# SHA-256 of each dataset's test players as sealed (e2e_v1: c58c35a, e2e_v2: eb8add4, e2e_v3: b15eccc, e2e_v4: 995e09d, e2e_v5: ddee1cd, e2e_v6: c259842, e2e_v7: e212511, e2e_v8: b9cd79b).
 SEALED_TEST_SHA256 = {
     "e2e_v1.json": "a841901abee86647f7454dce0cfeb23daaaaa777478e06f8f3a835ac54a583fa",
     "e2e_v8.json": "0d3b44f29b2114d0cf3d15c7ef1294360486849f5d47128fce28022e94e5ca5d",

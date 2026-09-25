@@ -177,7 +177,7 @@ class PersonalMemory:
                  safe_updates: bool = True,
                  subject_recall: bool = True,
                  interleave_fallback: bool = True,
-                 current_latest: bool = False):
+                 current_latest: bool = True):
         """
         write_mode: "ops" = extract facts, then the LLM decides
             ADD/UPDATE/DELETE/NOOP against related memories; "slots" = facts

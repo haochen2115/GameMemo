@@ -52,7 +52,7 @@ def test_can_be_turned_off(tmp_path):
 
 
 def test_current_question_keeps_the_newest_value_per_concept(tmp_path):
-    m = make(tmp_path, ("玩家妹在湛江读高三", ["湛江"]), ("玩家妹妹在海口上大学", ["海口"]), current_latest=True)
+    m = make(tmp_path, ("玩家妹在湛江读高三", ["湛江"]), ("玩家妹妹在海口上大学", ["海口"]))
     m.store.records[m.store.active()[0].id].created_at = "2026-02-16 21:00:00"
     m.store.records[m.store.active()[1].id].created_at = "2026-09-17 21:00:00"
     got = [r.content for r in m.retrieve("我妹现在在哪个城市")]
