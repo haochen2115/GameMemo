@@ -82,6 +82,7 @@ test 集的两位玩家在提交 `e2d9bce` 中封存，那时还没有任何系�
 | 2026-09-24 | **v2-hybrid** | retrieval_v2 | **0.892** | `research/personal-memory-foundation` |
 | 2026-09-24 | **P1**（检索持平 0.892；e2e_v2 test 0.448 → 0.759） | retrieval_v2 + e2e_v2 | 0.892 | `research/personal-memory-write-path` |
 | 2026-09-24 | **P2**（检索 0.912；e2e_v4 test 0.693 → 0.765） | retrieval_v2 + e2e_v4 | 0.912 | `research/personal-memory-consolidation` |
+| 2026-09-25 | **P3**（检索持平 0.912；e2e_v5 test 0.794 → 0.825） | retrieval_v2 + e2e_v5 | 0.912 | `research/personal-memory-facts` |
 
 ## 端到端评测：e2e（写入 + 检索）
 
@@ -100,6 +101,7 @@ test 集的两位玩家在提交 `e2d9bce` 中封存，那时还没有任何系�
 | `e2e_v2` | e_marks、e_jungle | e_mid、e_support（`eb8add4`） | 以上四类 + episodic / trajectory / promise |
 | `e2e_v3` | v3_archer、v3_tank | v3_mage、v3_jungle、v3_support（`b15eccc`） | 轨迹、更新、共享谓词负例加重 |
 | `e2e_v4` | v4_mid、v4_adc | v4_jg、v4_sup、v4_top（`995e09d`） | 小段位变化、多属性开场白 |
+| `e2e_v5` | v5_d1、v5_d2 | v5_t1、v5_t2、v5_t3（`ddee1cd`） | 事实题为主（类别问法、只在 episode 里的事） |
 
 ### e2e 记录
 
@@ -114,6 +116,8 @@ test 集的两位玩家在提交 `e2d9bce` 中封存，那时还没有任何系�
 | 2026-09-24 | 巩固 + 偏好门槛 + 接地检查 | e2e_v3 test | 0.667 | 1.000 | 0.139 | **未通过**（+0.026 < +0.03；轨迹 0.278 → 0.056） |
 | 2026-09-24 | main P1 | e2e_v4 test | 0.693 | 0.956 | 0.100 | e2e_v4 基线（`bench/baseline_e2e.json`） |
 | 2026-09-24 | **P2**（按属性回忆 + 偏好门槛 + 接地检查） | e2e_v4 test | **0.765** | 0.933 | **0.000** | **通过**：+0.072（CI [−0.007, +0.157]，边缘显著）；轨迹 0.333 → 1.000；合入 main |
+| 2026-09-25 | main P2 | e2e_v5 test | 0.794 | 1.000 | 0.000 | e2e_v5 基线（`bench/baseline_e2e.json`） |
+| 2026-09-25 | **P3**（概念标签 + 情景兜底） | e2e_v5 test | **0.825** | 1.000 | 0.000 | **通过**：+0.032（按题聚类 CI [0.000, +0.087]，4 胜 0 负，边缘）；事实 0.635 → 0.698；合入 main |
 
 P1 在 e2e_v2 test 上分题型的结果（main → P1）：情景 0.067 → 1.000，承诺 0.000 → 0.667，时间 0.500 → 1.000，更新 0.333 → 0.778，事实 0.833 → 0.792，轨迹 0.000 → 0.167，负例 0.667 → 0.667。
 

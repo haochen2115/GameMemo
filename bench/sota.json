@@ -1,6 +1,6 @@
 {
-  "system": "v2-hybrid",
-  "ref": "research/personal-memory-foundation -> main",
+  "system": "memory-default",
+  "ref": "research/personal-memory-facts -> main (P3)",
   "dataset": "bench/data/retrieval_v2.json",
   "split": "test",
   "primary": "MemScore@3",
@@ -11,9 +11,10 @@
     "Abstain": 0.05
   },
   "metrics": {
-    "MemScore@3": 0.8922,
-    "Recall@3": 0.9028,
-    "MRR": 0.8056,
-    "Abstain": 0.8667
-  }
+    "MemScore@3": 0.9118,
+    "Recall@3": 0.9167,
+    "MRR": 0.8218,
+    "Abstain": 0.9
+  },
+  "hold_tol": 0.02
 }

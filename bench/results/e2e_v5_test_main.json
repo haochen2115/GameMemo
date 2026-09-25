@@ -1,0 +1,5187 @@
+{
+ "dataset": "bench/data/e2e_v5.json",
+ "split": "test",
+ "model": "qwen2.5:3b",
+ "seeds": "0,1,2",
+ "code": "main @ 085c546",
+ "results": {
+  "p2": {
+   "E2EScore": 0.7937,
+   "Answer@3": 0.7111,
+   "StaleRate": 0.0,
+   "Abstain": 1.0,
+   "by_type": {
+    "fact": 0.6349,
+    "negative": 1.0,
+    "promise": 1.0,
+    "trajectory": 0.6667,
+    "update": 1.0
+   },
+   "n": 126,
+   "minutes": 33.3,
+   "ingest_errors": [],
+   "rows": [
+    {
+     "id": "v5_t1_q01",
+     "player": "v5_t1",
+     "type": "fact",
+     "query": "我是做什么工作的",
+     "answer_any": [
+      "消防"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t1_q02",
+     "player": "v5_t1",
+     "type": "fact",
+     "query": "我在哪个城市",
+     "answer_any": [
+      "重庆"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t1_q03",
+     "player": "v5_t1",
+     "type": "fact",
+     "query": "我主玩什么位置",
+     "answer_any": [
+      "坦克"
+     ],
+     "evidence": [
+      "玩家段位是钻石（记于2026-09-20）",
+      "玩家是消防员（记于2026-04-03）",
+      "玩家主玩坦克（记于2026-04-03）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t1_q04",
+     "player": "v5_t1",
+     "type": "fact",
+     "query": "我女朋友做什么的",
+     "answer_any": [
+      "幼儿园"
+     ],
+     "evidence": [
+      "玩家准备和女朋友去成都玩（2026-09-20）",
+      "玩家女朋友是幼儿园老师（2026-05-10）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t1_q05",
+     "player": "v5_t1",
+     "type": "fact",
+     "query": "我受过什么伤",
+     "answer_any": [
+      "韧带",
+      "膝盖"
+     ],
+     "evidence": [
+      "玩家膝盖韧带拉伤了（记于2026-06-18）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t1_q06",
+     "player": "v5_t1",
+     "type": "fact",
+     "query": "我的狗叫什么",
+     "answer_any": [
+      "旺财"
+     ],
+     "evidence": [
+      "玩家有宠物柯基狗名字叫旺财（记于2026-07-25）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t1_q07",
+     "player": "v5_t1",
+     "type": "fact",
+     "query": "我国庆打算去哪",
+     "answer_any": [
+      "成都"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t1_q08",
+     "player": "v5_t1",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "钻石"
+     ],
+     "evidence": [
+      "玩家段位是钻石（记于2026-09-20）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t1_q09",
+     "player": "v5_t1",
+     "type": "trajectory",
+     "query": "我的段位是怎么变的",
+     "answer_any": [
+      "铂金",
+      "铂金一",
+      "钻石"
+     ],
+     "evidence": [
+      "玩家段位黄金三（记于2026-04-03；已过时，2026-05-10被新信息取代）",
+      "玩家段位是铂金（记于2026-05-10；已过时，2026-09-20被新信息取代）",
+      "玩家段位是钻石（记于2026-09-20）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t1_q10",
+     "player": "v5_t1",
+     "type": "promise",
+     "query": "你答应过帮我整理什么",
+     "answer_any": [
+      "出装"
+     ],
+     "evidence": [
+      "助手答应下次帮你整理廉颇的出装。（记于2026-06-18）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t1_q11",
+     "player": "v5_t1",
+     "type": "negative",
+     "query": "我喜欢什么颜色",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t1_q12",
+     "player": "v5_t1",
+     "type": "negative",
+     "query": "我最喜欢的球星是谁",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t1_q13",
+     "player": "v5_t1",
+     "type": "negative",
+     "query": "我会做饭吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t1_q14",
+     "player": "v5_t1",
+     "type": "negative",
+     "query": "我的生日是哪天",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t2_q01",
+     "player": "v5_t2",
+     "type": "fact",
+     "query": "我是做什么的",
+     "answer_any": [
+      "牙医"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t2_q02",
+     "player": "v5_t2",
+     "type": "fact",
+     "query": "我在哪个城市",
+     "answer_any": [
+      "厦门"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t2_q03",
+     "player": "v5_t2",
+     "type": "fact",
+     "query": "我主玩什么位置",
+     "answer_any": [
+      "法师"
+     ],
+     "evidence": [
+      "玩家段位星耀一级（记于2026-09-19）",
+      "玩家上周喜欢周末早上打排位（记于2026-08-16）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t2_q04",
+     "player": "v5_t2",
+     "type": "fact",
+     "query": "我儿子读几年级",
+     "answer_any": [
+      "初二"
+     ],
+     "evidence": [
+      "玩家的儿子在上初二（记于2026-04-22）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t2_q05",
+     "player": "v5_t2",
+     "type": "fact",
+     "query": "我身体有什么问题",
+     "answer_any": [
+      "低血糖"
+     ],
+     "evidence": [
+      "玩家有低血糖（记于2026-05-30）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t2_q06",
+     "player": "v5_t2",
+     "type": "fact",
+     "query": "我老婆做什么工作",
+     "answer_any": [
+      "银行"
+     ],
+     "evidence": [
+      "玩家老婆是银行柜员（记于2026-07-08）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t2_q07",
+     "player": "v5_t2",
+     "type": "fact",
+     "query": "我下个月要去哪开会",
+     "answer_any": [
+      "上海"
+     ],
+     "evidence": [
+      "玩家计划下个月去上海参加口腔医学会议（2026-09-19）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t2_q08",
+     "player": "v5_t2",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "星耀一"
+     ],
+     "evidence": [
+      "玩家段位星耀一级（记于2026-09-19）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t2_q09",
+     "player": "v5_t2",
+     "type": "trajectory",
+     "query": "我的段位是怎么一步步升的",
+     "answer_any": [
+      "星耀五",
+      "星耀三",
+      "星耀一"
+     ],
+     "evidence": [
+      "玩家段位星耀五（记于2026-04-22；已过时，2026-07-08被新信息取代）",
+      "玩家段位星耀三（记于2026-07-08；已过时，2026-09-19被新信息取代）",
+      "玩家段位星耀一级（记于2026-09-19）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t2_q10",
+     "player": "v5_t2",
+     "type": "promise",
+     "query": "你答应过提醒我什么",
+     "answer_any": [
+      "吃点东西",
+      "三局"
+     ],
+     "evidence": [
+      "助手答应每天提醒你每打三局吃点东西。（记于2026-05-30）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t2_q11",
+     "player": "v5_t2",
+     "type": "negative",
+     "query": "我喜欢什么花",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t2_q12",
+     "player": "v5_t2",
+     "type": "negative",
+     "query": "我最喜欢的电视剧是什么",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t2_q13",
+     "player": "v5_t2",
+     "type": "negative",
+     "query": "我会开车吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t2_q14",
+     "player": "v5_t2",
+     "type": "negative",
+     "query": "我养宠物吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t3_q01",
+     "player": "v5_t3",
+     "type": "fact",
+     "query": "我读什么专业",
+     "answer_any": [
+      "土木"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t3_q02",
+     "player": "v5_t3",
+     "type": "fact",
+     "query": "我在哪个城市上学",
+     "answer_any": [
+      "哈尔滨"
+     ],
+     "evidence": [
+      "玩家妹妹今年高考考上了武汉大学（记于2026-09-15）",
+      "玩家妹妹今年高考考上了武汉大学（记于2026-07-30）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t3_q03",
+     "player": "v5_t3",
+     "type": "fact",
+     "query": "我主玩什么位置",
+     "answer_any": [
+      "打野"
+     ],
+     "evidence": [
+      "玩家当上了班长（记于2026-09-15）",
+      "玩家最近在练曜（2026-04-25）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t3_q04",
+     "player": "v5_t3",
+     "type": "fact",
+     "query": "我参加了什么校队",
+     "answer_any": [
+      "篮球"
+     ],
+     "evidence": [
+      "玩家妹妹今年高考考上了武汉大学（记于2026-09-15）",
+      "玩家当上了班长（记于2026-09-15）",
+      "玩家妹妹今年高考考上了武汉大学（记于2026-07-30）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t3_q05",
+     "player": "v5_t3",
+     "type": "fact",
+     "query": "我眼睛怎么样",
+     "answer_any": [
+      "近视"
+     ],
+     "evidence": [
+      "玩家近视六百度（记于2026-04-25）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t3_q06",
+     "player": "v5_t3",
+     "type": "fact",
+     "query": "我妹妹考上了哪",
+     "answer_any": [
+      "武汉大学"
+     ],
+     "evidence": [
+      "玩家妹妹今年高考考上了武汉大学（记于2026-09-15）",
+      "玩家妹妹今年高考考上了武汉大学（记于2026-07-30）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t3_q07",
+     "player": "v5_t3",
+     "type": "fact",
+     "query": "我在班里担任什么",
+     "answer_any": [
+      "班长"
+     ],
+     "evidence": [
+      "玩家当上了班长（记于2026-09-15）",
+      "玩家暑假要去工地实习（记于2026-06-12）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t3_q08",
+     "player": "v5_t3",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "星耀"
+     ],
+     "evidence": [
+      "（2026-09-15 的聊天）玩家宣布自己在游戏中的段位从普通晋升为星耀，并且成为了班级的班长。"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t3_q09",
+     "player": "v5_t3",
+     "type": "trajectory",
+     "query": "我的段位是怎么变的",
+     "answer_any": [
+      "钻石四",
+      "钻石一",
+      "星耀"
+     ],
+     "evidence": [
+      "玩家是大二学生，主玩打野，常用赵云，玩家段位钻石四，玩家是学校篮球队的（记于2026-03-18；已过时，2026-06-12被新信息取代）",
+      "玩家段位是钻石一段位（记于2026-06-12；已过时，2026-09-15被新信息取代）",
+      "（2026-09-15 的聊天）玩家宣布自己在游戏中的段位从普通晋升为星耀，并且成为了班级的班长。"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t3_q10",
+     "player": "v5_t3",
+     "type": "promise",
+     "query": "你答应过帮我看什么",
+     "answer_any": [
+      "打野节奏",
+      "节奏"
+     ],
+     "evidence": [
+      "助手答应下次我帮你看看曜的打野节奏。（记于2026-04-25）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t3_q11",
+     "player": "v5_t3",
+     "type": "negative",
+     "query": "我喜欢什么动物",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t3_q12",
+     "player": "v5_t3",
+     "type": "negative",
+     "query": "我最喜欢的明星是谁",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t3_q13",
+     "player": "v5_t3",
+     "type": "negative",
+     "query": "我会画画吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t3_q14",
+     "player": "v5_t3",
+     "type": "negative",
+     "query": "我有女朋友吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 0
+    },
+    {
+     "id": "v5_t1_q01",
+     "player": "v5_t1",
+     "type": "fact",
+     "query": "我是做什么工作的",
+     "answer_any": [
+      "消防"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t1_q02",
+     "player": "v5_t1",
+     "type": "fact",
+     "query": "我在哪个城市",
+     "answer_any": [
+      "重庆"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t1_q03",
+     "player": "v5_t1",
+     "type": "fact",
+     "query": "我主玩什么位置",
+     "answer_any": [
+      "坦克"
+     ],
+     "evidence": [
+      "玩家段位是钻石（记于2026-09-20）",
+      "玩家是消防员（记于2026-04-03）",
+      "玩家主玩坦克（记于2026-04-03）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t1_q04",
+     "player": "v5_t1",
+     "type": "fact",
+     "query": "我女朋友做什么的",
+     "answer_any": [
+      "幼儿园"
+     ],
+     "evidence": [
+      "玩家准备和女朋友去成都玩（2026-09-20）",
+      "玩家女朋友是幼儿园老师（记于2026-05-10）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t1_q05",
+     "player": "v5_t1",
+     "type": "fact",
+     "query": "我受过什么伤",
+     "answer_any": [
+      "韧带",
+      "膝盖"
+     ],
+     "evidence": [
+      "玩家膝盖韧带拉伤了（记于2026-06-18）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t1_q06",
+     "player": "v5_t1",
+     "type": "fact",
+     "query": "我的狗叫什么",
+     "answer_any": [
+      "旺财"
+     ],
+     "evidence": [
+      "玩家有宠物柯基狗，名字叫旺财（2026-07-25）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t1_q07",
+     "player": "v5_t1",
+     "type": "fact",
+     "query": "我国庆打算去哪",
+     "answer_any": [
+      "成都"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t1_q08",
+     "player": "v5_t1",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "钻石"
+     ],
+     "evidence": [
+      "玩家段位是钻石（记于2026-09-20）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t1_q09",
+     "player": "v5_t1",
+     "type": "trajectory",
+     "query": "我的段位是怎么变的",
+     "answer_any": [
+      "铂金",
+      "铂金一",
+      "钻石"
+     ],
+     "evidence": [
+      "玩家段位黄金三（记于2026-04-03；已过时，2026-05-10被新信息取代）",
+      "玩家段位是铂金（记于2026-05-10；已过时，2026-09-20被新信息取代）",
+      "玩家段位是钻石（记于2026-09-20）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t1_q10",
+     "player": "v5_t1",
+     "type": "promise",
+     "query": "你答应过帮我整理什么",
+     "answer_any": [
+      "出装"
+     ],
+     "evidence": [
+      "助手答应下次帮你整理廉颇的出装。（记于2026-06-18）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t1_q11",
+     "player": "v5_t1",
+     "type": "negative",
+     "query": "我喜欢什么颜色",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t1_q12",
+     "player": "v5_t1",
+     "type": "negative",
+     "query": "我最喜欢的球星是谁",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t1_q13",
+     "player": "v5_t1",
+     "type": "negative",
+     "query": "我会做饭吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t1_q14",
+     "player": "v5_t1",
+     "type": "negative",
+     "query": "我的生日是哪天",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t2_q01",
+     "player": "v5_t2",
+     "type": "fact",
+     "query": "我是做什么的",
+     "answer_any": [
+      "牙医"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t2_q02",
+     "player": "v5_t2",
+     "type": "fact",
+     "query": "我在哪个城市",
+     "answer_any": [
+      "厦门"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t2_q03",
+     "player": "v5_t2",
+     "type": "fact",
+     "query": "我主玩什么位置",
+     "answer_any": [
+      "法师"
+     ],
+     "evidence": [
+      "玩家段位星耀一（记于2026-09-19）",
+      "玩家上周喜欢周末早上打排位（记于2026-08-16）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t2_q04",
+     "player": "v5_t2",
+     "type": "fact",
+     "query": "我儿子读几年级",
+     "answer_any": [
+      "初二"
+     ],
+     "evidence": [
+      "玩家的儿子在上初二（记于2026-04-22）",
+      "玩家的儿子在上初二（记于2026-05-30）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t2_q05",
+     "player": "v5_t2",
+     "type": "fact",
+     "query": "我身体有什么问题",
+     "answer_any": [
+      "低血糖"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t2_q06",
+     "player": "v5_t2",
+     "type": "fact",
+     "query": "我老婆做什么工作",
+     "answer_any": [
+      "银行"
+     ],
+     "evidence": [
+      "玩家老婆是银行柜员（记于2026-07-08）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t2_q07",
+     "player": "v5_t2",
+     "type": "fact",
+     "query": "我下个月要去哪开会",
+     "answer_any": [
+      "上海"
+     ],
+     "evidence": [
+      "玩家下个月要去上海参加口腔医学会议（2026-09-19）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t2_q08",
+     "player": "v5_t2",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "星耀一"
+     ],
+     "evidence": [
+      "玩家段位星耀一（记于2026-09-19）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t2_q09",
+     "player": "v5_t2",
+     "type": "trajectory",
+     "query": "我的段位是怎么一步步升的",
+     "answer_any": [
+      "星耀五",
+      "星耀三",
+      "星耀一"
+     ],
+     "evidence": [
+      "玩家段位星耀五（记于2026-04-22；已过时，2026-07-08被新信息取代）",
+      "玩家段位星耀三（记于2026-07-08；已过时，2026-09-19被新信息取代）",
+      "玩家段位星耀一（记于2026-09-19）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t2_q10",
+     "player": "v5_t2",
+     "type": "promise",
+     "query": "你答应过提醒我什么",
+     "answer_any": [
+      "吃点东西",
+      "三局"
+     ],
+     "evidence": [
+      "助手答应每天提醒你每打三局吃点东西（记于2026-05-30）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t2_q11",
+     "player": "v5_t2",
+     "type": "negative",
+     "query": "我喜欢什么花",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t2_q12",
+     "player": "v5_t2",
+     "type": "negative",
+     "query": "我最喜欢的电视剧是什么",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t2_q13",
+     "player": "v5_t2",
+     "type": "negative",
+     "query": "我会开车吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t2_q14",
+     "player": "v5_t2",
+     "type": "negative",
+     "query": "我养宠物吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t3_q01",
+     "player": "v5_t3",
+     "type": "fact",
+     "query": "我读什么专业",
+     "answer_any": [
+      "土木"
+     ],
+     "evidence": [
+      "玩家学习土木工程（记于2026-02-10）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t3_q02",
+     "player": "v5_t3",
+     "type": "fact",
+     "query": "我在哪个城市上学",
+     "answer_any": [
+      "哈尔滨"
+     ],
+     "evidence": [
+      "玩家在哈尔滨读书（记于2026-02-10）",
+      "玩家妹妹今年高考考上了武汉大学（记于2026-07-30）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t3_q03",
+     "player": "v5_t3",
+     "type": "fact",
+     "query": "我主玩什么位置",
+     "answer_any": [
+      "打野"
+     ],
+     "evidence": [
+      "玩家主玩打野位置（记于2026-02-10）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t3_q04",
+     "player": "v5_t3",
+     "type": "fact",
+     "query": "我参加了什么校队",
+     "answer_any": [
+      "篮球"
+     ],
+     "evidence": [
+      "玩家是学校篮球队的（记于2026-03-18）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t3_q05",
+     "player": "v5_t3",
+     "type": "fact",
+     "query": "我眼睛怎么样",
+     "answer_any": [
+      "近视"
+     ],
+     "evidence": [
+      "玩家近视六百度（记于2026-04-25）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t3_q06",
+     "player": "v5_t3",
+     "type": "fact",
+     "query": "我妹妹考上了哪",
+     "answer_any": [
+      "武汉大学"
+     ],
+     "evidence": [
+      "玩家妹妹今年高考考上了武汉大学（记于2026-07-30）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t3_q07",
+     "player": "v5_t3",
+     "type": "fact",
+     "query": "我在班里担任什么",
+     "answer_any": [
+      "班长"
+     ],
+     "evidence": [
+      "玩家是大二学生，当上了班长（记于2026-09-15）",
+      "玩家暑假要去工地实习（2026-06-12）",
+      "玩家最近实习很累，玩的时间少了（记于2026-07-30）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t3_q08",
+     "player": "v5_t3",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "星耀"
+     ],
+     "evidence": [
+      "玩家段位是上星耀（记于2026-09-15）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t3_q09",
+     "player": "v5_t3",
+     "type": "trajectory",
+     "query": "我的段位是怎么变的",
+     "answer_any": [
+      "钻石四",
+      "钻石一",
+      "星耀"
+     ],
+     "evidence": [
+      "玩家段位是钻石四（记于2026-03-18；已过时，2026-06-12被新信息取代）",
+      "玩家段位是钻石一级（记于2026-06-12；已过时，2026-09-15被新信息取代）",
+      "玩家段位是上星耀（记于2026-09-15）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t3_q10",
+     "player": "v5_t3",
+     "type": "promise",
+     "query": "你答应过帮我看什么",
+     "answer_any": [
+      "打野节奏",
+      "节奏"
+     ],
+     "evidence": [
+      "助手答应下次我帮你看看曜的打野节奏。（记于2026-04-25）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t3_q11",
+     "player": "v5_t3",
+     "type": "negative",
+     "query": "我喜欢什么动物",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t3_q12",
+     "player": "v5_t3",
+     "type": "negative",
+     "query": "我最喜欢的明星是谁",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t3_q13",
+     "player": "v5_t3",
+     "type": "negative",
+     "query": "我会画画吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t3_q14",
+     "player": "v5_t3",
+     "type": "negative",
+     "query": "我有女朋友吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 1
+    },
+    {
+     "id": "v5_t1_q01",
+     "player": "v5_t1",
+     "type": "fact",
+     "query": "我是做什么工作的",
+     "answer_any": [
+      "消防"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t1_q02",
+     "player": "v5_t1",
+     "type": "fact",
+     "query": "我在哪个城市",
+     "answer_any": [
+      "重庆"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t1_q03",
+     "player": "v5_t1",
+     "type": "fact",
+     "query": "我主玩什么位置",
+     "answer_any": [
+      "坦克"
+     ],
+     "evidence": [
+      "玩家段位是钻石（记于2026-09-20）",
+      "玩家是消防员（记于2026-04-03）",
+      "玩家主玩坦克（记于2026-04-03）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t1_q04",
+     "player": "v5_t1",
+     "type": "fact",
+     "query": "我女朋友做什么的",
+     "answer_any": [
+      "幼儿园"
+     ],
+     "evidence": [
+      "玩家准备和女朋友去成都玩（2026-09-20）",
+      "玩家女朋友是幼儿园老师（记于2026-05-10）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t1_q05",
+     "player": "v5_t1",
+     "type": "fact",
+     "query": "我受过什么伤",
+     "answer_any": [
+      "韧带",
+      "膝盖"
+     ],
+     "evidence": [
+      "玩家膝盖韧带拉伤了（记于2026-06-18）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t1_q06",
+     "player": "v5_t1",
+     "type": "fact",
+     "query": "我的狗叫什么",
+     "answer_any": [
+      "旺财"
+     ],
+     "evidence": [
+      "玩家有宠物柯基狗，名字叫旺财（记于2026-07-25）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t1_q07",
+     "player": "v5_t1",
+     "type": "fact",
+     "query": "我国庆打算去哪",
+     "answer_any": [
+      "成都"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t1_q08",
+     "player": "v5_t1",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "钻石"
+     ],
+     "evidence": [
+      "玩家段位是钻石（记于2026-09-20）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t1_q09",
+     "player": "v5_t1",
+     "type": "trajectory",
+     "query": "我的段位是怎么变的",
+     "answer_any": [
+      "铂金",
+      "铂金一",
+      "钻石"
+     ],
+     "evidence": [
+      "玩家段位黄金三（记于2026-04-03；已过时，2026-05-10被新信息取代）",
+      "玩家段位是铂金（记于2026-05-10；已过时，2026-09-20被新信息取代）",
+      "玩家段位是钻石（记于2026-09-20）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t1_q10",
+     "player": "v5_t1",
+     "type": "promise",
+     "query": "你答应过帮我整理什么",
+     "answer_any": [
+      "出装"
+     ],
+     "evidence": [
+      "助手答应下次帮你整理廉颇的出装。（记于2026-06-18）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t1_q11",
+     "player": "v5_t1",
+     "type": "negative",
+     "query": "我喜欢什么颜色",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t1_q12",
+     "player": "v5_t1",
+     "type": "negative",
+     "query": "我最喜欢的球星是谁",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t1_q13",
+     "player": "v5_t1",
+     "type": "negative",
+     "query": "我会做饭吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t1_q14",
+     "player": "v5_t1",
+     "type": "negative",
+     "query": "我的生日是哪天",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t2_q01",
+     "player": "v5_t2",
+     "type": "fact",
+     "query": "我是做什么的",
+     "answer_any": [
+      "牙医"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t2_q02",
+     "player": "v5_t2",
+     "type": "fact",
+     "query": "我在哪个城市",
+     "answer_any": [
+      "厦门"
+     ],
+     "evidence": [],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t2_q03",
+     "player": "v5_t2",
+     "type": "fact",
+     "query": "我主玩什么位置",
+     "answer_any": [
+      "法师"
+     ],
+     "evidence": [
+      "玩家段位是星耀一级（记于2026-09-19）",
+      "玩家上周喜欢周末早上打排位（记于2026-08-16）"
+     ],
+     "success": 0.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t2_q04",
+     "player": "v5_t2",
+     "type": "fact",
+     "query": "我儿子读几年级",
+     "answer_any": [
+      "初二"
+     ],
+     "evidence": [
+      "玩家的儿子在上初二（记于2026-04-22）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t2_q05",
+     "player": "v5_t2",
+     "type": "fact",
+     "query": "我身体有什么问题",
+     "answer_any": [
+      "低血糖"
+     ],
+     "evidence": [
+      "玩家有低血糖（记于2026-05-30）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t2_q06",
+     "player": "v5_t2",
+     "type": "fact",
+     "query": "我老婆做什么工作",
+     "answer_any": [
+      "银行"
+     ],
+     "evidence": [
+      "玩家老婆是银行柜员（记于2026-07-08）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t2_q07",
+     "player": "v5_t2",
+     "type": "fact",
+     "query": "我下个月要去哪开会",
+     "answer_any": [
+      "上海"
+     ],
+     "evidence": [
+      "玩家计划下个月去上海参加口腔医学会议（2026-09-19）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t2_q08",
+     "player": "v5_t2",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "星耀一"
+     ],
+     "evidence": [
+      "玩家段位是星耀一级（记于2026-09-19）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t2_q09",
+     "player": "v5_t2",
+     "type": "trajectory",
+     "query": "我的段位是怎么一步步升的",
+     "answer_any": [
+      "星耀五",
+      "星耀三",
+      "星耀一"
+     ],
+     "evidence": [
+      "玩家段位星耀五（记于2026-04-22；已过时，2026-07-08被新信息取代）",
+      "玩家段位星耀三（记于2026-07-08；已过时，2026-09-19被新信息取代）",
+      "玩家段位是星耀一级（记于2026-09-19）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t2_q10",
+     "player": "v5_t2",
+     "type": "promise",
+     "query": "你答应过提醒我什么",
+     "answer_any": [
+      "吃点东西",
+      "三局"
+     ],
+     "evidence": [
+      "助手答应每天提醒你每打三局吃点东西。（记于2026-05-30）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t2_q11",
+     "player": "v5_t2",
+     "type": "negative",
+     "query": "我喜欢什么花",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t2_q12",
+     "player": "v5_t2",
+     "type": "negative",
+     "query": "我最喜欢的电视剧是什么",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t2_q13",
+     "player": "v5_t2",
+     "type": "negative",
+     "query": "我会开车吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t2_q14",
+     "player": "v5_t2",
+     "type": "negative",
+     "query": "我养宠物吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t3_q01",
+     "player": "v5_t3",
+     "type": "fact",
+     "query": "我读什么专业",
+     "answer_any": [
+      "土木"
+     ],
+     "evidence": [
+      "玩家学习土木工程（记于2026-02-10）",
+      "玩家暑假要去工地实习（2026-06-12）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t3_q02",
+     "player": "v5_t3",
+     "type": "fact",
+     "query": "我在哪个城市上学",
+     "answer_any": [
+      "哈尔滨"
+     ],
+     "evidence": [
+      "玩家妹妹今年高考考上了武汉大学（记于2026-07-30）",
+      "玩家在哈尔滨读书（记于2026-02-10）",
+      "玩家暑假要去工地实习（2026-06-12）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t3_q03",
+     "player": "v5_t3",
+     "type": "fact",
+     "query": "我主玩什么位置",
+     "answer_any": [
+      "打野"
+     ],
+     "evidence": [
+      "玩家主玩打野位置（记于2026-02-10）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t3_q04",
+     "player": "v5_t3",
+     "type": "fact",
+     "query": "我参加了什么校队",
+     "answer_any": [
+      "篮球"
+     ],
+     "evidence": [
+      "玩家是学校篮球队的（记于2026-03-18）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t3_q05",
+     "player": "v5_t3",
+     "type": "fact",
+     "query": "我眼睛怎么样",
+     "answer_any": [
+      "近视"
+     ],
+     "evidence": [
+      "玩家近视六百度（记于2026-04-25）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t3_q06",
+     "player": "v5_t3",
+     "type": "fact",
+     "query": "我妹妹考上了哪",
+     "answer_any": [
+      "武汉大学"
+     ],
+     "evidence": [
+      "玩家妹妹今年高考考上了武汉大学（记于2026-07-30）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t3_q07",
+     "player": "v5_t3",
+     "type": "fact",
+     "query": "我在班里担任什么",
+     "answer_any": [
+      "班长"
+     ],
+     "evidence": [
+      "玩家当上了班长（记于2026-09-15）",
+      "玩家最近实习很累，玩的时间少了（记于2026-07-30）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t3_q08",
+     "player": "v5_t3",
+     "type": "update",
+     "query": "我现在什么段位",
+     "answer_any": [
+      "星耀"
+     ],
+     "evidence": [
+      "玩家上星耀了（记于2026-09-15）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t3_q09",
+     "player": "v5_t3",
+     "type": "trajectory",
+     "query": "我的段位是怎么变的",
+     "answer_any": [
+      "钻石四",
+      "钻石一",
+      "星耀"
+     ],
+     "evidence": [
+      "玩家段位是钻石四（记于2026-03-18；已过时，2026-06-12被新信息取代）",
+      "玩家段位是钻石一（记于2026-06-12）",
+      "玩家上星耀了（记于2026-09-15）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t3_q10",
+     "player": "v5_t3",
+     "type": "promise",
+     "query": "你答应过帮我看什么",
+     "answer_any": [
+      "打野节奏",
+      "节奏"
+     ],
+     "evidence": [
+      "助手答应下次我帮你看看曜的打野节奏。（记于2026-04-25）"
+     ],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t3_q11",
+     "player": "v5_t3",
+     "type": "negative",
+     "query": "我喜欢什么动物",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t3_q12",
+     "player": "v5_t3",
+     "type": "negative",
+     "query": "我最喜欢的明星是谁",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t3_q13",
+     "player": "v5_t3",
+     "type": "negative",
+     "query": "我会画画吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    },
+    {
+     "id": "v5_t3_q14",
+     "player": "v5_t3",
+     "type": "negative",
+     "query": "我有女朋友吗",
+     "answer_any": [],
+     "evidence": [],
+     "success": 1.0,
+     "stale": false,
+     "seed": 2
+    }
+   ],
+   "memories": {
+    "v5_t1@0": [
+     {
+      "content": "玩家是消防员",
+      "keywords": [
+       "消防员"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_27f54fae",
+      "created_at": "2026-04-03 21:00:00",
+      "updated_at": "2026-04-03 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家主玩坦克",
+      "keywords": [
+       "坦克"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_d3d1d456",
+      "created_at": "2026-04-03 21:00:00",
+      "updated_at": "2026-04-03 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最常用张飞",
+      "keywords": [
+       "张飞"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_43cb1612",
+      "created_at": "2026-04-03 21:00:00",
+      "updated_at": "2026-04-03 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位黄金三",
+      "keywords": [
+       "黄金三"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_35e95843",
+      "created_at": "2026-04-03 21:00:00",
+      "updated_at": "2026-05-10 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-05-10 21:00:00",
+      "superseded_by": "mem_549d1b3a",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家表示他是消防员，来自重庆，并且最常用张飞作为坦克英雄，当前段位为黄金三。",
+      "keywords": [
+       "消防员",
+       "重庆",
+       "张飞",
+       "黄金三"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_75ba895d",
+      "created_at": "2026-04-03 21:00:00",
+      "updated_at": "2026-04-03 21:00:00",
+      "event_time": "2026-04-03",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是铂金",
+      "keywords": [
+       "铂金",
+       "黄金三"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_549d1b3a",
+      "created_at": "2026-05-10 21:00:00",
+      "updated_at": "2026-09-20 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-09-20 21:00:00",
+      "superseded_by": "mem_2ab07faa",
+      "supersedes": "mem_35e95843",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家女朋友是幼儿园老师",
+      "keywords": [
+       "幼儿园老师"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_eb91cb80",
+      "created_at": "2026-05-10 21:00:00",
+      "updated_at": "2026-05-10 21:00:00",
+      "event_time": "2026-05-10",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家告诉助手他女朋友是幼儿园老师，并且他的游戏段位已经升到了铂金。",
+      "keywords": [
+       "女朋友是幼儿园老师",
+       "升铂金"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_a4532f98",
+      "created_at": "2026-05-10 21:00:00",
+      "updated_at": "2026-05-10 21:00:00",
+      "event_time": "2026-05-10",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家膝盖韧带拉伤了",
+      "keywords": [
+       "膝盖韧带拉伤"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_0405feb5",
+      "created_at": "2026-06-18 21:00:00",
+      "updated_at": "2026-06-18 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家因为膝盖韧带拉伤正在休养，并且在练习廉颇",
+      "keywords": [
+       "膝盖韧带拉伤",
+       "休养",
+       "练习廉颇"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_f7a6e9d1",
+      "created_at": "2026-06-18 21:00:00",
+      "updated_at": "2026-06-18 21:00:00",
+      "event_time": "2026-06-18",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "助手答应下次帮你整理廉颇的出装。",
+      "keywords": [],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "promise",
+      "id": "mem_acc12814",
+      "created_at": "2026-06-18 21:00:00",
+      "updated_at": "2026-06-18 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家有宠物柯基狗名字叫旺财",
+      "keywords": [
+       "柯基狗",
+       "旺财"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_c4385457",
+      "created_at": "2026-07-25 21:00:00",
+      "updated_at": "2026-07-25 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到自己的宠物狗叫旺财，是一只柯基，并且在游戏中的铂金段位已经达到了一星",
+      "keywords": [
+       "旺财",
+       "铂金一星"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_521cf110",
+      "created_at": "2026-07-25 21:00:00",
+      "updated_at": "2026-07-25 21:00:00",
+      "event_time": "2026-07-25",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家驾照考过了",
+      "keywords": [
+       "驾照"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_7ebc0692",
+      "created_at": "2026-08-30 21:00:00",
+      "updated_at": "2026-08-30 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家换成了vivo X100手机",
+      "keywords": [
+       "vivo X100"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_d8f1f803",
+      "created_at": "2026-08-30 21:00:00",
+      "updated_at": "2026-08-30 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家在2026-08-30宣布自己考过了驾照，并更换了手机为vivo X100。",
+      "keywords": [
+       "驾照",
+       "vivo X100",
+       "2026-08-30"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_21ca0b6e",
+      "created_at": "2026-08-30 21:00:00",
+      "updated_at": "2026-08-30 21:00:00",
+      "event_time": "2026-08-30",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是钻石",
+      "keywords": [
+       "钻石",
+       "铂金"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_2ab07faa",
+      "created_at": "2026-09-20 21:00:00",
+      "updated_at": "2026-09-20 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_549d1b3a",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家准备和女朋友去成都玩",
+      "keywords": [
+       "成都"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_90a7e1ba",
+      "created_at": "2026-09-20 21:00:00",
+      "updated_at": "2026-09-20 21:00:00",
+      "event_time": "2026-09-20",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家宣布自己在游戏中的段位提升到了钻石，并计划国庆节和女朋友一起去成都游玩。",
+      "keywords": [
+       "钻石",
+       "国庆",
+       "成都",
+       "女朋友"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_77319a36",
+      "created_at": "2026-09-20 21:00:00",
+      "updated_at": "2026-09-20 21:00:00",
+      "event_time": "2026-09-20",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "v5_t2@0": [
+     {
+      "content": "玩家是牙医，玩家在厦门开诊所，玩家主玩法师，玩家最喜欢西施",
+      "keywords": [
+       "牙医",
+       "厦门",
+       "牙医诊所",
+       "法师",
+       "西施"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_7403df1e",
+      "created_at": "2026-03-15 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-07-08 21:00:00",
+      "superseded_by": "mem_f1d00239",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到自己是一名牙医，在厦门开诊所，并表示自己最喜欢玩的游戏英雄是西施",
+      "keywords": [
+       "牙医",
+       "厦门",
+       "诊所",
+       "西施"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_ce6e0073",
+      "created_at": "2026-03-15 21:00:00",
+      "updated_at": "2026-03-15 21:00:00",
+      "event_time": "2026-03-15",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的儿子在上初二",
+      "keywords": [
+       "初二"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_f701fe34",
+      "created_at": "2026-04-22 21:00:00",
+      "updated_at": "2026-04-22 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位星耀五",
+      "keywords": [
+       "星耀五"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_e41bd528",
+      "created_at": "2026-04-22 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-07-08 21:00:00",
+      "superseded_by": "mem_2ede27ce",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家告知助手其段位为星耀五，并提及儿子正在上初二。",
+      "keywords": [
+       "星耀五",
+       "初二"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_49f78e29",
+      "created_at": "2026-04-22 21:00:00",
+      "updated_at": "2026-04-22 21:00:00",
+      "event_time": "2026-04-22",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近在练沈梦溪",
+      "keywords": [
+       "沈梦溪"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_e7d4a1e4",
+      "created_at": "2026-05-30 21:00:00",
+      "updated_at": "2026-05-30 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家有低血糖",
+      "keywords": [
+       "低血糖"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_0517054a",
+      "created_at": "2026-05-30 21:00:00",
+      "updated_at": "2026-05-30 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到自己因为长时间游戏出现了低血糖症状，并表示最近在练习英雄沈梦溪",
+      "keywords": [
+       "低血糖",
+       "沈梦溪"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_2f8b3834",
+      "created_at": "2026-05-30 21:00:00",
+      "updated_at": "2026-05-30 21:00:00",
+      "event_time": "2026-05-30",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "助手答应每天提醒你每打三局吃点东西。",
+      "keywords": [],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "promise",
+      "id": "mem_30e9397c",
+      "created_at": "2026-05-30 21:00:00",
+      "updated_at": "2026-05-30 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位星耀三",
+      "keywords": [
+       "星耀三"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_2ede27ce",
+      "created_at": "2026-07-08 21:00:00",
+      "updated_at": "2026-09-19 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-09-19 21:00:00",
+      "superseded_by": "mem_f8ff6a75",
+      "supersedes": "mem_e41bd528",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家老婆是银行柜员",
+      "keywords": [
+       "银行柜员"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_f1d00239",
+      "created_at": "2026-07-08 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_7403df1e",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家宣布自己在游戏中的段位提升至星耀三，并提及自己的配偶是一名银行柜员。",
+      "keywords": [
+       "星耀三",
+       "银行柜员"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_877c2c7f",
+      "created_at": "2026-07-08 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": "2026-07-08",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家上周喜欢周末早上打排位",
+      "keywords": [
+       "排位"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_79649a1a",
+      "created_at": "2026-08-16 21:00:00",
+      "updated_at": "2026-08-16 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家新招了两个助理",
+      "keywords": [
+       "助理"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_6bd80153",
+      "created_at": "2026-08-16 21:00:00",
+      "updated_at": "2026-08-16 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家在聊天中提到了他在诊所新招了两个助理，并表示自己喜欢在周末早上打排位游戏。",
+      "keywords": [
+       "诊所助理",
+       "周末排位"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_d9c5dc76",
+      "created_at": "2026-08-16 21:00:00",
+      "updated_at": "2026-08-16 21:00:00",
+      "event_time": "2026-08-16",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位星耀一级",
+      "keywords": [
+       "星耀一级"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_f8ff6a75",
+      "created_at": "2026-09-19 21:00:00",
+      "updated_at": "2026-09-19 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_2ede27ce",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家计划下个月去上海参加口腔医学会议",
+      "keywords": [
+       "上海",
+       "口腔医学会议"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_6b461630",
+      "created_at": "2026-09-19 21:00:00",
+      "updated_at": "2026-09-19 21:00:00",
+      "event_time": "2026-09-19",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家宣布自己当前的段位为星耀一，并透露下个月将前往上海参加口腔医学会议。",
+      "keywords": [
+       "星耀一",
+       "上海",
+       "口腔医学会议"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_48db641d",
+      "created_at": "2026-09-19 21:00:00",
+      "updated_at": "2026-09-19 21:00:00",
+      "event_time": "2026-09-19",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "v5_t3@0": [
+     {
+      "content": "玩家是大二学生，主玩打野，常用赵云。",
+      "keywords": [
+       "大二学生",
+       "主玩打野",
+       "赵云"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_3b4f9c2d",
+      "created_at": "2026-02-10 21:00:00",
+      "updated_at": "2026-03-18 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-03-18 21:00:00",
+      "superseded_by": "mem_e8b549ab",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家介绍了自己是大二学生，目前在哈尔滨读书，学习土木工程，并表示自己主玩打野位置，常用英雄赵云。",
+      "keywords": [
+       "大二学生",
+       "哈尔滨",
+       "土木工程",
+       "主玩打野",
+       "常用赵云"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_2961c72e",
+      "created_at": "2026-02-10 21:00:00",
+      "updated_at": "2026-02-10 21:00:00",
+      "event_time": "2026-02-10",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家是大二学生，主玩打野，常用赵云，玩家段位钻石四，玩家是学校篮球队的",
+      "keywords": [
+       "赵云",
+       "大二学生",
+       "打野",
+       "钻石四",
+       "学校篮球队"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_e8b549ab",
+      "created_at": "2026-03-18 21:00:00",
+      "updated_at": "2026-06-12 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-06-12 21:00:00",
+      "superseded_by": "mem_fa30794c",
+      "supersedes": "mem_3b4f9c2d",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到自己目前的段位是钻石四，并且告知游戏助手自己是学校篮球队的成员。",
+      "keywords": [
+       "钻石四",
+       "学校篮球队"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_8727439f",
+      "created_at": "2026-03-18 21:00:00",
+      "updated_at": "2026-03-18 21:00:00",
+      "event_time": "2026-03-18",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家近视六百度",
+      "keywords": [
+       "近视"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_8e47d01d",
+      "created_at": "2026-04-25 21:00:00",
+      "updated_at": "2026-04-25 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近在练曜",
+      "keywords": [
+       "曜"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_794c1910",
+      "created_at": "2026-04-25 21:00:00",
+      "updated_at": "2026-04-25 21:00:00",
+      "event_time": "2026-04-25",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到自己有六百度的近视问题，并表示最近在练习游戏中的曜英雄",
+      "keywords": [
+       "六百度近视",
+       "练习曜"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_7ed2cbfe",
+      "created_at": "2026-04-25 21:00:00",
+      "updated_at": "2026-04-25 21:00:00",
+      "event_time": "2026-04-25",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "助手答应下次我帮你看看曜的打野节奏。",
+      "keywords": [],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "promise",
+      "id": "mem_7a653d62",
+      "created_at": "2026-04-25 21:00:00",
+      "updated_at": "2026-04-25 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是钻石一段位",
+      "keywords": [
+       "钻石一段位"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_fa30794c",
+      "created_at": "2026-06-12 21:00:00",
+      "updated_at": "2026-09-15 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-09-15 21:00:00",
+      "superseded_by": "mem_07ec8f34",
+      "supersedes": "mem_e8b549ab",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家暑假要去工地实习",
+      "keywords": [
+       "工地实习"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_81fdba98",
+      "created_at": "2026-06-12 21:00:00",
+      "updated_at": "2026-06-12 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家宣布自己在游戏中的段位提升到了钻石一，并透露自己即将在暑假期间去工地实习。",
+      "keywords": [
+       "钻石一",
+       "暑假",
+       "工地实习"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_2b82d661",
+      "created_at": "2026-06-12 21:00:00",
+      "updated_at": "2026-06-12 21:00:00",
+      "event_time": "2026-06-12",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家妹妹今年高考考上了武汉大学",
+      "keywords": [
+       "武汉大学"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_0d12541d",
+      "created_at": "2026-07-30 21:00:00",
+      "updated_at": "2026-07-30 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到他妹妹今年高考并考上了武汉大学，同时表示自己正在实习，因此玩的时间较少。",
+      "keywords": [
+       "武汉大学",
+       "实习",
+       "高考"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_946ecd03",
+      "created_at": "2026-07-30 21:00:00",
+      "updated_at": "2026-07-30 21:00:00",
+      "event_time": "2026-07-30",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家妹妹今年高考考上了武汉大学",
+      "keywords": [
+       "武汉大学",
+       "高考"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_07ec8f34",
+      "created_at": "2026-09-15 21:00:00",
+      "updated_at": "2026-09-15 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_fa30794c",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家当上了班长",
+      "keywords": [
+       "班长"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_08a3b81f",
+      "created_at": "2026-09-15 21:00:00",
+      "updated_at": "2026-09-15 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家宣布自己在游戏中的段位从普通晋升为星耀，并且成为了班级的班长。",
+      "keywords": [
+       "星耀",
+       "班长",
+       "段位晋升"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_491c93c2",
+      "created_at": "2026-09-15 21:00:00",
+      "updated_at": "2026-09-15 21:00:00",
+      "event_time": "2026-09-15",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "v5_t1@1": [
+     {
+      "content": "玩家是消防员",
+      "keywords": [
+       "消防员"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_6cee52b0",
+      "created_at": "2026-04-03 21:00:00",
+      "updated_at": "2026-04-03 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家主玩坦克",
+      "keywords": [
+       "坦克"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_f5c21ac1",
+      "created_at": "2026-04-03 21:00:00",
+      "updated_at": "2026-04-03 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最常用张飞",
+      "keywords": [
+       "张飞"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_81137ecd",
+      "created_at": "2026-04-03 21:00:00",
+      "updated_at": "2026-04-03 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位黄金三",
+      "keywords": [
+       "黄金三"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_2df2df37",
+      "created_at": "2026-04-03 21:00:00",
+      "updated_at": "2026-05-10 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-05-10 21:00:00",
+      "superseded_by": "mem_c0f292e5",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家表示他是消防员，来自重庆，并且主要玩坦克类游戏，最常用英雄是张飞，当前段位为黄金三。",
+      "keywords": [
+       "消防员",
+       "重庆",
+       "坦克",
+       "张飞",
+       "黄金三"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_97307d3d",
+      "created_at": "2026-04-03 21:00:00",
+      "updated_at": "2026-04-03 21:00:00",
+      "event_time": "2026-04-03",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是铂金",
+      "keywords": [
+       "铂金",
+       "黄金三"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_c0f292e5",
+      "created_at": "2026-05-10 21:00:00",
+      "updated_at": "2026-09-20 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-09-20 21:00:00",
+      "superseded_by": "mem_038256e1",
+      "supersedes": "mem_2df2df37",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家女朋友是幼儿园老师",
+      "keywords": [
+       "幼儿园老师"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_53995040",
+      "created_at": "2026-05-10 21:00:00",
+      "updated_at": "2026-05-10 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家告诉助手他的女朋友是幼儿园老师，并且他的游戏段位已经升到了铂金",
+      "keywords": [
+       "女朋友是幼儿园老师",
+       "升铂金"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_e2249375",
+      "created_at": "2026-05-10 21:00:00",
+      "updated_at": "2026-05-10 21:00:00",
+      "event_time": "2026-05-10",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家膝盖韧带拉伤了",
+      "keywords": [
+       "膝盖韧带拉伤"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_0dc83d34",
+      "created_at": "2026-06-18 21:00:00",
+      "updated_at": "2026-06-18 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近在练廉颇",
+      "keywords": [
+       "廉颇"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_b23e5460",
+      "created_at": "2026-06-18 21:00:00",
+      "updated_at": "2026-06-18 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家因为膝盖韧带拉伤正在休养，并且在练习廉颇",
+      "keywords": [
+       "膝盖韧带拉伤",
+       "休养",
+       "练习廉颇"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_f31ff158",
+      "created_at": "2026-06-18 21:00:00",
+      "updated_at": "2026-06-18 21:00:00",
+      "event_time": "2026-06-18",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "助手答应下次帮你整理廉颇的出装。",
+      "keywords": [],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "promise",
+      "id": "mem_30a55497",
+      "created_at": "2026-06-18 21:00:00",
+      "updated_at": "2026-06-18 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家有宠物柯基狗，名字叫旺财",
+      "keywords": [
+       "柯基狗",
+       "旺财"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_6e6e7a38",
+      "created_at": "2026-07-25 21:00:00",
+      "updated_at": "2026-07-25 21:00:00",
+      "event_time": "2026-07-25",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到他的宠物狗叫旺财，是一只柯基，并且在游戏中的铂金段位已经达到了一星。",
+      "keywords": [
+       "旺财",
+       "铂金一",
+       "柯基"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_6007d808",
+      "created_at": "2026-07-25 21:00:00",
+      "updated_at": "2026-07-25 21:00:00",
+      "event_time": "2026-07-25",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家驾照考过了",
+      "keywords": [
+       "驾照"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_41bd33f6",
+      "created_at": "2026-08-30 21:00:00",
+      "updated_at": "2026-08-30 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家换成了vivo X100手机",
+      "keywords": [
+       "vivo X100"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_92757bb2",
+      "created_at": "2026-08-30 21:00:00",
+      "updated_at": "2026-08-30 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家在2026-08-30告知游戏助手，他已经考过了驾照，并且更换了手机为vivo X100。",
+      "keywords": [
+       "驾照",
+       "vivo X100",
+       "2026-08-30"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_43796521",
+      "created_at": "2026-08-30 21:00:00",
+      "updated_at": "2026-08-30 21:00:00",
+      "event_time": "2026-08-30",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是钻石",
+      "keywords": [
+       "钻石",
+       "铂金"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_038256e1",
+      "created_at": "2026-09-20 21:00:00",
+      "updated_at": "2026-09-20 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_c0f292e5",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家准备和女朋友去成都玩",
+      "keywords": [
+       "成都"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_2c894d50",
+      "created_at": "2026-09-20 21:00:00",
+      "updated_at": "2026-09-20 21:00:00",
+      "event_time": "2026-09-20",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家宣布自己在游戏中的段位提升到了钻石，并计划国庆节与女朋友一起去成都游玩。",
+      "keywords": [
+       "钻石",
+       "国庆",
+       "成都"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_1f370f55",
+      "created_at": "2026-09-20 21:00:00",
+      "updated_at": "2026-09-20 21:00:00",
+      "event_time": "2026-09-20",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "v5_t2@1": [
+     {
+      "content": "玩家是牙医，玩家在厦门开诊所，玩家主玩法师，玩家最喜欢西施",
+      "keywords": [
+       "牙医",
+       "厦门",
+       "牙医诊所",
+       "法师",
+       "西施"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_c6470220",
+      "created_at": "2026-03-15 21:00:00",
+      "updated_at": "2026-05-30 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-05-30 21:00:00",
+      "superseded_by": "mem_1a236335",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到自己是一名牙医，在厦门开诊所，并表示自己最喜欢的游戏英雄是西施",
+      "keywords": [
+       "牙医",
+       "厦门",
+       "诊所",
+       "西施"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_83e32aeb",
+      "created_at": "2026-03-15 21:00:00",
+      "updated_at": "2026-03-15 21:00:00",
+      "event_time": "2026-03-15",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的儿子在上初二",
+      "keywords": [
+       "初二"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_19808e99",
+      "created_at": "2026-04-22 21:00:00",
+      "updated_at": "2026-04-22 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位星耀五",
+      "keywords": [
+       "星耀五"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_ac374288",
+      "created_at": "2026-04-22 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-07-08 21:00:00",
+      "superseded_by": "mem_edb284b9",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家告知游戏助手其段位为星耀五，并提及儿子正在上初二。",
+      "keywords": [
+       "星耀五",
+       "初二"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_16b7a29c",
+      "created_at": "2026-04-22 21:00:00",
+      "updated_at": "2026-04-22 21:00:00",
+      "event_time": "2026-04-22",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近在练沈梦溪",
+      "keywords": [
+       "沈梦溪"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_aac319be",
+      "created_at": "2026-05-30 21:00:00",
+      "updated_at": "2026-05-30 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的儿子在上初二",
+      "keywords": [
+       "初二"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_1a236335",
+      "created_at": "2026-05-30 21:00:00",
+      "updated_at": "2026-05-30 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_c6470220",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到自己因为长时间游戏出现了低血糖症状，并表示最近在练习英雄沈梦溪",
+      "keywords": [
+       "低血糖",
+       "沈梦溪"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_056a7afd",
+      "created_at": "2026-05-30 21:00:00",
+      "updated_at": "2026-05-30 21:00:00",
+      "event_time": "2026-05-30",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "助手答应每天提醒你每打三局吃点东西",
+      "keywords": [],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "promise",
+      "id": "mem_ff4c7954",
+      "created_at": "2026-05-30 21:00:00",
+      "updated_at": "2026-05-30 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位星耀三",
+      "keywords": [
+       "星耀三"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_edb284b9",
+      "created_at": "2026-07-08 21:00:00",
+      "updated_at": "2026-09-19 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-09-19 21:00:00",
+      "superseded_by": "mem_0c236e34",
+      "supersedes": "mem_ac374288",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家老婆是银行柜员",
+      "keywords": [
+       "银行柜员"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_695399cc",
+      "created_at": "2026-07-08 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家宣布自己在游戏中的段位提升至星耀三，并透露自己妻子的职业是银行柜员。",
+      "keywords": [
+       "星耀三",
+       "银行柜员"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_05a78c63",
+      "created_at": "2026-07-08 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": "2026-07-08",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家上周喜欢周末早上打排位",
+      "keywords": [
+       "排位"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_db51b9a5",
+      "created_at": "2026-08-16 21:00:00",
+      "updated_at": "2026-08-16 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家新招了两个助理",
+      "keywords": [
+       "助理"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_711541e7",
+      "created_at": "2026-08-16 21:00:00",
+      "updated_at": "2026-08-16 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到今天新招了两个诊所助理，并表示喜欢在周末早上打排位游戏。",
+      "keywords": [
+       "新招助理",
+       "周末打排位"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_2d4f42f0",
+      "created_at": "2026-08-16 21:00:00",
+      "updated_at": "2026-08-16 21:00:00",
+      "event_time": "2026-08-16",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位星耀一",
+      "keywords": [
+       "星耀一"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_0c236e34",
+      "created_at": "2026-09-19 21:00:00",
+      "updated_at": "2026-09-19 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_edb284b9",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家下个月要去上海参加口腔医学会议",
+      "keywords": [
+       "上海",
+       "口腔医学会议"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_28c32b52",
+      "created_at": "2026-09-19 21:00:00",
+      "updated_at": "2026-09-19 21:00:00",
+      "event_time": "2026-09-19",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家宣布自己当前的段位为星耀一，并告知助手下个月将要去上海参加口腔医学会议。",
+      "keywords": [
+       "星耀一",
+       "上海",
+       "口腔医学会议"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_f265334f",
+      "created_at": "2026-09-19 21:00:00",
+      "updated_at": "2026-09-19 21:00:00",
+      "event_time": "2026-09-19",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "v5_t3@1": [
+     {
+      "content": "玩家是大二学生",
+      "keywords": [
+       "大二"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_45578b90",
+      "created_at": "2026-02-10 21:00:00",
+      "updated_at": "2026-09-15 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-09-15 21:00:00",
+      "superseded_by": "mem_676155bb",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家在哈尔滨读书",
+      "keywords": [
+       "哈尔滨"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_f16324b0",
+      "created_at": "2026-02-10 21:00:00",
+      "updated_at": "2026-02-10 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家学习土木工程",
+      "keywords": [
+       "土木工程"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_0bad2962",
+      "created_at": "2026-02-10 21:00:00",
+      "updated_at": "2026-02-10 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家主玩打野位置",
+      "keywords": [
+       "打野"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_1c430fb4",
+      "created_at": "2026-02-10 21:00:00",
+      "updated_at": "2026-02-10 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家常用赵云作为打野英雄",
+      "keywords": [
+       "赵云",
+       "打野"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_2d57bac3",
+      "created_at": "2026-02-10 21:00:00",
+      "updated_at": "2026-02-10 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家是大二学生，就读于哈尔滨的土木专业，主玩打野位，常用英雄赵云。",
+      "keywords": [
+       "大二学生",
+       "哈尔滨",
+       "土木专业",
+       "主玩打野",
+       "常用赵云"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_8338846d",
+      "created_at": "2026-02-10 21:00:00",
+      "updated_at": "2026-02-10 21:00:00",
+      "event_time": "2026-02-10",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是钻石四",
+      "keywords": [
+       "钻石四"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_d26a9245",
+      "created_at": "2026-03-18 21:00:00",
+      "updated_at": "2026-06-12 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-06-12 21:00:00",
+      "superseded_by": "mem_1dc726c1",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家是学校篮球队的",
+      "keywords": [
+       "学校篮球队"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_3807d484",
+      "created_at": "2026-03-18 21:00:00",
+      "updated_at": "2026-03-18 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家告知游戏助手，他的段位是钻石四，并且透露自己是学校篮球队的成员。",
+      "keywords": [
+       "钻石四",
+       "学校篮球队"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_379d0dd7",
+      "created_at": "2026-03-18 21:00:00",
+      "updated_at": "2026-03-18 21:00:00",
+      "event_time": "2026-03-18",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家近视六百度",
+      "keywords": [
+       "近视"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_28382bd0",
+      "created_at": "2026-04-25 21:00:00",
+      "updated_at": "2026-04-25 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近在练曜",
+      "keywords": [
+       "曜"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_ca3c6987",
+      "created_at": "2026-04-25 21:00:00",
+      "updated_at": "2026-04-25 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到自己有六百度的近视问题，并表示晚上玩游戏眼睛感到疲劳，同时在练习游戏中的曜英雄。",
+      "keywords": [
+       "近视六百度",
+       "晚上玩眼睛累",
+       "练习曜"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_fdb1c931",
+      "created_at": "2026-04-25 21:00:00",
+      "updated_at": "2026-04-25 21:00:00",
+      "event_time": "2026-04-25",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "助手答应下次我帮你看看曜的打野节奏。",
+      "keywords": [],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "promise",
+      "id": "mem_b8f0a07c",
+      "created_at": "2026-04-25 21:00:00",
+      "updated_at": "2026-04-25 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是钻石一级",
+      "keywords": [
+       "钻石一级"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_1dc726c1",
+      "created_at": "2026-06-12 21:00:00",
+      "updated_at": "2026-09-15 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-09-15 21:00:00",
+      "superseded_by": "mem_2264f346",
+      "supersedes": "mem_d26a9245",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家暑假要去工地实习",
+      "keywords": [
+       "哈尔滨",
+       "工地实习"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_6775841f",
+      "created_at": "2026-06-12 21:00:00",
+      "updated_at": "2026-06-12 21:00:00",
+      "event_time": "2026-06-12",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家宣布自己在游戏中的段位提升到了钻石一，并提到自己即将在暑假期间去工地实习。",
+      "keywords": [
+       "钻石一",
+       "暑假",
+       "工地实习"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_35d850e3",
+      "created_at": "2026-06-12 21:00:00",
+      "updated_at": "2026-06-12 21:00:00",
+      "event_time": "2026-06-12",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近实习很累，玩的时间少了",
+      "keywords": [
+       "实习",
+       "累",
+       "玩的时间少"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_de7a92ee",
+      "created_at": "2026-07-30 21:00:00",
+      "updated_at": "2026-07-30 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家妹妹今年高考考上了武汉大学",
+      "keywords": [
+       "武汉大学",
+       "高考"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_bee13d48",
+      "created_at": "2026-07-30 21:00:00",
+      "updated_at": "2026-07-30 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到自己妹妹今年高考并考上了武汉大学，同时表示自己正在实习，因此玩的时间较少。",
+      "keywords": [
+       "武汉大学",
+       "实习",
+       "玩得少"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_8b1e6baf",
+      "created_at": "2026-07-30 21:00:00",
+      "updated_at": "2026-07-30 21:00:00",
+      "event_time": "2026-07-30",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是上星耀",
+      "keywords": [
+       "上星耀"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_2264f346",
+      "created_at": "2026-09-15 21:00:00",
+      "updated_at": "2026-09-15 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_1dc726c1",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家是大二学生，当上了班长",
+      "keywords": [
+       "大二学生",
+       "班长"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_676155bb",
+      "created_at": "2026-09-15 21:00:00",
+      "updated_at": "2026-09-15 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_45578b90",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家宣布自己在游戏中的段位从普通晋升为星耀，并且成为了班级的班长。",
+      "keywords": [
+       "星耀",
+       "班长",
+       "段位晋升"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_74f68918",
+      "created_at": "2026-09-15 21:00:00",
+      "updated_at": "2026-09-15 21:00:00",
+      "event_time": "2026-09-15",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "v5_t1@2": [
+     {
+      "content": "玩家是消防员",
+      "keywords": [
+       "消防员"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_61ebd89f",
+      "created_at": "2026-04-03 21:00:00",
+      "updated_at": "2026-04-03 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家主玩坦克",
+      "keywords": [
+       "坦克"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_1f558b12",
+      "created_at": "2026-04-03 21:00:00",
+      "updated_at": "2026-04-03 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最常用张飞",
+      "keywords": [
+       "张飞"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_95823f21",
+      "created_at": "2026-04-03 21:00:00",
+      "updated_at": "2026-04-03 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位黄金三",
+      "keywords": [
+       "黄金三"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_471cd47e",
+      "created_at": "2026-04-03 21:00:00",
+      "updated_at": "2026-05-10 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-05-10 21:00:00",
+      "superseded_by": "mem_82b4127c",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家表示他是消防员，来自重庆，并且最常用张飞作为坦克英雄，当前段位为黄金三。",
+      "keywords": [
+       "消防员",
+       "重庆",
+       "张飞",
+       "黄金三"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_b47332d2",
+      "created_at": "2026-04-03 21:00:00",
+      "updated_at": "2026-04-03 21:00:00",
+      "event_time": "2026-04-03",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是铂金",
+      "keywords": [
+       "铂金",
+       "黄金三"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_82b4127c",
+      "created_at": "2026-05-10 21:00:00",
+      "updated_at": "2026-09-20 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-09-20 21:00:00",
+      "superseded_by": "mem_12cf4a5f",
+      "supersedes": "mem_471cd47e",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家女朋友是幼儿园老师",
+      "keywords": [
+       "幼儿园老师"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_27e38d6a",
+      "created_at": "2026-05-10 21:00:00",
+      "updated_at": "2026-05-10 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家告诉助手他女朋友是幼儿园老师，并且他的游戏段位已经升到了铂金。",
+      "keywords": [
+       "女朋友是幼儿园老师",
+       "升铂金"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_eaaedf76",
+      "created_at": "2026-05-10 21:00:00",
+      "updated_at": "2026-05-10 21:00:00",
+      "event_time": "2026-05-10",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家膝盖韧带拉伤了",
+      "keywords": [
+       "膝盖韧带拉伤"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_28992aed",
+      "created_at": "2026-06-18 21:00:00",
+      "updated_at": "2026-06-18 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家因为膝盖韧带拉伤正在休养，并且在练习廉颇",
+      "keywords": [
+       "膝盖韧带拉伤",
+       "休养",
+       "练习廉颇"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_9b64d732",
+      "created_at": "2026-06-18 21:00:00",
+      "updated_at": "2026-06-18 21:00:00",
+      "event_time": "2026-06-18",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "助手答应下次帮你整理廉颇的出装。",
+      "keywords": [],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "promise",
+      "id": "mem_6f9f1275",
+      "created_at": "2026-06-18 21:00:00",
+      "updated_at": "2026-06-18 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家有宠物柯基狗，名字叫旺财",
+      "keywords": [
+       "柯基狗",
+       "旺财"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_312a4f37",
+      "created_at": "2026-07-25 21:00:00",
+      "updated_at": "2026-07-25 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到自己的宠物狗叫旺财，是一只柯基，并且在游戏中的铂金段位已经达到了一星",
+      "keywords": [
+       "旺财",
+       "铂金一",
+       "柯基"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_bcc6a232",
+      "created_at": "2026-07-25 21:00:00",
+      "updated_at": "2026-07-25 21:00:00",
+      "event_time": "2026-07-25",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家考过了驾照",
+      "keywords": [
+       "驾照"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_80e5db78",
+      "created_at": "2026-08-30 21:00:00",
+      "updated_at": "2026-08-30 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家在今天的对话中宣布自己考过了驾照，并且更换了手机为vivo X100",
+      "keywords": [
+       "驾照",
+       "vivo X100"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_90e461c1",
+      "created_at": "2026-08-30 21:00:00",
+      "updated_at": "2026-08-30 21:00:00",
+      "event_time": "2026-08-30",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是钻石",
+      "keywords": [
+       "钻石",
+       "铂金"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_12cf4a5f",
+      "created_at": "2026-09-20 21:00:00",
+      "updated_at": "2026-09-20 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_82b4127c",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家准备和女朋友去成都玩",
+      "keywords": [
+       "成都"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_cbf8e487",
+      "created_at": "2026-09-20 21:00:00",
+      "updated_at": "2026-09-20 21:00:00",
+      "event_time": "2026-09-20",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家宣布自己在游戏中的段位提升到了钻石，并计划国庆节和女朋友一起去成都游玩。",
+      "keywords": [
+       "钻石",
+       "国庆",
+       "成都",
+       "女朋友"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_d8281fa4",
+      "created_at": "2026-09-20 21:00:00",
+      "updated_at": "2026-09-20 21:00:00",
+      "event_time": "2026-09-20",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "v5_t2@2": [
+     {
+      "content": "玩家是牙医，玩家在厦门开诊所，玩家主玩法师，玩家最喜欢西施",
+      "keywords": [
+       "牙医",
+       "厦门",
+       "牙医诊所",
+       "法师",
+       "西施"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_02902596",
+      "created_at": "2026-03-15 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-07-08 21:00:00",
+      "superseded_by": "mem_be99764b",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到自己是一名牙医，在厦门开诊所，并表示最喜欢玩的游戏英雄是西施",
+      "keywords": [
+       "牙医",
+       "厦门",
+       "诊所",
+       "最喜欢",
+       "西施"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_5cbaf2cb",
+      "created_at": "2026-03-15 21:00:00",
+      "updated_at": "2026-03-15 21:00:00",
+      "event_time": "2026-03-15",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家的儿子在上初二",
+      "keywords": [
+       "初二"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_c9764190",
+      "created_at": "2026-04-22 21:00:00",
+      "updated_at": "2026-04-22 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位星耀五",
+      "keywords": [
+       "星耀五"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_294920a8",
+      "created_at": "2026-04-22 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-07-08 21:00:00",
+      "superseded_by": "mem_dc674867",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家告知助手其段位为星耀五，并提及儿子正在上初二。",
+      "keywords": [
+       "星耀五",
+       "初二"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_13c7e0ce",
+      "created_at": "2026-04-22 21:00:00",
+      "updated_at": "2026-04-22 21:00:00",
+      "event_time": "2026-04-22",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近在练沈梦溪",
+      "keywords": [
+       "沈梦溪"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_05aa7e1c",
+      "created_at": "2026-05-30 21:00:00",
+      "updated_at": "2026-05-30 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家有低血糖",
+      "keywords": [
+       "低血糖"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_df0f136e",
+      "created_at": "2026-05-30 21:00:00",
+      "updated_at": "2026-05-30 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到自己因为长时间游戏出现了低血糖的症状，并表示最近在练习英雄沈梦溪",
+      "keywords": [
+       "低血糖",
+       "沈梦溪"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_f56ad1d8",
+      "created_at": "2026-05-30 21:00:00",
+      "updated_at": "2026-05-30 21:00:00",
+      "event_time": "2026-05-30",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "助手答应每天提醒你每打三局吃点东西。",
+      "keywords": [],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "promise",
+      "id": "mem_8ac09642",
+      "created_at": "2026-05-30 21:00:00",
+      "updated_at": "2026-05-30 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位星耀三",
+      "keywords": [
+       "星耀三"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_dc674867",
+      "created_at": "2026-07-08 21:00:00",
+      "updated_at": "2026-09-19 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-09-19 21:00:00",
+      "superseded_by": "mem_9e355994",
+      "supersedes": "mem_294920a8",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家老婆是银行柜员",
+      "keywords": [
+       "银行柜员"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_be99764b",
+      "created_at": "2026-07-08 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_02902596",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家宣布自己在游戏中的段位提升至星耀三，并提及自己妻子的职业是银行柜员。",
+      "keywords": [
+       "星耀三",
+       "银行柜员"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_d52ec5e7",
+      "created_at": "2026-07-08 21:00:00",
+      "updated_at": "2026-07-08 21:00:00",
+      "event_time": "2026-07-08",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家上周喜欢周末早上打排位",
+      "keywords": [
+       "排位"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_6459311b",
+      "created_at": "2026-08-16 21:00:00",
+      "updated_at": "2026-08-16 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家新招了两个助理",
+      "keywords": [
+       "助理"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_035764e7",
+      "created_at": "2026-08-16 21:00:00",
+      "updated_at": "2026-08-16 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到今天新招了两个诊所助理，并表示喜欢在周末早上打排位游戏。",
+      "keywords": [
+       "新招助理",
+       "周末打排位"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_dcb2e453",
+      "created_at": "2026-08-16 21:00:00",
+      "updated_at": "2026-08-16 21:00:00",
+      "event_time": "2026-08-16",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是星耀一级",
+      "keywords": [
+       "星耀一级"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_9e355994",
+      "created_at": "2026-09-19 21:00:00",
+      "updated_at": "2026-09-19 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_dc674867",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家计划下个月去上海参加口腔医学会议",
+      "keywords": [
+       "上海",
+       "口腔医学会议"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_1a3a168c",
+      "created_at": "2026-09-19 21:00:00",
+      "updated_at": "2026-09-19 21:00:00",
+      "event_time": "2026-09-19",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家宣布自己当前的段位为星耀一，并透露下个月将要去上海参加口腔医学会议。",
+      "keywords": [
+       "星耀一",
+       "上海",
+       "口腔医学会议"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_82ecc308",
+      "created_at": "2026-09-19 21:00:00",
+      "updated_at": "2026-09-19 21:00:00",
+      "event_time": "2026-09-19",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ],
+    "v5_t3@2": [
+     {
+      "content": "玩家是大二学生",
+      "keywords": [
+       "大二学生"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_b15fb7df",
+      "created_at": "2026-02-10 21:00:00",
+      "updated_at": "2026-02-10 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家在哈尔滨读书",
+      "keywords": [
+       "哈尔滨"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_1260abe3",
+      "created_at": "2026-02-10 21:00:00",
+      "updated_at": "2026-02-10 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家学习土木工程",
+      "keywords": [
+       "土木工程"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_e7bb0c24",
+      "created_at": "2026-02-10 21:00:00",
+      "updated_at": "2026-02-10 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家主玩打野位置",
+      "keywords": [
+       "打野位置"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_129fbf80",
+      "created_at": "2026-02-10 21:00:00",
+      "updated_at": "2026-02-10 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家常用赵云作为打野英雄",
+      "keywords": [
+       "赵云",
+       "打野英雄"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_47ca3cca",
+      "created_at": "2026-02-10 21:00:00",
+      "updated_at": "2026-02-10 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家是大二学生，就读于哈尔滨的土木专业，主玩打野位，常用英雄赵云。",
+      "keywords": [
+       "大二学生",
+       "哈尔滨",
+       "土木专业",
+       "主玩打野",
+       "常用赵云"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_018ddc92",
+      "created_at": "2026-02-10 21:00:00",
+      "updated_at": "2026-02-10 21:00:00",
+      "event_time": "2026-02-10",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是钻石四",
+      "keywords": [
+       "钻石四"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_0c293d2a",
+      "created_at": "2026-03-18 21:00:00",
+      "updated_at": "2026-06-12 21:00:00",
+      "event_time": null,
+      "valid_to": "2026-06-12 21:00:00",
+      "superseded_by": "mem_d62d339d",
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家是学校篮球队的",
+      "keywords": [
+       "学校篮球队"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_954ae3ac",
+      "created_at": "2026-03-18 21:00:00",
+      "updated_at": "2026-03-18 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家告知自己目前的游戏段位为钻石四，并提到自己是学校篮球队的成员。",
+      "keywords": [
+       "钻石四",
+       "学校篮球队"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_9f06c271",
+      "created_at": "2026-03-18 21:00:00",
+      "updated_at": "2026-03-18 21:00:00",
+      "event_time": "2026-03-18",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家近视六百度",
+      "keywords": [
+       "近视"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_dd3bd83a",
+      "created_at": "2026-04-25 21:00:00",
+      "updated_at": "2026-04-25 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到自己有六百度的近视问题，并表示最近在练习游戏中的曜英雄",
+      "keywords": [
+       "六百度近视",
+       "练习曜"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_801cf8e8",
+      "created_at": "2026-04-25 21:00:00",
+      "updated_at": "2026-04-25 21:00:00",
+      "event_time": "2026-04-25",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "助手答应下次我帮你看看曜的打野节奏。",
+      "keywords": [],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "promise",
+      "id": "mem_fdafe170",
+      "created_at": "2026-04-25 21:00:00",
+      "updated_at": "2026-04-25 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家段位是钻石一",
+      "keywords": [
+       "钻石一",
+       "钻石四"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_d62d339d",
+      "created_at": "2026-06-12 21:00:00",
+      "updated_at": "2026-06-12 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": "mem_0c293d2a",
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家暑假要去工地实习",
+      "keywords": [
+       "哈尔滨",
+       "土木工程",
+       "大二学生"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_aaccf5ac",
+      "created_at": "2026-06-12 21:00:00",
+      "updated_at": "2026-06-12 21:00:00",
+      "event_time": "2026-06-12",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家在今天的对话中宣布自己在游戏中的段位升到了钻石一，并提到自己即将在暑假期间去工地实习。",
+      "keywords": [
+       "钻石一",
+       "暑假",
+       "工地实习"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_0f3b2489",
+      "created_at": "2026-06-12 21:00:00",
+      "updated_at": "2026-06-12 21:00:00",
+      "event_time": "2026-06-12",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家最近实习很累，玩的时间少了",
+      "keywords": [
+       "实习",
+       "累"
+      ],
+      "source": "chat",
+      "importance": 3,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_8a10eeab",
+      "created_at": "2026-07-30 21:00:00",
+      "updated_at": "2026-07-30 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家妹妹今年高考考上了武汉大学",
+      "keywords": [
+       "高考",
+       "武汉大学"
+      ],
+      "source": "chat",
+      "importance": 5,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_d05961e4",
+      "created_at": "2026-07-30 21:00:00",
+      "updated_at": "2026-07-30 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家提到他妹妹今年高考并考上了武汉大学，同时表示自己正在实习，因此玩的时间较少。",
+      "keywords": [
+       "武汉大学",
+       "实习",
+       "高考"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_e9148d4a",
+      "created_at": "2026-07-30 21:00:00",
+      "updated_at": "2026-07-30 21:00:00",
+      "event_time": "2026-07-30",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家当上了班长",
+      "keywords": [
+       "班长"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_71845f64",
+      "created_at": "2026-09-15 21:00:00",
+      "updated_at": "2026-09-15 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家上星耀了",
+      "keywords": [
+       "星耀"
+      ],
+      "source": "chat",
+      "importance": 4,
+      "aspect": null,
+      "kind": "fact",
+      "id": "mem_bef044bf",
+      "created_at": "2026-09-15 21:00:00",
+      "updated_at": "2026-09-15 21:00:00",
+      "event_time": null,
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     },
+     {
+      "content": "玩家宣布自己在游戏中的段位从普通晋升为星耀，并且成为了班级的班长。",
+      "keywords": [
+       "星耀",
+       "班长",
+       "段位晋升"
+      ],
+      "source": "chat",
+      "importance": 2,
+      "aspect": null,
+      "kind": "episode",
+      "id": "mem_696b25b0",
+      "created_at": "2026-09-15 21:00:00",
+      "updated_at": "2026-09-15 21:00:00",
+      "event_time": "2026-09-15",
+      "valid_to": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "access_count": 0,
+      "last_accessed_at": null
+     }
+    ]
+   }
+  }
+ }
+}
