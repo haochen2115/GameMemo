@@ -176,7 +176,8 @@ class PersonalMemory:
                  concept_fallback: bool = True,
                  safe_updates: bool = True,
                  subject_recall: bool = True,
-                 interleave_fallback: bool = True):
+                 interleave_fallback: bool = True,
+                 current_latest: bool = False):
         """
         write_mode: "ops" = extract facts, then the LLM decides
             ADD/UPDATE/DELETE/NOOP against related memories; "slots" = facts
@@ -215,6 +216,9 @@ class PersonalMemory:
         interleave_fallback: when episodes are consulted because the facts
             found are off-concept, alternate facts and episodes instead of
             putting every episode first (the lexicon may just lack the value).
+        current_latest: a "现在…" question keeps only the newest memory per
+            asked concept (city, job...): an older value that was never
+            superseded ("妹在湛江读高三" after "妹妹在海口上大学") is history.
         """
         if write_mode not in ("ops", "slots"):
             raise ValueError(f"unknown write_mode {write_mode!r}")
@@ -233,6 +237,7 @@ class PersonalMemory:
         self.safe_updates = safe_updates
         self.subject_recall = subject_recall
         self.interleave_fallback = interleave_fallback
+        self.current_latest = current_latest
         self.user_id = user_id
         self.llm = llm
         self.clock = clock
@@ -278,7 +283,21 @@ class PersonalMemory:
                 hits = mixed[:top_k]
             else:
                 hits = (found + hits)[:top_k] if hits else found
+        if self.current_latest and CURRENT_INTENT.search(query):
+            hits = self._latest_per_concept(query, hits)
         return hits
+
+    def _latest_per_concept(self, query: str, hits: List[ScoredMemory]) -> List[ScoredMemory]:
+        wanted = set(query_concepts(query))
+        if not wanted:
+            return hits
+        when = lambda h: (h.record.event_time or h.record.created_at or "")  # noqa: E731
+        newest: Dict[str, str] = {}
+        for h in hits:
+            for c in wanted & set(memory_concepts(h.record.content)):
+                newest[c] = max(newest.get(c, ""), when(h))
+        return [h for h in hits
+                if all(when(h) >= newest[c] for c in wanted & set(memory_concepts(h.record.content)))]
 
     def _subject_terms(self, query: str) -> List[str]:
         word = asked_word(query) if self.subject_recall else None

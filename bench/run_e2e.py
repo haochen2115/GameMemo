@@ -317,6 +317,7 @@ READ_VARIANTS = {
     "subject-recall": {"subject_recall": True},
     "interleave": {"interleave_fallback": True},
     "subject+interleave": {"subject_recall": True, "interleave_fallback": True},
+    "current-latest": {"current_latest": True},
     "concept-fallback": {"concept_fallback": True},
     "cover+fallback": {"concept_fallback": True, "retrieval_config_kw": {"concept_cover": True}},
     "pref-gate": {"retrieval_config_kw": {"require_specific": True, "min_dense_alone": 0.30,

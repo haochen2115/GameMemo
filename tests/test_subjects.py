@@ -49,3 +49,20 @@ def test_can_be_turned_off(tmp_path):
     m = PersonalMemory("p", storage_dir=str(tmp_path), clock=lambda: NOW, subject_recall=False)
     recs = [MemoryRecord(content="玩家哥哥是警察", keywords=["警察"])]
     assert m._about_subject("我姐姐是做什么的", recs) == recs
+
+
+def test_current_question_keeps_the_newest_value_per_concept(tmp_path):
+    m = make(tmp_path, ("玩家妹在湛江读高三", ["湛江"]), ("玩家妹妹在海口上大学", ["海口"]), current_latest=True)
+    m.store.records[m.store.active()[0].id].created_at = "2026-02-16 21:00:00"
+    m.store.records[m.store.active()[1].id].created_at = "2026-09-17 21:00:00"
+    got = [r.content for r in m.retrieve("我妹现在在哪个城市")]
+    assert got == ["玩家妹妹在海口上大学"]
+    m.current_latest = False
+    assert len(m.retrieve("我妹现在在哪个城市")) == 2
+
+
+def test_job_and_city_lexicons_cover_suffixes_and_smaller_cities():
+    from gamememo.personal.concepts import memory_concepts
+    assert memory_concepts("玩家男朋友是海员") == ["职业"]
+    assert "城市" in memory_concepts("玩家妹在湛江读高三")
+    assert memory_concepts("玩家是学校篮球队成员") == []
