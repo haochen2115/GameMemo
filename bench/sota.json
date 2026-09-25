@@ -1,6 +1,6 @@
 {
   "system": "memory-default",
-  "ref": "research/personal-memory-subjects -> main (P5b)",
+  "ref": "research/personal-memory-promises -> main (P6b)",
   "dataset": "bench/data/retrieval_v2.json",
   "split": "test",
   "primary": "MemScore@3",

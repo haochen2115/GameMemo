@@ -1,7 +1,7 @@
 {
   "system": "p5b (main @ b8f0ab9)",
   "ref": "main @ b8f0ab9, measured with bench/run_e2e.py in a worktree (shared LLM reply cache)",
-  "dataset": "bench/data/e2e_v9.json",
+  "dataset": "bench/data/e2e_v10.json",
   "split": "test",
   "model": "qwen2.5:3b",
   "seeds": "0,1,2",
@@ -16,9 +16,9 @@
     }
   },
   "metrics": {
-    "E2EScore": 0.4818,
-    "Answer@3": 0.4199,
-    "StaleRate": 0.6458,
-    "Abstain": 0.75
+    "E2EScore": 0.4609,
+    "Answer@3": 0.441,
+    "StaleRate": 0.4792,
+    "Abstain": 0.5208
   }
 }
