@@ -337,6 +337,8 @@ READ_VARIANTS = {
     "rule-promises": {"rule_promises": True, "rule_promises_after_load": True},
     "trajectory-summary": {"trajectory_summary": True},
     "p5b-read": {"rule_promises": False, "trajectory_summary": False},
+    "promise-topic": {"promise_topic": True, "rule_promises_after_load": True},
+    "p6-as-tested": {"rule_promises_after_load": True},
     "promises+trajectory": {"rule_promises": True, "rule_promises_after_load": True, "trajectory_summary": True},
     "concept-fallback": {"concept_fallback": True},
     "cover+fallback": {"concept_fallback": True, "retrieval_config_kw": {"concept_cover": True}},

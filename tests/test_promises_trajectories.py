@@ -36,3 +36,20 @@ def test_main_hero_changes_are_tracked(tmp_path):
         m.store.put(MemoryRecord(content=text, created_at=f"{day} 21:00:00", updated_at=f"{day} 21:00:00"))
     first = m.retrieve("我主玩的英雄是怎么变的")[0].content
     assert "鲁班七号" in first and "狄仁杰" in first and "戈娅" in first and "关羽" not in first
+
+
+def test_varied_promise_wordings():
+    lines = ["放心，明早六点我提醒你去文具批发市场。", "我记下了，周末帮你查查巅峰赛怎么报名。",
+             "那你求婚前，我帮你想几句开场白。", "好，赛季结束前我帮你算着还差多少胜点。"]
+    for line in lines:
+        assert promises_from_rules("助手: " + line), line
+    assert promises_from_rules("助手: 孙膑也是好辅助，加油！") == []
+
+
+def test_promise_question_with_an_unpromised_topic_gets_no_answer(tmp_path):
+    m = PersonalMemory("p", storage_dir=str(tmp_path), clock=lambda: NOW, promise_topic=True)
+    m.store.put(MemoryRecord(content="助手答应周末给你推荐几个适合新手的法师", kind="promise",
+                             created_at="2026-05-01 21:00:00"))
+    assert m.retrieve("你之前说要给我推荐什么电影") == []
+    assert [r.kind for r in m.retrieve("你答应过我什么")] == ["promise"]      # no topic: list them
+    assert [r.kind for r in m.retrieve("你之前说要给我推荐什么")] == ["promise"]

@@ -117,15 +117,47 @@ _FRAME = set("玩家 主玩 常用 最常用 喜欢 最喜欢 本命 现在 目�
              "在 是 了 的 用 玩 当前 正在".split())
 
 
+# A sentence where the assistant commits to something later: a reminder
+# ("明早我提醒你…"), or a favour ("帮你/给你/陪你/替你") with a future time
+# ("周末""赛季末""求婚前""下回") or after "我记下了".
+_REMIND = re.compile(r"我[^，,。]{0,4}提醒(?:你|您)")
+_FAVOUR = re.compile(r"(?:帮|给|陪|替|教)(?:你|您)")
+_FUTURE = re.compile(r"下次|下回|回头|改天|等你|过两天|晚点|有空|明天|明早|明晚|后天|周末|下周|下个月|月底|赛季末|"
+                     r"每周|每天|每晚|每次|前(?=[，,我])|前一晚|那天|之前|的时候|打完|以后|之后|我帮你把")
+_NOTED = re.compile(r"我?记(?:下|着|住)了")
+_FILLER = re.compile(r"^(?:好|行|嗯|没问题|放心|那|OK|ok)[，,！!]\s*|^我?记(?:下|着|住)了[，,]\s*")
+
+
+# Words that only say "what did you promise", not what about.
+_PROMISE_WORDS = set("答应 答应过 承诺 说 说过 说要 说好 要 会 帮 帮我 给 给我 替 替我 陪 陪我 教 教我 你 之前 上次 以前 那天 "
+                     "什么 啥 过 吗 是不是 有没有 事 哪些 一下 还 记得 整理 列 推荐 总结 提醒 讲 讲讲 做 弄 准备 查".split())
+
+
+_PROMISE_CHARS = set("".join(_PROMISE_WORDS) + "们的了呢")
+
+
+def _promise_topic(query: str) -> List[str]:
+    """What a promise question is about. Tokens made only of the question's
+    framing characters ("过帮", "我列" from bad segmentation) are not a topic."""
+    from .text import tokenize
+    return [t for t in tokenize(query) if t not in _PROMISE_WORDS and set(t) - _PROMISE_CHARS]
+
+
 def promises_from_rules(text: str) -> List[str]:
-    """Promises the assistant states in a fixed pattern, one per match."""
+    """Promises the assistant states in a recognisable pattern, one per sentence."""
     out = []
     for line in text.splitlines():
         line = line.strip()
         if not line.startswith(("助手:", "助手：")):
             continue
-        for m in _PROMISE_LINE.finditer(line[3:]):
-            out.append("助手答应" + m.group(0).strip())
+        body = line[3:].strip()
+        noted = bool(_NOTED.search(body))
+        for sent in re.split(r"[。！？!?]", body):
+            sent = sent.strip()
+            if len(sent) < 4:
+                continue
+            if _REMIND.search(sent) or (_FAVOUR.search(sent) and (noted or _FUTURE.search(sent))):
+                out.append("助手答应" + _FILLER.sub("", _FILLER.sub("", sent)))
     return out
 
 
@@ -197,7 +229,8 @@ class PersonalMemory:
                  interleave_fallback: bool = True,
                  current_latest: bool = True,
                  rule_promises: bool = True,
-                 trajectory_summary: bool = True):
+                 trajectory_summary: bool = True,
+                 promise_topic: bool = False):
         """
         write_mode: "ops" = extract facts, then the LLM decides
             ADD/UPDATE/DELETE/NOOP against related memories; "slots" = facts
@@ -245,6 +278,9 @@ class PersonalMemory:
         trajectory_summary: "段位 / 手机 / 英雄怎么变的" is answered with one line
             listing every state in time order (a 4-step history does not fit
             in 3 separate memories), and main-hero changes are tracked too.
+        promise_topic: a promise question that names a topic no promise is
+            about ("你答应过帮我抢门票吗") gets no answer instead of the list of
+            every promise.
         """
         if write_mode not in ("ops", "slots"):
             raise ValueError(f"unknown write_mode {write_mode!r}")
@@ -266,6 +302,7 @@ class PersonalMemory:
         self.current_latest = current_latest
         self.rule_promises = rule_promises
         self.trajectory_summary = trajectory_summary
+        self.promise_topic = promise_topic
         self.user_id = user_id
         self.llm = llm
         self.clock = clock
@@ -356,6 +393,10 @@ class PersonalMemory:
         if (PROMISE_INTENT_WIDE if self.rule_promises else PROMISE_INTENT).search(query):
             promises = [r for r in self.store.active() if r.kind == "promise"]
             hits = self.retriever.search(query, promises, top_k=top_k, now=now)
+            if not hits and self.promise_topic and _promise_topic(query):
+                # "你答应过帮我抢演唱会门票吗" names a topic no promise is about:
+                # the honest answer is "I never promised that"
+                return []
             if not hits:  # "你答应过我什么" names no topic: recall them all, newest first
                 promises.sort(key=lambda r: r.created_at, reverse=True)
                 hits = [ScoredMemory(r, 1.0) for r in promises[:top_k]]
