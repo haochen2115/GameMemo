@@ -196,8 +196,8 @@ class PersonalMemory:
                  subject_recall: bool = True,
                  interleave_fallback: bool = True,
                  current_latest: bool = True,
-                 rule_promises: bool = False,
-                 trajectory_summary: bool = False):
+                 rule_promises: bool = True,
+                 trajectory_summary: bool = True):
         """
         write_mode: "ops" = extract facts, then the LLM decides
             ADD/UPDATE/DELETE/NOOP against related memories; "slots" = facts
