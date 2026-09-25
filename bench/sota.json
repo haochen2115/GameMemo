@@ -1,6 +1,6 @@
 {
   "system": "memory-default",
-  "ref": "research/personal-memory-extraction -> main (P4)",
+  "ref": "research/personal-memory-subjects -> main (P5b)",
   "dataset": "bench/data/retrieval_v2.json",
   "split": "test",
   "primary": "MemScore@3",
