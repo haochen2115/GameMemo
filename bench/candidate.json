@@ -1,12 +1,12 @@
 {
-  "_note": "P4: lossless updates (safe_updates) + concept cover / concept fallback (E8) on top of P3. Baseline: main @ d8e5b24 (P3, system p3) on e2e_v6 test, same seeds, shared LLM reply cache (identical requests get identical replies, as with deterministic decoding).",
+  "_note": "P5b: P5 (subject-aware recall, interleaved fallback) + newest value per asked concept for 现在 questions + fuller city/job lexicons (E9, E9b). Read side only. P5 itself failed its gate on e2e_v7 (StaleRate +0.051); this is a new candidate on a new sealed set. Baseline: main @ 28379a7 (P4, system p4) on e2e_v8 test, same seeds, shared LLM reply cache.",
   "retrieval": {
     "system": "memory-default",
     "mode": "hold"
   },
   "e2e": {
-    "system": "p4",
+    "system": "p5b",
     "mode": "improve",
-    "results": "bench/results/e2e_v6_test.json"
+    "results": "bench/results/e2e_v8_test.json"
   }
 }

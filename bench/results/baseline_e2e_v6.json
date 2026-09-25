@@ -1,7 +1,7 @@
 {
-  "system": "p5b",
-  "ref": "research/personal-memory-subjects -> main",
-  "dataset": "bench/data/e2e_v8.json",
+  "system": "p3 (main @ d8e5b24)",
+  "ref": "main @ d8e5b24, measured with bench/run_e2e.py in a worktree (shared LLM reply cache)",
+  "dataset": "bench/data/e2e_v6.json",
   "split": "test",
   "model": "qwen2.5:3b",
   "seeds": "0,1,2",
@@ -16,9 +16,9 @@
     }
   },
   "metrics": {
-    "E2EScore": 0.5859,
-    "Answer@3": 0.5577,
-    "StaleRate": 0.3056,
-    "Abstain": 0.7083
+    "E2EScore": 0.4821,
+    "Answer@3": 0.5216,
+    "StaleRate": 0.2821,
+    "Abstain": 0.358
   }
 }

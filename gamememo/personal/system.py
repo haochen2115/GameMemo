@@ -25,6 +25,7 @@ from ..llm import LLMClient, parse_json
 from . import prompts
 from .consolidate import consolidate as consolidate_versions
 from .concepts import memory_concepts, query_concepts
+from .subjects import asked_word, fact_subject, mentions, query_subject
 from .consolidate import base_value, detect as detect_values
 from .embed import Embedder
 from .model import MemoryRecord, clamp_importance, fmt_time
@@ -173,7 +174,10 @@ class PersonalMemory:
                  attribute_recall: bool = True,
                  episode_fallback: bool = True,
                  concept_fallback: bool = True,
-                 safe_updates: bool = True):
+                 safe_updates: bool = True,
+                 subject_recall: bool = True,
+                 interleave_fallback: bool = True,
+                 current_latest: bool = True):
         """
         write_mode: "ops" = extract facts, then the LLM decides
             ADD/UPDATE/DELETE/NOOP against related memories; "slots" = facts
@@ -206,6 +210,15 @@ class PersonalMemory:
             ("玩家老婆是…") is added instead of replacing a fact about the
             player; clauses of a replaced fact that the new one does not
             speak to are kept as their own memory.
+        subject_recall: a question about a person ("我姐姐…") only considers
+            memories that mention that person; a question about the player
+            ignores facts whose subject is somebody else.
+        interleave_fallback: when episodes are consulted because the facts
+            found are off-concept, alternate facts and episodes instead of
+            putting every episode first (the lexicon may just lack the value).
+        current_latest: a "现在…" question keeps only the newest memory per
+            asked concept (city, job...): an older value that was never
+            superseded ("妹在湛江读高三" after "妹妹在海口上大学") is history.
         """
         if write_mode not in ("ops", "slots"):
             raise ValueError(f"unknown write_mode {write_mode!r}")
@@ -222,6 +235,9 @@ class PersonalMemory:
         self.episode_fallback = episode_fallback
         self.concept_fallback = concept_fallback
         self.safe_updates = safe_updates
+        self.subject_recall = subject_recall
+        self.interleave_fallback = interleave_fallback
+        self.current_latest = current_latest
         self.user_id = user_id
         self.llm = llm
         self.clock = clock
@@ -252,13 +268,52 @@ class PersonalMemory:
         # Promises are recalled when asked about, and shown to the chatbot via
         # pending_promises(); in ordinary search they only crowd out facts.
         records = [r for r in records if r.kind != "promise" or not self.recall_modes]
+        records = self._about_subject(query, records)
+        # memories are already about the asked person: the word naming them
+        # counts as matched, however a memory calls her ("姐" / "大姐")
+        given = self._subject_terms(query)
         hits = self.retriever.search(query, records, top_k=top_k, now=self.clock(),
-                                     include_inactive=include_history)
+                                     include_inactive=include_history, given=given)
         if not episodic and self.episode_fallback and (not hits or self._off_concept(query, hits)):
-            episodes = [r for r in self.store.active() if r.kind == "episode"]
-            found = self.retriever.search(query, episodes, top_k=top_k, now=self.clock())
-            hits = (found + hits)[:top_k] if hits else found
+            episodes = self._about_subject(query, [r for r in self.store.active() if r.kind == "episode"])
+            found = self.retriever.search(query, episodes, top_k=top_k, now=self.clock(), given=given)
+            if hits and self.interleave_fallback:
+                mixed = [h for pair in zip(hits, found) for h in pair]
+                mixed += hits[len(found):] + found[len(hits):]
+                hits = mixed[:top_k]
+            else:
+                hits = (found + hits)[:top_k] if hits else found
+        if self.current_latest and CURRENT_INTENT.search(query):
+            hits = self._latest_per_concept(query, hits)
         return hits
+
+    def _latest_per_concept(self, query: str, hits: List[ScoredMemory]) -> List[ScoredMemory]:
+        wanted = set(query_concepts(query))
+        if not wanted:
+            return hits
+        when = lambda h: (h.record.event_time or h.record.created_at or "")  # noqa: E731
+        newest: Dict[str, str] = {}
+        for h in hits:
+            for c in wanted & set(memory_concepts(h.record.content)):
+                newest[c] = max(newest.get(c, ""), when(h))
+        return [h for h in hits
+                if all(when(h) >= newest[c] for c in wanted & set(memory_concepts(h.record.content)))]
+
+    def _subject_terms(self, query: str) -> List[str]:
+        word = asked_word(query) if self.subject_recall else None
+        if not word:
+            return []
+        from .text import tokenize
+        # the query's own tokens that carry the word ("我哥" as one token)
+        return [t for t in tokenize(query) if word in t or t in word]
+
+    def _about_subject(self, query: str, records: List[MemoryRecord]) -> List[MemoryRecord]:
+        if not self.subject_recall:
+            return records
+        person = query_subject(query)
+        if person is not None:
+            return [r for r in records if mentions(r.content, person)]
+        return [r for r in records if r.kind != "fact" or fact_subject(r.content) is None]
 
     def _off_concept(self, query: str, hits: Sequence[ScoredMemory]) -> bool:
         """The question asks about a concept ("我在哪个城市") and none of the

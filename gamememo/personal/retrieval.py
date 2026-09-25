@@ -135,7 +135,8 @@ class HybridRetriever:
     def search(self, query: str, records: Sequence[MemoryRecord],
                top_k: Optional[int] = None,
                now: Optional[datetime] = None,
-               include_inactive: bool = False) -> List[ScoredMemory]:
+               include_inactive: bool = False,
+               given: Sequence[str] = ()) -> List[ScoredMemory]:
         """``include_inactive`` also searches superseded versions (for
         questions about the past); they rank below current ones."""
         cfg = self.config
@@ -154,7 +155,7 @@ class HybridRetriever:
 
         specific = [False] * n
         if cfg.use_lexical:
-            lex, cov, specific = self._bm25(query, records)
+            lex, cov, specific = self._bm25(query, records, given)
             # Only documents that matched something get a lexical rank.
             lists.append(sorted((i for i in range(n) if lex[i] > 0), key=lambda i: -lex[i]))
             for i in range(n):
@@ -238,9 +239,12 @@ class HybridRetriever:
             self._known_keywords |= new
             self._tok_cache.clear()
 
-    def _bm25(self, query: str, records: Sequence[MemoryRecord]) -> Tuple[List[float], List[float], List[bool]]:
+    def _bm25(self, query: str, records: Sequence[MemoryRecord],
+              given: Sequence[str] = ()) -> Tuple[List[float], List[float], List[bool]]:
         """BM25 scores, idf-weighted query coverage, and whether a
-        non-generic query term matched, per record."""
+        non-generic query term matched, per record. ``given`` query terms
+        count as covered by every record (the caller already filtered on
+        them, e.g. the person a question is about)."""
         cfg = self.config
         docs = [self._doc_tokens(r) for r in records]
         n = len(docs)
@@ -276,6 +280,7 @@ class HybridRetriever:
             for tag, ts in absorbed.items():
                 if tf.get(tag):
                     matched += sum(weight[t] for t in ts if not tf.get(t))
+            matched += sum(weight[t] for t in given if t in weight and not tf.get(t))
             scores.append(s)
             coverage.append(matched / q_mass)
             specific.append(spec)
