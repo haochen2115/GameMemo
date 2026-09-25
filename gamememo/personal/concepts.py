@@ -45,7 +45,7 @@ _STUDY = (
 
 # concept -> (question trigger, value words)
 CONCEPTS: Dict[str, Tuple[Pattern, Tuple[str, ...]]] = {
-    "职业": (re.compile(r"工作|职业|做什么的|干什么的|干啥的|是做什么|做什么工作|什么工作|上班|身份|从事"),
+    "职业": (re.compile(r"工作|职业|做什么的|干什么的|干啥的|是做什么|做什么工作|什么工作|身份|从事"),
            tuple(_OCCUPATIONS)),
     "城市": (re.compile(r"城市|哪里人|在哪(个城市|里)?(上班|工作|住|读书|上学)|住在哪|住哪|老家|家乡|哪个地方"),
            tuple(_CITIES)),
@@ -65,3 +65,17 @@ def memory_concepts(text: str) -> List[str]:
 
 def query_concepts(query: str) -> List[str]:
     return [c for c, (trigger, _) in CONCEPTS.items() if trigger.search(query)]
+
+
+def category_terms(query: str, terms: List[str]) -> Dict[str, List[str]]:
+    """Query terms that only name the category a concept asks about
+    ("工作" in "我是做什么工作的"). A memory carrying the concept's tag
+    answers them, even though it never contains the word itself. Value
+    words ("过敏") are never absorbed: they must match literally."""
+    out: Dict[str, List[str]] = {}
+    for c, (trigger, values) in CONCEPTS.items():
+        spans = [m.group() for m in trigger.finditer(query)]
+        hit = [t for t in terms if t not in values and any(t in s for s in spans)]
+        if hit:
+            out[c] = hit
+    return out

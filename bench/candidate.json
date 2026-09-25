@@ -1,5 +1,12 @@
 {
-  "_note": "Pre-registered candidate P3: concept tags + episode fallback (E7) on top of P2. Committed before any test run of this candidate.",
-  "retrieval": {"system": "memory-default", "mode": "hold"},
-  "e2e": {"system": "p3", "mode": "improve", "results": "bench/results/e2e_v5_test.json"}
+  "_note": "P4: lossless updates (safe_updates) + concept cover / concept fallback (E8) on top of P3. Baseline: main @ d8e5b24 (P3, system p3) on e2e_v6 test, same seeds, shared LLM reply cache (identical requests get identical replies, as with deterministic decoding).",
+  "retrieval": {
+    "system": "memory-default",
+    "mode": "hold"
+  },
+  "e2e": {
+    "system": "p4",
+    "mode": "improve",
+    "results": "bench/results/e2e_v6_test.json"
+  }
 }

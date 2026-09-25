@@ -13,7 +13,9 @@ from bench.run_e2e import replay
 S = os.environ.get("GAMEMEMO_RUNS", "runs")  # directory with stored e2e result files
 SETS = [("c3_e2e_v4dev", "e2e_v4", "p1"), ("c3_e2e_v3dev", "e2e_v3", "p1"), ("c2_e2e_v3dev", "e2e_v3", "p1"),
         ("c2_e2e_v2dev", "e2e_v2", "p1"), ("p1b_e2e_v2dev", "e2e_v2", "p1"), ("p1b_e2e_v1dev", "e2e_v1", "p1"),
-        ("f0_e2e_v5dev", "e2e_v5", "p2")]
+        ("f0_e2e_v5dev", "e2e_v5", "p2"),
+        # e2e_v5 test players, retired to development after the P3 report
+        ("e2e_v5_test", "e2e_v5", "p3")]
 variants = sys.argv[1].split(",")
 base = variants[0]
 rows = {v: [] for v in variants}

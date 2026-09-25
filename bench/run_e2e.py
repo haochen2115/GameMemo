@@ -69,6 +69,41 @@ class V0System:
         return [m.to_dict() for m in self.gm.memories]
 
 
+class LLMCache:
+    """sqlite cache of LLM replies keyed by the full request (model, seed,
+    prompt, schema...). Two systems run against the same cache get the same
+    reply to the same request, so an A/B comparison only differs where the
+    systems' own states differ -- and repeated runs cost no LLM time."""
+
+    def __init__(self, path: str):
+        import sqlite3
+        os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
+        self.db = sqlite3.connect(path)
+        self.db.execute("CREATE TABLE IF NOT EXISTS replies (key TEXT PRIMARY KEY, reply TEXT)")
+        self.hits = self.misses = 0
+
+    def wrap(self, client) -> None:
+        import hashlib
+        chat = client.chat
+
+        def cached(*args, **kw):
+            key = hashlib.sha256(json.dumps([client.model, client.seed, args, kw], ensure_ascii=False,
+                                            sort_keys=True, default=str).encode()).hexdigest()
+            row = self.db.execute("SELECT reply FROM replies WHERE key = ?", (key,)).fetchone()
+            if row is not None:
+                self.hits += 1
+                return row[0]
+            self.misses += 1
+            reply = chat(*args, **kw)
+            self.db.execute("INSERT OR REPLACE INTO replies VALUES (?, ?)", (key, reply))
+            self.db.commit()
+            return reply
+        client.chat = cached
+
+
+_CACHE: List[LLMCache] = []
+
+
 class V2System:
     def __init__(self, model: str, base_url: str, workdir: str, embedder=None, seed: int = 0, **opts):
         from gamememo.personal import PersonalMemory
@@ -77,6 +112,8 @@ class V2System:
         self.mem = PersonalMemory("e2e", llm=OllamaClient(model=model, base_url=base_url, timeout=600,
                                                           seed=seed, think=False if "qwen3" in model else None),
                                   storage_dir=workdir, embedder=embedder, clock=lambda: self.now, **opts)
+        if _CACHE:
+            _CACHE[0].wrap(self.mem.llm)
 
     def ingest(self, text: str, when: datetime) -> None:
         self.now = when
@@ -100,6 +137,11 @@ def jina():
     if not _JINA:
         _JINA.append(FastEmbedEmbedder())
     return _JINA[0]
+
+
+def _p4_read(concept_cover=True, **kw):
+    from gamememo.personal.retrieval import RetrievalConfig
+    return RetrievalConfig.for_embedder(jina(), concept_cover=concept_cover, **kw)
 
 
 def _nospec():
@@ -126,7 +168,18 @@ SYSTEMS: Dict[str, Callable[..., object]] = {
                                           consolidate=False, attribute_recall=True),
     "p3": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True, history_recall=True,
                                           episodes=True, promises=True, recall_modes=True, consolidate=False,
-                                          attribute_recall=True, episode_fallback=True),
+                                          attribute_recall=True, episode_fallback=True, safe_updates=False,
+                                          concept_fallback=False, retrieval_config=_p4_read(concept_cover=False)),
+    # P4: lossless updates on the write side, category words and concept-aware
+    # episode fallback on the read side
+    "p4": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True, history_recall=True,
+                                          episodes=True, promises=True, recall_modes=True, consolidate=False,
+                                          attribute_recall=True, episode_fallback=True, safe_updates=True,
+                                          concept_fallback=True, retrieval_config=_p4_read()),
+    "p3+safe-updates": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True,
+                                                       history_recall=True, episodes=True, promises=True,
+                                                       recall_modes=True, attribute_recall=True,
+                                                       episode_fallback=True, safe_updates=True),
     "p1+consolidate": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True,
                                                       history_recall=True, episodes=True, promises=True,
                                                       recall_modes=True, consolidate=True),
@@ -252,6 +305,9 @@ READ_VARIANTS = {
     "concepts+dense": {"retrieval_config_kw": {"concept_tags": True, "concept_dense": True}},
     "ep-fallback": {"episode_fallback": True},
     "concepts+ep-fallback": {"episode_fallback": True, "retrieval_config_kw": {"concept_tags": True}},
+    "concept-cover": {"retrieval_config_kw": {"concept_cover": True}},
+    "concept-fallback": {"concept_fallback": True},
+    "cover+fallback": {"concept_fallback": True, "retrieval_config_kw": {"concept_cover": True}},
     "pref-gate": {"retrieval_config_kw": {"require_specific": True, "min_dense_alone": 0.30,
                                           "generic_terms": "PREFERENCE_TERMS"}},
 }
@@ -307,6 +363,8 @@ def main(argv=None):
     ap.add_argument("--seeds", default="0", help="comma-separated LLM seeds for v2 systems; "
                     "rows of all seeds are pooled, so metrics are seed-averaged")
     ap.add_argument("--out", default=None)
+    ap.add_argument("--players", default=None, help="comma-separated player ids (default: all in the split)")
+    ap.add_argument("--llm-cache", default=None, help="sqlite file caching LLM replies across runs/systems")
     ap.add_argument("--keep", default=None, help="directory to keep each run's memory files")
     ap.add_argument("--show-errors", action="store_true")
     ap.add_argument("--replay", default=None, help="re-run the read path on memories stored in a results file")
@@ -327,6 +385,11 @@ def main(argv=None):
     with open(args.data, encoding="utf-8") as f:
         data = json.load(f)
     players = [p for p in data["players"] if args.split == "all" or p["split"] == args.split]
+    if args.players:
+        wanted = set(args.players.split(","))
+        players = [p for p in players if p["id"] in wanted]
+    if args.llm_cache:
+        _CACHE[:] = [LLMCache(args.llm_cache)]
 
     seeds = [int(x) for x in args.seeds.split(",")]
     results = {}
@@ -350,7 +413,8 @@ def main(argv=None):
         res["ingest_errors"] = errors
         res["rows"], res["memories"] = rows, dumps
         results[name] = res
-        print(f"[{name}] done in {res['minutes']} min, {len(errors)} failed sessions", flush=True)
+        cache = f", llm cache {_CACHE[0].hits} hits / {_CACHE[0].misses} misses" if _CACHE else ""
+        print(f"[{name}] done in {res['minutes']} min, {len(errors)} failed sessions{cache}", flush=True)
         if args.out:  # save after every system so a crash never loses finished runs
             save(args, results)
 
