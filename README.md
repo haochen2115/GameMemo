@@ -58,7 +58,7 @@ print(bot.chat("今天是我生日！").reply)
 ## 评测与分支
 
 - 评测集、指标和结果见 [docs/BENCHMARK.md](docs/BENCHMARK.md)。在封存的 test 集（两位新玩家、102 条查询）上，当前 SOTA `v2-hybrid` 的 MemScore@3 为 0.892，v0 为 0.750（95% CI [+0.049, +0.235]）；召回和拒答都更好，而且检索不再调用 LLM。
-- 端到端评测（真实 LLM 写入，再按规则判分）：P1 在 e2e_v2 test 上从 0.448 升到 0.759；P2 在 e2e_v4 test 上从 0.693 升到 0.765（段位 / 手机的变化轨迹 0.333 → 1.000）；P3 在 e2e_v5 test 上从 0.794 升到 0.825（事实题，边缘显著）。实验全过程（包括没通过的尝试）见 [docs/EXPERIMENTS.md](docs/EXPERIMENTS.md)。
+- 端到端评测（真实 LLM 写入，再按规则判分）：P1 在 e2e_v2 test 上从 0.448 升到 0.759；P2 在 e2e_v4 test 上从 0.693 升到 0.765（段位 / 手机的变化轨迹 0.333 → 1.000）；P3 在 e2e_v5 test 上从 0.794 升到 0.825（事实题，边缘显著）；P4 在更难的 e2e_v6 test 上从 0.482 升到 0.563（无损更新，事实题 0.560 → 0.720）。实验全过程（包括没通过的尝试）见 [docs/EXPERIMENTS.md](docs/EXPERIMENTS.md)。
 - `main` 只放当前 SOTA。分支命名和门禁规则见 [docs/BRANCHING.md](docs/BRANCHING.md)。
 - 类人记忆的路线图见 [docs/ROADMAP.md](docs/ROADMAP.md)：情景记忆、遗忘曲线、离线巩固、程序性记忆……
 
