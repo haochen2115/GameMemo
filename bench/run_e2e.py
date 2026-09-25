@@ -324,6 +324,9 @@ READ_VARIANTS = {
     "interleave": {"interleave_fallback": True},
     "subject+interleave": {"subject_recall": True, "interleave_fallback": True},
     "current-latest": {"current_latest": True},
+    "rule-promises": {"rule_promises": True, "rule_promises_after_load": True},
+    "trajectory-summary": {"trajectory_summary": True},
+    "promises+trajectory": {"rule_promises": True, "rule_promises_after_load": True, "trajectory_summary": True},
     "concept-fallback": {"concept_fallback": True},
     "cover+fallback": {"concept_fallback": True, "retrieval_config_kw": {"concept_cover": True}},
     "pref-gate": {"retrieval_config_kw": {"require_specific": True, "min_dense_alone": 0.30,
@@ -345,6 +348,7 @@ def replay(path: str, data_path: str, system: str, variant: str, show_errors: bo
     opts = dict(READ_VARIANTS[variant])
     kw = dict(opts.pop("retrieval_config_kw", {}))
     consolidate_after_load = opts.pop("consolidate_after_load", False)
+    rule_promises_after_load = opts.pop("rule_promises_after_load", False)
     if kw.get("generic_terms") == "PREFERENCE_TERMS":
         kw["generic_terms"] = R.PREFERENCE_TERMS
     res = saved["results"][system]
@@ -357,6 +361,14 @@ def replay(path: str, data_path: str, system: str, variant: str, show_errors: bo
                              clock=lambda: ask, **opts,
                              retrieval_config=R.RetrievalConfig.for_embedder(jina(), **kw))
         mem.store.extend(MemoryRecord.from_dict(m) for m in mems)
+        if rule_promises_after_load:
+            # what the pattern detector would have added while writing (no LLM needed)
+            from gamememo.personal.system import promises_from_rules
+            for s in p["sessions"]:
+                for content in promises_from_rules(transcript(s)):
+                    if mem._find_duplicate(content, kind="promise") is None:
+                        mem.store.put(MemoryRecord(content=content, kind="promise", importance=4, source="chat",
+                                                   created_at=s["date"], updated_at=s["date"]))
         if consolidate_after_load:
             from gamememo.personal.consolidate import consolidate
             consolidate(mem.store.all(), mem.store.history, p["ask_at"])

@@ -26,7 +26,7 @@ from . import prompts
 from .consolidate import consolidate as consolidate_versions
 from .concepts import memory_concepts, query_concepts
 from .subjects import asked_word, fact_subject, mentions, query_subject
-from .consolidate import base_value, detect as detect_values
+from .consolidate import RECALL_ATTRIBUTES, base_value, detect as detect_values
 from .embed import Embedder
 from .model import MemoryRecord, clamp_importance, fmt_time
 from .retrieval import HybridRetriever, RetrievalConfig, ScoredMemory
@@ -57,6 +57,11 @@ PAST_INTENT = re.compile(r"什么时候|哪天|以前|之前|原来|曾经|上�
 # "我段位是怎么变的" -> the whole story of one attribute, not its current value.
 RECENT_TALK = re.compile(r"(上次|上一次|最近一次|刚才|前几天).{0,6}(聊|说|讲)")
 PROMISE_INTENT = re.compile(r"答应|承诺|说过要|说好|保证过")
+# "你之前说要帮我整理什么" also asks what the assistant promised
+PROMISE_INTENT_WIDE = re.compile(r"答应|承诺|说好|保证过|你(之前|上次|以前|那天)?(说|讲)过?(要|会)|你(之前|上次|以前)?(会|要)(帮|给|替)我")
+# An assistant line committing to a future favour: "下次我给你整理一份…".
+_PROMISE_LINE = re.compile(r"(?:下次|下回|回头|改天|等你[^，。！？]{0,8}|过两天|晚点|有空)[，,]?\s*我?(?:来|再|会)?"
+                           r"(?:帮你|给你|替你|陪你)[^，。！？!?]{2,40}")
 # Episodes describe the state *at that time*; "我现在什么段位" must be answered
 # from semantic memory, so episodes are searched only for questions about a
 # particular time or event.
@@ -64,6 +69,7 @@ EPISODIC_INTENT = re.compile(r"那天|那次|那阵子|那段时间|那时候|�
 # Closed-set attributes named by a question, for attribute-aware recall.
 ATTRIBUTE_QUERY = (("段位", re.compile(r"段位|段|排位|星耀|钻石|王者|铂金|黄金")),
                    ("设备", re.compile(r"手机|设备|平板")))
+HERO_QUERY = ("英雄", re.compile(r"英雄|本命"))
 CURRENT_INTENT = re.compile(r"现在|目前|当前|最新")
 TRAJECTORY_INTENT = re.compile(r"怎么变|变化|一路|一步步|这几个月|历程|怎么升|怎么上来|成长")
 
@@ -109,6 +115,18 @@ _CLAUSE = re.compile(r"[，,；;。]|并且|而且|同时")
 # Words that frame a value rather than state one ("主玩", "常用"...).
 _FRAME = set("玩家 主玩 常用 最常用 喜欢 最喜欢 本命 现在 目前 已经 一名 一个 作为 英雄 位置 角色 段位 "
              "在 是 了 的 用 玩 当前 正在".split())
+
+
+def promises_from_rules(text: str) -> List[str]:
+    """Promises the assistant states in a fixed pattern, one per match."""
+    out = []
+    for line in text.splitlines():
+        line = line.strip()
+        if not line.startswith(("助手:", "助手：")):
+            continue
+        for m in _PROMISE_LINE.finditer(line[3:]):
+            out.append("助手答应" + m.group(0).strip())
+    return out
 
 
 def _subject(text: str) -> str:
@@ -177,7 +195,9 @@ class PersonalMemory:
                  safe_updates: bool = True,
                  subject_recall: bool = True,
                  interleave_fallback: bool = True,
-                 current_latest: bool = True):
+                 current_latest: bool = True,
+                 rule_promises: bool = False,
+                 trajectory_summary: bool = False):
         """
         write_mode: "ops" = extract facts, then the LLM decides
             ADD/UPDATE/DELETE/NOOP against related memories; "slots" = facts
@@ -219,6 +239,12 @@ class PersonalMemory:
         current_latest: a "现在…" question keeps only the newest memory per
             asked concept (city, job...): an older value that was never
             superseded ("妹在湛江读高三" after "妹妹在海口上大学") is history.
+        rule_promises: also detect the assistant's promises with patterns
+            ("下次/回头 + 我 + 帮你/给你 + …"), since small models often miss
+            them; "你之前说要帮我…" questions are routed to promises too.
+        trajectory_summary: "段位 / 手机 / 英雄怎么变的" is answered with one line
+            listing every state in time order (a 4-step history does not fit
+            in 3 separate memories), and main-hero changes are tracked too.
         """
         if write_mode not in ("ops", "slots"):
             raise ValueError(f"unknown write_mode {write_mode!r}")
@@ -238,6 +264,8 @@ class PersonalMemory:
         self.subject_recall = subject_recall
         self.interleave_fallback = interleave_fallback
         self.current_latest = current_latest
+        self.rule_promises = rule_promises
+        self.trajectory_summary = trajectory_summary
         self.user_id = user_id
         self.llm = llm
         self.clock = clock
@@ -325,7 +353,7 @@ class PersonalMemory:
 
     def _recall_mode(self, query: str, top_k: int) -> List[ScoredMemory]:
         now = self.clock()
-        if PROMISE_INTENT.search(query):
+        if (PROMISE_INTENT_WIDE if self.rule_promises else PROMISE_INTENT).search(query):
             promises = [r for r in self.store.active() if r.kind == "promise"]
             hits = self.retriever.search(query, promises, top_k=top_k, now=now)
             if not hits:  # "你答应过我什么" names no topic: recall them all, newest first
@@ -337,14 +365,21 @@ class PersonalMemory:
                               key=lambda r: (r.event_time or "", r.created_at), reverse=True)
             if episodes:
                 return [ScoredMemory(episodes[0], 1.0)]
-        attr = next((name for name, pat in ATTRIBUTE_QUERY if pat.search(query)), None) \
+        queries = ATTRIBUTE_QUERY + ((HERO_QUERY,) if self.trajectory_summary else ())
+        attr = next((name for name, pat in queries if pat.search(query)), None) \
             if self.attribute_recall else None
         if attr and (TRAJECTORY_INTENT.search(query) or re.search(r"换过|哪些", query)):
             states = self._attribute_states(attr)
             if len(states) > 1:
+                if self.trajectory_summary:
+                    return [ScoredMemory(self._state_summary(attr, states), 1.0)] + \
+                        [ScoredMemory(r, 1.0) for r in states[-(top_k - 1):]]
                 return [ScoredMemory(r, 1.0) for r in states[-top_k:]]
         if attr and CURRENT_INTENT.search(query):
             states = self._attribute_states(attr)
+            if states and self.trajectory_summary:
+                # just the current value: the latest record may also name the old one
+                return [ScoredMemory(self._state_summary(attr, states[-1:], current=True), 1.0)]
             if states:
                 return [ScoredMemory(states[-1], 1.0)]
         if TRAJECTORY_INTENT.search(query):
@@ -388,10 +423,11 @@ class PersonalMemory:
         episodes reliably mention "段位钻石一" even when the fact was merged
         away or never written."""
         dated = []
+        attributes = RECALL_ATTRIBUTES if self.trajectory_summary else None
         for r in self.store.all():
             if r.kind not in ("fact", "episode"):
                 continue
-            for name, value in detect_values(r):
+            for name, value in (detect_values(r, attributes) if attributes else detect_values(r)):
                 if name == attr:
                     dated.append(((r.event_time or r.created_at[:10]), r.created_at, r, value))
         dated.sort(key=lambda x: (x[0], x[1]))
@@ -405,6 +441,19 @@ class PersonalMemory:
             states.append(r)
             values.append(value)
         return states
+
+    def _state_summary(self, attr: str, states: List[MemoryRecord], current: bool = False) -> MemoryRecord:
+        """One line with every state, oldest first: "段位变化：黄金二（2026-01-12）→ …";
+        with ``current``, the latest value only: "现在的段位：钻石四（2026-08-08）"."""
+        attributes = RECALL_ATTRIBUTES
+        parts = []
+        for r in states:
+            value = next((v for n, v in detect_values(r, attributes) if n == attr), "")
+            parts.append(f"{value}（{(r.event_time or r.created_at)[:10]}）")
+        last = states[-1]
+        text = f"现在的{attr}：{parts[-1]}" if current else f"{attr}变化：" + " → ".join(parts)
+        return MemoryRecord(content=text, kind="fact",
+                            created_at=last.created_at, updated_at=last.created_at, event_time=None)
 
     def pending_promises(self, limit: int = 3) -> List[MemoryRecord]:
         """The assistant's most recent promises, kept in mind like a to-do list."""
@@ -510,6 +559,8 @@ class PersonalMemory:
             system=prompts.SYSTEM_JSON, temperature=0.1, json_schema=prompts.PROMISES_SCHEMA,
             max_tokens=self.max_output_tokens))
         items = data.get("promises", []) if isinstance(data, dict) else []
+        if self.rule_promises:
+            items = list(items) + promises_from_rules(text)
         now = fmt_time(today)
         changed = False
         for p in items:
