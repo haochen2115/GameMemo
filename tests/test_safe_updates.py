@@ -52,8 +52,8 @@ def test_delete_needs_the_conversation_to_mention_the_memory(tmp_path):
     assert not team.is_active
 
 
-def test_guards_are_off_by_default(tmp_path):
-    m = PersonalMemory("p", storage_dir=str(tmp_path), clock=lambda: NOW)
+def test_guards_can_be_turned_off(tmp_path):
+    m = PersonalMemory("p", storage_dir=str(tmp_path), clock=lambda: NOW, safe_updates=False)
     old = m.add("玩家主玩打野，常用赵云", ["打野", "赵云"], 3, source="chat")
     m.apply([{"op": "UPDATE", "target": 1, "content": "玩家常用赵云"}], [old], source_text="常用赵云")
     assert active(m) == ["玩家常用赵云"]

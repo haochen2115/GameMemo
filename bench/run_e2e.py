@@ -139,9 +139,9 @@ def jina():
     return _JINA[0]
 
 
-def _p4_read(**kw):
+def _p4_read(concept_cover=True, **kw):
     from gamememo.personal.retrieval import RetrievalConfig
-    return RetrievalConfig.for_embedder(jina(), concept_cover=True, **kw)
+    return RetrievalConfig.for_embedder(jina(), concept_cover=concept_cover, **kw)
 
 
 def _nospec():
@@ -168,7 +168,8 @@ SYSTEMS: Dict[str, Callable[..., object]] = {
                                           consolidate=False, attribute_recall=True),
     "p3": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True, history_recall=True,
                                           episodes=True, promises=True, recall_modes=True, consolidate=False,
-                                          attribute_recall=True, episode_fallback=True),
+                                          attribute_recall=True, episode_fallback=True, safe_updates=False,
+                                          concept_fallback=False, retrieval_config=_p4_read(concept_cover=False)),
     # P4: lossless updates on the write side, category words and concept-aware
     # episode fallback on the read side
     "p4": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True, history_recall=True,
