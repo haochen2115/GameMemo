@@ -124,6 +124,7 @@ SYSTEMS: Dict[str, Factory] = {
     "v2-hybrid+rerank": v1_factory(BGE_ZH, rr=BGE_RR, min_rerank=-1.0, rerank_pool=5),
     "memory-default": memory_factory(),
     "memory-history": memory_factory(history_recall=True),
+    "memory-subjects": memory_factory(subject_recall=True, interleave_fallback=True),
 }
 DEFAULT_SYSTEMS = ["v0-keyword", "v1-lexical", "v1-hybrid", "v2-hybrid"]
 
