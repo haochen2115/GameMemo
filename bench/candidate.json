@@ -1,12 +1,12 @@
 {
-  "_note": "P5b: P5 (subject-aware recall, interleaved fallback) + newest value per asked concept for 现在 questions + fuller city/job lexicons (E9, E9b). Read side only. P5 itself failed its gate on e2e_v7 (StaleRate +0.051); this is a new candidate on a new sealed set. Baseline: main @ 28379a7 (P4, system p4) on e2e_v8 test, same seeds, shared LLM reply cache.",
+  "_note": "P6b: rule-based promises (wider patterns) + one-line trajectories + topic-aware promise answers (E10, E10b) on top of P5b. P6 failed on e2e_v9 (Abstain -0.125) and is not re-tested; P6b is a new candidate on a new sealed set. Baseline: main @ b8f0ab9 (P5b, system p5b) on e2e_v10 test, same seeds, shared LLM reply cache.",
   "retrieval": {
     "system": "memory-default",
     "mode": "hold"
   },
   "e2e": {
-    "system": "p5b",
+    "system": "p6b",
     "mode": "improve",
-    "results": "bench/results/e2e_v8_test.json"
+    "results": "bench/results/e2e_v10_test.json"
   }
 }

@@ -321,7 +321,8 @@ def test_episode_and_promise_are_written_per_conversation(tmp_path):
 
 
 def test_recall_modes(tmp_path):
-    mem = make(tmp_path, recall_modes=True)
+    # one memory per state; the one-line summary mode is tested in test_promises_trajectories.py
+    mem = make(tmp_path, recall_modes=True, trajectory_summary=False)
     old = mem.add("玩家段位是黄金", ["段位", "黄金"], 4)
     old.created_at = "2026-06-01 10:00:00"
     mid = MemoryRecord(content="玩家升到了铂金", keywords=["段位", "铂金"], created_at="2026-07-01 10:00:00")
@@ -364,7 +365,7 @@ def test_promises_are_kept_in_mind_not_in_ordinary_search(tmp_path):
 
 
 def test_attribute_recall_merges_vague_and_precise_phrasings(tmp_path):
-    mem = make(tmp_path)
+    mem = make(tmp_path, trajectory_summary=False)
     for text, day in [("玩家段位是黄金二", "2026-02-01"), ("玩家升到了铂金", "2026-04-01"),
                       ("玩家说自己现在是铂金一", "2026-04-20"), ("玩家上钻石了", "2026-06-01")]:
         mem.store.put(MemoryRecord(content=text, created_at=day + " 10:00:00"))

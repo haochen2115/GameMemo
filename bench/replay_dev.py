@@ -19,7 +19,11 @@ SETS = [("c3_e2e_v4dev", "e2e_v4", "p1"), ("c3_e2e_v3dev", "e2e_v3", "p1"), ("c2
         # e2e_v6 test players, retired to development after the P4 report
         ("e2e_v6_test", "e2e_v6", "p4"),
         # e2e_v7 test players, retired to development after P5's failed gate
-        ("e2e_v7_test", "e2e_v7", "p5")]
+        ("e2e_v7_test", "e2e_v7", "p5"),
+        # e2e_v8 test players, retired to development after the P5b report
+        ("e2e_v8_test", "e2e_v8", "p5b"),
+        # e2e_v9 test players, retired to development after P6's failed gate
+        ("e2e_v9_test", "e2e_v9", "p6")]
 variants = sys.argv[1].split(",")
 base = variants[0]
 rows = {v: [] for v in variants}

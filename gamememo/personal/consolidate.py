@@ -44,6 +44,25 @@ ATTRIBUTES: Tuple[Attribute, ...] = (
 )
 
 
+# 王者荣耀 heroes. Only used for recall ("我主玩的英雄是怎么变的"), not for the
+# write-side checks, and only when the fact says the player plays the hero.
+HEROES = tuple(sorted((
+    "鲁班七号 鲁班大师 孙尚香 后羿 虞姬 狄仁杰 李元芳 马可波罗 公孙离 黄忠 百里守约 伽罗 蒙犽 艾琳 戈娅 敖隐 莱西奥 "
+    "成吉思汗 孙策 "
+    "妲己 安琪拉 小乔 王昭君 貂蝉 甄姬 武则天 诸葛亮 干将莫邪 上官婉儿 嫦娥 西施 沈梦溪 杨玉环 不知火舞 米莱狄 弈星 "
+    "女娲 周瑜 高渐离 扁鹊 张良 墨子 嬴政 姜子牙 司马懿 海月 金蝉 王者 元歌 露娜 海诺 "
+    "李白 韩信 赵云 娜可露露 兰陵王 阿轲 百里玄策 孙悟空 镜 澜 裴擒虎 云中君 暃 司空震 大司命 宫本武藏 橘右京 "
+    "典韦 曜 "
+    "亚瑟 吕布 关羽 花木兰 马超 老夫子 狂铁 夏侯惇 曹操 杨戬 李信 盘古 蒙恬 刘备 达摩 铠 哪吒 猪八戒 程咬金 苏烈 "
+    "项羽 刘邦 廉颇 张飞 白起 东皇太一 牛魔 太乙真人 蔡文姬 大乔 孙膑 明世隐 瑶 鬼谷子 庄周 刘禅 钟馗 盾山 少司缘 "
+    "朵莉亚 桑启 鲁班 梦奇 钟无艳 芈月 雅典娜 宫本 阿古朵 姬小满 云缨 影 司马 空空儿"
+).split(), key=len, reverse=True))
+_PLAYS = re.compile(r"主玩|常用|本命|改玩|在练|练|最近玩|拿手|擅长|换成|玩的是|玩得最多|主打|一直玩|只玩|基本只玩|上手|喜欢用|常玩|用")
+
+HERO = Attribute("英雄", HEROES, exclude=re.compile(r"想玩|打算玩|克|被|对面|敌方|怕"), require=_PLAYS)
+RECALL_ATTRIBUTES: Tuple[Attribute, ...] = ATTRIBUTES + (HERO,)
+
+
 _SUB = re.compile(r"[一二三四五六七八九十0-9]+星?$")
 
 
