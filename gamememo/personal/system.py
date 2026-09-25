@@ -175,8 +175,8 @@ class PersonalMemory:
                  episode_fallback: bool = True,
                  concept_fallback: bool = True,
                  safe_updates: bool = True,
-                 subject_recall: bool = False,
-                 interleave_fallback: bool = False):
+                 subject_recall: bool = True,
+                 interleave_fallback: bool = True):
         """
         write_mode: "ops" = extract facts, then the LLM decides
             ADD/UPDATE/DELETE/NOOP against related memories; "slots" = facts

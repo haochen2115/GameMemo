@@ -45,7 +45,7 @@ def test_partner_words_are_interchangeable(tmp_path):
     assert [r.content for r in m.retrieve("我老婆做什么的")] == ["玩家的女朋友在奶茶店当店长"]
 
 
-def test_off_by_default(tmp_path):
-    m = PersonalMemory("p", storage_dir=str(tmp_path), clock=lambda: NOW)
+def test_can_be_turned_off(tmp_path):
+    m = PersonalMemory("p", storage_dir=str(tmp_path), clock=lambda: NOW, subject_recall=False)
     recs = [MemoryRecord(content="玩家哥哥是警察", keywords=["警察"])]
     assert m._about_subject("我姐姐是做什么的", recs) == recs

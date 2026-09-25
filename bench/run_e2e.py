@@ -169,13 +169,21 @@ SYSTEMS: Dict[str, Callable[..., object]] = {
     "p3": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True, history_recall=True,
                                           episodes=True, promises=True, recall_modes=True, consolidate=False,
                                           attribute_recall=True, episode_fallback=True, safe_updates=False,
-                                          concept_fallback=False, retrieval_config=_p4_read(concept_cover=False)),
+                                          concept_fallback=False, retrieval_config=_p4_read(concept_cover=False),
+                                          subject_recall=False, interleave_fallback=False),
     # P4: lossless updates on the write side, category words and concept-aware
     # episode fallback on the read side
     "p4": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True, history_recall=True,
                                           episodes=True, promises=True, recall_modes=True, consolidate=False,
                                           attribute_recall=True, episode_fallback=True, safe_updates=True,
-                                          concept_fallback=True, retrieval_config=_p4_read()),
+                                          concept_fallback=True, retrieval_config=_p4_read(),
+                                          subject_recall=False, interleave_fallback=False),
+    # P5: subject-aware recall + interleaved concept fallback
+    "p5": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True, history_recall=True,
+                                          episodes=True, promises=True, recall_modes=True, consolidate=False,
+                                          attribute_recall=True, episode_fallback=True, safe_updates=True,
+                                          concept_fallback=True, retrieval_config=_p4_read(),
+                                          subject_recall=True, interleave_fallback=True),
     "p3+safe-updates": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True,
                                                        history_recall=True, episodes=True, promises=True,
                                                        recall_modes=True, attribute_recall=True,

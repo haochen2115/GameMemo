@@ -1,12 +1,12 @@
 {
-  "_note": "P4: lossless updates (safe_updates) + concept cover / concept fallback (E8) on top of P3. Baseline: main @ d8e5b24 (P3, system p3) on e2e_v6 test, same seeds, shared LLM reply cache (identical requests get identical replies, as with deterministic decoding).",
+  "_note": "P5: subject-aware recall + interleaved concept fallback (E9) on top of P4. Read side only. Baseline: main @ 28379a7 (P4, system p4) on e2e_v7 test, same seeds, shared LLM reply cache.",
   "retrieval": {
     "system": "memory-default",
     "mode": "hold"
   },
   "e2e": {
-    "system": "p4",
+    "system": "p5",
     "mode": "improve",
-    "results": "bench/results/e2e_v6_test.json"
+    "results": "bench/results/e2e_v7_test.json"
   }
 }
