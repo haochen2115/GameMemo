@@ -24,6 +24,7 @@ from typing import Callable, Dict, List, Optional, Sequence, Tuple
 from ..llm import LLMClient, parse_json
 from . import prompts
 from .consolidate import consolidate as consolidate_versions
+from .concepts import memory_concepts, query_concepts
 from .consolidate import base_value, detect as detect_values
 from .embed import Embedder
 from .model import MemoryRecord, clamp_importance, fmt_time
@@ -100,6 +101,55 @@ def _norm(text: str) -> str:
     return _NORM.sub("", text.lower())
 
 
+# Who a fact is about: the player, or someone the player talks about.
+_OTHER = re.compile(r"^玩家(的)?(老婆|女朋友|男朋友|对象|妻子|老公|丈夫|媳妇|妹妹|弟弟|哥哥|姐姐|爸爸|爸|妈妈|妈|"
+                    r"父亲|母亲|儿子|女儿|孩子|朋友|室友|舍友|同事|同学|队友|师父|徒弟|宠物|猫|狗)")
+_CLAUSE = re.compile(r"[，,；;。]|并且|而且|同时")
+# Words that frame a value rather than state one ("主玩", "常用"...).
+_FRAME = set("玩家 主玩 常用 最常用 喜欢 最喜欢 本命 现在 目前 已经 一名 一个 作为 英雄 位置 角色 段位 "
+             "在 是 了 的 用 玩 当前 正在".split())
+
+
+def _subject(text: str) -> str:
+    m = _OTHER.match(text.strip())
+    return m.group(2) if m else "玩家"
+
+
+def _values(text: str, keywords: Sequence[str]) -> List[str]:
+    """The value words of a clause: its keywords, else its content terms."""
+    kws = [k for k in keywords if k and k in text]
+    if kws:
+        return kws
+    from .text import tokenize
+    return [t for t in tokenize(text) if t not in _FRAME]
+
+
+def _carry_over(old: MemoryRecord, new_content: str) -> str:
+    """Clauses of ``old`` that ``new_content`` does not speak to.
+
+    "玩家主玩射手，常用公孙离" updated by "玩家主玩英雄是公孙离" would lose
+    the role; the role clause shares no value, concept or attribute with
+    the new statement, so it survives as its own memory."""
+    clauses = [c.strip() for c in _CLAUSE.split(old.content) if c.strip()]
+    if len(clauses) < 2:
+        return ""
+    new_concepts = set(memory_concepts(new_content))
+    new_attrs = {a for a, _ in detect_values(MemoryRecord(content=new_content))}
+    keep = []
+    who = _subject(old.content)
+    prefix = "玩家" if who == "玩家" else f"玩家的{who}"
+    for c in clauses:
+        vals = _values(c, old.keywords)
+        if not vals or any(v in new_content for v in vals):
+            continue
+        if new_concepts & set(memory_concepts(c)):
+            continue
+        if new_attrs & {a for a, _ in detect_values(MemoryRecord(content=c))}:
+            continue
+        keep.append(c if c.startswith("玩家") else prefix + c.lstrip("他她它"))
+    return "，".join(keep)
+
+
 class PersonalMemory:
     def __init__(self,
                  user_id: str,
@@ -121,7 +171,9 @@ class PersonalMemory:
                  recall_modes: bool = True,
                  consolidate: bool = False,
                  attribute_recall: bool = True,
-                 episode_fallback: bool = True):
+                 episode_fallback: bool = True,
+                 concept_fallback: bool = False,
+                 safe_updates: bool = False):
         """
         write_mode: "ops" = extract facts, then the LLM decides
             ADD/UPDATE/DELETE/NOOP against related memories; "slots" = facts
@@ -147,6 +199,13 @@ class PersonalMemory:
             from every dated mention of that attribute in facts and episodes.
         episode_fallback: when an ordinary question finds no fact, look in
             episodes (the answer may only have been summarised there).
+        concept_fallback: also look in episodes when a question asks about a
+            concept (job, city...) and none of the facts found belongs to it.
+        safe_updates: guard against lossy writes. A DELETE needs the
+            conversation to mention the memory; an UPDATE about someone else
+            ("玩家老婆是…") is added instead of replacing a fact about the
+            player; clauses of a replaced fact that the new one does not
+            speak to are kept as their own memory.
         """
         if write_mode not in ("ops", "slots"):
             raise ValueError(f"unknown write_mode {write_mode!r}")
@@ -161,6 +220,8 @@ class PersonalMemory:
         self.consolidate = consolidate
         self.attribute_recall = attribute_recall
         self.episode_fallback = episode_fallback
+        self.concept_fallback = concept_fallback
+        self.safe_updates = safe_updates
         self.user_id = user_id
         self.llm = llm
         self.clock = clock
@@ -193,10 +254,19 @@ class PersonalMemory:
         records = [r for r in records if r.kind != "promise" or not self.recall_modes]
         hits = self.retriever.search(query, records, top_k=top_k, now=self.clock(),
                                      include_inactive=include_history)
-        if not hits and not episodic and self.episode_fallback:
+        if not episodic and self.episode_fallback and (not hits or self._off_concept(query, hits)):
             episodes = [r for r in self.store.active() if r.kind == "episode"]
-            hits = self.retriever.search(query, episodes, top_k=top_k, now=self.clock())
+            found = self.retriever.search(query, episodes, top_k=top_k, now=self.clock())
+            hits = (found + hits)[:top_k] if hits else found
         return hits
+
+    def _off_concept(self, query: str, hits: Sequence[ScoredMemory]) -> bool:
+        """The question asks about a concept ("我在哪个城市") and none of the
+        facts found is about it: the answer may be in an episode."""
+        if not (self.concept_fallback and self.retriever.config.concept_tags):
+            return False
+        wanted = set(query_concepts(query))
+        return bool(wanted) and not any(wanted & set(memory_concepts(h.record.content)) for h in hits)
 
     def _recall_mode(self, query: str, top_k: int) -> List[ScoredMemory]:
         now = self.clock()
@@ -445,6 +515,12 @@ class PersonalMemory:
             if kind in ("ADD", "UPDATE") and source_text is not None and not _grounded(content, known):
                 report.rejected.append((op, "states a value the conversation never mentions"))
                 continue
+            if self.safe_updates and kind == "DELETE" and source_text is not None \
+                    and not any(v in source_text for v in _values(target.content, target.keywords)):
+                report.rejected.append((op, "deletes a memory the conversation never mentions"))
+                continue
+            if self.safe_updates and kind == "UPDATE" and _subject(content) != _subject(target.content):
+                kind = "ADD"  # about someone else: a new fact, not a new version
 
             if kind == "ADD":
                 dup = self._find_duplicate(content)
@@ -464,6 +540,15 @@ class PersonalMemory:
                 self.store.put(rec)
                 touched.update({target.id, rec.id})
                 report.updated.append((target, rec))
+                rest = _carry_over(target, content) if self.safe_updates else ""
+                if rest and self._find_duplicate(rest) is None:
+                    kept = MemoryRecord(content=rest, keywords=[k for k in target.keywords if k in rest],
+                                        source=target.source, importance=target.importance,
+                                        created_at=target.created_at, updated_at=now,
+                                        event_time=target.event_time)
+                    self.store.put(kept)
+                    touched.add(kept.id)
+                    report.added.append(kept)
             elif kind == "DELETE":
                 target.valid_to = now
                 target.updated_at = now

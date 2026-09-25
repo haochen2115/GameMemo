@@ -21,7 +21,7 @@ from dataclasses import dataclass, replace
 from datetime import datetime
 from typing import Dict, List, Optional, Sequence, Tuple
 
-from .concepts import memory_concepts, query_concepts, tag_text
+from .concepts import category_terms, memory_concepts, query_concepts, tag_text
 from .embed import Embedder, Reranker, cosine
 from .model import MemoryRecord, parse_time
 from .text import add_words, tokenize
@@ -75,6 +75,7 @@ class RetrievalConfig:
     generic_terms: frozenset = GENERIC_TERMS
     concept_tags: bool = False          # bridge "做什么工作" <-> "是护士" (concepts.py)
     concept_dense: bool = False         # also add concept names to the dense texts
+    concept_cover: bool = False         # a tagged memory also covers the category word itself
     min_dense: float = 0.25             # cosine floor (default embedder: jina-v2-base-zh)
     dense_margin: float = 0.15          # also require being near the best match
     w_importance: float = 0.10
@@ -247,7 +248,10 @@ class HybridRetriever:
         for d in docs:
             df.update(set(d))
         q_terms = list(dict.fromkeys(tokenize(query, bigrams=cfg.bigrams)))
+        absorbed: Dict[str, List[str]] = {}
         if cfg.concept_tags:
+            if cfg.concept_cover:
+                absorbed = {tag_text(c): ts for c, ts in category_terms(query, q_terms).items()}
             q_terms += [tag_text(c) for c in query_concepts(query)]
         idf = {t: math.log(1 + (n - df[t] + 0.5) / (df[t] + 0.5)) for t in q_terms}
         generic = cfg.generic_terms
@@ -268,6 +272,9 @@ class HybridRetriever:
                 spec |= t not in generic
                 s += weight[t] * f * (cfg.bm25_k1 + 1) / (
                     f + cfg.bm25_k1 * (1 - cfg.bm25_b + cfg.bm25_b * len(d) / avgdl))
+            for tag, ts in absorbed.items():
+                if tf.get(tag):
+                    matched += sum(weight[t] for t in ts if not tf.get(t))
             scores.append(s)
             coverage.append(matched / q_mass)
             specific.append(spec)
