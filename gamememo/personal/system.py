@@ -230,7 +230,7 @@ class PersonalMemory:
                  current_latest: bool = True,
                  rule_promises: bool = True,
                  trajectory_summary: bool = True,
-                 promise_topic: bool = False):
+                 promise_topic: bool = True):
         """
         write_mode: "ops" = extract facts, then the LLM decides
             ADD/UPDATE/DELETE/NOOP against related memories; "slots" = facts
