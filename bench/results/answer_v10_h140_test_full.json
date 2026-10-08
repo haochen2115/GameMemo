@@ -1,26 +1,26 @@
 {
- "dataset": "bench/data/e2e_v10_h40.json",
+ "dataset": "bench/data/e2e_v10_h140.json",
  "split": "test",
  "model": "qwen2.5:3b",
  "seeds": "0",
  "results_file": null,
- "generated_at": "2026-10-08 04:50:47",
+ "generated_at": "2026-10-08 07:58:21",
  "results": {
   "rag:5": {
-   "AnswerScore": 0.6875,
+   "AnswerScore": 0.6953,
    "Answered": 0.6354,
-   "Abstain": 0.8438,
+   "Abstain": 0.875,
    "StaleMention": 0.1875,
    "by_type": {
-    "fact": 0.7292,
-    "negative": 0.8438,
-    "promise": 0.8125,
+    "fact": 0.7083,
+    "negative": 0.875,
+    "promise": 0.875,
     "trajectory": 0.0,
     "update": 0.8125
    },
-   "context_chars": 174,
+   "context_chars": 189,
    "n": 128,
-   "minutes": 8.9,
+   "minutes": 6.8,
    "rows": [
     {
      "id": "v10_t1_q01",
@@ -122,10 +122,10 @@
       "密室"
      ],
      "known": true,
-     "answer": "玩家最近周末去了密室",
+     "answer": "玩家最近提到周末又去了密室",
      "success": 1.0,
      "stale": false,
-     "context_chars": 130
+     "context_chars": 183
     },
     {
      "id": "v10_t1_q08",
@@ -155,10 +155,10 @@
       "铂金二"
      ],
      "known": true,
-     "answer": "你这一年段位从黄金一提升到了铂金二",
+     "answer": "这一年段位从铂金三掉回黄金一",
      "success": 0.0,
      "stale": false,
-     "context_chars": 289
+     "context_chars": 297
     },
     {
      "id": "v10_t1_q10",
@@ -172,10 +172,10 @@
       "张飞"
      ],
      "known": false,
-     "answer": "无法确定玩家换过的具体英雄",
+     "answer": "没有具体提到换过哪些英雄",
      "success": 0.0,
      "stale": false,
-     "context_chars": 281
+     "context_chars": 286
     },
     {
      "id": "v10_t1_q11",
@@ -205,7 +205,7 @@
      "answer": "月底前我帮你盯着碎片商店，看换什么最划算。",
      "success": 1.0,
      "stale": false,
-     "context_chars": 87
+     "context_chars": 141
     },
     {
      "id": "v10_t1_q13",
@@ -228,10 +228,10 @@
      "query": "小雯是做什么工作的",
      "answer_any": [],
      "known": false,
-     "answer": "无法从给定的信息中得知小雯的工作",
+     "answer": "没有相关信息表明小雯的工作",
      "success": 1.0,
      "stale": false,
-     "context_chars": 292
+     "context_chars": 287
     },
     {
      "id": "v10_t1_q15",
@@ -241,10 +241,10 @@
      "query": "我表妹在哪读书",
      "answer_any": [],
      "known": false,
-     "answer": "没有找到关于表妹读书地点的信息。",
+     "answer": "没找到关于你表妹读书的信息",
      "success": 1.0,
      "stale": false,
-     "context_chars": 246
+     "context_chars": 297
     },
     {
      "id": "v10_t1_q16",
@@ -391,11 +391,11 @@
       "钻石二",
       "星耀四"
      ],
-     "known": true,
-     "answer": "玩家的段位从钻石二掉到了钻石二",
+     "known": false,
+     "answer": "无法根据现有信息判断玩家段位的具体变化",
      "success": 0.0,
      "stale": false,
-     "context_chars": 273
+     "context_chars": 279
     },
     {
      "id": "v10_t2_q10",
@@ -409,7 +409,7 @@
       "孙尚香"
      ],
      "known": false,
-     "answer": "没找到关于英雄更换的具体信息",
+     "answer": "没有找到关于英雄更换的信息",
      "success": 0.0,
      "stale": false,
      "context_chars": 288
@@ -424,10 +424,10 @@
       "雪地胎"
      ],
      "known": false,
-     "answer": "无",
+     "answer": "没有说过",
      "success": 0.0,
      "stale": false,
-     "context_chars": 133
+     "context_chars": 235
     },
     {
      "id": "v10_t2_q12",
@@ -452,10 +452,10 @@
      "query": "你答应过帮我挑钓鱼竿吗",
      "answer_any": [],
      "known": false,
-     "answer": "我没有答应过帮你挑钓鱼竿",
+     "answer": "没有",
      "success": 1.0,
      "stale": false,
-     "context_chars": 126
+     "context_chars": 176
     },
     {
      "id": "v10_t2_q14",
@@ -478,10 +478,10 @@
      "query": "我岳母是做什么的",
      "answer_any": [],
      "known": false,
-     "answer": "没有提到玩家的岳母是做什么的",
+     "answer": "不知道玩家的岳母是做什么的",
      "success": 1.0,
      "stale": false,
-     "context_chars": 246
+     "context_chars": 289
     },
     {
      "id": "v10_t2_q16",
@@ -509,7 +509,7 @@
      "answer": "你在开封当导游",
      "success": 1.0,
      "stale": false,
-     "context_chars": 186
+     "context_chars": 286
     },
     {
      "id": "v10_t3_q02",
@@ -524,7 +524,7 @@
      "answer": "你在开封工作",
      "success": 1.0,
      "stale": false,
-     "context_chars": 300
+     "context_chars": 307
     },
     {
      "id": "v10_t3_q03",
@@ -569,7 +569,7 @@
      "answer": "阿杰是辅警",
      "success": 1.0,
      "stale": false,
-     "context_chars": 297
+     "context_chars": 289
     },
     {
      "id": "v10_t3_q06",
@@ -614,7 +614,7 @@
      "answer": "玩家改学尤克里里",
      "success": 1.0,
      "stale": false,
-     "context_chars": 183
+     "context_chars": 233
     },
     {
      "id": "v10_t3_q09",
@@ -629,10 +629,10 @@
       "铂金四"
      ],
      "known": true,
-     "answer": "你的段位从白银一上到了黄金二",
+     "answer": "玩家从白银一上到了黄金二",
      "success": 0.0,
      "stale": false,
-     "context_chars": 293
+     "context_chars": 292
     },
     {
      "id": "v10_t3_q10",
@@ -649,7 +649,7 @@
      "answer": "阿杰先后在新乡和商丘工作过",
      "success": 0.0,
      "stale": false,
-     "context_chars": 249
+     "context_chars": 300
     },
     {
      "id": "v10_t3_q11",
@@ -689,10 +689,10 @@
      "query": "你说过要帮我找摄影师吗",
      "answer_any": [],
      "known": false,
-     "answer": "我没有说过要帮你找摄影师。",
+     "answer": "我没有说过要帮你找摄影师",
      "success": 1.0,
      "stale": false,
-     "context_chars": 20
+     "context_chars": 121
     },
     {
      "id": "v10_t3_q14",
@@ -715,10 +715,10 @@
      "query": "我姑姑是做什么的",
      "answer_any": [],
      "known": false,
-     "answer": "没有相关信息",
+     "answer": "无法从给定的信息中得知玩家的姑姑是做什么的",
      "success": 1.0,
      "stale": false,
-     "context_chars": 248
+     "context_chars": 287
     },
     {
      "id": "v10_t3_q16",
@@ -818,10 +818,10 @@
       "自行车"
      ],
      "known": true,
-     "answer": "你老爸退休前是修自行车的",
+     "answer": "退休前是修自行车的",
      "success": 1.0,
      "stale": false,
-     "context_chars": 83
+     "context_chars": 195
     },
     {
      "id": "v10_t4_q07",
@@ -866,10 +866,10 @@
       "钻石三"
      ],
      "known": true,
-     "answer": "根据之前的聊天记录，你的段位在2026-05-25掉回铂金二，之后又在2026-09-02提到看职业比赛被洗脑，但没有具体提到之后的段位变化。所以只能提供这两个信息。",
+     "answer": "根据之前的聊天记录，你的段位在2026-01-12时是铂金一，到了2026-05-25时掉到了铂金二。",
      "success": 0.0,
      "stale": false,
-     "context_chars": 286
+     "context_chars": 296
     },
     {
      "id": "v10_t4_q10",
@@ -913,10 +913,10 @@
       "复活甲"
      ],
      "known": true,
-     "answer": "这波属于意外，笑一笑",
-     "success": 0.0,
+     "answer": "打完我陪你把复活甲什么时候出理一理。",
+     "success": 1.0,
      "stale": false,
-     "context_chars": 281
+     "context_chars": 287
     },
     {
      "id": "v10_t4_q13",
@@ -929,7 +929,7 @@
      "answer": "",
      "success": 1.0,
      "stale": false,
-     "context_chars": 179
+     "context_chars": 278
     },
     {
      "id": "v10_t4_q14",
@@ -951,11 +951,11 @@
      "type": "negative",
      "query": "我大伯是干啥的",
      "answer_any": [],
-     "known": true,
-     "answer": "玩家提到大伯以前是修自行车的",
-     "success": 0.0,
+     "known": false,
+     "answer": "没有相关信息",
+     "success": 1.0,
      "stale": false,
-     "context_chars": 300
+     "context_chars": 195
     },
     {
      "id": "v10_t4_q16",
@@ -1010,10 +1010,10 @@
       "尘螨"
      ],
      "known": true,
-     "answer": "玩家提到可能是过敏，需要去查查过敏原。",
+     "answer": "玩家提到可能是过敏，建议去查查过敏原。",
      "success": 0.0,
      "stale": false,
-     "context_chars": 304
+     "context_chars": 298
     },
     {
      "id": "v10_t5_q04",
@@ -1103,10 +1103,10 @@
       "铂金三"
      ],
      "known": true,
-     "answer": "问这个问题时，回答的是最新的状态，即段位从年初到现在是铂金三。",
+     "answer": "年初时玩家的段位是铂金三，后来掉到了铂金三",
      "success": 0.0,
      "stale": false,
-     "context_chars": 76
+     "context_chars": 180
     },
     {
      "id": "v10_t5_q10",
@@ -1119,11 +1119,11 @@
       "沈梦溪",
       "干将莫邪"
      ],
-     "known": false,
-     "answer": "无法确定玩家常用的英雄换过哪些，因为没有相关信息。",
+     "known": true,
+     "answer": "过去几个月里，玩家提到的英雄有被削的热门英雄、新出的英雄以及一些背景故事有趣的英雄。",
      "success": 0.0,
      "stale": false,
-     "context_chars": 280
+     "context_chars": 284
     },
     {
      "id": "v10_t5_q11",
@@ -1220,7 +1220,7 @@
      "answer": "玩家提到的是核工程的专业课",
      "success": 0.0,
      "stale": false,
-     "context_chars": 130
+     "context_chars": 234
     },
     {
      "id": "v10_t6_q02",
@@ -1246,11 +1246,11 @@
      "answer_any": [
       "色弱"
      ],
-     "known": false,
-     "answer": "没有提到玩家的眼睛问题",
+     "known": true,
+     "answer": "玩家提到眼睛累了，需要休息",
      "success": 0.0,
      "stale": false,
-     "context_chars": 233
+     "context_chars": 272
     },
     {
      "id": "v10_t6_q04",
@@ -1265,7 +1265,7 @@
      "answer": "",
      "success": 0.0,
      "stale": false,
-     "context_chars": 280
+     "context_chars": 271
     },
     {
      "id": "v10_t6_q05",
@@ -1340,10 +1340,10 @@
       "星耀二"
      ],
      "known": true,
-     "answer": "这一年你从钻石二段位冲上了星耀五段位。",
+     "answer": "这一年你从钻石二段位提升到了星耀五段位。",
      "success": 0.0,
      "stale": false,
-     "context_chars": 303
+     "context_chars": 307
     },
     {
      "id": "v10_t6_q10",
@@ -1387,10 +1387,10 @@
       "对局数据"
      ],
      "known": true,
-     "answer": "这周末要陪你把这周的对局数据过一遍。",
+     "answer": "这周末我陪你把这周的对局数据过一遍。",
      "success": 1.0,
      "stale": false,
-     "context_chars": 153
+     "context_chars": 254
     },
     {
      "id": "v10_t6_q13",
@@ -1429,7 +1429,7 @@
      "answer": "没有提到过女朋友的专业",
      "success": 1.0,
      "stale": false,
-     "context_chars": 130
+     "context_chars": 234
     },
     {
      "id": "v10_t6_q16",
@@ -1457,7 +1457,7 @@
      "answer": "你开的是米线店",
      "success": 1.0,
      "stale": false,
-     "context_chars": 306
+     "context_chars": 301
     },
     {
      "id": "v10_t7_q02",
@@ -1499,10 +1499,10 @@
       "十字绣"
      ],
      "known": true,
-     "answer": "玩家表示她现在在绣牡丹",
+     "answer": "我闲下来绣一幅牡丹",
      "success": 0.0,
      "stale": false,
-     "context_chars": 135
+     "context_chars": 289
     },
     {
      "id": "v10_t7_q05",
@@ -1577,10 +1577,10 @@
       "白银一"
      ],
      "known": true,
-     "answer": "从白银一掉回白银一",
+     "answer": "从白银三掉回白银一",
      "success": 0.0,
      "stale": false,
-     "context_chars": 292
+     "context_chars": 288
     },
     {
      "id": "v10_t7_q10",
@@ -1627,7 +1627,7 @@
      "answer": "每日任务",
      "success": 1.0,
      "stale": false,
-     "context_chars": 286
+     "context_chars": 290
     },
     {
      "id": "v10_t7_q13",
@@ -1637,10 +1637,10 @@
      "query": "你答应过帮我办健康证吗",
      "answer_any": [],
      "known": false,
-     "answer": "未听说过要帮你办健康证",
+     "answer": "",
      "success": 1.0,
      "stale": false,
-     "context_chars": 134
+     "context_chars": 291
     },
     {
      "id": "v10_t7_q14",
@@ -1691,10 +1691,10 @@
       "湖笔"
      ],
      "known": true,
-     "answer": "你是在湖州做湖笔的",
+     "answer": "你做湖笔的手艺，师父教你八年。",
      "success": 1.0,
      "stale": false,
-     "context_chars": 312
+     "context_chars": 306
     },
     {
      "id": "v10_t8_q02",
@@ -1721,10 +1721,10 @@
       "脱发"
      ],
      "known": true,
-     "answer": "玩家提到他有脂溢性脱发的问题，需要按时用药并避免熬夜。",
-     "success": 1.0,
+     "answer": "最近掉头发厉害，枕头上一大把",
+     "success": 0.0,
      "stale": false,
-     "context_chars": 178
+     "context_chars": 276
     },
     {
      "id": "v10_t8_q04",
@@ -1781,10 +1781,10 @@
       "台球"
      ],
      "known": true,
-     "answer": "玩家提到下班去酒吧玩飞镖，准头越来越好。",
+     "answer": "下班去酒吧玩飞镖",
      "success": 0.0,
      "stale": true,
-     "context_chars": 296
+     "context_chars": 293
     },
     {
      "id": "v10_t8_q08",
@@ -1817,7 +1817,7 @@
      "answer": "这一年玩家的段位从钻石一提升到了星耀三。",
      "success": 0.0,
      "stale": false,
-     "context_chars": 289
+     "context_chars": 290
     },
     {
      "id": "v10_t8_q10",
@@ -1900,10 +1900,10 @@
      "query": "我奶奶身体怎么样",
      "answer_any": [],
      "known": false,
-     "answer": "我记不清奶奶的身体状况",
+     "answer": "没有相关信息提到玩家奶奶的身体状况",
      "success": 1.0,
      "stale": false,
-     "context_chars": 20
+     "context_chars": 291
     },
     {
      "id": "v10_t8_q16",
@@ -1921,20 +1921,20 @@
    ]
   },
   "full": {
-   "AnswerScore": 0.6328,
-   "Answered": 0.5729,
-   "Abstain": 0.8125,
-   "StaleMention": 0.4375,
+   "AnswerScore": 0.6016,
+   "Answered": 0.5,
+   "Abstain": 0.9062,
+   "StaleMention": 0.125,
    "by_type": {
-    "fact": 0.7708,
-    "negative": 0.8125,
+    "fact": 0.5833,
+    "negative": 0.9062,
     "promise": 0.6875,
-    "trajectory": 0.0625,
-    "update": 0.375
+    "trajectory": 0.0,
+    "update": 0.5625
    },
-   "context_chars": 6002,
+   "context_chars": 18092,
    "n": 128,
-   "minutes": 9.2,
+   "minutes": 58.1,
    "rows": [
     {
      "id": "v10_t1_q01",
@@ -1945,11 +1945,11 @@
      "answer_any": [
       "跟单"
      ],
-     "known": true,
-     "answer": "你在台州一家服装厂上班，负责跟单工作。",
-     "success": 1.0,
+     "known": false,
+     "answer": "",
+     "success": 0.0,
      "stale": false,
-     "context_chars": 6058
+     "context_chars": 18087
     },
     {
      "id": "v10_t1_q02",
@@ -1961,10 +1961,10 @@
       "台州"
      ],
      "known": true,
-     "answer": "你在台州上班。",
+     "answer": "台州",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6058
+     "context_chars": 18087
     },
     {
      "id": "v10_t1_q03",
@@ -1975,11 +1975,11 @@
      "answer_any": [
       "结节"
      ],
-     "known": true,
-     "answer": "医生说甲状腺结节不大",
-     "success": 1.0,
+     "known": false,
+     "answer": "",
+     "success": 0.0,
      "stale": false,
-     "context_chars": 6058
+     "context_chars": 18087
     },
     {
      "id": "v10_t1_q04",
@@ -1994,7 +1994,7 @@
      "answer": "饼干是柯基品种的狗",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6058
+     "context_chars": 18087
     },
     {
      "id": "v10_t1_q05",
@@ -2006,10 +2006,10 @@
       "杨梅"
      ],
      "known": true,
-     "answer": "玩家的爸爸在老家种杨梅。",
+     "answer": "我爸在老家种杨梅",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6058
+     "context_chars": 18087
     },
     {
      "id": "v10_t1_q06",
@@ -2024,7 +2024,7 @@
      "answer": "小雯在杭州",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6058
+     "context_chars": 18087
     },
     {
      "id": "v10_t1_q07",
@@ -2036,10 +2036,10 @@
       "密室"
      ],
      "known": true,
-     "answer": "玩家最近改玩了鬼谷子，辅助开团效果很好。",
-     "success": 0.0,
+     "answer": "玩家提到周末去玩密室逃脱",
+     "success": 1.0,
      "stale": false,
-     "context_chars": 6058
+     "context_chars": 18087
     },
     {
      "id": "v10_t1_q08",
@@ -2050,11 +2050,11 @@
      "answer_any": [
       "开车"
      ],
-     "known": false,
-     "answer": "",
-     "success": 0.0,
+     "known": true,
+     "answer": "玩家现在通过开车上班，但因为网络卡顿导致被推了一座塔。",
+     "success": 1.0,
      "stale": false,
-     "context_chars": 6058
+     "context_chars": 18087
     },
     {
      "id": "v10_t1_q09",
@@ -2072,7 +2072,7 @@
      "answer": "玩家最近上到了铂金二",
      "success": 0.0,
      "stale": false,
-     "context_chars": 6058
+     "context_chars": 18087
     },
     {
      "id": "v10_t1_q10",
@@ -2086,10 +2086,10 @@
       "张飞"
      ],
      "known": true,
-     "answer": "玩家主玩的英雄换过鬼谷子和张飞。",
+     "answer": "玩家主玩的英雄从蔡文姬换成了鲁班七号，又换成了嫦娥，最后换成了张飞。",
      "success": 0.0,
      "stale": false,
-     "context_chars": 6058
+     "context_chars": 18087
     },
     {
      "id": "v10_t1_q11",
@@ -2100,11 +2100,11 @@
      "answer_any": [
       "复查"
      ],
-     "known": true,
-     "answer": "玩家提到医生让其三个月后再去看甲状腺结节",
+     "known": false,
+     "answer": "没说过",
      "success": 0.0,
      "stale": false,
-     "context_chars": 6058
+     "context_chars": 18087
     },
     {
      "id": "v10_t1_q12",
@@ -2116,10 +2116,10 @@
       "碎片商店"
      ],
      "known": true,
-     "answer": "月底前我帮你盯着碎片商店，看换什么最划算。",
+     "answer": "助手说月底前会帮玩家盯着碎片商店，看换什么最划算",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6058
+     "context_chars": 18087
     },
     {
      "id": "v10_t1_q13",
@@ -2129,10 +2129,10 @@
      "query": "你说过要帮我查航班吗",
      "answer_any": [],
      "known": false,
-     "answer": "未听说过要帮玩家查航班",
+     "answer": "未提及助手是否说过要帮玩家查航班",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6058
+     "context_chars": 18087
     },
     {
      "id": "v10_t1_q14",
@@ -2142,10 +2142,10 @@
      "query": "小雯是做什么工作的",
      "answer_any": [],
      "known": false,
-     "answer": "无法从给定的聊天记录中得知小雯的工作。",
+     "answer": "",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6058
+     "context_chars": 18087
     },
     {
      "id": "v10_t1_q15",
@@ -2155,10 +2155,10 @@
      "query": "我表妹在哪读书",
      "answer_any": [],
      "known": false,
-     "answer": "不知道",
+     "answer": "无法确定表妹在哪读书",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6058
+     "context_chars": 18087
     },
     {
      "id": "v10_t1_q16",
@@ -2171,7 +2171,7 @@
      "answer": "",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6058
+     "context_chars": 18087
     },
     {
      "id": "v10_t2_q01",
@@ -2182,11 +2182,11 @@
      "answer_any": [
       "采油"
      ],
-     "known": true,
-     "answer": "你在大庆油田当采油工",
-     "success": 1.0,
+     "known": false,
+     "answer": "null",
+     "success": 0.0,
      "stale": false,
-     "context_chars": 5941
+     "context_chars": 18057
     },
     {
      "id": "v10_t2_q02",
@@ -2198,10 +2198,10 @@
       "大庆"
      ],
      "known": false,
-     "answer": "无法确定",
+     "answer": "",
      "success": 0.0,
      "stale": false,
-     "context_chars": 5941
+     "context_chars": 18057
     },
     {
      "id": "v10_t2_q03",
@@ -2213,10 +2213,10 @@
       "冻疮"
      ],
      "known": true,
-     "answer": "手上老长冻疮",
+     "answer": "一到冬天手上会长冻疮，一到冬天就又痒又疼",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5941
+     "context_chars": 18057
     },
     {
      "id": "v10_t2_q04",
@@ -2228,10 +2228,10 @@
       "齐齐哈尔"
      ],
      "known": false,
-     "answer": "无法确定玩家老家的具体位置",
+     "answer": "无法从提供的聊天记录中获取玩家老家的具体信息。",
      "success": 0.0,
      "stale": false,
-     "context_chars": 5941
+     "context_chars": 18057
     },
     {
      "id": "v10_t2_q05",
@@ -2243,10 +2243,10 @@
       "水果摊"
      ],
      "known": true,
-     "answer": "玩家的媳妇在小区门口开了个水果摊。",
+     "answer": "玩家的媳妇在小区门口开了个水果摊",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5941
+     "context_chars": 18057
     },
     {
      "id": "v10_t2_q06",
@@ -2261,7 +2261,7 @@
      "answer": "玩家的儿子报了冰球队",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5941
+     "context_chars": 18057
     },
     {
      "id": "v10_t2_q07",
@@ -2272,11 +2272,11 @@
      "answer_any": [
       "夜班"
      ],
-     "known": true,
-     "answer": "玩家现在是白班，早上八点到下午五点上班。",
+     "known": false,
+     "answer": "",
      "success": 0.0,
-     "stale": true,
-     "context_chars": 5941
+     "stale": false,
+     "context_chars": 18057
     },
     {
      "id": "v10_t2_q08",
@@ -2288,10 +2288,10 @@
       "哈弗"
      ],
      "known": true,
-     "answer": "你现在开的是哈弗车。",
+     "answer": "玩家现在开的是哈弗车",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5941
+     "context_chars": 18057
     },
     {
      "id": "v10_t2_q09",
@@ -2306,10 +2306,10 @@
       "星耀四"
      ],
      "known": true,
-     "answer": "玩家从钻石三提升到了星耀四",
+     "answer": "玩家的段位从钻石二变到星耀四",
      "success": 0.0,
      "stale": false,
-     "context_chars": 5941
+     "context_chars": 18057
     },
     {
      "id": "v10_t2_q10",
@@ -2323,10 +2323,10 @@
       "孙尚香"
      ],
      "known": true,
-     "answer": "玩家的本命英雄从马可波罗换成了公孙离。",
+     "answer": "玩家从马可波罗换成了公孙离",
      "success": 0.0,
      "stale": false,
-     "context_chars": 5941
+     "context_chars": 18057
     },
     {
      "id": "v10_t2_q11",
@@ -2337,11 +2337,11 @@
      "answer_any": [
       "雪地胎"
      ],
-     "known": true,
-     "answer": "你说过哪天早上要提醒你去换雪地胎。",
-     "success": 1.0,
+     "known": false,
+     "answer": "未听说过有说过要提醒玩家早上干嘛",
+     "success": 0.0,
      "stale": false,
-     "context_chars": 5941
+     "context_chars": 18057
     },
     {
      "id": "v10_t2_q12",
@@ -2356,7 +2356,7 @@
      "answer": "",
      "success": 0.0,
      "stale": false,
-     "context_chars": 5941
+     "context_chars": 18057
     },
     {
      "id": "v10_t2_q13",
@@ -2366,10 +2366,10 @@
      "query": "你答应过帮我挑钓鱼竿吗",
      "answer_any": [],
      "known": false,
-     "answer": "未提及助手曾答应帮玩家挑钓鱼竿",
+     "answer": "",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5941
+     "context_chars": 18057
     },
     {
      "id": "v10_t2_q14",
@@ -2379,10 +2379,10 @@
      "query": "我媳妇是哪儿人",
      "answer_any": [],
      "known": false,
-     "answer": "未提及",
+     "answer": "未提及玩家媳妇的具体地点",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5941
+     "context_chars": 18057
     },
     {
      "id": "v10_t2_q15",
@@ -2395,7 +2395,7 @@
      "answer": "未提及",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5941
+     "context_chars": 18057
     },
     {
      "id": "v10_t2_q16",
@@ -2405,10 +2405,10 @@
      "query": "我有没有打过耳洞",
      "answer_any": [],
      "known": false,
-     "answer": "没有找到关于玩家打耳洞的信息。",
+     "answer": "没有找到关于你是否打过耳洞的相关信息。",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5941
+     "context_chars": 18057
     },
     {
      "id": "v10_t3_q01",
@@ -2423,7 +2423,7 @@
      "answer": "",
      "success": 0.0,
      "stale": false,
-     "context_chars": 6024
+     "context_chars": 18069
     },
     {
      "id": "v10_t3_q02",
@@ -2438,7 +2438,7 @@
      "answer": "",
      "success": 0.0,
      "stale": false,
-     "context_chars": 6024
+     "context_chars": 18069
     },
     {
      "id": "v10_t3_q03",
@@ -2450,10 +2450,10 @@
       "乳糖"
      ],
      "known": true,
-     "answer": "因为你有乳糖不耐，一喝牛奶就闹肚子",
+     "answer": "你因为乳糖不耐，一喝牛奶就闹肚子",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6024
+     "context_chars": 18069
     },
     {
      "id": "v10_t3_q04",
@@ -2465,10 +2465,10 @@
       "橘猫"
      ],
      "known": true,
-     "answer": "橙子是玩家家里的一只橘猫的昵称。",
+     "answer": "橙子是玩家家里的一只橘猫的名。",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6024
+     "context_chars": 18069
     },
     {
      "id": "v10_t3_q05",
@@ -2480,10 +2480,10 @@
       "辅警"
      ],
      "known": true,
-     "answer": "阿杰是玩家男朋友，当辅警",
+     "answer": "阿杰是玩家的男朋友，当辅警",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6024
+     "context_chars": 18069
     },
     {
      "id": "v10_t3_q06",
@@ -2495,10 +2495,10 @@
       "剪纸"
      ],
      "known": true,
-     "answer": "玩家的奶奶会剪纸，给玩家剪了一个福字。",
+     "answer": "玩家提到奶奶会剪纸，给玩家剪了个福字。",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6024
+     "context_chars": 18069
     },
     {
      "id": "v10_t3_q07",
@@ -2510,10 +2510,10 @@
       "万岁山"
      ],
      "known": true,
-     "answer": "你现在在万岁山景区带团。",
+     "answer": "现在玩家在万岁山景区带团。",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6024
+     "context_chars": 18069
     },
     {
      "id": "v10_t3_q08",
@@ -2525,10 +2525,10 @@
       "尤克里里"
      ],
      "known": true,
-     "answer": "玩家现在在学尤克里里",
-     "success": 1.0,
-     "stale": false,
-     "context_chars": 6024
+     "answer": "玩家现在在学古筝",
+     "success": 0.0,
+     "stale": true,
+     "context_chars": 18069
     },
     {
      "id": "v10_t3_q09",
@@ -2543,10 +2543,10 @@
       "铂金四"
      ],
      "known": true,
-     "answer": "玩家最近上到了黄金二",
+     "answer": "玩家从白银一上到了黄金二",
      "success": 0.0,
      "stale": false,
-     "context_chars": 6024
+     "context_chars": 18069
     },
     {
      "id": "v10_t3_q10",
@@ -2560,10 +2560,10 @@
       "商丘"
      ],
      "known": true,
-     "answer": "阿杰先后在新乡和许昌工作过",
+     "answer": "阿杰先后在新乡和商丘工作过",
      "success": 0.0,
      "stale": false,
-     "context_chars": 6024
+     "context_chars": 18069
     },
     {
      "id": "v10_t3_q11",
@@ -2575,10 +2575,10 @@
       "战队赛"
      ],
      "known": true,
-     "answer": "你答应过帮我盯着这周的战队赛",
+     "answer": "我帮你盯着这周的战队赛",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6024
+     "context_chars": 18069
     },
     {
      "id": "v10_t3_q12",
@@ -2590,10 +2590,10 @@
       "五点半"
      ],
      "known": true,
-     "answer": "周六早上五点半叫我",
+     "answer": "周六早上五点半",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6024
+     "context_chars": 18069
     },
     {
      "id": "v10_t3_q13",
@@ -2606,7 +2606,7 @@
      "answer": "",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6024
+     "context_chars": 18069
     },
     {
      "id": "v10_t3_q14",
@@ -2616,10 +2616,10 @@
      "query": "我奶奶住在哪个城市",
      "answer_any": [],
      "known": true,
-     "answer": "玩家的奶奶住在开封",
+     "answer": "玩家提到奶奶住在万岁山",
      "success": 0.0,
      "stale": false,
-     "context_chars": 6024
+     "context_chars": 18069
     },
     {
      "id": "v10_t3_q15",
@@ -2629,10 +2629,10 @@
      "query": "我姑姑是做什么的",
      "answer_any": [],
      "known": false,
-     "answer": "未提及玩家的姑姑是做什么的",
+     "answer": "未提供相关信息",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6024
+     "context_chars": 18069
     },
     {
      "id": "v10_t3_q16",
@@ -2642,10 +2642,10 @@
      "query": "我爱吃甜粽子还是咸粽子",
      "answer_any": [],
      "known": false,
-     "answer": "我不知道玩家喜欢吃甜粽子还是咸粽子",
+     "answer": "",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6024
+     "context_chars": 18069
     },
     {
      "id": "v10_t4_q01",
@@ -2660,7 +2660,7 @@
      "answer": "",
      "success": 0.0,
      "stale": false,
-     "context_chars": 6145
+     "context_chars": 18206
     },
     {
      "id": "v10_t4_q02",
@@ -2671,11 +2671,11 @@
      "answer_any": [
       "赣州"
      ],
-     "known": true,
-     "answer": "赣州",
-     "success": 1.0,
+     "known": false,
+     "answer": "",
+     "success": 0.0,
      "stale": false,
-     "context_chars": 6145
+     "context_chars": 18206
     },
     {
      "id": "v10_t4_q03",
@@ -2687,10 +2687,10 @@
       "疱疹"
      ],
      "known": true,
-     "answer": "医生说是带状疱疹",
+     "answer": "三斤的草鱼不小了，医生说是带状疱疹",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6145
+     "context_chars": 18206
     },
     {
      "id": "v10_t4_q04",
@@ -2702,10 +2702,10 @@
       "钓鱼"
      ],
      "known": true,
-     "answer": "玩家表示周末去章江边钓鱼",
+     "answer": "你周末爱去的地方是章江边钓鱼",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6145
+     "context_chars": 18206
     },
     {
      "id": "v10_t4_q05",
@@ -2720,7 +2720,7 @@
      "answer": "学校选女儿去学主持",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6145
+     "context_chars": 18206
     },
     {
      "id": "v10_t4_q06",
@@ -2732,10 +2732,10 @@
       "自行车"
      ],
      "known": true,
-     "answer": "老爸爸以前是修自行车的",
+     "answer": "你老爸退休前是做修自行车的。",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6145
+     "context_chars": 18206
     },
     {
      "id": "v10_t4_q07",
@@ -2747,10 +2747,10 @@
       "太极"
      ],
      "known": true,
-     "answer": "玩家每天早上五点起来晨跑五公里。",
+     "answer": "每天早上五点起来晨跑五公里",
      "success": 0.0,
      "stale": true,
-     "context_chars": 6145
+     "context_chars": 18206
     },
     {
      "id": "v10_t4_q08",
@@ -2762,10 +2762,10 @@
       "智能锁"
      ],
      "known": true,
-     "answer": "玩家提到现在店里主要接智能锁的活。",
+     "answer": "玩家: 现在装智能锁的人多了，我也接这活",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6145
+     "context_chars": 18206
     },
     {
      "id": "v10_t4_q09",
@@ -2780,10 +2780,10 @@
       "钻石三"
      ],
      "known": true,
-     "answer": "玩家目前的段位是钻石三",
+     "answer": "玩家在2026-03-11 23:11时提到自己感觉段位起起落落，但没有具体说明起落的具体时间或段位变化。",
      "success": 0.0,
      "stale": false,
-     "context_chars": 6145
+     "context_chars": 18206
     },
     {
      "id": "v10_t4_q10",
@@ -2796,11 +2796,11 @@
       "nova11",
       "Magic6"
      ],
-     "known": false,
-     "answer": "助手没有具体提到玩家换过哪些手机。",
+     "known": true,
+     "answer": "玩家提到用女儿的旧手机，是个华为nova11",
      "success": 0.0,
      "stale": false,
-     "context_chars": 6145
+     "context_chars": 18206
     },
     {
      "id": "v10_t4_q11",
@@ -2812,10 +2812,10 @@
       "请假"
      ],
      "known": true,
-     "answer": "你说要提醒我帮你盯着赛季结算，最后三天提醒你上号。",
-     "success": 0.0,
+     "answer": "你说要提醒我比赛那天早上请假去现场看她。",
+     "success": 1.0,
      "stale": false,
-     "context_chars": 6145
+     "context_chars": 18206
     },
     {
      "id": "v10_t4_q12",
@@ -2827,10 +2827,10 @@
       "复活甲"
      ],
      "known": true,
-     "answer": "助手提到打完我陪你把复活甲什么时候出理一理。",
+     "answer": "玩家说打完那局后，助手建议陪他把复活甲理一理。",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6145
+     "context_chars": 18206
     },
     {
      "id": "v10_t4_q13",
@@ -2840,10 +2840,10 @@
      "query": "你答应过帮我查天气预报吗",
      "answer_any": [],
      "known": false,
-     "answer": "未听说过帮玩家查天气预报的事",
+     "answer": "",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6145
+     "context_chars": 18206
     },
     {
      "id": "v10_t4_q14",
@@ -2853,10 +2853,10 @@
      "query": "我老爸今年多大了",
      "answer_any": [],
      "known": true,
-     "answer": "玩家提到老爸以前是修自行车的，现在退休了",
+     "answer": "玩家提到父亲退休了，但没有具体给出父亲的年龄。",
      "success": 0.0,
      "stale": false,
-     "context_chars": 6145
+     "context_chars": 18206
     },
     {
      "id": "v10_t4_q15",
@@ -2866,10 +2866,10 @@
      "query": "我大伯是干啥的",
      "answer_any": [],
      "known": false,
-     "answer": "未提及大伯的职业",
+     "answer": "",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6145
+     "context_chars": 18206
     },
     {
      "id": "v10_t4_q16",
@@ -2879,10 +2879,10 @@
      "query": "我喜欢哪个牌子的球鞋",
      "answer_any": [],
      "known": false,
-     "answer": "没有提到任何牌子的球鞋",
+     "answer": "未提及任何品牌或型号的球鞋",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6145
+     "context_chars": 18206
     },
     {
      "id": "v10_t5_q01",
@@ -2893,11 +2893,11 @@
      "answer_any": [
       "美术"
      ],
-     "known": true,
-     "answer": "你在学校教美术。",
-     "success": 1.0,
+     "known": false,
+     "answer": "",
+     "success": 0.0,
      "stale": false,
-     "context_chars": 5899
+     "context_chars": 18069
     },
     {
      "id": "v10_t5_q02",
@@ -2908,11 +2908,11 @@
      "answer_any": [
       "泸州"
      ],
-     "known": true,
-     "answer": "你在泸州教书",
-     "success": 1.0,
+     "known": false,
+     "answer": "",
+     "success": 0.0,
      "stale": false,
-     "context_chars": 5899
+     "context_chars": 18069
     },
     {
      "id": "v10_t5_q03",
@@ -2924,10 +2924,10 @@
       "尘螨"
      ],
      "known": true,
-     "answer": "玩家提到是尘螨过敏",
+     "answer": "尘螨过敏",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5899
+     "context_chars": 18069
     },
     {
      "id": "v10_t5_q04",
@@ -2939,10 +2939,10 @@
       "芦丁鸡"
      ],
      "known": true,
-     "answer": "玩家家养的是芦丁鸡。",
+     "answer": "玩家家养的是两只芦丁鸡。",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5899
+     "context_chars": 18069
     },
     {
      "id": "v10_t5_q05",
@@ -2954,10 +2954,10 @@
       "烟草"
      ],
      "known": true,
-     "answer": "老公在烟草局上班",
+     "answer": "玩家老公在烟草局上班",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5899
+     "context_chars": 18069
     },
     {
      "id": "v10_t5_q06",
@@ -2969,10 +2969,10 @@
       "广场舞"
      ],
      "known": true,
-     "answer": "婆婆平时喜欢带队排广场舞",
+     "answer": "玩家的婆婆是广场舞领队",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5899
+     "context_chars": 18069
     },
     {
      "id": "v10_t5_q07",
@@ -2983,11 +2983,11 @@
      "answer_any": [
       "飞盘"
      ],
-     "known": true,
-     "answer": "玩家提到晚上在家跳绳半小时来减肥。",
+     "known": false,
+     "answer": "",
      "success": 0.0,
-     "stale": true,
-     "context_chars": 5899
+     "stale": false,
+     "context_chars": 18069
     },
     {
      "id": "v10_t5_q08",
@@ -2998,11 +2998,11 @@
      "answer_any": [
       "漫画"
      ],
-     "known": true,
-     "answer": "玩家现在在学校带的社团是素描社。",
+     "known": false,
+     "answer": "",
      "success": 0.0,
-     "stale": true,
-     "context_chars": 5899
+     "stale": false,
+     "context_chars": 18069
     },
     {
      "id": "v10_t5_q09",
@@ -3017,10 +3017,10 @@
       "铂金三"
      ],
      "known": true,
-     "answer": "年初玩家的段位是铂金五，目前玩家的段位是钻石五。",
+     "answer": "玩家的段位从年初到现在从铂金五掉到了铂金三",
      "success": 0.0,
      "stale": false,
-     "context_chars": 5899
+     "context_chars": 18069
     },
     {
      "id": "v10_t5_q10",
@@ -3034,10 +3034,10 @@
       "干将莫邪"
      ],
      "known": true,
-     "answer": "玩家常用的英雄包括貂蝉、沈梦溪、狄仁杰、干将莫邪等。",
-     "success": 1.0,
+     "answer": "玩家常用英雄包括貂蝉、吕布、干将莫邪、李白、狄仁杰等。",
+     "success": 0.0,
      "stale": false,
-     "context_chars": 5899
+     "context_chars": 18069
     },
     {
      "id": "v10_t5_q11",
@@ -3052,7 +3052,7 @@
      "answer": "",
      "success": 0.0,
      "stale": false,
-     "context_chars": 5899
+     "context_chars": 18069
     },
     {
      "id": "v10_t5_q12",
@@ -3064,10 +3064,10 @@
       "宠物医院"
      ],
      "known": true,
-     "answer": "你说芦丁鸡生病那次，要去找几家能看小宠的宠物医院。",
+     "answer": "助手建议玩家找几家能看小宠的宠物医院。",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5899
+     "context_chars": 18069
     },
     {
      "id": "v10_t5_q13",
@@ -3080,7 +3080,7 @@
      "answer": "",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5899
+     "context_chars": 18069
     },
     {
      "id": "v10_t5_q14",
@@ -3089,11 +3089,11 @@
      "type": "negative",
      "query": "我老公有什么爱好",
      "answer_any": [],
-     "known": true,
-     "answer": "老公在烟草局上班，过年值班没回来；婆婆是广场舞领队，过年排了个新舞；家里养了两只芦丁鸡，天天下小蛋。",
-     "success": 0.0,
+     "known": false,
+     "answer": "null",
+     "success": 1.0,
      "stale": false,
-     "context_chars": 5899
+     "context_chars": 18069
     },
     {
      "id": "v10_t5_q15",
@@ -3103,10 +3103,10 @@
      "query": "我小叔子是做什么的",
      "answer_any": [],
      "known": false,
-     "answer": "助手没有关于玩家小叔子的信息",
+     "answer": "玩家没有提供关于小叔子具体从事工作的信息。",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5899
+     "context_chars": 18069
     },
     {
      "id": "v10_t5_q16",
@@ -3116,10 +3116,10 @@
      "query": "我喜欢吃榴莲吗",
      "answer_any": [],
      "known": false,
-     "answer": "没有相关信息表明玩家喜欢吃榴莲",
+     "answer": "没有相关信息表明玩家喜欢或不喜欢吃榴莲",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5899
+     "context_chars": 18069
     },
     {
      "id": "v10_t6_q01",
@@ -3131,10 +3131,10 @@
       "核工程"
      ],
      "known": false,
-     "answer": "null",
+     "answer": "",
      "success": 0.0,
      "stale": false,
-     "context_chars": 5968
+     "context_chars": 18077
     },
     {
      "id": "v10_t6_q02",
@@ -3145,11 +3145,11 @@
      "answer_any": [
       "衡阳"
      ],
-     "known": true,
-     "answer": "衡阳",
-     "success": 1.0,
+     "known": false,
+     "answer": "",
+     "success": 0.0,
      "stale": false,
-     "context_chars": 5968
+     "context_chars": 18077
     },
     {
      "id": "v10_t6_q03",
@@ -3161,10 +3161,10 @@
       "色弱"
      ],
      "known": false,
-     "answer": "没有提到玩家有眼睛方面的问题",
+     "answer": "助手没提到玩家的眼睛有什么问题",
      "success": 0.0,
      "stale": false,
-     "context_chars": 5968
+     "context_chars": 18077
     },
     {
      "id": "v10_t6_q04",
@@ -3176,10 +3176,10 @@
       "魔方"
      ],
      "known": false,
-     "answer": "玩家最近在玩魔方",
+     "answer": "……",
      "success": 0.0,
      "stale": false,
-     "context_chars": 5968
+     "context_chars": 18077
     },
     {
      "id": "v10_t6_q05",
@@ -3194,7 +3194,7 @@
      "answer": "大刘是丹东人",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5968
+     "context_chars": 18077
     },
     {
      "id": "v10_t6_q06",
@@ -3206,10 +3206,10 @@
       "扳道"
      ],
      "known": true,
-     "answer": "玩家的爷爷以前在铁路上当扳道工。",
+     "answer": "我爷爷以前在铁路上当扳道工",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5968
+     "context_chars": 18077
     },
     {
      "id": "v10_t6_q07",
@@ -3220,11 +3220,11 @@
      "answer_any": [
       "合租"
      ],
-     "known": true,
-     "answer": "你现在住在衡阳",
+     "known": false,
+     "answer": "",
      "success": 0.0,
      "stale": false,
-     "context_chars": 5968
+     "context_chars": 18077
     },
     {
      "id": "v10_t6_q08",
@@ -3236,10 +3236,10 @@
       "修电脑"
      ],
      "known": true,
-     "answer": "玩家最近在修电脑挣外快。",
+     "answer": "玩家最近在修电脑，挣了一千多。",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5968
+     "context_chars": 18077
     },
     {
      "id": "v10_t6_q09",
@@ -3254,10 +3254,10 @@
       "星耀二"
      ],
      "known": true,
-     "answer": "你这一年打上了星耀五",
+     "answer": "玩家这赛季冲上了星耀五",
      "success": 0.0,
      "stale": false,
-     "context_chars": 5968
+     "context_chars": 18077
     },
     {
      "id": "v10_t6_q10",
@@ -3271,10 +3271,10 @@
       "新加坡"
      ],
      "known": true,
-     "answer": "玩家提到他哥从扎钢筋的工作换成了学焊工，工资比扎钢筋高。",
+     "answer": "玩家提到他哥从工地上扎钢筋，过年才回来几天，现在在帮同学修电脑挣外快，说明他哥这一年从工地上的体力活变成了技术活，挣外快。",
      "success": 0.0,
      "stale": false,
-     "context_chars": 5968
+     "context_chars": 18077
     },
     {
      "id": "v10_t6_q11",
@@ -3286,10 +3286,10 @@
       "耳机"
      ],
      "known": true,
-     "answer": "四级前一晚提醒你把听力耳机备好。",
+     "answer": "四级前一晚提醒我把听力耳机备好。",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5968
+     "context_chars": 18077
     },
     {
      "id": "v10_t6_q12",
@@ -3301,10 +3301,10 @@
       "对局数据"
      ],
      "known": true,
-     "answer": "这周末我陪你把这周的对局数据过一遍。",
+     "answer": "周末要陪玩家过一遍这周的对局数据",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5968
+     "context_chars": 18077
     },
     {
      "id": "v10_t6_q13",
@@ -3314,10 +3314,10 @@
      "query": "你答应过帮我抢课吗",
      "answer_any": [],
      "known": false,
-     "answer": "未提及助手答应过帮忙抢课",
+     "answer": "未答应过帮忙抢课",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5968
+     "context_chars": 18077
     },
     {
      "id": "v10_t6_q14",
@@ -3326,11 +3326,11 @@
      "type": "negative",
      "query": "我爷爷老家是哪的",
      "answer_any": [],
-     "known": true,
-     "answer": "玩家玩家爷爷老家是丹东",
-     "success": 0.0,
+     "known": false,
+     "answer": "无法确定玩家爷爷老家的具体地点",
+     "success": 1.0,
      "stale": false,
-     "context_chars": 5968
+     "context_chars": 18077
     },
     {
      "id": "v10_t6_q15",
@@ -3340,10 +3340,10 @@
      "query": "我女朋友是哪个专业的",
      "answer_any": [],
      "known": false,
-     "answer": "无法从提供的聊天记录中得知玩家的女朋友的专业。",
+     "answer": "未提及",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5968
+     "context_chars": 18077
     },
     {
      "id": "v10_t6_q16",
@@ -3353,10 +3353,10 @@
      "query": "我近视多少度",
      "answer_any": [],
      "known": false,
-     "answer": "无法从提供的聊天记录中得知玩家的近视度数。",
+     "answer": "无法从给定的聊天记录中得知玩家的近视度数。",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5968
+     "context_chars": 18077
     },
     {
      "id": "v10_t7_q01",
@@ -3368,10 +3368,10 @@
       "米线"
      ],
      "known": true,
-     "answer": "你开的是米线店。",
+     "answer": "玩家在曲靖麒麟区开了个米线店",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6018
+     "context_chars": 18127
     },
     {
      "id": "v10_t7_q02",
@@ -3383,10 +3383,10 @@
       "曲靖"
      ],
      "known": true,
-     "answer": "你在曲靖麒麟区开店。",
+     "answer": "你在曲靖麒麟区开店",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6018
+     "context_chars": 18127
     },
     {
      "id": "v10_t7_q03",
@@ -3397,11 +3397,11 @@
      "answer_any": [
       "骨质疏松"
      ],
-     "known": true,
-     "answer": "查出来有点骨质疏松",
-     "success": 1.0,
+     "known": false,
+     "answer": "没提到骨头的具体问题",
+     "success": 0.0,
      "stale": false,
-     "context_chars": 6018
+     "context_chars": 18127
     },
     {
      "id": "v10_t7_q04",
@@ -3413,10 +3413,10 @@
       "十字绣"
      ],
      "known": true,
-     "answer": "玩家提到绣的是牡丹。",
+     "answer": "玩家提到他正在绣一幅牡丹",
      "success": 0.0,
      "stale": false,
-     "context_chars": 6018
+     "context_chars": 18127
     },
     {
      "id": "v10_t7_q05",
@@ -3428,10 +3428,10 @@
       "煤矿"
      ],
      "known": true,
-     "answer": "玩家老公在煤矿上班",
+     "answer": "玩家提到老公在煤矿上班",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6018
+     "context_chars": 18127
     },
     {
      "id": "v10_t7_q06",
@@ -3443,10 +3443,10 @@
       "花椒"
      ],
      "known": true,
-     "answer": "玩家提到大姐在老家种花椒",
+     "answer": "大姐在老家种花椒",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6018
+     "context_chars": 18127
     },
     {
      "id": "v10_t7_q07",
@@ -3458,10 +3458,10 @@
       "快走"
      ],
      "known": true,
-     "answer": "晚上关了店就去打麻将",
+     "answer": "现在晚上关店后，玩家计划去大理读大专的儿子那里帮忙看店。",
      "success": 0.0,
-     "stale": true,
-     "context_chars": 6018
+     "stale": false,
+     "context_chars": 18127
     },
     {
      "id": "v10_t7_q08",
@@ -3473,10 +3473,10 @@
       "沾益"
      ],
      "known": true,
-     "answer": "你的店现在开在曲靖麒麟区。",
-     "success": 0.0,
-     "stale": true,
-     "context_chars": 6018
+     "answer": "玩家的店现在开在沾益。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 18127
     },
     {
      "id": "v10_t7_q09",
@@ -3490,11 +3490,11 @@
       "黄金四",
       "白银一"
      ],
-     "known": true,
-     "answer": "玩家从白银三升到了白银三",
+     "known": false,
+     "answer": "无法从给定的聊天记录中得知你的段位是如何变过来的。",
      "success": 0.0,
      "stale": false,
-     "context_chars": 6018
+     "context_chars": 18127
     },
     {
      "id": "v10_t7_q10",
@@ -3508,10 +3508,10 @@
       "深圳"
      ],
      "known": true,
-     "answer": "玩家的儿子先后在大理和深圳读大专和工作。",
+     "answer": "玩家的儿子先后在大理和深圳读大专、实习",
      "success": 0.0,
      "stale": false,
-     "context_chars": 6018
+     "context_chars": 18127
     },
     {
      "id": "v10_t7_q11",
@@ -3526,7 +3526,7 @@
      "answer": "骨密度报告",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6018
+     "context_chars": 18127
     },
     {
      "id": "v10_t7_q12",
@@ -3538,10 +3538,10 @@
       "每日任务"
      ],
      "known": true,
-     "answer": "每日任务",
+     "answer": "你一上线，我就帮你看看每日任务做完没。",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6018
+     "context_chars": 18127
     },
     {
      "id": "v10_t7_q13",
@@ -3551,10 +3551,10 @@
      "query": "你答应过帮我办健康证吗",
      "answer_any": [],
      "known": false,
-     "answer": "未提及健康证的事",
+     "answer": "助手没说过要帮你办健康证",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6018
+     "context_chars": 18127
     },
     {
      "id": "v10_t7_q14",
@@ -3567,7 +3567,7 @@
      "answer": "老公在煤矿上班，一个月就回来两趟",
      "success": 0.0,
      "stale": false,
-     "context_chars": 6018
+     "context_chars": 18127
     },
     {
      "id": "v10_t7_q15",
@@ -3577,10 +3577,10 @@
      "query": "我孙子几岁了",
      "answer_any": [],
      "known": false,
-     "answer": "不知道玩家孙子的年龄",
+     "answer": "无法得知",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6018
+     "context_chars": 18127
     },
     {
      "id": "v10_t7_q16",
@@ -3590,10 +3590,10 @@
      "query": "我信佛吗",
      "answer_any": [],
      "known": false,
-     "answer": "无法回答",
+     "answer": "无法从给定的聊天记录中得知",
      "success": 1.0,
      "stale": false,
-     "context_chars": 6018
+     "context_chars": 18127
     },
     {
      "id": "v10_t8_q01",
@@ -3608,7 +3608,7 @@
      "answer": "",
      "success": 0.0,
      "stale": false,
-     "context_chars": 5961
+     "context_chars": 18043
     },
     {
      "id": "v10_t8_q02",
@@ -3623,7 +3623,7 @@
      "answer": "",
      "success": 0.0,
      "stale": false,
-     "context_chars": 5961
+     "context_chars": 18043
     },
     {
      "id": "v10_t8_q03",
@@ -3635,10 +3635,10 @@
       "脱发"
      ],
      "known": true,
-     "answer": "玩家的脱发问题是由脂溢性脱发引起的，医生建议他要用药，并且建议他早点睡觉。",
+     "answer": "玩家提到他脱发问题，医生说是脂溢性脱发，建议他用药，并提到要给芝麻做驱虫。",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5961
+     "context_chars": 18043
     },
     {
      "id": "v10_t8_q04",
@@ -3649,11 +3649,11 @@
      "answer_any": [
       "暹罗"
      ],
-     "known": true,
-     "answer": "芝麻是暹罗猫",
-     "success": 1.0,
+     "known": false,
+     "answer": "芝麻是玩家提到的一只暹罗猫",
+     "success": 0.0,
      "stale": false,
-     "context_chars": 5961
+     "context_chars": 18043
     },
     {
      "id": "v10_t8_q05",
@@ -3668,7 +3668,7 @@
      "answer": "安安是教舞蹈的",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5961
+     "context_chars": 18043
     },
     {
      "id": "v10_t8_q06",
@@ -3683,7 +3683,7 @@
      "answer": "玩家的表弟在健身房当私教",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5961
+     "context_chars": 18043
     },
     {
      "id": "v10_t8_q07",
@@ -3695,10 +3695,10 @@
       "台球"
      ],
      "known": true,
-     "answer": "玩家表示下班后去酒吧玩飞镖",
-     "success": 0.0,
-     "stale": true,
-     "context_chars": 5961
+     "answer": "助手知道玩家下班后爱玩台球。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 18043
     },
     {
      "id": "v10_t8_q08",
@@ -3713,7 +3713,7 @@
      "answer": "安安现在是玩家的未婚妻",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5961
+     "context_chars": 18043
     },
     {
      "id": "v10_t8_q09",
@@ -3728,10 +3728,10 @@
       "星耀三"
      ],
      "known": true,
-     "answer": "你这一年段位从钻石一提升到了星耀三。",
+     "answer": "玩家在2026-09-27时还处于钻石二的段位。",
      "success": 0.0,
      "stale": false,
-     "context_chars": 5961
+     "context_chars": 18043
     },
     {
      "id": "v10_t8_q10",
@@ -3745,10 +3745,10 @@
       "门卫"
      ],
      "known": true,
-     "answer": "玩家提到父亲在湖州做湖笔，后来在湖州退下来后跟人合伙开了个茶馆。",
+     "answer": "我爸在丝厂干了三十年，刚退下来",
      "success": 0.0,
      "stale": false,
-     "context_chars": 5961
+     "context_chars": 18043
     },
     {
      "id": "v10_t8_q11",
@@ -3763,7 +3763,7 @@
      "answer": "",
      "success": 0.0,
      "stale": false,
-     "context_chars": 5961
+     "context_chars": 18043
     },
     {
      "id": "v10_t8_q12",
@@ -3775,10 +3775,10 @@
       "驱虫"
      ],
      "known": true,
-     "answer": "助手曾答应提醒玩家给芝麻做驱虫。",
+     "answer": "助手提到过要提醒玩家给芝麻做驱虫",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5961
+     "context_chars": 18043
     },
     {
      "id": "v10_t8_q13",
@@ -3788,10 +3788,10 @@
      "query": "你答应过帮我订婚宴酒店吗",
      "answer_any": [],
      "known": false,
-     "answer": "未说过",
+     "answer": "",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5961
+     "context_chars": 18043
     },
     {
      "id": "v10_t8_q14",
@@ -3800,11 +3800,11 @@
      "type": "negative",
      "query": "我表弟住在哪个城市",
      "answer_any": [],
-     "known": true,
-     "answer": "玩家提到表弟在健身房当私教，说要带我去练，说明表弟住在健身房附近的城市，但没有具体说明是哪个城市。",
-     "success": 0.0,
+     "known": false,
+     "answer": "未提及",
+     "success": 1.0,
      "stale": false,
-     "context_chars": 5961
+     "context_chars": 18043
     },
     {
      "id": "v10_t8_q15",
@@ -3814,10 +3814,10 @@
      "query": "我奶奶身体怎么样",
      "answer_any": [],
      "known": false,
-     "answer": "找不到关于玩家奶奶身体状况的信息",
+     "answer": "无法得知",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5961
+     "context_chars": 18043
     },
     {
      "id": "v10_t8_q16",
@@ -3830,7 +3830,7 @@
      "answer": "",
      "success": 1.0,
      "stale": false,
-     "context_chars": 5961
+     "context_chars": 18043
     }
    ]
   }
