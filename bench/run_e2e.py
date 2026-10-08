@@ -129,6 +129,27 @@ class V2System:
         return [r.to_dict() for r in self.mem.store.all()]
 
 
+class RawSystem:
+    """P7: raw-first memory (no LLM on the write path)."""
+
+    def __init__(self, workdir: str, **opts):
+        from gamememo.personal.raw import RawMemory
+
+        self.now = datetime.now()
+        self.mem = RawMemory("e2e", storage_dir=workdir, embedder=jina(), clock=lambda: self.now, **opts)
+
+    def ingest(self, text: str, when: datetime) -> None:
+        self.now = when
+        self.mem.ingest(text, source="chat")
+
+    def evidence(self, query: str, when: datetime) -> List[str]:
+        self.now = when
+        return [self.mem.describe(r) for r in self.mem.retrieve(query, top_k=K, touch=False)]
+
+    def dump(self) -> List[Dict]:
+        return [r.to_dict() for r in self.mem.store.all()]
+
+
 _JINA = []
 
 
@@ -207,6 +228,8 @@ SYSTEMS: Dict[str, Callable[..., object]] = {
                                            concept_fallback=True, retrieval_config=_p4_read(),
                                            subject_recall=True, interleave_fallback=True, current_latest=True,
                                            rule_promises=True, trajectory_summary=True, promise_topic=True),
+    # P7: raw-first memory -- exchanges stored verbatim, rule promises, change-aware window
+    "p7": lambda model, url, wd: RawSystem(wd),
     "p3+safe-updates": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True,
                                                        history_recall=True, episodes=True, promises=True,
                                                        recall_modes=True, attribute_recall=True,
