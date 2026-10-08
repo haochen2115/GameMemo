@@ -86,3 +86,19 @@ def test_attribute_index_recalls_every_stated_value(tmp_path):
     heroes = [h for h in mem.retrieve("我主玩的英雄是怎么变的", top_k=3) if h.kind == "turn"]
     assert "主玩小乔" in heroes[0].content or any("主玩小乔" in h.content for h in heroes)
     assert not any("对面小乔" in h.content for h in heroes[:1])
+
+
+def test_registered_raw_systems_keep_their_definitions():
+    """A candidate's baseline must not drift when RawMemory's defaults change
+    (P8 silently inherited P9's default once; see EXPERIMENTS E16)."""
+    from bench.run_e2e import SYSTEMS
+    flags = {}
+    for name in ("p7", "p8", "p9"):
+        mem = SYSTEMS[name]("m", "http://localhost:0", str(tmp_dir(name))).mem
+        flags[name] = (mem.attribute_index, mem.state_line, mem.current)
+    assert flags == {"p7": (False, True, False), "p8": (True, True, False), "p9": (True, True, True)}
+
+
+def tmp_dir(name):
+    import tempfile
+    return tempfile.mkdtemp(prefix=f"sys_{name}_")
