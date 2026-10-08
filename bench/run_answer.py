@@ -13,6 +13,9 @@ prompt:
     evidence:<sys>    the top-3 memories <sys> retrieved in a run_e2e results file
     chatbot:<sys>     what MemoryChatBot injects: core profile + pending
                       promises + top-3, replayed on <sys>'s stored memories
+    recall:<sys>      the top-3 memories <sys> retrieves, replayed on its stored memories
+    rag:<k>           no memory writing: the top-k raw exchanges (player turn +
+                      assistant reply) by the same hybrid retriever, in date order
 
     python -m bench.run_answer --data bench/data/e2e_v10.json --split test \\
         --contexts none,full,evidence:p6b --results bench/results/e2e_v10_test.json \\
@@ -113,13 +116,16 @@ class ContextProvider:
         self.players = players
         self._evidence: Dict[Tuple[str, int], List[str]] = {}
         self._mem: Dict[Tuple[str, int], object] = {}
-        if self.kind in ("evidence", "chatbot"):
+        if self.kind in ("evidence", "chatbot", "recall"):
             if results is None or self.system not in results["results"]:
                 raise SystemExit(f"{spec}: needs --results containing system {self.system!r}")
             res = results["results"][self.system]
             for row in res["rows"]:
                 self._evidence[(row["id"], row.get("seed", 0))] = row["evidence"]
             self._memories = res["memories"]
+        elif self.kind == "rag":
+            self.k = int(self.system or 5)
+            self._rag: Dict[str, Tuple[object, List]] = {}
         elif self.kind not in ("none", "full"):
             raise SystemExit(f"unknown context {spec}")
 
@@ -136,6 +142,30 @@ class ContextProvider:
             self._mem[key] = sysobj
         return self._mem[key]
 
+    def _rag_context(self, player, q) -> str:
+        from bench.run_e2e import jina
+        from gamememo.personal.model import MemoryRecord
+        from gamememo.personal.retrieval import HybridRetriever, RetrievalConfig
+        if player["id"] not in self._rag:
+            recs = []
+            for s in player["sessions"]:
+                turns = s["turns"]
+                for i, t in enumerate(turns):
+                    if t["role"] != "user":
+                        continue
+                    text = f"玩家: {t['content']}"
+                    if i + 1 < len(turns) and turns[i + 1]["role"] == "assistant":
+                        text += f"\n助手: {turns[i + 1]['content']}"
+                    recs.append(MemoryRecord(content=text, created_at=s["date"], updated_at=s["date"]))
+            self._rag[player["id"]] = (HybridRetriever(jina(), RetrievalConfig.for_embedder(jina())), recs)
+        retriever, recs = self._rag[player["id"]]
+        hits = [h.record for h in retriever.search(q["query"], recs, top_k=self.k, now=parse_time(player["ask_at"]))]
+        if not hits:
+            return "你在过去的聊天记录里没有找到相关的内容。"
+        hits.sort(key=lambda r: r.created_at)
+        return "下面是过去聊天记录里和这个问题相关的片段：\n\n" + "\n\n".join(
+            f"【{r.created_at[:16]}】\n{r.content}" for r in hits)
+
     def __call__(self, player, q, seed: int) -> str:
         if self.kind == "none":
             return "关于这位玩家，你没有任何记录。"
@@ -143,8 +173,12 @@ class ContextProvider:
             return full_context(player)
         if self.kind == "evidence":
             return memory_context(self._evidence[(q["id"], seed)])
+        if self.kind == "rag":
+            return self._rag_context(player, q)
         sysobj = self._replayed(player["id"], seed)
         mem = sysobj.mem
+        if self.kind == "recall":
+            return memory_context([mem.describe(r) for r in mem.retrieve(q["query"], top_k=3, touch=False)])
         profile, promises = mem.core_profile(), mem.pending_promises()
         shown = {r.id for r in profile + promises}
         retrieved = [r for r in mem.retrieve(q["query"], top_k=3, touch=False) if r.id not in shown]
