@@ -230,7 +230,7 @@ SYSTEMS: Dict[str, Callable[..., object]] = {
                                            rule_promises=True, trajectory_summary=True, promise_topic=True),
     # P7: raw-first memory -- exchanges stored verbatim, rule promises, change-aware window
     "p7": lambda model, url, wd: RawSystem(wd),
-    "p7-timeline": lambda model, url, wd: RawSystem(wd, timeline=True),
+    "p7-notimeline": lambda model, url, wd: RawSystem(wd, timeline=False),
     "p3+safe-updates": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True,
                                                        history_recall=True, episodes=True, promises=True,
                                                        recall_modes=True, attribute_recall=True,

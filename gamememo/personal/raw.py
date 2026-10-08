@@ -68,7 +68,7 @@ class RawMemory:
                  change_k: int = 12,
                  promises: bool = True,
                  max_promises: int = 3,
-                 timeline: bool = False):
+                 timeline: bool = True):
         """
         min_k: retrieve at least this many exchanges, whatever top_k the
             caller asks for (one exchange is much shorter than a summary).
