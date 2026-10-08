@@ -13,6 +13,8 @@ prompt:
     evidence:<sys>    the top-3 memories <sys> retrieved in a run_e2e results file
     chatbot:<sys>     what MemoryChatBot injects: core profile + pending
                       promises + top-3, replayed on <sys>'s stored memories
+    allmem:<sys>      every stored memory of <sys> (active and superseded, described
+                      with dates and staleness) in date order: no retrieval at all
     recall:<sys>      the top-3 memories <sys> retrieves, replayed on its stored memories
     rag:<k>           no memory writing: the top-k raw exchanges (player turn +
                       assistant reply) by the same hybrid retriever, in date order
@@ -116,7 +118,7 @@ class ContextProvider:
         self.players = players
         self._evidence: Dict[Tuple[str, int], List[str]] = {}
         self._mem: Dict[Tuple[str, int], object] = {}
-        if self.kind in ("evidence", "chatbot", "recall"):
+        if self.kind in ("evidence", "chatbot", "recall", "allmem"):
             if results is None or self.system not in results["results"]:
                 raise SystemExit(f"{spec}: needs --results containing system {self.system!r}")
             res = results["results"][self.system]
@@ -177,6 +179,11 @@ class ContextProvider:
             return self._rag_context(player, q)
         sysobj = self._replayed(player["id"], seed)
         mem = sysobj.mem
+        if self.kind == "allmem":
+            recs = sorted(mem.store.all(), key=lambda r: (r.event_time or r.created_at or "", r.created_at or ""))
+            lines = [(f"你答应过玩家：{r.content}（{r.created_at[:10]}）" if r.kind == "promise" else mem.describe(r))
+                     for r in recs]
+            return memory_context(lines)
         if self.kind == "recall":
             return memory_context([mem.describe(r) for r in mem.retrieve(q["query"], top_k=3, touch=False)])
         profile, promises = mem.core_profile(), mem.pending_promises()
