@@ -16,8 +16,9 @@ prompt:
     allmem:<sys>      every stored memory of <sys> (active and superseded, described
                       with dates and staleness) in date order: no retrieval at all
     recall:<sys>      the top-3 memories <sys> retrieves, replayed on its stored memories
-    rag:<k>           no memory writing: the top-k raw exchanges (player turn +
-                      assistant reply) by the same hybrid retriever, in date order
+    rag:<k>[:<ck>]    no memory writing: the top-k raw exchanges (player turn +
+                      assistant reply) by the same hybrid retriever, in date order;
+                      questions about change over time get the top-<ck> instead
 
     python -m bench.run_answer --data bench/data/e2e_v10.json --split test \\
         --contexts none,full,evidence:p6b --results bench/results/e2e_v10_test.json \\
@@ -74,6 +75,10 @@ _PAST = ("以前", "之前", "原来", "原先", "曾", "过去", "从前", "后
 _ABSTAIN = re.compile(r"不记得|不知道|没有提到|没提到|没提过|没有提过|没说过|没有说过|没有答应|没答应|没有记录|找不到|无法确定")
 
 
+# "how did it change" questions need every state, not the best few mentions
+CHANGE_INTENT = re.compile(r"怎么(变|换|升|降|走|起伏|上来)|变化|换过|一路|一步步|历程|前后")
+
+
 def normalize_answer(text: str) -> str:
     text = _TIER.sub(lambda m: m.group(1) + _NUM[m.group(2)], text)
     return normalize_dates(text)
@@ -126,7 +131,8 @@ class ContextProvider:
                 self._evidence[(row["id"], row.get("seed", 0))] = row["evidence"]
             self._memories = res["memories"]
         elif self.kind == "rag":
-            self.k = int(self.system or 5)
+            k, _, ck = (self.system or "5").partition(":")
+            self.k, self.change_k = int(k), int(ck or k)
             self._rag: Dict[str, Tuple[object, List]] = {}
         elif self.kind not in ("none", "full"):
             raise SystemExit(f"unknown context {spec}")
@@ -161,7 +167,8 @@ class ContextProvider:
                     recs.append(MemoryRecord(content=text, created_at=s["date"], updated_at=s["date"]))
             self._rag[player["id"]] = (HybridRetriever(jina(), RetrievalConfig.for_embedder(jina())), recs)
         retriever, recs = self._rag[player["id"]]
-        hits = [h.record for h in retriever.search(q["query"], recs, top_k=self.k, now=parse_time(player["ask_at"]))]
+        k = self.change_k if CHANGE_INTENT.search(q["query"]) else self.k
+        hits = [h.record for h in retriever.search(q["query"], recs, top_k=k, now=parse_time(player["ask_at"]))]
         if not hits:
             return "你在过去的聊天记录里没有找到相关的内容。"
         hits.sort(key=lambda r: r.created_at)
