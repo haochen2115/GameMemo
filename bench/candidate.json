@@ -1,12 +1,8 @@
 {
-  "_note": "P6b: rule-based promises (wider patterns) + one-line trajectories + topic-aware promise answers (E10, E10b) on top of P5b. P6 failed on e2e_v9 (Abstain -0.125) and is not re-tested; P6b is a new candidate on a new sealed set. Baseline: main @ b8f0ab9 (P5b, system p5b) on e2e_v10 test, same seeds, shared LLM reply cache.",
-  "retrieval": {
-    "system": "memory-default",
-    "mode": "hold"
-  },
-  "e2e": {
-    "system": "p6b",
+  "_note": "P7: raw-first memory (gamememo/personal/raw.py, E14). Exchanges stored verbatim, rule promises, top-8 raw exchanges (12 + timeline note for change questions). Judged on the answer level (bench/run_answer.py, chatbot context); E2EScore and retrieval_v2 judge stored evidence and do not apply to a system that keeps old statements verbatim (see EXPERIMENTS E14). Baseline: main @ 6d71bfc (P6b) on sealed e2e_v11 test, storage seeds 0,1,2.",
+  "answer": {
+    "system": "chatbot:p7",
     "mode": "improve",
-    "results": "bench/results/e2e_v10_test.json"
+    "results": "bench/results/answer_v11_test_p7.json"
   }
 }

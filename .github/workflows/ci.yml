@@ -42,7 +42,7 @@ jobs:
       - name: SOTA records on the base branch
         run: |
           mkdir -p /tmp/base
-          for f in sota.json sota_e2e.json; do
+          for f in sota.json sota_e2e.json sota_answer.json; do
             git show "origin/${{ github.base_ref }}:bench/$f" > "/tmp/base/$f" 2>/dev/null || rm -f "/tmp/base/$f"
           done
           ls -l /tmp/base

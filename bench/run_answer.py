@@ -238,6 +238,22 @@ def paired_bootstrap(a_rows, b_rows, n=10000, seed=0) -> Dict:
             "better": sum(x > 0 for x in d), "worse": sum(x < 0 for x in d), "questions": len(ids)}
 
 
+def rejudge(path: str, data_path: str) -> Dict[str, Dict]:
+    """Re-score saved answers with the current judge and answer keys (no LLM)."""
+    with open(path, encoding="utf-8") as f:
+        saved = json.load(f)
+    with open(data_path, encoding="utf-8") as f:
+        qs = {q["id"]: q for p in json.load(f)["players"] for q in p["questions"]}
+    out = {}
+    for name, res in saved["results"].items():
+        rows = []
+        for row in res["rows"]:
+            success, stale = judge_answer(qs[row["id"]], row["known"], row["answer"])
+            rows.append(dict(row, success=success, stale=stale))
+        out[name] = dict(summarize(rows), rows=rows)
+    return out
+
+
 def answer(llm, context: str, today, query: str) -> Tuple[bool, str]:
     system = SYSTEM.format(today=today.strftime("%Y-%m-%d"), weekday=WEEKDAYS[today.weekday()], context=context)
     raw = llm.chat(system=system, messages=[{"role": "user", "content": query}], temperature=0.0,

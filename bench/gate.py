@@ -13,7 +13,7 @@ committed before the test run, which doubles as the pre-registration:
         --retrieval-results bench/results/candidate.json --base-dir /tmp/base
 
 ``--base-dir`` holds the base branch's SOTA records (``sota.json``,
-``sota_e2e.json``); CI extracts them with ``git show origin/main:...``.
+``sota_e2e.json``, ``sota_answer.json``); CI extracts them with ``git show origin/main:...``.
 A missing record, or one measured on a different dataset, falls back to
 the baseline shipped in this checkout (base code on the new dataset).
 
@@ -34,7 +34,8 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SOTA = os.path.join(ROOT, "bench", "sota.json")
 RECORDS = {"retrieval": ("sota.json", "baseline_v0.json"),
-           "e2e": ("sota_e2e.json", "baseline_e2e.json")}
+           "e2e": ("sota_e2e.json", "baseline_e2e.json"),
+           "answer": ("sota_answer.json", "baseline_answer.json")}
 
 
 def check(candidate: dict, sota: dict, mode: str = "improve"):
@@ -91,10 +92,18 @@ def candidate_metrics(bench: str, entry: dict, retrieval_results: str, record: d
             res = json.load(f)
         _same_data(res, record)
         return res["results"][entry["system"]]
+    path = os.path.join(ROOT, entry["results"])
+    if bench == "answer":  # re-score the stored answers
+        from bench.run_answer import rejudge as rejudge_answers
+        with open(path, encoding="utf-8") as f:
+            res = json.load(f)
+        _same_data(res, record)
+        if res.get("model") != record.get("model"):
+            sys.exit(f"answer results use model {res.get('model')!r}, record needs {record.get('model')!r}")
+        return rejudge_answers(path, os.path.join(ROOT, record["dataset"]))[entry["system"]]
     # e2e: never trust stored numbers; re-score the stored evidence.
     from bench.run_e2e import rejudge
 
-    path = os.path.join(ROOT, entry["results"])
     with open(path, encoding="utf-8") as f:
         res = json.load(f)
     _same_data(res, record)
