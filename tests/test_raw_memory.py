@@ -51,7 +51,8 @@ def test_change_questions_get_a_wider_window(tmp_path):
         mem.ingest(f"玩家: 我段位到{tier}了\n助手: 恭喜")
     mem.min_k = 3
     assert len(mem.retrieve("我段位是多少", top_k=3)) == 3
-    assert len(mem.retrieve("我段位是怎么变的", top_k=3)) == 6
+    hits = mem.retrieve("我段位是怎么变的", top_k=3)
+    assert [h.kind for h in hits] == ["note"] + ["turn"] * 6 and "6次" in mem.describe(hits[0])
 
 
 def test_hard_forget_removes_the_exchange(tmp_path):
