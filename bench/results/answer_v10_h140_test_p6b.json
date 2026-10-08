@@ -1,0 +1,5716 @@
+{
+ "dataset": "bench/data/e2e_v10_h140.json",
+ "split": "test",
+ "model": "qwen2.5:3b",
+ "seeds": "0,1,2",
+ "results_file": "/tmp/claude-0/-home-user-GameMemo/878bb1b0-44e3-5fad-a3eb-f354ac4367bd/scratchpad/e2e_v10_h140_p6b.json",
+ "generated_at": "2026-10-08 19:09:33",
+ "results": {
+  "chatbot:p6b": {
+   "AnswerScore": 0.5599,
+   "Answered": 0.4583,
+   "Abstain": 0.8646,
+   "StaleMention": 0.25,
+   "by_type": {
+    "fact": 0.5694,
+    "negative": 0.8646,
+    "promise": 0.5208,
+    "trajectory": 0.2292,
+    "update": 0.2917
+   },
+   "context_chars": 377,
+   "n": 384,
+   "minutes": 16.0,
+   "rows": [
+    {
+     "id": "v10_t1_q01",
+     "player": "v10_t1",
+     "seed": 0,
+     "type": "fact",
+     "query": "我在服装厂负责什么",
+     "answer_any": [
+      "跟单"
+     ],
+     "known": true,
+     "answer": "玩家在台州一家服装厂上班，干了四年",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 336
+    },
+    {
+     "id": "v10_t1_q02",
+     "player": "v10_t1",
+     "seed": 0,
+     "type": "fact",
+     "query": "我在哪个城市上班",
+     "answer_any": [
+      "台州"
+     ],
+     "known": true,
+     "answer": "台州",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 364
+    },
+    {
+     "id": "v10_t1_q03",
+     "player": "v10_t1",
+     "seed": 0,
+     "type": "fact",
+     "query": "我甲状腺查出了什么",
+     "answer_any": [
+      "结节"
+     ],
+     "known": false,
+     "answer": "助手答应该歇歇了，眼睛要紧",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 380
+    },
+    {
+     "id": "v10_t1_q04",
+     "player": "v10_t1",
+     "seed": 0,
+     "type": "fact",
+     "query": "饼干是什么品种的狗",
+     "answer_any": [
+      "柯基"
+     ],
+     "known": true,
+     "answer": "玩家家里养了一只叫饼干的柯基犬",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 334
+    },
+    {
+     "id": "v10_t1_q05",
+     "player": "v10_t1",
+     "seed": 0,
+     "type": "fact",
+     "query": "我爸在老家种什么",
+     "answer_any": [
+      "杨梅"
+     ],
+     "known": true,
+     "answer": "我爸在老家种杨梅",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 449
+    },
+    {
+     "id": "v10_t1_q06",
+     "player": "v10_t1",
+     "seed": 0,
+     "type": "fact",
+     "query": "小雯在哪个城市",
+     "answer_any": [
+      "杭州"
+     ],
+     "known": true,
+     "answer": "小雯来访的城市是台州",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 404
+    },
+    {
+     "id": "v10_t1_q07",
+     "player": "v10_t1",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在周末爱去玩什么",
+     "answer_any": [
+      "密室"
+     ],
+     "known": false,
+     "answer": "无法提供具体周末活动",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 389
+    },
+    {
+     "id": "v10_t1_q08",
+     "player": "v10_t1",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在怎么去上班",
+     "answer_any": [
+      "开车"
+     ],
+     "known": true,
+     "answer": "你现在自己开车上班了",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 364
+    },
+    {
+     "id": "v10_t1_q09",
+     "player": "v10_t1",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我这一年段位是怎么走的",
+     "answer_any": [
+      "黄金二",
+      "铂金三",
+      "黄金一",
+      "铂金二"
+     ],
+     "known": true,
+     "answer": "玩家的段位是铂金二",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 380
+    },
+    {
+     "id": "v10_t1_q10",
+     "player": "v10_t1",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我主玩的英雄换过哪几个",
+     "answer_any": [
+      "蔡文姬",
+      "鬼谷子",
+      "张飞"
+     ],
+     "known": true,
+     "answer": "玩家在游戏中使用了以下英雄：蔡文姬 → 达摩 → 镜 → 元歌 → 刘禅 → 周瑜 → 鬼谷子 → 韩信 → 米莱狄 → 庄周 → 后羿 → 程咬金 → 诸葛亮 → 典韦 → 牛魔 → 李白 → 黄忠 → 张飞 → 曜 → 张飞 → 赵云 → 吕布 → 李信 → 廉颇 → 太乙真人 → 安琪拉",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 830
+    },
+    {
+     "id": "v10_t1_q11",
+     "player": "v10_t1",
+     "seed": 0,
+     "type": "promise",
+     "query": "你答应过提醒我去医院干嘛",
+     "answer_any": [
+      "复查"
+     ],
+     "known": true,
+     "answer": "助手答应六月第一周提醒你去医院复查。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 302
+    },
+    {
+     "id": "v10_t1_q12",
+     "player": "v10_t1",
+     "seed": 0,
+     "type": "promise",
+     "query": "攒的碎片你说要帮我看什么",
+     "answer_any": [
+      "碎片商店"
+     ],
+     "known": true,
+     "answer": "助手答应月底前帮你盯着碎片商店，看换什么最划算",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 343
+    },
+    {
+     "id": "v10_t1_q13",
+     "player": "v10_t1",
+     "seed": 0,
+     "type": "negative",
+     "query": "你说过要帮我查航班吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "助手没说过要帮你查航班。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 302
+    },
+    {
+     "id": "v10_t1_q14",
+     "player": "v10_t1",
+     "seed": 0,
+     "type": "negative",
+     "query": "小雯是做什么工作的",
+     "answer_any": [],
+     "known": false,
+     "answer": "……",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 402
+    },
+    {
+     "id": "v10_t1_q15",
+     "player": "v10_t1",
+     "seed": 0,
+     "type": "negative",
+     "query": "我表妹在哪读书",
+     "answer_any": [],
+     "known": false,
+     "answer": "无法提供相关信息",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 302
+    },
+    {
+     "id": "v10_t1_q16",
+     "player": "v10_t1",
+     "seed": 0,
+     "type": "negative",
+     "query": "我最喜欢哪个季节",
+     "answer_any": [],
+     "known": false,
+     "answer": "……",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 363
+    },
+    {
+     "id": "v10_t2_q01",
+     "player": "v10_t2",
+     "seed": 0,
+     "type": "fact",
+     "query": "我在油田干什么活",
+     "answer_any": [
+      "采油"
+     ],
+     "known": true,
+     "answer": "玩家在大庆油田当采油工",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 333
+    },
+    {
+     "id": "v10_t2_q02",
+     "player": "v10_t2",
+     "seed": 0,
+     "type": "fact",
+     "query": "我在哪个城市上班",
+     "answer_any": [
+      "大庆"
+     ],
+     "known": true,
+     "answer": "大庆油田",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 395
+    },
+    {
+     "id": "v10_t2_q03",
+     "player": "v10_t2",
+     "seed": 0,
+     "type": "fact",
+     "query": "我手上一到冬天长什么",
+     "answer_any": [
+      "冻疮"
+     ],
+     "known": false,
+     "answer": "不记得手上长冻疮",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 330
+    },
+    {
+     "id": "v10_t2_q04",
+     "player": "v10_t2",
+     "seed": 0,
+     "type": "fact",
+     "query": "我老家是哪的",
+     "answer_any": [
+      "齐齐哈尔"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 363
+    },
+    {
+     "id": "v10_t2_q05",
+     "player": "v10_t2",
+     "seed": 0,
+     "type": "fact",
+     "query": "我媳妇做什么小生意",
+     "answer_any": [
+      "水果摊"
+     ],
+     "known": true,
+     "answer": "玩家的妻子在2026-03-15在小区门口开了个水果摊",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 376
+    },
+    {
+     "id": "v10_t2_q06",
+     "player": "v10_t2",
+     "seed": 0,
+     "type": "fact",
+     "query": "我儿子在练什么运动",
+     "answer_any": [
+      "冰球"
+     ],
+     "known": true,
+     "answer": "玩家的儿子报了冰球队，每周训练三次",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 339
+    },
+    {
+     "id": "v10_t2_q07",
+     "player": "v10_t2",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在上什么班",
+     "answer_any": [
+      "夜班"
+     ],
+     "known": true,
+     "answer": "你现在是白班，早上八点到下午五点",
+     "success": 0.0,
+     "stale": true,
+     "context_chars": 367
+    },
+    {
+     "id": "v10_t2_q08",
+     "player": "v10_t2",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在开的什么车",
+     "answer_any": [
+      "哈弗"
+     ],
+     "known": true,
+     "answer": "玩家最后开的是捷达",
+     "success": 0.0,
+     "stale": true,
+     "context_chars": 331
+    },
+    {
+     "id": "v10_t2_q09",
+     "player": "v10_t2",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我的段位是怎么变的",
+     "answer_any": [
+      "钻石三",
+      "星耀五",
+      "钻石二",
+      "星耀四"
+     ],
+     "known": true,
+     "answer": "玩家段位变化如下：钻石三 → 星耀五 → 钻石二 → 星耀四（2026-01-08） → 星耀四（2026-03-16） → 钻石二（2026-05-21） → 星耀四（2026-09-16）",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 542
+    },
+    {
+     "id": "v10_t2_q10",
+     "player": "v10_t2",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我的本命英雄前后换了哪些",
+     "answer_any": [
+      "马可波罗",
+      "公孙离",
+      "孙尚香"
+     ],
+     "known": true,
+     "answer": "马可波罗 → 程咬金 → 后羿 → 马可波罗 → 廉颇 → 曜 → 牛魔 → 米莱狄 → 公孙离 → 李信 → 周瑜 → 元歌 → 镜 → 吕布 → 太乙真人 → 赵云 → 诸葛亮 → 李白 → 猪八戒 → 黄忠 → 孙尚香 → 韩信 → 典韦 → 刘禅 → 庄周 → 达摩",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 837
+    },
+    {
+     "id": "v10_t2_q11",
+     "player": "v10_t2",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说过哪天早上要提醒我干嘛",
+     "answer_any": [
+      "雪地胎"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 361
+    },
+    {
+     "id": "v10_t2_q12",
+     "player": "v10_t2",
+     "seed": 0,
+     "type": "promise",
+     "query": "你答应周末帮我找什么",
+     "answer_any": [
+      "操作视频"
+     ],
+     "known": true,
+     "answer": "助手答应这周末我帮你找几个公孙离的操作视频。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 305
+    },
+    {
+     "id": "v10_t2_q13",
+     "player": "v10_t2",
+     "seed": 0,
+     "type": "negative",
+     "query": "你答应过帮我挑钓鱼竿吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "助手没说过要帮玩家挑钓鱼竿。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 305
+    },
+    {
+     "id": "v10_t2_q14",
+     "player": "v10_t2",
+     "seed": 0,
+     "type": "negative",
+     "query": "我媳妇是哪儿人",
+     "answer_any": [],
+     "known": false,
+     "answer": "……",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 349
+    },
+    {
+     "id": "v10_t2_q15",
+     "player": "v10_t2",
+     "seed": 0,
+     "type": "negative",
+     "query": "我岳母是做什么的",
+     "answer_any": [],
+     "known": false,
+     "answer": "记不到",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 305
+    },
+    {
+     "id": "v10_t2_q16",
+     "player": "v10_t2",
+     "seed": 0,
+     "type": "negative",
+     "query": "我有没有打过耳洞",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 305
+    },
+    {
+     "id": "v10_t3_q01",
+     "player": "v10_t3",
+     "seed": 0,
+     "type": "fact",
+     "query": "我是做什么工作的",
+     "answer_any": [
+      "导游"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 380
+    },
+    {
+     "id": "v10_t3_q02",
+     "player": "v10_t3",
+     "seed": 0,
+     "type": "fact",
+     "query": "我在哪个城市工作",
+     "answer_any": [
+      "开封"
+     ],
+     "known": true,
+     "answer": "开封",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 364
+    },
+    {
+     "id": "v10_t3_q03",
+     "player": "v10_t3",
+     "seed": 0,
+     "type": "fact",
+     "query": "我为什么不能喝牛奶",
+     "answer_any": [
+      "乳糖"
+     ],
+     "known": true,
+     "answer": "玩家的乳糖不耐，一喝牛奶就闹肚子，玩家的乳糖不耐是记于2026-03-17的。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 303
+    },
+    {
+     "id": "v10_t3_q04",
+     "player": "v10_t3",
+     "seed": 0,
+     "type": "fact",
+     "query": "橙子是什么猫",
+     "answer_any": [
+      "橘猫"
+     ],
+     "known": true,
+     "answer": "橙子是一只橘猫",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 332
+    },
+    {
+     "id": "v10_t3_q05",
+     "player": "v10_t3",
+     "seed": 0,
+     "type": "fact",
+     "query": "阿杰是干什么的",
+     "answer_any": [
+      "辅警"
+     ],
+     "known": true,
+     "answer": "阿杰是去商丘的",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 374
+    },
+    {
+     "id": "v10_t3_q06",
+     "player": "v10_t3",
+     "seed": 0,
+     "type": "fact",
+     "query": "我奶奶有什么手艺",
+     "answer_any": [
+      "剪纸"
+     ],
+     "known": false,
+     "answer": "玩家的奶奶已经八十大寿，但没有提到奶奶有什么手艺。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 271
+    },
+    {
+     "id": "v10_t3_q07",
+     "player": "v10_t3",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在在哪个景区带团",
+     "answer_any": [
+      "万岁山"
+     ],
+     "known": true,
+     "answer": "玩家现在在清明上河园带团。",
+     "success": 0.0,
+     "stale": true,
+     "context_chars": 330
+    },
+    {
+     "id": "v10_t3_q08",
+     "player": "v10_t3",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在在学什么乐器",
+     "answer_any": [
+      "尤克里里"
+     ],
+     "known": true,
+     "answer": "玩家决定改学尤克里里",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 360
+    },
+    {
+     "id": "v10_t3_q09",
+     "player": "v10_t3",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我的段位是一步步怎么上来的",
+     "answer_any": [
+      "白银一",
+      "黄金五",
+      "黄金二",
+      "铂金四"
+     ],
+     "known": true,
+     "answer": "玩家的段位从白银一提升到了黄金二，再提升到了铂金四。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 473
+    },
+    {
+     "id": "v10_t3_q10",
+     "player": "v10_t3",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "阿杰先后在哪些城市工作过",
+     "answer_any": [
+      "新乡",
+      "许昌",
+      "商丘"
+     ],
+     "known": false,
+     "answer": "……",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 332
+    },
+    {
+     "id": "v10_t3_q11",
+     "player": "v10_t3",
+     "seed": 0,
+     "type": "promise",
+     "query": "你答应过帮我盯着什么比赛",
+     "answer_any": [
+      "战队赛"
+     ],
+     "known": true,
+     "answer": "你答应过玩家：助手答应该歇歇了，眼睛要紧（2026-05-08）",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 362
+    },
+    {
+     "id": "v10_t3_q12",
+     "player": "v10_t3",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说周六早上几点叫我",
+     "answer_any": [
+      "五点半"
+     ],
+     "known": false,
+     "answer": "……",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 295
+    },
+    {
+     "id": "v10_t3_q13",
+     "player": "v10_t3",
+     "seed": 0,
+     "type": "negative",
+     "query": "你说过要帮我找摄影师吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "助手没说过要找摄影师",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 271
+    },
+    {
+     "id": "v10_t3_q14",
+     "player": "v10_t3",
+     "seed": 0,
+     "type": "negative",
+     "query": "我奶奶住在哪个城市",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 342
+    },
+    {
+     "id": "v10_t3_q15",
+     "player": "v10_t3",
+     "seed": 0,
+     "type": "negative",
+     "query": "我姑姑是做什么的",
+     "answer_any": [],
+     "known": false,
+     "answer": "不清楚玩家的姑姑是做什么的",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 372
+    },
+    {
+     "id": "v10_t3_q16",
+     "player": "v10_t3",
+     "seed": 0,
+     "type": "negative",
+     "query": "我爱吃甜粽子还是咸粽子",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 346
+    },
+    {
+     "id": "v10_t4_q01",
+     "player": "v10_t4",
+     "seed": 0,
+     "type": "fact",
+     "query": "我是干哪一行的",
+     "answer_any": [
+      "开锁"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 320
+    },
+    {
+     "id": "v10_t4_q02",
+     "player": "v10_t4",
+     "seed": 0,
+     "type": "fact",
+     "query": "我的铺子在哪个城市",
+     "answer_any": [
+      "赣州"
+     ],
+     "known": true,
+     "answer": "赣州",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 360
+    },
+    {
+     "id": "v10_t4_q03",
+     "player": "v10_t4",
+     "seed": 0,
+     "type": "fact",
+     "query": "我腰上起水泡是什么病",
+     "answer_any": [
+      "疱疹"
+     ],
+     "known": false,
+     "answer": "玩家腰上起了一片水泡，疼得睡不着，发生在2026-03-19",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 353
+    },
+    {
+     "id": "v10_t4_q04",
+     "player": "v10_t4",
+     "seed": 0,
+     "type": "fact",
+     "query": "我周末爱去干嘛",
+     "answer_any": [
+      "钓鱼"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 407
+    },
+    {
+     "id": "v10_t4_q05",
+     "player": "v10_t4",
+     "seed": 0,
+     "type": "fact",
+     "query": "学校选我女儿去学什么",
+     "answer_any": [
+      "主持"
+     ],
+     "known": false,
+     "answer": "没有提到学校选女儿学什么",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 400
+    },
+    {
+     "id": "v10_t4_q06",
+     "player": "v10_t4",
+     "seed": 0,
+     "type": "fact",
+     "query": "我老爸退休前是做什么的",
+     "answer_any": [
+      "自行车"
+     ],
+     "known": true,
+     "answer": "玩家的父亲以前是修自行车的",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 369
+    },
+    {
+     "id": "v10_t4_q07",
+     "player": "v10_t4",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在每天早上做什么锻炼",
+     "answer_any": [
+      "太极"
+     ],
+     "known": true,
+     "answer": "玩家每天早上五点起来打太极",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 350
+    },
+    {
+     "id": "v10_t4_q08",
+     "player": "v10_t4",
+     "seed": 0,
+     "type": "update",
+     "query": "我店里现在主要接什么活",
+     "answer_any": [
+      "智能锁"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 385
+    },
+    {
+     "id": "v10_t4_q09",
+     "player": "v10_t4",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我的段位这一年起起落落是怎样的",
+     "answer_any": [
+      "铂金一",
+      "钻石四",
+      "铂金二",
+      "钻石三"
+     ],
+     "known": true,
+     "answer": "玩家从2026-05-25开始掉回铂金二段，一晚上连跪七把。之后在2026-09-10感觉比赛后情绪有些低落。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 403
+    },
+    {
+     "id": "v10_t4_q10",
+     "player": "v10_t4",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我的手机前后换了哪几部",
+     "answer_any": [
+      "诺基亚",
+      "nova11",
+      "Magic6"
+     ],
+     "known": true,
+     "answer": "助手提到玩家使用过女儿的旧华为nova11手机",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 500
+    },
+    {
+     "id": "v10_t4_q11",
+     "player": "v10_t4",
+     "seed": 0,
+     "type": "promise",
+     "query": "我女儿比赛那天你说要提醒我什么",
+     "answer_any": [
+      "请假"
+     ],
+     "known": true,
+     "answer": "助手答应帮你盯着赛季结算，最后三天提醒你上号。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 320
+    },
+    {
+     "id": "v10_t4_q12",
+     "player": "v10_t4",
+     "seed": 0,
+     "type": "promise",
+     "query": "被对面秒的那局你说打完陪我理什么",
+     "answer_any": [
+      "复活甲"
+     ],
+     "known": true,
+     "answer": "你答应过玩家：助手答应打完我陪你把复活甲什么时候出理一理（2026-06-28）",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 413
+    },
+    {
+     "id": "v10_t4_q13",
+     "player": "v10_t4",
+     "seed": 0,
+     "type": "negative",
+     "query": "你答应过帮我查天气预报吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "未提及助手是否答应过帮玩家查天气预报",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 320
+    },
+    {
+     "id": "v10_t4_q14",
+     "player": "v10_t4",
+     "seed": 0,
+     "type": "negative",
+     "query": "我老爸今年多大了",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 400
+    },
+    {
+     "id": "v10_t4_q15",
+     "player": "v10_t4",
+     "seed": 0,
+     "type": "negative",
+     "query": "我大伯是干啥的",
+     "answer_any": [],
+     "known": false,
+     "answer": "……",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 429
+    },
+    {
+     "id": "v10_t4_q16",
+     "player": "v10_t4",
+     "seed": 0,
+     "type": "negative",
+     "query": "我喜欢哪个牌子的球鞋",
+     "answer_any": [],
+     "known": false,
+     "answer": "……",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 411
+    },
+    {
+     "id": "v10_t5_q01",
+     "player": "v10_t5",
+     "seed": 0,
+     "type": "fact",
+     "query": "我在学校教什么",
+     "answer_any": [
+      "美术"
+     ],
+     "known": true,
+     "answer": "玩家在泸州一所小学教美术",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 389
+    },
+    {
+     "id": "v10_t5_q02",
+     "player": "v10_t5",
+     "seed": 0,
+     "type": "fact",
+     "query": "我在哪个城市教书",
+     "answer_any": [
+      "泸州"
+     ],
+     "known": true,
+     "answer": "玩家在泸州教书",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 336
+    },
+    {
+     "id": "v10_t5_q03",
+     "player": "v10_t5",
+     "seed": 0,
+     "type": "fact",
+     "query": "我对什么过敏",
+     "answer_any": [
+      "尘螨"
+     ],
+     "known": true,
+     "answer": "玩家有尘螨过敏的情况",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 334
+    },
+    {
+     "id": "v10_t5_q04",
+     "player": "v10_t5",
+     "seed": 0,
+     "type": "fact",
+     "query": "我家养的是什么小动物",
+     "answer_any": [
+      "芦丁鸡"
+     ],
+     "known": true,
+     "answer": "玩家家里养了两只芦丁鸡",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 341
+    },
+    {
+     "id": "v10_t5_q05",
+     "player": "v10_t5",
+     "seed": 0,
+     "type": "fact",
+     "query": "我老公在哪个单位上班",
+     "answer_any": [
+      "烟草"
+     ],
+     "known": true,
+     "answer": "玩家老公在烟草局上班",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 343
+    },
+    {
+     "id": "v10_t5_q06",
+     "player": "v10_t5",
+     "seed": 0,
+     "type": "fact",
+     "query": "我婆婆平时爱干什么",
+     "answer_any": [
+      "广场舞"
+     ],
+     "known": true,
+     "answer": "玩家的婆婆是广场舞领队",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 382
+    },
+    {
+     "id": "v10_t5_q07",
+     "player": "v10_t5",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在平时做什么运动",
+     "answer_any": [
+      "飞盘"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 335
+    },
+    {
+     "id": "v10_t5_q08",
+     "player": "v10_t5",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在在学校带什么社团",
+     "answer_any": [
+      "漫画"
+     ],
+     "known": true,
+     "answer": "玩家还带漫画社",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 364
+    },
+    {
+     "id": "v10_t5_q09",
+     "player": "v10_t5",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我的段位从年初到现在是怎么变的",
+     "answer_any": [
+      "铂金五",
+      "铂金一",
+      "钻石五",
+      "铂金三"
+     ],
+     "known": true,
+     "answer": "铂金五 → 铂金一 → 钻石五 → 铂金三",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 569
+    },
+    {
+     "id": "v10_t5_q10",
+     "player": "v10_t5",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我常用的英雄换过哪些",
+     "answer_any": [
+      "貂蝉",
+      "沈梦溪",
+      "干将莫邪"
+     ],
+     "known": true,
+     "answer": "貂蝉 → 周瑜 → 太乙真人 → 典韦 → 安琪拉 → 诸葛亮 → 米莱狄 → 廉颇 → 黄忠 → 达摩 → 元歌 → 李信 → 韩信 → 貂蝉 → 程咬金 → 后羿 → 镜 → 刘禅 → 吕布 → 猪八戒 → 赵云 → 庄周 → 李白 → 曜 → 牛魔",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 818
+    },
+    {
+     "id": "v10_t5_q11",
+     "player": "v10_t5",
+     "seed": 0,
+     "type": "promise",
+     "query": "公开课之前你答应提醒我干什么",
+     "answer_any": [
+      "U盘"
+     ],
+     "known": true,
+     "answer": "助手答应周末我帮你找几家能看小宠的宠物医院",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 416
+    },
+    {
+     "id": "v10_t5_q12",
+     "player": "v10_t5",
+     "seed": 0,
+     "type": "promise",
+     "query": "芦丁鸡生病那次你说帮我找什么",
+     "answer_any": [
+      "宠物医院"
+     ],
+     "known": true,
+     "answer": "宠物医院",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 419
+    },
+    {
+     "id": "v10_t5_q13",
+     "player": "v10_t5",
+     "seed": 0,
+     "type": "negative",
+     "query": "你答应过帮我查快递到哪了吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 307
+    },
+    {
+     "id": "v10_t5_q14",
+     "player": "v10_t5",
+     "seed": 0,
+     "type": "negative",
+     "query": "我老公有什么爱好",
+     "answer_any": [],
+     "known": false,
+     "answer": "……",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 343
+    },
+    {
+     "id": "v10_t5_q15",
+     "player": "v10_t5",
+     "seed": 0,
+     "type": "negative",
+     "query": "我小叔子是做什么的",
+     "answer_any": [],
+     "known": false,
+     "answer": "……",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 307
+    },
+    {
+     "id": "v10_t5_q16",
+     "player": "v10_t5",
+     "seed": 0,
+     "type": "negative",
+     "query": "我喜欢吃榴莲吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 354
+    },
+    {
+     "id": "v10_t6_q01",
+     "player": "v10_t6",
+     "seed": 0,
+     "type": "fact",
+     "query": "我学的是什么专业",
+     "answer_any": [
+      "核工程"
+     ],
+     "known": false,
+     "answer": "……",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 346
+    },
+    {
+     "id": "v10_t6_q02",
+     "player": "v10_t6",
+     "seed": 0,
+     "type": "fact",
+     "query": "我在哪个城市上大学",
+     "answer_any": [
+      "衡阳"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 362
+    },
+    {
+     "id": "v10_t6_q03",
+     "player": "v10_t6",
+     "seed": 0,
+     "type": "fact",
+     "query": "我眼睛有什么问题",
+     "answer_any": [
+      "色弱"
+     ],
+     "known": true,
+     "answer": "玩家表示连续打了多局游戏，眼睛疲劳，还因为分不清队友和对手而技能放空，导致队友质疑。助手答应这周末我陪你把这周的对局数据过一遍。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 484
+    },
+    {
+     "id": "v10_t6_q04",
+     "player": "v10_t6",
+     "seed": 0,
+     "type": "fact",
+     "query": "我最近在玩什么益智玩具",
+     "answer_any": [
+      "魔方"
+     ],
+     "known": false,
+     "answer": "……",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 399
+    },
+    {
+     "id": "v10_t6_q05",
+     "player": "v10_t6",
+     "seed": 0,
+     "type": "fact",
+     "query": "室友大刘是哪里人",
+     "answer_any": [
+      "丹东"
+     ],
+     "known": false,
+     "answer": "……",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 430
+    },
+    {
+     "id": "v10_t6_q06",
+     "player": "v10_t6",
+     "seed": 0,
+     "type": "fact",
+     "query": "我爷爷以前在铁路上干什么",
+     "answer_any": [
+      "扳道"
+     ],
+     "known": true,
+     "answer": "玩家的爷爷以前在铁路上工作",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 346
+    },
+    {
+     "id": "v10_t6_q07",
+     "player": "v10_t6",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在住在哪",
+     "answer_any": [
+      "合租"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 362
+    },
+    {
+     "id": "v10_t6_q08",
+     "player": "v10_t6",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在做什么兼职挣钱",
+     "answer_any": [
+      "修电脑"
+     ],
+     "known": true,
+     "answer": "玩家最近通过工作挣了一千多块钱，同时玩家开始帮同学修电脑挣外快。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 410
+    },
+    {
+     "id": "v10_t6_q09",
+     "player": "v10_t6",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我的段位这一年怎么爬的",
+     "answer_any": [
+      "钻石五",
+      "钻石二",
+      "星耀五",
+      "星耀二"
+     ],
+     "known": false,
+     "answer": "无法提供具体的段位爬升记录",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 415
+    },
+    {
+     "id": "v10_t6_q10",
+     "player": "v10_t6",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我哥这一年干活的变化",
+     "answer_any": [
+      "钢筋",
+      "焊工",
+      "新加坡"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 467
+    },
+    {
+     "id": "v10_t6_q11",
+     "player": "v10_t6",
+     "seed": 0,
+     "type": "promise",
+     "query": "四级之前你说要提醒我带什么",
+     "answer_any": [
+      "耳机"
+     ],
+     "known": false,
+     "answer": "……",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 316
+    },
+    {
+     "id": "v10_t6_q12",
+     "player": "v10_t6",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说周末要陪我过一遍什么",
+     "answer_any": [
+      "对局数据"
+     ],
+     "known": true,
+     "answer": "这周的对局数据",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 396
+    },
+    {
+     "id": "v10_t6_q13",
+     "player": "v10_t6",
+     "seed": 0,
+     "type": "negative",
+     "query": "你答应过帮我抢课吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "助手没说过要帮玩家抢课。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 316
+    },
+    {
+     "id": "v10_t6_q14",
+     "player": "v10_t6",
+     "seed": 0,
+     "type": "negative",
+     "query": "我爷爷老家是哪的",
+     "answer_any": [],
+     "known": true,
+     "answer": "玩家爷爷以前在铁路上当扳道工，老家在铁路上",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 422
+    },
+    {
+     "id": "v10_t6_q15",
+     "player": "v10_t6",
+     "seed": 0,
+     "type": "negative",
+     "query": "我女朋友是哪个专业的",
+     "answer_any": [],
+     "known": false,
+     "answer": "……",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 316
+    },
+    {
+     "id": "v10_t6_q16",
+     "player": "v10_t6",
+     "seed": 0,
+     "type": "negative",
+     "query": "我近视多少度",
+     "answer_any": [],
+     "known": false,
+     "answer": "……",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 316
+    },
+    {
+     "id": "v10_t7_q01",
+     "player": "v10_t7",
+     "seed": 0,
+     "type": "fact",
+     "query": "我开的是什么店",
+     "answer_any": [
+      "米线"
+     ],
+     "known": true,
+     "answer": "玩家在曲靖麒麟区开了个米线店",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 395
+    },
+    {
+     "id": "v10_t7_q02",
+     "player": "v10_t7",
+     "seed": 0,
+     "type": "fact",
+     "query": "我在哪个城市开店",
+     "answer_any": [
+      "曲靖"
+     ],
+     "known": true,
+     "answer": "曲靖麒麟区",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 421
+    },
+    {
+     "id": "v10_t7_q03",
+     "player": "v10_t7",
+     "seed": 0,
+     "type": "fact",
+     "query": "我骨头查出什么问题",
+     "answer_any": [
+      "骨质疏松"
+     ],
+     "known": true,
+     "answer": "玩家被诊断出骨质疏松",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 347
+    },
+    {
+     "id": "v10_t7_q04",
+     "player": "v10_t7",
+     "seed": 0,
+     "type": "fact",
+     "query": "我闲下来绣什么",
+     "answer_any": [
+      "十字绣"
+     ],
+     "known": true,
+     "answer": "玩家绣完了牡丹",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 383
+    },
+    {
+     "id": "v10_t7_q05",
+     "player": "v10_t7",
+     "seed": 0,
+     "type": "fact",
+     "query": "我老公在哪干活",
+     "answer_any": [
+      "煤矿"
+     ],
+     "known": true,
+     "answer": "玩家的老公在煤矿上班",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 347
+    },
+    {
+     "id": "v10_t7_q06",
+     "player": "v10_t7",
+     "seed": 0,
+     "type": "fact",
+     "query": "我大姐在老家种什么",
+     "answer_any": [
+      "花椒"
+     ],
+     "known": true,
+     "answer": "玩家的大姐在老家种花椒",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 510
+    },
+    {
+     "id": "v10_t7_q07",
+     "player": "v10_t7",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在晚上关店后去干嘛",
+     "answer_any": [
+      "快走"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 422
+    },
+    {
+     "id": "v10_t7_q08",
+     "player": "v10_t7",
+     "seed": 0,
+     "type": "update",
+     "query": "我的店现在开在哪",
+     "answer_any": [
+      "沾益"
+     ],
+     "known": true,
+     "answer": "玩家在曲靖麒麟区开了个米线店",
+     "success": 0.0,
+     "stale": true,
+     "context_chars": 426
+    },
+    {
+     "id": "v10_t7_q09",
+     "player": "v10_t7",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我的段位是怎么变过来的",
+     "answer_any": [
+      "青铜二",
+      "白银三",
+      "黄金四",
+      "白银一"
+     ],
+     "known": true,
+     "answer": "玩家的段位从青铜二提升到了白银一",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 515
+    },
+    {
+     "id": "v10_t7_q10",
+     "player": "v10_t7",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我儿子这一年先后在哪些地方",
+     "answer_any": [
+      "大理",
+      "玉溪",
+      "深圳"
+     ],
+     "known": true,
+     "answer": "玩家的儿子在深圳和大理读大专",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 348
+    },
+    {
+     "id": "v10_t7_q11",
+     "player": "v10_t7",
+     "seed": 0,
+     "type": "promise",
+     "query": "你答应下周一提醒我去拿什么",
+     "answer_any": [
+      "骨密度"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 406
+    },
+    {
+     "id": "v10_t7_q12",
+     "player": "v10_t7",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说我一上线就帮我看什么",
+     "answer_any": [
+      "每日任务"
+     ],
+     "known": true,
+     "answer": "助手答应你一上线，我就帮你看看每日任务做完没。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 412
+    },
+    {
+     "id": "v10_t7_q13",
+     "player": "v10_t7",
+     "seed": 0,
+     "type": "negative",
+     "query": "你答应过帮我办健康证吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "助手没说过要帮你办健康证",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 320
+    },
+    {
+     "id": "v10_t7_q14",
+     "player": "v10_t7",
+     "seed": 0,
+     "type": "negative",
+     "query": "我老公在哪个城市",
+     "answer_any": [],
+     "known": true,
+     "answer": "玩家的老公在煤矿工作，一个月回来两次。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 442
+    },
+    {
+     "id": "v10_t7_q15",
+     "player": "v10_t7",
+     "seed": 0,
+     "type": "negative",
+     "query": "我孙子几岁了",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 320
+    },
+    {
+     "id": "v10_t7_q16",
+     "player": "v10_t7",
+     "seed": 0,
+     "type": "negative",
+     "query": "我信佛吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 320
+    },
+    {
+     "id": "v10_t8_q01",
+     "player": "v10_t8",
+     "seed": 0,
+     "type": "fact",
+     "query": "我是做什么手艺的",
+     "answer_any": [
+      "湖笔"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 415
+    },
+    {
+     "id": "v10_t8_q02",
+     "player": "v10_t8",
+     "seed": 0,
+     "type": "fact",
+     "query": "我在哪个城市",
+     "answer_any": [
+      "湖州"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 334
+    },
+    {
+     "id": "v10_t8_q03",
+     "player": "v10_t8",
+     "seed": 0,
+     "type": "fact",
+     "query": "我头发有什么问题",
+     "answer_any": [
+      "脱发"
+     ],
+     "known": false,
+     "answer": "没有找到关于玩家头发的问题或状态的记录。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 414
+    },
+    {
+     "id": "v10_t8_q04",
+     "player": "v10_t8",
+     "seed": 0,
+     "type": "fact",
+     "query": "芝麻是什么品种的猫",
+     "answer_any": [
+      "暹罗"
+     ],
+     "known": true,
+     "answer": "玩家家里养了一只暹罗猫，名字叫芝麻",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 343
+    },
+    {
+     "id": "v10_t8_q05",
+     "player": "v10_t8",
+     "seed": 0,
+     "type": "fact",
+     "query": "安安是做什么的",
+     "answer_any": [
+      "舞蹈"
+     ],
+     "known": true,
+     "answer": "安安是一名学生",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 368
+    },
+    {
+     "id": "v10_t8_q06",
+     "player": "v10_t8",
+     "seed": 0,
+     "type": "fact",
+     "query": "我表弟在健身房干什么",
+     "answer_any": [
+      "私教"
+     ],
+     "known": true,
+     "answer": "玩家的表弟在健身房当私教",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 337
+    },
+    {
+     "id": "v10_t8_q07",
+     "player": "v10_t8",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在下班爱玩什么",
+     "answer_any": [
+      "台球"
+     ],
+     "known": true,
+     "answer": "玩家喜欢在看烟花时玩游戏",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 395
+    },
+    {
+     "id": "v10_t8_q08",
+     "player": "v10_t8",
+     "seed": 0,
+     "type": "update",
+     "query": "安安现在是我什么人",
+     "answer_any": [
+      "未婚妻"
+     ],
+     "known": true,
+     "answer": "玩家的昵称安安现在是助手的玩家的昵称",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 309
+    },
+    {
+     "id": "v10_t8_q09",
+     "player": "v10_t8",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我的段位这一年怎么走的",
+     "answer_any": [
+      "钻石一",
+      "星耀四",
+      "钻石二",
+      "星耀三"
+     ],
+     "known": true,
+     "answer": "玩家上星耀三的日期是2026-09-22",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 386
+    },
+    {
+     "id": "v10_t8_q10",
+     "player": "v10_t8",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我爸这一年都在干什么活",
+     "answer_any": [
+      "丝厂",
+      "茶馆",
+      "门卫"
+     ],
+     "known": true,
+     "answer": "玩家的父亲在丝厂工作了三十年，刚刚退休，现在去当门卫了",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 352
+    },
+    {
+     "id": "v10_t8_q11",
+     "player": "v10_t8",
+     "seed": 0,
+     "type": "promise",
+     "query": "订婚的事你答应帮我干嘛",
+     "answer_any": [
+      "三金"
+     ],
+     "known": true,
+     "answer": "助手答应下个月帮你列一下订婚要准备的三金和礼品",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 309
+    },
+    {
+     "id": "v10_t8_q12",
+     "player": "v10_t8",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说过要提醒我给芝麻做什么",
+     "answer_any": [
+      "驱虫"
+     ],
+     "known": true,
+     "answer": "助手答应明晚十点提醒你给芝麻做驱虫",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 344
+    },
+    {
+     "id": "v10_t8_q13",
+     "player": "v10_t8",
+     "seed": 0,
+     "type": "negative",
+     "query": "你答应过帮我订婚宴酒店吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "记不到具体答应过帮订婚宴酒店",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 309
+    },
+    {
+     "id": "v10_t8_q14",
+     "player": "v10_t8",
+     "seed": 0,
+     "type": "negative",
+     "query": "我表弟住在哪个城市",
+     "answer_any": [],
+     "known": true,
+     "answer": "玩家的表弟住在健身房",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 337
+    },
+    {
+     "id": "v10_t8_q15",
+     "player": "v10_t8",
+     "seed": 0,
+     "type": "negative",
+     "query": "我奶奶身体怎么样",
+     "answer_any": [],
+     "known": false,
+     "answer": "记不到奶奶的身体状况",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 309
+    },
+    {
+     "id": "v10_t8_q16",
+     "player": "v10_t8",
+     "seed": 0,
+     "type": "negative",
+     "query": "我会说英语吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 309
+    },
+    {
+     "id": "v10_t1_q01",
+     "player": "v10_t1",
+     "seed": 1,
+     "type": "fact",
+     "query": "我在服装厂负责什么",
+     "answer_any": [
+      "跟单"
+     ],
+     "known": true,
+     "answer": "你在台州一家服装厂上班，干了四年。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 344
+    },
+    {
+     "id": "v10_t1_q02",
+     "player": "v10_t1",
+     "seed": 1,
+     "type": "fact",
+     "query": "我在哪个城市上班",
+     "answer_any": [
+      "台州"
+     ],
+     "known": true,
+     "answer": "台州",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 376
+    },
+    {
+     "id": "v10_t1_q03",
+     "player": "v10_t1",
+     "seed": 1,
+     "type": "fact",
+     "query": "我甲状腺查出了什么",
+     "answer_any": [
+      "结节"
+     ],
+     "known": true,
+     "answer": "玩家体检查出甲状腺有个小结节，医生建议三个月后再去看",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 310
+    },
+    {
+     "id": "v10_t1_q04",
+     "player": "v10_t1",
+     "seed": 1,
+     "type": "fact",
+     "query": "饼干是什么品种的狗",
+     "answer_any": [
+      "柯基"
+     ],
+     "known": true,
+     "answer": "玩家家里养了一只叫饼干的柯基犬",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 342
+    },
+    {
+     "id": "v10_t1_q05",
+     "player": "v10_t1",
+     "seed": 1,
+     "type": "fact",
+     "query": "我爸在老家种什么",
+     "answer_any": [
+      "杨梅"
+     ],
+     "known": true,
+     "answer": "我爸在老家种杨梅",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 471
+    },
+    {
+     "id": "v10_t1_q06",
+     "player": "v10_t1",
+     "seed": 1,
+     "type": "fact",
+     "query": "小雯在哪个城市",
+     "answer_any": [
+      "杭州"
+     ],
+     "known": true,
+     "answer": "小雯在台州",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 414
+    },
+    {
+     "id": "v10_t1_q07",
+     "player": "v10_t1",
+     "seed": 1,
+     "type": "update",
+     "query": "我现在周末爱去玩什么",
+     "answer_any": [
+      "密室"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 397
+    },
+    {
+     "id": "v10_t1_q08",
+     "player": "v10_t1",
+     "seed": 1,
+     "type": "update",
+     "query": "我现在怎么去上班",
+     "answer_any": [
+      "开车"
+     ],
+     "known": true,
+     "answer": "你每天早上六点半出门开车上班",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 376
+    },
+    {
+     "id": "v10_t1_q09",
+     "player": "v10_t1",
+     "seed": 1,
+     "type": "trajectory",
+     "query": "我这一年段位是怎么走的",
+     "answer_any": [
+      "黄金二",
+      "铂金三",
+      "黄金一",
+      "铂金二"
+     ],
+     "known": false,
+     "answer": "无法提供玩家这一年段位的具体信息",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 363
+    },
+    {
+     "id": "v10_t1_q10",
+     "player": "v10_t1",
+     "seed": 1,
+     "type": "trajectory",
+     "query": "我主玩的英雄换过哪几个",
+     "answer_any": [
+      "蔡文姬",
+      "鬼谷子",
+      "张飞"
+     ],
+     "known": true,
+     "answer": "玩家在游戏中使用了太乙真人英雄（记于2026-09-08），上周使用了安琪拉这个英雄（2026-09-23）",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 838
+    },
+    {
+     "id": "v10_t1_q11",
+     "player": "v10_t1",
+     "seed": 1,
+     "type": "promise",
+     "query": "你答应过提醒我去医院干嘛",
+     "answer_any": [
+      "复查"
+     ],
+     "known": true,
+     "answer": "玩家体检查出甲状腺有个小结节，医生建议三个月后再去看。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 310
+    },
+    {
+     "id": "v10_t1_q12",
+     "player": "v10_t1",
+     "seed": 1,
+     "type": "promise",
+     "query": "攒的碎片你说要帮我看什么",
+     "answer_any": [
+      "碎片商店"
+     ],
+     "known": true,
+     "answer": "你说要帮我看碎片商店，看换什么最划算",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 310
+    },
+    {
+     "id": "v10_t1_q13",
+     "player": "v10_t1",
+     "seed": 1,
+     "type": "negative",
+     "query": "你说过要帮我查航班吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "助手没说过要帮玩家查航班",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 310
+    },
+    {
+     "id": "v10_t1_q14",
+     "player": "v10_t1",
+     "seed": 1,
+     "type": "negative",
+     "query": "小雯是做什么工作的",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 412
+    },
+    {
+     "id": "v10_t1_q15",
+     "player": "v10_t1",
+     "seed": 1,
+     "type": "negative",
+     "query": "我表妹在哪读书",
+     "answer_any": [],
+     "known": false,
+     "answer": "不知道",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 310
+    },
+    {
+     "id": "v10_t1_q16",
+     "player": "v10_t1",
+     "seed": 1,
+     "type": "negative",
+     "query": "我最喜欢哪个季节",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 371
+    },
+    {
+     "id": "v10_t2_q01",
+     "player": "v10_t2",
+     "seed": 1,
+     "type": "fact",
+     "query": "我在油田干什么活",
+     "answer_any": [
+      "采油"
+     ],
+     "known": true,
+     "answer": "玩家在大庆油田当采油工，都干十年了",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 339
+    },
+    {
+     "id": "v10_t2_q02",
+     "player": "v10_t2",
+     "seed": 1,
+     "type": "fact",
+     "query": "我在哪个城市上班",
+     "answer_any": [
+      "大庆"
+     ],
+     "known": true,
+     "answer": "大庆油田",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 402
+    },
+    {
+     "id": "v10_t2_q03",
+     "player": "v10_t2",
+     "seed": 1,
+     "type": "fact",
+     "query": "我手上一到冬天长什么",
+     "answer_any": [
+      "冻疮"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 333
+    },
+    {
+     "id": "v10_t2_q04",
+     "player": "v10_t2",
+     "seed": 1,
+     "type": "fact",
+     "query": "我老家是哪的",
+     "answer_any": [
+      "齐齐哈尔"
+     ],
+     "known": true,
+     "answer": "玩家过年回齐齐哈尔老家了（记于2026-02-12）",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 368
+    },
+    {
+     "id": "v10_t2_q05",
+     "player": "v10_t2",
+     "seed": 1,
+     "type": "fact",
+     "query": "我媳妇做什么小生意",
+     "answer_any": [
+      "水果摊"
+     ],
+     "known": true,
+     "answer": "玩家的妻子在2026-03-15在小区门口开了个水果摊",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 380
+    },
+    {
+     "id": "v10_t2_q06",
+     "player": "v10_t2",
+     "seed": 1,
+     "type": "fact",
+     "query": "我儿子在练什么运动",
+     "answer_any": [
+      "冰球"
+     ],
+     "known": true,
+     "answer": "玩家的儿子报了冰球队，每周训练三次",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 339
+    },
+    {
+     "id": "v10_t2_q07",
+     "player": "v10_t2",
+     "seed": 1,
+     "type": "update",
+     "query": "我现在上什么班",
+     "answer_any": [
+      "夜班"
+     ],
+     "known": true,
+     "answer": "你现在是白班，早上八点到下午五点",
+     "success": 0.0,
+     "stale": true,
+     "context_chars": 339
+    },
+    {
+     "id": "v10_t2_q08",
+     "player": "v10_t2",
+     "seed": 1,
+     "type": "update",
+     "query": "我现在开的什么车",
+     "answer_any": [
+      "哈弗"
+     ],
+     "known": true,
+     "answer": "玩家最后开的是捷达。",
+     "success": 0.0,
+     "stale": true,
+     "context_chars": 331
+    },
+    {
+     "id": "v10_t2_q09",
+     "player": "v10_t2",
+     "seed": 1,
+     "type": "trajectory",
+     "query": "我的段位是怎么变的",
+     "answer_any": [
+      "钻石三",
+      "星耀五",
+      "钻石二",
+      "星耀四"
+     ],
+     "known": true,
+     "answer": "玩家段位变化：钻石三（2026-01-08） → 星耀五（2026-03-16） → 钻石二（2026-05-21） → 星耀四（2026-09-16）",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 520
+    },
+    {
+     "id": "v10_t2_q10",
+     "player": "v10_t2",
+     "seed": 1,
+     "type": "trajectory",
+     "query": "我的本命英雄前后换了哪些",
+     "answer_any": [
+      "马可波罗",
+      "公孙离",
+      "孙尚香"
+     ],
+     "known": true,
+     "answer": "马可波罗 → 程咬金 → 后羿 → 马可波罗 → 廉颇 → 曜 → 牛魔 → 米莱狄 → 公孙离 → 李信 → 周瑜 → 元歌 → 镜 → 吕布 → 太乙真人 → 赵云 → 诸葛亮 → 李白 → 猪八戒 → 黄忠 → 孙尚香 → 韩信 → 典韦 → 刘禅 → 庄周 → 达摩",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 837
+    },
+    {
+     "id": "v10_t2_q11",
+     "player": "v10_t2",
+     "seed": 1,
+     "type": "promise",
+     "query": "你说过哪天早上要提醒我干嘛",
+     "answer_any": [
+      "雪地胎"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 382
+    },
+    {
+     "id": "v10_t2_q12",
+     "player": "v10_t2",
+     "seed": 1,
+     "type": "promise",
+     "query": "你答应周末帮我找什么",
+     "answer_any": [
+      "操作视频"
+     ],
+     "known": true,
+     "answer": "助手答应这周末我帮你找几个公孙离的操作视频。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 305
+    },
+    {
+     "id": "v10_t2_q13",
+     "player": "v10_t2",
+     "seed": 1,
+     "type": "negative",
+     "query": "你答应过帮我挑钓鱼竿吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "助手没说过要帮玩家挑钓鱼竿。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 305
+    },
+    {
+     "id": "v10_t2_q14",
+     "player": "v10_t2",
+     "seed": 1,
+     "type": "negative",
+     "query": "我媳妇是哪儿人",
+     "answer_any": [],
+     "known": true,
+     "answer": "玩家的妻子是玩家的媳妇，玩家的妻子在2026-03-15在小区门口开了个水果摊",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 380
+    },
+    {
+     "id": "v10_t2_q15",
+     "player": "v10_t2",
+     "seed": 1,
+     "type": "negative",
+     "query": "我岳母是做什么的",
+     "answer_any": [],
+     "known": false,
+     "answer": "记不到",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 305
+    },
+    {
+     "id": "v10_t2_q16",
+     "player": "v10_t2",
+     "seed": 1,
+     "type": "negative",
+     "query": "我有没有打过耳洞",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 305
+    },
+    {
+     "id": "v10_t3_q01",
+     "player": "v10_t3",
+     "seed": 1,
+     "type": "fact",
+     "query": "我是做什么工作的",
+     "answer_any": [
+      "导游"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 359
+    },
+    {
+     "id": "v10_t3_q02",
+     "player": "v10_t3",
+     "seed": 1,
+     "type": "fact",
+     "query": "我在哪个城市工作",
+     "answer_any": [
+      "开封"
+     ],
+     "known": true,
+     "answer": "开封",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 350
+    },
+    {
+     "id": "v10_t3_q03",
+     "player": "v10_t3",
+     "seed": 1,
+     "type": "fact",
+     "query": "我为什么不能喝牛奶",
+     "answer_any": [
+      "乳糖"
+     ],
+     "known": true,
+     "answer": "玩家的乳糖不耐是记于2026-03-17的",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 314
+    },
+    {
+     "id": "v10_t3_q04",
+     "player": "v10_t3",
+     "seed": 1,
+     "type": "fact",
+     "query": "橙子是什么猫",
+     "answer_any": [
+      "橘猫"
+     ],
+     "known": true,
+     "answer": "玩家家里养了一只橘猫，名字叫橙子又胖了",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 299
+    },
+    {
+     "id": "v10_t3_q05",
+     "player": "v10_t3",
+     "seed": 1,
+     "type": "fact",
+     "query": "阿杰是干什么的",
+     "answer_any": [
+      "辅警"
+     ],
+     "known": true,
+     "answer": "阿杰是新乡的辅警，又调了，这回去了商丘",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 402
+    },
+    {
+     "id": "v10_t3_q06",
+     "player": "v10_t3",
+     "seed": 1,
+     "type": "fact",
+     "query": "我奶奶有什么手艺",
+     "answer_any": [
+      "剪纸"
+     ],
+     "known": true,
+     "answer": "玩家奶奶会剪纸",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 281
+    },
+    {
+     "id": "v10_t3_q07",
+     "player": "v10_t3",
+     "seed": 1,
+     "type": "update",
+     "query": "我现在在哪个景区带团",
+     "answer_any": [
+      "万岁山"
+     ],
+     "known": true,
+     "answer": "玩家被调去万岁山景区带团了",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 349
+    },
+    {
+     "id": "v10_t3_q08",
+     "player": "v10_t3",
+     "seed": 1,
+     "type": "update",
+     "query": "我现在在学什么乐器",
+     "answer_any": [
+      "尤克里里"
+     ],
+     "known": true,
+     "answer": "玩家正在学习尤克里里",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 346
+    },
+    {
+     "id": "v10_t3_q09",
+     "player": "v10_t3",
+     "seed": 1,
+     "type": "trajectory",
+     "query": "我的段位是一步步怎么上来的",
+     "answer_any": [
+      "白银一",
+      "黄金五",
+      "黄金二",
+      "铂金四"
+     ],
+     "known": true,
+     "answer": "玩家的段位从白银一提升到了黄金二，再到铂金四。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 425
+    },
+    {
+     "id": "v10_t3_q10",
+     "player": "v10_t3",
+     "seed": 1,
+     "type": "trajectory",
+     "query": "阿杰先后在哪些城市工作过",
+     "answer_any": [
+      "新乡",
+      "许昌",
+      "商丘"
+     ],
+     "known": true,
+     "answer": "阿杰先后在新乡和商丘工作过",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 350
+    },
+    {
+     "id": "v10_t3_q11",
+     "player": "v10_t3",
+     "seed": 1,
+     "type": "promise",
+     "query": "你答应过帮我盯着什么比赛",
+     "answer_any": [
+      "战队赛"
+     ],
+     "known": true,
+     "answer": "助手答应打完这局我陪你看看补兵怎么练",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 320
+    },
+    {
+     "id": "v10_t3_q12",
+     "player": "v10_t3",
+     "seed": 1,
+     "type": "promise",
+     "query": "你说周六早上几点叫我",
+     "answer_any": [
+      "五点半"
+     ],
+     "known": true,
+     "answer": "助手答应在周六五点前到达集合点",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 289
+    },
+    {
+     "id": "v10_t3_q13",
+     "player": "v10_t3",
+     "seed": 1,
+     "type": "negative",
+     "query": "你说过要帮我找摄影师吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "助手没说过要找摄影师",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 257
+    },
+    {
+     "id": "v10_t3_q14",
+     "player": "v10_t3",
+     "seed": 1,
+     "type": "negative",
+     "query": "我奶奶住在哪个城市",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 352
+    },
+    {
+     "id": "v10_t3_q15",
+     "player": "v10_t3",
+     "seed": 1,
+     "type": "negative",
+     "query": "我姑姑是做什么的",
+     "answer_any": [],
+     "known": false,
+     "answer": "不清楚",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 358
+    },
+    {
+     "id": "v10_t3_q16",
+     "player": "v10_t3",
+     "seed": 1,
+     "type": "negative",
+     "query": "我爱吃甜粽子还是咸粽子",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 304
+    },
+    {
+     "id": "v10_t4_q01",
+     "player": "v10_t4",
+     "seed": 1,
+     "type": "fact",
+     "query": "我是干哪一行的",
+     "answer_any": [
+      "开锁"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 306
+    },
+    {
+     "id": "v10_t4_q02",
+     "player": "v10_t4",
+     "seed": 1,
+     "type": "fact",
+     "query": "我的铺子在哪个城市",
+     "answer_any": [
+      "赣州"
+     ],
+     "known": true,
+     "answer": "赣州",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 340
+    },
+    {
+     "id": "v10_t4_q03",
+     "player": "v10_t4",
+     "seed": 1,
+     "type": "fact",
+     "query": "我腰上起水泡是什么病",
+     "answer_any": [
+      "疱疹"
+     ],
+     "known": false,
+     "answer": "玩家的腰上起了一片水泡，疼得睡不着，发生在2026-03-19",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 339
+    },
+    {
+     "id": "v10_t4_q04",
+     "player": "v10_t4",
+     "seed": 1,
+     "type": "fact",
+     "query": "我周末爱去干嘛",
+     "answer_any": [
+      "钓鱼"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 393
+    },
+    {
+     "id": "v10_t4_q05",
+     "player": "v10_t4",
+     "seed": 1,
+     "type": "fact",
+     "query": "学校选我女儿去学什么",
+     "answer_any": [
+      "主持"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 441
+    },
+    {
+     "id": "v10_t4_q06",
+     "player": "v10_t4",
+     "seed": 1,
+     "type": "fact",
+     "query": "我老爸退休前是做什么的",
+     "answer_any": [
+      "自行车"
+     ],
+     "known": true,
+     "answer": "玩家的父亲以前是修自行车的，现在退休了",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 342
+    },
+    {
+     "id": "v10_t4_q07",
+     "player": "v10_t4",
+     "seed": 1,
+     "type": "update",
+     "query": "我现在每天早上做什么锻炼",
+     "answer_any": [
+      "太极"
+     ],
+     "known": true,
+     "answer": "玩家每天早上五点起来打太极",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 336
+    },
+    {
+     "id": "v10_t4_q08",
+     "player": "v10_t4",
+     "seed": 1,
+     "type": "update",
+     "query": "我店里现在主要接什么活",
+     "answer_any": [
+      "智能锁"
+     ],
+     "known": false,
+     "answer": "……",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 339
+    },
+    {
+     "id": "v10_t4_q09",
+     "player": "v10_t4",
+     "seed": 1,
+     "type": "trajectory",
+     "query": "我的段位这一年起起落落是怎样的",
+     "answer_any": [
+      "铂金一",
+      "钻石四",
+      "铂金二",
+      "钻石三"
+     ],
+     "known": false,
+     "answer": "玩家段位信息未在提供的信息中提及。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 389
+    },
+    {
+     "id": "v10_t4_q10",
+     "player": "v10_t4",
+     "seed": 1,
+     "type": "trajectory",
+     "query": "我的手机前后换了哪几部",
+     "answer_any": [
+      "诺基亚",
+      "nova11",
+      "Magic6"
+     ],
+     "known": true,
+     "answer": "玩家使用了女儿的旧华为nova11手机",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 486
+    },
+    {
+     "id": "v10_t4_q11",
+     "player": "v10_t4",
+     "seed": 1,
+     "type": "promise",
+     "query": "我女儿比赛那天你说要提醒我什么",
+     "answer_any": [
+      "请假"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 306
+    },
+    {
+     "id": "v10_t4_q12",
+     "player": "v10_t4",
+     "seed": 1,
+     "type": "promise",
+     "query": "被对面秒的那局你说打完陪我理什么",
+     "answer_any": [
+      "复活甲"
+     ],
+     "known": true,
+     "answer": "你答应过玩家：助手答应打完我陪你把复活甲什么时候出理一理（2026-06-28）",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 399
+    },
+    {
+     "id": "v10_t4_q13",
+     "player": "v10_t4",
+     "seed": 1,
+     "type": "negative",
+     "query": "你答应过帮我查天气预报吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "助手没说过要帮玩家查天气预报",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 306
+    },
+    {
+     "id": "v10_t4_q14",
+     "player": "v10_t4",
+     "seed": 1,
+     "type": "negative",
+     "query": "我老爸今年多大了",
+     "answer_any": [],
+     "known": true,
+     "answer": "玩家父亲现在26岁",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 406
+    },
+    {
+     "id": "v10_t4_q15",
+     "player": "v10_t4",
+     "seed": 1,
+     "type": "negative",
+     "query": "我大伯是干啥的",
+     "answer_any": [],
+     "known": false,
+     "answer": "不清楚",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 407
+    },
+    {
+     "id": "v10_t4_q16",
+     "player": "v10_t4",
+     "seed": 1,
+     "type": "negative",
+     "query": "我喜欢哪个牌子的球鞋",
+     "answer_any": [],
+     "known": false,
+     "answer": "……",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 397
+    },
+    {
+     "id": "v10_t5_q01",
+     "player": "v10_t5",
+     "seed": 1,
+     "type": "fact",
+     "query": "我在学校教什么",
+     "answer_any": [
+      "美术"
+     ],
+     "known": false,
+     "answer": "……",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 332
+    },
+    {
+     "id": "v10_t5_q02",
+     "player": "v10_t5",
+     "seed": 1,
+     "type": "fact",
+     "query": "我在哪个城市教书",
+     "answer_any": [
+      "泸州"
+     ],
+     "known": true,
+     "answer": "泸州",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 382
+    },
+    {
+     "id": "v10_t5_q03",
+     "player": "v10_t5",
+     "seed": 1,
+     "type": "fact",
+     "query": "我对什么过敏",
+     "answer_any": [
+      "尘螨"
+     ],
+     "known": true,
+     "answer": "玩家有尘螨过敏的情况",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 334
+    },
+    {
+     "id": "v10_t5_q04",
+     "player": "v10_t5",
+     "seed": 1,
+     "type": "fact",
+     "query": "我家养的是什么小动物",
+     "answer_any": [
+      "芦丁鸡"
+     ],
+     "known": true,
+     "answer": "玩家家里养了一只芦丁鸡",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 335
+    },
+    {
+     "id": "v10_t5_q05",
+     "player": "v10_t5",
+     "seed": 1,
+     "type": "fact",
+     "query": "我老公在哪个单位上班",
+     "answer_any": [
+      "烟草"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 336
+    },
+    {
+     "id": "v10_t5_q06",
+     "player": "v10_t5",
+     "seed": 1,
+     "type": "fact",
+     "query": "我婆婆平时爱干什么",
+     "answer_any": [
+      "广场舞"
+     ],
+     "known": true,
+     "answer": "玩家的婆婆是广场舞领队",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 382
+    },
+    {
+     "id": "v10_t5_q07",
+     "player": "v10_t5",
+     "seed": 1,
+     "type": "update",
+     "query": "我现在平时做什么运动",
+     "answer_any": [
+      "飞盘"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 335
+    },
+    {
+     "id": "v10_t5_q08",
+     "player": "v10_t5",
+     "seed": 1,
+     "type": "update",
+     "query": "我现在在学校带什么社团",
+     "answer_any": [
+      "漫画"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 335
+    },
+    {
+     "id": "v10_t5_q09",
+     "player": "v10_t5",
+     "seed": 1,
+     "type": "trajectory",
+     "query": "我的段位从年初到现在是怎么变的",
+     "answer_any": [
+      "铂金五",
+      "铂金一",
+      "钻石五",
+      "铂金三"
+     ],
+     "known": true,
+     "answer": "玩家的段位从铂金五（2026-01-11） → 钻石五（2026-05-26） → 铂金三（2026-09-19）",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 486
+    },
+    {
+     "id": "v10_t5_q10",
+     "player": "v10_t5",
+     "seed": 1,
+     "type": "trajectory",
+     "query": "我常用的英雄换过哪些",
+     "answer_any": [
+      "貂蝉",
+      "沈梦溪",
+      "干将莫邪"
+     ],
+     "known": true,
+     "answer": "貂蝉 → 周瑜 → 太乙真人 → 典韦 → 安琪拉 → 诸葛亮 → 米莱狄 → 廉颇 → 黄忠 → 达摩 → 元歌 → 李信 → 韩信 → 貂蝉 → 程咬金 → 后羿 → 镜 → 刘禅 → 吕布 → 猪八戒 → 赵云 → 庄周 → 李白 → 曜 → 牛魔",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 818
+    },
+    {
+     "id": "v10_t5_q11",
+     "player": "v10_t5",
+     "seed": 1,
+     "type": "promise",
+     "query": "公开课之前你答应提醒我干什么",
+     "answer_any": [
+      "U盘"
+     ],
+     "known": false,
+     "answer": "null",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 363
+    },
+    {
+     "id": "v10_t5_q12",
+     "player": "v10_t5",
+     "seed": 1,
+     "type": "promise",
+     "query": "芦丁鸡生病那次你说帮我找什么",
+     "answer_any": [
+      "宠物医院"
+     ],
+     "known": true,
+     "answer": "你说帮玩家周末找几家能看小宠的宠物医院",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 500
+    },
+    {
+     "id": "v10_t5_q13",
+     "player": "v10_t5",
+     "seed": 1,
+     "type": "negative",
+     "query": "你答应过帮我查快递到哪了吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 307
+    },
+    {
+     "id": "v10_t5_q14",
+     "player": "v10_t5",
+     "seed": 1,
+     "type": "negative",
+     "query": "我老公有什么爱好",
+     "answer_any": [],
+     "known": false,
+     "answer": "没有找到关于玩家老公爱好的相关信息",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 336
+    },
+    {
+     "id": "v10_t5_q15",
+     "player": "v10_t5",
+     "seed": 1,
+     "type": "negative",
+     "query": "我小叔子是做什么的",
+     "answer_any": [],
+     "known": false,
+     "answer": "……",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 307
+    },
+    {
+     "id": "v10_t5_q16",
+     "player": "v10_t5",
+     "seed": 1,
+     "type": "negative",
+     "query": "我喜欢吃榴莲吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 354
+    },
+    {
+     "id": "v10_t6_q01",
+     "player": "v10_t6",
+     "seed": 1,
+     "type": "fact",
+     "query": "我学的是什么专业",
+     "answer_any": [
+      "核工程"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 344
+    },
+    {
+     "id": "v10_t6_q02",
+     "player": "v10_t6",
+     "seed": 1,
+     "type": "fact",
+     "query": "我在哪个城市上大学",
+     "answer_any": [
+      "衡阳"
+     ],
+     "known": true,
+     "answer": "衡阳",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 374
+    },
+    {
+     "id": "v10_t6_q03",
+     "player": "v10_t6",
+     "seed": 1,
+     "type": "fact",
+     "query": "我眼睛有什么问题",
+     "answer_any": [
+      "色弱"
+     ],
+     "known": true,
+     "answer": "助手答应这周末我陪你把这周的对局数据过一遍时提到过眼睛疲劳的问题，所以玩家的眼睛可能有问题。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 482
+    },
+    {
+     "id": "v10_t6_q04",
+     "player": "v10_t6",
+     "seed": 1,
+     "type": "fact",
+     "query": "我最近在玩什么益智玩具",
+     "answer_any": [
+      "魔方"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 397
+    },
+    {
+     "id": "v10_t6_q05",
+     "player": "v10_t6",
+     "seed": 1,
+     "type": "fact",
+     "query": "室友大刘是哪里人",
+     "answer_any": [
+      "丹东"
+     ],
+     "known": false,
+     "answer": "……",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 349
+    },
+    {
+     "id": "v10_t6_q06",
+     "player": "v10_t6",
+     "seed": 1,
+     "type": "fact",
+     "query": "我爷爷以前在铁路上干什么",
+     "answer_any": [
+      "扳道"
+     ],
+     "known": true,
+     "answer": "玩家玩家玩家玩家爷爷以前在铁路上当扳道工",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 346
+    },
+    {
+     "id": "v10_t6_q07",
+     "player": "v10_t6",
+     "seed": 1,
+     "type": "update",
+     "query": "我现在住在哪",
+     "answer_any": [
+      "合租"
+     ],
+     "known": false,
+     "answer": "……",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 349
+    },
+    {
+     "id": "v10_t6_q08",
+     "player": "v10_t6",
+     "seed": 1,
+     "type": "update",
+     "query": "我现在做什么兼职挣钱",
+     "answer_any": [
+      "修电脑"
+     ],
+     "known": false,
+     "answer": "null",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 343
+    },
+    {
+     "id": "v10_t6_q09",
+     "player": "v10_t6",
+     "seed": 1,
+     "type": "trajectory",
+     "query": "我的段位这一年怎么爬的",
+     "answer_any": [
+      "钻石五",
+      "钻石二",
+      "星耀五",
+      "星耀二"
+     ],
+     "known": true,
+     "answer": "玩家从2026-03-21达到钻石五段位，到2026-09-28时的段位没有明确提到，但这一年里有进步到星耀二段位的记录（2026-09-20）。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 388
+    },
+    {
+     "id": "v10_t6_q10",
+     "player": "v10_t6",
+     "seed": 1,
+     "type": "trajectory",
+     "query": "我哥这一年干活的变化",
+     "answer_any": [
+      "钢筋",
+      "焊工",
+      "新加坡"
+     ],
+     "known": false,
+     "answer": "没有关于玩家哥哥这一年变化的具体信息。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 465
+    },
+    {
+     "id": "v10_t6_q11",
+     "player": "v10_t6",
+     "seed": 1,
+     "type": "promise",
+     "query": "四级之前你说要提醒我带什么",
+     "answer_any": [
+      "耳机"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 420
+    },
+    {
+     "id": "v10_t6_q12",
+     "player": "v10_t6",
+     "seed": 1,
+     "type": "promise",
+     "query": "你说周末要陪我过一遍什么",
+     "answer_any": [
+      "对局数据"
+     ],
+     "known": true,
+     "answer": "这周的对局数据",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 394
+    },
+    {
+     "id": "v10_t6_q13",
+     "player": "v10_t6",
+     "seed": 1,
+     "type": "negative",
+     "query": "你答应过帮我抢课吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 314
+    },
+    {
+     "id": "v10_t6_q14",
+     "player": "v10_t6",
+     "seed": 1,
+     "type": "negative",
+     "query": "我爷爷老家是哪的",
+     "answer_any": [],
+     "known": true,
+     "answer": "玩家爷爷老家在铁路上",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 422
+    },
+    {
+     "id": "v10_t6_q15",
+     "player": "v10_t6",
+     "seed": 1,
+     "type": "negative",
+     "query": "我女朋友是哪个专业的",
+     "answer_any": [],
+     "known": false,
+     "answer": "……",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 314
+    },
+    {
+     "id": "v10_t6_q16",
+     "player": "v10_t6",
+     "seed": 1,
+     "type": "negative",
+     "query": "我近视多少度",
+     "answer_any": [],
+     "known": false,
+     "answer": "……",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 314
+    },
+    {
+     "id": "v10_t7_q01",
+     "player": "v10_t7",
+     "seed": 1,
+     "type": "fact",
+     "query": "我开的是什么店",
+     "answer_any": [
+      "米线"
+     ],
+     "known": true,
+     "answer": "玩家在曲靖麒麟区开了个米线店",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 342
+    },
+    {
+     "id": "v10_t7_q02",
+     "player": "v10_t7",
+     "seed": 1,
+     "type": "fact",
+     "query": "我在哪个城市开店",
+     "answer_any": [
+      "曲靖"
+     ],
+     "known": true,
+     "answer": "曲靖麒麟区",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 370
+    },
+    {
+     "id": "v10_t7_q03",
+     "player": "v10_t7",
+     "seed": 1,
+     "type": "fact",
+     "query": "我骨头查出什么问题",
+     "answer_any": [
+      "骨质疏松"
+     ],
+     "known": true,
+     "answer": "玩家检查出有骨质疏松",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 371
+    },
+    {
+     "id": "v10_t7_q04",
+     "player": "v10_t7",
+     "seed": 1,
+     "type": "fact",
+     "query": "我闲下来绣什么",
+     "answer_any": [
+      "十字绣"
+     ],
+     "known": true,
+     "answer": "玩家绣了一幅牡丹，是在2026-09-21",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 363
+    },
+    {
+     "id": "v10_t7_q05",
+     "player": "v10_t7",
+     "seed": 1,
+     "type": "fact",
+     "query": "我老公在哪干活",
+     "answer_any": [
+      "煤矿"
+     ],
+     "known": true,
+     "answer": "玩家的老公在煤矿上班",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 333
+    },
+    {
+     "id": "v10_t7_q06",
+     "player": "v10_t7",
+     "seed": 1,
+     "type": "fact",
+     "query": "我大姐在老家种什么",
+     "answer_any": [
+      "花椒"
+     ],
+     "known": true,
+     "answer": "玩家的大姐在老家种花椒",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 496
+    },
+    {
+     "id": "v10_t7_q07",
+     "player": "v10_t7",
+     "seed": 1,
+     "type": "update",
+     "query": "我现在晚上关店后去干嘛",
+     "answer_any": [
+      "快走"
+     ],
+     "known": false,
+     "answer": "没有找到关于玩家晚上关店后的具体活动信息。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 397
+    },
+    {
+     "id": "v10_t7_q08",
+     "player": "v10_t7",
+     "seed": 1,
+     "type": "update",
+     "query": "我的店现在开在哪",
+     "answer_any": [
+      "沾益"
+     ],
+     "known": true,
+     "answer": "玩家在曲靖麒麟区开了个米线店",
+     "success": 0.0,
+     "stale": true,
+     "context_chars": 342
+    },
+    {
+     "id": "v10_t7_q09",
+     "player": "v10_t7",
+     "seed": 1,
+     "type": "trajectory",
+     "query": "我的段位是怎么变过来的",
+     "answer_any": [
+      "青铜二",
+      "白银三",
+      "黄金四",
+      "白银一"
+     ],
+     "known": true,
+     "answer": "玩家的段位变化为：青铜二 → 白银三 → 黄金四 → 白银一",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 456
+    },
+    {
+     "id": "v10_t7_q10",
+     "player": "v10_t7",
+     "seed": 1,
+     "type": "trajectory",
+     "query": "我儿子这一年先后在哪些地方",
+     "answer_any": [
+      "大理",
+      "玉溪",
+      "深圳"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 306
+    },
+    {
+     "id": "v10_t7_q11",
+     "player": "v10_t7",
+     "seed": 1,
+     "type": "promise",
+     "query": "你答应下周一提醒我去拿什么",
+     "answer_any": [
+      "骨密度"
+     ],
+     "known": true,
+     "answer": "腊肉",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 392
+    },
+    {
+     "id": "v10_t7_q12",
+     "player": "v10_t7",
+     "seed": 1,
+     "type": "promise",
+     "query": "你说我一上线就帮我看什么",
+     "answer_any": [
+      "每日任务"
+     ],
+     "known": true,
+     "answer": "每日任务",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 398
+    },
+    {
+     "id": "v10_t7_q13",
+     "player": "v10_t7",
+     "seed": 1,
+     "type": "negative",
+     "query": "你答应过帮我办健康证吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 306
+    },
+    {
+     "id": "v10_t7_q14",
+     "player": "v10_t7",
+     "seed": 1,
+     "type": "negative",
+     "query": "我老公在哪个城市",
+     "answer_any": [],
+     "known": true,
+     "answer": "玩家的老公在煤矿工作，一个月回来两次，所以玩家老公在煤矿城市工作。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 428
+    },
+    {
+     "id": "v10_t7_q15",
+     "player": "v10_t7",
+     "seed": 1,
+     "type": "negative",
+     "query": "我孙子几岁了",
+     "answer_any": [],
+     "known": true,
+     "answer": "玩家儿子下个月生日，是2026-05-28",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 306
+    },
+    {
+     "id": "v10_t7_q16",
+     "player": "v10_t7",
+     "seed": 1,
+     "type": "negative",
+     "query": "我信佛吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 306
+    },
+    {
+     "id": "v10_t8_q01",
+     "player": "v10_t8",
+     "seed": 1,
+     "type": "fact",
+     "query": "我是做什么手艺的",
+     "answer_any": [
+      "湖笔"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 414
+    },
+    {
+     "id": "v10_t8_q02",
+     "player": "v10_t8",
+     "seed": 1,
+     "type": "fact",
+     "query": "我在哪个城市",
+     "answer_any": [
+      "湖州"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 333
+    },
+    {
+     "id": "v10_t8_q03",
+     "player": "v10_t8",
+     "seed": 1,
+     "type": "fact",
+     "query": "我头发有什么问题",
+     "answer_any": [
+      "脱发"
+     ],
+     "known": false,
+     "answer": "没有找到关于玩家头发问题的相关信息。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 413
+    },
+    {
+     "id": "v10_t8_q04",
+     "player": "v10_t8",
+     "seed": 1,
+     "type": "fact",
+     "query": "芝麻是什么品种的猫",
+     "answer_any": [
+      "暹罗"
+     ],
+     "known": true,
+     "answer": "玩家家里养了一只暹罗猫，名字叫芝麻",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 342
+    },
+    {
+     "id": "v10_t8_q05",
+     "player": "v10_t8",
+     "seed": 1,
+     "type": "fact",
+     "query": "安安是做什么的",
+     "answer_any": [
+      "舞蹈"
+     ],
+     "known": true,
+     "answer": "安安是一名学生",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 404
+    },
+    {
+     "id": "v10_t8_q06",
+     "player": "v10_t8",
+     "seed": 1,
+     "type": "fact",
+     "query": "我表弟在健身房干什么",
+     "answer_any": [
+      "私教"
+     ],
+     "known": true,
+     "answer": "玩家表弟在2026-04-25在健身房当私教",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 347
+    },
+    {
+     "id": "v10_t8_q07",
+     "player": "v10_t8",
+     "seed": 1,
+     "type": "update",
+     "query": "我现在下班爱玩什么",
+     "answer_any": [
+      "台球"
+     ],
+     "known": true,
+     "answer": "玩家喜欢在看烟花时玩游戏，所以现在可以玩偷家模式。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 394
+    },
+    {
+     "id": "v10_t8_q08",
+     "player": "v10_t8",
+     "seed": 1,
+     "type": "update",
+     "query": "安安现在是我什么人",
+     "answer_any": [
+      "未婚妻"
+     ],
+     "known": true,
+     "answer": "安安是玩家的未婚妻",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 422
+    },
+    {
+     "id": "v10_t8_q09",
+     "player": "v10_t8",
+     "seed": 1,
+     "type": "trajectory",
+     "query": "我的段位这一年怎么走的",
+     "answer_any": [
+      "钻石一",
+      "星耀四",
+      "钻石二",
+      "星耀三"
+     ],
+     "known": true,
+     "answer": "玩家上星耀四了，发生在2026-03-23",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 385
+    },
+    {
+     "id": "v10_t8_q10",
+     "player": "v10_t8",
+     "seed": 1,
+     "type": "trajectory",
+     "query": "我爸这一年都在干什么活",
+     "answer_any": [
+      "丝厂",
+      "茶馆",
+      "门卫"
+     ],
+     "known": true,
+     "answer": "玩家的父亲在丝厂工作了三十年，刚刚退休，现在去当门卫了",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 351
+    },
+    {
+     "id": "v10_t8_q11",
+     "player": "v10_t8",
+     "seed": 1,
+     "type": "promise",
+     "query": "订婚的事你答应帮我干嘛",
+     "answer_any": [
+      "三金"
+     ],
+     "known": true,
+     "answer": "你答应过玩家：助手答应帮你列一下订婚要准备的三金和礼品",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 308
+    },
+    {
+     "id": "v10_t8_q12",
+     "player": "v10_t8",
+     "seed": 1,
+     "type": "promise",
+     "query": "你说过要提醒我给芝麻做什么",
+     "answer_any": [
+      "驱虫"
+     ],
+     "known": true,
+     "answer": "助手答应明晚十点提醒你给芝麻做驱虫",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 343
+    },
+    {
+     "id": "v10_t8_q13",
+     "player": "v10_t8",
+     "seed": 1,
+     "type": "negative",
+     "query": "你答应过帮我订婚宴酒店吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "记不到",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 308
+    },
+    {
+     "id": "v10_t8_q14",
+     "player": "v10_t8",
+     "seed": 1,
+     "type": "negative",
+     "query": "我表弟住在哪个城市",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 409
+    },
+    {
+     "id": "v10_t8_q15",
+     "player": "v10_t8",
+     "seed": 1,
+     "type": "negative",
+     "query": "我奶奶身体怎么样",
+     "answer_any": [],
+     "known": false,
+     "answer": "记不到奶奶的身体状况",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 308
+    },
+    {
+     "id": "v10_t8_q16",
+     "player": "v10_t8",
+     "seed": 1,
+     "type": "negative",
+     "query": "我会说英语吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "记不起玩家说过的话。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 308
+    },
+    {
+     "id": "v10_t1_q01",
+     "player": "v10_t1",
+     "seed": 2,
+     "type": "fact",
+     "query": "我在服装厂负责什么",
+     "answer_any": [
+      "跟单"
+     ],
+     "known": true,
+     "answer": "玩家在台州一家服装厂上班，干了四年",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 380
+    },
+    {
+     "id": "v10_t1_q02",
+     "player": "v10_t1",
+     "seed": 2,
+     "type": "fact",
+     "query": "我在哪个城市上班",
+     "answer_any": [
+      "台州"
+     ],
+     "known": true,
+     "answer": "台州",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 380
+    },
+    {
+     "id": "v10_t1_q03",
+     "player": "v10_t1",
+     "seed": 2,
+     "type": "fact",
+     "query": "我甲状腺查出了什么",
+     "answer_any": [
+      "结节"
+     ],
+     "known": true,
+     "answer": "玩家的甲状腺检查出有个小结节",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 318
+    },
+    {
+     "id": "v10_t1_q04",
+     "player": "v10_t1",
+     "seed": 2,
+     "type": "fact",
+     "query": "饼干是什么品种的狗",
+     "answer_any": [
+      "柯基"
+     ],
+     "known": true,
+     "answer": "玩家家里养了一只叫饼干的柯基犬",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 350
+    },
+    {
+     "id": "v10_t1_q05",
+     "player": "v10_t1",
+     "seed": 2,
+     "type": "fact",
+     "query": "我爸在老家种什么",
+     "answer_any": [
+      "杨梅"
+     ],
+     "known": true,
+     "answer": "我爸在老家种杨梅",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 454
+    },
+    {
+     "id": "v10_t1_q06",
+     "player": "v10_t1",
+     "seed": 2,
+     "type": "fact",
+     "query": "小雯在哪个城市",
+     "answer_any": [
+      "杭州"
+     ],
+     "known": true,
+     "answer": "小雯在台州",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 429
+    },
+    {
+     "id": "v10_t1_q07",
+     "player": "v10_t1",
+     "seed": 2,
+     "type": "update",
+     "query": "我现在周末爱去玩什么",
+     "answer_any": [
+      "密室"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 405
+    },
+    {
+     "id": "v10_t1_q08",
+     "player": "v10_t1",
+     "seed": 2,
+     "type": "update",
+     "query": "我现在怎么去上班",
+     "answer_any": [
+      "开车"
+     ],
+     "known": true,
+     "answer": "你现在自己开车上班了",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 380
+    },
+    {
+     "id": "v10_t1_q09",
+     "player": "v10_t1",
+     "seed": 2,
+     "type": "trajectory",
+     "query": "我这一年段位是怎么走的",
+     "answer_any": [
+      "黄金二",
+      "铂金三",
+      "黄金一",
+      "铂金二"
+     ],
+     "known": true,
+     "answer": "玩家的段位从上铂金二段位时使用了张飞（2026-08-04）变为了黄金一（2026-06-23）",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 419
+    },
+    {
+     "id": "v10_t1_q10",
+     "player": "v10_t1",
+     "seed": 2,
+     "type": "trajectory",
+     "query": "我主玩的英雄换过哪几个",
+     "answer_any": [
+      "蔡文姬",
+      "鬼谷子",
+      "张飞"
+     ],
+     "known": true,
+     "answer": "玩家在游戏中使用了太乙真人英雄（2026-09-08），上周使用了安琪拉这个英雄（2026-09-23）",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 846
+    },
+    {
+     "id": "v10_t1_q11",
+     "player": "v10_t1",
+     "seed": 2,
+     "type": "promise",
+     "query": "你答应过提醒我去医院干嘛",
+     "answer_any": [
+      "复查"
+     ],
+     "known": true,
+     "answer": "玩家的生日是2026-04-30，医生建议三个月后再去看甲状腺小结节。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 318
+    },
+    {
+     "id": "v10_t1_q12",
+     "player": "v10_t1",
+     "seed": 2,
+     "type": "promise",
+     "query": "攒的碎片你说要帮我看什么",
+     "answer_any": [
+      "碎片商店"
+     ],
+     "known": true,
+     "answer": "助手答应月底前我帮你盯着碎片商店，看换什么最划算",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 318
+    },
+    {
+     "id": "v10_t1_q13",
+     "player": "v10_t1",
+     "seed": 2,
+     "type": "negative",
+     "query": "你说过要帮我查航班吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "助手没说过要帮玩家查航班",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 318
+    },
+    {
+     "id": "v10_t1_q14",
+     "player": "v10_t1",
+     "seed": 2,
+     "type": "negative",
+     "query": "小雯是做什么工作的",
+     "answer_any": [],
+     "known": false,
+     "answer": "……",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 427
+    },
+    {
+     "id": "v10_t1_q15",
+     "player": "v10_t1",
+     "seed": 2,
+     "type": "negative",
+     "query": "我表妹在哪读书",
+     "answer_any": [],
+     "known": false,
+     "answer": "不知道",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 318
+    },
+    {
+     "id": "v10_t1_q16",
+     "player": "v10_t1",
+     "seed": 2,
+     "type": "negative",
+     "query": "我最喜欢哪个季节",
+     "answer_any": [],
+     "known": false,
+     "answer": "……",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 379
+    },
+    {
+     "id": "v10_t2_q01",
+     "player": "v10_t2",
+     "seed": 2,
+     "type": "fact",
+     "query": "我在油田干什么活",
+     "answer_any": [
+      "采油"
+     ],
+     "known": true,
+     "answer": "玩家在大庆油田当采油工",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 380
+    },
+    {
+     "id": "v10_t2_q02",
+     "player": "v10_t2",
+     "seed": 2,
+     "type": "fact",
+     "query": "我在哪个城市上班",
+     "answer_any": [
+      "大庆"
+     ],
+     "known": true,
+     "answer": "大庆油田",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 442
+    },
+    {
+     "id": "v10_t2_q03",
+     "player": "v10_t2",
+     "seed": 2,
+     "type": "fact",
+     "query": "我手上一到冬天长什么",
+     "answer_any": [
+      "冻疮"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 374
+    },
+    {
+     "id": "v10_t2_q04",
+     "player": "v10_t2",
+     "seed": 2,
+     "type": "fact",
+     "query": "我老家是哪的",
+     "answer_any": [
+      "齐齐哈尔"
+     ],
+     "known": false,
+     "answer": "……",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 408
+    },
+    {
+     "id": "v10_t2_q05",
+     "player": "v10_t2",
+     "seed": 2,
+     "type": "fact",
+     "query": "我媳妇做什么小生意",
+     "answer_any": [
+      "水果摊"
+     ],
+     "known": true,
+     "answer": "玩家的妻子在2026-03-15在小区门口开了个水果摊",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 465
+    },
+    {
+     "id": "v10_t2_q06",
+     "player": "v10_t2",
+     "seed": 2,
+     "type": "fact",
+     "query": "我儿子在练什么运动",
+     "answer_any": [
+      "冰球"
+     ],
+     "known": true,
+     "answer": "玩家儿子报了冰球队，每周训练三次",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 380
+    },
+    {
+     "id": "v10_t2_q07",
+     "player": "v10_t2",
+     "seed": 2,
+     "type": "update",
+     "query": "我现在上什么班",
+     "answer_any": [
+      "夜班"
+     ],
+     "known": true,
+     "answer": "现在玩家是白班，早上八点到下午五点",
+     "success": 0.0,
+     "stale": true,
+     "context_chars": 410
+    },
+    {
+     "id": "v10_t2_q08",
+     "player": "v10_t2",
+     "seed": 2,
+     "type": "update",
+     "query": "我现在开的什么车",
+     "answer_any": [
+      "哈弗"
+     ],
+     "known": true,
+     "answer": "玩家最后开的是捷达",
+     "success": 0.0,
+     "stale": true,
+     "context_chars": 372
+    },
+    {
+     "id": "v10_t2_q09",
+     "player": "v10_t2",
+     "seed": 2,
+     "type": "trajectory",
+     "query": "我的段位是怎么变的",
+     "answer_any": [
+      "钻石三",
+      "星耀五",
+      "钻石二",
+      "星耀四"
+     ],
+     "known": true,
+     "answer": "玩家段位变化：钻石三（2026-01-08） → 星耀五（2026-03-16） → 钻石二（2026-05-21） → 星耀四（2026-06-23）",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 504
+    },
+    {
+     "id": "v10_t2_q10",
+     "player": "v10_t2",
+     "seed": 2,
+     "type": "trajectory",
+     "query": "我的本命英雄前后换了哪些",
+     "answer_any": [
+      "马可波罗",
+      "公孙离",
+      "孙尚香"
+     ],
+     "known": true,
+     "answer": "玩家使用过英雄列表：马可波罗 → 程咬金 → 后羿 → 马可波罗 → 廉颇 → 曜 → 牛魔 → 米莱狄 → 公孙离 → 李信 → 周瑜 → 元歌 → 镜 → 吕布 → 太乙真人 → 赵云 → 诸葛亮 → 李白 → 猪八戒 → 黄忠 → 孙尚香 → 韩信 → 典韦 → 刘禅 → 庄周 → 达摩",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 878
+    },
+    {
+     "id": "v10_t2_q11",
+     "player": "v10_t2",
+     "seed": 2,
+     "type": "promise",
+     "query": "你说过哪天早上要提醒我干嘛",
+     "answer_any": [
+      "雪地胎"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 402
+    },
+    {
+     "id": "v10_t2_q12",
+     "player": "v10_t2",
+     "seed": 2,
+     "type": "promise",
+     "query": "你答应周末帮我找什么",
+     "answer_any": [
+      "操作视频"
+     ],
+     "known": true,
+     "answer": "助手答应这周末我帮你找几个公孙离的操作视频。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 346
+    },
+    {
+     "id": "v10_t2_q13",
+     "player": "v10_t2",
+     "seed": 2,
+     "type": "negative",
+     "query": "你答应过帮我挑钓鱼竿吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "助手没有答应帮玩家挑钓鱼竿。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 346
+    },
+    {
+     "id": "v10_t2_q14",
+     "player": "v10_t2",
+     "seed": 2,
+     "type": "negative",
+     "query": "我媳妇是哪儿人",
+     "answer_any": [],
+     "known": true,
+     "answer": "玩家的妻子在2026-03-15在小区门口开了个水果摊",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 465
+    },
+    {
+     "id": "v10_t2_q15",
+     "player": "v10_t2",
+     "seed": 2,
+     "type": "negative",
+     "query": "我岳母是做什么的",
+     "answer_any": [],
+     "known": false,
+     "answer": "记不起",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 346
+    },
+    {
+     "id": "v10_t2_q16",
+     "player": "v10_t2",
+     "seed": 2,
+     "type": "negative",
+     "query": "我有没有打过耳洞",
+     "answer_any": [],
+     "known": false,
+     "answer": "没有找到关于玩家打耳洞的信息。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 346
+    },
+    {
+     "id": "v10_t3_q01",
+     "player": "v10_t3",
+     "seed": 2,
+     "type": "fact",
+     "query": "我是做什么工作的",
+     "answer_any": [
+      "导游"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 355
+    },
+    {
+     "id": "v10_t3_q02",
+     "player": "v10_t3",
+     "seed": 2,
+     "type": "fact",
+     "query": "我在哪个城市工作",
+     "answer_any": [
+      "开封"
+     ],
+     "known": true,
+     "answer": "开封",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 310
+    },
+    {
+     "id": "v10_t3_q03",
+     "player": "v10_t3",
+     "seed": 2,
+     "type": "fact",
+     "query": "我为什么不能喝牛奶",
+     "answer_any": [
+      "乳糖"
+     ],
+     "known": true,
+     "answer": "玩家提到自己在2026-08-04偷家成功后，自己家里的橘猫名字叫橙子，且这只猫最喜欢趴在玩家的键盘上。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 370
+    },
+    {
+     "id": "v10_t3_q04",
+     "player": "v10_t3",
+     "seed": 2,
+     "type": "fact",
+     "query": "橙子是什么猫",
+     "answer_any": [
+      "橘猫"
+     ],
+     "known": true,
+     "answer": "玩家家里养了一只橘猫叫橙子",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 283
+    },
+    {
+     "id": "v10_t3_q05",
+     "player": "v10_t3",
+     "seed": 2,
+     "type": "fact",
+     "query": "阿杰是干什么的",
+     "answer_any": [
+      "辅警"
+     ],
+     "known": true,
+     "answer": "阿杰是当辅警的",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 310
+    },
+    {
+     "id": "v10_t3_q06",
+     "player": "v10_t3",
+     "seed": 2,
+     "type": "fact",
+     "query": "我奶奶有什么手艺",
+     "answer_any": [
+      "剪纸"
+     ],
+     "known": false,
+     "answer": "记于2026-06-26，玩家的奶奶已经八十大寿。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 281
+    },
+    {
+     "id": "v10_t3_q07",
+     "player": "v10_t3",
+     "seed": 2,
+     "type": "update",
+     "query": "我现在在哪个景区带团",
+     "answer_any": [
+      "万岁山"
+     ],
+     "known": true,
+     "answer": "开封",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 340
+    },
+    {
+     "id": "v10_t3_q08",
+     "player": "v10_t3",
+     "seed": 2,
+     "type": "update",
+     "query": "我现在在学什么乐器",
+     "answer_any": [
+      "尤克里里"
+     ],
+     "known": true,
+     "answer": "玩家晚上在学尤克里里",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 316
+    },
+    {
+     "id": "v10_t3_q09",
+     "player": "v10_t3",
+     "seed": 2,
+     "type": "trajectory",
+     "query": "我的段位是一步步怎么上来的",
+     "answer_any": [
+      "白银一",
+      "黄金五",
+      "黄金二",
+      "铂金四"
+     ],
+     "known": true,
+     "answer": "玩家的段位从白银一提升到了黄金五，然后到了白银，再提升到黄金二，最终达到了铂金四。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 495
+    },
+    {
+     "id": "v10_t3_q10",
+     "player": "v10_t3",
+     "seed": 2,
+     "type": "trajectory",
+     "query": "阿杰先后在哪些城市工作过",
+     "answer_any": [
+      "新乡",
+      "许昌",
+      "商丘"
+     ],
+     "known": true,
+     "answer": "阿杰先后在商丘和新乡工作过",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 303
+    },
+    {
+     "id": "v10_t3_q11",
+     "player": "v10_t3",
+     "seed": 2,
+     "type": "promise",
+     "query": "你答应过帮我盯着什么比赛",
+     "answer_any": [
+      "战队赛"
+     ],
+     "known": true,
+     "answer": "助手答应打完这局我陪你看看补兵怎么练",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 316
+    },
+    {
+     "id": "v10_t3_q12",
+     "player": "v10_t3",
+     "seed": 2,
+     "type": "promise",
+     "query": "你说周六早上几点叫我",
+     "answer_any": [
+      "五点半"
+     ],
+     "known": true,
+     "answer": "2026-04-20 玩家需要在周六五点多到达集合点",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 283
+    },
+    {
+     "id": "v10_t3_q13",
+     "player": "v10_t3",
+     "seed": 2,
+     "type": "negative",
+     "query": "你说过要帮我找摄影师吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "助手没说过要找摄影师",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 253
+    },
+    {
+     "id": "v10_t3_q14",
+     "player": "v10_t3",
+     "seed": 2,
+     "type": "negative",
+     "query": "我奶奶住在哪个城市",
+     "answer_any": [],
+     "known": true,
+     "answer": "阿杰调到商丘的时候，玩家的奶奶已经八十大寿，说明奶奶住在商丘。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 353
+    },
+    {
+     "id": "v10_t3_q15",
+     "player": "v10_t3",
+     "seed": 2,
+     "type": "negative",
+     "query": "我姑姑是做什么的",
+     "answer_any": [],
+     "known": false,
+     "answer": "无法从提供的信息中得知玩家姑姑是做什么的",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 354
+    },
+    {
+     "id": "v10_t3_q16",
+     "player": "v10_t3",
+     "seed": 2,
+     "type": "negative",
+     "query": "我爱吃甜粽子还是咸粽子",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 300
+    },
+    {
+     "id": "v10_t4_q01",
+     "player": "v10_t4",
+     "seed": 2,
+     "type": "fact",
+     "query": "我是干哪一行的",
+     "answer_any": [
+      "开锁"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 309
+    },
+    {
+     "id": "v10_t4_q02",
+     "player": "v10_t4",
+     "seed": 2,
+     "type": "fact",
+     "query": "我的铺子在哪个城市",
+     "answer_any": [
+      "赣州"
+     ],
+     "known": true,
+     "answer": "赣州",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 343
+    },
+    {
+     "id": "v10_t4_q03",
+     "player": "v10_t4",
+     "seed": 2,
+     "type": "fact",
+     "query": "我腰上起水泡是什么病",
+     "answer_any": [
+      "疱疹"
+     ],
+     "known": false,
+     "answer": "没有提到过腰上起水泡的相关信息",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 340
+    },
+    {
+     "id": "v10_t4_q04",
+     "player": "v10_t4",
+     "seed": 2,
+     "type": "fact",
+     "query": "我周末爱去干嘛",
+     "answer_any": [
+      "钓鱼"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 396
+    },
+    {
+     "id": "v10_t4_q05",
+     "player": "v10_t4",
+     "seed": 2,
+     "type": "fact",
+     "query": "学校选我女儿去学什么",
+     "answer_any": [
+      "主持"
+     ],
+     "known": false,
+     "answer": "不知道",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 343
+    },
+    {
+     "id": "v10_t4_q06",
+     "player": "v10_t4",
+     "seed": 2,
+     "type": "fact",
+     "query": "我老爸退休前是做什么的",
+     "answer_any": [
+      "自行车"
+     ],
+     "known": false,
+     "answer": "助手没有玩家父亲退休前做什么的具体信息",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 309
+    },
+    {
+     "id": "v10_t4_q07",
+     "player": "v10_t4",
+     "seed": 2,
+     "type": "update",
+     "query": "我现在每天早上做什么锻炼",
+     "answer_any": [
+      "太极"
+     ],
+     "known": true,
+     "answer": "玩家每天早上五点起来晨跑五公里，后来腰好了以后晨跑改成打太极。",
+     "success": 1.0,
+     "stale": true,
+     "context_chars": 372
+    },
+    {
+     "id": "v10_t4_q08",
+     "player": "v10_t4",
+     "seed": 2,
+     "type": "update",
+     "query": "我店里现在主要接什么活",
+     "answer_any": [
+      "智能锁"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 374
+    },
+    {
+     "id": "v10_t4_q09",
+     "player": "v10_t4",
+     "seed": 2,
+     "type": "trajectory",
+     "query": "我的段位这一年起起落落是怎样的",
+     "answer_any": [
+      "铂金一",
+      "钻石四",
+      "铂金二",
+      "钻石三"
+     ],
+     "known": false,
+     "answer": "玩家段位变化情况未在提供的信息中提及。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 392
+    },
+    {
+     "id": "v10_t4_q10",
+     "player": "v10_t4",
+     "seed": 2,
+     "type": "trajectory",
+     "query": "我的手机前后换了哪几部",
+     "answer_any": [
+      "诺基亚",
+      "nova11",
+      "Magic6"
+     ],
+     "known": false,
+     "answer": "没找到关于手机更换的具体信息",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 341
+    },
+    {
+     "id": "v10_t4_q11",
+     "player": "v10_t4",
+     "seed": 2,
+     "type": "promise",
+     "query": "我女儿比赛那天你说要提醒我什么",
+     "answer_any": [
+      "请假"
+     ],
+     "known": true,
+     "answer": "助手说过要帮你盯着赛季结算，最后三天提醒你上号。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 309
+    },
+    {
+     "id": "v10_t4_q12",
+     "player": "v10_t4",
+     "seed": 2,
+     "type": "promise",
+     "query": "被对面秒的那局你说打完陪我理什么",
+     "answer_any": [
+      "复活甲"
+     ],
+     "known": true,
+     "answer": "你答应过玩家：助手答应打完我陪你把复活甲什么时候出理一理（2026-06-28）",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 402
+    },
+    {
+     "id": "v10_t4_q13",
+     "player": "v10_t4",
+     "seed": 2,
+     "type": "negative",
+     "query": "你答应过帮我查天气预报吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "助手没说过要帮玩家查天气预报",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 309
+    },
+    {
+     "id": "v10_t4_q14",
+     "player": "v10_t4",
+     "seed": 2,
+     "type": "negative",
+     "query": "我老爸今年多大了",
+     "answer_any": [],
+     "known": true,
+     "answer": "玩家的父亲现在退休了，记于2026-05-25",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 309
+    },
+    {
+     "id": "v10_t4_q15",
+     "player": "v10_t4",
+     "seed": 2,
+     "type": "negative",
+     "query": "我大伯是干啥的",
+     "answer_any": [],
+     "known": false,
+     "answer": "……",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 410
+    },
+    {
+     "id": "v10_t4_q16",
+     "player": "v10_t4",
+     "seed": 2,
+     "type": "negative",
+     "query": "我喜欢哪个牌子的球鞋",
+     "answer_any": [],
+     "known": false,
+     "answer": "……",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 400
+    },
+    {
+     "id": "v10_t5_q01",
+     "player": "v10_t5",
+     "seed": 2,
+     "type": "fact",
+     "query": "我在学校教什么",
+     "answer_any": [
+      "美术"
+     ],
+     "known": true,
+     "answer": "玩家在泸州一所小学教美术",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 391
+    },
+    {
+     "id": "v10_t5_q02",
+     "player": "v10_t5",
+     "seed": 2,
+     "type": "fact",
+     "query": "我在哪个城市教书",
+     "answer_any": [
+      "泸州"
+     ],
+     "known": true,
+     "answer": "玩家在泸州教书",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 336
+    },
+    {
+     "id": "v10_t5_q03",
+     "player": "v10_t5",
+     "seed": 2,
+     "type": "fact",
+     "query": "我对什么过敏",
+     "answer_any": [
+      "尘螨"
+     ],
+     "known": true,
+     "answer": "玩家有尘螨过敏的问题",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 334
+    },
+    {
+     "id": "v10_t5_q04",
+     "player": "v10_t5",
+     "seed": 2,
+     "type": "fact",
+     "query": "我家养的是什么小动物",
+     "answer_any": [
+      "芦丁鸡"
+     ],
+     "known": true,
+     "answer": "玩家最近养了一只芦丁鸡",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 369
+    },
+    {
+     "id": "v10_t5_q05",
+     "player": "v10_t5",
+     "seed": 2,
+     "type": "fact",
+     "query": "我老公在哪个单位上班",
+     "answer_any": [
+      "烟草"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 336
+    },
+    {
+     "id": "v10_t5_q06",
+     "player": "v10_t5",
+     "seed": 2,
+     "type": "fact",
+     "query": "我婆婆平时爱干什么",
+     "answer_any": [
+      "广场舞"
+     ],
+     "known": true,
+     "answer": "玩家的婆婆是广场舞领队",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 343
+    },
+    {
+     "id": "v10_t5_q07",
+     "player": "v10_t5",
+     "seed": 2,
+     "type": "update",
+     "query": "我现在平时做什么运动",
+     "answer_any": [
+      "飞盘"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 333
+    },
+    {
+     "id": "v10_t5_q08",
+     "player": "v10_t5",
+     "seed": 2,
+     "type": "update",
+     "query": "我现在在学校带什么社团",
+     "answer_any": [
+      "漫画"
+     ],
+     "known": true,
+     "answer": "玩家带过素描社",
+     "success": 0.0,
+     "stale": true,
+     "context_chars": 330
+    },
+    {
+     "id": "v10_t5_q09",
+     "player": "v10_t5",
+     "seed": 2,
+     "type": "trajectory",
+     "query": "我的段位从年初到现在是怎么变的",
+     "answer_any": [
+      "铂金五",
+      "铂金一",
+      "钻石五",
+      "铂金三"
+     ],
+     "known": true,
+     "answer": "玩家的段位从年初的铂金五提升到了钻石五，然后又降到了铂金三。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 553
+    },
+    {
+     "id": "v10_t5_q10",
+     "player": "v10_t5",
+     "seed": 2,
+     "type": "trajectory",
+     "query": "我常用的英雄换过哪些",
+     "answer_any": [
+      "貂蝉",
+      "沈梦溪",
+      "干将莫邪"
+     ],
+     "known": true,
+     "answer": "貂蝉 → 周瑜 → 太乙真人 → 典韦 → 安琪拉 → 诸葛亮 → 米莱狄 → 廉颇 → 黄忠 → 达摩 → 元歌 → 李信 → 韩信 → 貂蝉 → 程咬金 → 后羿 → 镜 → 刘禅 → 吕布 → 猪八戒 → 赵云 → 庄周 → 李白 → 曜 → 牛魔",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 818
+    },
+    {
+     "id": "v10_t5_q11",
+     "player": "v10_t5",
+     "seed": 2,
+     "type": "promise",
+     "query": "公开课之前你答应提醒我干什么",
+     "answer_any": [
+      "U盘"
+     ],
+     "known": true,
+     "answer": "助手答应打完这局，我陪你看看沈梦溪该什么时候进场",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 393
+    },
+    {
+     "id": "v10_t5_q12",
+     "player": "v10_t5",
+     "seed": 2,
+     "type": "promise",
+     "query": "芦丁鸡生病那次你说帮我找什么",
+     "answer_any": [
+      "宠物医院"
+     ],
+     "known": true,
+     "answer": "助手答应周末我帮你找几家能看小宠的宠物医院",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 450
+    },
+    {
+     "id": "v10_t5_q13",
+     "player": "v10_t5",
+     "seed": 2,
+     "type": "negative",
+     "query": "你答应过帮我查快递到哪了吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 307
+    },
+    {
+     "id": "v10_t5_q14",
+     "player": "v10_t5",
+     "seed": 2,
+     "type": "negative",
+     "query": "我老公有什么爱好",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 336
+    },
+    {
+     "id": "v10_t5_q15",
+     "player": "v10_t5",
+     "seed": 2,
+     "type": "negative",
+     "query": "我小叔子是做什么的",
+     "answer_any": [],
+     "known": false,
+     "answer": "……",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 307
+    },
+    {
+     "id": "v10_t5_q16",
+     "player": "v10_t5",
+     "seed": 2,
+     "type": "negative",
+     "query": "我喜欢吃榴莲吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 354
+    },
+    {
+     "id": "v10_t6_q01",
+     "player": "v10_t6",
+     "seed": 2,
+     "type": "fact",
+     "query": "我学的是什么专业",
+     "answer_any": [
+      "核工程"
+     ],
+     "known": false,
+     "answer": "……",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 352
+    },
+    {
+     "id": "v10_t6_q02",
+     "player": "v10_t6",
+     "seed": 2,
+     "type": "fact",
+     "query": "我在哪个城市上大学",
+     "answer_any": [
+      "衡阳"
+     ],
+     "known": true,
+     "answer": "衡阳",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 390
+    },
+    {
+     "id": "v10_t6_q03",
+     "player": "v10_t6",
+     "seed": 2,
+     "type": "fact",
+     "query": "我眼睛有什么问题",
+     "answer_any": [
+      "色弱"
+     ],
+     "known": true,
+     "answer": "玩家表示连续打了多局游戏，眼睛疲劳，还因为分不清队友和对手而技能放空，导致队友质疑。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 490
+    },
+    {
+     "id": "v10_t6_q04",
+     "player": "v10_t6",
+     "seed": 2,
+     "type": "fact",
+     "query": "我最近在玩什么益智玩具",
+     "answer_any": [
+      "魔方"
+     ],
+     "known": false,
+     "answer": "……",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 405
+    },
+    {
+     "id": "v10_t6_q05",
+     "player": "v10_t6",
+     "seed": 2,
+     "type": "fact",
+     "query": "室友大刘是哪里人",
+     "answer_any": [
+      "丹东"
+     ],
+     "known": false,
+     "answer": "……",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 322
+    },
+    {
+     "id": "v10_t6_q06",
+     "player": "v10_t6",
+     "seed": 2,
+     "type": "fact",
+     "query": "我爷爷以前在铁路上干什么",
+     "answer_any": [
+      "扳道"
+     ],
+     "known": true,
+     "answer": "玩家的爷爷是铁路上的扳道工",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 352
+    },
+    {
+     "id": "v10_t6_q07",
+     "player": "v10_t6",
+     "seed": 2,
+     "type": "update",
+     "query": "我现在住在哪",
+     "answer_any": [
+      "合租"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 322
+    },
+    {
+     "id": "v10_t6_q08",
+     "player": "v10_t6",
+     "seed": 2,
+     "type": "update",
+     "query": "我现在做什么兼职挣钱",
+     "answer_any": [
+      "修电脑"
+     ],
+     "known": true,
+     "answer": "最近通过接电脑维修单赚了一千多",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 417
+    },
+    {
+     "id": "v10_t6_q09",
+     "player": "v10_t6",
+     "seed": 2,
+     "type": "trajectory",
+     "query": "我的段位这一年怎么爬的",
+     "answer_any": [
+      "钻石五",
+      "钻石二",
+      "星耀五",
+      "星耀二"
+     ],
+     "known": false,
+     "answer": "助手没有玩家段位变化的具体信息。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 403
+    },
+    {
+     "id": "v10_t6_q10",
+     "player": "v10_t6",
+     "seed": 2,
+     "type": "trajectory",
+     "query": "我哥这一年干活的变化",
+     "answer_any": [
+      "钢筋",
+      "焊工",
+      "新加坡"
+     ],
+     "known": false,
+     "answer": "没有关于玩家哥哥这一年变化的具体信息。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 473
+    },
+    {
+     "id": "v10_t6_q11",
+     "player": "v10_t6",
+     "seed": 2,
+     "type": "promise",
+     "query": "四级之前你说要提醒我带什么",
+     "answer_any": [
+      "耳机"
+     ],
+     "known": false,
+     "answer": "null",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 322
+    },
+    {
+     "id": "v10_t6_q12",
+     "player": "v10_t6",
+     "seed": 2,
+     "type": "promise",
+     "query": "你说周末要陪我过一遍什么",
+     "answer_any": [
+      "对局数据"
+     ],
+     "known": true,
+     "answer": "这周的对局数据",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 402
+    },
+    {
+     "id": "v10_t6_q13",
+     "player": "v10_t6",
+     "seed": 2,
+     "type": "negative",
+     "query": "你答应过帮我抢课吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "助手没说过要帮玩家抢课。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 322
+    },
+    {
+     "id": "v10_t6_q14",
+     "player": "v10_t6",
+     "seed": 2,
+     "type": "negative",
+     "query": "我爷爷老家是哪的",
+     "answer_any": [],
+     "known": true,
+     "answer": "玩家爷爷老家在铁路上",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 428
+    },
+    {
+     "id": "v10_t6_q15",
+     "player": "v10_t6",
+     "seed": 2,
+     "type": "negative",
+     "query": "我女朋友是哪个专业的",
+     "answer_any": [],
+     "known": false,
+     "answer": "……",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 322
+    },
+    {
+     "id": "v10_t6_q16",
+     "player": "v10_t6",
+     "seed": 2,
+     "type": "negative",
+     "query": "我近视多少度",
+     "answer_any": [],
+     "known": false,
+     "answer": "没有提到过玩家的近视度数",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 322
+    },
+    {
+     "id": "v10_t7_q01",
+     "player": "v10_t7",
+     "seed": 2,
+     "type": "fact",
+     "query": "我开的是什么店",
+     "answer_any": [
+      "米线"
+     ],
+     "known": true,
+     "answer": "玩家开的是米线店",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 467
+    },
+    {
+     "id": "v10_t7_q02",
+     "player": "v10_t7",
+     "seed": 2,
+     "type": "fact",
+     "query": "我在哪个城市开店",
+     "answer_any": [
+      "曲靖"
+     ],
+     "known": true,
+     "answer": "曲靖麒麟区",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 551
+    },
+    {
+     "id": "v10_t7_q03",
+     "player": "v10_t7",
+     "seed": 2,
+     "type": "fact",
+     "query": "我骨头查出什么问题",
+     "answer_any": [
+      "骨质疏松"
+     ],
+     "known": true,
+     "answer": "玩家被诊断出有骨质疏松",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 340
+    },
+    {
+     "id": "v10_t7_q04",
+     "player": "v10_t7",
+     "seed": 2,
+     "type": "fact",
+     "query": "我闲下来绣什么",
+     "answer_any": [
+      "十字绣"
+     ],
+     "known": true,
+     "answer": "玩家喜欢绣十字绣",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 394
+    },
+    {
+     "id": "v10_t7_q05",
+     "player": "v10_t7",
+     "seed": 2,
+     "type": "fact",
+     "query": "我老公在哪干活",
+     "answer_any": [
+      "煤矿"
+     ],
+     "known": true,
+     "answer": "玩家的老公在煤矿上班",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 375
+    },
+    {
+     "id": "v10_t7_q06",
+     "player": "v10_t7",
+     "seed": 2,
+     "type": "fact",
+     "query": "我大姐在老家种什么",
+     "answer_any": [
+      "花椒"
+     ],
+     "known": true,
+     "answer": "大姐在老家种花椒",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 497
+    },
+    {
+     "id": "v10_t7_q07",
+     "player": "v10_t7",
+     "seed": 2,
+     "type": "update",
+     "query": "我现在晚上关店后去干嘛",
+     "answer_any": [
+      "快走"
+     ],
+     "known": true,
+     "answer": "玩家晚上会关店去打麻将",
+     "success": 0.0,
+     "stale": true,
+     "context_chars": 404
+    },
+    {
+     "id": "v10_t7_q08",
+     "player": "v10_t7",
+     "seed": 2,
+     "type": "update",
+     "query": "我的店现在开在哪",
+     "answer_any": [
+      "沾益"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 415
+    },
+    {
+     "id": "v10_t7_q09",
+     "player": "v10_t7",
+     "seed": 2,
+     "type": "trajectory",
+     "query": "我的段位是怎么变过来的",
+     "answer_any": [
+      "青铜二",
+      "白银三",
+      "黄金四",
+      "白银一"
+     ],
+     "known": true,
+     "answer": "玩家的段位变化：青铜二 → 白银三 → 黄金四 → 白银一",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 535
+    },
+    {
+     "id": "v10_t7_q10",
+     "player": "v10_t7",
+     "seed": 2,
+     "type": "trajectory",
+     "query": "我儿子这一年先后在哪些地方",
+     "answer_any": [
+      "大理",
+      "玉溪",
+      "深圳"
+     ],
+     "known": true,
+     "answer": "玩家的儿子目前在玉溪一家烟厂实习",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 372
+    },
+    {
+     "id": "v10_t7_q11",
+     "player": "v10_t7",
+     "seed": 2,
+     "type": "promise",
+     "query": "你答应下周一提醒我去拿什么",
+     "answer_any": [
+      "骨密度"
+     ],
+     "known": false,
+     "answer": "……",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 398
+    },
+    {
+     "id": "v10_t7_q12",
+     "player": "v10_t7",
+     "seed": 2,
+     "type": "promise",
+     "query": "你说我一上线就帮我看什么",
+     "answer_any": [
+      "每日任务"
+     ],
+     "known": true,
+     "answer": "每日任务做完没",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 404
+    },
+    {
+     "id": "v10_t7_q13",
+     "player": "v10_t7",
+     "seed": 2,
+     "type": "negative",
+     "query": "你答应过帮我办健康证吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 312
+    },
+    {
+     "id": "v10_t7_q14",
+     "player": "v10_t7",
+     "seed": 2,
+     "type": "negative",
+     "query": "我老公在哪个城市",
+     "answer_any": [],
+     "known": true,
+     "answer": "玩家的老公在煤矿上班，玩家的老公在煤矿工作",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 470
+    },
+    {
+     "id": "v10_t7_q15",
+     "player": "v10_t7",
+     "seed": 2,
+     "type": "negative",
+     "query": "我孙子几岁了",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 312
+    },
+    {
+     "id": "v10_t7_q16",
+     "player": "v10_t7",
+     "seed": 2,
+     "type": "negative",
+     "query": "我信佛吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 312
+    },
+    {
+     "id": "v10_t8_q01",
+     "player": "v10_t8",
+     "seed": 2,
+     "type": "fact",
+     "query": "我是做什么手艺的",
+     "answer_any": [
+      "湖笔"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 417
+    },
+    {
+     "id": "v10_t8_q02",
+     "player": "v10_t8",
+     "seed": 2,
+     "type": "fact",
+     "query": "我在哪个城市",
+     "answer_any": [
+      "湖州"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 336
+    },
+    {
+     "id": "v10_t8_q03",
+     "player": "v10_t8",
+     "seed": 2,
+     "type": "fact",
+     "query": "我头发有什么问题",
+     "answer_any": [
+      "脱发"
+     ],
+     "known": false,
+     "answer": "没有找到关于玩家头发的问题或状态。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 416
+    },
+    {
+     "id": "v10_t8_q04",
+     "player": "v10_t8",
+     "seed": 2,
+     "type": "fact",
+     "query": "芝麻是什么品种的猫",
+     "answer_any": [
+      "暹罗"
+     ],
+     "known": true,
+     "answer": "玩家家里养了一只暹罗猫，名字叫芝麻",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 345
+    },
+    {
+     "id": "v10_t8_q05",
+     "player": "v10_t8",
+     "seed": 2,
+     "type": "fact",
+     "query": "安安是做什么的",
+     "answer_any": [
+      "舞蹈"
+     ],
+     "known": true,
+     "answer": "玩家的未婚妻安安教舞蹈",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 400
+    },
+    {
+     "id": "v10_t8_q06",
+     "player": "v10_t8",
+     "seed": 2,
+     "type": "fact",
+     "query": "我表弟在健身房干什么",
+     "answer_any": [
+      "私教"
+     ],
+     "known": true,
+     "answer": "玩家表弟在健身房当私教",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 339
+    },
+    {
+     "id": "v10_t8_q07",
+     "player": "v10_t8",
+     "seed": 2,
+     "type": "update",
+     "query": "我现在下班爱玩什么",
+     "answer_any": [
+      "台球"
+     ],
+     "known": true,
+     "answer": "玩家喜欢在看烟花时玩游戏",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 397
+    },
+    {
+     "id": "v10_t8_q08",
+     "player": "v10_t8",
+     "seed": 2,
+     "type": "update",
+     "query": "安安现在是我什么人",
+     "answer_any": [
+      "未婚妻"
+     ],
+     "known": true,
+     "answer": "安安是玩家的未婚妻",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 400
+    },
+    {
+     "id": "v10_t8_q09",
+     "player": "v10_t8",
+     "seed": 2,
+     "type": "trajectory",
+     "query": "我的段位这一年怎么走的",
+     "answer_any": [
+      "钻石一",
+      "星耀四",
+      "钻石二",
+      "星耀三"
+     ],
+     "known": true,
+     "answer": "玩家年前的目标是在钻石二段位，现在在钻石二段位。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 400
+    },
+    {
+     "id": "v10_t8_q10",
+     "player": "v10_t8",
+     "seed": 2,
+     "type": "trajectory",
+     "query": "我爸这一年都在干什么活",
+     "answer_any": [
+      "丝厂",
+      "茶馆",
+      "门卫"
+     ],
+     "known": true,
+     "answer": "玩家的父亲最近刚退休",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 347
+    },
+    {
+     "id": "v10_t8_q11",
+     "player": "v10_t8",
+     "seed": 2,
+     "type": "promise",
+     "query": "订婚的事你答应帮我干嘛",
+     "answer_any": [
+      "三金"
+     ],
+     "known": true,
+     "answer": "助手答应帮你列一下订婚要准备的三金和礼品",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 311
+    },
+    {
+     "id": "v10_t8_q12",
+     "player": "v10_t8",
+     "seed": 2,
+     "type": "promise",
+     "query": "你说过要提醒我给芝麻做什么",
+     "answer_any": [
+      "驱虫"
+     ],
+     "known": true,
+     "answer": "助手答应明晚十点提醒你给芝麻做驱虫",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 346
+    },
+    {
+     "id": "v10_t8_q13",
+     "player": "v10_t8",
+     "seed": 2,
+     "type": "negative",
+     "query": "你答应过帮我订婚宴酒店吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "记不到具体答应过帮玩家订婚宴酒店",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 311
+    },
+    {
+     "id": "v10_t8_q14",
+     "player": "v10_t8",
+     "seed": 2,
+     "type": "negative",
+     "query": "我表弟住在哪个城市",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 407
+    },
+    {
+     "id": "v10_t8_q15",
+     "player": "v10_t8",
+     "seed": 2,
+     "type": "negative",
+     "query": "我奶奶身体怎么样",
+     "answer_any": [],
+     "known": false,
+     "answer": "记不到奶奶的身体状况",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 311
+    },
+    {
+     "id": "v10_t8_q16",
+     "player": "v10_t8",
+     "seed": 2,
+     "type": "negative",
+     "query": "我会说英语吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "记不起你是否能说英语",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 311
+    }
+   ]
+  }
+ }
+}
