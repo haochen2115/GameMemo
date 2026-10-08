@@ -98,10 +98,11 @@ def build(args) -> None:
     with open(args.data, encoding="utf-8") as f:
         data = json.load(f)
     filler = load_haystack(args.haystack)
-    problems = check_haystack(filler, [args.data])
-    if problems:
-        print("\n".join(problems))
-        sys.exit(f"{len(problems)} problem lines in {args.haystack}")
+    # drop filler that mentions this dataset's answer keys (a hero met as an
+    # opponent must not make a wrong answer match by accident)
+    bad = {line.split()[0] for line in check_haystack(filler, [args.data])}
+    filler = [h for h in filler if h["id"] not in bad]
+    print(f"{len(filler)} filler sessions usable ({len(bad)} dropped: {sorted(bad)})")
     base = os.path.splitext(args.data)[0]
     for size in [int(x) for x in args.sizes.split(",")]:
         players = [pad_player(p, filler, size) for p in data["players"]
@@ -174,7 +175,7 @@ def merge(args) -> None:
         for s in players[pid]["sessions"]:
             if "filler" in s:
                 # a filler session can be reused across players: give its records fresh ids
-                recs = fill[f"{s['filler']}@{seed}"]
+                recs = fill[f"{s['filler']}@{seed if args.fill_seed is None else args.fill_seed}"]
                 ids = {m["id"]: f"{m['id']}-{s['date'][:10]}" for m in recs}
                 for m in recs:
                     m = _redate(m, s["date"])
@@ -217,6 +218,7 @@ def main(argv=None):
     m.add_argument("--fill", required=True)
     m.add_argument("--data", required=True)
     m.add_argument("--out", required=True)
+    m.add_argument("--fill-seed", type=int, default=None, help="use this seed's filler memories for every seed")
     args = ap.parse_args(argv)
     if args.cmd == "build":
         build(args)
