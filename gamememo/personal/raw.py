@@ -31,8 +31,9 @@ from typing import Callable, List, Optional, Sequence
 from .embed import Embedder
 from .model import MemoryRecord, fmt_time
 from .retrieval import HybridRetriever, RetrievalConfig
+from .consolidate import RECALL_ATTRIBUTES, detect
 from .store import JsonMemoryStore
-from .system import IngestReport, promises_from_rules
+from .system import ATTRIBUTE_QUERY, HERO_QUERY, IngestReport, promises_from_rules
 
 _SPEAKER = re.compile(r"^\s*(玩家|助手)\s*[:：]\s*")
 # "how did it change" questions need every state, not the best few mentions
@@ -68,7 +69,8 @@ class RawMemory:
                  change_k: int = 12,
                  promises: bool = True,
                  max_promises: int = 3,
-                 timeline: bool = True):
+                 timeline: bool = True,
+                 attribute_index: bool = False):
         """
         min_k: retrieve at least this many exchanges, whatever top_k the
             caller asks for (one exchange is much shorter than a summary).
@@ -77,6 +79,12 @@ class RawMemory:
         timeline: for change questions, lead the recalled exchanges with a
             note that they are every mention in time order, so a small reply
             model lists each stage instead of summarising the last one.
+        attribute_index: for a change question about a closed-set game
+            attribute (rank, main hero, phone), recall every exchange in which
+            the player states a value of it, not only the best-matching ones;
+            otherwise unrelated chat about heroes and ranked games fills the
+            window once the history is long (E15). The index only points at
+            exchanges; nothing is rewritten.
         """
         self.user_id = user_id
         self.clock = clock
@@ -85,6 +93,7 @@ class RawMemory:
         self.promises = promises
         self.max_promises = max_promises
         self.timeline = timeline
+        self.attribute_index = attribute_index
         self.store = JsonMemoryStore(os.path.join(storage_dir, f"{user_id}_raw.json"))
         if retrieval_config is None:
             retrieval_config = RetrievalConfig.for_embedder(embedder)
@@ -130,12 +139,30 @@ class RawMemory:
         k = max(top_k, self.change_k if change else self.min_k)
         turns = [r for r in self.store.active() if r.kind == "turn"]
         hits = [h.record for h in self.retriever.search(query, turns, top_k=k, now=self.clock())]
+        attr = self._asked_attribute(query) if change and self.attribute_index else None
+        if attr:
+            states = [r for r in turns if self._states(r, attr)]
+            others = [r for r in hits if r not in states]
+            hits = states + others[:max(0, k - len(states))]
         hits.sort(key=lambda r: r.created_at)
         if change and self.timeline and len(hits) > 1:
             note = MemoryRecord(content=TIMELINE_NOTE.format(n=len(hits)), kind="note", source="recall",
                                 created_at=hits[0].created_at, id="timeline-note")
             hits.insert(0, note)
         return hits
+
+    @staticmethod
+    def _asked_attribute(query: str) -> Optional[str]:
+        for name, pattern in ATTRIBUTE_QUERY + (HERO_QUERY,):
+            if pattern.search(query):
+                return name
+        return None
+
+    @staticmethod
+    def _states(rec: MemoryRecord, attr: str) -> bool:
+        """Does the player, in this exchange, state a value of ``attr``?"""
+        said = "\n".join(l for l in rec.content.splitlines() if l.startswith("玩家"))
+        return any(name == attr for name, _ in detect(MemoryRecord(content=said), RECALL_ATTRIBUTES))
 
     def core_profile(self, limit: int = 6) -> List[MemoryRecord]:
         return []  # nothing is distilled; everything is recalled on demand

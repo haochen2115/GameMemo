@@ -231,6 +231,8 @@ SYSTEMS: Dict[str, Callable[..., object]] = {
     # P7: raw-first memory -- exchanges stored verbatim, rule promises, change-aware window
     "p7": lambda model, url, wd: RawSystem(wd),
     "p7-notimeline": lambda model, url, wd: RawSystem(wd, timeline=False),
+    # P8 candidate: P7 + attribute index for change questions
+    "p8": lambda model, url, wd: RawSystem(wd, attribute_index=True),
     "p3+safe-updates": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True,
                                                        history_recall=True, episodes=True, promises=True,
                                                        recall_modes=True, attribute_recall=True,

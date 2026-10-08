@@ -71,3 +71,18 @@ def test_drop_in_for_memory_chatbot(tmp_path):
     system = llm.calls[-1]["system"]
     assert "株洲" in system and "燃气费" in system
     assert turn.report is not None and any("我在哪里开理发店来着" in r.content for r in turn.report.added)
+
+
+def test_attribute_index_recalls_every_stated_value(tmp_path):
+    mem, clock = make(tmp_path)
+    mem.attribute_index, mem.change_k = True, 3
+    lines = ["我段位到黄金三了", "对面小乔大招好疼", "我主玩小乔，现在铂金二", "刚才排位又输了", "今天天气不错",
+             "上钻石五了！", "队友挂机了", "排位赛季快结束了"]
+    for month, line in enumerate(lines, start=1):
+        clock["now"] = datetime(2026, month, 1, 21, 0)
+        mem.ingest(f"玩家: {line}\n助手: 好的")
+    said = " ".join(mem.describe(h) for h in mem.retrieve("我的段位是怎么变的", top_k=3))
+    assert all(t in said for t in ("黄金三", "铂金二", "钻石五"))
+    heroes = [h for h in mem.retrieve("我主玩的英雄是怎么变的", top_k=3) if h.kind == "turn"]
+    assert "主玩小乔" in heroes[0].content or any("主玩小乔" in h.content for h in heroes)
+    assert not any("对面小乔" in h.content for h in heroes[:1])
