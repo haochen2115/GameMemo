@@ -35,7 +35,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SOTA = os.path.join(ROOT, "bench", "sota.json")
 RECORDS = {"retrieval": ("sota.json", "baseline_v0.json"),
            "e2e": ("sota_e2e.json", "baseline_e2e.json"),
-           "answer": ("sota_answer.json", "baseline_answer.json")}
+           "answer": ("sota_answer.json", "baseline_answer.json"),
+           # the same answer-level eval on the sealed set padded with filler (bench/haystack.py)
+           "answer_long": ("sota_answer_long.json", "baseline_answer_long.json")}
 
 
 def check(candidate: dict, sota: dict, mode: str = "improve"):
@@ -93,7 +95,7 @@ def candidate_metrics(bench: str, entry: dict, retrieval_results: str, record: d
         _same_data(res, record)
         return res["results"][entry["system"]]
     path = os.path.join(ROOT, entry["results"])
-    if bench == "answer":  # re-score the stored answers
+    if bench.startswith("answer"):  # re-score the stored answers
         from bench.run_answer import rejudge as rejudge_answers
         with open(path, encoding="utf-8") as f:
             res = json.load(f)
