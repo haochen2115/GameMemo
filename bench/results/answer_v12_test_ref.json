@@ -1,0 +1,5905 @@
+{
+ "dataset": "bench/data/e2e_v12.json",
+ "split": "test",
+ "model": "qwen2.5:3b",
+ "seeds": "0",
+ "results_file": null,
+ "generated_at": "2026-10-08 20:26:57",
+ "results": {
+  "none": {
+   "AnswerScore": 0.1953,
+   "Answered": 0.0096,
+   "Abstain": 1.0,
+   "StaleMention": 0.0,
+   "by_type": {
+    "fact": 0.0,
+    "negative": 1.0,
+    "promise": 0.0,
+    "trajectory": 0.0,
+    "update": 0.0625
+   },
+   "context_chars": 15,
+   "n": 128,
+   "minutes": 3.9,
+   "rows": [
+    {
+     "id": "v12_t1_q01",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "fact",
+     "query": "我老伴在哪儿上班来着",
+     "answer_any": [
+      "食堂"
+     ],
+     "known": false,
+     "answer": "不记得老伴在哪儿上班",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t1_q02",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "fact",
+     "query": "我闺女读研是学啥的",
+     "answer_any": [
+      "法学"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t1_q03",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "fact",
+     "query": "我在家养的是什么鱼",
+     "answer_any": [
+      "锦鲤"
+     ],
+     "known": false,
+     "answer": "不记得玩家在家养的是什么鱼",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t1_q04",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "fact",
+     "query": "我是哪个城市的人",
+     "answer_any": [
+      "沈阳"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t1_q05",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "fact",
+     "query": "体检后大夫给我开的啥药",
+     "answer_any": [
+      "降压药"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t1_q06",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在开的是什么车",
+     "answer_any": [
+      "比亚迪"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t1_q07",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "update",
+     "query": "我闺女眼下在哪个城市",
+     "answer_any": [
+      "杭州"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t1_q08",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我玩王者以来段位是怎么升升降降的",
+     "answer_any": [
+      "白银二",
+      "黄金四",
+      "白银一",
+      "黄金二"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t1_q09",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我先后主玩过哪些英雄",
+     "answer_any": [
+      "亚瑟",
+      "程咬金",
+      "廉颇"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t1_q10",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "这一年我的工作是怎么变的",
+     "answer_any": [
+      "车间主任",
+      "内退",
+      "物业"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t1_q11",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我平时的消遣这一年换了几样",
+     "answer_any": [
+      "钓鱼",
+      "象棋",
+      "太极"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t1_q12",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说过每周六替我记着干啥",
+     "answer_any": [
+      "换水"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t1_q13",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "promise",
+     "query": "年初你说要提醒我哪天去医院干嘛",
+     "answer_any": [
+      "复查"
+     ],
+     "known": false,
+     "answer": "不记得年初说过要提醒玩家哪天去医院",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t1_q14",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "negative",
+     "query": "你答应过帮我找车位出租的信息没",
+     "answer_any": [],
+     "known": false,
+     "answer": "未听说过有找车位出租的信息",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t1_q15",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "negative",
+     "query": "我老伴今年多大岁数",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t1_q16",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "negative",
+     "query": "我会不会游泳",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t2_q01",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "fact",
+     "query": "我姐在香港是干什么的",
+     "answer_any": [
+      "会计"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t2_q02",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "fact",
+     "query": "我爸妈在老家种的什么茶",
+     "answer_any": [
+      "单丛"
+     ],
+     "known": false,
+     "answer": "不记得玩家提到的茶种类",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t2_q03",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "fact",
+     "query": "我家狗叫什么名字",
+     "answer_any": [
+      "可乐"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t2_q04",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "fact",
+     "query": "我老家是哪儿的",
+     "answer_any": [
+      "潮州"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t2_q05",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "fact",
+     "query": "我大学念的什么专业",
+     "answer_any": [
+      "学前教育"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t2_q06",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在住深圳哪个区",
+     "answer_any": [
+      "南山"
+     ],
+     "known": true,
+     "answer": "你现在住深圳",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t2_q07",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在每天怎么去上班",
+     "answer_any": [
+      "电动车"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t2_q08",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "从去年冬天到现在我的段位是怎么变的",
+     "answer_any": [
+      "钻石二",
+      "星耀四",
+      "钻石一",
+      "星耀二"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t2_q09",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我换过几次手机，按顺序说说",
+     "answer_any": [
+      "苹果13",
+      "苹果16",
+      "小米15"
+     ],
+     "known": true,
+     "answer": "按顺序说，你换过1次手机。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t2_q10",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我这一年工作上是怎么折腾过来的",
+     "answer_any": [
+      "幼儿园",
+      "早教",
+      "绘本馆"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t2_q11",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我业余时间迷过哪些东西，先后顺序呢",
+     "answer_any": [
+      "烘焙",
+      "陶艺",
+      "潜水"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t2_q12",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说要帮我列什么材料来着",
+     "answer_any": [
+      "营业执照"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t2_q13",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "promise",
+     "query": "可乐那回你说要提醒我干啥",
+     "answer_any": [
+      "疫苗"
+     ],
+     "known": false,
+     "answer": "不清楚玩家提到的可乐回来说要干什么",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t2_q14",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "negative",
+     "query": "你是不是说过帮我找潜水教练",
+     "answer_any": [],
+     "known": false,
+     "answer": "没有听说过你要求我帮你找潜水教练。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t2_q15",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "negative",
+     "query": "我姐结婚了没有",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t2_q16",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "negative",
+     "query": "我平时追什么综艺",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t3_q01",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "fact",
+     "query": "我妈是教哪门课的",
+     "answer_any": [
+      "数学"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t3_q02",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "fact",
+     "query": "我奶奶住在哪个城市",
+     "answer_any": [
+      "开封"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t3_q03",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "fact",
+     "query": "我在班里是什么课代表",
+     "answer_any": [
+      "物理课代表"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t3_q04",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "fact",
+     "query": "我近视多少度来着",
+     "answer_any": [
+      "五百度"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t3_q05",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "fact",
+     "query": "我那个同桌外号叫啥",
+     "answer_any": [
+      "胖虎"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t3_q06",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "update",
+     "query": "我爸那个烧烤摊现在摆在哪",
+     "answer_any": [
+      "夜市"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t3_q07",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "update",
+     "query": "我分班之后现在在几班",
+     "answer_any": [
+      "八班"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t3_q08",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我段位这一年是怎么起伏的",
+     "answer_any": [
+      "钻石四",
+      "星耀五",
+      "钻石二",
+      "星耀三"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t3_q09",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我的本命英雄换过哪几个",
+     "answer_any": [
+      "韩信",
+      "李白",
+      "马超"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t3_q10",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我爸这一年干过哪些营生",
+     "answer_any": [
+      "出租车",
+      "网约车",
+      "烧烤"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t3_q11",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我课外迷过的运动有哪些，按先后说",
+     "answer_any": [
+      "篮球",
+      "街舞",
+      "乒乓球"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t3_q12",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说过要帮我理一下什么东西的思路",
+     "answer_any": [
+      "错题"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t3_q13",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "promise",
+     "query": "考试前你说会提醒我啥",
+     "answer_any": [
+      "早点睡"
+     ],
+     "known": false,
+     "answer": "没有说过",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t3_q14",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "negative",
+     "query": "你答应过帮我写作文没",
+     "answer_any": [],
+     "known": false,
+     "answer": "无",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t3_q15",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "negative",
+     "query": "我爸开的什么牌子的车",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t3_q16",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "negative",
+     "query": "我家养没养宠物",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t4_q01",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "fact",
+     "query": "我儿子在学校学的啥专业",
+     "answer_any": [
+      "土木"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t4_q02",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "fact",
+     "query": "我妈住在哪个城市",
+     "answer_any": [
+      "黄石"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t4_q03",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "fact",
+     "query": "我一直有什么老毛病",
+     "answer_any": [
+      "腰间盘"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t4_q04",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "fact",
+     "query": "我阳台冻死的那盆是什么花",
+     "answer_any": [
+      "三角梅"
+     ],
+     "known": false,
+     "answer": "没有具体的名字",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t4_q05",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "fact",
+     "query": "我儿子最爱喝我炖的什么汤",
+     "answer_any": [
+      "排骨藕汤"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t4_q06",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "update",
+     "query": "我们家如今住在武汉哪个区",
+     "answer_any": [
+      "洪山"
+     ],
+     "known": true,
+     "answer": "你家如今住在武汉的某个区，但具体的区名我没有记录。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t4_q07",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "update",
+     "query": "我老公现在在哪儿上班",
+     "answer_any": [
+      "仓库"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t4_q08",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "跟儿子学打王者以后，我段位是怎么走的",
+     "answer_any": [
+      "白银三",
+      "黄金五",
+      "白银一",
+      "黄金三",
+      "铂金四"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t4_q09",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我前后用过哪几个手机",
+     "answer_any": [
+      "S18",
+      "nova12",
+      "苹果15"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t4_q10",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我这一年都干过哪些活儿",
+     "answer_any": [
+      "保险",
+      "团购",
+      "早餐店"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t4_q11",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我儿子这一年的情况是怎么变的",
+     "answer_any": [
+      "大三",
+      "考研",
+      "上海"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t4_q12",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说过帮我记着我妈什么事",
+     "answer_any": [
+      "复诊"
+     ],
+     "known": false,
+     "answer": "不记得说过要帮你记着妈妈的事",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t4_q13",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "promise",
+     "query": "开店前你答应帮我干嘛来着",
+     "answer_any": [
+      "店名"
+     ],
+     "known": false,
+     "answer": "没有记得说过要帮玩家开店",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t4_q14",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "negative",
+     "query": "你答应过帮我算保险收益吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "未提及",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t4_q15",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "negative",
+     "query": "我老公是哪里人",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t4_q16",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "negative",
+     "query": "我会不会开车",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t5_q01",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "fact",
+     "query": "我爸在老家种的什么",
+     "answer_any": [
+      "辣椒"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t5_q02",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "fact",
+     "query": "我对象在什么地方上班",
+     "answer_any": [
+      "药店"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t5_q03",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "fact",
+     "query": "我手上那道疤是怎么来的",
+     "answer_any": [
+      "排气管"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t5_q04",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "fact",
+     "query": "我骑的摩托啥牌子",
+     "answer_any": [
+      "春风"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t5_q05",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "fact",
+     "query": "当初带我的师傅是谁",
+     "answer_any": [
+      "潘师傅"
+     ],
+     "known": false,
+     "answer": "不记得当初带玩家的师傅是谁。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t5_q06",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在住贵阳哪片",
+     "answer_any": [
+      "观山湖"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t5_q07",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "update",
+     "query": "我下班现在一般干嘛去",
+     "answer_any": [
+      "游泳"
+     ],
+     "known": true,
+     "answer": "下班后一般会去和朋友聚会或者回家休息。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t5_q08",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我的段位从去年到现在是怎么变的",
+     "answer_any": [
+      "星耀二",
+      "钻石一",
+      "星耀一",
+      "钻石三"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t5_q09",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我主玩的英雄先后换过谁",
+     "answer_any": [
+      "露娜",
+      "百里守约",
+      "云缨"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t5_q10",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我这一年在哪些地方干过活",
+     "answer_any": [
+      "汽修厂",
+      "4S店",
+      "修理铺"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t5_q11",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我跟我对象是怎么一步步走过来的",
+     "answer_any": [
+      "相亲",
+      "订婚",
+      "领证"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t5_q12",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说要帮我盯什么设备的价格",
+     "answer_any": [
+      "举升机"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t5_q13",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "promise",
+     "query": "你之前说到日子提醒我交啥来着",
+     "answer_any": [
+      "房租"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t5_q14",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "negative",
+     "query": "你答应过帮我挑婚纱照的店没",
+     "answer_any": [],
+     "known": false,
+     "answer": "未提及过要帮你挑婚纱照的店",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t5_q15",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "negative",
+     "query": "我对象家里是做什么的",
+     "answer_any": [],
+     "known": false,
+     "answer": "没有具体信息",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t5_q16",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "negative",
+     "query": "我有没有养过猫",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t6_q01",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "fact",
+     "query": "我生孩子之前是干嘛的",
+     "answer_any": [
+      "空乘"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t6_q02",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "fact",
+     "query": "我婆婆住在哪",
+     "answer_any": [
+      "即墨"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t6_q03",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "fact",
+     "query": "我家小的那个小名叫什么",
+     "answer_any": [
+      "壮壮"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t6_q04",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "fact",
+     "query": "我老公最爱吃我做的哪道菜",
+     "answer_any": [
+      "辣炒蛤蜊"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t6_q05",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "fact",
+     "query": "我那时候做微商卖的啥",
+     "answer_any": [
+      "干货"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t6_q06",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在住在青岛哪边",
+     "answer_any": [
+      "市南"
+     ],
+     "known": true,
+     "answer": "你现在住在青岛哪边：这个问题没有具体的地理位置信息，但我可以告诉你，青岛有市南区、市北区、李沧区、崂山区、城阳区等多个行政区划，具体哪边取决于你的居住地。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t6_q07",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "update",
+     "query": "我老公现在做什么工作",
+     "answer_any": [
+      "调度"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t6_q08",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我西施打到现在，段位经历了哪些变化",
+     "answer_any": [
+      "铂金二",
+      "钻石五",
+      "铂金四",
+      "钻石四"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t6_q09",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我这一年换了几部手机，都是啥",
+     "answer_any": [
+      "Reno9",
+      "Reno12",
+      "Magic6"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t6_q10",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我这一年的工作状态是怎么变的",
+     "answer_any": [
+      "全职",
+      "微商",
+      "前台"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t6_q11",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我大女儿学过哪些兴趣班，按顺序",
+     "answer_any": [
+      "舞蹈",
+      "书法",
+      "围棋"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t6_q12",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说要帮我整理什么账",
+     "answer_any": [
+      "进货"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t6_q13",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说过哪天要提醒我去学校",
+     "answer_any": [
+      "家长会"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t6_q14",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "negative",
+     "query": "你是不是答应过帮我报驾校",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t6_q15",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "negative",
+     "query": "我婆婆以前是做什么的",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t6_q16",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "negative",
+     "query": "我家用什么牌子的洗衣液",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t7_q01",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "fact",
+     "query": "我前妻住在哪个城市",
+     "answer_any": [
+      "曲靖"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t7_q02",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "fact",
+     "query": "我闺女叫啥名",
+     "answer_any": [
+      "朵朵"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t7_q03",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "fact",
+     "query": "我脚上犯的是什么病",
+     "answer_any": [
+      "痛风"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t7_q04",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "fact",
+     "query": "我以前带的校队是什么项目",
+     "answer_any": [
+      "排球"
+     ],
+     "known": false,
+     "answer": "不记得以前带的校队项目",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t7_q05",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "fact",
+     "query": "我老家在哪儿",
+     "answer_any": [
+      "大理"
+     ],
+     "known": false,
+     "answer": "不记得玩家老家的具体位置。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t7_q06",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "update",
+     "query": "我们父女俩现在住昆明哪个区",
+     "answer_any": [
+      "五华"
+     ],
+     "known": true,
+     "answer": "你父女俩现在住昆明哪个区",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t7_q07",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "update",
+     "query": "我闺女现在读几年级",
+     "answer_any": [
+      "高一"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t7_q08",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我的段位这一年起起落落都到过哪",
+     "answer_any": [
+      "钻石三",
+      "星耀五",
+      "星耀二",
+      "钻石二",
+      "星耀四"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t7_q09",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我主力英雄这一年换了几个",
+     "answer_any": [
+      "孙策",
+      "项羽",
+      "白起"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t7_q10",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我在学校的岗位这一年是怎么变的",
+     "answer_any": [
+      "体育老师",
+      "教务处",
+      "年级主任"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t7_q11",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我业余爱好前后换过哪些",
+     "answer_any": [
+      "马拉松",
+      "爬山",
+      "摄影"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t7_q12",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "promise",
+     "query": "你答应过提醒我交什么保险",
+     "answer_any": [
+      "车险"
+     ],
+     "known": false,
+     "answer": "没有听说过要提醒你交保险的事。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t7_q13",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说要陪我挑什么东西",
+     "answer_any": [
+      "书桌"
+     ],
+     "known": false,
+     "answer": "不记得具体挑过什么东西",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t7_q14",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "negative",
+     "query": "你说过要帮我订机票对吧",
+     "answer_any": [],
+     "known": false,
+     "answer": "我没有说过要帮你订机票",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t7_q15",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "negative",
+     "query": "我前妻是干什么工作的",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t7_q16",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "negative",
+     "query": "我抽不抽烟",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t8_q01",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "fact",
+     "query": "我退休前在哪儿上班",
+     "answer_any": [
+      "纺织厂"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t8_q02",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "fact",
+     "query": "我老伴退休前是干什么的",
+     "answer_any": [
+      "公交"
+     ],
+     "known": false,
+     "answer": "没有相关信息",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t8_q03",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "fact",
+     "query": "我儿媳妇做的什么工作",
+     "answer_any": [
+      "药剂师"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t8_q04",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "fact",
+     "query": "我体检查出了什么毛病",
+     "answer_any": [
+      "糖尿病"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t8_q05",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "fact",
+     "query": "我孙女小名叫什么",
+     "answer_any": [
+      "糖糖"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t8_q06",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "update",
+     "query": "我们老两口现在住在哪",
+     "answer_any": [
+      "江宁"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t8_q07",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "update",
+     "query": "糖糖现在白天在哪上学",
+     "answer_any": [
+      "幼儿园"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t8_q08",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我学打王者以来段位是怎么变的",
+     "answer_any": [
+      "青铜三",
+      "白银五",
+      "青铜一",
+      "白银三",
+      "黄金五"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t8_q09",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我这一年用过哪几部手机",
+     "answer_any": [
+      "苹果11",
+      "Y78",
+      "Mate60"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t8_q10",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我儿子这一年工作是怎么换的",
+     "answer_any": [
+      "银行",
+      "证券",
+      "公务员"
+     ],
+     "known": false,
+     "answer": "没有记录显示玩家的儿子工作换了什么",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t8_q11",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "退休后我学过哪些爱好，按先后",
+     "answer_any": [
+      "葫芦丝",
+      "合唱",
+      "广场舞"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t8_q12",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说过每天提醒我吃什么",
+     "answer_any": [
+      "降糖药"
+     ],
+     "known": false,
+     "answer": "没有说过",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t8_q13",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "promise",
+     "query": "出去玩之前你说帮我查哪的路线",
+     "answer_any": [
+      "西安"
+     ],
+     "known": true,
+     "answer": "你答应帮我查北京市的路线",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t8_q14",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "negative",
+     "query": "你答应过帮我抢演唱会门票吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "未提及",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t8_q15",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "negative",
+     "query": "我儿媳妇是哪里人",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    },
+    {
+     "id": "v12_t8_q16",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "negative",
+     "query": "我年轻时候出过国没有",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 15
+    }
+   ]
+  },
+  "full": {
+   "AnswerScore": 0.6641,
+   "Answered": 0.5962,
+   "Abstain": 0.9583,
+   "StaleMention": 0.3125,
+   "by_type": {
+    "fact": 0.8,
+    "negative": 0.9583,
+    "promise": 0.75,
+    "trajectory": 0.2188,
+    "update": 0.6875
+   },
+   "context_chars": 1845,
+   "n": 128,
+   "minutes": 8.6,
+   "rows": [
+    {
+     "id": "v12_t1_q01",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "fact",
+     "query": "我老伴在哪儿上班来着",
+     "answer_any": [
+      "食堂"
+     ],
+     "known": true,
+     "answer": "老伴在沈阳一个机械厂食堂上班",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1875
+    },
+    {
+     "id": "v12_t1_q02",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "fact",
+     "query": "我闺女读研是学啥的",
+     "answer_any": [
+      "法学"
+     ],
+     "known": true,
+     "answer": "她学法学的",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1875
+    },
+    {
+     "id": "v12_t1_q03",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "fact",
+     "query": "我在家养的是什么鱼",
+     "answer_any": [
+      "锦鲤"
+     ],
+     "known": true,
+     "answer": "玩家在家养的是锦鲤。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1875
+    },
+    {
+     "id": "v12_t1_q04",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "fact",
+     "query": "我是哪个城市的人",
+     "answer_any": [
+      "沈阳"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1875
+    },
+    {
+     "id": "v12_t1_q05",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "fact",
+     "query": "体检后大夫给我开的啥药",
+     "answer_any": [
+      "降压药"
+     ],
+     "known": true,
+     "answer": "大夫让下周三复查我提醒你，别忘了带病历本。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1875
+    },
+    {
+     "id": "v12_t1_q06",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在开的是什么车",
+     "answer_any": [
+      "比亚迪"
+     ],
+     "known": true,
+     "answer": "你现在开的是比亚迪",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1875
+    },
+    {
+     "id": "v12_t1_q07",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "update",
+     "query": "我闺女眼下在哪个城市",
+     "answer_any": [
+      "杭州"
+     ],
+     "known": true,
+     "answer": "她在北京读研",
+     "success": 0.0,
+     "stale": true,
+     "context_chars": 1875
+    },
+    {
+     "id": "v12_t1_q08",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我玩王者以来段位是怎么升升降降的",
+     "answer_any": [
+      "白银二",
+      "黄金四",
+      "白银一",
+      "黄金二"
+     ],
+     "known": true,
+     "answer": "玩家从白银二段位开始，升到了黄金四段位，然后又降回了白银一，再升到了黄金二段位",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1875
+    },
+    {
+     "id": "v12_t1_q09",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我先后主玩过哪些英雄",
+     "answer_any": [
+      "亚瑟",
+      "程咬金",
+      "廉颇"
+     ],
+     "known": true,
+     "answer": "玩家先后主玩过的英雄有亚瑟、程咬金、廉颇",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1875
+    },
+    {
+     "id": "v12_t1_q10",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "这一年我的工作是怎么变的",
+     "answer_any": [
+      "车间主任",
+      "内退",
+      "物业"
+     ],
+     "known": true,
+     "answer": "你从沈阳一个机械厂的车间主任变成了在杭州一家律所工作的员工。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1875
+    },
+    {
+     "id": "v12_t1_q11",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我平时的消遣这一年换了几样",
+     "answer_any": [
+      "钓鱼",
+      "象棋",
+      "太极"
+     ],
+     "known": true,
+     "answer": "这一年玩家尝试过玩程咬金、廉颇、亚瑟、程咬金、锦鲤、比亚迪、小区物业的门岗和巡逻、太极拳、王者荣耀等消遣活动。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1875
+    },
+    {
+     "id": "v12_t1_q12",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说过每周六替我记着干啥",
+     "answer_any": [
+      "换水"
+     ],
+     "known": true,
+     "answer": "替我记着每周六换锦鲤缸的水",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1875
+    },
+    {
+     "id": "v12_t1_q13",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "promise",
+     "query": "年初你说要提醒我哪天去医院干嘛",
+     "answer_any": [
+      "复查"
+     ],
+     "known": true,
+     "answer": "助手提到大夫让玩家下周三复查，别忘了带病历本。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1875
+    },
+    {
+     "id": "v12_t1_q14",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "negative",
+     "query": "你答应过帮我找车位出租的信息没",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1875
+    },
+    {
+     "id": "v12_t1_q15",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "negative",
+     "query": "我老伴今年多大岁数",
+     "answer_any": [],
+     "known": false,
+     "answer": "无法确定玩家玩家老伴的年龄",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1875
+    },
+    {
+     "id": "v12_t1_q16",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "negative",
+     "query": "我会不会游泳",
+     "answer_any": [],
+     "known": false,
+     "answer": "没有提到玩家会不会游泳的信息。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1875
+    },
+    {
+     "id": "v12_t2_q01",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "fact",
+     "query": "我姐在香港是干什么的",
+     "answer_any": [
+      "会计"
+     ],
+     "known": true,
+     "answer": "玩家的姐姐在香港做会计",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1856
+    },
+    {
+     "id": "v12_t2_q02",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "fact",
+     "query": "我爸妈在老家种的什么茶",
+     "answer_any": [
+      "单丛"
+     ],
+     "known": true,
+     "answer": "我爸妈在老家种的茶是凤凰单丛。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1856
+    },
+    {
+     "id": "v12_t2_q03",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "fact",
+     "query": "我家狗叫什么名字",
+     "answer_any": [
+      "可乐"
+     ],
+     "known": true,
+     "answer": "我家狗叫可乐",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1856
+    },
+    {
+     "id": "v12_t2_q04",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "fact",
+     "query": "我老家是哪儿的",
+     "answer_any": [
+      "潮州"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1856
+    },
+    {
+     "id": "v12_t2_q05",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "fact",
+     "query": "我大学念的什么专业",
+     "answer_any": [
+      "学前教育"
+     ],
+     "known": true,
+     "answer": "玩家大学念的是学前教育专业",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1856
+    },
+    {
+     "id": "v12_t2_q06",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在住深圳哪个区",
+     "answer_any": [
+      "南山"
+     ],
+     "known": true,
+     "answer": "现在玩家住在深圳的龙华区",
+     "success": 0.0,
+     "stale": true,
+     "context_chars": 1856
+    },
+    {
+     "id": "v12_t2_q07",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在每天怎么去上班",
+     "answer_any": [
+      "电动车"
+     ],
+     "known": true,
+     "answer": "玩家每天挤地铁去上班",
+     "success": 0.0,
+     "stale": true,
+     "context_chars": 1856
+    },
+    {
+     "id": "v12_t2_q08",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "从去年冬天到现在我的段位是怎么变的",
+     "answer_any": [
+      "钻石二",
+      "星耀四",
+      "钻石一",
+      "星耀二"
+     ],
+     "known": true,
+     "answer": "去年冬天你的段位是钻石二，现在是星耀二。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1856
+    },
+    {
+     "id": "v12_t2_q09",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我换过几次手机，按顺序说说",
+     "answer_any": [
+      "苹果13",
+      "苹果16",
+      "小米15"
+     ],
+     "known": true,
+     "answer": "你用了三年的苹果13，后来换成了苹果16，现在又换成了小米15。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1856
+    },
+    {
+     "id": "v12_t2_q10",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我这一年工作上是怎么折腾过来的",
+     "answer_any": [
+      "幼儿园",
+      "早教",
+      "绘本馆"
+     ],
+     "known": true,
+     "answer": "这一年你从深圳一家幼儿园当老师，后来辞职去早教机构上班，工作两周后掉段到钻石一，现在又辞职准备开绘本馆。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1856
+    },
+    {
+     "id": "v12_t2_q11",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我业余时间迷过哪些东西，先后顺序呢",
+     "answer_any": [
+      "烘焙",
+      "陶艺",
+      "潜水"
+     ],
+     "known": true,
+     "answer": "你曾经迷过烘焙，现在迷过陶艺。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1856
+    },
+    {
+     "id": "v12_t2_q12",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说要帮我列什么材料来着",
+     "answer_any": [
+      "营业执照"
+     ],
+     "known": true,
+     "answer": "助手回头帮你列了一下营业执照要的材料",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1856
+    },
+    {
+     "id": "v12_t2_q13",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "promise",
+     "query": "可乐那回你说要提醒我干啥",
+     "answer_any": [
+      "疫苗"
+     ],
+     "known": true,
+     "answer": "提醒你下周四早上去打疫苗",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1856
+    },
+    {
+     "id": "v12_t2_q14",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "negative",
+     "query": "你是不是说过帮我找潜水教练",
+     "answer_any": [],
+     "known": false,
+     "answer": "助手没说过要帮你找潜水教练。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1856
+    },
+    {
+     "id": "v12_t2_q15",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "negative",
+     "query": "我姐结婚了没有",
+     "answer_any": [],
+     "known": false,
+     "answer": "无法确定",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1856
+    },
+    {
+     "id": "v12_t2_q16",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "negative",
+     "query": "我平时追什么综艺",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1856
+    },
+    {
+     "id": "v12_t3_q01",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "fact",
+     "query": "我妈是教哪门课的",
+     "answer_any": [
+      "数学"
+     ],
+     "known": true,
+     "answer": "我妈是初中数学老师",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1892
+    },
+    {
+     "id": "v12_t3_q02",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "fact",
+     "query": "我奶奶住在哪个城市",
+     "answer_any": [
+      "开封"
+     ],
+     "known": true,
+     "answer": "奶奶住在开封",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1892
+    },
+    {
+     "id": "v12_t3_q03",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "fact",
+     "query": "我在班里是什么课代表",
+     "answer_any": [
+      "物理课代表"
+     ],
+     "known": true,
+     "answer": "你物理课代表",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1892
+    },
+    {
+     "id": "v12_t3_q04",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "fact",
+     "query": "我近视多少度来着",
+     "answer_any": [
+      "五百度"
+     ],
+     "known": true,
+     "answer": "你近视都五百度了",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1892
+    },
+    {
+     "id": "v12_t3_q05",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "fact",
+     "query": "我那个同桌外号叫啥",
+     "answer_any": [
+      "胖虎"
+     ],
+     "known": true,
+     "answer": "同桌的外号叫胖虎。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1892
+    },
+    {
+     "id": "v12_t3_q06",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "update",
+     "query": "我爸那个烧烤摊现在摆在哪",
+     "answer_any": [
+      "夜市"
+     ],
+     "known": true,
+     "answer": "现在摆到夜市去了",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1892
+    },
+    {
+     "id": "v12_t3_q07",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "update",
+     "query": "我分班之后现在在几班",
+     "answer_any": [
+      "八班"
+     ],
+     "known": true,
+     "answer": "你原来在三班，现在分到八班了",
+     "success": 1.0,
+     "stale": true,
+     "context_chars": 1892
+    },
+    {
+     "id": "v12_t3_q08",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我段位这一年是怎么起伏的",
+     "answer_any": [
+      "钻石四",
+      "星耀五",
+      "钻石二",
+      "星耀三"
+     ],
+     "known": true,
+     "answer": "你段位从星耀三爬回到了星耀四",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1892
+    },
+    {
+     "id": "v12_t3_q09",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我的本命英雄换过哪几个",
+     "answer_any": [
+      "韩信",
+      "李白",
+      "马超"
+     ],
+     "known": true,
+     "answer": "你的本命英雄是韩信，曾换过其他英雄。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1892
+    },
+    {
+     "id": "v12_t3_q10",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我爸这一年干过哪些营生",
+     "answer_any": [
+      "出租车",
+      "网约车",
+      "烧烤"
+     ],
+     "known": true,
+     "answer": "这一年里，玩家的父亲从开出租车改跑网约车，然后又开了烧烤摊。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1892
+    },
+    {
+     "id": "v12_t3_q11",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我课外迷过的运动有哪些，按先后说",
+     "answer_any": [
+      "篮球",
+      "街舞",
+      "乒乓球"
+     ],
+     "known": true,
+     "answer": "你最近迷过乒乓球，课间去打；之前迷过街舞，参加过街舞社排的节目。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1892
+    },
+    {
+     "id": "v12_t3_q12",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说过要帮我理一下什么东西的思路",
+     "answer_any": [
+      "错题"
+     ],
+     "known": true,
+     "answer": "我帮你把这几类错题的思路理了一理。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1892
+    },
+    {
+     "id": "v12_t3_q13",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "promise",
+     "query": "考试前你说会提醒我啥",
+     "answer_any": [
+      "早点睡"
+     ],
+     "known": true,
+     "answer": "考好了周末再放开玩。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1892
+    },
+    {
+     "id": "v12_t3_q14",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "negative",
+     "query": "你答应过帮我写作文没",
+     "answer_any": [],
+     "known": false,
+     "answer": "未提及助手是否答应过帮助写作文",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1892
+    },
+    {
+     "id": "v12_t3_q15",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "negative",
+     "query": "我爸开的什么牌子的车",
+     "answer_any": [],
+     "known": false,
+     "answer": "助手没有提到玩家父亲开的车牌子。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1892
+    },
+    {
+     "id": "v12_t3_q16",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "negative",
+     "query": "我家养没养宠物",
+     "answer_any": [],
+     "known": false,
+     "answer": "没有提到玩家家养过宠物。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1892
+    },
+    {
+     "id": "v12_t4_q01",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "fact",
+     "query": "我儿子在学校学的啥专业",
+     "answer_any": [
+      "土木"
+     ],
+     "known": true,
+     "answer": "玩家的儿子在上海实习，实习的地方是一家设计院，但玩家没有具体说明这个设计院的专业",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1871
+    },
+    {
+     "id": "v12_t4_q02",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "fact",
+     "query": "我妈住在哪个城市",
+     "answer_any": [
+      "黄石"
+     ],
+     "known": true,
+     "answer": "玩家的妈妈住在黄石",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1871
+    },
+    {
+     "id": "v12_t4_q03",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "fact",
+     "query": "我一直有什么老毛病",
+     "answer_any": [
+      "腰间盘"
+     ],
+     "known": true,
+     "answer": "玩家提到的老毛病是腰间盘突出。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1871
+    },
+    {
+     "id": "v12_t4_q04",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "fact",
+     "query": "我阳台冻死的那盆是什么花",
+     "answer_any": [
+      "三角梅"
+     ],
+     "known": true,
+     "answer": "那盆冻死的花是三角梅",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1871
+    },
+    {
+     "id": "v12_t4_q05",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "fact",
+     "query": "我儿子最爱喝我炖的什么汤",
+     "answer_any": [
+      "排骨藕汤"
+     ],
+     "known": true,
+     "answer": "我炖的排骨藕汤",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1871
+    },
+    {
+     "id": "v12_t4_q06",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "update",
+     "query": "我们家如今住在武汉哪个区",
+     "answer_any": [
+      "洪山"
+     ],
+     "known": true,
+     "answer": "我们家如今住在武汉洪山区",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1871
+    },
+    {
+     "id": "v12_t4_q07",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "update",
+     "query": "我老公现在在哪儿上班",
+     "answer_any": [
+      "仓库"
+     ],
+     "known": true,
+     "answer": "老公现在在物流仓库当保管",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1871
+    },
+    {
+     "id": "v12_t4_q08",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "跟儿子学打王者以后，我段位是怎么走的",
+     "answer_any": [
+      "白银三",
+      "黄金五",
+      "白银一",
+      "黄金三",
+      "铂金四"
+     ],
+     "known": true,
+     "answer": "跟儿子学打王者以后，你从白银三上到了黄金五。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1871
+    },
+    {
+     "id": "v12_t4_q09",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我前后用过哪几个手机",
+     "answer_any": [
+      "S18",
+      "nova12",
+      "苹果15"
+     ],
+     "known": true,
+     "answer": "你用过vivo S18和华为nova12",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1871
+    },
+    {
+     "id": "v12_t4_q10",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我这一年都干过哪些活儿",
+     "answer_any": [
+      "保险",
+      "团购",
+      "早餐店"
+     ],
+     "known": false,
+     "answer": "{\"known\": true, \"answer\": \"你这一年干过社区团购团长、在小区做社区团购团长、在保险公司跑业务、在洪山区开早餐店、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做社区团购团长、在小区做",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1871
+    },
+    {
+     "id": "v12_t4_q11",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我儿子这一年的情况是怎么变的",
+     "answer_any": [
+      "大三",
+      "考研",
+      "上海"
+     ],
+     "known": true,
+     "answer": "儿子这一年从南京读大三学土木，现在在武汉洪山区做社区团购团长，暑假去上海一家设计院实习，儿子在上海实习时住得挺好。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1871
+    },
+    {
+     "id": "v12_t4_q12",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说过帮我记着我妈什么事",
+     "answer_any": [
+      "复诊"
+     ],
+     "known": true,
+     "answer": "你妈复诊的日子我帮你记着。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1871
+    },
+    {
+     "id": "v12_t4_q13",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "promise",
+     "query": "开店前你答应帮我干嘛来着",
+     "answer_any": [
+      "店名"
+     ],
+     "known": true,
+     "answer": "你答应帮我参谋早餐店的名字。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1871
+    },
+    {
+     "id": "v12_t4_q14",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "negative",
+     "query": "你答应过帮我算保险收益吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "助手没说过要帮你算保险收益。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1871
+    },
+    {
+     "id": "v12_t4_q15",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "negative",
+     "query": "我老公是哪里人",
+     "answer_any": [],
+     "known": false,
+     "answer": "助手没有提到玩家老公的具体籍贯信息。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1871
+    },
+    {
+     "id": "v12_t4_q16",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "negative",
+     "query": "我会不会开车",
+     "answer_any": [],
+     "known": false,
+     "answer": "没有找到关于玩家是否会开车的相关信息。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1871
+    },
+    {
+     "id": "v12_t5_q01",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "fact",
+     "query": "我爸在老家种的什么",
+     "answer_any": [
+      "辣椒"
+     ],
+     "known": true,
+     "answer": "你爸种辣椒",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1846
+    },
+    {
+     "id": "v12_t5_q02",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "fact",
+     "query": "我对象在什么地方上班",
+     "answer_any": [
+      "药店"
+     ],
+     "known": true,
+     "answer": "她现在在观山湖的药店上班",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1846
+    },
+    {
+     "id": "v12_t5_q03",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "fact",
+     "query": "我手上那道疤是怎么来的",
+     "answer_any": [
+      "排气管"
+     ],
+     "known": true,
+     "answer": "左手这道疤是以前排气管烫的",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1846
+    },
+    {
+     "id": "v12_t5_q04",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "fact",
+     "query": "我骑的摩托啥牌子",
+     "answer_any": [
+      "春风"
+     ],
+     "known": true,
+     "answer": "你骑的是春风",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1846
+    },
+    {
+     "id": "v12_t5_q05",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "fact",
+     "query": "当初带我的师傅是谁",
+     "answer_any": [
+      "潘师傅"
+     ],
+     "known": true,
+     "answer": "师傅叫潘师傅",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1846
+    },
+    {
+     "id": "v12_t5_q06",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在住贵阳哪片",
+     "answer_any": [
+      "观山湖"
+     ],
+     "known": true,
+     "answer": "玩家现在住贵阳的观山湖片区",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1846
+    },
+    {
+     "id": "v12_t5_q07",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "update",
+     "query": "我下班现在一般干嘛去",
+     "answer_any": [
+      "游泳"
+     ],
+     "known": true,
+     "answer": "现在一般下班后会去打王者",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1846
+    },
+    {
+     "id": "v12_t5_q08",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我的段位从去年到现在是怎么变的",
+     "answer_any": [
+      "星耀二",
+      "钻石一",
+      "星耀一",
+      "钻石三"
+     ],
+     "known": true,
+     "answer": "玩家的段位从星耀二掉到了钻石三",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1846
+    },
+    {
+     "id": "v12_t5_q09",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我主玩的英雄先后换过谁",
+     "answer_any": [
+      "露娜",
+      "百里守约",
+      "云缨"
+     ],
+     "known": true,
+     "answer": "玩家先后换过露娜、百里守约、云缨",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1846
+    },
+    {
+     "id": "v12_t5_q10",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我这一年在哪些地方干过活",
+     "answer_any": [
+      "汽修厂",
+      "4S店",
+      "修理铺"
+     ],
+     "known": true,
+     "answer": "你这一年在贵阳的一家汽修厂、贵阳的一家4S店、观山湖的一个小区的底商干过活。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1846
+    },
+    {
+     "id": "v12_t5_q11",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我跟我对象是怎么一步步走过来的",
+     "answer_any": [
+      "相亲",
+      "订婚",
+      "领证"
+     ],
+     "known": true,
+     "answer": "你们从相识到订婚，再到领证，最后成为一家人。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1846
+    },
+    {
+     "id": "v12_t5_q12",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说要帮我盯什么设备的价格",
+     "answer_any": [
+      "举升机"
+     ],
+     "known": true,
+     "answer": "你答应过要帮我盯二手举升机的行情。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1846
+    },
+    {
+     "id": "v12_t5_q13",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "promise",
+     "query": "你之前说到日子提醒我交啥来着",
+     "answer_any": [
+      "房租"
+     ],
+     "known": true,
+     "answer": "下周二交房租",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1846
+    },
+    {
+     "id": "v12_t5_q14",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "negative",
+     "query": "你答应过帮我挑婚纱照的店没",
+     "answer_any": [],
+     "known": false,
+     "answer": "助手没说过要帮你挑婚纱照店",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1846
+    },
+    {
+     "id": "v12_t5_q15",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "negative",
+     "query": "我对象家里是做什么的",
+     "answer_any": [],
+     "known": true,
+     "answer": "她对象家里在药店上班",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1846
+    },
+    {
+     "id": "v12_t5_q16",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "negative",
+     "query": "我有没有养过猫",
+     "answer_any": [],
+     "known": false,
+     "answer": "没有提到你养过猫",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1846
+    },
+    {
+     "id": "v12_t6_q01",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "fact",
+     "query": "我生孩子之前是干嘛的",
+     "answer_any": [
+      "空乘"
+     ],
+     "known": false,
+     "answer": "玩家没有提到生孩子之前的情况",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1823
+    },
+    {
+     "id": "v12_t6_q02",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "fact",
+     "query": "我婆婆住在哪",
+     "answer_any": [
+      "即墨"
+     ],
+     "known": true,
+     "answer": "玩家的婆婆住在即墨",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1823
+    },
+    {
+     "id": "v12_t6_q03",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "fact",
+     "query": "我家小的那个小名叫什么",
+     "answer_any": [
+      "壮壮"
+     ],
+     "known": true,
+     "answer": "小的那个叫壮壮",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1823
+    },
+    {
+     "id": "v12_t6_q04",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "fact",
+     "query": "我老公最爱吃我做的哪道菜",
+     "answer_any": [
+      "辣炒蛤蜊"
+     ],
+     "known": true,
+     "answer": "老公最爱吃的是辣炒蛤蜊",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1823
+    },
+    {
+     "id": "v12_t6_q05",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "fact",
+     "query": "我那时候做微商卖的啥",
+     "answer_any": [
+      "干货"
+     ],
+     "known": true,
+     "answer": "你那时候卖的是海鲜干货。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1823
+    },
+    {
+     "id": "v12_t6_q06",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在住在青岛哪边",
+     "answer_any": [
+      "市南"
+     ],
+     "known": true,
+     "answer": "你现在住在青岛市南",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1823
+    },
+    {
+     "id": "v12_t6_q07",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "update",
+     "query": "我老公现在做什么工作",
+     "answer_any": [
+      "调度"
+     ],
+     "known": true,
+     "answer": "老公现在在前湾港那边当调度",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1823
+    },
+    {
+     "id": "v12_t6_q08",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我西施打到现在，段位经历了哪些变化",
+     "answer_any": [
+      "铂金二",
+      "钻石五",
+      "铂金四",
+      "钻石四"
+     ],
+     "known": true,
+     "answer": "玩家的西施从铂金二打到了钻石四",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1823
+    },
+    {
+     "id": "v12_t6_q09",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我这一年换了几部手机，都是啥",
+     "answer_any": [
+      "Reno9",
+      "Reno12",
+      "Magic6"
+     ],
+     "known": true,
+     "answer": "你这一年换了几部手机，分别是OPPO Reno9、Reno12、荣耀Magic6",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1823
+    },
+    {
+     "id": "v12_t6_q10",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我这一年的工作状态是怎么变的",
+     "answer_any": [
+      "全职",
+      "微商",
+      "前台"
+     ],
+     "known": true,
+     "answer": "玩家从2025年11月开始打王者，到2026年9月26日，工作状态是每天晚上打两把西施就睡觉。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1823
+    },
+    {
+     "id": "v12_t6_q11",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我大女儿学过哪些兴趣班，按顺序",
+     "answer_any": [
+      "舞蹈",
+      "书法",
+      "围棋"
+     ],
+     "known": false,
+     "answer": "小棋手",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1823
+    },
+    {
+     "id": "v12_t6_q12",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说要帮我整理什么账",
+     "answer_any": [
+      "进货"
+     ],
+     "known": true,
+     "answer": "助手之前答应过要帮玩家整理微商的进货账。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1823
+    },
+    {
+     "id": "v12_t6_q13",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说过哪天要提醒我去学校",
+     "answer_any": [
+      "家长会"
+     ],
+     "known": true,
+     "answer": "下周三学校开家长会",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1823
+    },
+    {
+     "id": "v12_t6_q14",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "negative",
+     "query": "你是不是答应过帮我报驾校",
+     "answer_any": [],
+     "known": false,
+     "answer": "未提及助手答应过帮玩家报驾校",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1823
+    },
+    {
+     "id": "v12_t6_q15",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "negative",
+     "query": "我婆婆以前是做什么的",
+     "answer_any": [],
+     "known": false,
+     "answer": "未找到玩家婆婆以前职业的相关信息。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1823
+    },
+    {
+     "id": "v12_t6_q16",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "negative",
+     "query": "我家用什么牌子的洗衣液",
+     "answer_any": [],
+     "known": false,
+     "answer": "找不到关于洗衣液牌子的信息",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1823
+    },
+    {
+     "id": "v12_t7_q01",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "fact",
+     "query": "我前妻住在哪个城市",
+     "answer_any": [
+      "曲靖"
+     ],
+     "known": false,
+     "answer": "未提及",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1807
+    },
+    {
+     "id": "v12_t7_q02",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "fact",
+     "query": "我闺女叫啥名",
+     "answer_any": [
+      "朵朵"
+     ],
+     "known": true,
+     "answer": "朵朵",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1807
+    },
+    {
+     "id": "v12_t7_q03",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "fact",
+     "query": "我脚上犯的是什么病",
+     "answer_any": [
+      "痛风"
+     ],
+     "known": true,
+     "answer": "玩家提到脚趾头又肿了，痛风犯了",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1807
+    },
+    {
+     "id": "v12_t7_q04",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "fact",
+     "query": "我以前带的校队是什么项目",
+     "answer_any": [
+      "排球"
+     ],
+     "known": false,
+     "answer": "未提及",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1807
+    },
+    {
+     "id": "v12_t7_q05",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "fact",
+     "query": "我老家在哪儿",
+     "answer_any": [
+      "大理"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1807
+    },
+    {
+     "id": "v12_t7_q06",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "update",
+     "query": "我们父女俩现在住昆明哪个区",
+     "answer_any": [
+      "五华"
+     ],
+     "known": true,
+     "answer": "我们父女俩现在住昆明呈贡区",
+     "success": 0.0,
+     "stale": true,
+     "context_chars": 1807
+    },
+    {
+     "id": "v12_t7_q07",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "update",
+     "query": "我闺女现在读几年级",
+     "answer_any": [
+      "高一"
+     ],
+     "known": true,
+     "answer": "朵朵现在上高一",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1807
+    },
+    {
+     "id": "v12_t7_q08",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我的段位这一年起起落落都到过哪",
+     "answer_any": [
+      "钻石三",
+      "星耀五",
+      "星耀二",
+      "钻石二",
+      "星耀四"
+     ],
+     "known": true,
+     "answer": "你的段位起起落落的状态包括钻石二、钻石三、星耀四",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1807
+    },
+    {
+     "id": "v12_t7_q09",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我主力英雄这一年换了几个",
+     "answer_any": [
+      "孙策",
+      "项羽",
+      "白起"
+     ],
+     "known": true,
+     "answer": "这一年换了从钻石三到星耀二，再到星耀四，最后换回钻石二，以及最近换回星耀四。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1807
+    },
+    {
+     "id": "v12_t7_q10",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我在学校的岗位这一年是怎么变的",
+     "answer_any": [
+      "体育老师",
+      "教务处",
+      "年级主任"
+     ],
+     "known": true,
+     "answer": "你从体育老师岗位调到了教务处，升职为教务处工作人员。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1807
+    },
+    {
+     "id": "v12_t7_q11",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我业余爱好前后换过哪些",
+     "answer_any": [
+      "马拉松",
+      "爬山",
+      "摄影"
+     ],
+     "known": true,
+     "answer": "玩家换过爱好包括从跑步改为马拉松，再改为爬山，最后改为玩项羽、白起等游戏角色。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1807
+    },
+    {
+     "id": "v12_t7_q12",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "promise",
+     "query": "你答应过提醒我交什么保险",
+     "answer_any": [
+      "车险"
+     ],
+     "known": true,
+     "answer": "下周四我提醒你去交车险。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1807
+    },
+    {
+     "id": "v12_t7_q13",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说要陪我挑什么东西",
+     "answer_any": [
+      "书桌"
+     ],
+     "known": true,
+     "answer": "助手提到要陪你挑挑书桌的款式。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1807
+    },
+    {
+     "id": "v12_t7_q14",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "negative",
+     "query": "你说过要帮我订机票对吧",
+     "answer_any": [],
+     "known": false,
+     "answer": "助手没说过要订机票。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1807
+    },
+    {
+     "id": "v12_t7_q15",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "negative",
+     "query": "我前妻是干什么工作的",
+     "answer_any": [],
+     "known": false,
+     "answer": "无",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1807
+    },
+    {
+     "id": "v12_t7_q16",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "negative",
+     "query": "我抽不抽烟",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1807
+    },
+    {
+     "id": "v12_t8_q01",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "fact",
+     "query": "我退休前在哪儿上班",
+     "answer_any": [
+      "纺织厂"
+     ],
+     "known": true,
+     "answer": "你退休前在纺织厂上班。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1792
+    },
+    {
+     "id": "v12_t8_q02",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "fact",
+     "query": "我老伴退休前是干什么的",
+     "answer_any": [
+      "公交"
+     ],
+     "known": true,
+     "answer": "老伴退休前是开公交的",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1792
+    },
+    {
+     "id": "v12_t8_q03",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "fact",
+     "query": "我儿媳妇做的什么工作",
+     "answer_any": [
+      "药剂师"
+     ],
+     "known": true,
+     "answer": "儿媳妇在药房当药剂师",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1792
+    },
+    {
+     "id": "v12_t8_q04",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "fact",
+     "query": "我体检查出了什么毛病",
+     "answer_any": [
+      "糖尿病"
+     ],
+     "known": true,
+     "answer": "你体检查出糖尿病",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1792
+    },
+    {
+     "id": "v12_t8_q05",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "fact",
+     "query": "我孙女小名叫什么",
+     "answer_any": [
+      "糖糖"
+     ],
+     "known": true,
+     "answer": "孙女小名叫糖糖",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1792
+    },
+    {
+     "id": "v12_t8_q06",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "update",
+     "query": "我们老两口现在住在哪",
+     "answer_any": [
+      "江宁"
+     ],
+     "known": true,
+     "answer": "你们老两口现在住在江宁。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1792
+    },
+    {
+     "id": "v12_t8_q07",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "update",
+     "query": "糖糖现在白天在哪上学",
+     "answer_any": [
+      "幼儿园"
+     ],
+     "known": true,
+     "answer": "糖糖现在白天在幼儿园上学。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1792
+    },
+    {
+     "id": "v12_t8_q08",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我学打王者以来段位是怎么变的",
+     "answer_any": [
+      "青铜三",
+      "白银五",
+      "青铜一",
+      "白银三",
+      "黄金五"
+     ],
+     "known": true,
+     "answer": "玩家从青铜三提升到了白银五，再到黄金五",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1792
+    },
+    {
+     "id": "v12_t8_q09",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我这一年用过哪几部手机",
+     "answer_any": [
+      "苹果11",
+      "Y78",
+      "Mate60"
+     ],
+     "known": true,
+     "answer": "你用过苹果11和vivo Y78",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1792
+    },
+    {
+     "id": "v12_t8_q10",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我儿子这一年工作是怎么换的",
+     "answer_any": [
+      "银行",
+      "证券",
+      "公务员"
+     ],
+     "known": true,
+     "answer": "玩家的儿子从银行上班换到了证券公司工作。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1792
+    },
+    {
+     "id": "v12_t8_q11",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "退休后我学过哪些爱好，按先后",
+     "answer_any": [
+      "葫芦丝",
+      "合唱",
+      "广场舞"
+     ],
+     "known": true,
+     "answer": "你退休后学过的新爱好包括：纺织厂工作、苹果11手机、老年大学的葫芦丝班、合唱团排新歌、乒乓球。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1792
+    },
+    {
+     "id": "v12_t8_q12",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说过每天提醒我吃什么",
+     "answer_any": [
+      "降糖药"
+     ],
+     "known": false,
+     "answer": "助手没说过要每天提醒玩家吃什么。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 1792
+    },
+    {
+     "id": "v12_t8_q13",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "promise",
+     "query": "出去玩之前你说帮我查哪的路线",
+     "answer_any": [
+      "西安"
+     ],
+     "known": true,
+     "answer": "你去西安玩，我帮你查了去西安的路线。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1792
+    },
+    {
+     "id": "v12_t8_q14",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "negative",
+     "query": "你答应过帮我抢演唱会门票吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "助手没说过要帮你抢演唱会门票。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1792
+    },
+    {
+     "id": "v12_t8_q15",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "negative",
+     "query": "我儿媳妇是哪里人",
+     "answer_any": [],
+     "known": false,
+     "answer": "未提及",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1792
+    },
+    {
+     "id": "v12_t8_q16",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "negative",
+     "query": "我年轻时候出过国没有",
+     "answer_any": [],
+     "known": false,
+     "answer": "找不到关于玩家年轻时候出过国的信息",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 1792
+    }
+   ]
+  },
+  "rag:8": {
+   "AnswerScore": 0.6328,
+   "Answered": 0.5577,
+   "Abstain": 0.9583,
+   "StaleMention": 0.3125,
+   "by_type": {
+    "fact": 0.75,
+    "negative": 0.9583,
+    "promise": 0.6875,
+    "trajectory": 0.2188,
+    "update": 0.625
+   },
+   "context_chars": 202,
+   "n": 128,
+   "minutes": 10.4,
+   "rows": [
+    {
+     "id": "v12_t1_q01",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "fact",
+     "query": "我老伴在哪儿上班来着",
+     "answer_any": [
+      "食堂"
+     ],
+     "known": true,
+     "answer": "老伴在医院食堂上班",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 464
+    },
+    {
+     "id": "v12_t1_q02",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "fact",
+     "query": "我闺女读研是学啥的",
+     "answer_any": [
+      "法学"
+     ],
+     "known": true,
+     "answer": "闺女读研学的是法学",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 75
+    },
+    {
+     "id": "v12_t1_q03",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "fact",
+     "query": "我在家养的是什么鱼",
+     "answer_any": [
+      "锦鲤"
+     ],
+     "known": true,
+     "answer": "你在家养的是锦鲤",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 135
+    },
+    {
+     "id": "v12_t1_q04",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "fact",
+     "query": "我是哪个城市的人",
+     "answer_any": [
+      "沈阳"
+     ],
+     "known": false,
+     "answer": "无法确定玩家是哪个城市的人",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 464
+    },
+    {
+     "id": "v12_t1_q05",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "fact",
+     "query": "体检后大夫给我开的啥药",
+     "answer_any": [
+      "降压药"
+     ],
+     "known": false,
+     "answer": "没找到关于你体检后大夫开的药的信息",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 136
+    },
+    {
+     "id": "v12_t1_q06",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在开的是什么车",
+     "answer_any": [
+      "比亚迪"
+     ],
+     "known": true,
+     "answer": "你现在开的是比亚迪",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 243
+    },
+    {
+     "id": "v12_t1_q07",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "update",
+     "query": "我闺女眼下在哪个城市",
+     "answer_any": [
+      "杭州"
+     ],
+     "known": true,
+     "answer": "她现在在杭州",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 457
+    },
+    {
+     "id": "v12_t1_q08",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我玩王者以来段位是怎么升升降降的",
+     "answer_any": [
+      "白银二",
+      "黄金四",
+      "白银一",
+      "黄金二"
+     ],
+     "known": true,
+     "answer": "你的段位从白银一升到了黄金四，然后又掉到了白银一。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 458
+    },
+    {
+     "id": "v12_t1_q09",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我先后主玩过哪些英雄",
+     "answer_any": [
+      "亚瑟",
+      "程咬金",
+      "廉颇"
+     ],
+     "known": true,
+     "answer": "你先后主玩过的英雄有亚瑟、程咬金、廉颇。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 407
+    },
+    {
+     "id": "v12_t1_q10",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "这一年我的工作是怎么变的",
+     "answer_any": [
+      "车间主任",
+      "内退",
+      "物业"
+     ],
+     "known": true,
+     "answer": "这一年你从厂里内退了，不用上夜班了，但工资减少。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 356
+    },
+    {
+     "id": "v12_t1_q11",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我平时的消遣这一年换了几样",
+     "answer_any": [
+      "钓鱼",
+      "象棋",
+      "太极"
+     ],
+     "known": true,
+     "answer": "这一年里，你换了几次消遣方式，从钓鱼变成了在家喂锦鲤。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 78
+    },
+    {
+     "id": "v12_t1_q12",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说过每周六替我记着干啥",
+     "answer_any": [
+      "换水"
+     ],
+     "known": true,
+     "answer": "你答应过替我记着每周六换锦鲤缸的水。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 286
+    },
+    {
+     "id": "v12_t1_q13",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "promise",
+     "query": "年初你说要提醒我哪天去医院干嘛",
+     "answer_any": [
+      "复查"
+     ],
+     "known": true,
+     "answer": "下周三复查",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 182
+    },
+    {
+     "id": "v12_t1_q14",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "negative",
+     "query": "你答应过帮我找车位出租的信息没",
+     "answer_any": [],
+     "known": false,
+     "answer": "未听说过要帮你找车位出租的信息",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 78
+    },
+    {
+     "id": "v12_t1_q15",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "negative",
+     "query": "我老伴今年多大岁数",
+     "answer_any": [],
+     "known": false,
+     "answer": "没提到老伴的年龄",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 133
+    },
+    {
+     "id": "v12_t1_q16",
+     "player": "v12_t1",
+     "seed": 0,
+     "type": "negative",
+     "query": "我会不会游泳",
+     "answer_any": [],
+     "known": false,
+     "answer": "没有找到关于你是否会游泳的信息",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 78
+    },
+    {
+     "id": "v12_t2_q01",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "fact",
+     "query": "我姐在香港是干什么的",
+     "answer_any": [
+      "会计"
+     ],
+     "known": true,
+     "answer": "我姐在香港做会计",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 235
+    },
+    {
+     "id": "v12_t2_q02",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "fact",
+     "query": "我爸妈在老家种的什么茶",
+     "answer_any": [
+      "单丛"
+     ],
+     "known": true,
+     "answer": "他们种的是单丛茶",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 343
+    },
+    {
+     "id": "v12_t2_q03",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "fact",
+     "query": "我家狗叫什么名字",
+     "answer_any": [
+      "可乐"
+     ],
+     "known": true,
+     "answer": "我家狗叫可乐",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 188
+    },
+    {
+     "id": "v12_t2_q04",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "fact",
+     "query": "我老家是哪儿的",
+     "answer_any": [
+      "潮州"
+     ],
+     "known": false,
+     "answer": "无法确定玩家的家乡",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 284
+    },
+    {
+     "id": "v12_t2_q05",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "fact",
+     "query": "我大学念的什么专业",
+     "answer_any": [
+      "学前教育"
+     ],
+     "known": true,
+     "answer": "玩家大学学的学前教育",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 196
+    },
+    {
+     "id": "v12_t2_q06",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在住深圳哪个区",
+     "answer_any": [
+      "南山"
+     ],
+     "known": true,
+     "answer": "你住龙华",
+     "success": 0.0,
+     "stale": true,
+     "context_chars": 186
+    },
+    {
+     "id": "v12_t2_q07",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在每天怎么去上班",
+     "answer_any": [
+      "电动车"
+     ],
+     "known": true,
+     "answer": "你每天挤地铁去上班",
+     "success": 0.0,
+     "stale": true,
+     "context_chars": 227
+    },
+    {
+     "id": "v12_t2_q08",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "从去年冬天到现在我的段位是怎么变的",
+     "answer_any": [
+      "钻石二",
+      "星耀四",
+      "钻石一",
+      "星耀二"
+     ],
+     "known": true,
+     "answer": "从去年冬天到现在，你的段位从钻石二变到了钻石一。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 185
+    },
+    {
+     "id": "v12_t2_q09",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我换过几次手机，按顺序说说",
+     "answer_any": [
+      "苹果13",
+      "苹果16",
+      "小米15"
+     ],
+     "known": true,
+     "answer": "你换过苹果13、苹果16、小米15。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 238
+    },
+    {
+     "id": "v12_t2_q10",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我这一年工作上是怎么折腾过来的",
+     "answer_any": [
+      "幼儿园",
+      "早教",
+      "绘本馆"
+     ],
+     "known": true,
+     "answer": "你最近的工作状态是在早教机构上班两周。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 127
+    },
+    {
+     "id": "v12_t2_q11",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我业余时间迷过哪些东西，先后顺序呢",
+     "answer_any": [
+      "烘焙",
+      "陶艺",
+      "潜水"
+     ],
+     "known": false,
+     "answer": "没有具体记录玩家迷过哪些东西",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 20
+    },
+    {
+     "id": "v12_t2_q12",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说要帮我列什么材料来着",
+     "answer_any": [
+      "营业执照"
+     ],
+     "known": true,
+     "answer": "你说要营业执照要的材料，我回头帮你列一下。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 131
+    },
+    {
+     "id": "v12_t2_q13",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "promise",
+     "query": "可乐那回你说要提醒我干啥",
+     "answer_any": [
+      "疫苗"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 247
+    },
+    {
+     "id": "v12_t2_q14",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "negative",
+     "query": "你是不是说过帮我找潜水教练",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 127
+    },
+    {
+     "id": "v12_t2_q15",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "negative",
+     "query": "我姐结婚了没有",
+     "answer_any": [],
+     "known": false,
+     "answer": "没有提到你姐是否结婚",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 185
+    },
+    {
+     "id": "v12_t2_q16",
+     "player": "v12_t2",
+     "seed": 0,
+     "type": "negative",
+     "query": "我平时追什么综艺",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 20
+    },
+    {
+     "id": "v12_t3_q01",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "fact",
+     "query": "我妈是教哪门课的",
+     "answer_any": [
+      "数学"
+     ],
+     "known": true,
+     "answer": "玩家的妈妈是初中数学老师",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 183
+    },
+    {
+     "id": "v12_t3_q02",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "fact",
+     "query": "我奶奶住在哪个城市",
+     "answer_any": [
+      "开封"
+     ],
+     "known": false,
+     "answer": "无法确定",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 128
+    },
+    {
+     "id": "v12_t3_q03",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "fact",
+     "query": "我在班里是什么课代表",
+     "answer_any": [
+      "物理课代表"
+     ],
+     "known": true,
+     "answer": "你原来是物理课代表",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 124
+    },
+    {
+     "id": "v12_t3_q04",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "fact",
+     "query": "我近视多少度来着",
+     "answer_any": [
+      "五百度"
+     ],
+     "known": true,
+     "answer": "五百度",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 131
+    },
+    {
+     "id": "v12_t3_q05",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "fact",
+     "query": "我那个同桌外号叫啥",
+     "answer_any": [
+      "胖虎"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 445
+    },
+    {
+     "id": "v12_t3_q06",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "update",
+     "query": "我爸那个烧烤摊现在摆在哪",
+     "answer_any": [
+      "夜市"
+     ],
+     "known": true,
+     "answer": "我爸的烧烤摊现在摆到夜市去了",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 194
+    },
+    {
+     "id": "v12_t3_q07",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "update",
+     "query": "我分班之后现在在几班",
+     "answer_any": [
+      "八班"
+     ],
+     "known": true,
+     "answer": "现在在八班",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 75
+    },
+    {
+     "id": "v12_t3_q08",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我段位这一年是怎么起伏的",
+     "answer_any": [
+      "钻石四",
+      "星耀五",
+      "钻石二",
+      "星耀三"
+     ],
+     "known": true,
+     "answer": "你这一年段位从星耀三爬回到了星耀三",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 338
+    },
+    {
+     "id": "v12_t3_q09",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我的本命英雄换过哪几个",
+     "answer_any": [
+      "韩信",
+      "李白",
+      "马超"
+     ],
+     "known": true,
+     "answer": "你的本命英雄是韩信",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 448
+    },
+    {
+     "id": "v12_t3_q10",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我爸这一年干过哪些营生",
+     "answer_any": [
+      "出租车",
+      "网约车",
+      "烧烤"
+     ],
+     "known": true,
+     "answer": "这一年里，你爸从开出租车改跑网约车，然后又开了烧烤摊，最后把烧烤摊挪到了夜市。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 365
+    },
+    {
+     "id": "v12_t3_q11",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我课外迷过的运动有哪些，按先后说",
+     "answer_any": [
+      "篮球",
+      "街舞",
+      "乒乓球"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 20
+    },
+    {
+     "id": "v12_t3_q12",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说过要帮我理一下什么东西的思路",
+     "answer_any": [
+      "错题"
+     ],
+     "known": true,
+     "answer": "你提到过物理错题，我帮你理一理思路。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 128
+    },
+    {
+     "id": "v12_t3_q13",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "promise",
+     "query": "考试前你说会提醒我啥",
+     "answer_any": [
+      "早点睡"
+     ],
+     "known": true,
+     "answer": "月考前一天我提醒你早点睡，别熬夜。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 77
+    },
+    {
+     "id": "v12_t3_q14",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "negative",
+     "query": "你答应过帮我写作文没",
+     "answer_any": [],
+     "known": false,
+     "answer": "未提及过帮忙写作文的事",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 20
+    },
+    {
+     "id": "v12_t3_q15",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "negative",
+     "query": "我爸开的什么牌子的车",
+     "answer_any": [],
+     "known": false,
+     "answer": "没提到玩家父亲开的车牌子",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 134
+    },
+    {
+     "id": "v12_t3_q16",
+     "player": "v12_t3",
+     "seed": 0,
+     "type": "negative",
+     "query": "我家养没养宠物",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 20
+    },
+    {
+     "id": "v12_t4_q01",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "fact",
+     "query": "我儿子在学校学的啥专业",
+     "answer_any": [
+      "土木"
+     ],
+     "known": true,
+     "answer": "他儿子在学校学的是土木",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 234
+    },
+    {
+     "id": "v12_t4_q02",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "fact",
+     "query": "我妈住在哪个城市",
+     "answer_any": [
+      "黄石"
+     ],
+     "known": true,
+     "answer": "玩家的妈妈住在黄石",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 460
+    },
+    {
+     "id": "v12_t4_q03",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "fact",
+     "query": "我一直有什么老毛病",
+     "answer_any": [
+      "腰间盘"
+     ],
+     "known": true,
+     "answer": "玩家一直有腰间盘突出的老毛病。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 183
+    },
+    {
+     "id": "v12_t4_q04",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "fact",
+     "query": "我阳台冻死的那盆是什么花",
+     "answer_any": [
+      "三角梅"
+     ],
+     "known": true,
+     "answer": "冻死的那盆是三角梅",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 76
+    },
+    {
+     "id": "v12_t4_q05",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "fact",
+     "query": "我儿子最爱喝我炖的什么汤",
+     "answer_any": [
+      "排骨藕汤"
+     ],
+     "known": true,
+     "answer": "我给他炖了排骨藕汤",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 77
+    },
+    {
+     "id": "v12_t4_q06",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "update",
+     "query": "我们家如今住在武汉哪个区",
+     "answer_any": [
+      "洪山"
+     ],
+     "known": true,
+     "answer": "如今你们家住在武汉洪山区",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 134
+    },
+    {
+     "id": "v12_t4_q07",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "update",
+     "query": "我老公现在在哪儿上班",
+     "answer_any": [
+      "仓库"
+     ],
+     "known": true,
+     "answer": "现在他去物流仓库当保管",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 136
+    },
+    {
+     "id": "v12_t4_q08",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "跟儿子学打王者以后，我段位是怎么走的",
+     "answer_any": [
+      "白银三",
+      "黄金五",
+      "白银一",
+      "黄金三",
+      "铂金四"
+     ],
+     "known": true,
+     "answer": "玩家从白银三提升到了黄金五",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 252
+    },
+    {
+     "id": "v12_t4_q09",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我前后用过哪几个手机",
+     "answer_any": [
+      "S18",
+      "nova12",
+      "苹果15"
+     ],
+     "known": true,
+     "answer": "玩家用过 vivo S18 和 华为 nova12",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 200
+    },
+    {
+     "id": "v12_t4_q10",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我这一年都干过哪些活儿",
+     "answer_any": [
+      "保险",
+      "团购",
+      "早餐店"
+     ],
+     "known": false,
+     "answer": "无法确定玩家这一年都干过哪些活儿",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 77
+    },
+    {
+     "id": "v12_t4_q11",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我儿子这一年的情况是怎么变的",
+     "answer_any": [
+      "大三",
+      "考研",
+      "上海"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 20
+    },
+    {
+     "id": "v12_t4_q12",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说过帮我记着我妈什么事",
+     "answer_any": [
+      "复诊"
+     ],
+     "known": true,
+     "answer": "你妈复诊的日子我帮你记着。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 130
+    },
+    {
+     "id": "v12_t4_q13",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "promise",
+     "query": "开店前你答应帮我干嘛来着",
+     "answer_any": [
+      "店名"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 462
+    },
+    {
+     "id": "v12_t4_q14",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "negative",
+     "query": "你答应过帮我算保险收益吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "没有",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 130
+    },
+    {
+     "id": "v12_t4_q15",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "negative",
+     "query": "我老公是哪里人",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 464
+    },
+    {
+     "id": "v12_t4_q16",
+     "player": "v12_t4",
+     "seed": 0,
+     "type": "negative",
+     "query": "我会不会开车",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 20
+    },
+    {
+     "id": "v12_t5_q01",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "fact",
+     "query": "我爸在老家种的什么",
+     "answer_any": [
+      "辣椒"
+     ],
+     "known": true,
+     "answer": "你爸种辣椒",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 191
+    },
+    {
+     "id": "v12_t5_q02",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "fact",
+     "query": "我对象在什么地方上班",
+     "answer_any": [
+      "药店"
+     ],
+     "known": true,
+     "answer": "她对象在药店上班，具体地点是在玩家提到的药店。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 130
+    },
+    {
+     "id": "v12_t5_q03",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "fact",
+     "query": "我手上那道疤是怎么来的",
+     "answer_any": [
+      "排气管"
+     ],
+     "known": true,
+     "answer": "那是你以前修车时，排气管烫的伤疤。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 127
+    },
+    {
+     "id": "v12_t5_q04",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "fact",
+     "query": "我骑的摩托啥牌子",
+     "answer_any": [
+      "春风"
+     ],
+     "known": true,
+     "answer": "你骑的是春风250",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 127
+    },
+    {
+     "id": "v12_t5_q05",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "fact",
+     "query": "当初带我的师傅是谁",
+     "answer_any": [
+      "潘师傅"
+     ],
+     "known": true,
+     "answer": "当初带你的师傅叫潘师傅",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 128
+    },
+    {
+     "id": "v12_t5_q06",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在住贵阳哪片",
+     "answer_any": [
+      "观山湖"
+     ],
+     "known": true,
+     "answer": "你现在住贵阳的观山湖区",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 191
+    },
+    {
+     "id": "v12_t5_q07",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "update",
+     "query": "我下班现在一般干嘛去",
+     "answer_any": [
+      "游泳"
+     ],
+     "known": true,
+     "answer": "下班后你可能会去游泳",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 236
+    },
+    {
+     "id": "v12_t5_q08",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我的段位从去年到现在是怎么变的",
+     "answer_any": [
+      "星耀二",
+      "钻石一",
+      "星耀一",
+      "钻石三"
+     ],
+     "known": true,
+     "answer": "去年段位是星耀二，到今年10月17日，段位是钻石三。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 235
+    },
+    {
+     "id": "v12_t5_q09",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我主玩的英雄先后换过谁",
+     "answer_any": [
+      "露娜",
+      "百里守约",
+      "云缨"
+     ],
+     "known": true,
+     "answer": "玩家最近改玩百里守约了，之前玩过露娜",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 389
+    },
+    {
+     "id": "v12_t5_q10",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我这一年在哪些地方干过活",
+     "answer_any": [
+      "汽修厂",
+      "4S店",
+      "修理铺"
+     ],
+     "known": false,
+     "answer": "没有具体提到玩家在哪些地方干过活",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 79
+    },
+    {
+     "id": "v12_t5_q11",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我跟我对象是怎么一步步走过来的",
+     "answer_any": [
+      "相亲",
+      "订婚",
+      "领证"
+     ],
+     "known": true,
+     "answer": "你们从相识到订婚再到领证，这是一个逐步发展的过程。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 387
+    },
+    {
+     "id": "v12_t5_q12",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说要帮我盯什么设备的价格",
+     "answer_any": [
+      "举升机"
+     ],
+     "known": true,
+     "answer": "你说要帮我盯二手举升机的价格。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 79
+    },
+    {
+     "id": "v12_t5_q13",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "promise",
+     "query": "你之前说到日子提醒我交啥来着",
+     "answer_any": [
+      "房租"
+     ],
+     "known": true,
+     "answer": "房租",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 133
+    },
+    {
+     "id": "v12_t5_q14",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "negative",
+     "query": "你答应过帮我挑婚纱照的店没",
+     "answer_any": [],
+     "known": false,
+     "answer": "未提及关于挑婚纱照的店",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 20
+    },
+    {
+     "id": "v12_t5_q15",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "negative",
+     "query": "我对象家里是做什么的",
+     "answer_any": [],
+     "known": true,
+     "answer": "她对象女朋友在药店上班",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 444
+    },
+    {
+     "id": "v12_t5_q16",
+     "player": "v12_t5",
+     "seed": 0,
+     "type": "negative",
+     "query": "我有没有养过猫",
+     "answer_any": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 75
+    },
+    {
+     "id": "v12_t6_q01",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "fact",
+     "query": "我生孩子之前是干嘛的",
+     "answer_any": [
+      "空乘"
+     ],
+     "known": true,
+     "answer": "你生孩子之前是空乘",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 133
+    },
+    {
+     "id": "v12_t6_q02",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "fact",
+     "query": "我婆婆住在哪",
+     "answer_any": [
+      "即墨"
+     ],
+     "known": true,
+     "answer": "婆婆住在即墨",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 451
+    },
+    {
+     "id": "v12_t6_q03",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "fact",
+     "query": "我家小的那个小名叫什么",
+     "answer_any": [
+      "壮壮"
+     ],
+     "known": true,
+     "answer": "小的那个小名叫壮壮",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 123
+    },
+    {
+     "id": "v12_t6_q04",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "fact",
+     "query": "我老公最爱吃我做的哪道菜",
+     "answer_any": [
+      "辣炒蛤蜊"
+     ],
+     "known": true,
+     "answer": "玩家提到他最爱吃的是辣炒蛤蜊",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 77
+    },
+    {
+     "id": "v12_t6_q05",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "fact",
+     "query": "我那时候做微商卖的啥",
+     "answer_any": [
+      "干货"
+     ],
+     "known": true,
+     "answer": "那时候玩家卖的是虾皮。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 234
+    },
+    {
+     "id": "v12_t6_q06",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "update",
+     "query": "我现在住在青岛哪边",
+     "answer_any": [
+      "市南"
+     ],
+     "known": true,
+     "answer": "你住在黄岛",
+     "success": 0.0,
+     "stale": true,
+     "context_chars": 186
+    },
+    {
+     "id": "v12_t6_q07",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "update",
+     "query": "我老公现在做什么工作",
+     "answer_any": [
+      "调度"
+     ],
+     "known": true,
+     "answer": "老公现在在港口找了个活",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 348
+    },
+    {
+     "id": "v12_t6_q08",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我西施打到现在，段位经历了哪些变化",
+     "answer_any": [
+      "铂金二",
+      "钻石五",
+      "铂金四",
+      "钻石四"
+     ],
+     "known": true,
+     "answer": "玩家的西施段位经历了铂金二到钻石五的变化。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 231
+    },
+    {
+     "id": "v12_t6_q09",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我这一年换了几部手机，都是啥",
+     "answer_any": [
+      "Reno9",
+      "Reno12",
+      "Magic6"
+     ],
+     "known": true,
+     "answer": "你这一年换了三部手机，分别是OPPO Reno9、Reno12和荣耀Magic6。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 251
+    },
+    {
+     "id": "v12_t6_q10",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我这一年的工作状态是怎么变的",
+     "answer_any": [
+      "全职",
+      "微商",
+      "前台"
+     ],
+     "known": true,
+     "answer": "你从空乘变成了牙科诊所前台的工作状态。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 130
+    },
+    {
+     "id": "v12_t6_q11",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我大女儿学过哪些兴趣班，按顺序",
+     "answer_any": [
+      "舞蹈",
+      "书法",
+      "围棋"
+     ],
+     "known": true,
+     "answer": "大女儿学过舞蹈、围棋，目前还在学书法",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 290
+    },
+    {
+     "id": "v12_t6_q12",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说要帮我整理什么账",
+     "answer_any": [
+      "进货"
+     ],
+     "known": true,
+     "answer": "你说要帮我整理微商的进货账。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 75
+    },
+    {
+     "id": "v12_t6_q13",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说过哪天要提醒我去学校",
+     "answer_any": [
+      "家长会"
+     ],
+     "known": true,
+     "answer": "下周三",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 127
+    },
+    {
+     "id": "v12_t6_q14",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "negative",
+     "query": "你是不是答应过帮我报驾校",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 20
+    },
+    {
+     "id": "v12_t6_q15",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "negative",
+     "query": "我婆婆以前是做什么的",
+     "answer_any": [],
+     "known": false,
+     "answer": "没找到婆婆以前的信息",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 239
+    },
+    {
+     "id": "v12_t6_q16",
+     "player": "v12_t6",
+     "seed": 0,
+     "type": "negative",
+     "query": "我家用什么牌子的洗衣液",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 20
+    },
+    {
+     "id": "v12_t7_q01",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "fact",
+     "query": "我前妻住在哪个城市",
+     "answer_any": [
+      "曲靖"
+     ],
+     "known": false,
+     "answer": "无法确定",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 351
+    },
+    {
+     "id": "v12_t7_q02",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "fact",
+     "query": "我闺女叫啥名",
+     "answer_any": [
+      "朵朵"
+     ],
+     "known": false,
+     "answer": "没找到关于玩家闺女名字的信息",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 127
+    },
+    {
+     "id": "v12_t7_q03",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "fact",
+     "query": "我脚上犯的是什么病",
+     "answer_any": [
+      "痛风"
+     ],
+     "known": true,
+     "answer": "玩家提到脚趾头肿了，痛风犯了",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 179
+    },
+    {
+     "id": "v12_t7_q04",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "fact",
+     "query": "我以前带的校队是什么项目",
+     "answer_any": [
+      "排球"
+     ],
+     "known": true,
+     "answer": "以前玩家带的是学校排球队",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 444
+    },
+    {
+     "id": "v12_t7_q05",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "fact",
+     "query": "我老家在哪儿",
+     "answer_any": [
+      "大理"
+     ],
+     "known": false,
+     "answer": "玩家没有提到过老家的具体位置。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 351
+    },
+    {
+     "id": "v12_t7_q06",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "update",
+     "query": "我们父女俩现在住昆明哪个区",
+     "answer_any": [
+      "五华"
+     ],
+     "known": true,
+     "answer": "我们父女俩现在住昆明呈贡区",
+     "success": 0.0,
+     "stale": true,
+     "context_chars": 122
+    },
+    {
+     "id": "v12_t7_q07",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "update",
+     "query": "我闺女现在读几年级",
+     "answer_any": [
+      "高一"
+     ],
+     "known": true,
+     "answer": "朵朵上高一了",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 228
+    },
+    {
+     "id": "v12_t7_q08",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我的段位这一年起起落落都到过哪",
+     "answer_any": [
+      "钻石三",
+      "星耀五",
+      "星耀二",
+      "钻石二",
+      "星耀四"
+     ],
+     "known": true,
+     "answer": "你的段位从星耀四落回到钻石二",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 448
+    },
+    {
+     "id": "v12_t7_q09",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我主力英雄这一年换了几个",
+     "answer_any": [
+      "孙策",
+      "项羽",
+      "白起"
+     ],
+     "known": true,
+     "answer": "这一年换了1个主力英雄（从白起变为主力）",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 440
+    },
+    {
+     "id": "v12_t7_q10",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我在学校的岗位这一年是怎么变的",
+     "answer_any": [
+      "体育老师",
+      "教务处",
+      "年级主任"
+     ],
+     "known": true,
+     "answer": "这一年里，你的岗位从体育老师变成了高二年级主任。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 181
+    },
+    {
+     "id": "v12_t7_q11",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我业余爱好前后换过哪些",
+     "answer_any": [
+      "马拉松",
+      "爬山",
+      "摄影"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 20
+    },
+    {
+     "id": "v12_t7_q12",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "promise",
+     "query": "你答应过提醒我交什么保险",
+     "answer_any": [
+      "车险"
+     ],
+     "known": true,
+     "answer": "你答应过提醒你去交车险。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 73
+    },
+    {
+     "id": "v12_t7_q13",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说要陪我挑什么东西",
+     "answer_any": [
+      "书桌"
+     ],
+     "known": true,
+     "answer": "你说过想给她买张新书桌，我答应陪你挑挑书桌的款式。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 75
+    },
+    {
+     "id": "v12_t7_q14",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "negative",
+     "query": "你说过要帮我订机票对吧",
+     "answer_any": [],
+     "known": false,
+     "answer": "我没有说过要帮你订机票",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 20
+    },
+    {
+     "id": "v12_t7_q15",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "negative",
+     "query": "我前妻是干什么工作的",
+     "answer_any": [],
+     "known": false,
+     "answer": "不知道",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 228
+    },
+    {
+     "id": "v12_t7_q16",
+     "player": "v12_t7",
+     "seed": 0,
+     "type": "negative",
+     "query": "我抽不抽烟",
+     "answer_any": [],
+     "known": false,
+     "answer": "不记得",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 20
+    },
+    {
+     "id": "v12_t8_q01",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "fact",
+     "query": "我退休前在哪儿上班",
+     "answer_any": [
+      "纺织厂"
+     ],
+     "known": true,
+     "answer": "在纺织厂上班",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 75
+    },
+    {
+     "id": "v12_t8_q02",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "fact",
+     "query": "我老伴退休前是干什么的",
+     "answer_any": [
+      "公交"
+     ],
+     "known": true,
+     "answer": "老伴退休前是开公交的",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 401
+    },
+    {
+     "id": "v12_t8_q03",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "fact",
+     "query": "我儿媳妇做的什么工作",
+     "answer_any": [
+      "药剂师"
+     ],
+     "known": true,
+     "answer": "儿媳妇在药房当药剂师",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 451
+    },
+    {
+     "id": "v12_t8_q04",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "fact",
+     "query": "我体检查出了什么毛病",
+     "answer_any": [
+      "糖尿病"
+     ],
+     "known": true,
+     "answer": "体检查出糖尿病",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 127
+    },
+    {
+     "id": "v12_t8_q05",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "fact",
+     "query": "我孙女小名叫什么",
+     "answer_any": [
+      "糖糖"
+     ],
+     "known": false,
+     "answer": "不记得",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 232
+    },
+    {
+     "id": "v12_t8_q06",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "update",
+     "query": "我们老两口现在住在哪",
+     "answer_any": [
+      "江宁"
+     ],
+     "known": true,
+     "answer": "你们搬回了江宁自己家住",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 182
+    },
+    {
+     "id": "v12_t8_q07",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "update",
+     "query": "糖糖现在白天在哪上学",
+     "answer_any": [
+      "幼儿园"
+     ],
+     "known": true,
+     "answer": "糖糖现在白天上托班",
+     "success": 0.0,
+     "stale": true,
+     "context_chars": 400
+    },
+    {
+     "id": "v12_t8_q08",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我学打王者以来段位是怎么变的",
+     "answer_any": [
+      "青铜三",
+      "白银五",
+      "青铜一",
+      "白银三",
+      "黄金五"
+     ],
+     "known": true,
+     "answer": "你学打王者以来段位从青铜三变到白银五，再掉回青铜一，然后又变回白银三，最后到黄金五。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 401
+    },
+    {
+     "id": "v12_t8_q09",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我这一年用过哪几部手机",
+     "answer_any": [
+      "苹果11",
+      "Y78",
+      "Mate60"
+     ],
+     "known": true,
+     "answer": "这一年你用过的手机有苹果11、vivo Y78、华为Mate60。",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 200
+    },
+    {
+     "id": "v12_t8_q10",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "我儿子这一年工作是怎么换的",
+     "answer_any": [
+      "银行",
+      "证券",
+      "公务员"
+     ],
+     "known": true,
+     "answer": "你儿子从证券公司跳槽到了区里的公务员岗位。",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 456
+    },
+    {
+     "id": "v12_t8_q11",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "trajectory",
+     "query": "退休后我学过哪些爱好，按先后",
+     "answer_any": [
+      "葫芦丝",
+      "合唱",
+      "广场舞"
+     ],
+     "known": false,
+     "answer": "unknown",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 75
+    },
+    {
+     "id": "v12_t8_q12",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "promise",
+     "query": "你说过每天提醒我吃什么",
+     "answer_any": [
+      "降糖药"
+     ],
+     "known": false,
+     "answer": "没有说过",
+     "success": 0.0,
+     "stale": false,
+     "context_chars": 179
+    },
+    {
+     "id": "v12_t8_q13",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "promise",
+     "query": "出去玩之前你说帮我查哪的路线",
+     "answer_any": [
+      "西安"
+     ],
+     "known": true,
+     "answer": "西安",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 240
+    },
+    {
+     "id": "v12_t8_q14",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "negative",
+     "query": "你答应过帮我抢演唱会门票吗",
+     "answer_any": [],
+     "known": false,
+     "answer": "未提及",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 129
+    },
+    {
+     "id": "v12_t8_q15",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "negative",
+     "query": "我儿媳妇是哪里人",
+     "answer_any": [],
+     "known": false,
+     "answer": "不知道",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 130
+    },
+    {
+     "id": "v12_t8_q16",
+     "player": "v12_t8",
+     "seed": 0,
+     "type": "negative",
+     "query": "我年轻时候出过国没有",
+     "answer_any": [],
+     "known": false,
+     "answer": "无",
+     "success": 1.0,
+     "stale": false,
+     "context_chars": 76
+    }
+   ]
+  }
+ }
+}
