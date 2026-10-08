@@ -39,6 +39,9 @@ _SPEAKER = re.compile(r"^\s*(玩家|助手)\s*[:：]\s*")
 CHANGE_INTENT = re.compile(r"怎么(变|换|升|降|走|起伏|上来)|变化|换过|一路|一步步|历程|前后")
 
 
+TIMELINE_NOTE = "（下面是玩家先后{n}次提到这件事的原话，按时间排列；问变化过程时，要按时间顺序逐一说出每个阶段）"
+
+
 def exchanges(text: str) -> List[str]:
     """Split a transcript into exchanges: a player line plus the assistant
     lines that answer it. Assistant lines before any player line are kept
@@ -61,15 +64,19 @@ class RawMemory:
                  embedder: Optional[Embedder] = None,
                  retrieval_config: Optional[RetrievalConfig] = None,
                  clock: Callable[[], datetime] = datetime.now,
-                 min_k: int = 5,
+                 min_k: int = 8,
                  change_k: int = 12,
                  promises: bool = True,
-                 max_promises: int = 3):
+                 max_promises: int = 3,
+                 timeline: bool = False):
         """
         min_k: retrieve at least this many exchanges, whatever top_k the
             caller asks for (one exchange is much shorter than a summary).
         change_k: window for "how did it change" questions.
         promises: detect the assistant's promises and keep them in mind.
+        timeline: for change questions, lead the recalled exchanges with a
+            note that they are every mention in time order, so a small reply
+            model lists each stage instead of summarising the last one.
         """
         self.user_id = user_id
         self.clock = clock
@@ -77,6 +84,7 @@ class RawMemory:
         self.change_k = change_k
         self.promises = promises
         self.max_promises = max_promises
+        self.timeline = timeline
         self.store = JsonMemoryStore(os.path.join(storage_dir, f"{user_id}_raw.json"))
         if retrieval_config is None:
             retrieval_config = RetrievalConfig.for_embedder(embedder)
@@ -118,10 +126,16 @@ class RawMemory:
     # ================================================================ read
 
     def retrieve(self, query: str, top_k: int = 5, touch: bool = True) -> List[MemoryRecord]:
-        k = max(top_k, self.change_k if CHANGE_INTENT.search(query) else self.min_k)
+        change = bool(CHANGE_INTENT.search(query))
+        k = max(top_k, self.change_k if change else self.min_k)
         turns = [r for r in self.store.active() if r.kind == "turn"]
         hits = [h.record for h in self.retriever.search(query, turns, top_k=k, now=self.clock())]
-        return sorted(hits, key=lambda r: r.created_at)
+        hits.sort(key=lambda r: r.created_at)
+        if change and self.timeline and len(hits) > 1:
+            note = MemoryRecord(content=TIMELINE_NOTE.format(n=len(hits)), kind="note", source="recall",
+                                created_at=hits[0].created_at, id="timeline-note")
+            hits.insert(0, note)
+        return hits
 
     def core_profile(self, limit: int = 6) -> List[MemoryRecord]:
         return []  # nothing is distilled; everything is recalled on demand
@@ -136,6 +150,8 @@ class RawMemory:
 
     @staticmethod
     def describe(r: MemoryRecord) -> str:
+        if r.kind == "note":
+            return r.content
         if r.kind == "turn":
             return f"【{r.created_at[:16]}】" + r.content.replace("\n", " ")
         return f"{r.content}（{r.created_at[:10]}）"
