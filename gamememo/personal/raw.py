@@ -43,6 +43,16 @@ CHANGE_INTENT = re.compile(r"怎么(变|换|升|降|走|起伏|上来)|变化|�
 TIMELINE_NOTE = "（下面是玩家先后{n}次提到这件事的原话，按时间排列；问变化过程时，要按时间顺序逐一说出每个阶段）"
 
 
+# "打王者" / "王者时间" / "最强王者" name the game, not the top rank; the rank is
+# "上王者" / "到王者" / "王者3星" (dev: all 11 bare mentions were the game)
+_GAME_NAME = re.compile(r"(?<![上到升])王者(?![0-9一二三四五六七八九十]+星)")
+
+
+def _player_said(rec: MemoryRecord) -> str:
+    said = "\n".join(l for l in rec.content.splitlines() if l.startswith("玩家"))
+    return _GAME_NAME.sub("游戏", said)
+
+
 def exchanges(text: str) -> List[str]:
     """Split a transcript into exchanges: a player line plus the assistant
     lines that answer it. Assistant lines before any player line are kept
@@ -174,8 +184,7 @@ class RawMemory:
     @staticmethod
     def _states(rec: MemoryRecord, attr: str) -> bool:
         """Does the player, in this exchange, state a value of ``attr``?"""
-        said = "\n".join(l for l in rec.content.splitlines() if l.startswith("玩家"))
-        return any(name == attr for name, _ in detect(MemoryRecord(content=said), RECALL_ATTRIBUTES))
+        return any(name == attr for name, _ in detect(MemoryRecord(content=_player_said(rec)), RECALL_ATTRIBUTES))
 
     @staticmethod
     def _state_line(attr: str, states: List[MemoryRecord]) -> str:
@@ -183,8 +192,8 @@ class RawMemory:
         "按时间顺序，玩家说过的段位：黄金三（2026-01-06）→ 铂金二（2026-03-12）"."""
         parts, last = [], None
         for r in states:
-            said = "\n".join(l for l in r.content.splitlines() if l.startswith("玩家"))
-            value = next((v for n, v in detect(MemoryRecord(content=said), RECALL_ATTRIBUTES) if n == attr), "")
+            value = next((v for n, v in detect(MemoryRecord(content=_player_said(r)), RECALL_ATTRIBUTES)
+                          if n == attr), "")
             if value and value != last:
                 parts.append(f"{value}（{r.created_at[:10]}）")
                 last = value
