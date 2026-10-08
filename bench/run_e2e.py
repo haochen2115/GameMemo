@@ -229,8 +229,8 @@ SYSTEMS: Dict[str, Callable[..., object]] = {
                                            subject_recall=True, interleave_fallback=True, current_latest=True,
                                            rule_promises=True, trajectory_summary=True, promise_topic=True),
     # P7: raw-first memory -- exchanges stored verbatim, rule promises, change-aware window
-    "p7": lambda model, url, wd: RawSystem(wd),
-    "p7-notimeline": lambda model, url, wd: RawSystem(wd, timeline=False),
+    "p7": lambda model, url, wd: RawSystem(wd, attribute_index=False),
+    "p7-notimeline": lambda model, url, wd: RawSystem(wd, timeline=False, attribute_index=False),
     # P8 candidate: P7 + attribute index for change questions
     "p8": lambda model, url, wd: RawSystem(wd, attribute_index=True),
     "p8-noline": lambda model, url, wd: RawSystem(wd, attribute_index=True, state_line=False),

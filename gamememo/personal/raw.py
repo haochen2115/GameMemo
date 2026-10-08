@@ -80,7 +80,7 @@ class RawMemory:
                  promises: bool = True,
                  max_promises: int = 3,
                  timeline: bool = True,
-                 attribute_index: bool = False,
+                 attribute_index: bool = True,
                  state_line: bool = True):
         """
         min_k: retrieve at least this many exchanges, whatever top_k the
