@@ -70,7 +70,8 @@ class RawMemory:
                  promises: bool = True,
                  max_promises: int = 3,
                  timeline: bool = True,
-                 attribute_index: bool = False):
+                 attribute_index: bool = False,
+                 state_line: bool = True):
         """
         min_k: retrieve at least this many exchanges, whatever top_k the
             caller asks for (one exchange is much shorter than a summary).
@@ -85,6 +86,10 @@ class RawMemory:
             otherwise unrelated chat about heroes and ranked games fills the
             window once the history is long (E15). The index only points at
             exchanges; nothing is rewritten.
+        state_line: with the attribute index, lead with one line listing the
+            values the player stated, in time order (taken from the player's
+            own words by the attribute patterns); a small reply model lists
+            these, while it summarises a dozen raw exchanges to the last one.
         """
         self.user_id = user_id
         self.clock = clock
@@ -94,6 +99,7 @@ class RawMemory:
         self.max_promises = max_promises
         self.timeline = timeline
         self.attribute_index = attribute_index
+        self.state_line = state_line
         self.store = JsonMemoryStore(os.path.join(storage_dir, f"{user_id}_raw.json"))
         if retrieval_config is None:
             retrieval_config = RetrievalConfig.for_embedder(embedder)
@@ -140,11 +146,18 @@ class RawMemory:
         turns = [r for r in self.store.active() if r.kind == "turn"]
         hits = [h.record for h in self.retriever.search(query, turns, top_k=k, now=self.clock())]
         attr = self._asked_attribute(query) if change and self.attribute_index else None
+        states: List[MemoryRecord] = []
         if attr:
-            states = [r for r in turns if self._states(r, attr)]
+            states = sorted((r for r in turns if self._states(r, attr)), key=lambda r: r.created_at)
             others = [r for r in hits if r not in states]
             hits = states + others[:max(0, k - len(states))]
         hits.sort(key=lambda r: r.created_at)
+        if states and self.state_line:
+            line = self._state_line(attr, states)
+            if line:
+                hits.insert(0, MemoryRecord(content=line, kind="note", source="recall",
+                                            created_at=states[0].created_at, id="state-line"))
+                return hits
         if change and self.timeline and len(hits) > 1:
             note = MemoryRecord(content=TIMELINE_NOTE.format(n=len(hits)), kind="note", source="recall",
                                 created_at=hits[0].created_at, id="timeline-note")
@@ -163,6 +176,21 @@ class RawMemory:
         """Does the player, in this exchange, state a value of ``attr``?"""
         said = "\n".join(l for l in rec.content.splitlines() if l.startswith("玩家"))
         return any(name == attr for name, _ in detect(MemoryRecord(content=said), RECALL_ATTRIBUTES))
+
+    @staticmethod
+    def _state_line(attr: str, states: List[MemoryRecord]) -> str:
+        """Every value the player stated, oldest first, each as said and dated:
+        "按时间顺序，玩家说过的段位：黄金三（2026-01-06）→ 铂金二（2026-03-12）"."""
+        parts, last = [], None
+        for r in states:
+            said = "\n".join(l for l in r.content.splitlines() if l.startswith("玩家"))
+            value = next((v for n, v in detect(MemoryRecord(content=said), RECALL_ATTRIBUTES) if n == attr), "")
+            if value and value != last:
+                parts.append(f"{value}（{r.created_at[:10]}）")
+                last = value
+        if len(parts) < 2:
+            return ""
+        return f"按时间顺序，玩家说过的{attr}：" + " → ".join(parts) + "（下面是原话）"
 
     def core_profile(self, limit: int = 6) -> List[MemoryRecord]:
         return []  # nothing is distilled; everything is recalled on demand
