@@ -85,7 +85,7 @@ class RawMemory:
                  timeline: bool = True,
                  attribute_index: bool = True,
                  state_line: bool = True,
-                 current: bool = False):
+                 current: bool = True):
         """
         min_k: retrieve at least this many exchanges, whatever top_k the
             caller asks for (one exchange is much shorter than a summary).
