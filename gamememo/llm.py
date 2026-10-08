@@ -37,14 +37,17 @@ class OllamaClient:
                  base_url: str = "http://localhost:11434",
                  timeout: int = 120,
                  seed: Optional[int] = None,
-                 think: Optional[bool] = None):
+                 think: Optional[bool] = None,
+                 num_ctx: Optional[int] = None):
         """``seed`` makes sampling reproducible; ``think=False`` turns off the
-        reasoning trace of thinking models such as qwen3."""
+        reasoning trace of thinking models such as qwen3; ``num_ctx`` sets
+        the context window (Ollama's default truncates long prompts)."""
         self.model = model
         self.base_url = base_url.rstrip("/")
         self.timeout = timeout
         self.seed = seed
         self.think = think
+        self.num_ctx = num_ctx
 
     def chat(self,
              prompt: Optional[str] = None,
@@ -79,6 +82,8 @@ class OllamaClient:
             payload["options"]["num_predict"] = max_tokens
         if self.seed is not None:
             payload["options"]["seed"] = self.seed
+        if self.num_ctx:
+            payload["options"]["num_ctx"] = self.num_ctx
         if self.think is not None:
             payload["think"] = self.think
         if json_schema is not None:
