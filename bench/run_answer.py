@@ -141,6 +141,7 @@ class ContextProvider:
         """The stored memories of pid@seed loaded into the system's read path."""
         key = (pid, seed)
         if key not in self._mem:
+            self._mem.clear()  # one player at a time: long histories hold many embedded records
             from gamememo.personal.model import MemoryRecord
             p = self.players[pid]
             wd = tempfile.mkdtemp(prefix="answer_")
