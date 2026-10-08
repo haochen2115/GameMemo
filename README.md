@@ -10,6 +10,16 @@ Long-term, human-like memory for game AI assistants. It remembers who the player
 
 ## 现在能做什么
 
+> **P7 原始记录为主的记忆（`RawMemory`，在 `claude/elegant-maxwell-1sehni` 上，已通过门禁、待合入）**：写入不调用 LLM，每段对话原话带时间保存；助手的承诺按规则找出、常驻 prompt；回答时检索相关的原始片段。在回答层评测（e2e_v11 test）上 0.781，下面描述的 P6b 是 0.633；历史拉长到 150 段时仍有 0.750。为什么改方向见 [docs/ROADMAP.md](docs/ROADMAP.md) 的"方向调整"。
+>
+> ```python
+> from gamememo.personal import RawMemory, FastEmbedEmbedder, MemoryChatBot
+> mem = RawMemory("player_001", embedder=FastEmbedEmbedder())
+> bot = MemoryChatBot(mem, llm)   # 用法和 PersonalMemory 一样
+> ```
+
+以下是 P6b（当前 main）的能力：
+
 - **写入**：从对话或游戏数据中抽取事实（相对时间自动换算成绝对日期）→ 只把相关的旧记忆交给 LLM → 决定 ADD / UPDATE / DELETE / NOOP → 逐条校验后执行。LLM 编造的目标 id 会被拒绝，近似重复的内容会被跳过。
 - **更新保留历史**：段位从星耀升到王者时，旧记录失效但保留，可以回答"我以前什么段位"。
 - **检索不调 LLM**：jieba + BM25 + 中文向量（可选），用 RRF 融合；无关的问题返回空，不往 prompt 里塞凑数的记忆。
@@ -57,6 +67,7 @@ print(bot.chat("今天是我生日！").reply)
 
 ## 评测与分支
 
+- **回答层评测**（`bench/run_answer.py`）：让模型真的回答每道题，再给回答判分，可以把记忆系统和"把全部聊天记录放进 prompt""直接检索原始片段"放在一起比较；`bench/haystack.py` 用中性填充对话把历史拉长。结果见 [docs/BENCHMARK.md](docs/BENCHMARK.md) 开头。
 - 评测集、指标和结果见 [docs/BENCHMARK.md](docs/BENCHMARK.md)。在封存的 test 集（两位新玩家、102 条查询）上，当前 SOTA `v2-hybrid` 的 MemScore@3 为 0.892，v0 为 0.750（95% CI [+0.049, +0.235]）；召回和拒答都更好，而且检索不再调用 LLM。
 - 端到端评测（真实 LLM 写入，再按规则判分）：P1 在 e2e_v2 test 上从 0.448 升到 0.759；P2 在 e2e_v4 test 上从 0.693 升到 0.765（段位 / 手机的变化轨迹 0.333 → 1.000）；P3 在 e2e_v5 test 上从 0.794 升到 0.825（事实题，边缘显著）；P4 在更难的 e2e_v6 test 上从 0.482 升到 0.563（无损更新，事实题 0.560 → 0.720）；P5b 在 e2e_v8 test 上从 0.451 升到 0.586（按主语回忆：问"我姐姐…"不再返回哥哥的事，过时率 0.542 → 0.306）；P6b 在 e2e_v10 test 上从 0.461 升到 0.536（记得自己答应过什么、段位 / 英雄的完整变化）。实验全过程（包括没通过的尝试）见 [docs/EXPERIMENTS.md](docs/EXPERIMENTS.md)。
 - `main` 只放当前 SOTA。分支命名和门禁规则见 [docs/BRANCHING.md](docs/BRANCHING.md)。
@@ -68,6 +79,7 @@ print(bot.chat("今天是我生日！").reply)
 gamememo/
   llm.py                 LLM 接口：OllamaClient / FakeLLM / JSON 解析
   personal/
+    raw.py               RawMemory（P7）：原话保存 + 规则承诺 + 原始片段检索
     system.py            PersonalMemory：写入链路、检索、遗忘
     retrieval.py         混合检索（BM25 + 向量 + RRF + 相关性门槛）
     model.py, store.py   记忆记录（双时态字段）与原子写入的 JSON 存储

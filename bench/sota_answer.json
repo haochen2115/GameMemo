@@ -1,0 +1,20 @@
+{
+  "system": "chatbot:p7",
+  "ref": "claude/elegant-maxwell-1sehni (P7, RawMemory)",
+  "dataset": "bench/data/e2e_v11.json",
+  "split": "test",
+  "model": "qwen2.5:3b",
+  "seeds": "0",
+  "primary": "AnswerScore",
+  "min_gain": 0.03,
+  "hold_tol": 0.02,
+  "guards": {
+    "Abstain": 0.05
+  },
+  "metrics": {
+    "AnswerScore": 0.7812,
+    "Answered": 0.7396,
+    "Abstain": 0.9062,
+    "StaleMention": 0.1875
+  }
+}

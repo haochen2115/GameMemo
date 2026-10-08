@@ -20,6 +20,7 @@
 | 分支 | 内容 | 状态 |
 |---|---|---|
 | `main` | 个人记忆 P6b：P5b + 规则承诺、按话题回答承诺题、一行轨迹 | 当前 SOTA（retrieval_v2 0.922；e2e_v10 test 0.536） |
+| `claude/elegant-maxwell-1sehni` | 回答层评测（E11）、长历史评测（E13）、P7 原始记录为主的记忆（E14） | P7 通过回答层门禁（e2e_v11 test 0.633 → 0.781），待维护者合入 |
 | `archive/v0-keyword-baseline` | v0 的冻结快照（旧 main @ `3a866ba`） | 只读 |
 | `research/personal-memory-foundation` | v2 检索与写入重构 | 已合入（PR #1） |
 | `research/personal-memory-write-path` | 写入链路 + P1 | 已合入（PR #2） |
@@ -33,7 +34,7 @@
 ## SOTA 门禁（进入 main 的条件）
 
 1. `pytest` 全部通过。
-2. 在 `bench/candidate.json` 声明的每个评测上（检索看 `bench/sota.json`，端到端看 `bench/sota_e2e.json`；目前分别是 `retrieval_v2` 和 `e2e_v10` 的 **test** split）：
+2. 在 `bench/candidate.json` 声明的每个评测上（检索看 `bench/sota.json`，端到端看 `bench/sota_e2e.json`，回答层看 `bench/sota_answer.json`；从 P7 起主门禁是回答层的 `e2e_v11` **test** split，E2EScore 和 `retrieval_v2` 只对"存改写后事实"的系统适用，见 BENCHMARK.md）：
    - 至少一个评测标为 `improve`，并且主指标比记录的 SOTA 高 `min_gain`；其余评测标为 `hold`，主指标降幅不超过 `hold_tol`；
    - 所有守护指标（如 `Abstain`、`StaleRate`）变差的幅度都不超过各自的容忍度。
 3. 用脚本检查，不靠人工判断：
