@@ -1,10 +1,10 @@
 {
-  "system": "chatbot:p6b",
-  "ref": "main @ 6d71bfc (P6b) on e2e_v11 test",
-  "dataset": "bench/data/e2e_v11.json",
+  "system": "chatbot:p7",
+  "ref": "P7 (sota_answer.json before P8) on e2e_v12 test",
+  "dataset": "bench/data/e2e_v12.json",
   "split": "test",
   "model": "qwen2.5:3b",
-  "seeds": "0,1,2",
+  "seeds": "0",
   "primary": "AnswerScore",
   "min_gain": 0.03,
   "hold_tol": 0.02,
@@ -12,9 +12,9 @@
     "Abstain": 0.05
   },
   "metrics": {
-    "AnswerScore": 0.6328,
-    "Answered": 0.5312,
-    "Abstain": 0.9375,
-    "StaleMention": 0.3333
+    "AnswerScore": 0.6719,
+    "Answered": 0.6058,
+    "Abstain": 0.9583,
+    "StaleMention": 0.375
   }
 }

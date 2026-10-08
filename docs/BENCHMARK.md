@@ -121,6 +121,7 @@ test 集的两位玩家在提交 `e2d9bce` 中封存，那时还没有任何系�
 | 2026-09-25 | **P5b**（检索持平 0.922；e2e_v8 test 0.451 → 0.586） | retrieval_v2 + e2e_v8 | 0.922 | `research/personal-memory-subjects` |
 | 2026-09-25 | **P6b**（检索持平 0.922；e2e_v10 test 0.461 → 0.536） | retrieval_v2 + e2e_v10 | 0.922 | `research/personal-memory-promises` |
 | 2026-10-08 | **P7** 原始记录为主（回答层 e2e_v11 test 0.633 → 0.781；不再适用检索评测） | 回答层 e2e_v11 | — | `claude/elegant-maxwell-1sehni`（待合入） |
+| 2026-10-08 | **P8** P7 + 属性索引 + 状态行（回答层 e2e_v12 test 0.672 → 0.727，轨迹 0.250 → 0.469） | 回答层 e2e_v12 | — | `claude/elegant-maxwell-1sehni`（待合入） |
 
 ## 端到端评测：e2e（写入 + 检索）
 

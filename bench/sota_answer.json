@@ -1,7 +1,7 @@
 {
-  "system": "chatbot:p7",
-  "ref": "claude/elegant-maxwell-1sehni (P7, RawMemory)",
-  "dataset": "bench/data/e2e_v11.json",
+  "system": "chatbot:p8",
+  "ref": "claude/elegant-maxwell-1sehni (P8, RawMemory defaults)",
+  "dataset": "bench/data/e2e_v12.json",
   "split": "test",
   "model": "qwen2.5:3b",
   "seeds": "0",
@@ -12,9 +12,9 @@
     "Abstain": 0.05
   },
   "metrics": {
-    "AnswerScore": 0.7812,
-    "Answered": 0.7396,
-    "Abstain": 0.9062,
-    "StaleMention": 0.1875
+    "AnswerScore": 0.7266,
+    "Answered": 0.6731,
+    "Abstain": 0.9583,
+    "StaleMention": 0.375
   }
 }

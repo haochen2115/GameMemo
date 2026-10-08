@@ -10,7 +10,7 @@ Long-term, human-like memory for game AI assistants. It remembers who the player
 
 ## 现在能做什么
 
-> **P7 原始记录为主的记忆（`RawMemory`，在 `claude/elegant-maxwell-1sehni` 上，已通过门禁、待合入）**：写入不调用 LLM，每段对话原话带时间保存；助手的承诺按规则找出、常驻 prompt；回答时检索相关的原始片段。在回答层评测（e2e_v11 test）上 0.781，下面描述的 P6b 是 0.633；历史拉长到 150 段时仍有 0.750。为什么改方向见 [docs/ROADMAP.md](docs/ROADMAP.md) 的"方向调整"。
+> **原始记录为主的记忆（`RawMemory`，P7 / P8，在 `claude/elegant-maxwell-1sehni` 上，已通过门禁、待合入）**：写入不调用 LLM，每段对话原话带时间保存；助手的承诺按规则找出、常驻 prompt；回答时检索相关的原始片段；问"段位 / 主玩英雄 / 手机怎么变的"时，从原话里按时间列出每个取值（P8）。回答层评测上，P7 在 e2e_v11 test 0.781（下面描述的 P6b 是 0.633，历史拉长到 150 段时 P7 仍有 0.750）；P8 在 e2e_v12 test 上比 P7 再高 0.055。为什么改方向见 [docs/ROADMAP.md](docs/ROADMAP.md) 的"方向调整"。
 >
 > ```python
 > from gamememo.personal import RawMemory, FastEmbedEmbedder, MemoryChatBot

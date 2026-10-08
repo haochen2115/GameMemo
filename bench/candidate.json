@@ -1,8 +1,8 @@
 {
-  "_note": "P7: raw-first memory (gamememo/personal/raw.py, E14). Exchanges stored verbatim, rule promises, top-8 raw exchanges (12 + timeline note for change questions). Judged on the answer level (bench/run_answer.py, chatbot context); E2EScore and retrieval_v2 judge stored evidence and do not apply to a system that keeps old statements verbatim (see EXPERIMENTS E14). Baseline: main @ 6d71bfc (P6b) on sealed e2e_v11 test, storage seeds 0,1,2.",
+  "_note": "P8: P7 + attribute index + state line for change questions (RawMemory defaults, E15). Pre-registered in efc00ce before the e2e_v12 test run. Baseline: P7 on sealed e2e_v12 test (bench/baseline_answer.json).",
   "answer": {
-    "system": "chatbot:p7",
+    "system": "chatbot:p8",
     "mode": "improve",
-    "results": "bench/results/answer_v11_test_p7.json"
+    "results": "bench/results/answer_v12_test_p78.json"
   }
 }
