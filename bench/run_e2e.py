@@ -233,6 +233,8 @@ SYSTEMS: Dict[str, Callable[..., object]] = {
     "p7-notimeline": lambda model, url, wd: RawSystem(wd, timeline=False, attribute_index=False),
     # P8 candidate: P7 + attribute index for change questions
     "p8": lambda model, url, wd: RawSystem(wd, attribute_index=True),
+    # P9 candidate: P8 + "现在…" handling
+    "p9": lambda model, url, wd: RawSystem(wd, current=True),
     "p8-noline": lambda model, url, wd: RawSystem(wd, attribute_index=True, state_line=False),
     "p3+safe-updates": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True,
                                                        history_recall=True, episodes=True, promises=True,

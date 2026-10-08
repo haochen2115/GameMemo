@@ -33,7 +33,7 @@ from .model import MemoryRecord, fmt_time
 from .retrieval import HybridRetriever, RetrievalConfig
 from .consolidate import RECALL_ATTRIBUTES, detect
 from .store import JsonMemoryStore
-from .system import ATTRIBUTE_QUERY, HERO_QUERY, IngestReport, promises_from_rules
+from .system import ATTRIBUTE_QUERY, CURRENT_INTENT, HERO_QUERY, IngestReport, promises_from_rules
 
 _SPEAKER = re.compile(r"^\s*(玩家|助手)\s*[:：]\s*")
 # "how did it change" questions need every state, not the best few mentions
@@ -51,6 +51,9 @@ _GAME_NAME = re.compile(r"(?<![上到升])王者(?![0-9一二三四五六七八�
 def _player_said(rec: MemoryRecord) -> str:
     said = "\n".join(l for l in rec.content.splitlines() if l.startswith("玩家"))
     return _GAME_NAME.sub("游戏", said)
+
+
+CURRENT_NOTE = "（下面的原话按时间排列，越往后越新；问现在的情况时，以最新的说法为准）"
 
 
 def exchanges(text: str) -> List[str]:
@@ -81,7 +84,8 @@ class RawMemory:
                  max_promises: int = 3,
                  timeline: bool = True,
                  attribute_index: bool = True,
-                 state_line: bool = True):
+                 state_line: bool = True,
+                 current: bool = False):
         """
         min_k: retrieve at least this many exchanges, whatever top_k the
             caller asks for (one exchange is much shorter than a summary).
@@ -100,6 +104,10 @@ class RawMemory:
             values the player stated, in time order (taken from the player's
             own words by the attribute patterns); a small reply model lists
             these, while it summarises a dozen raw exchanges to the last one.
+        current: "现在…" questions. About a game attribute, the exchanges where
+            the player last stated it are recalled and named in one line;
+            otherwise a note says the exchanges run oldest to newest and the
+            newest statement is what holds now.
         """
         self.user_id = user_id
         self.clock = clock
@@ -110,6 +118,7 @@ class RawMemory:
         self.timeline = timeline
         self.attribute_index = attribute_index
         self.state_line = state_line
+        self.current = current
         self.store = JsonMemoryStore(os.path.join(storage_dir, f"{user_id}_raw.json"))
         if retrieval_config is None:
             retrieval_config = RetrievalConfig.for_embedder(embedder)
@@ -168,10 +177,31 @@ class RawMemory:
                 hits.insert(0, MemoryRecord(content=line, kind="note", source="recall",
                                             created_at=states[0].created_at, id="state-line"))
                 return hits
+        if self.current and not change and CURRENT_INTENT.search(query):
+            return self._current(query, turns, hits, k)
         if change and self.timeline and len(hits) > 1:
             note = MemoryRecord(content=TIMELINE_NOTE.format(n=len(hits)), kind="note", source="recall",
                                 created_at=hits[0].created_at, id="timeline-note")
             hits.insert(0, note)
+        return hits
+
+    def _current(self, query: str, turns: List[MemoryRecord], hits: List[MemoryRecord],
+                 k: int) -> List[MemoryRecord]:
+        attr = self._asked_attribute(query) if self.attribute_index else None
+        states = sorted((r for r in turns if self._states(r, attr)), key=lambda r: r.created_at) if attr else []
+        if states:
+            latest = states[-2:]
+            hits = sorted(latest + [r for r in hits if r not in latest][:max(0, k - len(latest))],
+                          key=lambda r: r.created_at)
+            value = next((v for n, v in detect(MemoryRecord(content=_player_said(states[-1])), RECALL_ATTRIBUTES)
+                          if n == attr), "")
+            note = f"玩家最近一次说的{attr}：{value}（{states[-1].created_at[:10]}）"
+        elif len(hits) > 1:
+            note = CURRENT_NOTE
+        else:
+            return hits
+        hits.insert(0, MemoryRecord(content=note, kind="note", source="recall",
+                                    created_at=hits[0].created_at, id="current-note"))
         return hits
 
     @staticmethod
