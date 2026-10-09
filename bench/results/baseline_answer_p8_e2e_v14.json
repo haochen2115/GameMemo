@@ -1,7 +1,7 @@
 {
   "system": "chatbot:p8",
-  "ref": "P8 (sota_answer.json) on e2e_v14_h140",
-  "dataset": "bench/data/e2e_v14_h140.json",
+  "ref": "P8 (sota_answer.json) on e2e_v14",
+  "dataset": "bench/data/e2e_v14.json",
   "split": "test",
   "model": "qwen2.5:3b",
   "seeds": "0",
@@ -12,9 +12,9 @@
     "Abstain": 0.05
   },
   "metrics": {
-    "AnswerScore": 0.625,
-    "Answered": 0.5673,
+    "AnswerScore": 0.6406,
+    "Answered": 0.5865,
     "Abstain": 0.875,
-    "StaleMention": 0.3333
+    "StaleMention": 0.4167
   }
 }

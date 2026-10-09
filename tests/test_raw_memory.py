@@ -27,9 +27,7 @@ def test_ingest_is_verbatim_and_never_overwrites(tmp_path):
     turns = sorted((r for r in mem.store.all() if r.kind == "turn"), key=lambda r: r.created_at)
     assert [t.content for t in turns] == ["玩家: 周末去打乒乓球\n助手: 挺好", "玩家: 现在周末改打羽毛球了\n助手: 换换口味"]
     assert all(t.is_active for t in turns)
-    recalled = mem.retrieve("我周末打什么球")
-    assert recalled[0].kind == "note" and "越往后越新" in mem.describe(recalled[0])  # recency note (P10)
-    hits = [h for h in recalled if h.kind == "turn"]
+    hits = [h for h in mem.retrieve("我周末打什么球") if h.kind == "turn"]
     assert [h.created_at[:10] for h in hits] == ["2026-03-01", "2026-06-01"]  # oldest first, dated
     assert mem.describe(hits[-1]).startswith("【2026-06-01 21:00】玩家: 现在")
     reloaded = RawMemory("p1", storage_dir=str(tmp_path))

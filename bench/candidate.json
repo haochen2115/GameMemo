@@ -1,13 +1,8 @@
 {
-  "_note": "P10: P8 + tense-free recency (RawMemory defaults, E17). Pre-registered before the e2e_v14 test run (sealed b262eb0). Must improve on the padded set (answer_long, e2e_v14_h140 test) and hold on the plain set (answer, e2e_v14 test). Baseline: P8 on both (bench/baseline_answer.json, bench/baseline_answer_long.json, written after the run).",
-  "answer_long": {
-    "system": "chatbot:p10",
-    "mode": "improve",
-    "results": "bench/results/answer_v14_h140_test_p810.json"
-  },
+  "_note": "P8: P7 + attribute index + state line for change questions (RawMemory defaults, E15). Pre-registered in efc00ce before the e2e_v12 test run. Baseline: P7 on sealed e2e_v12 test (bench/baseline_answer.json). Later candidates that did not pass: P9 (bench/results/candidate_p9_e2e_v13.json), P10 (bench/results/candidate_p10_e2e_v14.json).",
   "answer": {
-    "system": "chatbot:p10",
-    "mode": "hold",
-    "results": "bench/results/answer_v14_test_p810.json"
+    "system": "chatbot:p8",
+    "mode": "improve",
+    "results": "bench/results/answer_v12_test_p78.json"
   }
 }

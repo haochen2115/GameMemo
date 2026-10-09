@@ -87,7 +87,7 @@ class RawMemory:
                  attribute_index: bool = True,
                  state_line: bool = True,
                  current: bool = False,
-                 recency: bool = True):
+                 recency: bool = False):
         """
         min_k: retrieve at least this many exchanges, whatever top_k the
             caller asks for (one exchange is much shorter than a summary).
