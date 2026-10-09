@@ -149,12 +149,12 @@ class Contexts:
 
     def mem0(self, query: str, k: int) -> str:
         m, uid = self._mem0_store()
-        res = m.search(query, filters={"user_id": uid}, limit=k).get("results", [])
+        res = m.search(query, filters={"user_id": uid}, top_k=k).get("results", [])  # Mem0 2.x: top_k, not limit
         return "Memories about the conversation:\n" + "\n".join(f"- {r['memory']}" for r in res)
 
     def mem0all(self) -> str:
         m, uid = self._mem0_store()
-        res = m.get_all(filters={"user_id": uid}, limit=10000).get("results", [])
+        res = m.get_all(filters={"user_id": uid}, top_k=10000).get("results", [])
         return "Memories about the conversation:\n" + "\n".join(f"- {r['memory']}" for r in res)
 
 
