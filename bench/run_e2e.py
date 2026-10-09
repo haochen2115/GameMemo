@@ -235,6 +235,8 @@ SYSTEMS: Dict[str, Callable[..., object]] = {
     "p8": lambda model, url, wd: RawSystem(wd, attribute_index=True, current=False),
     # P9 candidate: P8 + "现在…" handling
     "p9": lambda model, url, wd: RawSystem(wd, current=True),
+    # P10 candidate: P8 + recency without reading the question's tense
+    "p10": lambda model, url, wd: RawSystem(wd, attribute_index=True, current=False, recency=True),
     "p8-noline": lambda model, url, wd: RawSystem(wd, attribute_index=True, state_line=False, current=False),
     "p3+safe-updates": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True,
                                                        history_recall=True, episodes=True, promises=True,

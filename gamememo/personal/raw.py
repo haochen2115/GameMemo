@@ -53,6 +53,7 @@ def _player_said(rec: MemoryRecord) -> str:
     return _GAME_NAME.sub("游戏", said)
 
 
+RECENCY_NOTE = "（下面的原话按时间排列，越往后越新；同一件事前后说法不同时，以最新的为准，除非问的是以前的情况）"
 CURRENT_NOTE = "（下面的原话按时间排列，越往后越新；问现在的情况时，以最新的说法为准）"
 
 
@@ -85,7 +86,8 @@ class RawMemory:
                  timeline: bool = True,
                  attribute_index: bool = True,
                  state_line: bool = True,
-                 current: bool = False):
+                 current: bool = False,
+                 recency: bool = False):
         """
         min_k: retrieve at least this many exchanges, whatever top_k the
             caller asks for (one exchange is much shorter than a summary).
@@ -107,7 +109,13 @@ class RawMemory:
         current: "现在…" questions. About a game attribute, the exchanges where
             the player last stated it are recalled and named in one line;
             otherwise a note says the exchanges run oldest to newest and the
-            newest statement is what holds now.
+            newest statement is what holds now. (P9; keyed on 现在/目前, which
+            did not generalise, see E16.)
+        recency: the same idea without reading the question's tense (P10).
+            Any question naming a game attribute gets every dated value the
+            player stated plus the newest one; every other recall is led by a
+            note that exchanges run oldest to newest and the newest statement
+            holds unless the question asks about the past.
         """
         self.user_id = user_id
         self.clock = clock
@@ -119,6 +127,7 @@ class RawMemory:
         self.attribute_index = attribute_index
         self.state_line = state_line
         self.current = current
+        self.recency = recency
         self.store = JsonMemoryStore(os.path.join(storage_dir, f"{user_id}_raw.json"))
         if retrieval_config is None:
             retrieval_config = RetrievalConfig.for_embedder(embedder)
@@ -179,6 +188,8 @@ class RawMemory:
                 return hits
         if self.current and not change and CURRENT_INTENT.search(query):
             return self._current(query, turns, hits, k)
+        if self.recency and not change:
+            return self._recency(query, turns, hits, k)
         if change and self.timeline and len(hits) > 1:
             note = MemoryRecord(content=TIMELINE_NOTE.format(n=len(hits)), kind="note", source="recall",
                                 created_at=hits[0].created_at, id="timeline-note")
@@ -202,6 +213,28 @@ class RawMemory:
             return hits
         hits.insert(0, MemoryRecord(content=note, kind="note", source="recall",
                                     created_at=hits[0].created_at, id="current-note"))
+        return hits
+
+    def _recency(self, query: str, turns: List[MemoryRecord], hits: List[MemoryRecord],
+                 k: int) -> List[MemoryRecord]:
+        attr = self._asked_attribute(query) if self.attribute_index else None
+        states = sorted((r for r in turns if self._states(r, attr)), key=lambda r: r.created_at) if attr else []
+        note = ""
+        if states:
+            latest = states[-2:]
+            hits = sorted(latest + [r for r in hits if r not in latest][:max(0, k - len(latest))],
+                          key=lambda r: r.created_at)
+            line = self._state_line(attr, states)
+            value = next((v for n, v in detect(MemoryRecord(content=_player_said(states[-1])), RECALL_ATTRIBUTES)
+                          if n == attr), "")
+            note = (line.replace("（下面是原话）", "") + "；" if line else "") + \
+                f"最近一次说的{attr}：{value}（{states[-1].created_at[:10]}）"
+        elif len(hits) > 1:
+            note = RECENCY_NOTE
+        if not note:
+            return hits
+        hits.insert(0, MemoryRecord(content=note, kind="note", source="recall",
+                                    created_at=hits[0].created_at, id="recency-note"))
         return hits
 
     @staticmethod
