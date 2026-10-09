@@ -1,13 +1,8 @@
 {
-  "_note": "P9: P8 + current-question handling (RawMemory defaults, E16). Pre-registered before the e2e_v13 test run (sealed c8fbdcc). P9's dev gain is at long history, so it must improve on the padded set (answer_long, e2e_v13_h140 test) and hold on the plain set (answer, e2e_v13 test). Baseline: P8 on both (bench/baseline_answer.json, bench/baseline_answer_long.json, written after the run).",
-  "answer_long": {
-    "system": "chatbot:p9",
-    "mode": "improve",
-    "results": "bench/results/answer_v13_h140_test_p89.json"
-  },
+  "_note": "P8: P7 + attribute index + state line for change questions (RawMemory defaults, E15). Pre-registered in efc00ce before the e2e_v12 test run. Baseline: P7 on sealed e2e_v12 test (bench/baseline_answer.json). P9 (E16) did not pass on e2e_v13; its record is bench/results/candidate_p9_e2e_v13.json.",
   "answer": {
-    "system": "chatbot:p9",
-    "mode": "hold",
-    "results": "bench/results/answer_v13_test_p89.json"
+    "system": "chatbot:p8",
+    "mode": "improve",
+    "results": "bench/results/answer_v12_test_p78.json"
   }
 }

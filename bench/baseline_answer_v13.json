@@ -1,0 +1,20 @@
+{
+  "system": "chatbot:p8",
+  "ref": "P8 (sota_answer.json) on e2e_v13",
+  "dataset": "bench/data/e2e_v13.json",
+  "split": "test",
+  "model": "qwen2.5:3b",
+  "seeds": "0",
+  "primary": "AnswerScore",
+  "min_gain": 0.03,
+  "hold_tol": 0.02,
+  "guards": {
+    "Abstain": 0.05
+  },
+  "metrics": {
+    "AnswerScore": 0.6797,
+    "Answered": 0.6346,
+    "Abstain": 0.875,
+    "StaleMention": 0.325
+  }
+}
