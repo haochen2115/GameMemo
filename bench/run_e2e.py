@@ -29,7 +29,7 @@ import tempfile
 import time
 from collections import defaultdict
 from datetime import datetime
-from typing import Callable, Dict, List, Tuple
+from typing import Callable, Dict, List, Optional, Tuple
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
@@ -132,10 +132,14 @@ class V2System:
 class RawSystem:
     """P7: raw-first memory (no LLM on the write path)."""
 
-    def __init__(self, workdir: str, **opts):
+    def __init__(self, workdir: str, reader: Optional[str] = None, **opts):
         from gamememo.personal.raw import RawMemory
 
         self.now = datetime.now()
+        if reader:  # read-time LLM (P11); a fixed model so replays are comparable
+            opts["llm"] = OllamaClient(model=reader, base_url="http://localhost:11434", timeout=600, seed=0)
+            if _CACHE:
+                _CACHE[0].wrap(opts["llm"])
         self.mem = RawMemory("e2e", storage_dir=workdir, embedder=jina(), clock=lambda: self.now, **opts)
 
     def ingest(self, text: str, when: datetime) -> None:
@@ -237,6 +241,9 @@ SYSTEMS: Dict[str, Callable[..., object]] = {
     "p9": lambda model, url, wd: RawSystem(wd, current=True, recency=False),
     # P10 candidate: P8 + recency without reading the question's tense
     "p10": lambda model, url, wd: RawSystem(wd, attribute_index=True, current=False, recency=True),
+    # P11 candidate: P8 + read-time state listing for change questions the patterns cannot answer
+    "p11": lambda model, url, wd: RawSystem(wd, attribute_index=True, current=False, recency=False,
+                                            read_states=True, reader="qwen2.5:3b"),
     "p8-noline": lambda model, url, wd: RawSystem(wd, attribute_index=True, state_line=False, current=False, recency=False),
     "p3+safe-updates": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True,
                                                        history_recall=True, episodes=True, promises=True,

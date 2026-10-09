@@ -53,6 +53,15 @@ def _player_said(rec: MemoryRecord) -> str:
     return _GAME_NAME.sub("游戏", said)
 
 
+READ_STATES_SYSTEM = "你是记忆助手，只根据给出的聊天原话整理信息，不编造。严格输出JSON。"
+READ_STATES = """玩家问："{query}"
+下面是玩家过去聊天的原话（带日期，按时间排列）：
+{excerpts}
+
+按时间顺序列出玩家问的这件事先后的每一个状态。value 用原话里的词（2到8个字），date 是那句话的日期。原话里没提到的不要写。"""
+READ_STATES_SCHEMA = {"type": "object", "properties": {"states": {"type": "array", "items": {
+    "type": "object", "properties": {"date": {"type": "string"}, "value": {"type": "string"}},
+    "required": ["date", "value"]}}}, "required": ["states"]}
 RECENCY_NOTE = "（下面的原话按时间排列，越往后越新；同一件事前后说法不同时，以最新的为准，除非问的是以前的情况）"
 CURRENT_NOTE = "（下面的原话按时间排列，越往后越新；问现在的情况时，以最新的说法为准）"
 
@@ -87,7 +96,9 @@ class RawMemory:
                  attribute_index: bool = True,
                  state_line: bool = True,
                  current: bool = False,
-                 recency: bool = False):
+                 recency: bool = False,
+                 llm=None,
+                 read_states: bool = False):
         """
         min_k: retrieve at least this many exchanges, whatever top_k the
             caller asks for (one exchange is much shorter than a summary).
@@ -116,6 +127,10 @@ class RawMemory:
             player stated plus the newest one; every other recall is led by a
             note that exchanges run oldest to newest and the newest statement
             holds unless the question asks about the past.
+        read_states: for a change question the attribute patterns cannot
+            answer (a job, a home, a relative), ask ``llm`` once, at read time,
+            to list the states the recalled exchanges mention, oldest first,
+            in the player's own words (P11). Writing stays LLM-free.
         """
         self.user_id = user_id
         self.clock = clock
@@ -128,6 +143,8 @@ class RawMemory:
         self.state_line = state_line
         self.current = current
         self.recency = recency
+        self.llm = llm
+        self.read_states = read_states
         self.store = JsonMemoryStore(os.path.join(storage_dir, f"{user_id}_raw.json"))
         if retrieval_config is None:
             retrieval_config = RetrievalConfig.for_embedder(embedder)
@@ -190,6 +207,12 @@ class RawMemory:
             return self._current(query, turns, hits, k)
         if self.recency and not change:
             return self._recency(query, turns, hits, k)
+        if change and self.read_states and self.llm is not None and len([h for h in hits if h.kind == "turn"]) > 1:
+            line = self._read_states(query, hits)
+            if line:
+                hits.insert(0, MemoryRecord(content=line, kind="note", source="recall",
+                                            created_at=hits[0].created_at, id="read-states"))
+                return hits
         if change and self.timeline and len(hits) > 1:
             note = MemoryRecord(content=TIMELINE_NOTE.format(n=len(hits)), kind="note", source="recall",
                                 created_at=hits[0].created_at, id="timeline-note")
@@ -236,6 +259,30 @@ class RawMemory:
         hits.insert(0, MemoryRecord(content=note, kind="note", source="recall",
                                     created_at=hits[0].created_at, id="recency-note"))
         return hits
+
+    def _read_states(self, query: str, hits: List[MemoryRecord]) -> str:
+        """One LLM call: the states of what ``query`` asks about, in time
+        order, as the recalled exchanges state them. Empty on any failure."""
+        from ..llm import parse_json
+        excerpts = "\n".join(self.describe(h) for h in hits if h.kind == "turn")
+        try:
+            data = parse_json(self.llm.chat(prompt=READ_STATES.format(query=query, excerpts=excerpts),
+                                            system=READ_STATES_SYSTEM, temperature=0.0, max_tokens=300,
+                                            json_schema=READ_STATES_SCHEMA))
+        except Exception:
+            return ""
+        states = data.get("states", []) if isinstance(data, dict) else []
+        parts, last = [], None
+        for st in states:
+            if not isinstance(st, dict):
+                continue
+            value, date = str(st.get("value", "")).strip(), str(st.get("date", "")).strip()[:10]
+            if value and value != last and any(value in h.content for h in hits if h.kind == "turn"):
+                parts.append(f"{value}（{date}）" if date else value)
+                last = value
+        if len(parts) < 2:
+            return ""
+        return "按时间顺序，玩家说过的情况：" + " → ".join(parts) + "（下面是原话）"
 
     @staticmethod
     def _asked_attribute(query: str) -> Optional[str]:

@@ -293,6 +293,9 @@ def main(argv=None):
         with open(args.results, encoding="utf-8") as f:
             results_file = json.load(f)
     cache = LLMCache(args.llm_cache) if args.llm_cache else None
+    if cache:  # systems that call an LLM at read time (P11) use the same cache
+        from bench import run_e2e
+        run_e2e._CACHE[:] = [cache]
     seeds = [int(x) for x in args.seeds.split(",")]
 
     out: Dict[str, Dict] = {}

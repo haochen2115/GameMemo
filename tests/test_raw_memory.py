@@ -93,13 +93,29 @@ def test_registered_raw_systems_keep_their_definitions():
     (P8 silently inherited P9's default once; see EXPERIMENTS E16)."""
     from bench.run_e2e import SYSTEMS
     flags = {}
-    for name in ("p7", "p8", "p9", "p10"):
+    for name in ("p7", "p8", "p9", "p10", "p11"):
         mem = SYSTEMS[name]("m", "http://localhost:0", str(tmp_dir(name))).mem
-        flags[name] = (mem.attribute_index, mem.state_line, mem.current, mem.recency)
-    assert flags == {"p7": (False, True, False, False), "p8": (True, True, False, False),
-                     "p9": (True, True, True, False), "p10": (True, True, False, True)}
+        flags[name] = (mem.attribute_index, mem.state_line, mem.current, mem.recency, mem.read_states)
+    assert flags == {"p7": (False, True, False, False, False), "p8": (True, True, False, False, False),
+                     "p9": (True, True, True, False, False), "p10": (True, True, False, True, False),
+                     "p11": (True, True, False, False, True)}
 
 
 def tmp_dir(name):
     import tempfile
     return tempfile.mkdtemp(prefix=f"sys_{name}_")
+
+
+def test_read_states_lists_grounded_states_once(tmp_path):
+    from gamememo.llm import FakeLLM
+    mem, clock = make(tmp_path)
+    mem.llm = FakeLLM(lambda prompt, system: {"states": [
+        {"date": "2026-01-01", "value": "收银"}, {"date": "2026-03-01", "value": "奶茶店"},
+        {"date": "2026-05-01", "value": "宇宙飞船"}]})  # not in the chats: dropped
+    mem.read_states = True
+    for month, line in [(1, "我老婆的工作是超市收银"), (3, "我老婆换工作去奶茶店了"), (5, "今天天气好")]:
+        clock["now"] = datetime(2026, month, 1, 21, 0)
+        mem.ingest(f"玩家: {line}\n助手: 好的")
+    hits = mem.retrieve("我老婆的工作是怎么变的", top_k=3)
+    assert hits[0].kind == "note"
+    assert mem.describe(hits[0]) == "按时间顺序，玩家说过的情况：收银（2026-01-01） → 奶茶店（2026-03-01）（下面是原话）"
