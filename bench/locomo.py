@@ -173,6 +173,9 @@ def mem0_config(path: str, collection: str) -> Dict:
 
 
 def mem0_client(base: str, sample_id: str, max_session: Optional[int]):
+    # Mem0's telemetry opens a second local qdrant store (~/.mem0/migrations_qdrant)
+    # per Memory instance, and local qdrant allows one client per process.
+    os.environ.setdefault("MEM0_TELEMETRY", "False")
     from mem0 import Memory
     path = os.path.join(base, sample_id)
     return Memory.from_config(mem0_config(path, "locomo")), sample_id
