@@ -27,7 +27,9 @@ def test_ingest_is_verbatim_and_never_overwrites(tmp_path):
     turns = sorted((r for r in mem.store.all() if r.kind == "turn"), key=lambda r: r.created_at)
     assert [t.content for t in turns] == ["玩家: 周末去打乒乓球\n助手: 挺好", "玩家: 现在周末改打羽毛球了\n助手: 换换口味"]
     assert all(t.is_active for t in turns)
-    hits = mem.retrieve("我周末打什么球")
+    recalled = mem.retrieve("我周末打什么球")
+    assert recalled[0].kind == "note" and "越往后越新" in mem.describe(recalled[0])  # recency note (P10)
+    hits = [h for h in recalled if h.kind == "turn"]
     assert [h.created_at[:10] for h in hits] == ["2026-03-01", "2026-06-01"]  # oldest first, dated
     assert mem.describe(hits[-1]).startswith("【2026-06-01 21:00】玩家: 现在")
     reloaded = RawMemory("p1", storage_dir=str(tmp_path))
@@ -49,7 +51,7 @@ def test_change_questions_get_a_wider_window(tmp_path):
     for month, tier in enumerate(["黄金三", "铂金二", "铂金四", "钻石五", "钻石三", "星耀五"], start=1):
         clock["now"] = datetime(2026, month, 1, 21, 0)
         mem.ingest(f"玩家: 我段位到{tier}了\n助手: 恭喜")
-    mem.min_k, mem.attribute_index = 3, False  # P7 behaviour: generic timeline note
+    mem.min_k, mem.attribute_index, mem.recency = 3, False, False  # P7 behaviour: generic timeline note
     assert len(mem.retrieve("我段位是多少", top_k=3)) == 3
     hits = mem.retrieve("我段位是怎么变的", top_k=3)
     assert [h.kind for h in hits] == ["note"] + ["turn"] * 6 and "6次" in mem.describe(hits[0])
@@ -93,10 +95,11 @@ def test_registered_raw_systems_keep_their_definitions():
     (P8 silently inherited P9's default once; see EXPERIMENTS E16)."""
     from bench.run_e2e import SYSTEMS
     flags = {}
-    for name in ("p7", "p8", "p9"):
+    for name in ("p7", "p8", "p9", "p10"):
         mem = SYSTEMS[name]("m", "http://localhost:0", str(tmp_dir(name))).mem
-        flags[name] = (mem.attribute_index, mem.state_line, mem.current)
-    assert flags == {"p7": (False, True, False), "p8": (True, True, False), "p9": (True, True, True)}
+        flags[name] = (mem.attribute_index, mem.state_line, mem.current, mem.recency)
+    assert flags == {"p7": (False, True, False, False), "p8": (True, True, False, False),
+                     "p9": (True, True, True, False), "p10": (True, True, False, True)}
 
 
 def tmp_dir(name):

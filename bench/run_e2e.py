@@ -229,15 +229,15 @@ SYSTEMS: Dict[str, Callable[..., object]] = {
                                            subject_recall=True, interleave_fallback=True, current_latest=True,
                                            rule_promises=True, trajectory_summary=True, promise_topic=True),
     # P7: raw-first memory -- exchanges stored verbatim, rule promises, change-aware window
-    "p7": lambda model, url, wd: RawSystem(wd, attribute_index=False, current=False),
-    "p7-notimeline": lambda model, url, wd: RawSystem(wd, timeline=False, attribute_index=False, current=False),
+    "p7": lambda model, url, wd: RawSystem(wd, attribute_index=False, current=False, recency=False),
+    "p7-notimeline": lambda model, url, wd: RawSystem(wd, timeline=False, attribute_index=False, current=False, recency=False),
     # P8 candidate: P7 + attribute index for change questions
-    "p8": lambda model, url, wd: RawSystem(wd, attribute_index=True, current=False),
+    "p8": lambda model, url, wd: RawSystem(wd, attribute_index=True, current=False, recency=False),
     # P9 candidate: P8 + "现在…" handling
-    "p9": lambda model, url, wd: RawSystem(wd, current=True),
+    "p9": lambda model, url, wd: RawSystem(wd, current=True, recency=False),
     # P10 candidate: P8 + recency without reading the question's tense
     "p10": lambda model, url, wd: RawSystem(wd, attribute_index=True, current=False, recency=True),
-    "p8-noline": lambda model, url, wd: RawSystem(wd, attribute_index=True, state_line=False, current=False),
+    "p8-noline": lambda model, url, wd: RawSystem(wd, attribute_index=True, state_line=False, current=False, recency=False),
     "p3+safe-updates": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True,
                                                        history_recall=True, episodes=True, promises=True,
                                                        recall_modes=True, attribute_recall=True,
