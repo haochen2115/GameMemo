@@ -9837,6 +9837,1973 @@
     }
    ],
    "minutes": 33.0
+  },
+  "full": {
+   "score": 0.4667,
+   "n": 150,
+   "by_group": {
+    "fact": 0.625,
+    "game": 0.3056,
+    "link": 0.0,
+    "negative": 0.875,
+    "promise": 0.875
+   },
+   "by_subtype": {
+    "current_rank": 0.5,
+    "fact": 0.625,
+    "hero_games": 0.0,
+    "hero_winrate": 0.0,
+    "last_season_games": 0.0,
+    "last_season_peak": 0.125,
+    "link_promotion": 0.0,
+    "link_streak": 0.0,
+    "longest_losing_streak": 0.25,
+    "main_position": 0.875,
+    "negative": 0.875,
+    "promise": 0.875,
+    "recent_top_hero": 0.875,
+    "season_peak": 0.125
+   },
+   "context_chars": 20711,
+   "rows": [
+    {
+     "id": "g1_t1_q01",
+     "player": "g1_t1",
+     "type": "game",
+     "subtype": "current_rank",
+     "query": "我这号现在啥段",
+     "key": "铂金四",
+     "known": true,
+     "answer": "铂金四4星",
+     "success": 1.0,
+     "context_chars": 20798
+    },
+    {
+     "id": "g1_t1_q02",
+     "player": "g1_t1",
+     "type": "game",
+     "subtype": "season_peak",
+     "query": "本赛季我最高到过哪个段位",
+     "key": "铂金一",
+     "known": true,
+     "answer": "钻石五1星",
+     "success": 0.0,
+     "context_chars": 20798
+    },
+    {
+     "id": "g1_t1_q03",
+     "player": "g1_t1",
+     "type": "game",
+     "subtype": "last_season_peak",
+     "query": "上个赛季我段位最高是在哪一档",
+     "key": "钻石五",
+     "known": true,
+     "answer": "上个赛季段位最高是在铂金二1星",
+     "success": 0.0,
+     "context_chars": 20798
+    },
+    {
+     "id": "g1_t1_q04",
+     "player": "g1_t1",
+     "type": "game",
+     "subtype": "hero_winrate",
+     "query": "我拿庄周打排位胜率高不高",
+     "key": 50,
+     "known": true,
+     "answer": "玩家主玩庄周，排位段位最高达到铂金四四星",
+     "success": 0.0,
+     "context_chars": 20798
+    },
+    {
+     "id": "g1_t1_q05",
+     "player": "g1_t1",
+     "type": "game",
+     "subtype": "hero_games",
+     "query": "我蔡文姬玩了几把了",
+     "key": 82,
+     "known": true,
+     "answer": "玩家共玩了284把蔡文姬",
+     "success": 0.0,
+     "context_chars": 20798
+    },
+    {
+     "id": "g1_t1_q06",
+     "player": "g1_t1",
+     "type": "game",
+     "subtype": "recent_top_hero",
+     "query": "近期我最常拿的英雄是谁",
+     "key": "庄周",
+     "known": true,
+     "answer": "近期玩家最常拿的英雄是蔡文姬",
+     "success": 0.0,
+     "context_chars": 20798
+    },
+    {
+     "id": "g1_t1_q07",
+     "player": "g1_t1",
+     "type": "game",
+     "subtype": "main_position",
+     "query": "查下我排位最常选的位置",
+     "key": "游走",
+     "known": true,
+     "answer": "玩家排位最常选的位置是游走",
+     "success": 1.0,
+     "context_chars": 20798
+    },
+    {
+     "id": "g1_t1_q08",
+     "player": "g1_t1",
+     "type": "game",
+     "subtype": "last_season_games",
+     "query": "统计一下上赛季我的排位局数",
+     "key": 141,
+     "known": false,
+     "answer": "无法获取",
+     "success": 0.0,
+     "context_chars": 20798
+    },
+    {
+     "id": "g1_t1_q09",
+     "player": "g1_t1",
+     "type": "game",
+     "subtype": "longest_losing_streak",
+     "query": "我历史上最多连输过几场排位",
+     "key": 8,
+     "known": true,
+     "answer": "最多连输过22场",
+     "success": 0.0,
+     "context_chars": 20798
+    },
+    {
+     "id": "g1_t1_q10",
+     "player": "g1_t1",
+     "type": "link",
+     "subtype": "link_promotion",
+     "query": "首次上钻石那天我跟你说了啥",
+     "key": [
+      "部长",
+      "摄影社"
+     ],
+     "known": true,
+     "answer": "首次上钻石那天你跟我说了恭喜，并且祝贺我第一次钻石。",
+     "success": 0.0,
+     "context_chars": 20798
+    },
+    {
+     "id": "g1_t1_q11",
+     "player": "g1_t1",
+     "type": "link",
+     "subtype": "link_streak",
+     "query": "我连败纪录那几天咱俩聊的是啥",
+     "key": [
+      "屏幕"
+     ],
+     "known": true,
+     "answer": "玩家在2026-06-06聊到自己第一次上钻石的事情，之后聊到自己被室友小婷开始玩王者荣耀，以及开学后开学第一周会计课好难的事情。",
+     "success": 0.0,
+     "context_chars": 20798
+    },
+    {
+     "id": "g1_t1_q12",
+     "player": "g1_t1",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我学的是什么专业来着？",
+     "key": [
+      "会计"
+     ],
+     "known": false,
+     "answer": "null",
+     "success": 0.0,
+     "context_chars": 20798
+    },
+    {
+     "id": "g1_t1_q13",
+     "player": "g1_t1",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我室友叫啥？",
+     "key": [
+      "小婷"
+     ],
+     "known": true,
+     "answer": "玩家的室友叫小婷。",
+     "success": 1.0,
+     "context_chars": 20798
+    },
+    {
+     "id": "g1_t1_q14",
+     "player": "g1_t1",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我老家是哪里的？",
+     "key": [
+      "宜昌"
+     ],
+     "known": false,
+     "answer": "无法从提供的信息中得知玩家的家乡",
+     "success": 0.0,
+     "context_chars": 20798
+    },
+    {
+     "id": "g1_t1_q15",
+     "player": "g1_t1",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我暑假在哪打的工？",
+     "key": [
+      "奶茶店"
+     ],
+     "known": true,
+     "answer": "玩家在宜昌的奶茶店打工。",
+     "success": 1.0,
+     "context_chars": 20798
+    },
+    {
+     "id": "g1_t1_q16",
+     "player": "g1_t1",
+     "type": "promise",
+     "subtype": "promise",
+     "query": "你说等我庄周练熟了陪我干嘛？",
+     "key": [
+      "回放"
+     ],
+     "known": true,
+     "answer": "陪玩家一起看对局回放",
+     "success": 1.0,
+     "context_chars": 20798
+    },
+    {
+     "id": "g1_t1_q17",
+     "player": "g1_t1",
+     "type": "promise",
+     "subtype": "promise",
+     "query": "开学前你答应提醒我什么事？",
+     "key": [
+      "战令"
+     ],
+     "known": true,
+     "answer": "助手确实说过要提醒玩家把战令等级刷满。",
+     "success": 1.0,
+     "context_chars": 20798
+    },
+    {
+     "id": "g1_t1_q18",
+     "player": "g1_t1",
+     "type": "negative",
+     "subtype": "negative",
+     "query": "你是不是说过要教我玩马超？",
+     "key": [],
+     "known": false,
+     "answer": "助手没说过要教玩家玩马超。",
+     "success": 1.0,
+     "context_chars": 20798
+    },
+    {
+     "id": "g1_t1_q19",
+     "player": "g1_t1",
+     "type": "negative",
+     "subtype": "negative",
+     "query": "我跟你讲过我男朋友的事吗？",
+     "key": [],
+     "known": false,
+     "answer": "未找到关于你男朋友的信息",
+     "success": 1.0,
+     "context_chars": 20798
+    },
+    {
+     "id": "g1_t2_q01",
+     "player": "g1_t2",
+     "type": "game",
+     "subtype": "current_rank",
+     "query": "最近排位打到啥段了我",
+     "key": "铂金一",
+     "known": true,
+     "answer": "最近排位打到钻石五1星",
+     "success": 0.0,
+     "context_chars": 23128
+    },
+    {
+     "id": "g1_t2_q02",
+     "player": "g1_t2",
+     "type": "game",
+     "subtype": "season_peak",
+     "query": "这赛季我段位最高的时候是啥",
+     "key": "钻石五",
+     "known": true,
+     "answer": "这赛季最高段位是钻石五1星",
+     "success": 1.0,
+     "context_chars": 23128
+    },
+    {
+     "id": "g1_t2_q03",
+     "player": "g1_t2",
+     "type": "game",
+     "subtype": "last_season_peak",
+     "query": "上个赛季我最高到过什么段",
+     "key": "铂金一",
+     "known": true,
+     "answer": "上个赛季最高到过钻石五1星",
+     "success": 0.0,
+     "context_chars": 23128
+    },
+    {
+     "id": "g1_t2_q04",
+     "player": "g1_t2",
+     "type": "game",
+     "subtype": "hero_winrate",
+     "query": "嬴政我玩得胜率咋样了",
+     "key": 60,
+     "known": true,
+     "answer": "最新的状态是钻石五4星",
+     "success": 0.0,
+     "context_chars": 23128
+    },
+    {
+     "id": "g1_t2_q05",
+     "player": "g1_t2",
+     "type": "game",
+     "subtype": "hero_games",
+     "query": "我用王昭君打了多少局",
+     "key": 68,
+     "known": true,
+     "answer": "玩家共打了1238局",
+     "success": 0.0,
+     "context_chars": 23128
+    },
+    {
+     "id": "g1_t2_q06",
+     "player": "g1_t2",
+     "type": "game",
+     "subtype": "recent_top_hero",
+     "query": "这个月我玩最多的英雄是啥",
+     "key": "嬴政",
+     "known": true,
+     "answer": "这个月玩家玩最多的英雄是嬴政",
+     "success": 1.0,
+     "context_chars": 23128
+    },
+    {
+     "id": "g1_t2_q07",
+     "player": "g1_t2",
+     "type": "game",
+     "subtype": "main_position",
+     "query": "我打得最多的是哪个分路",
+     "key": "中路",
+     "known": true,
+     "answer": "嬴政（打野）",
+     "success": 0.0,
+     "context_chars": 23128
+    },
+    {
+     "id": "g1_t2_q08",
+     "player": "g1_t2",
+     "type": "game",
+     "subtype": "last_season_games",
+     "query": "上个赛季我排位打了多少场",
+     "key": 165,
+     "known": true,
+     "answer": "最新的排位记录显示玩家上个赛季打了超过200场",
+     "success": 0.0,
+     "context_chars": 23128
+    },
+    {
+     "id": "g1_t2_q09",
+     "player": "g1_t2",
+     "type": "game",
+     "subtype": "longest_losing_streak",
+     "query": "说说我最长的一次连跪有多少局",
+     "key": 7,
+     "known": true,
+     "answer": "最长的一次连跪有 13 局。发生在 2026-04-16 22:50",
+     "success": 0.0,
+     "context_chars": 23128
+    },
+    {
+     "id": "g1_t2_q10",
+     "player": "g1_t2",
+     "type": "link",
+     "subtype": "link_promotion",
+     "query": "第一次打到铂金那天我那边在发生什么事",
+     "key": [
+      "追尾",
+      "保险杠"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "context_chars": 23128
+    },
+    {
+     "id": "g1_t2_q11",
+     "player": "g1_t2",
+     "type": "link",
+     "subtype": "link_streak",
+     "query": "我最长连跪那会儿跟你聊什么了",
+     "key": [
+      "骨折",
+      "钢板"
+     ],
+     "known": true,
+     "answer": "你最长连跪的那会儿跟我聊了你上钻石的事情。",
+     "success": 0.0,
+     "context_chars": 23128
+    },
+    {
+     "id": "g1_t2_q12",
+     "player": "g1_t2",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我是开什么车的？",
+     "key": [
+      "出租车",
+      "出租"
+     ],
+     "known": false,
+     "answer": "null",
+     "success": 0.0,
+     "context_chars": 23128
+    },
+    {
+     "id": "g1_t2_q13",
+     "player": "g1_t2",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我儿子叫什么？",
+     "key": [
+      "豪豪"
+     ],
+     "known": true,
+     "answer": "你儿子叫豪豪。",
+     "success": 1.0,
+     "context_chars": 23128
+    },
+    {
+     "id": "g1_t2_q14",
+     "player": "g1_t2",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我老婆是做啥的？",
+     "key": [
+      "早餐店"
+     ],
+     "known": true,
+     "answer": "玩家的老婆是做早餐店的",
+     "success": 1.0,
+     "context_chars": 23128
+    },
+    {
+     "id": "g1_t2_q15",
+     "player": "g1_t2",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我带儿子去爬的哪座山？",
+     "key": [
+      "华山"
+     ],
+     "known": true,
+     "answer": "华山",
+     "success": 1.0,
+     "context_chars": 23128
+    },
+    {
+     "id": "g1_t2_q16",
+     "player": "g1_t2",
+     "type": "promise",
+     "subtype": "promise",
+     "query": "你说等我张良练顺了陪我干什么？",
+     "key": [
+      "复盘"
+     ],
+     "known": true,
+     "answer": "你答应陪我复盘几场团战。",
+     "success": 1.0,
+     "context_chars": 23128
+    },
+    {
+     "id": "g1_t2_q17",
+     "player": "g1_t2",
+     "type": "promise",
+     "subtype": "promise",
+     "query": "嬴政皮肤那事你答应我啥了？",
+     "key": [
+      "返场"
+     ],
+     "known": true,
+     "answer": "你答应我嬴政皮肤返场那天，我提醒你去看看。",
+     "success": 1.0,
+     "context_chars": 23128
+    },
+    {
+     "id": "g1_t2_q18",
+     "player": "g1_t2",
+     "type": "negative",
+     "subtype": "negative",
+     "query": "你答应过陪我练王昭君连招吗？",
+     "key": [],
+     "known": true,
+     "answer": "你答应过要陪我练王昭君连招",
+     "success": 0.0,
+     "context_chars": 23128
+    },
+    {
+     "id": "g1_t2_q19",
+     "player": "g1_t2",
+     "type": "negative",
+     "subtype": "negative",
+     "query": "我跟你聊过我女儿吗？",
+     "key": [],
+     "known": true,
+     "answer": "你提过你女儿初二了，现在个子都快比你高了。",
+     "success": 0.0,
+     "context_chars": 23128
+    },
+    {
+     "id": "g1_t3_q01",
+     "player": "g1_t3",
+     "type": "game",
+     "subtype": "current_rank",
+     "query": "查一下我现在排位在哪个段",
+     "key": "星耀五",
+     "known": true,
+     "answer": "星耀五5星",
+     "success": 1.0,
+     "context_chars": 20184
+    },
+    {
+     "id": "g1_t3_q02",
+     "player": "g1_t3",
+     "type": "game",
+     "subtype": "season_peak",
+     "query": "这赛季我段位最高的时候是啥",
+     "key": "星耀四",
+     "known": true,
+     "answer": "这赛季段位最高的时候是星耀五1星",
+     "success": 0.0,
+     "context_chars": 20184
+    },
+    {
+     "id": "g1_t3_q03",
+     "player": "g1_t3",
+     "type": "game",
+     "subtype": "last_season_peak",
+     "query": "我上赛季冲到的最高段位是啥",
+     "key": "星耀三",
+     "known": true,
+     "answer": "上赛季最高段位是钻石四5星",
+     "success": 0.0,
+     "context_chars": 20184
+    },
+    {
+     "id": "g1_t3_q04",
+     "player": "g1_t3",
+     "type": "game",
+     "subtype": "hero_winrate",
+     "query": "说说我百里玄策这个英雄的胜率",
+     "key": 53,
+     "known": true,
+     "answer": "百里玄策的胜率变化记录显示，从钻石一5星开始，连胜率逐步提升，最终达到星耀五5星。",
+     "success": 0.0,
+     "context_chars": 20184
+    },
+    {
+     "id": "g1_t3_q05",
+     "player": "g1_t3",
+     "type": "game",
+     "subtype": "hero_games",
+     "query": "我镜玩了几把了",
+     "key": 64,
+     "known": true,
+     "answer": "玩家最近一次玩镜的记录是在2026-09-29 23:34，当时镜的段位是星耀五5星",
+     "success": 0.0,
+     "context_chars": 20184
+    },
+    {
+     "id": "g1_t3_q06",
+     "player": "g1_t3",
+     "type": "game",
+     "subtype": "recent_top_hero",
+     "query": "最近我用得最多的是哪个英雄",
+     "key": "百里玄策",
+     "known": true,
+     "answer": "最近玩家用得最多的是百里玄策",
+     "success": 1.0,
+     "context_chars": 20184
+    },
+    {
+     "id": "g1_t3_q07",
+     "player": "g1_t3",
+     "type": "game",
+     "subtype": "main_position",
+     "query": "一般我都打什么位置啊",
+     "key": "打野",
+     "known": true,
+     "answer": "玩家一般都打打野位置",
+     "success": 1.0,
+     "context_chars": 20184
+    },
+    {
+     "id": "g1_t3_q08",
+     "player": "g1_t3",
+     "type": "game",
+     "subtype": "last_season_games",
+     "query": "统计一下上赛季我的排位局数",
+     "key": 120,
+     "known": true,
+     "answer": "上赛季排位局数为 1449 局",
+     "success": 0.0,
+     "context_chars": 20184
+    },
+    {
+     "id": "g1_t3_q09",
+     "player": "g1_t3",
+     "type": "game",
+     "subtype": "longest_losing_streak",
+     "query": "我排位最长连跪多少把",
+     "key": 6,
+     "known": true,
+     "answer": "玩家排位最长连跪了6/5/6把",
+     "success": 1.0,
+     "context_chars": 20184
+    },
+    {
+     "id": "g1_t3_q10",
+     "player": "g1_t3",
+     "type": "link",
+     "subtype": "link_promotion",
+     "query": "第一次打到星耀那天我那边在发生什么事",
+     "key": [
+      "表白"
+     ],
+     "known": true,
+     "answer": "第一次打到星耀那天是2026-09-28，数值或日期。",
+     "success": 0.0,
+     "context_chars": 20184
+    },
+    {
+     "id": "g1_t3_q11",
+     "player": "g1_t3",
+     "type": "link",
+     "subtype": "link_streak",
+     "query": "我连败纪录那几天咱俩聊的是啥",
+     "key": [
+      "漏水",
+      "天花板"
+     ],
+     "known": true,
+     "answer": "玩家在2026-07-19 15:48 至 2026-07-20 21:34 这几天有连败纪录，期间玩家和助手聊过的内容包括：2026-07-19 15:48 排位 百里玄策（打野）负 5/6/4 钻石二4星→钻石二3星",
+     "success": 0.0,
+     "context_chars": 20184
+    },
+    {
+     "id": "g1_t3_q12",
+     "player": "g1_t3",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我是做什么工作的？",
+     "key": [
+      "程序员",
+      "后端"
+     ],
+     "known": false,
+     "answer": "",
+     "success": 0.0,
+     "context_chars": 20184
+    },
+    {
+     "id": "g1_t3_q13",
+     "player": "g1_t3",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我老家在哪儿？",
+     "key": [
+      "衡阳"
+     ],
+     "known": false,
+     "answer": "无法从提供的信息中得知玩家的家乡所在地。",
+     "success": 0.0,
+     "context_chars": 20184
+    },
+    {
+     "id": "g1_t3_q14",
+     "player": "g1_t3",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "老三跟我是什么关系？",
+     "key": [
+      "发小"
+     ],
+     "known": true,
+     "answer": "老三是玩家的朋友，他们从小一起长大。",
+     "success": 0.0,
+     "context_chars": 20184
+    },
+    {
+     "id": "g1_t3_q15",
+     "player": "g1_t3",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "老三后来开了家什么店？",
+     "key": [
+      "米粉店"
+     ],
+     "known": true,
+     "answer": "老三后来开了家米粉店",
+     "success": 1.0,
+     "context_chars": 20184
+    },
+    {
+     "id": "g1_t3_q16",
+     "player": "g1_t3",
+     "type": "promise",
+     "subtype": "promise",
+     "query": "你之前说等我镜练熟了陪我复盘啥？",
+     "key": [
+      "打野路线"
+     ],
+     "known": true,
+     "answer": "你之前答应等你镜练熟了陪你看复盘打野路线",
+     "success": 1.0,
+     "context_chars": 20184
+    },
+    {
+     "id": "g1_t3_q17",
+     "player": "g1_t3",
+     "type": "promise",
+     "subtype": "promise",
+     "query": "这个赛季结束前你说要提醒我干什么？",
+     "key": [
+      "冲星耀"
+     ],
+     "known": true,
+     "answer": "提醒我冲星耀",
+     "success": 1.0,
+     "context_chars": 20184
+    },
+    {
+     "id": "g1_t3_q18",
+     "player": "g1_t3",
+     "type": "negative",
+     "subtype": "negative",
+     "query": "你答应过帮我练娜可露露吗？",
+     "key": [],
+     "known": false,
+     "answer": "",
+     "success": 1.0,
+     "context_chars": 20184
+    },
+    {
+     "id": "g1_t3_q19",
+     "player": "g1_t3",
+     "type": "negative",
+     "subtype": "negative",
+     "query": "我跟你说过我办健身卡的事吗？",
+     "key": [],
+     "known": false,
+     "answer": "未提及办健身卡的事",
+     "success": 1.0,
+     "context_chars": 20184
+    },
+    {
+     "id": "g1_t4_q01",
+     "player": "g1_t4",
+     "type": "game",
+     "subtype": "current_rank",
+     "query": "跟我说下我现在的段位呗",
+     "key": "钻石四",
+     "known": true,
+     "answer": "你现在钻石五5星",
+     "success": 0.0,
+     "context_chars": 18855
+    },
+    {
+     "id": "g1_t4_q02",
+     "player": "g1_t4",
+     "type": "game",
+     "subtype": "season_peak",
+     "query": "本赛季我最高到过哪个段位",
+     "key": "钻石四",
+     "known": true,
+     "answer": "钻石五5星",
+     "success": 0.0,
+     "context_chars": 18855
+    },
+    {
+     "id": "g1_t4_q03",
+     "player": "g1_t4",
+     "type": "game",
+     "subtype": "last_season_peak",
+     "query": "说说我上个赛季的最高段位呗",
+     "key": "钻石四",
+     "known": true,
+     "answer": "上个赛季最高段位是钻石五5星",
+     "success": 0.0,
+     "context_chars": 18855
+    },
+    {
+     "id": "g1_t4_q04",
+     "player": "g1_t4",
+     "type": "game",
+     "subtype": "hero_winrate",
+     "query": "我的兰陵王胜率是多少",
+     "key": 56,
+     "known": true,
+     "answer": "助手记录中，兰陵王的胜率最高达到钻石五5星",
+     "success": 0.0,
+     "context_chars": 18855
+    },
+    {
+     "id": "g1_t4_q05",
+     "player": "g1_t4",
+     "type": "game",
+     "subtype": "hero_games",
+     "query": "我用澜打了多少局",
+     "key": 73,
+     "known": true,
+     "answer": "最新的记录显示玩家用澜打了1000多局",
+     "success": 0.0,
+     "context_chars": 18855
+    },
+    {
+     "id": "g1_t4_q06",
+     "player": "g1_t4",
+     "type": "game",
+     "subtype": "recent_top_hero",
+     "query": "我最近一个月主要在玩谁啊",
+     "key": "镜",
+     "known": true,
+     "answer": "最近一个月主要在玩镜",
+     "success": 1.0,
+     "context_chars": 18855
+    },
+    {
+     "id": "g1_t4_q07",
+     "player": "g1_t4",
+     "type": "game",
+     "subtype": "main_position",
+     "query": "我算是主玩哪个位置的",
+     "key": "打野",
+     "known": true,
+     "answer": "玩家主玩的是打野位置",
+     "success": 1.0,
+     "context_chars": 18855
+    },
+    {
+     "id": "g1_t4_q08",
+     "player": "g1_t4",
+     "type": "game",
+     "subtype": "last_season_games",
+     "query": "说下我上个赛季打的排位总场次",
+     "key": 127,
+     "known": true,
+     "answer": "上个赛季排位总场次为2026-09-18 22:43 排位 镜（打野）胜 6/5/6 钻石五5星→钻石五4星",
+     "success": 0.0,
+     "context_chars": 18855
+    },
+    {
+     "id": "g1_t4_q09",
+     "player": "g1_t4",
+     "type": "game",
+     "subtype": "longest_losing_streak",
+     "query": "我最高连败纪录是几局",
+     "key": 6,
+     "known": true,
+     "answer": "最高连败纪录是6局",
+     "success": 1.0,
+     "context_chars": 18855
+    },
+    {
+     "id": "g1_t4_q10",
+     "player": "g1_t4",
+     "type": "link",
+     "subtype": "link_promotion",
+     "query": "首次上钻石那天我跟你说了啥",
+     "key": [
+      "作文比赛",
+      "一等奖"
+     ],
+     "known": true,
+     "answer": "首次上钻石那天你跟助手说了：镜（打野）胜 9/4/8 MVP 钻石五1星→钻石五2星",
+     "success": 0.0,
+     "context_chars": 18855
+    },
+    {
+     "id": "g1_t4_q11",
+     "player": "g1_t4",
+     "type": "link",
+     "subtype": "link_streak",
+     "query": "最长连败那阵子我跟你说过啥",
+     "key": [
+      "报到"
+     ],
+     "known": false,
+     "answer": "未找到相关信息",
+     "success": 0.0,
+     "context_chars": 18855
+    },
+    {
+     "id": "g1_t4_q12",
+     "player": "g1_t4",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我考上的是哪个城市的大学？",
+     "key": [
+      "南京"
+     ],
+     "known": true,
+     "answer": "南京",
+     "success": 1.0,
+     "context_chars": 18855
+    },
+    {
+     "id": "g1_t4_q13",
+     "player": "g1_t4",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我大学学的什么专业？",
+     "key": [
+      "计算机"
+     ],
+     "known": true,
+     "answer": "玩家大学学的专业是计算机专业。",
+     "success": 1.0,
+     "context_chars": 18855
+    },
+    {
+     "id": "g1_t4_q14",
+     "player": "g1_t4",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "小周跟我什么关系？",
+     "key": [
+      "同桌"
+     ],
+     "known": true,
+     "answer": "小周是玩家的同桌",
+     "success": 1.0,
+     "context_chars": 18855
+    },
+    {
+     "id": "g1_t4_q15",
+     "player": "g1_t4",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "小周后来去哪上大学了？",
+     "key": [
+      "成都"
+     ],
+     "known": true,
+     "answer": "南京",
+     "success": 0.0,
+     "context_chars": 18855
+    },
+    {
+     "id": "g1_t4_q16",
+     "player": "g1_t4",
+     "type": "promise",
+     "subtype": "promise",
+     "query": "你说我高考完要陪我练什么？",
+     "key": [
+      "连招"
+     ],
+     "known": true,
+     "answer": "你说要陪我练兰陵王",
+     "success": 0.0,
+     "context_chars": 18855
+    },
+    {
+     "id": "g1_t4_q17",
+     "player": "g1_t4",
+     "type": "promise",
+     "subtype": "promise",
+     "query": "暑假结束前你说要提醒我干嘛？",
+     "key": [
+      "碎片"
+     ],
+     "known": true,
+     "answer": "提醒我把镜的皮肤碎片兑了",
+     "success": 1.0,
+     "context_chars": 18855
+    },
+    {
+     "id": "g1_t4_q18",
+     "player": "g1_t4",
+     "type": "negative",
+     "subtype": "negative",
+     "query": "你是不是说过要帮我盯澜的新皮肤上架？",
+     "key": [],
+     "known": false,
+     "answer": "助手没说过要帮你盯澜的新皮肤上架。",
+     "success": 1.0,
+     "context_chars": 18855
+    },
+    {
+     "id": "g1_t4_q19",
+     "player": "g1_t4",
+     "type": "negative",
+     "subtype": "negative",
+     "query": "我跟你讲过我打篮球的事吗？",
+     "key": [],
+     "known": false,
+     "answer": "未找到关于玩家打篮球的相关记录。",
+     "success": 1.0,
+     "context_chars": 18855
+    },
+    {
+     "id": "g1_t5_q01",
+     "player": "g1_t5",
+     "type": "game",
+     "subtype": "current_rank",
+     "query": "我如今卡在什么段位啊",
+     "key": "钻石三",
+     "known": true,
+     "answer": "你现在在钻石三1星",
+     "success": 1.0,
+     "context_chars": 17309
+    },
+    {
+     "id": "g1_t5_q02",
+     "player": "g1_t5",
+     "type": "game",
+     "subtype": "season_peak",
+     "query": "这赛季我段位最高的时候是啥",
+     "key": "钻石三",
+     "known": true,
+     "answer": "这赛季段位最高的时候是钻石五",
+     "success": 0.0,
+     "context_chars": 17309
+    },
+    {
+     "id": "g1_t5_q03",
+     "player": "g1_t5",
+     "type": "game",
+     "subtype": "last_season_peak",
+     "query": "我上赛季冲到的最高段位是啥",
+     "key": "钻石二",
+     "known": true,
+     "answer": "钻石四5星",
+     "success": 0.0,
+     "context_chars": 17309
+    },
+    {
+     "id": "g1_t5_q04",
+     "player": "g1_t5",
+     "type": "game",
+     "subtype": "hero_winrate",
+     "query": "查一下我夏洛特的胜率呗",
+     "key": 62,
+     "known": true,
+     "answer": "最新的胜率为钻石三1星",
+     "success": 0.0,
+     "context_chars": 17309
+    },
+    {
+     "id": "g1_t5_q05",
+     "player": "g1_t5",
+     "type": "game",
+     "subtype": "hero_games",
+     "query": "我刘备到底玩过多少盘啊",
+     "key": 54,
+     "known": true,
+     "answer": "玩家共进行了1236盘对局，使用刘备英雄",
+     "success": 0.0,
+     "context_chars": 17309
+    },
+    {
+     "id": "g1_t5_q06",
+     "player": "g1_t5",
+     "type": "game",
+     "subtype": "recent_top_hero",
+     "query": "说说我这阵子最常用的英雄",
+     "key": "夏洛特",
+     "known": true,
+     "answer": "这阵子最常用的英雄是夏洛特。",
+     "success": 1.0,
+     "context_chars": 17309
+    },
+    {
+     "id": "g1_t5_q07",
+     "player": "g1_t5",
+     "type": "game",
+     "subtype": "main_position",
+     "query": "我的主位置是什么",
+     "key": "对抗路",
+     "known": true,
+     "answer": "对抗路",
+     "success": 1.0,
+     "context_chars": 17309
+    },
+    {
+     "id": "g1_t5_q08",
+     "player": "g1_t5",
+     "type": "game",
+     "subtype": "last_season_games",
+     "query": "上赛季我一共排了几把",
+     "key": 125,
+     "known": true,
+     "answer": "上赛季玩家一共排了2026-06-06 21:17 排位 刘备（对抗路）胜 6/5/9 钻石四1星→钻石五5星",
+     "success": 0.0,
+     "context_chars": 17309
+    },
+    {
+     "id": "g1_t5_q09",
+     "player": "g1_t5",
+     "type": "game",
+     "subtype": "longest_losing_streak",
+     "query": "我最多连着输了几把啊",
+     "key": 5,
+     "known": true,
+     "answer": "玩家最多连输了7把。",
+     "success": 0.0,
+     "context_chars": 17309
+    },
+    {
+     "id": "g1_t5_q10",
+     "player": "g1_t5",
+     "type": "link",
+     "subtype": "link_streak",
+     "query": "连输最多的那段日子我都在干嘛",
+     "key": [
+      "装修公司",
+      "瓷砖"
+     ],
+     "known": true,
+     "answer": "连输最多的那段日子，玩家都在玩王者荣耀，具体来说是在2026-07-08 22:58 时，从钻石五4星掉到了钻石三1星。",
+     "success": 0.0,
+     "context_chars": 17309
+    },
+    {
+     "id": "g1_t5_q11",
+     "player": "g1_t5",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我是教什么的老师？",
+     "key": [
+      "体育老师",
+      "体育"
+     ],
+     "known": true,
+     "answer": "你是体育老师",
+     "success": 1.0,
+     "context_chars": 17309
+    },
+    {
+     "id": "g1_t5_q12",
+     "player": "g1_t5",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我家狗叫啥名字？",
+     "key": [
+      "可乐"
+     ],
+     "known": false,
+     "answer": "不清楚玩家家的狗名字",
+     "success": 0.0,
+     "context_chars": 17309
+    },
+    {
+     "id": "g1_t5_q13",
+     "player": "g1_t5",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我在哪个城市工作？",
+     "key": [
+      "济南"
+     ],
+     "known": false,
+     "answer": "无法从提供的信息中得知",
+     "success": 0.0,
+     "context_chars": 17309
+    },
+    {
+     "id": "g1_t5_q14",
+     "player": "g1_t5",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我姐在青岛是干什么的？",
+     "key": [
+      "民宿"
+     ],
+     "known": true,
+     "answer": "她姐姐在青岛开民宿",
+     "success": 1.0,
+     "context_chars": 17309
+    },
+    {
+     "id": "g1_t5_q15",
+     "player": "g1_t5",
+     "type": "promise",
+     "subtype": "promise",
+     "query": "你之前说要陪我看刘备的什么来着？",
+     "key": [
+      "出装"
+     ],
+     "known": true,
+     "answer": "你答应过要陪我看刘备的出装怎么配。",
+     "success": 1.0,
+     "context_chars": 17309
+    },
+    {
+     "id": "g1_t5_q16",
+     "player": "g1_t5",
+     "type": "promise",
+     "subtype": "promise",
+     "query": "开学前你答应提醒我配什么？",
+     "key": [
+      "铭文"
+     ],
+     "known": true,
+     "answer": "你答应提醒我配夏洛特的铭文",
+     "success": 1.0,
+     "context_chars": 17309
+    },
+    {
+     "id": "g1_t5_q17",
+     "player": "g1_t5",
+     "type": "negative",
+     "subtype": "negative",
+     "query": "你答应过帮我找老夫子的教学视频吗？",
+     "key": [],
+     "known": false,
+     "answer": "助手没说过要找老夫子的教学视频。",
+     "success": 1.0,
+     "context_chars": 17309
+    },
+    {
+     "id": "g1_t5_q18",
+     "player": "g1_t5",
+     "type": "negative",
+     "subtype": "negative",
+     "query": "我跟你讲过我女朋友的事吗？",
+     "key": [],
+     "known": false,
+     "answer": "未找到关于玩家提到女朋友的信息。",
+     "success": 1.0,
+     "context_chars": 17309
+    },
+    {
+     "id": "g1_t6_q01",
+     "player": "g1_t6",
+     "type": "game",
+     "subtype": "current_rank",
+     "query": "跟我说下我现在的段位呗",
+     "key": "钻石一",
+     "known": true,
+     "answer": "你现在是钻石一1星",
+     "success": 1.0,
+     "context_chars": 23888
+    },
+    {
+     "id": "g1_t6_q02",
+     "player": "g1_t6",
+     "type": "game",
+     "subtype": "season_peak",
+     "query": "本赛季我峰值段位是哪个",
+     "key": "星耀五",
+     "known": true,
+     "answer": "钻石一1星",
+     "success": 0.0,
+     "context_chars": 23888
+    },
+    {
+     "id": "g1_t6_q03",
+     "player": "g1_t6",
+     "type": "game",
+     "subtype": "last_season_peak",
+     "query": "我上赛季冲到的最高段位是啥",
+     "key": "钻石一",
+     "known": true,
+     "answer": "上赛季冲到的最高段位是钻石一1星",
+     "success": 1.0,
+     "context_chars": 23888
+    },
+    {
+     "id": "g1_t6_q04",
+     "player": "g1_t6",
+     "type": "game",
+     "subtype": "hero_winrate",
+     "query": "说说我鲁班大师这个英雄的胜率",
+     "key": 54,
+     "known": true,
+     "answer": "鲁班大师的胜率变化记录如下：钻石二1星时胜率10/2/9，钻石二2星时胜率11/3/11，钻石二3星时胜率10/3/11，钻石二4星时胜率11/3/11，钻石二5星时胜率10/3/11",
+     "success": 0.0,
+     "context_chars": 23888
+    },
+    {
+     "id": "g1_t6_q05",
+     "player": "g1_t6",
+     "type": "game",
+     "subtype": "hero_games",
+     "query": "盾山的总场次我有多少",
+     "key": 96,
+     "known": true,
+     "answer": "玩家的盾山总场次为284场",
+     "success": 0.0,
+     "context_chars": 23888
+    },
+    {
+     "id": "g1_t6_q06",
+     "player": "g1_t6",
+     "type": "game",
+     "subtype": "recent_top_hero",
+     "query": "说说我这阵子最常用的英雄",
+     "key": "鲁班大师",
+     "known": true,
+     "answer": "这阵子玩家最常用的英雄是鲁班大师",
+     "success": 1.0,
+     "context_chars": 23888
+    },
+    {
+     "id": "g1_t6_q07",
+     "player": "g1_t6",
+     "type": "game",
+     "subtype": "main_position",
+     "query": "查下我排位最常选的位置",
+     "key": "游走",
+     "known": true,
+     "answer": "玩家排位最常选的位置是游走",
+     "success": 1.0,
+     "context_chars": 23888
+    },
+    {
+     "id": "g1_t6_q08",
+     "player": "g1_t6",
+     "type": "game",
+     "subtype": "last_season_games",
+     "query": "上个赛季我排位打了多少场",
+     "key": 145,
+     "known": true,
+     "answer": "最新的排位记录显示玩家上个赛季打了超过1000场",
+     "success": 0.0,
+     "context_chars": 23888
+    },
+    {
+     "id": "g1_t6_q09",
+     "player": "g1_t6",
+     "type": "game",
+     "subtype": "longest_losing_streak",
+     "query": "我最高连败纪录是几局",
+     "key": 7,
+     "known": true,
+     "answer": "最高连败纪录是22局",
+     "success": 0.0,
+     "context_chars": 23888
+    },
+    {
+     "id": "g1_t6_q10",
+     "player": "g1_t6",
+     "type": "link",
+     "subtype": "link_promotion",
+     "query": "首次上星耀那天我跟你说了啥",
+     "key": [
+      "分店"
+     ],
+     "known": true,
+     "answer": "首次上星耀那天你跟我说你第一次上星耀，太厉害了。",
+     "success": 0.0,
+     "context_chars": 23888
+    },
+    {
+     "id": "g1_t6_q11",
+     "player": "g1_t6",
+     "type": "link",
+     "subtype": "link_streak",
+     "query": "连输最多的那段日子我都在干嘛",
+     "key": [
+      "差评"
+     ],
+     "known": true,
+     "answer": "连输最多的那段日子，玩家都在美甲店开分店，以及在店里忙的时候在家跟宠物仓鼠豆豆玩。",
+     "success": 0.0,
+     "context_chars": 23888
+    },
+    {
+     "id": "g1_t6_q12",
+     "player": "g1_t6",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我开的是什么店？",
+     "key": [
+      "美甲"
+     ],
+     "known": true,
+     "answer": "美甲店",
+     "success": 1.0,
+     "context_chars": 23888
+    },
+    {
+     "id": "g1_t6_q13",
+     "player": "g1_t6",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我男朋友是做什么工作的？",
+     "key": [
+      "消防员"
+     ],
+     "known": false,
+     "answer": "null",
+     "success": 0.0,
+     "context_chars": 23888
+    },
+    {
+     "id": "g1_t6_q14",
+     "player": "g1_t6",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我养的小宠物是啥？",
+     "key": [
+      "仓鼠",
+      "豆豆"
+     ],
+     "known": true,
+     "answer": "是你养的仓鼠",
+     "success": 1.0,
+     "context_chars": 23888
+    },
+    {
+     "id": "g1_t6_q15",
+     "player": "g1_t6",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我们婚纱照是去哪拍的？",
+     "key": [
+      "三亚"
+     ],
+     "known": true,
+     "answer": "你们婚纱照是去三亚拍的。",
+     "success": 1.0,
+     "context_chars": 23888
+    },
+    {
+     "id": "g1_t6_q16",
+     "player": "g1_t6",
+     "type": "promise",
+     "subtype": "promise",
+     "query": "你说等我牛魔练熟了陪我看什么？",
+     "key": [
+      "开团时机"
+     ],
+     "known": true,
+     "answer": "你答应过陪我看牛魔的开团时机。",
+     "success": 1.0,
+     "context_chars": 23888
+    },
+    {
+     "id": "g1_t6_q17",
+     "player": "g1_t6",
+     "type": "promise",
+     "subtype": "promise",
+     "query": "赛季结算前你说要提醒我领什么？",
+     "key": [
+      "战令皮肤"
+     ],
+     "known": true,
+     "answer": "赛季结算前我提醒你把战令皮肤领了。",
+     "success": 1.0,
+     "context_chars": 23888
+    },
+    {
+     "id": "g1_t6_q18",
+     "player": "g1_t6",
+     "type": "negative",
+     "subtype": "negative",
+     "query": "你答应过陪我练瑶吗？",
+     "key": [],
+     "known": false,
+     "answer": "助手没说过要陪玩家练瑶。",
+     "success": 1.0,
+     "context_chars": 23888
+    },
+    {
+     "id": "g1_t6_q19",
+     "player": "g1_t6",
+     "type": "negative",
+     "subtype": "negative",
+     "query": "我跟你聊过我学车的事吗？",
+     "key": [],
+     "known": false,
+     "answer": "未提及学车相关事宜。",
+     "success": 1.0,
+     "context_chars": 23888
+    },
+    {
+     "id": "g1_t7_q01",
+     "player": "g1_t7",
+     "type": "game",
+     "subtype": "current_rank",
+     "query": "跟我说下我现在的段位呗",
+     "key": "星耀四",
+     "known": true,
+     "answer": "你现在是星耀五1星",
+     "success": 0.0,
+     "context_chars": 25634
+    },
+    {
+     "id": "g1_t7_q02",
+     "player": "g1_t7",
+     "type": "game",
+     "subtype": "season_peak",
+     "query": "你还记得我这赛季打到过的最高段吗",
+     "key": "星耀四",
+     "known": true,
+     "answer": "这赛季打到过的最高段是星耀五1星",
+     "success": 0.0,
+     "context_chars": 25634
+    },
+    {
+     "id": "g1_t7_q03",
+     "player": "g1_t7",
+     "type": "game",
+     "subtype": "last_season_peak",
+     "query": "上个赛季我段位最高是在哪一档",
+     "key": "星耀三",
+     "known": true,
+     "answer": "上个赛季玩家段位最高是在星耀五1星",
+     "success": 0.0,
+     "context_chars": 25634
+    },
+    {
+     "id": "g1_t7_q04",
+     "player": "g1_t7",
+     "type": "game",
+     "subtype": "hero_winrate",
+     "query": "我拿夏洛特打排位胜率高不高",
+     "key": 51,
+     "known": true,
+     "answer": "玩家的排位胜率为星耀五1星",
+     "success": 0.0,
+     "context_chars": 25634
+    },
+    {
+     "id": "g1_t7_q05",
+     "player": "g1_t7",
+     "type": "game",
+     "subtype": "hero_games",
+     "query": "说下我拿杨戬出战的局数",
+     "key": 90,
+     "known": true,
+     "answer": "玩家共进行了143局杨戬出战的局数。",
+     "success": 0.0,
+     "context_chars": 25634
+    },
+    {
+     "id": "g1_t7_q06",
+     "player": "g1_t7",
+     "type": "game",
+     "subtype": "recent_top_hero",
+     "query": "我最近一个月主要在玩谁啊",
+     "key": "夏洛特",
+     "known": true,
+     "answer": "最近一个月玩家主要在玩夏洛特。",
+     "success": 1.0,
+     "context_chars": 25634
+    },
+    {
+     "id": "g1_t7_q07",
+     "player": "g1_t7",
+     "type": "game",
+     "subtype": "main_position",
+     "query": "我打得最多的是哪个分路",
+     "key": "对抗路",
+     "known": true,
+     "answer": "对抗路",
+     "success": 1.0,
+     "context_chars": 25634
+    },
+    {
+     "id": "g1_t7_q08",
+     "player": "g1_t7",
+     "type": "game",
+     "subtype": "last_season_games",
+     "query": "上个赛季我排位打了多少场",
+     "key": 178,
+     "known": true,
+     "answer": "最新的记录显示玩家上个赛季排位打了超过1000场",
+     "success": 0.0,
+     "context_chars": 25634
+    },
+    {
+     "id": "g1_t7_q09",
+     "player": "g1_t7",
+     "type": "game",
+     "subtype": "longest_losing_streak",
+     "query": "说说我最长的一次连跪有多少局",
+     "key": 8,
+     "known": true,
+     "answer": "玩家最长的一次连跪有 20 局。",
+     "success": 0.0,
+     "context_chars": 25634
+    },
+    {
+     "id": "g1_t7_q10",
+     "player": "g1_t7",
+     "type": "link",
+     "subtype": "link_promotion",
+     "query": "你记得我第一次升到星耀那天聊了啥吗",
+     "key": [
+      "教练证"
+     ],
+     "known": true,
+     "answer": "第一次升到星耀是在2026-03-04，那天我们聊了玩家摸到星耀了，这是第一次，然后聊了杨戬在对抗路的稳定性",
+     "success": 0.0,
+     "context_chars": 25634
+    },
+    {
+     "id": "g1_t7_q11",
+     "player": "g1_t7",
+     "type": "link",
+     "subtype": "link_streak",
+     "query": "那次最长的连输期间，我生活里有啥事",
+     "key": [
+      "跑路",
+      "仲裁"
+     ],
+     "known": false,
+     "answer": "无法确定具体的事件，因为没有相关信息显示那次最长的连输期间玩家生活里发生了什么。",
+     "success": 0.0,
+     "context_chars": 25634
+    },
+    {
+     "id": "g1_t7_q12",
+     "player": "g1_t7",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我是干什么工作的？",
+     "key": [
+      "健身教练"
+     ],
+     "known": false,
+     "answer": "null",
+     "success": 0.0,
+     "context_chars": 25634
+    },
+    {
+     "id": "g1_t7_q13",
+     "player": "g1_t7",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我老家是哪儿的？",
+     "key": [
+      "阜阳"
+     ],
+     "known": false,
+     "answer": "无法从提供的信息中得知玩家的家乡所在地。",
+     "success": 0.0,
+     "context_chars": 25634
+    },
+    {
+     "id": "g1_t7_q14",
+     "player": "g1_t7",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "小林在哪上班？",
+     "key": [
+      "银行"
+     ],
+     "known": true,
+     "answer": "小林在银行上班",
+     "success": 1.0,
+     "context_chars": 25634
+    },
+    {
+     "id": "g1_t7_q15",
+     "player": "g1_t7",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我妈来上海我带她去哪玩了？",
+     "key": [
+      "外滩"
+     ],
+     "known": true,
+     "answer": "玩家妈妈来上海时，玩家带她去了外滩。",
+     "success": 1.0,
+     "context_chars": 25634
+    },
+    {
+     "id": "g1_t7_q16",
+     "player": "g1_t7",
+     "type": "promise",
+     "subtype": "promise",
+     "query": "你说等我李信练顺了陪我复盘什么？",
+     "key": [
+      "变身时机"
+     ],
+     "known": true,
+     "answer": "你答应过要等你李信练顺了陪你复盘变身时机。",
+     "success": 1.0,
+     "context_chars": 25634
+    },
+    {
+     "id": "g1_t7_q17",
+     "player": "g1_t7",
+     "type": "promise",
+     "subtype": "promise",
+     "query": "新赛季开打那天你说要提醒我领什么？",
+     "key": [
+      "赛季皮肤"
+     ],
+     "known": true,
+     "answer": "新赛季皮肤",
+     "success": 1.0,
+     "context_chars": 25634
+    },
+    {
+     "id": "g1_t7_q18",
+     "player": "g1_t7",
+     "type": "negative",
+     "subtype": "negative",
+     "query": "你答应过帮我练马超吗？",
+     "key": [],
+     "known": false,
+     "answer": "助手没说过要帮玩家练马超。",
+     "success": 1.0,
+     "context_chars": 25634
+    },
+    {
+     "id": "g1_t7_q19",
+     "player": "g1_t7",
+     "type": "negative",
+     "subtype": "negative",
+     "query": "我跟你说过我买车的事吗？",
+     "key": [],
+     "known": false,
+     "answer": "未提及买车的事",
+     "success": 1.0,
+     "context_chars": 25634
+    },
+    {
+     "id": "g1_t8_q01",
+     "player": "g1_t8",
+     "type": "game",
+     "subtype": "current_rank",
+     "query": "我目前段位是多少",
+     "key": "星耀四",
+     "known": true,
+     "answer": "星耀五5星",
+     "success": 0.0,
+     "context_chars": 15437
+    },
+    {
+     "id": "g1_t8_q02",
+     "player": "g1_t8",
+     "type": "game",
+     "subtype": "season_peak",
+     "query": "这赛季我段位最高的时候是啥",
+     "key": "星耀三",
+     "known": true,
+     "answer": "这赛季段位最高的时候是星耀五5星",
+     "success": 0.0,
+     "context_chars": 15437
+    },
+    {
+     "id": "g1_t8_q03",
+     "player": "g1_t8",
+     "type": "game",
+     "subtype": "last_season_peak",
+     "query": "我上赛季冲到的最高段位是啥",
+     "key": "星耀三",
+     "known": true,
+     "answer": "上赛季冲到的最高段位是星耀五5星",
+     "success": 0.0,
+     "context_chars": 15437
+    },
+    {
+     "id": "g1_t8_q04",
+     "player": "g1_t8",
+     "type": "game",
+     "subtype": "hero_winrate",
+     "query": "我拿女娲打排位胜率高不高",
+     "key": 57,
+     "known": true,
+     "answer": "玩家目前的段位是星耀五5星，使用女娲打排位的胜率较高",
+     "success": 0.0,
+     "context_chars": 15437
+    },
+    {
+     "id": "g1_t8_q05",
+     "player": "g1_t8",
+     "type": "game",
+     "subtype": "hero_games",
+     "query": "嬴政的总场次我有多少",
+     "key": 43,
+     "known": true,
+     "answer": "玩家嬴政的总场次为124场",
+     "success": 0.0,
+     "context_chars": 15437
+    },
+    {
+     "id": "g1_t8_q06",
+     "player": "g1_t8",
+     "type": "game",
+     "subtype": "recent_top_hero",
+     "query": "最近我用得最多的是哪个英雄",
+     "key": "女娲",
+     "known": true,
+     "answer": "最近玩家用得最多的是女娲",
+     "success": 1.0,
+     "context_chars": 15437
+    },
+    {
+     "id": "g1_t8_q07",
+     "player": "g1_t8",
+     "type": "game",
+     "subtype": "main_position",
+     "query": "我算是主玩哪个位置的",
+     "key": "中路",
+     "known": true,
+     "answer": "玩家主玩中路",
+     "success": 1.0,
+     "context_chars": 15437
+    },
+    {
+     "id": "g1_t8_q08",
+     "player": "g1_t8",
+     "type": "game",
+     "subtype": "last_season_games",
+     "query": "上个赛季我排位打了多少场",
+     "key": 71,
+     "known": true,
+     "answer": "上个赛季玩家排位打了1000多场",
+     "success": 0.0,
+     "context_chars": 15437
+    },
+    {
+     "id": "g1_t8_q09",
+     "player": "g1_t8",
+     "type": "game",
+     "subtype": "longest_losing_streak",
+     "query": "查下我排位连续输得最多的一次",
+     "key": 7,
+     "known": true,
+     "answer": "2026-07-17 21:05 排位 女娲（中路）负 6/6/2 星耀五3星→星耀五2星",
+     "success": 0.0,
+     "context_chars": 15437
+    },
+    {
+     "id": "g1_t8_q10",
+     "player": "g1_t8",
+     "type": "link",
+     "subtype": "link_streak",
+     "query": "我最长连跪那会儿跟你聊什么了",
+     "key": [
+      "钱包",
+      "挂失"
+     ],
+     "known": true,
+     "answer": "2026-07-07 21:05 排位 女娲（中路）负 6/6/2 星耀五3星→星耀五2星",
+     "success": 0.0,
+     "context_chars": 15437
+    },
+    {
+     "id": "g1_t8_q11",
+     "player": "g1_t8",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我毕业后做的是什么工作？",
+     "key": [
+      "UI设计"
+     ],
+     "known": true,
+     "answer": "玩家毕业后做的是UI设计工作。",
+     "success": 1.0,
+     "context_chars": 15437
+    },
+    {
+     "id": "g1_t8_q12",
+     "player": "g1_t8",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "阿伟是我什么人？",
+     "key": [
+      "表哥"
+     ],
+     "known": true,
+     "answer": "阿伟是玩家的表哥",
+     "success": 1.0,
+     "context_chars": 15437
+    },
+    {
+     "id": "g1_t8_q13",
+     "player": "g1_t8",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我老家是哪儿的？",
+     "key": [
+      "潮汕"
+     ],
+     "known": true,
+     "answer": "玩家老家在潮汕",
+     "success": 1.0,
+     "context_chars": 15437
+    },
+    {
+     "id": "g1_t8_q14",
+     "player": "g1_t8",
+     "type": "fact",
+     "subtype": "fact",
+     "query": "我后来搬到广州哪个区了？",
+     "key": [
+      "海珠"
+     ],
+     "known": true,
+     "answer": "后来玩家搬到广州海珠区",
+     "success": 1.0,
+     "context_chars": 15437
+    },
+    {
+     "id": "g1_t8_q15",
+     "player": "g1_t8",
+     "type": "promise",
+     "subtype": "promise",
+     "query": "你说要陪我去哪练女娲大招？",
+     "key": [
+      "训练营"
+     ],
+     "known": true,
+     "answer": "助手答应要陪玩家去训练营练女娲大招。",
+     "success": 1.0,
+     "context_chars": 15437
+    },
+    {
+     "id": "g1_t8_q16",
+     "player": "g1_t8",
+     "type": "promise",
+     "subtype": "promise",
+     "query": "女娲会不会被削那事，你说什么时候提醒我？",
+     "key": [
+      "版本更新"
+     ],
+     "known": true,
+     "answer": "助手确实说过会提醒玩家女娲是否被削，最新的提醒时间是在2026-07-07 23:30",
+     "success": 0.0,
+     "context_chars": 15437
+    },
+    {
+     "id": "g1_t8_q17",
+     "player": "g1_t8",
+     "type": "negative",
+     "subtype": "negative",
+     "query": "你答应过帮我查嬴政皮肤什么时候返场吗？",
+     "key": [],
+     "known": false,
+     "answer": "助手没说过要帮玩家查嬴政皮肤返场时间",
+     "success": 1.0,
+     "context_chars": 15437
+    },
+    {
+     "id": "g1_t8_q18",
+     "player": "g1_t8",
+     "type": "negative",
+     "subtype": "negative",
+     "query": "我跟你说过我健身的事吗？",
+     "key": [],
+     "known": false,
+     "answer": "未找到关于健身的相关记录",
+     "success": 1.0,
+     "context_chars": 15437
+    }
+   ],
+   "minutes": 82.4
   }
  }
 }
