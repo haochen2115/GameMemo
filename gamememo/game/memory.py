@@ -29,6 +29,8 @@ class GameMemory:
     def __init__(self, user_id: str, storage_dir: str = "./memory_data", embedder=None,
                  clock: Callable[[], datetime] = datetime.now, **raw_opts):
         self.clock = clock
+        # game attributes (rank, heroes) come from the ledger, not from what was said in chat
+        raw_opts.setdefault("attribute_index", False)
         self.chat = RawMemory(user_id, storage_dir=storage_dir, embedder=embedder, clock=clock, **raw_opts)
         self.ledger = GameLedger()
 
@@ -46,24 +48,34 @@ class GameMemory:
         return sorted((r for r in self.chat.store.active() if r.kind == "turn" and r.created_at.startswith(day)),
                       key=lambda r: r.created_at)
 
+    def describe(self, r: MemoryRecord) -> str:
+        """A chat exchange, with a note when the player's rank claim contradicts the record."""
+        text = self.chat.describe(r)
+        if r.kind == "turn":
+            said = "\n".join(l for l in r.content.splitlines() if l.startswith("玩家"))
+            note = self.ledger.check_claim(said, r.created_at[:10])
+            if note:
+                text += note
+        return text
+
     def context(self, query: str, top_k: int = 8) -> str:
         now = self.clock()
+        days = self.ledger.event_dates(query, now)
+        linked = [(day, self.day_exchanges(day)) for day in days]
+        linked = [(day, ex) for day, ex in linked if ex]
+        if linked:
+            # the question is anchored by a game event: answer from that day's chat
+            return "【问题提到的那一天（由对局记录确定）】\n" + "\n\n".join(
+                f"{day}那天的聊天：\n" + "\n".join(self.describe(r) for r in ex) for day, ex in linked)
         parts = []
         card = self.ledger.card(now)
         if card:
             views = self.ledger.views(query, now)
             parts.append(card + ("\n" + "\n".join(views) if views else "") + "\n" + RECORD_NOTE)
-        linked = []
-        for day in self.ledger.event_dates(query, now):
-            ex = self.day_exchanges(day)
-            if ex:
-                linked.append(f"{day}那天的聊天：\n" + "\n".join(self.chat.describe(r) for r in ex))
-        if linked:
-            parts.append("【问题提到的那一天】\n" + "\n\n".join(linked))
-        recalled = [r for r in self.chat.retrieve(query, top_k=top_k, touch=False)]
+        recalled = self.chat.retrieve(query, top_k=top_k, touch=False)
         if recalled:
-            parts.append("【相关的聊天原话】\n" + "\n".join(self.chat.describe(r) for r in recalled))
+            parts.append("【相关的聊天原话】\n" + "\n".join(self.describe(r) for r in recalled))
         promises = self.chat.pending_promises()
         if promises:
-            parts.append("【你答应过玩家的事】\n" + "\n".join(self.chat.describe(r) for r in promises))
+            parts.append("【你答应过玩家的事】\n" + "\n".join(self.describe(r) for r in promises))
         return "\n\n".join(parts) if parts else "关于这位玩家，你没有任何记录。"

@@ -147,8 +147,8 @@ class GameLedger:
             rec = self.record(now, season=s, ranked_only=True)
             if rec.games:
                 pk = self.peak(now, s)
-                lines.append(f"{label}（{s.name}，{s.start}至{s.end}）排位{rec.games}场，胜率{round(100 * rec.winrate)}%，"
-                             f"最高{rank_name(pk[0])}（{pk[1]}）")
+                lines.append(f"{label}最高段位：{rank_name(pk[0])}（{pk[1]}达到；{s.name}赛季{s.start}至{s.end}）")
+                lines.append(f"{label}排位：{rec.games}场，胜率{round(100 * rec.winrate)}%")
         pk = self.peak(now)
         lines.append(f"有记录以来最高段位：{rank_name(pk[0])}（{pk[1]}）")
         top = self.heroes(now)[:3]
@@ -182,6 +182,38 @@ class GameLedger:
             used = [m["time"][:10] for m in self.until(now) if m["hero"] == h]
             out.append(f"{h}：{rec.text()}；{'，'.join(per)}；第一次用{used[0]}，最近一次{used[-1]}")
         return out
+
+    def rank_on(self, day: str) -> Optional[Tuple[int, int]]:
+        """(lowest, highest) rank the player held on a day, from ranked games."""
+        r = [m for m in self.matches if m["mode"] == "排位" and m["time"][:10] == day]
+        if not r:
+            before = [m for m in self.matches if m["mode"] == "排位" and m["time"][:10] < day]
+            return (before[-1]["rank_after"],) * 2 if before else None
+        vals = [m["rank_before"] for m in r] + [m["rank_after"] for m in r]
+        return min(vals), max(vals)
+
+    def check_claim(self, said: str, day: str) -> Optional[str]:
+        """A note when a rank the player claims on ``day`` is above the record."""
+        from .ontology import TIER_NAMES, parse_ranks
+        claims = parse_ranks(said)
+        if not claims:
+            return None
+        when = datetime.fromisoformat(day + " 23:59")
+        if "上赛季" in said or "上个赛季" in said:
+            s = previous_season(season_of(when))
+            pk = self.peak(when, s) if s else None
+            if not pk:
+                return None
+            truth, label = pk[0], f"上赛季（{s.name}）最高其实是{rank_name(pk[0], stars=False)}"
+        else:
+            pk = self.peak(when)
+            if not pk:
+                return None
+            truth, label = pk[0], f"到那天为止最高其实是{rank_name(pk[0], stars=False)}"
+        top = max(TIER_NAMES.index(t) for t, _ in claims)
+        if top > TIER_NAMES.index(tier_of(truth)):
+            return f"（与系统记录不符：{label}）"
+        return None
 
     def event_dates(self, query: str, now: datetime) -> List[str]:
         """Dates a question anchors to by a game event, e.g. 第一次上钻石那天 / 连输最多那次."""

@@ -44,7 +44,7 @@ def test_ledger_answers_exactly():
     assert led.event_dates("我第一次上钻石那天聊了啥", now) == ["2026-06-02"]
     assert led.event_dates("我连跪最多那次在干嘛", now) == ["2026-06-03"]
     card = led.card(now)
-    assert "当前段位：铂金一" in card and "最长排位连败：3把" in card
+    assert "当前段位：铂金一" in card and "最长排位连败：3把" in card and "本赛季最高段位：钻石五" in card
 
 
 def test_game_memory_links_event_day_to_that_days_chat(tmp_path):
@@ -57,8 +57,22 @@ def test_game_memory_links_event_day_to_that_days_chat(tmp_path):
     gm.ingest_matches([m("2026-06-01 21:00", before=d - 2, after=d - 1), m("2026-06-02 21:00", before=d - 1, after=d)])
     clock["now"] = datetime(2026, 6, 10, 21)
     ctx = gm.context("我第一次上钻石那天跟你说了啥")
-    assert "2026-06-02那天的聊天" in ctx and "面试" in ctx
-    assert "系统记录" in ctx and "当前段位：钻石五" in ctx
+    assert "2026-06-02那天的聊天" in ctx and "面试" in ctx and "火锅" not in ctx  # only that day
+    ctx = gm.context("我现在什么段位")
+    assert "当前段位：钻石五" in ctx and "系统记录" in ctx
+
+
+def test_rank_claims_above_the_record_are_flagged(tmp_path):
+    clock = {"now": datetime(2026, 8, 2, 22)}
+    gm = GameMemory("p", storage_dir=str(tmp_path), clock=lambda: clock["now"])
+    gm.ingest_chat("玩家: 上赛季我可是打到星耀的\n助手: 厉害\n玩家: 这赛季在钻石五\n助手: 加油")
+    d = level_start("钻石", 3)
+    gm.ingest_matches([m("2026-05-01 21:00", before=d - 1, after=d), m("2026-08-01 21:00", before=d - 13, after=d - 12)])
+    clock["now"] = datetime(2026, 9, 1, 21)
+    ctx = gm.context("上赛季我最高到哪")
+    assert "上赛季我可是打到星耀的" in ctx and "与系统记录不符：上赛季（S40）最高其实是钻石三" in ctx
+    assert "上赛季最高段位：钻石三" in ctx
+    assert ctx.count("与系统记录不符") == 1  # 钻石五 is not above the record
 
 
 def test_judge_by_answer_type():
