@@ -1,0 +1,1170 @@
+[
+ {
+  "id": "g1_d1",
+  "position": "中路",
+  "mains_in_order": [
+   "沈梦溪",
+   "安琪拉",
+   "小乔"
+  ],
+  "duo_partner": "阿杰",
+  "chat_days": [
+   {
+    "date": "2026-03-01",
+    "game_summary": "当天3局，2胜1负，用了沈梦溪",
+    "rank_after_that_day": "钻石五",
+    "events": [
+     "首次打到钻石"
+    ],
+    "must_link_topic": true
+   },
+   {
+    "date": "2026-03-15",
+    "game_summary": "当天2局，0胜2负，用了沈梦溪",
+    "rank_after_that_day": "钻石五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-03-17",
+    "game_summary": "当天2局，1胜1负，用了小乔、沈梦溪",
+    "rank_after_that_day": "钻石五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-05-08",
+    "game_summary": "当天2局，1胜1负，用了干将莫邪、沈梦溪",
+    "rank_after_that_day": "钻石五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-05-19",
+    "game_summary": "当天2局，2胜0负，用了安琪拉、海月",
+    "rank_after_that_day": "钻石五",
+    "events": [
+     "最近主玩从沈梦溪换成了安琪拉"
+    ],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-04",
+    "game_summary": "当天2局，0胜2负，用了安琪拉",
+    "rank_after_that_day": "钻石四",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-07",
+    "game_summary": "当天3局，1胜2负，用了孙悟空、安琪拉",
+    "rank_after_that_day": "钻石四",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-28",
+    "game_summary": "当天2局，0胜2负，用了武则天、貂蝉",
+    "rank_after_that_day": "钻石五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-29",
+    "game_summary": "当天6局，3胜3负，用了典韦、小乔、镜",
+    "rank_after_that_day": "钻石五",
+    "events": [
+     "排位连输6把（最长的一次）"
+    ],
+    "must_link_topic": true
+   },
+   {
+    "date": "2026-07-10",
+    "game_summary": "当天3局，1胜2负，用了张良、西施、诸葛亮",
+    "rank_after_that_day": "铂金三",
+    "events": [
+     "最近主玩从安琪拉换成了小乔"
+    ],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-08-02",
+    "game_summary": "当天3局，1胜2负，用了云中君、小乔、海月",
+    "rank_after_that_day": "铂金三",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-08-09",
+    "game_summary": "当天1局，1胜0负，用了米莱狄",
+    "rank_after_that_day": "铂金三",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-08-14",
+    "game_summary": "当天1局，1胜0负，用了小乔",
+    "rank_after_that_day": "铂金三",
+    "events": [],
+    "must_link_topic": false
+   }
+  ],
+  "brag": {
+   "date": "2026-08-02",
+   "true_last_season_peak": "钻石三",
+   "claim": "上赛季（S40）打到了星耀",
+   "claimed_tier": "星耀"
+  }
+ },
+ {
+  "id": "g1_d2",
+  "position": "对抗路",
+  "mains_in_order": [
+   "铠",
+   "吕布",
+   "花木兰"
+  ],
+  "duo_partner": "胖虎",
+  "chat_days": [
+   {
+    "date": "2026-04-04",
+    "game_summary": "当天4局，2胜2负，用了大乔、狂铁、铠、马超",
+    "rank_after_that_day": "钻石三",
+    "events": [
+     "排位连输8把（最长的一次）"
+    ],
+    "must_link_topic": true
+   },
+   {
+    "date": "2026-04-18",
+    "game_summary": "当天4局，1胜3负，用了吕布、夏洛特",
+    "rank_after_that_day": "铂金一",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-04-23",
+    "game_summary": "当天3局，2胜1负，用了吕布、太乙真人、狂铁",
+    "rank_after_that_day": "钻石五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-04-26",
+    "game_summary": "当天5局，2胜3负，用了吕布、蒙恬",
+    "rank_after_that_day": "钻石五",
+    "events": [
+     "最近主玩从铠换成了吕布"
+    ],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-05-10",
+    "game_summary": "当天2局，2胜0负，用了吕布",
+    "rank_after_that_day": "钻石三",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-05-24",
+    "game_summary": "当天3局，2胜1负，用了东皇太一、牛魔、瑶",
+    "rank_after_that_day": "钻石五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-05-26",
+    "game_summary": "当天4局，2胜2负，用了吕布",
+    "rank_after_that_day": "钻石五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-14",
+    "game_summary": "当天2局，1胜1负，用了花木兰",
+    "rank_after_that_day": "钻石五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-24",
+    "game_summary": "当天5局，1胜4负，用了关羽、牛魔、花木兰",
+    "rank_after_that_day": "钻石五",
+    "events": [
+     "最近主玩从吕布换成了花木兰"
+    ],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-25",
+    "game_summary": "当天2局，1胜1负，用了花木兰",
+    "rank_after_that_day": "钻石五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-07-08",
+    "game_summary": "当天3局，1胜2负，用了花木兰",
+    "rank_after_that_day": "钻石四",
+    "events": [
+     "S40赛季结束，最高钻石三，结束时钻石四"
+    ],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-07-13",
+    "game_summary": "当天4局，4胜0负，用了花木兰",
+    "rank_after_that_day": "钻石五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-08-20",
+    "game_summary": "当天2局，1胜1负，用了杨戬、花木兰",
+    "rank_after_that_day": "钻石三",
+    "events": [],
+    "must_link_topic": false
+   }
+  ],
+  "brag": {
+   "date": "2026-08-20",
+   "true_last_season_peak": "钻石三",
+   "claim": "上赛季（S40）打到了星耀",
+   "claimed_tier": "星耀"
+  }
+ },
+ {
+  "id": "g1_t1",
+  "position": "游走",
+  "mains_in_order": [
+   "太乙真人",
+   "蔡文姬",
+   "庄周"
+  ],
+  "duo_partner": null,
+  "chat_days": [
+   {
+    "date": "2026-03-08",
+    "game_summary": "当天5局，1胜4负，用了孙膑、廉颇、杨戬、瑶、花木兰",
+    "rank_after_that_day": "铂金三",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-03-21",
+    "game_summary": "当天2局，2胜0负，用了太乙真人、曹操",
+    "rank_after_that_day": "铂金二",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-04-22",
+    "game_summary": "当天6局，4胜2负，用了李信、瑶、蔡文姬",
+    "rank_after_that_day": "黄金三",
+    "events": [
+     "最近主玩从太乙真人换成了蔡文姬"
+    ],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-06",
+    "game_summary": "当天6局，5胜1负，用了刘备、庄周、蔡文姬、钟馗",
+    "rank_after_that_day": "钻石五",
+    "events": [
+     "首次打到钻石"
+    ],
+    "must_link_topic": true
+   },
+   {
+    "date": "2026-06-12",
+    "game_summary": "当天4局，2胜2负，用了庄周、廉颇、李信",
+    "rank_after_that_day": "铂金二",
+    "events": [
+     "排位连输8把（最长的一次）"
+    ],
+    "must_link_topic": true
+   },
+   {
+    "date": "2026-06-23",
+    "game_summary": "当天4局，2胜2负，用了大乔、庄周、马超",
+    "rank_after_that_day": "铂金一",
+    "events": [
+     "最近主玩从蔡文姬换成了庄周"
+    ],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-07-04",
+    "game_summary": "当天6局，4胜2负，用了大乔、庄周、朵莉亚、钟馗",
+    "rank_after_that_day": "钻石五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-07-13",
+    "game_summary": "当天3局，1胜2负，用了孙膑、庄周、廉颇",
+    "rank_after_that_day": "铂金三",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-07-16",
+    "game_summary": "当天2局，1胜1负，用了东皇太一、庄周",
+    "rank_after_that_day": "铂金三",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-08-10",
+    "game_summary": "当天2局，2胜0负，用了东皇太一、庄周",
+    "rank_after_that_day": "铂金二",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-08-12",
+    "game_summary": "当天5局，3胜2负，用了太乙真人、孙膑、庄周",
+    "rank_after_that_day": "铂金二",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-09-22",
+    "game_summary": "当天3局，0胜3负，用了庄周、蔡文姬",
+    "rank_after_that_day": "黄金一",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-09-27",
+    "game_summary": "当天5局，4胜1负，用了孙膑、庄周、程咬金、铠",
+    "rank_after_that_day": "铂金四",
+    "events": [],
+    "must_link_topic": false
+   }
+  ],
+  "brag": {
+   "date": "2026-08-10",
+   "true_last_season_peak": "钻石五",
+   "claim": "上赛季（S40）打到了星耀",
+   "claimed_tier": "星耀"
+  }
+ },
+ {
+  "id": "g1_t2",
+  "position": "中路",
+  "mains_in_order": [
+   "王昭君",
+   "张良",
+   "嬴政"
+  ],
+  "duo_partner": null,
+  "chat_days": [
+   {
+    "date": "2026-03-01",
+    "game_summary": "当天6局，4胜2负，用了妲己、孙悟空、王昭君",
+    "rank_after_that_day": "铂金四",
+    "events": [
+     "首次打到铂金"
+    ],
+    "must_link_topic": true
+   },
+   {
+    "date": "2026-03-30",
+    "game_summary": "当天4局，2胜2负，用了王昭君、百里玄策、阿轲",
+    "rank_after_that_day": "铂金二",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-04-16",
+    "game_summary": "当天2局，0胜2负，用了王昭君",
+    "rank_after_that_day": "铂金四",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-04-18",
+    "game_summary": "当天6局，4胜2负，用了上官婉儿、干将莫邪、王昭君",
+    "rank_after_that_day": "铂金四",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-04-26",
+    "game_summary": "当天3局，2胜1负，用了兰陵王、张良",
+    "rank_after_that_day": "铂金三",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-05-08",
+    "game_summary": "当天3局，0胜3负，用了孙悟空、张良",
+    "rank_after_that_day": "铂金三",
+    "events": [
+     "最近主玩从王昭君换成了张良"
+    ],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-15",
+    "game_summary": "当天3局，1胜2负，用了嬴政",
+    "rank_after_that_day": "铂金三",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-19",
+    "game_summary": "当天6局，2胜4负，用了兰陵王、嬴政、澜",
+    "rank_after_that_day": "铂金三",
+    "events": [
+     "最近主玩从张良换成了嬴政"
+    ],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-21",
+    "game_summary": "当天2局，1胜1负，用了嬴政",
+    "rank_after_that_day": "铂金三",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-07-26",
+    "game_summary": "当天3局，2胜1负，用了嬴政、百里玄策、米莱狄",
+    "rank_after_that_day": "铂金四",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-08-11",
+    "game_summary": "当天6局，6胜0负，用了嬴政、甄姬、貂蝉",
+    "rank_after_that_day": "钻石五",
+    "events": [
+     "首次打到钻石"
+    ],
+    "must_link_topic": true
+   },
+   {
+    "date": "2026-09-07",
+    "game_summary": "当天4局，2胜2负，用了不知火舞、嬴政、沈梦溪、王昭君",
+    "rank_after_that_day": "铂金一",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-09-27",
+    "game_summary": "当天5局，4胜1负，用了妲己、嬴政、小乔、张良、赵云",
+    "rank_after_that_day": "铂金一",
+    "events": [
+     "排位连输7把（最长的一次）"
+    ],
+    "must_link_topic": true
+   }
+  ],
+  "brag": {
+   "date": "2026-09-07",
+   "true_last_season_peak": "铂金一",
+   "claim": "上赛季（S40）打到了钻石",
+   "claimed_tier": "钻石"
+  }
+ },
+ {
+  "id": "g1_t3",
+  "position": "打野",
+  "mains_in_order": [
+   "裴擒虎",
+   "镜",
+   "百里玄策"
+  ],
+  "duo_partner": "老三",
+  "chat_days": [
+   {
+    "date": "2026-03-22",
+    "game_summary": "当天1局，0胜1负，用了廉颇",
+    "rank_after_that_day": "钻石三",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-03-28",
+    "game_summary": "当天2局，2胜0负，用了裴擒虎",
+    "rank_after_that_day": "钻石二",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-04-11",
+    "game_summary": "当天6局，5胜1负，用了兰陵王、澜、裴擒虎",
+    "rank_after_that_day": "钻石三",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-04-14",
+    "game_summary": "当天4局，2胜2负，用了裴擒虎、镜",
+    "rank_after_that_day": "钻石三",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-04-21",
+    "game_summary": "当天2局，1胜1负，用了百里玄策、裴擒虎",
+    "rank_after_that_day": "钻石二",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-05-13",
+    "game_summary": "当天3局，0胜3负，用了钟馗、镜",
+    "rank_after_that_day": "钻石二",
+    "events": [
+     "最近主玩从裴擒虎换成了镜"
+    ],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-05-30",
+    "game_summary": "当天3局，1胜2负，用了裴擒虎、镜",
+    "rank_after_that_day": "钻石一",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-04",
+    "game_summary": "当天3局，2胜1负，用了娜可露露、镜",
+    "rank_after_that_day": "钻石一",
+    "events": [
+     "首次打到星耀"
+    ],
+    "must_link_topic": true
+   },
+   {
+    "date": "2026-07-07",
+    "game_summary": "当天4局，1胜3负，用了云中君、典韦、盾山",
+    "rank_after_that_day": "星耀五",
+    "events": [
+     "最近主玩从镜换成了百里玄策",
+     "排位连输6把（最长的一次）"
+    ],
+    "must_link_topic": true
+   },
+   {
+    "date": "2026-07-21",
+    "game_summary": "当天2局，1胜1负，用了百里玄策",
+    "rank_after_that_day": "钻石二",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-09-06",
+    "game_summary": "当天6局，3胜3负，用了百里玄策、蔡文姬、裴擒虎",
+    "rank_after_that_day": "钻石一",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-09-07",
+    "game_summary": "当天2局，0胜2负，用了东皇太一、百里玄策",
+    "rank_after_that_day": "钻石一",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-09-09",
+    "game_summary": "当天1局，0胜1负，用了太乙真人",
+    "rank_after_that_day": "钻石一",
+    "events": [],
+    "must_link_topic": false
+   }
+  ],
+  "brag": {
+   "date": "2026-07-21",
+   "true_last_season_peak": "星耀三",
+   "claim": "上赛季（S40）打到了王者",
+   "claimed_tier": "王者"
+  }
+ },
+ {
+  "id": "g1_t4",
+  "position": "打野",
+  "mains_in_order": [
+   "澜",
+   "兰陵王",
+   "镜"
+  ],
+  "duo_partner": "小周",
+  "chat_days": [
+   {
+    "date": "2026-03-01",
+    "game_summary": "当天1局，1胜0负，用了澜",
+    "rank_after_that_day": "铂金二",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-03-14",
+    "game_summary": "当天3局，2胜1负，用了澜",
+    "rank_after_that_day": "铂金一",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-03-22",
+    "game_summary": "当天4局，3胜1负，用了澜、裴擒虎",
+    "rank_after_that_day": "钻石五",
+    "events": [
+     "首次打到钻石"
+    ],
+    "must_link_topic": true
+   },
+   {
+    "date": "2026-03-31",
+    "game_summary": "当天5局，3胜2负，用了亚瑟、暃、澜",
+    "rank_after_that_day": "钻石五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-05-04",
+    "game_summary": "当天3局，1胜2负，用了曹操、澜、韩信",
+    "rank_after_that_day": "钻石五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-05-19",
+    "game_summary": "当天2局，2胜0负，用了兰陵王",
+    "rank_after_that_day": "钻石四",
+    "events": [
+     "最近主玩从澜换成了兰陵王"
+    ],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-04",
+    "game_summary": "当天2局，1胜1负，用了兰陵王、花木兰",
+    "rank_after_that_day": "钻石五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-28",
+    "game_summary": "当天6局，4胜2负，用了兰陵王、吕布、李白、赵云",
+    "rank_after_that_day": "钻石五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-29",
+    "game_summary": "当天4局，1胜3负，用了刘备、百里玄策、裴擒虎、铠",
+    "rank_after_that_day": "钻石五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-07-18",
+    "game_summary": "当天1局，1胜0负，用了百里玄策",
+    "rank_after_that_day": "铂金一",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-08-01",
+    "game_summary": "当天3局，1胜2负，用了赵云、镜",
+    "rank_after_that_day": "钻石五",
+    "events": [
+     "最近主玩从兰陵王换成了镜"
+    ],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-08-13",
+    "game_summary": "当天2局，1胜1负，用了狂铁、镜",
+    "rank_after_that_day": "钻石五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-08-29",
+    "game_summary": "当天6局，3胜3负，用了典韦、裴擒虎、镜",
+    "rank_after_that_day": "钻石四",
+    "events": [
+     "排位连输6把（最长的一次）"
+    ],
+    "must_link_topic": true
+   }
+  ],
+  "brag": {
+   "date": "2026-08-13",
+   "true_last_season_peak": "钻石四",
+   "claim": "上赛季（S40）打到了星耀",
+   "claimed_tier": "星耀"
+  }
+ },
+ {
+  "id": "g1_t5",
+  "position": "对抗路",
+  "mains_in_order": [
+   "老夫子",
+   "刘备",
+   "夏洛特"
+  ],
+  "duo_partner": null,
+  "chat_days": [
+   {
+    "date": "2026-03-01",
+    "game_summary": "当天1局，1胜0负，用了老夫子",
+    "rank_after_that_day": "钻石三",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-03-08",
+    "game_summary": "当天3局，0胜3负，用了朵莉亚、老夫子、蒙恬",
+    "rank_after_that_day": "钻石四",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-03-22",
+    "game_summary": "当天5局，2胜3负，用了老夫子、花木兰、蔡文姬",
+    "rank_after_that_day": "钻石四",
+    "events": [
+     "排位连输5把（最长的一次）"
+    ],
+    "must_link_topic": true
+   },
+   {
+    "date": "2026-04-13",
+    "game_summary": "当天3局，3胜0负，用了老夫子",
+    "rank_after_that_day": "铂金二",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-05-03",
+    "game_summary": "当天3局，2胜1负，用了刘备",
+    "rank_after_that_day": "钻石五",
+    "events": [
+     "最近主玩从老夫子换成了刘备"
+    ],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-05-23",
+    "game_summary": "当天2局，1胜1负，用了亚瑟、瑶",
+    "rank_after_that_day": "钻石五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-06",
+    "game_summary": "当天4局，3胜1负，用了刘备、廉颇、狂铁、马超",
+    "rank_after_that_day": "钻石四",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-20",
+    "game_summary": "当天2局，1胜1负，用了庄周",
+    "rank_after_that_day": "钻石三",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-28",
+    "game_summary": "当天5局，3胜2负，用了夏洛特、牛魔、花木兰、铠",
+    "rank_after_that_day": "钻石三",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-07-02",
+    "game_summary": "当天4局，3胜1负，用了夏洛特、狂铁",
+    "rank_after_that_day": "钻石三",
+    "events": [
+     "最近主玩从刘备换成了夏洛特"
+    ],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-07-14",
+    "game_summary": "当天1局，0胜1负，用了夏洛特",
+    "rank_after_that_day": "钻石五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-07-18",
+    "game_summary": "当天2局，1胜1负，用了夏洛特",
+    "rank_after_that_day": "钻石五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-09-29",
+    "game_summary": "当天2局，1胜1负，用了夏洛特",
+    "rank_after_that_day": "钻石三",
+    "events": [],
+    "must_link_topic": false
+   }
+  ],
+  "brag": {
+   "date": "2026-07-18",
+   "true_last_season_peak": "钻石二",
+   "claim": "上赛季（S40）打到了星耀",
+   "claimed_tier": "星耀"
+  }
+ },
+ {
+  "id": "g1_t6",
+  "position": "游走",
+  "mains_in_order": [
+   "盾山",
+   "牛魔",
+   "鲁班大师"
+  ],
+  "duo_partner": null,
+  "chat_days": [
+   {
+    "date": "2026-03-28",
+    "game_summary": "当天2局，2胜0负，用了盾山",
+    "rank_after_that_day": "星耀五",
+    "events": [
+     "首次打到星耀"
+    ],
+    "must_link_topic": true
+   },
+   {
+    "date": "2026-03-29",
+    "game_summary": "当天5局，3胜2负，用了少司缘、盾山、钟馗",
+    "rank_after_that_day": "星耀五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-04-25",
+    "game_summary": "当天3局，0胜3负，用了刘禅、张飞、盾山",
+    "rank_after_that_day": "钻石四",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-05-25",
+    "game_summary": "当天4局，2胜2负，用了小乔、明世隐、牛魔、高渐离",
+    "rank_after_that_day": "钻石一",
+    "events": [
+     "最近主玩从盾山换成了牛魔"
+    ],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-05-31",
+    "game_summary": "当天5局，1胜4负，用了孙膑、张飞、牛魔",
+    "rank_after_that_day": "钻石二",
+    "events": [
+     "排位连输7把（最长的一次）"
+    ],
+    "must_link_topic": true
+   },
+   {
+    "date": "2026-06-05",
+    "game_summary": "当天2局，0胜2负，用了少司缘、牛魔",
+    "rank_after_that_day": "钻石一",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-07-05",
+    "game_summary": "当天5局，2胜3负，用了大乔、太乙真人、明世隐、牛魔、鲁班大师",
+    "rank_after_that_day": "钻石三",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-07-13",
+    "game_summary": "当天3局，3胜0负，用了牛魔",
+    "rank_after_that_day": "钻石四",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-07-30",
+    "game_summary": "当天2局，0胜2负，用了鲁班大师",
+    "rank_after_that_day": "钻石二",
+    "events": [
+     "最近主玩从牛魔换成了鲁班大师"
+    ],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-08-04",
+    "game_summary": "当天3局，1胜2负，用了钟馗、鲁班大师",
+    "rank_after_that_day": "钻石三",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-08-28",
+    "game_summary": "当天1局，0胜1负，用了王昭君",
+    "rank_after_that_day": "钻石一",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-08-29",
+    "game_summary": "当天2局，1胜1负，用了刘禅、鬼谷子",
+    "rank_after_that_day": "钻石一",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-09-09",
+    "game_summary": "当天2局，1胜1负，用了周瑜、明世隐",
+    "rank_after_that_day": "钻石二",
+    "events": [],
+    "must_link_topic": false
+   }
+  ],
+  "brag": {
+   "date": "2026-07-30",
+   "true_last_season_peak": "钻石一",
+   "claim": "上赛季（S40）打到了星耀",
+   "claimed_tier": "星耀"
+  }
+ },
+ {
+  "id": "g1_t7",
+  "position": "对抗路",
+  "mains_in_order": [
+   "杨戬",
+   "李信",
+   "夏洛特"
+  ],
+  "duo_partner": null,
+  "chat_days": [
+   {
+    "date": "2026-03-04",
+    "game_summary": "当天2局，1胜1负，用了曹操、杨戬",
+    "rank_after_that_day": "钻石一",
+    "events": [
+     "首次打到星耀"
+    ],
+    "must_link_topic": true
+   },
+   {
+    "date": "2026-04-16",
+    "game_summary": "当天2局，2胜0负，用了曹操、杨戬",
+    "rank_after_that_day": "钻石一",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-04-25",
+    "game_summary": "当天2局，1胜1负，用了杨戬、蒙恬",
+    "rank_after_that_day": "星耀五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-05-03",
+    "game_summary": "当天5局，3胜2负，用了李信、杨戬、裴擒虎",
+    "rank_after_that_day": "星耀五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-05-17",
+    "game_summary": "当天6局，3胜3负，用了暃、李信、杨戬、程咬金、赵云",
+    "rank_after_that_day": "星耀四",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-05-22",
+    "game_summary": "当天4局，1胜3负，用了关羽、吕布、李信",
+    "rank_after_that_day": "星耀五",
+    "events": [
+     "最近主玩从杨戬换成了李信"
+    ],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-02",
+    "game_summary": "当天5局，2胜3负，用了李信、老夫子",
+    "rank_after_that_day": "星耀四",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-09",
+    "game_summary": "当天4局，2胜2负，用了李信、铠、镜",
+    "rank_after_that_day": "星耀四",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-10",
+    "game_summary": "当天3局，1胜2负，用了亚瑟、李信、蒙恬",
+    "rank_after_that_day": "星耀四",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-27",
+    "game_summary": "当天2局，0胜2负，用了夏洛特、蒙恬",
+    "rank_after_that_day": "星耀四",
+    "events": [
+     "排位连输8把（最长的一次）"
+    ],
+    "must_link_topic": true
+   },
+   {
+    "date": "2026-07-08",
+    "game_summary": "当天3局，0胜3负，用了夏洛特、澜、程咬金",
+    "rank_after_that_day": "星耀五",
+    "events": [
+     "最近主玩从李信换成了夏洛特",
+     "S40赛季结束，最高星耀三，结束时星耀五"
+    ],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-07-27",
+    "game_summary": "当天3局，1胜2负，用了夏洛特、孙悟空",
+    "rank_after_that_day": "钻石一",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-08-20",
+    "game_summary": "当天2局，0胜2负，用了夏洛特、娜可露露",
+    "rank_after_that_day": "钻石二",
+    "events": [],
+    "must_link_topic": false
+   }
+  ],
+  "brag": {
+   "date": "2026-07-27",
+   "true_last_season_peak": "星耀三",
+   "claim": "上赛季（S40）打到了王者",
+   "claimed_tier": "王者"
+  }
+ },
+ {
+  "id": "g1_t8",
+  "position": "中路",
+  "mains_in_order": [
+   "嬴政",
+   "王昭君",
+   "女娲"
+  ],
+  "duo_partner": "阿伟",
+  "chat_days": [
+   {
+    "date": "2026-03-01",
+    "game_summary": "当天3局，2胜1负，用了周瑜、嬴政、镜",
+    "rank_after_that_day": "星耀四",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-04-26",
+    "game_summary": "当天5局，3胜2负，用了张良、王昭君、诸葛亮、赵云",
+    "rank_after_that_day": "钻石一",
+    "events": [
+     "最近主玩从嬴政换成了王昭君"
+    ],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-05-31",
+    "game_summary": "当天2局，1胜1负，用了女娲、嬴政",
+    "rank_after_that_day": "星耀五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-13",
+    "game_summary": "当天2局，1胜1负，用了女娲",
+    "rank_after_that_day": "星耀四",
+    "events": [
+     "最近主玩从王昭君换成了女娲"
+    ],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-06-21",
+    "game_summary": "当天3局，1胜2负，用了女娲、嫦娥、王昭君",
+    "rank_after_that_day": "星耀三",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-07-07",
+    "game_summary": "当天3局，2胜1负，用了女娲、孙悟空",
+    "rank_after_that_day": "星耀四",
+    "events": [
+     "排位连输7把（最长的一次）"
+    ],
+    "must_link_topic": true
+   },
+   {
+    "date": "2026-07-19",
+    "game_summary": "当天5局，4胜1负，用了女娲、诸葛亮、赵云",
+    "rank_after_that_day": "星耀五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-07-27",
+    "game_summary": "当天4局，2胜2负，用了女娲",
+    "rank_after_that_day": "星耀五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-07-30",
+    "game_summary": "当天3局，2胜1负，用了女娲",
+    "rank_after_that_day": "星耀五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-08-25",
+    "game_summary": "当天1局，0胜1负，用了女娲",
+    "rank_after_that_day": "星耀五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-09-07",
+    "game_summary": "当天2局，1胜1负，用了女娲",
+    "rank_after_that_day": "星耀五",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-09-20",
+    "game_summary": "当天1局，1胜0负，用了女娲",
+    "rank_after_that_day": "星耀四",
+    "events": [],
+    "must_link_topic": false
+   },
+   {
+    "date": "2026-09-22",
+    "game_summary": "当天5局，3胜2负，用了女娲、暃、王昭君",
+    "rank_after_that_day": "星耀三",
+    "events": [],
+    "must_link_topic": false
+   }
+  ],
+  "brag": {
+   "date": "2026-08-25",
+   "true_last_season_peak": "星耀三",
+   "claim": "上赛季（S40）打到了王者",
+   "claimed_tier": "王者"
+  }
+ }
+]

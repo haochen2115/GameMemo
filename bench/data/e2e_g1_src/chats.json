@@ -1,0 +1,5794 @@
+{
+ "players": [
+  {
+   "id": "g1_d1",
+   "persona": "周宇航，26岁，杭州电商公司运营，养了只橘猫叫馒头，女友小雅是小学老师，大学室友阿杰常和他双排；说话随意爱吐槽。",
+   "sessions": [
+    {
+     "date": "2026-03-01 20:32:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天终于上钻石了！第一次上钻！"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜！第一次到钻石，值得庆祝。"
+      },
+      {
+       "role": "user",
+       "content": "沈梦溪今天炸得超准，猫猫炸弹满天飞"
+      },
+      {
+       "role": "assistant",
+       "content": "沈梦溪手感一来，对面真的很难躲。"
+      },
+      {
+       "role": "user",
+       "content": "还有个好消息，我转正答辩过了"
+      },
+      {
+       "role": "assistant",
+       "content": "双喜临门！答辩准备了挺久吧？"
+      },
+      {
+       "role": "user",
+       "content": "熬了两个礼拜做PPT，领导说讲得不错"
+      },
+      {
+       "role": "assistant",
+       "content": "努力有回报，今晚好好犒劳下自己。"
+      },
+      {
+       "role": "user",
+       "content": "阿杰说明天请我吃烧烤庆祝"
+      },
+      {
+       "role": "assistant",
+       "content": "好兄弟，吃完记得一起双排。"
+      }
+     ]
+    },
+    {
+     "date": "2026-03-15 21:41:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天沈梦溪打得稀烂，全输了"
+      },
+      {
+       "role": "assistant",
+       "content": "别急，钻石局节奏快，慢慢适应。"
+      },
+      {
+       "role": "user",
+       "content": "对面打野老来抓中，技能都放不出来"
+      },
+      {
+       "role": "assistant",
+       "content": "可以多往河道靠，给自己留条退路。"
+      },
+      {
+       "role": "user",
+       "content": "下班回家还被馒头挠了一下"
+      },
+      {
+       "role": "assistant",
+       "content": "馒头是你家猫吧？怎么惹它了？"
+      },
+      {
+       "role": "user",
+       "content": "对，橘猫，我想给它剪指甲来着"
+      },
+      {
+       "role": "assistant",
+       "content": "哈哈，剪指甲得趁它睡迷糊的时候。"
+      },
+      {
+       "role": "user",
+       "content": "明天还要早起去公司开周会，睡了"
+      },
+      {
+       "role": "assistant",
+       "content": "好，晚安，别想今天的输赢了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-03-17 22:05:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天试了下小乔，还挺好玩的"
+      },
+      {
+       "role": "assistant",
+       "content": "小乔清线快，二技能回旋很舒服。"
+      },
+      {
+       "role": "user",
+       "content": "小乔赢了，沈梦溪又输了"
+      },
+      {
+       "role": "assistant",
+       "content": "有赢有输，段位稳住就行。"
+      },
+      {
+       "role": "user",
+       "content": "阿杰是我大学室友，他玩射手"
+      },
+      {
+       "role": "assistant",
+       "content": "那你们中射双排配合应该不错。"
+      },
+      {
+       "role": "user",
+       "content": "他住杭州另一头，周末才见得着"
+      },
+      {
+       "role": "assistant",
+       "content": "平时就靠游戏里一起开黑了吧。"
+      },
+      {
+       "role": "user",
+       "content": "对，我在电商公司做运营，天天盯数据"
+      },
+      {
+       "role": "assistant",
+       "content": "运营挺费脑的，打游戏正好放松下。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-08 20:50:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "最近公司在备战618，天天加班"
+      },
+      {
+       "role": "assistant",
+       "content": "电商大促前确实最忙，注意身体。"
+      },
+      {
+       "role": "user",
+       "content": "今天抽空玩了干将莫邪，飞剑老空"
+      },
+      {
+       "role": "assistant",
+       "content": "干将吃预判，多练练飞剑的距离。"
+      },
+      {
+       "role": "user",
+       "content": "还是沈梦溪顺手，又赢回来了"
+      },
+      {
+       "role": "assistant",
+       "content": "老本命关键时候还是靠得住。"
+      },
+      {
+       "role": "user",
+       "content": "小雅说我再熬夜打游戏就不理我了"
+      },
+      {
+       "role": "assistant",
+       "content": "小雅是你女朋友吧？那得早点睡哈。"
+      },
+      {
+       "role": "user",
+       "content": "是啊，她是小学老师，作息特规律"
+      },
+      {
+       "role": "assistant",
+       "content": "那你跟着她的作息走准没错。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-19 21:15:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "最近我主玩换成安琪拉了"
+      },
+      {
+       "role": "assistant",
+       "content": "安琪拉爆发高，很适合收割残血。"
+      },
+      {
+       "role": "user",
+       "content": "今天全赢，安琪拉大招一开就融化"
+      },
+      {
+       "role": "assistant",
+       "content": "状态不错！今天还玩别的了吗？"
+      },
+      {
+       "role": "user",
+       "content": "玩了海月，大招拉人单杀爽死了"
+      },
+      {
+       "role": "assistant",
+       "content": "海月切后排确实很强。"
+      },
+      {
+       "role": "user",
+       "content": "周末要搬家，搬到滨江那边去"
+      },
+      {
+       "role": "assistant",
+       "content": "是搬到离公司近点的地方吗？"
+      },
+      {
+       "role": "user",
+       "content": "对，以后通勤能省半小时"
+      },
+      {
+       "role": "assistant",
+       "content": "那搬好以后每天能多睡会儿了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-04 22:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天安琪拉被刺客切得没脾气"
+      },
+      {
+       "role": "assistant",
+       "content": "安琪拉没位移，站位要再靠后点。"
+      },
+      {
+       "role": "user",
+       "content": "全输了，好在还在钻四没掉"
+      },
+      {
+       "role": "assistant",
+       "content": "能稳在钻四就好，别上头。"
+      },
+      {
+       "role": "user",
+       "content": "618前最后一周，天天加班到十点"
+      },
+      {
+       "role": "assistant",
+       "content": "大促冲刺最累，打游戏放松就好。"
+      },
+      {
+       "role": "user",
+       "content": "新家这边楼下有家米粉店挺好吃"
+      },
+      {
+       "role": "assistant",
+       "content": "搬到滨江以后生活方便多了吧。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-07 21:03:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天玩了下孙悟空，被对面打崩了"
+      },
+      {
+       "role": "assistant",
+       "content": "猴子吃经济，中单去玩不顺很正常。"
+      },
+      {
+       "role": "user",
+       "content": "安琪拉倒是赢了，还是法师顺手"
+      },
+      {
+       "role": "assistant",
+       "content": "回到熟悉的位置，心态也稳。"
+      },
+      {
+       "role": "user",
+       "content": "战令我还差好几级没满呢"
+      },
+      {
+       "role": "assistant",
+       "content": "七月初赛季结算前，我提醒你把战令皮肤领了。"
+      },
+      {
+       "role": "user",
+       "content": "好，我老忘这种事，记得叫我"
+      },
+      {
+       "role": "assistant",
+       "content": "放心，到时候一定提醒你。"
+      },
+      {
+       "role": "user",
+       "content": "明天陪小雅去看展，先下了"
+      },
+      {
+       "role": "assistant",
+       "content": "去吧，看展玩得开心！"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-28 22:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天武则天和貂蝉都输了，掉回钻五"
+      },
+      {
+       "role": "assistant",
+       "content": "换新英雄有起伏很正常，别太在意。"
+      },
+      {
+       "role": "user",
+       "content": "武则天我真不会，大招老放歪"
+      },
+      {
+       "role": "assistant",
+       "content": "武则天大招要预判对面走位。"
+      },
+      {
+       "role": "user",
+       "content": "618终于忙完了，奖金应该还不错"
+      },
+      {
+       "role": "assistant",
+       "content": "辛苦一个多月，奖金是该犒劳的。"
+      },
+      {
+       "role": "user",
+       "content": "想拿奖金给小雅买个包"
+      },
+      {
+       "role": "assistant",
+       "content": "好男友！她肯定很开心。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-29 23:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "气死了，排位连跪好几把，从没这么惨"
+      },
+      {
+       "role": "assistant",
+       "content": "连败最容易上头，先停一停吧。"
+      },
+      {
+       "role": "user",
+       "content": "典韦镜都拿了，最后靠小乔才缓过来"
+      },
+      {
+       "role": "assistant",
+       "content": "中单补位打野太难，还是小乔靠谱。"
+      },
+      {
+       "role": "user",
+       "content": "今天还有个糟心事，馒头吞了根皮筋"
+      },
+      {
+       "role": "assistant",
+       "content": "天哪！猫没事吧？送医了吗？"
+      },
+      {
+       "role": "user",
+       "content": "下午送宠物医院做了个小手术，花了三千多"
+      },
+      {
+       "role": "assistant",
+       "content": "手术成功就好，这几天得好好看着它。"
+      },
+      {
+       "role": "user",
+       "content": "现在戴着伊丽莎白圈，看着好可怜"
+      },
+      {
+       "role": "assistant",
+       "content": "让它多休息，你也别打太晚了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-10 20:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "新赛季一开，直接被打回铂金了"
+      },
+      {
+       "role": "assistant",
+       "content": "赛季重置都这样，慢慢爬回去。"
+      },
+      {
+       "role": "user",
+       "content": "张良西施诸葛亮都试了，就诸葛亮赢了"
+      },
+      {
+       "role": "assistant",
+       "content": "多会几个法师是好事，不过要有本命。"
+      },
+      {
+       "role": "user",
+       "content": "我现在主练小乔了，安琪拉不想玩了"
+      },
+      {
+       "role": "assistant",
+       "content": "小乔清线强，适合拿来上分。"
+      },
+      {
+       "role": "user",
+       "content": "但小乔我还不太会躲技能"
+      },
+      {
+       "role": "assistant",
+       "content": "等你小乔练熟了，我陪你一起复盘对局。"
+      },
+      {
+       "role": "user",
+       "content": "好啊，下周回温州看爸妈，回来再练"
+      },
+      {
+       "role": "assistant",
+       "content": "回家好好休息，多吃点家里饭。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-02 21:35:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "从温州回来了，带了好多鱼丸"
+      },
+      {
+       "role": "assistant",
+       "content": "温州鱼丸好吃，有口福了。"
+      },
+      {
+       "role": "user",
+       "content": "今天云中君被对面打野反了，好菜"
+      },
+      {
+       "role": "assistant",
+       "content": "补位打野辛苦了，小乔怎么样？"
+      },
+      {
+       "role": "user",
+       "content": "小乔赢了，海月又输了"
+      },
+      {
+       "role": "assistant",
+       "content": "铂金局小乔还是很好用的。"
+      },
+      {
+       "role": "user",
+       "content": "我跟你说，上赛季我可是打到星耀的"
+      },
+      {
+       "role": "assistant",
+       "content": "那现在铂金对你来说就是热身。"
+      },
+      {
+       "role": "user",
+       "content": "阿杰不信，说我吹牛"
+      },
+      {
+       "role": "assistant",
+       "content": "打回去给他看就是最好的证明。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-09 22:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天玩了米莱狄，偷塔偷赢了"
+      },
+      {
+       "role": "assistant",
+       "content": "米莱狄偷塔一流，节奏很好。"
+      },
+      {
+       "role": "user",
+       "content": "小雅暑假在家，拉着我追剧"
+      },
+      {
+       "role": "assistant",
+       "content": "老师暑假是福利，你们追什么剧？"
+      },
+      {
+       "role": "user",
+       "content": "一部悬疑剧，她看得比我还投入"
+      },
+      {
+       "role": "assistant",
+       "content": "追剧加游戏，周末挺充实。"
+      },
+      {
+       "role": "user",
+       "content": "等下她喊我睡觉，今天就打到这儿了"
+      },
+      {
+       "role": "assistant",
+       "content": "好，听小雅的，早点休息。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-14 21:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "小乔今天上分了，二技能准多了"
+      },
+      {
+       "role": "assistant",
+       "content": "进步很明显，练得不错。"
+      },
+      {
+       "role": "user",
+       "content": "你说复盘的事还算数吗？"
+      },
+      {
+       "role": "assistant",
+       "content": "当然算数，你随时找我一起看。"
+      },
+      {
+       "role": "user",
+       "content": "下周公司团建去千岛湖"
+      },
+      {
+       "role": "assistant",
+       "content": "千岛湖风景好，好好玩几天。"
+      },
+      {
+       "role": "user",
+       "content": "馒头最近胖了，得给它减肥了"
+      },
+      {
+       "role": "assistant",
+       "content": "少喂点零食，多陪它玩逗猫棒。"
+      }
+     ]
+    }
+   ],
+   "links": [
+    {
+     "kind": "promotion",
+     "date": "2026-03-01",
+     "tier": "钻石",
+     "answer_any": [
+      "转正",
+      "答辩"
+     ]
+    },
+    {
+     "kind": "losing_streak",
+     "date": "2026-06-29",
+     "tier": "",
+     "answer_any": [
+      "皮筋",
+      "宠物医院"
+     ]
+    }
+   ],
+   "brag_claimed_tier": "星耀",
+   "questions": [
+    {
+     "type": "fact",
+     "query": "我家那只猫叫啥名字来着？",
+     "answer_any": [
+      "馒头"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "你还记得我是干什么工作的吗？",
+     "answer_any": [
+      "运营"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "我女朋友是做什么的？",
+     "answer_any": [
+      "小学老师"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "阿杰跟我是什么关系来着？",
+     "answer_any": [
+      "室友"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "promise",
+     "query": "赛季结算前你说要提醒我干啥？",
+     "answer_any": [
+      "战令"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "promise",
+     "query": "你之前说等我小乔练熟了要陪我做什么？",
+     "answer_any": [
+      "复盘"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "negative",
+     "query": "你是不是答应过帮我盯巅峰赛的开放时间？",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "type": "negative",
+     "query": "我跟你提过我爸妈是做什么工作的吗？",
+     "answer_any": [],
+     "stale_any": []
+    }
+   ]
+  },
+  {
+   "id": "g1_d2",
+   "persona": "赵磊，29岁，成都汽修厂修车师傅，妻子刘芳是护士，女儿朵朵三岁半，徒弟胖虎常跟他双排；性格直爽，说话带点川味。",
+   "sessions": [
+    {
+     "date": "2026-04-04 22:15:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "这几天排位连跪了好多把，人都麻了"
+      },
+      {
+       "role": "assistant",
+       "content": "连败太伤心态了，先缓一缓。"
+      },
+      {
+       "role": "user",
+       "content": "铠打不过，换狂铁马超也输，还玩了大乔"
+      },
+      {
+       "role": "assistant",
+       "content": "英雄换来换去容易乱，先固定本命。"
+      },
+      {
+       "role": "user",
+       "content": "最后铠总算赢了，钻石还保住了"
+      },
+      {
+       "role": "assistant",
+       "content": "能止住连败就是好事。"
+      },
+      {
+       "role": "user",
+       "content": "跟你说个大事，老家房子要拆迁了"
+      },
+      {
+       "role": "assistant",
+       "content": "哇，这可是大事！合同签了吗？"
+      },
+      {
+       "role": "user",
+       "content": "今天我爸打电话说签了，能分两套房"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜恭喜，家里该好好庆祝下。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-18 21:50:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "又掉回铂金了，气死我了"
+      },
+      {
+       "role": "assistant",
+       "content": "掉段别慌，钻石门口很快能回去。"
+      },
+      {
+       "role": "user",
+       "content": "在练吕布，大招老被躲，夏洛特也不会"
+      },
+      {
+       "role": "assistant",
+       "content": "吕布大招要等对面交了位移再跳。"
+      },
+      {
+       "role": "user",
+       "content": "今天厂里修了一下午变速箱，累瘫"
+      },
+      {
+       "role": "assistant",
+       "content": "修车是体力活，早点休息。"
+      },
+      {
+       "role": "user",
+       "content": "胖虎这小子又把扳手弄丢了"
+      },
+      {
+       "role": "assistant",
+       "content": "胖虎是你厂里的同事吗？"
+      },
+      {
+       "role": "user",
+       "content": "是我徒弟，跟我学修车大半年了"
+      },
+      {
+       "role": "assistant",
+       "content": "带徒弟不容易，你也是师傅了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-23 20:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "打回钻石了！吕布真香"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜回钻！吕布手感出来了。"
+      },
+      {
+       "role": "user",
+       "content": "胖虎玩太乙给我挂大招，双排赢了"
+      },
+      {
+       "role": "assistant",
+       "content": "太乙复活配吕布，师徒默契。"
+      },
+      {
+       "role": "user",
+       "content": "狂铁被对面射手风筝死了"
+      },
+      {
+       "role": "assistant",
+       "content": "狂铁怕控，团战等对面交了控再进。"
+      },
+      {
+       "role": "user",
+       "content": "朵朵今天在幼儿园得了小红花"
+      },
+      {
+       "role": "assistant",
+       "content": "朵朵是你女儿吧？真棒！"
+      },
+      {
+       "role": "user",
+       "content": "对，三岁半了，嘴可甜了"
+      },
+      {
+       "role": "assistant",
+       "content": "这个年纪最可爱了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-26 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "铠我现在基本不玩了，主玩吕布"
+      },
+      {
+       "role": "assistant",
+       "content": "吕布团战能力强，换得不错。"
+      },
+      {
+       "role": "user",
+       "content": "今天有赢有输，蒙恬玩得一塌糊涂"
+      },
+      {
+       "role": "assistant",
+       "content": "蒙恬节奏偏慢，不太适合你。"
+      },
+      {
+       "role": "user",
+       "content": "吕布有个新皮肤下个月上，好想要"
+      },
+      {
+       "role": "assistant",
+       "content": "下个月新皮肤上架那天，我提醒你去抽。"
+      },
+      {
+       "role": "user",
+       "content": "好，老婆知道我又氪金得骂我"
+      },
+      {
+       "role": "assistant",
+       "content": "适度就好，量力而行哈。"
+      },
+      {
+       "role": "user",
+       "content": "她是护士，这周上夜班，我带朵朵"
+      },
+      {
+       "role": "assistant",
+       "content": "护士夜班辛苦，你带娃也辛苦了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-10 22:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天吕布全胜，舒服了"
+      },
+      {
+       "role": "assistant",
+       "content": "状态火热，继续保持。"
+      },
+      {
+       "role": "user",
+       "content": "母亲节给我妈买了条围巾寄回去"
+      },
+      {
+       "role": "assistant",
+       "content": "有心了，阿姨肯定很开心。"
+      },
+      {
+       "role": "user",
+       "content": "我妈在老家种菜，一直不肯来成都"
+      },
+      {
+       "role": "assistant",
+       "content": "老人家习惯了老家的生活。"
+      },
+      {
+       "role": "user",
+       "content": "吕布那个新皮肤出了没？"
+      },
+      {
+       "role": "assistant",
+       "content": "还没上架，到时候我第一时间提醒你。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-24 21:05:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天给胖虎打辅助，东皇牛魔瑶都玩了"
+      },
+      {
+       "role": "assistant",
+       "content": "对抗路去打辅助，挺能补位的。"
+      },
+      {
+       "role": "user",
+       "content": "胖虎玩射手太菜，我得保着他"
+      },
+      {
+       "role": "assistant",
+       "content": "师傅保徒弟，天经地义。"
+      },
+      {
+       "role": "user",
+       "content": "厂里来了台进口车，老板让我修"
+      },
+      {
+       "role": "assistant",
+       "content": "老板这是信任你的技术啊。"
+      },
+      {
+       "role": "user",
+       "content": "修好了能拿提成，嘿嘿"
+      },
+      {
+       "role": "assistant",
+       "content": "那得好好干，给朵朵买玩具。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-26 22:45:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天吕布打得一般，有输有赢"
+      },
+      {
+       "role": "assistant",
+       "content": "吕布被针对时，可以多跟着团走。"
+      },
+      {
+       "role": "user",
+       "content": "对面老拿控制英雄克我"
+      },
+      {
+       "role": "assistant",
+       "content": "出双抵抗之靴，会好很多。"
+      },
+      {
+       "role": "user",
+       "content": "朵朵发烧了，老婆值班我在家照顾"
+      },
+      {
+       "role": "assistant",
+       "content": "小孩发烧要多喝水，注意观察。"
+      },
+      {
+       "role": "user",
+       "content": "退烧了，现在睡着了"
+      },
+      {
+       "role": "assistant",
+       "content": "那你也早点睡吧。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-14 20:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "最近在练花木兰，切剑好难"
+      },
+      {
+       "role": "assistant",
+       "content": "花木兰重剑轻剑切换要多练。"
+      },
+      {
+       "role": "user",
+       "content": "今天有输有赢，还算可以"
+      },
+      {
+       "role": "assistant",
+       "content": "刚上手能这样已经不错了。"
+      },
+      {
+       "role": "user",
+       "content": "成都热起来了，厂里跟蒸笼一样"
+      },
+      {
+       "role": "assistant",
+       "content": "高温干活一定注意防暑。"
+      },
+      {
+       "role": "user",
+       "content": "胖虎中暑了，今天请假"
+      },
+      {
+       "role": "assistant",
+       "content": "让他多补水，你也小心点。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-24 21:55:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天又是被虐的一天，输麻了"
+      },
+      {
+       "role": "assistant",
+       "content": "怎么了？今天用的什么英雄？"
+      },
+      {
+       "role": "user",
+       "content": "关羽牛魔都输，就花木兰赢了"
+      },
+      {
+       "role": "assistant",
+       "content": "看来还是花木兰更顺手。"
+      },
+      {
+       "role": "user",
+       "content": "嗯，以后主玩花木兰了，吕布不玩了"
+      },
+      {
+       "role": "assistant",
+       "content": "换个本命，换个心情。"
+      },
+      {
+       "role": "user",
+       "content": "过几天朵朵生日，想给她买滑板车"
+      },
+      {
+       "role": "assistant",
+       "content": "小孩都喜欢滑板车，记得买护具。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-25 20:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "花木兰今天打得还行"
+      },
+      {
+       "role": "assistant",
+       "content": "花木兰越练越熟了，不错。"
+      },
+      {
+       "role": "user",
+       "content": "滑板车买了，粉色的"
+      },
+      {
+       "role": "assistant",
+       "content": "朵朵肯定喜欢粉色。"
+      },
+      {
+       "role": "user",
+       "content": "老婆说我比她还宠孩子"
+      },
+      {
+       "role": "assistant",
+       "content": "当爸爸的都这样。"
+      },
+      {
+       "role": "user",
+       "content": "胖虎说周末去喝啤酒撸串"
+      },
+      {
+       "role": "assistant",
+       "content": "别喝太多，第二天还要上班。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-08 22:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "赛季结束了，最后钻石收尾"
+      },
+      {
+       "role": "assistant",
+       "content": "一整个赛季都在钻石，挺稳的。"
+      },
+      {
+       "role": "user",
+       "content": "最后几天花木兰输多赢少"
+      },
+      {
+       "role": "assistant",
+       "content": "赛季末大家都在冲分，比较难打。"
+      },
+      {
+       "role": "user",
+       "content": "赛季奖励的皮肤还没领呢"
+      },
+      {
+       "role": "assistant",
+       "content": "下周新赛季开了，我提醒你领赛季奖励。"
+      },
+      {
+       "role": "user",
+       "content": "好嘞，我这人老是忘事"
+      },
+      {
+       "role": "assistant",
+       "content": "放心，这事我帮你记着。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-13 21:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "新赛季花木兰全胜，爽翻了"
+      },
+      {
+       "role": "assistant",
+       "content": "开门红！花木兰稳了。"
+      },
+      {
+       "role": "user",
+       "content": "带朵朵去了趟动物园，她最喜欢熊猫"
+      },
+      {
+       "role": "assistant",
+       "content": "在成都看熊猫太合适了。"
+      },
+      {
+       "role": "user",
+       "content": "老婆难得休息，一家人出去玩"
+      },
+      {
+       "role": "assistant",
+       "content": "一家人出去玩，最珍贵了。"
+      },
+      {
+       "role": "user",
+       "content": "赛季奖励我领了，谢啦"
+      },
+      {
+       "role": "assistant",
+       "content": "不客气，领到就好。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-20 22:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "杨戬今天被打爆，花木兰救回来了"
+      },
+      {
+       "role": "assistant",
+       "content": "花木兰还是你的招牌英雄。"
+      },
+      {
+       "role": "user",
+       "content": "胖虎说我对抗路一般，我不服"
+      },
+      {
+       "role": "assistant",
+       "content": "怎么了，他又嘴你了？"
+      },
+      {
+       "role": "user",
+       "content": "我上赛季可是打到星耀的，他才钻石"
+      },
+      {
+       "role": "assistant",
+       "content": "那你得用实力让他心服口服。"
+      },
+      {
+       "role": "user",
+       "content": "上周带家里人去了九寨沟，水真蓝"
+      },
+      {
+       "role": "assistant",
+       "content": "九寨沟的水确实漂亮。"
+      }
+     ]
+    }
+   ],
+   "links": [
+    {
+     "kind": "losing_streak",
+     "date": "2026-04-04",
+     "tier": "",
+     "answer_any": [
+      "拆迁"
+     ]
+    }
+   ],
+   "brag_claimed_tier": "星耀",
+   "questions": [
+    {
+     "type": "fact",
+     "query": "我闺女叫什么名字？",
+     "answer_any": [
+      "朵朵"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "你记得我是干哪行的吗？",
+     "answer_any": [
+      "修车"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "我老婆是做什么工作的？",
+     "answer_any": [
+      "护士"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "胖虎跟我是啥关系？",
+     "answer_any": [
+      "徒弟"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "promise",
+     "query": "你说吕布出什么的时候要提醒我？",
+     "answer_any": [
+      "新皮肤"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "promise",
+     "query": "新赛季开了你答应提醒我领啥来着？",
+     "answer_any": [
+      "赛季奖励"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "negative",
+     "query": "你是不是答应过帮我找花木兰的教学视频？",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "type": "negative",
+     "query": "我跟你聊过我家养的狗吗？",
+     "answer_any": [],
+     "stale_any": []
+    }
+   ]
+  },
+  {
+   "id": "g1_t1",
+   "persona": "陈思琪，20岁，武汉一所大学会计专业大二女生，老家宜昌，室友小婷，暑假在老家奶茶店打工；活泼爱用感叹号。",
+   "sessions": [
+    {
+     "date": "2026-03-08 21:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天被虐惨了，几乎全输"
+      },
+      {
+       "role": "assistant",
+       "content": "怎么了？是排到坑队友了吗？"
+      },
+      {
+       "role": "user",
+       "content": "孙膑廉颇瑶都玩了，还被抢去打边路"
+      },
+      {
+       "role": "assistant",
+       "content": "辅助老是补位，心态别崩。"
+      },
+      {
+       "role": "user",
+       "content": "杨戬花木兰我根本不会玩"
+      },
+      {
+       "role": "assistant",
+       "content": "不熟的位置输了很正常。"
+      },
+      {
+       "role": "user",
+       "content": "开学第一周，会计课好难"
+      },
+      {
+       "role": "assistant",
+       "content": "会计入门要多记分录，慢慢来。"
+      },
+      {
+       "role": "user",
+       "content": "室友小婷说我考试前肯定挂"
+      },
+      {
+       "role": "assistant",
+       "content": "室友在激你呢，好好学给她看。"
+      }
+     ]
+    },
+    {
+     "date": "2026-03-21 20:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天太乙真人全赢！"
+      },
+      {
+       "role": "assistant",
+       "content": "太乙复活大招救队友超关键。"
+      },
+      {
+       "role": "user",
+       "content": "曹操也是我拿的，居然乱杀"
+      },
+      {
+       "role": "assistant",
+       "content": "游走去玩曹操，挺意外的。"
+      },
+      {
+       "role": "user",
+       "content": "小婷也开始玩王者了，我带她"
+      },
+      {
+       "role": "assistant",
+       "content": "带室友上分，你成老师了。"
+      },
+      {
+       "role": "user",
+       "content": "她玩瑶，一直挂在我身上"
+      },
+      {
+       "role": "assistant",
+       "content": "瑶和太乙一起玩很有意思。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-22 22:35:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "掉到黄金了，不过今天赢的多"
+      },
+      {
+       "role": "assistant",
+       "content": "赢得多就好，段位很快能回去。"
+      },
+      {
+       "role": "user",
+       "content": "最近我主玩蔡文姬，太乙不玩了"
+      },
+      {
+       "role": "assistant",
+       "content": "蔡文姬奶量足，这个段位很好用。"
+      },
+      {
+       "role": "user",
+       "content": "李信是被迫拿的，居然也赢了"
+      },
+      {
+       "role": "assistant",
+       "content": "补位还能赢，挺厉害。"
+      },
+      {
+       "role": "user",
+       "content": "下周期中考试，得复习了"
+      },
+      {
+       "role": "assistant",
+       "content": "考试优先，游戏可以先放放。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-06 21:45:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "啊啊啊我第一次上钻石了！"
+      },
+      {
+       "role": "assistant",
+       "content": "太棒了！第一次钻石，恭喜！"
+      },
+      {
+       "role": "user",
+       "content": "庄周和蔡文姬都超稳，钟馗也钩中好多"
+      },
+      {
+       "role": "assistant",
+       "content": "辅助玩得好，上分就快。"
+      },
+      {
+       "role": "user",
+       "content": "还有更开心的，我被选为社团部长了"
+      },
+      {
+       "role": "assistant",
+       "content": "双喜临门！是什么社团？"
+      },
+      {
+       "role": "user",
+       "content": "摄影社，下学期我要管二十多个人"
+      },
+      {
+       "role": "assistant",
+       "content": "部长不轻松，但很锻炼人。"
+      },
+      {
+       "role": "user",
+       "content": "今晚请小婷喝奶茶庆祝"
+      },
+      {
+       "role": "assistant",
+       "content": "好好庆祝，你值得！"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-12 23:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我真的服了，连跪了好多把"
+      },
+      {
+       "role": "assistant",
+       "content": "刚上钻就连败，太难受了。"
+      },
+      {
+       "role": "user",
+       "content": "掉回铂金了，钻石还没捂热呢"
+      },
+      {
+       "role": "assistant",
+       "content": "钻石门口，还会再冲上去的。"
+      },
+      {
+       "role": "user",
+       "content": "最惨的是手机还摔了，屏幕全碎"
+      },
+      {
+       "role": "assistant",
+       "content": "啊？人没伤着吧？还能玩吗？"
+      },
+      {
+       "role": "user",
+       "content": "能用，就是划得手疼，打团看不清"
+      },
+      {
+       "role": "assistant",
+       "content": "赶紧去换个屏，别伤到手。"
+      },
+      {
+       "role": "user",
+       "content": "庄周和廉颇最后总算赢了几局"
+      },
+      {
+       "role": "assistant",
+       "content": "能止住就好，早点睡。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-23 20:50:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "最近主玩庄周了，蔡文姬太脆"
+      },
+      {
+       "role": "assistant",
+       "content": "庄周解控强，排位很稳。"
+      },
+      {
+       "role": "user",
+       "content": "大乔马超也玩了，马超真不会"
+      },
+      {
+       "role": "assistant",
+       "content": "马超操作难，还是辅助适合你。"
+      },
+      {
+       "role": "user",
+       "content": "期末考完了，会计应该能过"
+      },
+      {
+       "role": "assistant",
+       "content": "考完就轻松了，暑假准备干嘛？"
+      },
+      {
+       "role": "user",
+       "content": "回宜昌，在家附近奶茶店打工"
+      },
+      {
+       "role": "assistant",
+       "content": "打工赚点零花钱，挺好的。"
+      },
+      {
+       "role": "user",
+       "content": "庄周我总是净化交早了"
+      },
+      {
+       "role": "assistant",
+       "content": "等你庄周练熟了，我陪你一起看对局回放。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-04 21:15:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "又回钻石了！赛季末赶上了"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜！赛季结束前回钻，漂亮。"
+      },
+      {
+       "role": "user",
+       "content": "朵莉亚好可爱，玩着很开心"
+      },
+      {
+       "role": "assistant",
+       "content": "朵莉亚回血快，辅助也能玩。"
+      },
+      {
+       "role": "user",
+       "content": "奶茶店上班第一天，手都摇酸了"
+      },
+      {
+       "role": "assistant",
+       "content": "摇奶茶确实累，注意手腕。"
+      },
+      {
+       "role": "user",
+       "content": "店长人很好，还送我喝新品"
+      },
+      {
+       "role": "assistant",
+       "content": "遇到好店长很幸运。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-13 22:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "新赛季又掉回铂金了，唉"
+      },
+      {
+       "role": "assistant",
+       "content": "赛季重置大家都一样，别急。"
+      },
+      {
+       "role": "user",
+       "content": "孙膑廉颇都输了，庄周还行"
+      },
+      {
+       "role": "assistant",
+       "content": "坚持玩庄周，会稳下来的。"
+      },
+      {
+       "role": "user",
+       "content": "宜昌这两天好热，三十八度"
+      },
+      {
+       "role": "assistant",
+       "content": "太热了，上班路上注意防暑。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-16 20:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天东皇太一被针对了"
+      },
+      {
+       "role": "assistant",
+       "content": "东皇大招要找关键目标。"
+      },
+      {
+       "role": "user",
+       "content": "庄周那局赢了，还是庄周稳"
+      },
+      {
+       "role": "assistant",
+       "content": "庄周就是你的本命了。"
+      },
+      {
+       "role": "user",
+       "content": "奶茶店这周排了好多班"
+      },
+      {
+       "role": "assistant",
+       "content": "别太累，晚上早点休息。"
+      },
+      {
+       "role": "user",
+       "content": "我妈说暑假赚的钱自己存着"
+      },
+      {
+       "role": "assistant",
+       "content": "你妈妈挺开明的。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-10 21:25:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天全赢，东皇庄周都好用"
+      },
+      {
+       "role": "assistant",
+       "content": "状态回来了，继续保持！"
+      },
+      {
+       "role": "user",
+       "content": "店里新来的同事问我什么段位"
+      },
+      {
+       "role": "assistant",
+       "content": "那你怎么跟人家说的？"
+      },
+      {
+       "role": "user",
+       "content": "我说上赛季我可是星耀，现在随便打打"
+      },
+      {
+       "role": "assistant",
+       "content": "哈哈，那她肯定想跟你双排了。"
+      },
+      {
+       "role": "user",
+       "content": "她已经加我好友了，明天一起玩"
+      },
+      {
+       "role": "assistant",
+       "content": "那你得好好带带新同事。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-12 22:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天把太乙真人又捡起来玩了"
+      },
+      {
+       "role": "assistant",
+       "content": "老本命手感还在吗？"
+      },
+      {
+       "role": "user",
+       "content": "还行，孙膑庄周也都拿了"
+      },
+      {
+       "role": "assistant",
+       "content": "游走英雄池越来越深了。"
+      },
+      {
+       "role": "user",
+       "content": "再过两周就开学了，好舍不得"
+      },
+      {
+       "role": "assistant",
+       "content": "开学前我提醒你把战令等级刷满。"
+      },
+      {
+       "role": "user",
+       "content": "好，我老忘记做战令任务"
+      },
+      {
+       "role": "assistant",
+       "content": "交给我，到时候提醒你。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-22 21:50:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "开学后打得好烂，掉到黄金了"
+      },
+      {
+       "role": "assistant",
+       "content": "刚开学事情多，状态难免受影响。"
+      },
+      {
+       "role": "user",
+       "content": "今天庄周蔡文姬全输"
+      },
+      {
+       "role": "assistant",
+       "content": "先停一停，别越打越掉。"
+      },
+      {
+       "role": "user",
+       "content": "大三课好多，还要准备考证"
+      },
+      {
+       "role": "assistant",
+       "content": "会计要考初级证吧？加油。"
+      },
+      {
+       "role": "user",
+       "content": "对，小婷跟我一起报了"
+      },
+      {
+       "role": "assistant",
+       "content": "有伴一起学更有动力。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-27 20:15:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天爬回铂金了，舒服"
+      },
+      {
+       "role": "assistant",
+       "content": "回来得挺快，状态不错。"
+      },
+      {
+       "role": "user",
+       "content": "程咬金和铠都拿了，补位也能赢"
+      },
+      {
+       "role": "assistant",
+       "content": "补位上分，团队型选手。"
+      },
+      {
+       "role": "user",
+       "content": "下周国庆回宜昌，好开心"
+      },
+      {
+       "role": "assistant",
+       "content": "国庆回家好好休息。"
+      },
+      {
+       "role": "user",
+       "content": "回去要吃我妈做的糍粑"
+      },
+      {
+       "role": "assistant",
+       "content": "家里的味道最香了。"
+      }
+     ]
+    }
+   ],
+   "links": [
+    {
+     "kind": "promotion",
+     "date": "2026-06-06",
+     "tier": "钻石",
+     "answer_any": [
+      "部长",
+      "摄影社"
+     ]
+    },
+    {
+     "kind": "losing_streak",
+     "date": "2026-06-12",
+     "tier": "",
+     "answer_any": [
+      "屏幕"
+     ]
+    }
+   ],
+   "brag_claimed_tier": "星耀",
+   "questions": [
+    {
+     "type": "fact",
+     "query": "我学的是什么专业来着？",
+     "answer_any": [
+      "会计"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "我室友叫啥？",
+     "answer_any": [
+      "小婷"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "我老家是哪里的？",
+     "answer_any": [
+      "宜昌"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "我暑假在哪打的工？",
+     "answer_any": [
+      "奶茶店"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "promise",
+     "query": "你说等我庄周练熟了陪我干嘛？",
+     "answer_any": [
+      "回放"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "promise",
+     "query": "开学前你答应提醒我什么事？",
+     "answer_any": [
+      "战令"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "negative",
+     "query": "你是不是说过要教我玩马超？",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "type": "negative",
+     "query": "我跟你讲过我男朋友的事吗？",
+     "answer_any": [],
+     "stale_any": []
+    }
+   ]
+  },
+  {
+   "id": "g1_t2",
+   "persona": "王海涛，38岁，西安出租车司机，妻子开早餐店，儿子豪豪上初中；收车后打几局放松，说话朴实，爱说“舒坦”。",
+   "sessions": [
+    {
+     "date": "2026-03-01 22:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "嘿，我第一次上铂金了！"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜！第一次铂金，值得纪念。"
+      },
+      {
+       "role": "user",
+       "content": "王昭君冻住一大片，舒坦"
+      },
+      {
+       "role": "assistant",
+       "content": "王昭君大招团战很强。"
+      },
+      {
+       "role": "user",
+       "content": "就是今天上午车被人追尾了"
+      },
+      {
+       "role": "assistant",
+       "content": "啊？人没事吧？伤着没有？"
+      },
+      {
+       "role": "user",
+       "content": "人没事，后保险杠撞瘪了，对方全责"
+      },
+      {
+       "role": "assistant",
+       "content": "人没事就好，修车钱对方出。"
+      },
+      {
+       "role": "user",
+       "content": "耽误半天没拉活，少挣不少"
+      },
+      {
+       "role": "assistant",
+       "content": "安全第一，钱慢慢挣。"
+      }
+     ]
+    },
+    {
+     "date": "2026-03-30 23:05:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "开出租车的，收车回家打几局放松"
+      },
+      {
+       "role": "assistant",
+       "content": "跑出租辛苦，放松下挺好。"
+      },
+      {
+       "role": "user",
+       "content": "王昭君赢了，阿轲玄策都送了"
+      },
+      {
+       "role": "assistant",
+       "content": "刺客不是你的强项，还是玩法师吧。"
+      },
+      {
+       "role": "user",
+       "content": "豪豪说我比他还爱玩游戏"
+      },
+      {
+       "role": "assistant",
+       "content": "豪豪是你儿子吧？多大了？"
+      },
+      {
+       "role": "user",
+       "content": "初二了，个子都快比我高了"
+      },
+      {
+       "role": "assistant",
+       "content": "初二正是长个子的时候。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-16 22:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天王昭君被刺客追着打，全输"
+      },
+      {
+       "role": "assistant",
+       "content": "法师要跟着辅助走，别单独发育。"
+      },
+      {
+       "role": "user",
+       "content": "唉，又掉到铂金底了"
+      },
+      {
+       "role": "assistant",
+       "content": "段位来回波动很正常。"
+      },
+      {
+       "role": "user",
+       "content": "西安今天下大雨，打车的特别多"
+      },
+      {
+       "role": "assistant",
+       "content": "下雨天打车的人多，生意不错吧。"
+      },
+      {
+       "role": "user",
+       "content": "还行，就是堵得心烦"
+      },
+      {
+       "role": "assistant",
+       "content": "早点休息，明天还要出车。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-18 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "周末跑完车，打了一晚上"
+      },
+      {
+       "role": "assistant",
+       "content": "今天手感怎么样？"
+      },
+      {
+       "role": "user",
+       "content": "赢得多，上官婉儿居然还能玩"
+      },
+      {
+       "role": "assistant",
+       "content": "婉儿操作难，你挺厉害。"
+      },
+      {
+       "role": "user",
+       "content": "干将莫邪也不错，远程消耗"
+      },
+      {
+       "role": "assistant",
+       "content": "干将飞剑命中了很爽。"
+      },
+      {
+       "role": "user",
+       "content": "老婆早餐店最近生意好"
+      },
+      {
+       "role": "assistant",
+       "content": "早餐店起早贪黑，嫂子辛苦了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-26 20:55:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "最近开始练张良了，大招锁人好用"
+      },
+      {
+       "role": "assistant",
+       "content": "张良大招能锁住突进英雄。"
+      },
+      {
+       "role": "user",
+       "content": "兰陵王偷了几次人，也挺爽"
+      },
+      {
+       "role": "assistant",
+       "content": "中单玩兰陵王，你英雄池真广。"
+      },
+      {
+       "role": "user",
+       "content": "豪豪下周期中考，我得管着他"
+      },
+      {
+       "role": "assistant",
+       "content": "考前少玩手机，爸爸也带个头。"
+      },
+      {
+       "role": "user",
+       "content": "我答应他考好了带他去爬华山"
+      },
+      {
+       "role": "assistant",
+       "content": "华山不错，还能锻炼身体。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-08 22:25:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天全输，张良老是被先手"
+      },
+      {
+       "role": "assistant",
+       "content": "张良站位要藏在草里。"
+      },
+      {
+       "role": "user",
+       "content": "王昭君放下了，现在主练张良"
+      },
+      {
+       "role": "assistant",
+       "content": "等你张良练顺了，我陪你复盘几场团战。"
+      },
+      {
+       "role": "user",
+       "content": "孙悟空我也不会，瞎玩的"
+      },
+      {
+       "role": "assistant",
+       "content": "先专心张良，别分心。"
+      },
+      {
+       "role": "user",
+       "content": "豪豪期中考了全班第十几名"
+      },
+      {
+       "role": "assistant",
+       "content": "中上水平，继续加油。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-15 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天试了下嬴政，伤害真高"
+      },
+      {
+       "role": "assistant",
+       "content": "嬴政大招持续输出很强。"
+      },
+      {
+       "role": "user",
+       "content": "就是没位移，老被切死"
+      },
+      {
+       "role": "assistant",
+       "content": "嬴政要站在队友后面输出。"
+      },
+      {
+       "role": "user",
+       "content": "夏天到了，晚上拉活的多"
+      },
+      {
+       "role": "assistant",
+       "content": "跑夜车注意安全，别疲劳驾驶。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-19 22:50:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我现在主玩嬴政了，张良不玩了"
+      },
+      {
+       "role": "assistant",
+       "content": "嬴政输出更高，挺适合你。"
+      },
+      {
+       "role": "user",
+       "content": "今天输多赢少，澜和兰陵王都不行"
+      },
+      {
+       "role": "assistant",
+       "content": "中单还是别去抢打野了。"
+      },
+      {
+       "role": "user",
+       "content": "嬴政有个皮肤听说要返场"
+      },
+      {
+       "role": "assistant",
+       "content": "嬴政皮肤返场那天，我提醒你去看看。"
+      },
+      {
+       "role": "user",
+       "content": "好的，我先存点点券"
+      },
+      {
+       "role": "assistant",
+       "content": "好，提前准备着。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-21 20:35:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "嬴政今天有输有赢"
+      },
+      {
+       "role": "assistant",
+       "content": "慢慢练，熟了就稳了。"
+      },
+      {
+       "role": "user",
+       "content": "豪豪考完试了，周末带他爬了华山"
+      },
+      {
+       "role": "assistant",
+       "content": "爬华山不轻松，豪豪厉害。"
+      },
+      {
+       "role": "user",
+       "content": "我腿都软了，他一点事没有"
+      },
+      {
+       "role": "assistant",
+       "content": "年轻人体力就是好。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-26 21:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "新赛季又从铂金开始爬了"
+      },
+      {
+       "role": "assistant",
+       "content": "新赛季重新冲，慢慢来。"
+      },
+      {
+       "role": "user",
+       "content": "米莱狄推塔好用，嬴政也赢了"
+      },
+      {
+       "role": "assistant",
+       "content": "中路法师两个都能玩，挺好。"
+      },
+      {
+       "role": "user",
+       "content": "豪豪暑假天天在家打游戏"
+      },
+      {
+       "role": "assistant",
+       "content": "你得给他立规矩了。"
+      },
+      {
+       "role": "user",
+       "content": "我说他他说我也打，没法说"
+      },
+      {
+       "role": "assistant",
+       "content": "那你们父子定个时间表一起遵守。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-11 22:15:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我上钻石了！这辈子第一次！"
+      },
+      {
+       "role": "assistant",
+       "content": "太牛了！第一次钻石，恭喜！"
+      },
+      {
+       "role": "user",
+       "content": "今天全胜，嬴政貂蝉甄姬都赢了"
+      },
+      {
+       "role": "assistant",
+       "content": "全胜上钻，状态满分。"
+      },
+      {
+       "role": "user",
+       "content": "今天也是我老婆生日"
+      },
+      {
+       "role": "assistant",
+       "content": "祝嫂子生日快乐！送了啥？"
+      },
+      {
+       "role": "user",
+       "content": "给她买了个金镯子，她高兴坏了"
+      },
+      {
+       "role": "assistant",
+       "content": "金镯子实在又体面，有心了。"
+      },
+      {
+       "role": "user",
+       "content": "双喜临门，今晚喝两杯"
+      },
+      {
+       "role": "assistant",
+       "content": "少喝点，明天还要出车。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-07 23:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "掉回铂金了，钻石没待几天"
+      },
+      {
+       "role": "assistant",
+       "content": "钻石刚上去容易掉，别灰心。"
+      },
+      {
+       "role": "user",
+       "content": "其实上赛季我就打到过钻石了"
+      },
+      {
+       "role": "assistant",
+       "content": "那这个段位你肯定能回去。"
+      },
+      {
+       "role": "user",
+       "content": "今天不知火舞沈梦溪都试了"
+      },
+      {
+       "role": "assistant",
+       "content": "中路英雄换着玩，保持新鲜感。"
+      },
+      {
+       "role": "user",
+       "content": "开学了，豪豪上初三了"
+      },
+      {
+       "role": "assistant",
+       "content": "初三关键一年，你也要上心。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-27 21:45:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "前几天连跪了好多把，差点卸游戏"
+      },
+      {
+       "role": "assistant",
+       "content": "连败太折磨了，今天怎么样？"
+      },
+      {
+       "role": "user",
+       "content": "今天总算赢回来了，妲己小乔都行"
+      },
+      {
+       "role": "assistant",
+       "content": "止住连败了，不容易。"
+      },
+      {
+       "role": "user",
+       "content": "但我爸前天摔了一跤，腿骨折了"
+      },
+      {
+       "role": "assistant",
+       "content": "啊，老人家严重吗？在医院吗？"
+      },
+      {
+       "role": "user",
+       "content": "住院了，打了钢板，我白天去陪护"
+      },
+      {
+       "role": "assistant",
+       "content": "辛苦了，老人骨折要静养。"
+      },
+      {
+       "role": "user",
+       "content": "晚上收车再去医院换我老婆"
+      },
+      {
+       "role": "assistant",
+       "content": "你也注意身体，别熬垮了。"
+      }
+     ]
+    }
+   ],
+   "links": [
+    {
+     "kind": "promotion",
+     "date": "2026-03-01",
+     "tier": "铂金",
+     "answer_any": [
+      "追尾",
+      "保险杠"
+     ]
+    },
+    {
+     "kind": "promotion",
+     "date": "2026-08-11",
+     "tier": "钻石",
+     "answer_any": [
+      "金镯子"
+     ]
+    },
+    {
+     "kind": "losing_streak",
+     "date": "2026-09-27",
+     "tier": "",
+     "answer_any": [
+      "骨折",
+      "钢板"
+     ]
+    }
+   ],
+   "brag_claimed_tier": "钻石",
+   "questions": [
+    {
+     "type": "fact",
+     "query": "我是开什么车的？",
+     "answer_any": [
+      "出租车",
+      "出租"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "我儿子叫什么？",
+     "answer_any": [
+      "豪豪"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "我老婆是做啥的？",
+     "answer_any": [
+      "早餐店"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "我带儿子去爬的哪座山？",
+     "answer_any": [
+      "华山"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "promise",
+     "query": "你说等我张良练顺了陪我干什么？",
+     "answer_any": [
+      "复盘"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "promise",
+     "query": "嬴政皮肤那事你答应我啥了？",
+     "answer_any": [
+      "返场"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "negative",
+     "query": "你答应过陪我练王昭君连招吗？",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "type": "negative",
+     "query": "我跟你聊过我女儿吗？",
+     "answer_any": [],
+     "stale_any": []
+    }
+   ]
+  },
+  {
+   "id": "g1_t3",
+   "persona": "黄子轩，24岁，衡阳人，在深圳做后端程序员，春天跳槽到新公司，发小老三在东莞上班；嘴上爱逞强，做事认真。",
+   "sessions": [
+    {
+     "date": "2026-03-22 22:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天就上了会儿号，还被抢了打野"
+      },
+      {
+       "role": "assistant",
+       "content": "被抢位置确实难受，玩了啥？"
+      },
+      {
+       "role": "user",
+       "content": "只能玩廉颇，输了，不想玩了"
+      },
+      {
+       "role": "assistant",
+       "content": "坦克打得再好也难带。"
+      },
+      {
+       "role": "user",
+       "content": "最近在准备跳槽面试，算法题刷到头大"
+      },
+      {
+       "role": "assistant",
+       "content": "刷题确实磨人，面的是什么岗位？"
+      },
+      {
+       "role": "user",
+       "content": "后端开发，深圳这边机会多"
+      },
+      {
+       "role": "assistant",
+       "content": "深圳互联网公司多，祝你顺利。"
+      }
+     ]
+    },
+    {
+     "date": "2026-03-28 21:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "裴擒虎今天全赢，舒服"
+      },
+      {
+       "role": "assistant",
+       "content": "老虎前期节奏快，打得好。"
+      },
+      {
+       "role": "user",
+       "content": "老三一直嚷嚷要跟我双排"
+      },
+      {
+       "role": "assistant",
+       "content": "老三是你朋友吗？"
+      },
+      {
+       "role": "user",
+       "content": "我发小，从小在衡阳一块长大的"
+      },
+      {
+       "role": "assistant",
+       "content": "发小一起开黑，默契肯定好。"
+      },
+      {
+       "role": "user",
+       "content": "他在东莞工厂上班，周末来深圳找我"
+      },
+      {
+       "role": "assistant",
+       "content": "离得近，见面也方便。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-11 23:15:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "offer拿到了！下周入职新公司"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜！面试辛苦没白费。"
+      },
+      {
+       "role": "user",
+       "content": "今晚庆祝一下，排位基本全赢"
+      },
+      {
+       "role": "assistant",
+       "content": "双喜临门，好状态。"
+      },
+      {
+       "role": "user",
+       "content": "兰陵王澜老虎轮着玩"
+      },
+      {
+       "role": "assistant",
+       "content": "打野英雄池很深嘛。"
+      },
+      {
+       "role": "user",
+       "content": "新公司还是写代码，程序员的命"
+      },
+      {
+       "role": "assistant",
+       "content": "新环境加油，也要注意颈椎。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-14 21:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "最近在练镜，太难了"
+      },
+      {
+       "role": "assistant",
+       "content": "镜的连招多，要多去训练营。"
+      },
+      {
+       "role": "user",
+       "content": "今天镜输了，老虎还是稳"
+      },
+      {
+       "role": "assistant",
+       "content": "等你镜练熟了，我陪你复盘下打野路线。"
+      },
+      {
+       "role": "user",
+       "content": "好啊，新公司第一周，还在熟悉代码"
+      },
+      {
+       "role": "assistant",
+       "content": "刚入职都这样，慢慢来。"
+      },
+      {
+       "role": "user",
+       "content": "同事挺好，中午一起点外卖"
+      },
+      {
+       "role": "assistant",
+       "content": "同事好相处，上班也开心。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-21 20:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "试了下百里玄策，钩子好难中"
+      },
+      {
+       "role": "assistant",
+       "content": "玄策钩子要预判，多练手感。"
+      },
+      {
+       "role": "user",
+       "content": "老三说以后玩辅助跟我"
+      },
+      {
+       "role": "assistant",
+       "content": "发小当辅助，打野更安心。"
+      },
+      {
+       "role": "user",
+       "content": "周末跟老三去吃了猪脚饭"
+      },
+      {
+       "role": "assistant",
+       "content": "深圳猪脚饭确实好吃。"
+      },
+      {
+       "role": "user",
+       "content": "他说要攒钱回衡阳开店"
+      },
+      {
+       "role": "assistant",
+       "content": "有目标挺好，支持他。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-13 22:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我现在主玩镜了，老虎先放放"
+      },
+      {
+       "role": "assistant",
+       "content": "镜上限高，练好了很强。"
+      },
+      {
+       "role": "user",
+       "content": "但今天全输，镜被对面打野反了"
+      },
+      {
+       "role": "assistant",
+       "content": "刚换本命有阵痛期，正常。"
+      },
+      {
+       "role": "user",
+       "content": "钟馗也拿了，钩子没中几个"
+      },
+      {
+       "role": "assistant",
+       "content": "今天手感不好，早点休息吧。"
+      },
+      {
+       "role": "user",
+       "content": "加班到九点才回家，打得没状态"
+      },
+      {
+       "role": "assistant",
+       "content": "累了就别打排位了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-30 21:50:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "钻一了，离星耀就差一点"
+      },
+      {
+       "role": "assistant",
+       "content": "很接近了，加把劲。"
+      },
+      {
+       "role": "user",
+       "content": "镜还是不太稳，老虎赢了"
+      },
+      {
+       "role": "assistant",
+       "content": "关键的时候可以先用老虎。"
+      },
+      {
+       "role": "user",
+       "content": "端午节放假，老三喊我回衡阳"
+      },
+      {
+       "role": "assistant",
+       "content": "回家吃粽子，挺好。"
+      },
+      {
+       "role": "user",
+       "content": "我妈包的粽子我想好久了"
+      },
+      {
+       "role": "assistant",
+       "content": "家里的粽子最香。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-04 22:45:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天第一次上了星耀！虽然又掉回钻一"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜！第一次摸到星耀，很棒。"
+      },
+      {
+       "role": "user",
+       "content": "镜终于打出感觉了，娜可露露也赢了"
+      },
+      {
+       "role": "assistant",
+       "content": "镜练出来了，以后就是本命。"
+      },
+      {
+       "role": "user",
+       "content": "还有个事，我今天表白成功了"
+      },
+      {
+       "role": "assistant",
+       "content": "哇！恭喜！是谁呀？"
+      },
+      {
+       "role": "user",
+       "content": "新公司的同事，叫晓晴，做产品的"
+      },
+      {
+       "role": "assistant",
+       "content": "同事变女朋友，好甜。"
+      },
+      {
+       "role": "user",
+       "content": "今天算是人生巅峰了"
+      },
+      {
+       "role": "assistant",
+       "content": "星耀加脱单，好日子。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-07 23:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "最近连跪了好几把，快崩了"
+      },
+      {
+       "role": "assistant",
+       "content": "这么惨？现在还在星耀吗？"
+      },
+      {
+       "role": "user",
+       "content": "星耀五，再输就掉了"
+      },
+      {
+       "role": "assistant",
+       "content": "守住段位最重要，先别急。"
+      },
+      {
+       "role": "user",
+       "content": "我最近主练百里玄策，今天还被禁了"
+      },
+      {
+       "role": "assistant",
+       "content": "被禁了就只能拿别的了。"
+      },
+      {
+       "role": "user",
+       "content": "云中君典韦都输，盾山才赢"
+      },
+      {
+       "role": "assistant",
+       "content": "补位辅助还能赢，不错。"
+      },
+      {
+       "role": "user",
+       "content": "更烦的是出租屋天花板漏水了"
+      },
+      {
+       "role": "assistant",
+       "content": "啊，东西没泡坏吧？"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-21 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "新赛季掉到钻二了，难受"
+      },
+      {
+       "role": "assistant",
+       "content": "赛季重置，慢慢爬回去。"
+      },
+      {
+       "role": "user",
+       "content": "不过上赛季我可是打到王者的"
+      },
+      {
+       "role": "assistant",
+       "content": "那这段位对你来说小意思。"
+      },
+      {
+       "role": "user",
+       "content": "玄策今天有赢有输，这赛季目标星耀以上"
+      },
+      {
+       "role": "assistant",
+       "content": "这个赛季结束前一周，我提醒你冲星耀。"
+      },
+      {
+       "role": "user",
+       "content": "晓晴说陪我一起打，她玩瑶"
+      },
+      {
+       "role": "assistant",
+       "content": "有女朋友挂着，玄策更好切了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-06 22:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天玩了一晚上，有输有赢"
+      },
+      {
+       "role": "assistant",
+       "content": "玄策还是主力吗？"
+      },
+      {
+       "role": "user",
+       "content": "对，老虎也拿了，还帮队友玩蔡文姬"
+      },
+      {
+       "role": "assistant",
+       "content": "打野去补辅助，团队意识强。"
+      },
+      {
+       "role": "user",
+       "content": "老三真回衡阳开店了，开米粉店"
+      },
+      {
+       "role": "assistant",
+       "content": "他说到做到，祝他生意兴隆。"
+      },
+      {
+       "role": "user",
+       "content": "我说下次回家去他店里吃"
+      },
+      {
+       "role": "assistant",
+       "content": "发小开店，必须捧场。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-07 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天全输，东皇被骂惨了"
+      },
+      {
+       "role": "assistant",
+       "content": "补位还被骂最委屈了。"
+      },
+      {
+       "role": "user",
+       "content": "玄策钩子也空了好几次"
+      },
+      {
+       "role": "assistant",
+       "content": "别上头，明天再打。"
+      },
+      {
+       "role": "user",
+       "content": "项目下周上线，这周要加班"
+      },
+      {
+       "role": "assistant",
+       "content": "上线前最忙，注意休息。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-09 20:45:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天就打了会儿，太乙也输了"
+      },
+      {
+       "role": "assistant",
+       "content": "时间少就别打排位了。"
+      },
+      {
+       "role": "user",
+       "content": "加班太累，坐地铁差点睡过站"
+      },
+      {
+       "role": "assistant",
+       "content": "写代码加班多，注意身体。"
+      },
+      {
+       "role": "user",
+       "content": "国庆想带晓晴回衡阳见爸妈"
+      },
+      {
+       "role": "assistant",
+       "content": "见家长是大事，准备点礼物。"
+      },
+      {
+       "role": "user",
+       "content": "还在想买什么礼物好"
+      },
+      {
+       "role": "assistant",
+       "content": "带点深圳特产或者茶叶都行。"
+      }
+     ]
+    }
+   ],
+   "links": [
+    {
+     "kind": "promotion",
+     "date": "2026-06-04",
+     "tier": "星耀",
+     "answer_any": [
+      "表白"
+     ]
+    },
+    {
+     "kind": "losing_streak",
+     "date": "2026-07-07",
+     "tier": "",
+     "answer_any": [
+      "漏水",
+      "天花板"
+     ]
+    }
+   ],
+   "brag_claimed_tier": "王者",
+   "questions": [
+    {
+     "type": "fact",
+     "query": "我是做什么工作的？",
+     "answer_any": [
+      "程序员",
+      "后端"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "我老家在哪儿？",
+     "answer_any": [
+      "衡阳"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "老三跟我是什么关系？",
+     "answer_any": [
+      "发小"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "老三后来开了家什么店？",
+     "answer_any": [
+      "米粉店"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "promise",
+     "query": "你之前说等我镜练熟了陪我复盘啥？",
+     "answer_any": [
+      "打野路线"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "promise",
+     "query": "这个赛季结束前你说要提醒我干什么？",
+     "answer_any": [
+      "冲星耀"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "negative",
+     "query": "你答应过帮我练娜可露露吗？",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "type": "negative",
+     "query": "我跟你说过我办健身卡的事吗？",
+     "answer_any": [],
+     "stale_any": []
+    }
+   ]
+  },
+  {
+   "id": "g1_t4",
+   "persona": "吴佳豪，18岁，重庆高三学生，六月高考后被南京一所大学计算机专业录取，同桌小周是开黑搭档；少年心性，说话快。",
+   "sessions": [
+    {
+     "date": "2026-03-01 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "高三周末就放半天，玩了会儿澜，赢了"
+      },
+      {
+       "role": "assistant",
+       "content": "高三辛苦，放松一下挺好。"
+      },
+      {
+       "role": "user",
+       "content": "我妈说再玩就没收手机"
+      },
+      {
+       "role": "assistant",
+       "content": "高三家长都紧张，理解一下。"
+      },
+      {
+       "role": "user",
+       "content": "小周是我同桌，他也偷偷玩"
+      },
+      {
+       "role": "assistant",
+       "content": "同桌一起开黑，记得别耽误学习。"
+      }
+     ]
+    },
+    {
+     "date": "2026-03-14 22:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "铂金一了，离钻石就差一点"
+      },
+      {
+       "role": "assistant",
+       "content": "加油，快到钻石了。"
+      },
+      {
+       "role": "user",
+       "content": "澜鲨鱼大招追人太爽"
+      },
+      {
+       "role": "assistant",
+       "content": "澜收割能力强，适合打野。"
+      },
+      {
+       "role": "user",
+       "content": "下周月考，小周比我还慌"
+      },
+      {
+       "role": "assistant",
+       "content": "月考检验一下，别太紧张。"
+      }
+     ]
+    },
+    {
+     "date": "2026-03-22 22:50:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我上钻石了！第一次！"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜！高三还能上钻，厉害。"
+      },
+      {
+       "role": "user",
+       "content": "澜和老虎轮着玩，赢多输少"
+      },
+      {
+       "role": "assistant",
+       "content": "打野节奏带得好。"
+      },
+      {
+       "role": "user",
+       "content": "还有，我作文比赛拿了市一等奖"
+      },
+      {
+       "role": "assistant",
+       "content": "太强了！文武双全啊。"
+      },
+      {
+       "role": "user",
+       "content": "语文老师在班里念了我的作文"
+      },
+      {
+       "role": "assistant",
+       "content": "这是很大的认可，值得骄傲。"
+      },
+      {
+       "role": "user",
+       "content": "小周说要请我喝可乐"
+      },
+      {
+       "role": "assistant",
+       "content": "好兄弟，开心就好。"
+      }
+     ]
+    },
+    {
+     "date": "2026-03-31 21:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天被抢打野，拿了亚瑟"
+      },
+      {
+       "role": "assistant",
+       "content": "亚瑟上手简单，补位不错。"
+      },
+      {
+       "role": "user",
+       "content": "暃好难，澜还是最顺手"
+      },
+      {
+       "role": "assistant",
+       "content": "关键时候还是用本命最靠谱。"
+      },
+      {
+       "role": "user",
+       "content": "体育课跑了一千米，腿疼"
+      },
+      {
+       "role": "assistant",
+       "content": "高三也要锻炼身体。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-04 20:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "五一就放了一天，玩了会儿"
+      },
+      {
+       "role": "assistant",
+       "content": "高三假期少，抓紧休息。"
+      },
+      {
+       "role": "user",
+       "content": "韩信曹操都输了，澜赢了"
+      },
+      {
+       "role": "assistant",
+       "content": "打野还是澜最稳。"
+      },
+      {
+       "role": "user",
+       "content": "还有一个多月就高考了"
+      },
+      {
+       "role": "assistant",
+       "content": "冲刺阶段，加油！"
+      },
+      {
+       "role": "user",
+       "content": "我想考南京的大学"
+      },
+      {
+       "role": "assistant",
+       "content": "南京高校多，目标明确挺好。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-19 21:55:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我最近主玩兰陵王了，澜被削了"
+      },
+      {
+       "role": "assistant",
+       "content": "兰陵王隐身抓人很灵活。"
+      },
+      {
+       "role": "user",
+       "content": "今天兰陵王全赢，切射手太爽了"
+      },
+      {
+       "role": "assistant",
+       "content": "状态很好，继续保持。"
+      },
+      {
+       "role": "user",
+       "content": "学校体检，我又长高了两厘米"
+      },
+      {
+       "role": "assistant",
+       "content": "还在长个子，多喝牛奶。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-04 22:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "过三天就高考了，今晚放松一下"
+      },
+      {
+       "role": "assistant",
+       "content": "放松可以，早点睡别熬夜。"
+      },
+      {
+       "role": "user",
+       "content": "兰陵王赢了，花木兰输了"
+      },
+      {
+       "role": "assistant",
+       "content": "考前别打排位了，影响心情。"
+      },
+      {
+       "role": "user",
+       "content": "嗯，考完我要天天练兰陵王"
+      },
+      {
+       "role": "assistant",
+       "content": "等你考完，我陪你把兰陵王连招练熟。"
+      },
+      {
+       "role": "user",
+       "content": "好！我妈不让我碰手机了"
+      },
+      {
+       "role": "assistant",
+       "content": "听妈妈的，考完再说。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-28 21:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "高考分数出来了，比预想的高"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜！考得怎么样？"
+      },
+      {
+       "role": "user",
+       "content": "六百出头，南京有学校能上"
+      },
+      {
+       "role": "assistant",
+       "content": "不错，可以好好挑志愿。"
+      },
+      {
+       "role": "user",
+       "content": "今天玩了好多英雄，李白赵云都拿了"
+      },
+      {
+       "role": "assistant",
+       "content": "考完放开玩，英雄池扩大了。"
+      },
+      {
+       "role": "user",
+       "content": "兰陵王还是赢最多的"
+      },
+      {
+       "role": "assistant",
+       "content": "本命英雄稳定发挥。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-29 22:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天输麻了，几乎没赢"
+      },
+      {
+       "role": "assistant",
+       "content": "换了好多英雄吧？"
+      },
+      {
+       "role": "user",
+       "content": "刘备玄策老虎铠都玩了，都不行"
+      },
+      {
+       "role": "assistant",
+       "content": "换太多容易乱，回到兰陵王吧。"
+      },
+      {
+       "role": "user",
+       "content": "在填志愿，纠结南京哪个学校"
+      },
+      {
+       "role": "assistant",
+       "content": "看专业也很重要，想学啥？"
+      },
+      {
+       "role": "user",
+       "content": "想学计算机，以后好找工作"
+      },
+      {
+       "role": "assistant",
+       "content": "计算机挺热门，选好学校就行。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-18 20:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "新赛季掉到铂金了，重新打"
+      },
+      {
+       "role": "assistant",
+       "content": "赛季重置，打回钻石不难。"
+      },
+      {
+       "role": "user",
+       "content": "玄策今天赢了，钩子中了好几次"
+      },
+      {
+       "role": "assistant",
+       "content": "玄策练得越来越好了。"
+      },
+      {
+       "role": "user",
+       "content": "暑假在驾校学车，晒成炭了"
+      },
+      {
+       "role": "assistant",
+       "content": "学车夏天最晒，注意防晒。"
+      },
+      {
+       "role": "user",
+       "content": "科目二倒车入库好难"
+      },
+      {
+       "role": "assistant",
+       "content": "多练几次就熟了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-01 21:45:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "回钻石了，最近在练镜"
+      },
+      {
+       "role": "assistant",
+       "content": "镜上限高，打野很强。"
+      },
+      {
+       "role": "user",
+       "content": "主玩镜了，兰陵王先放着"
+      },
+      {
+       "role": "assistant",
+       "content": "那镜的皮肤你攒了吗？"
+      },
+      {
+       "role": "user",
+       "content": "镜皮肤碎片我攒了好多"
+      },
+      {
+       "role": "assistant",
+       "content": "暑假结束前我提醒你把镜的皮肤碎片兑了。"
+      },
+      {
+       "role": "user",
+       "content": "好，录取通知书也到了，南京的"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜！正式是大学生了。"
+      },
+      {
+       "role": "user",
+       "content": "计算机专业，小周去了成都"
+      },
+      {
+       "role": "assistant",
+       "content": "同桌分开了，游戏里还能一起玩。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-13 22:15:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天跟小周双排，狂铁被打爆"
+      },
+      {
+       "role": "assistant",
+       "content": "补位对抗路不容易。"
+      },
+      {
+       "role": "user",
+       "content": "镜还行，那局赢了"
+      },
+      {
+       "role": "assistant",
+       "content": "镜越来越顺手了。"
+      },
+      {
+       "role": "user",
+       "content": "小周说我菜，我上赛季可是星耀"
+      },
+      {
+       "role": "assistant",
+       "content": "那你得打给他看看。"
+      },
+      {
+       "role": "user",
+       "content": "驾照拿到了，开心"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜！暑假收获满满。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-29 23:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "前两天连跪好几把，心态崩了"
+      },
+      {
+       "role": "assistant",
+       "content": "连败最磨人，今天好些了吗？"
+      },
+      {
+       "role": "user",
+       "content": "今天赢回来一些，镜和老虎都还行"
+      },
+      {
+       "role": "assistant",
+       "content": "能止住连败就好。"
+      },
+      {
+       "role": "user",
+       "content": "今天去南京报到了，坐了一天高铁"
+      },
+      {
+       "role": "assistant",
+       "content": "正式开学了！宿舍怎么样？"
+      },
+      {
+       "role": "user",
+       "content": "四人间，室友都爱打王者"
+      },
+      {
+       "role": "assistant",
+       "content": "那以后不缺队友了。"
+      }
+     ]
+    }
+   ],
+   "links": [
+    {
+     "kind": "promotion",
+     "date": "2026-03-22",
+     "tier": "钻石",
+     "answer_any": [
+      "作文比赛",
+      "一等奖"
+     ]
+    },
+    {
+     "kind": "losing_streak",
+     "date": "2026-08-29",
+     "tier": "",
+     "answer_any": [
+      "报到"
+     ]
+    }
+   ],
+   "brag_claimed_tier": "星耀",
+   "questions": [
+    {
+     "type": "fact",
+     "query": "我考上的是哪个城市的大学？",
+     "answer_any": [
+      "南京"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "我大学学的什么专业？",
+     "answer_any": [
+      "计算机"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "小周跟我什么关系？",
+     "answer_any": [
+      "同桌"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "小周后来去哪上大学了？",
+     "answer_any": [
+      "成都"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "promise",
+     "query": "你说我高考完要陪我练什么？",
+     "answer_any": [
+      "连招"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "promise",
+     "query": "暑假结束前你说要提醒我干嘛？",
+     "answer_any": [
+      "碎片"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "negative",
+     "query": "你是不是说过要帮我盯澜的新皮肤上架？",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "type": "negative",
+     "query": "我跟你讲过我打篮球的事吗？",
+     "answer_any": [],
+     "stale_any": []
+    }
+   ]
+  },
+  {
+   "id": "g1_t5",
+   "persona": "马晓东，34岁，济南一所中学的体育老师，养了只柯基叫可乐，姐姐在青岛开民宿；春天买了新房，嗓门大，说话爽快。",
+   "sessions": [
+    {
+     "date": "2026-03-01 20:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "开学前最后一天，玩了会儿老夫子"
+      },
+      {
+       "role": "assistant",
+       "content": "老夫子单带很强，赢了吧？"
+      },
+      {
+       "role": "user",
+       "content": "赢了，把对面边路拖得没脾气"
+      },
+      {
+       "role": "assistant",
+       "content": "老夫子二技能抓人太恶心了。"
+      },
+      {
+       "role": "user",
+       "content": "明天开学，又要带学生跑操了"
+      },
+      {
+       "role": "assistant",
+       "content": "你是老师呀？教什么的？"
+      },
+      {
+       "role": "user",
+       "content": "体育老师，在济南一所中学"
+      },
+      {
+       "role": "assistant",
+       "content": "体育老师好啊，身体倍儿棒。"
+      }
+     ]
+    },
+    {
+     "date": "2026-03-08 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天全输，掉到钻四了"
+      },
+      {
+       "role": "assistant",
+       "content": "怎么了，状态不好？"
+      },
+      {
+       "role": "user",
+       "content": "老夫子被克，蒙恬朵莉亚也都输"
+      },
+      {
+       "role": "assistant",
+       "content": "换英雄也没用，先休息吧。"
+      },
+      {
+       "role": "user",
+       "content": "可乐今天把沙发啃了"
+      },
+      {
+       "role": "assistant",
+       "content": "可乐是你养的狗吗？"
+      },
+      {
+       "role": "user",
+       "content": "对，柯基，精力旺盛得很"
+      },
+      {
+       "role": "assistant",
+       "content": "柯基得多遛，消耗精力。"
+      }
+     ]
+    },
+    {
+     "date": "2026-03-22 22:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "连跪了好几把，钻四都快保不住了"
+      },
+      {
+       "role": "assistant",
+       "content": "连败先停停，别越打越掉。"
+      },
+      {
+       "role": "user",
+       "content": "老夫子总算赢回来了，花木兰不行"
+      },
+      {
+       "role": "assistant",
+       "content": "本命关键时候还是靠得住。"
+      },
+      {
+       "role": "user",
+       "content": "还有糟心事，新房被装修公司坑了"
+      },
+      {
+       "role": "assistant",
+       "content": "怎么了？出啥问题了？"
+      },
+      {
+       "role": "user",
+       "content": "瓷砖用的次品，还多收了一万多"
+      },
+      {
+       "role": "assistant",
+       "content": "太过分了，留好合同去维权。"
+      },
+      {
+       "role": "user",
+       "content": "明天请假去跟他们理论"
+      },
+      {
+       "role": "assistant",
+       "content": "带上证据，冷静处理。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-13 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "前阵子掉回铂金了，今天全赢"
+      },
+      {
+       "role": "assistant",
+       "content": "全胜，回钻石指日可待。"
+      },
+      {
+       "role": "user",
+       "content": "老夫子在铂金局就是无敌"
+      },
+      {
+       "role": "assistant",
+       "content": "这个段位没人会针对老夫子。"
+      },
+      {
+       "role": "user",
+       "content": "带学生跑了一下午八百米测试"
+      },
+      {
+       "role": "assistant",
+       "content": "体育老师辛苦，嗓子还好吗？"
+      },
+      {
+       "role": "user",
+       "content": "喊哑了，回家可乐还要遛"
+      },
+      {
+       "role": "assistant",
+       "content": "那你今晚早点歇着。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-03 20:45:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "回钻石了！我现在主玩刘备"
+      },
+      {
+       "role": "assistant",
+       "content": "刘备在对抗路也很猛。"
+      },
+      {
+       "role": "user",
+       "content": "老夫子被削了，刘备打着更爽"
+      },
+      {
+       "role": "assistant",
+       "content": "刘备霰弹枪近身伤害高。"
+      },
+      {
+       "role": "user",
+       "content": "五一带可乐去泉城广场玩了"
+      },
+      {
+       "role": "assistant",
+       "content": "济南五一人多吧？"
+      },
+      {
+       "role": "user",
+       "content": "人山人海，可乐差点走丢"
+      },
+      {
+       "role": "assistant",
+       "content": "人多遛狗要拴好绳。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-23 22:05:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天被抢位，玩了亚瑟和瑶"
+      },
+      {
+       "role": "assistant",
+       "content": "补位也能打，不错。"
+      },
+      {
+       "role": "user",
+       "content": "刘备都没机会拿出来"
+      },
+      {
+       "role": "assistant",
+       "content": "周末我陪你看看刘备的出装怎么配。"
+      },
+      {
+       "role": "user",
+       "content": "好，最近带学生准备中考体育"
+      },
+      {
+       "role": "assistant",
+       "content": "中考体育很关键，压力也大。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-06 21:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天赢得多，刘备狂铁都好用"
+      },
+      {
+       "role": "assistant",
+       "content": "状态回来了，不错。"
+      },
+      {
+       "role": "user",
+       "content": "你上次说的出装我试了，确实猛"
+      },
+      {
+       "role": "assistant",
+       "content": "有用就好，刘备就该这么出。"
+      },
+      {
+       "role": "user",
+       "content": "廉颇马超也拿了，帮队友补位"
+      },
+      {
+       "role": "assistant",
+       "content": "能补位的对抗路很吃香。"
+      },
+      {
+       "role": "user",
+       "content": "下周中考体育考试，我要去监考"
+      },
+      {
+       "role": "assistant",
+       "content": "监考要站一上午吧，辛苦。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-20 20:35:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "回钻三了，玩了会儿庄周"
+      },
+      {
+       "role": "assistant",
+       "content": "帮队友补辅助玩庄周了吧？"
+      },
+      {
+       "role": "user",
+       "content": "对，被抢位了，有输有赢"
+      },
+      {
+       "role": "assistant",
+       "content": "能稳住段位就好。"
+      },
+      {
+       "role": "user",
+       "content": "学校放暑假前事好多，天天开会"
+      },
+      {
+       "role": "assistant",
+       "content": "期末总结开会多。"
+      },
+      {
+       "role": "user",
+       "content": "暑假打算去青岛找我姐"
+      },
+      {
+       "role": "assistant",
+       "content": "青岛夏天很舒服。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-28 21:50:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天在试夏洛特，挺帅的"
+      },
+      {
+       "role": "assistant",
+       "content": "夏洛特连招华丽，对抗路好用。"
+      },
+      {
+       "role": "user",
+       "content": "牛魔花木兰铠也玩了"
+      },
+      {
+       "role": "assistant",
+       "content": "英雄池扩得挺快。"
+      },
+      {
+       "role": "user",
+       "content": "我姐在青岛开民宿，喊我去帮忙"
+      },
+      {
+       "role": "assistant",
+       "content": "帮姐姐打理民宿，顺便度假。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-02 22:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "主玩换夏洛特了，刘备先放放"
+      },
+      {
+       "role": "assistant",
+       "content": "夏洛特操作上限高。"
+      },
+      {
+       "role": "user",
+       "content": "今天赢多输少，夏洛特越来越顺"
+      },
+      {
+       "role": "assistant",
+       "content": "顺手了就多练练，加油。"
+      },
+      {
+       "role": "user",
+       "content": "狂铁也赢了，对面边路被打哭"
+      },
+      {
+       "role": "assistant",
+       "content": "狂铁打团冲进去很猛。"
+      },
+      {
+       "role": "user",
+       "content": "明天出发去青岛，带上可乐"
+      },
+      {
+       "role": "assistant",
+       "content": "一路顺风！可乐也去度假。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-14 21:15:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "新赛季掉到钻五了"
+      },
+      {
+       "role": "assistant",
+       "content": "重置后慢慢爬就行。"
+      },
+      {
+       "role": "user",
+       "content": "在青岛只打了会儿，夏洛特还输了"
+      },
+      {
+       "role": "assistant",
+       "content": "度假为主，游戏为辅。"
+      },
+      {
+       "role": "user",
+       "content": "民宿暑假爆满，我天天帮忙收拾房间"
+      },
+      {
+       "role": "assistant",
+       "content": "体育老师干这个，体力不愁。"
+      },
+      {
+       "role": "user",
+       "content": "夏洛特铭文我还没配好"
+      },
+      {
+       "role": "assistant",
+       "content": "九月开学前一周，我提醒你把夏洛特铭文配好。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-18 22:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "在民宿遇到个小伙子也玩王者"
+      },
+      {
+       "role": "assistant",
+       "content": "这么巧，你们双排了吗？"
+      },
+      {
+       "role": "user",
+       "content": "排了，我跟他说上赛季我打到星耀"
+      },
+      {
+       "role": "assistant",
+       "content": "他是不是很佩服你？"
+      },
+      {
+       "role": "user",
+       "content": "结果夏洛特有输有赢，他不太信"
+      },
+      {
+       "role": "assistant",
+       "content": "下次多赢点给他看。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-29 20:50:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "开学一个月了，终于有空玩"
+      },
+      {
+       "role": "assistant",
+       "content": "新学期是不是特别忙？"
+      },
+      {
+       "role": "user",
+       "content": "夏洛特铭文配好了，你提醒得及时"
+      },
+      {
+       "role": "assistant",
+       "content": "配好了打得更顺。"
+      },
+      {
+       "role": "user",
+       "content": "现在回钻三了，有输有赢"
+      },
+      {
+       "role": "assistant",
+       "content": "段位稳步上升，不错。"
+      },
+      {
+       "role": "user",
+       "content": "国庆想带可乐去爬泰山"
+      },
+      {
+       "role": "assistant",
+       "content": "柯基腿短，爬泰山可别累着它。"
+      }
+     ]
+    }
+   ],
+   "links": [
+    {
+     "kind": "losing_streak",
+     "date": "2026-03-22",
+     "tier": "",
+     "answer_any": [
+      "装修公司",
+      "瓷砖"
+     ]
+    }
+   ],
+   "brag_claimed_tier": "星耀",
+   "questions": [
+    {
+     "type": "fact",
+     "query": "我是教什么的老师？",
+     "answer_any": [
+      "体育老师",
+      "体育"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "我家狗叫啥名字？",
+     "answer_any": [
+      "可乐"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "我在哪个城市工作？",
+     "answer_any": [
+      "济南"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "我姐在青岛是干什么的？",
+     "answer_any": [
+      "民宿"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "promise",
+     "query": "你之前说要陪我看刘备的什么来着？",
+     "answer_any": [
+      "出装"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "promise",
+     "query": "开学前你答应提醒我配什么？",
+     "answer_any": [
+      "铭文"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "negative",
+     "query": "你答应过帮我找老夫子的教学视频吗？",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "type": "negative",
+     "query": "我跟你讲过我女朋友的事吗？",
+     "answer_any": [],
+     "stale_any": []
+    }
+   ]
+  },
+  {
+   "id": "g1_t6",
+   "persona": "郑雨桐，27岁，长沙美甲店老板娘，男友阿凯是消防员，养了只仓鼠豆豆；夏天见了男友父母、秋天筹备婚礼，说话软萌爱撒娇。",
+   "sessions": [
+    {
+     "date": "2026-03-28 22:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我第一次上星耀啦！盾山太强了"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜！第一次星耀，太厉害了。"
+      },
+      {
+       "role": "user",
+       "content": "盾山挡射手的子弹，对面气死了"
+      },
+      {
+       "role": "assistant",
+       "content": "盾山克制射手，用得很好。"
+      },
+      {
+       "role": "user",
+       "content": "还有个好消息，我美甲店开分店了"
+      },
+      {
+       "role": "assistant",
+       "content": "双喜临门！开在哪儿呀？"
+      },
+      {
+       "role": "user",
+       "content": "在五一广场附近，下周开业"
+      },
+      {
+       "role": "assistant",
+       "content": "五一广场人流大，生意肯定好。"
+      },
+      {
+       "role": "user",
+       "content": "开业那天阿凯请假来帮忙"
+      },
+      {
+       "role": "assistant",
+       "content": "有人帮忙，安心多了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-03-29 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "星耀局好难，今天有输有赢"
+      },
+      {
+       "role": "assistant",
+       "content": "刚上星耀都要适应一阵。"
+      },
+      {
+       "role": "user",
+       "content": "少司缘钟馗都试了，盾山最稳"
+      },
+      {
+       "role": "assistant",
+       "content": "本命辅助最靠得住。"
+      },
+      {
+       "role": "user",
+       "content": "阿凯是我男朋友，消防员，今天值班"
+      },
+      {
+       "role": "assistant",
+       "content": "消防员很辛苦，也很了不起。"
+      },
+      {
+       "role": "user",
+       "content": "我一个人在家跟豆豆玩"
+      },
+      {
+       "role": "assistant",
+       "content": "豆豆是你养的宠物吗？"
+      },
+      {
+       "role": "user",
+       "content": "是只仓鼠，天天跑轮子"
+      },
+      {
+       "role": "assistant",
+       "content": "仓鼠好可爱，晚上很能闹。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-25 22:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "掉回钻石了，今天全输"
+      },
+      {
+       "role": "assistant",
+       "content": "星耀掉下来很正常，别灰心。"
+      },
+      {
+       "role": "user",
+       "content": "刘禅张飞盾山都输，队友也坑"
+      },
+      {
+       "role": "assistant",
+       "content": "辅助背锅最多，委屈了。"
+      },
+      {
+       "role": "user",
+       "content": "店里最近忙，做美甲做到手抽筋"
+      },
+      {
+       "role": "assistant",
+       "content": "美甲是精细活，注意休息手腕。"
+      },
+      {
+       "role": "user",
+       "content": "长沙最近天天下雨，烦死了"
+      },
+      {
+       "role": "assistant",
+       "content": "回南天确实闷，开个除湿机吧。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-25 21:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我现在主玩牛魔了，盾山不想玩"
+      },
+      {
+       "role": "assistant",
+       "content": "牛魔开团能力强，好选择。"
+      },
+      {
+       "role": "user",
+       "content": "牛魔大招顶人好爽，就是老开空"
+      },
+      {
+       "role": "assistant",
+       "content": "等你牛魔练熟了，我陪你看看开团时机。"
+      },
+      {
+       "role": "user",
+       "content": "今天还被迫玩了小乔高渐离"
+      },
+      {
+       "role": "assistant",
+       "content": "补位法师，你英雄池挺广。"
+      },
+      {
+       "role": "user",
+       "content": "明世隐也拿了，钻石上游了，再冲冲"
+      },
+      {
+       "role": "assistant",
+       "content": "星耀已经离你不远了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-31 23:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "连跪了好多把，我真的要哭了"
+      },
+      {
+       "role": "assistant",
+       "content": "抱抱，连败太难受了。"
+      },
+      {
+       "role": "user",
+       "content": "孙膑张飞牛魔轮着输，最后才赢回来"
+      },
+      {
+       "role": "assistant",
+       "content": "能止住就好，今天别打了。"
+      },
+      {
+       "role": "user",
+       "content": "今天店里还被顾客写了差评"
+      },
+      {
+       "role": "assistant",
+       "content": "啊？发生什么了？"
+      },
+      {
+       "role": "user",
+       "content": "说我做的指甲歪了，其实是她自己碰坏的"
+      },
+      {
+       "role": "assistant",
+       "content": "太冤了，可以在平台申诉。"
+      },
+      {
+       "role": "user",
+       "content": "申诉了，希望能撤掉"
+      },
+      {
+       "role": "assistant",
+       "content": "别往心里去，你手艺大家知道。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-05 20:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天又全输，牛魔开团没人跟"
+      },
+      {
+       "role": "assistant",
+       "content": "开团没人跟最无奈了。"
+      },
+      {
+       "role": "user",
+       "content": "少司缘也输，我是不是不适合游走"
+      },
+      {
+       "role": "assistant",
+       "content": "你上过星耀，实力在的。"
+      },
+      {
+       "role": "user",
+       "content": "阿凯今天值班救了只卡在树上的猫"
+      },
+      {
+       "role": "assistant",
+       "content": "消防员真暖心，现在什么都管。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-05 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天把辅助英雄玩了个遍"
+      },
+      {
+       "role": "assistant",
+       "content": "大乔太乙明世隐都拿了？"
+      },
+      {
+       "role": "user",
+       "content": "对，还试了鲁班大师，挺好玩"
+      },
+      {
+       "role": "assistant",
+       "content": "鲁班大师拉人很强。"
+      },
+      {
+       "role": "user",
+       "content": "战令皮肤还差几级，赛季要结束了"
+      },
+      {
+       "role": "assistant",
+       "content": "赛季结算前我提醒你把战令皮肤领了。"
+      },
+      {
+       "role": "user",
+       "content": "阿凯说下周带我去见他爸妈"
+      },
+      {
+       "role": "assistant",
+       "content": "见家长啦，好事将近。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-13 20:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "新赛季牛魔全赢，开门红"
+      },
+      {
+       "role": "assistant",
+       "content": "牛魔已经练熟了。"
+      },
+      {
+       "role": "user",
+       "content": "战令皮肤领到了，谢谢你提醒"
+      },
+      {
+       "role": "assistant",
+       "content": "不客气，领到就好。"
+      },
+      {
+       "role": "user",
+       "content": "见了阿凯爸妈，他们人很好"
+      },
+      {
+       "role": "assistant",
+       "content": "太好了，第一次见面很顺利。"
+      },
+      {
+       "role": "user",
+       "content": "他妈妈还包了个大红包"
+      },
+      {
+       "role": "assistant",
+       "content": "这是认可你了，恭喜。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-30 22:15:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "最近主玩鲁班大师了，今天全输"
+      },
+      {
+       "role": "assistant",
+       "content": "刚换本命要磨合一下。"
+      },
+      {
+       "role": "user",
+       "content": "店里新来的小妹说她钻石"
+      },
+      {
+       "role": "assistant",
+       "content": "那你跟她说你的段位了吗？"
+      },
+      {
+       "role": "user",
+       "content": "我说我上赛季打到星耀，她超崇拜"
+      },
+      {
+       "role": "assistant",
+       "content": "那她肯定想跟你学辅助了。"
+      },
+      {
+       "role": "user",
+       "content": "鲁班大师拉人老拉到自己人"
+      },
+      {
+       "role": "assistant",
+       "content": "大招方向要提前看好再按。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-04 21:50:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "钟馗钩中了好几个，还是输了"
+      },
+      {
+       "role": "assistant",
+       "content": "钩中了队友跟不上也没办法。"
+      },
+      {
+       "role": "user",
+       "content": "鲁班大师赢了，越来越顺"
+      },
+      {
+       "role": "assistant",
+       "content": "新本命开始上手了。"
+      },
+      {
+       "role": "user",
+       "content": "长沙热死了，四十度"
+      },
+      {
+       "role": "assistant",
+       "content": "高温天少出门，多喝水。"
+      },
+      {
+       "role": "user",
+       "content": "豆豆好像也热得不想动"
+      },
+      {
+       "role": "assistant",
+       "content": "给仓鼠放块冰盘降降温。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-28 22:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天就玩了会儿王昭君，输了"
+      },
+      {
+       "role": "assistant",
+       "content": "辅助去玩法师不太顺吧。"
+      },
+      {
+       "role": "user",
+       "content": "被抢位了，没心情打了"
+      },
+      {
+       "role": "assistant",
+       "content": "没心情就早点休息吧。"
+      },
+      {
+       "role": "user",
+       "content": "跟阿凯在看婚纱照套餐"
+      },
+      {
+       "role": "assistant",
+       "content": "好事近了！要拍什么风格？"
+      },
+      {
+       "role": "user",
+       "content": "想去海边拍，他想拍中式"
+      },
+      {
+       "role": "assistant",
+       "content": "两种都拍，各取所需。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-29 21:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天刘禅鬼谷子，有输有赢"
+      },
+      {
+       "role": "assistant",
+       "content": "鬼谷子拉人开团，挺适合你。"
+      },
+      {
+       "role": "user",
+       "content": "婚纱照定了，两种都拍"
+      },
+      {
+       "role": "assistant",
+       "content": "听了我的建议？哈哈。"
+      },
+      {
+       "role": "user",
+       "content": "对，下个月去三亚拍"
+      },
+      {
+       "role": "assistant",
+       "content": "三亚海边拍照绝美。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-09 22:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "周瑜明世隐，今天还行"
+      },
+      {
+       "role": "assistant",
+       "content": "有输有赢，段位稳着。"
+      },
+      {
+       "role": "user",
+       "content": "三亚拍完回来了，晒黑了"
+      },
+      {
+       "role": "assistant",
+       "content": "照片好看就值了。"
+      },
+      {
+       "role": "user",
+       "content": "店里忙，晚上才有空玩"
+      },
+      {
+       "role": "assistant",
+       "content": "劳逸结合，别累着。"
+      },
+      {
+       "role": "user",
+       "content": "下个月开始筹备婚礼了"
+      },
+      {
+       "role": "assistant",
+       "content": "好忙的一段时间，加油。"
+      }
+     ]
+    }
+   ],
+   "links": [
+    {
+     "kind": "promotion",
+     "date": "2026-03-28",
+     "tier": "星耀",
+     "answer_any": [
+      "分店"
+     ]
+    },
+    {
+     "kind": "losing_streak",
+     "date": "2026-05-31",
+     "tier": "",
+     "answer_any": [
+      "差评"
+     ]
+    }
+   ],
+   "brag_claimed_tier": "星耀",
+   "questions": [
+    {
+     "type": "fact",
+     "query": "我开的是什么店？",
+     "answer_any": [
+      "美甲"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "我男朋友是做什么工作的？",
+     "answer_any": [
+      "消防员"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "我养的小宠物是啥？",
+     "answer_any": [
+      "仓鼠",
+      "豆豆"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "我们婚纱照是去哪拍的？",
+     "answer_any": [
+      "三亚"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "promise",
+     "query": "你说等我牛魔练熟了陪我看什么？",
+     "answer_any": [
+      "开团时机"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "promise",
+     "query": "赛季结算前你说要提醒我领什么？",
+     "answer_any": [
+      "战令皮肤"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "negative",
+     "query": "你答应过陪我练瑶吗？",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "type": "negative",
+     "query": "我跟你聊过我学车的事吗？",
+     "answer_any": [],
+     "stale_any": []
+    }
+   ]
+  },
+  {
+   "id": "g1_t7",
+   "persona": "何志强，30岁，阜阳人，在上海做健身教练，春天相亲认识了在银行上班的小林；夏天健身房老板跑路后换了工作，说话直来直去。",
+   "sessions": [
+    {
+     "date": "2026-03-04 22:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天摸到星耀了！第一次！"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜！第一次星耀，厉害。"
+      },
+      {
+       "role": "user",
+       "content": "可惜又掉回钻一了，杨戬那局输了"
+      },
+      {
+       "role": "assistant",
+       "content": "摸到就是实力，很快能回去。"
+      },
+      {
+       "role": "user",
+       "content": "还有个好消息，国家级教练证考下来了"
+      },
+      {
+       "role": "assistant",
+       "content": "太棒了！备考很久了吧？"
+      },
+      {
+       "role": "user",
+       "content": "理论课背了三个月，总算过了"
+      },
+      {
+       "role": "assistant",
+       "content": "证书到手，涨薪有望了。"
+      },
+      {
+       "role": "user",
+       "content": "曹操今天也拿了，手感不错"
+      },
+      {
+       "role": "assistant",
+       "content": "双喜临门，今晚早点休息。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-16 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天曹操杨戬全赢"
+      },
+      {
+       "role": "assistant",
+       "content": "对抗路两个都很稳。"
+      },
+      {
+       "role": "user",
+       "content": "晚课上完才回家，学员练腿练哭了"
+      },
+      {
+       "role": "assistant",
+       "content": "学员这么拼，你是教练吗？"
+      },
+      {
+       "role": "user",
+       "content": "对，健身教练，在上海一家健身房"
+      },
+      {
+       "role": "assistant",
+       "content": "难怪你晚上回来得这么晚。"
+      },
+      {
+       "role": "user",
+       "content": "上海这几天降温，又穿回外套了"
+      },
+      {
+       "role": "assistant",
+       "content": "倒春寒注意别感冒。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-25 20:50:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "回星耀了！这次要稳住"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜重回星耀，稳住。"
+      },
+      {
+       "role": "user",
+       "content": "杨戬赢了，蒙恬不太会"
+      },
+      {
+       "role": "assistant",
+       "content": "杨戬还是你的看家英雄。"
+      },
+      {
+       "role": "user",
+       "content": "周末去相亲了，女生叫小林"
+      },
+      {
+       "role": "assistant",
+       "content": "哦？感觉怎么样？"
+      },
+      {
+       "role": "user",
+       "content": "在银行上班，挺温柔的"
+      },
+      {
+       "role": "assistant",
+       "content": "听起来不错，可以多接触。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-03 21:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "五一健身房人巨多，累惨了"
+      },
+      {
+       "role": "assistant",
+       "content": "假期大家都想练出好身材。"
+      },
+      {
+       "role": "user",
+       "content": "晚上打排位，试了李信，挺带劲"
+      },
+      {
+       "role": "assistant",
+       "content": "李信两种形态，玩起来很爽。"
+      },
+      {
+       "role": "user",
+       "content": "还玩了杨戬和老虎，赢多输少"
+      },
+      {
+       "role": "assistant",
+       "content": "节假日状态不错。"
+      },
+      {
+       "role": "user",
+       "content": "和小林约了下周看电影"
+      },
+      {
+       "role": "assistant",
+       "content": "进展挺顺利嘛，加油。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-17 22:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天打了一晚上，有输有赢"
+      },
+      {
+       "role": "assistant",
+       "content": "星耀局都很胶着。"
+      },
+      {
+       "role": "user",
+       "content": "李信越来越顺，暃和赵云是补位"
+      },
+      {
+       "role": "assistant",
+       "content": "补位打野也能玩，挺全面。"
+      },
+      {
+       "role": "user",
+       "content": "程咬金也拿了，杨戬还是稳"
+      },
+      {
+       "role": "assistant",
+       "content": "你的英雄池挺深的。"
+      },
+      {
+       "role": "user",
+       "content": "妈妈从阜阳来上海看我"
+      },
+      {
+       "role": "assistant",
+       "content": "妈妈来了，带她到处转转。"
+      },
+      {
+       "role": "user",
+       "content": "带她去了外滩，她拍了好多照片"
+      },
+      {
+       "role": "assistant",
+       "content": "老人家第一次来上海吧？"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-22 21:15:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "主玩换成李信了，杨戬先不玩"
+      },
+      {
+       "role": "assistant",
+       "content": "李信对抗路上限很高。"
+      },
+      {
+       "role": "user",
+       "content": "今天关羽吕布都输，只有李信赢"
+      },
+      {
+       "role": "assistant",
+       "content": "李信变身时机掌握了吗？"
+      },
+      {
+       "role": "user",
+       "content": "还不太会，老是变早了"
+      },
+      {
+       "role": "assistant",
+       "content": "等你李信练顺了，我陪你复盘变身时机。"
+      },
+      {
+       "role": "user",
+       "content": "好，妈妈回阜阳了，有点舍不得"
+      },
+      {
+       "role": "assistant",
+       "content": "常打电话回去，她会开心的。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-02 20:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "李信今天还行，老夫子被打爆"
+      },
+      {
+       "role": "assistant",
+       "content": "老夫子要找机会单带。"
+      },
+      {
+       "role": "user",
+       "content": "小林说我打游戏比约会还认真"
+      },
+      {
+       "role": "assistant",
+       "content": "哈哈，要给她多点时间。"
+      },
+      {
+       "role": "user",
+       "content": "周末带她来健身房，教她练臀"
+      },
+      {
+       "role": "assistant",
+       "content": "当教练的约会方式，很特别。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-09 22:05:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天铠和镜也玩了，有输有赢"
+      },
+      {
+       "role": "assistant",
+       "content": "你的英雄池挺深的嘛。"
+      },
+      {
+       "role": "user",
+       "content": "李信还是最顺手的"
+      },
+      {
+       "role": "assistant",
+       "content": "本命英雄就要多练练。"
+      },
+      {
+       "role": "user",
+       "content": "上海梅雨季到了，衣服晒不干"
+      },
+      {
+       "role": "assistant",
+       "content": "开个除湿机会好很多。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-10 21:50:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天又是输多赢少"
+      },
+      {
+       "role": "assistant",
+       "content": "别急，星耀局本来难打。"
+      },
+      {
+       "role": "user",
+       "content": "亚瑟补位，蒙恬我是真不会"
+      },
+      {
+       "role": "assistant",
+       "content": "蒙恬可以先不碰。"
+      },
+      {
+       "role": "user",
+       "content": "小林生日，我送了她一束花"
+      },
+      {
+       "role": "assistant",
+       "content": "浪漫！她喜欢吗？"
+      },
+      {
+       "role": "user",
+       "content": "她说下次送点实用的，哈哈"
+      },
+      {
+       "role": "assistant",
+       "content": "务实的女生，挺好的。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-27 23:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "这阵子连跪了好多把，真麻了"
+      },
+      {
+       "role": "assistant",
+       "content": "连败这么久，太折磨了。"
+      },
+      {
+       "role": "user",
+       "content": "今天试夏洛特和蒙恬，还是全输"
+      },
+      {
+       "role": "assistant",
+       "content": "先停一停，调整下心态。"
+      },
+      {
+       "role": "user",
+       "content": "更惨的是健身房老板跑路了"
+      },
+      {
+       "role": "assistant",
+       "content": "啊？工资发了吗？"
+      },
+      {
+       "role": "user",
+       "content": "欠了我两个月工资，好多会员也被坑"
+      },
+      {
+       "role": "assistant",
+       "content": "赶紧跟同事一起去劳动仲裁。"
+      },
+      {
+       "role": "user",
+       "content": "明天就去，真是倒霉透了"
+      },
+      {
+       "role": "assistant",
+       "content": "先照顾好自己，会解决的。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-08 21:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "赛季最后一天，又全输了"
+      },
+      {
+       "role": "assistant",
+       "content": "赛季末大家都在冲，难打。"
+      },
+      {
+       "role": "user",
+       "content": "星耀收尾，还行吧"
+      },
+      {
+       "role": "assistant",
+       "content": "稳在星耀已经很不错了。"
+      },
+      {
+       "role": "user",
+       "content": "最近主玩夏洛特了，李信放下了"
+      },
+      {
+       "role": "assistant",
+       "content": "夏洛特灵活，对抗路好用。"
+      },
+      {
+       "role": "user",
+       "content": "赛季皮肤我老是忘领"
+      },
+      {
+       "role": "assistant",
+       "content": "新赛季开打那天我提醒你领赛季皮肤。"
+      },
+      {
+       "role": "user",
+       "content": "新工作也找好了，换了家健身房"
+      },
+      {
+       "role": "assistant",
+       "content": "太好了，新的开始。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-27 22:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "新赛季掉到钻石了，不习惯"
+      },
+      {
+       "role": "assistant",
+       "content": "重置后再爬回星耀就行。"
+      },
+      {
+       "role": "user",
+       "content": "说实话，上赛季我打到过王者"
+      },
+      {
+       "role": "assistant",
+       "content": "那现在是在炸鱼啊。"
+      },
+      {
+       "role": "user",
+       "content": "夏洛特还行，孙悟空被打爆"
+      },
+      {
+       "role": "assistant",
+       "content": "猴子要找准时机进场。"
+      },
+      {
+       "role": "user",
+       "content": "新健身房离家近，骑车十分钟"
+      },
+      {
+       "role": "assistant",
+       "content": "通勤近了，生活舒服多了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-20 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天全输，掉到钻二了"
+      },
+      {
+       "role": "assistant",
+       "content": "状态不好就先休息。"
+      },
+      {
+       "role": "user",
+       "content": "夏洛特被克制，娜可露露也不会"
+      },
+      {
+       "role": "assistant",
+       "content": "对抗路被克可以换个思路。"
+      },
+      {
+       "role": "user",
+       "content": "小林说中秋去她家吃饭"
+      },
+      {
+       "role": "assistant",
+       "content": "见家长了！准备点礼物。"
+      },
+      {
+       "role": "user",
+       "content": "想买点阜阳特产带过去"
+      },
+      {
+       "role": "assistant",
+       "content": "家乡特产有心意。"
+      }
+     ]
+    }
+   ],
+   "links": [
+    {
+     "kind": "promotion",
+     "date": "2026-03-04",
+     "tier": "星耀",
+     "answer_any": [
+      "教练证"
+     ]
+    },
+    {
+     "kind": "losing_streak",
+     "date": "2026-06-27",
+     "tier": "",
+     "answer_any": [
+      "跑路",
+      "仲裁"
+     ]
+    }
+   ],
+   "brag_claimed_tier": "王者",
+   "questions": [
+    {
+     "type": "fact",
+     "query": "我是干什么工作的？",
+     "answer_any": [
+      "健身教练"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "我老家是哪儿的？",
+     "answer_any": [
+      "阜阳"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "小林在哪上班？",
+     "answer_any": [
+      "银行"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "我妈来上海我带她去哪玩了？",
+     "answer_any": [
+      "外滩"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "promise",
+     "query": "你说等我李信练顺了陪我复盘什么？",
+     "answer_any": [
+      "变身时机"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "promise",
+     "query": "新赛季开打那天你说要提醒我领什么？",
+     "answer_any": [
+      "赛季皮肤"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "negative",
+     "query": "你答应过帮我练马超吗？",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "type": "negative",
+     "query": "我跟你说过我买车的事吗？",
+     "answer_any": [],
+     "stale_any": []
+    }
+   ]
+  },
+  {
+   "id": "g1_t8",
+   "persona": "林小雨，22岁，潮汕姑娘，在广州读大四，六月毕业后进设计公司做UI设计，表哥阿伟常和她双排；说话轻快，爱分享日常。",
+   "sessions": [
+    {
+     "date": "2026-03-01 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "开学了，大四下学期好闲"
+      },
+      {
+       "role": "assistant",
+       "content": "就剩毕业设计了吧？"
+      },
+      {
+       "role": "user",
+       "content": "对，毕设做UI设计，还没动工"
+      },
+      {
+       "role": "assistant",
+       "content": "早点开工，后面就不慌。"
+      },
+      {
+       "role": "user",
+       "content": "晚上跟阿伟双排，嬴政赢了"
+      },
+      {
+       "role": "assistant",
+       "content": "嬴政输出稳，阿伟玩什么？"
+      },
+      {
+       "role": "user",
+       "content": "阿伟是我表哥，玩打野，周瑜镜我也试了"
+      },
+      {
+       "role": "assistant",
+       "content": "表哥带你上分，挺好。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-26 22:15:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "掉回钻石了，不过今天赢的多"
+      },
+      {
+       "role": "assistant",
+       "content": "很快就能回星耀的。"
+      },
+      {
+       "role": "user",
+       "content": "现在主玩王昭君，嬴政先放着"
+      },
+      {
+       "role": "assistant",
+       "content": "王昭君控制强，团战好用。"
+      },
+      {
+       "role": "user",
+       "content": "张良诸葛亮也试了，赵云是补位"
+      },
+      {
+       "role": "assistant",
+       "content": "中路英雄池越来越深了。"
+      },
+      {
+       "role": "user",
+       "content": "下周毕设答辩，紧张"
+      },
+      {
+       "role": "assistant",
+       "content": "准备充分就好，加油。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-31 20:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "回星耀了！在试女娲"
+      },
+      {
+       "role": "assistant",
+       "content": "女娲玩法独特，上限很高。"
+      },
+      {
+       "role": "user",
+       "content": "女娲好难，砖块老放不准"
+      },
+      {
+       "role": "assistant",
+       "content": "多练练就有手感了。"
+      },
+      {
+       "role": "user",
+       "content": "答辩过了，今天拍毕业照"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜毕业！照片拍得好看吗？"
+      },
+      {
+       "role": "user",
+       "content": "学士服太热了，汗流浃背"
+      },
+      {
+       "role": "assistant",
+       "content": "广州五月底确实热。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-13 21:45:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我现在主玩女娲了，王昭君不玩了"
+      },
+      {
+       "role": "assistant",
+       "content": "女娲练好了很无解。"
+      },
+      {
+       "role": "user",
+       "content": "大招范围我还是把握不好"
+      },
+      {
+       "role": "assistant",
+       "content": "下次你上线，我陪你去训练营练女娲大招。"
+      },
+      {
+       "role": "user",
+       "content": "好啊，下周入职设计公司了"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜！做UI设计吗？"
+      },
+      {
+       "role": "user",
+       "content": "对，在天河，离出租屋不远"
+      },
+      {
+       "role": "assistant",
+       "content": "通勤方便，挺好。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-21 22:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "上班第一周，好累"
+      },
+      {
+       "role": "assistant",
+       "content": "新人都这样，慢慢适应。"
+      },
+      {
+       "role": "user",
+       "content": "晚上打了会儿，女娲嫦娥都输了"
+      },
+      {
+       "role": "assistant",
+       "content": "累了的时候别打排位。"
+      },
+      {
+       "role": "user",
+       "content": "王昭君倒是赢了，还行"
+      },
+      {
+       "role": "assistant",
+       "content": "老本命还是靠得住。"
+      },
+      {
+       "role": "user",
+       "content": "阿伟说周末请我吃早茶庆祝入职"
+      },
+      {
+       "role": "assistant",
+       "content": "表哥真好，广州早茶必须安排。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-07 23:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "前几天连跪了好几把，差点卸载"
+      },
+      {
+       "role": "assistant",
+       "content": "连败太伤了，今天怎么样？"
+      },
+      {
+       "role": "user",
+       "content": "今天总算赢回来了，女娲打得不错"
+      },
+      {
+       "role": "assistant",
+       "content": "能止住连败就好。"
+      },
+      {
+       "role": "user",
+       "content": "但是今天地铁上钱包被偷了"
+      },
+      {
+       "role": "assistant",
+       "content": "天哪，证件在里面吗？"
+      },
+      {
+       "role": "user",
+       "content": "身份证银行卡都在，挂失了一下午"
+      },
+      {
+       "role": "assistant",
+       "content": "先补办身份证，别太难过了。"
+      },
+      {
+       "role": "user",
+       "content": "还好手机没丢，不然更惨"
+      },
+      {
+       "role": "assistant",
+       "content": "人没事就是最重要的。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-19 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天赢麻了，女娲诸葛亮都超神"
+      },
+      {
+       "role": "assistant",
+       "content": "状态火热，中路统治。"
+      },
+      {
+       "role": "user",
+       "content": "赵云也拿了，阿伟玩辅助"
+      },
+      {
+       "role": "assistant",
+       "content": "表哥换辅助保你，真宠你。"
+      },
+      {
+       "role": "user",
+       "content": "老板夸我设计稿做得好"
+      },
+      {
+       "role": "assistant",
+       "content": "入职就被夸，厉害。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-27 22:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "女娲今天有输有赢"
+      },
+      {
+       "role": "assistant",
+       "content": "女娲最近好像要被调整了。"
+      },
+      {
+       "role": "user",
+       "content": "真的？别削我女娲啊"
+      },
+      {
+       "role": "assistant",
+       "content": "下周四版本更新那天，我提醒你看女娲有没有被削。"
+      },
+      {
+       "role": "user",
+       "content": "好，那就拜托你了"
+      },
+      {
+       "role": "assistant",
+       "content": "放心，这事包在我身上。"
+      },
+      {
+       "role": "user",
+       "content": "第一个月工资发了，给我妈转了点"
+      },
+      {
+       "role": "assistant",
+       "content": "第一份工资孝敬妈妈，真懂事。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-30 20:50:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "版本更新了，女娲没被削"
+      },
+      {
+       "role": "assistant",
+       "content": "那太好了，可以放心玩。"
+      },
+      {
+       "role": "user",
+       "content": "今天赢多输少，舒服"
+      },
+      {
+       "role": "assistant",
+       "content": "状态稳住了，继续。"
+      },
+      {
+       "role": "user",
+       "content": "天河这边租房好贵，想换个地方"
+      },
+      {
+       "role": "assistant",
+       "content": "可以看看地铁沿线远一点的。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-25 22:35:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天只打了会儿，女娲输了"
+      },
+      {
+       "role": "assistant",
+       "content": "输了就别打了，休息吧。"
+      },
+      {
+       "role": "user",
+       "content": "公司新来的同事也玩王者"
+      },
+      {
+       "role": "assistant",
+       "content": "有同事一起玩挺好。"
+      },
+      {
+       "role": "user",
+       "content": "我跟他说上赛季我打到王者了"
+      },
+      {
+       "role": "assistant",
+       "content": "哈哈，那他肯定要你带。"
+      },
+      {
+       "role": "user",
+       "content": "他说要跟我学女娲"
+      },
+      {
+       "role": "assistant",
+       "content": "你现在是女娲老师了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-07 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "搬家了，搬到海珠，房租便宜点"
+      },
+      {
+       "role": "assistant",
+       "content": "新家住着舒服吗？"
+      },
+      {
+       "role": "user",
+       "content": "还行，就是离公司远了"
+      },
+      {
+       "role": "assistant",
+       "content": "多睡会儿还是省钱，总要取舍。"
+      },
+      {
+       "role": "user",
+       "content": "晚上女娲有输有赢"
+      },
+      {
+       "role": "assistant",
+       "content": "段位稳着就挺好。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-20 20:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "女娲今天赢了，状态回来了"
+      },
+      {
+       "role": "assistant",
+       "content": "女娲越来越稳了。"
+      },
+      {
+       "role": "user",
+       "content": "中秋放假准备回潮汕"
+      },
+      {
+       "role": "assistant",
+       "content": "潮汕老家好吃的多。"
+      },
+      {
+       "role": "user",
+       "content": "我妈说给我做牛肉丸"
+      },
+      {
+       "role": "assistant",
+       "content": "潮汕牛肉丸一绝。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-22 22:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "在潮汕老家，晚上打了会儿"
+      },
+      {
+       "role": "assistant",
+       "content": "回家还不忘上分。"
+      },
+      {
+       "role": "user",
+       "content": "女娲王昭君都赢了，暃是补位"
+      },
+      {
+       "role": "assistant",
+       "content": "中路稳，补位也不怕。"
+      },
+      {
+       "role": "user",
+       "content": "阿伟也回来了，我们一起吃饭"
+      },
+      {
+       "role": "assistant",
+       "content": "表哥也是潮汕人呀？"
+      },
+      {
+       "role": "user",
+       "content": "对，我们两家住一条街"
+      },
+      {
+       "role": "assistant",
+       "content": "那你们是从小一起长大的吧。"
+      }
+     ]
+    }
+   ],
+   "links": [
+    {
+     "kind": "losing_streak",
+     "date": "2026-07-07",
+     "tier": "",
+     "answer_any": [
+      "钱包",
+      "挂失"
+     ]
+    }
+   ],
+   "brag_claimed_tier": "王者",
+   "questions": [
+    {
+     "type": "fact",
+     "query": "我毕业后做的是什么工作？",
+     "answer_any": [
+      "UI设计"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "阿伟是我什么人？",
+     "answer_any": [
+      "表哥"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "我老家是哪儿的？",
+     "answer_any": [
+      "潮汕"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "fact",
+     "query": "我后来搬到广州哪个区了？",
+     "answer_any": [
+      "海珠"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "promise",
+     "query": "你说要陪我去哪练女娲大招？",
+     "answer_any": [
+      "训练营"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "promise",
+     "query": "女娲会不会被削那事，你说什么时候提醒我？",
+     "answer_any": [
+      "版本更新"
+     ],
+     "stale_any": []
+    },
+    {
+     "type": "negative",
+     "query": "你答应过帮我查嬴政皮肤什么时候返场吗？",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "type": "negative",
+     "query": "我跟你说过我健身的事吗？",
+     "answer_any": [],
+     "stale_any": []
+    }
+   ]
+  }
+ ]
+}
