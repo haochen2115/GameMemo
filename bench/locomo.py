@@ -248,9 +248,9 @@ def answer_all(args) -> None:
                     context = "(no information)"
                 else:
                     raise SystemExit(f"unknown context {spec}")
-                pred = llm.chat(system=ANSWER_SYSTEM.format(a=a, b=b, context=context),
-                                messages=[{"role": "user", "content": q["question"]}],
-                                temperature=0.0, max_tokens=64).strip()
+                pred = _retry(lambda: llm.chat(system=ANSWER_SYSTEM.format(a=a, b=b, context=context),
+                                               messages=[{"role": "user", "content": q["question"]}],
+                                               temperature=0.0, max_tokens=64)).strip()
                 row = {"id": q["id"], "category": q["category"], "question": q["question"], "gold": q["answer"],
                        "evidence": q.get("evidence", []), "pred": pred, "f1": round(f1(pred, q["answer"]), 4),
                        "context_chars": len(context)}
@@ -316,6 +316,17 @@ Generated answer: {pred}
 Reply with one word: CORRECT or WRONG."""
 
 
+def _retry(call, tries: int = 5, wait: float = 30.0):
+    """Ollama occasionally answers 500 (e.g. while a model reloads): wait and retry."""
+    for i in range(tries):
+        try:
+            return call()
+        except RuntimeError:
+            if i == tries - 1:
+                raise
+            time.sleep(wait)
+
+
 def judge(args) -> None:
     cache = LLMCache(args.llm_cache) if args.llm_cache else None
     llm = OllamaClient(model=args.judge, timeout=600, seed=0, num_ctx=2048)
@@ -326,8 +337,8 @@ def judge(args) -> None:
         for r in res["rows"]:
             if "judge" in r:
                 continue
-            reply = llm.chat(prompt=JUDGE_PROMPT.format(question=r["question"], gold=r["gold"], pred=r["pred"]),
-                             temperature=0.0, max_tokens=8)
+            reply = _retry(lambda: llm.chat(prompt=JUDGE_PROMPT.format(question=r["question"], gold=r["gold"],
+                                                                   pred=r["pred"]), temperature=0.0, max_tokens=8))
             r["judge"] = 1.0 if "CORRECT" in reply.upper() and "WRONG" not in reply.upper() else 0.0
         out["results"][spec] = summarize(res["rows"]) | {"rows": res["rows"]}
         _save(args.answers, out)
