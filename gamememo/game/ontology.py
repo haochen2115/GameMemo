@@ -144,3 +144,13 @@ def heroes_in(text: str) -> List[str]:
 
 def positions_in(text: str) -> List[str]:
     return [p for p, words in POSITION_ALIASES.items() if any(w in text for w in words)]
+
+
+_GAME_TALK = ("排位", "上分", "掉分", "连跪", "连败", "连胜", "段位", "赛季", "战令", "皮肤", "开黑", "双排", "五排",
+              "对面", "队友", "打野", "补位", "团战", "推塔", "大招", "出装", "铭文", "MVP", "mvp", "巅峰赛", "王者",
+              "钻石", "星耀", "铂金", "黄金", "白银", "青铜", "上星", "掉星", "这把", "那把", "一把", "几把")
+
+
+def is_game_talk(text: str) -> bool:
+    """Does a line talk about the game (matches, heroes, rank) rather than life?"""
+    return bool(heroes_in(text)) or any(w in text for w in _GAME_TALK) or bool(positions_in(text))

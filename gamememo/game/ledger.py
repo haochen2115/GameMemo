@@ -180,7 +180,7 @@ class GameLedger:
                 if r.games:
                     per.append(f"{s.name} {r.games}场胜率{round(100 * r.winrate)}%")
             used = [m["time"][:10] for m in self.until(now) if m["hero"] == h]
-            out.append(f"{h}：{rec.text()}；{'，'.join(per)}；第一次用{used[0]}，最近一次{used[-1]}")
+            out.append(f"{h}总计：{rec.text()}；其中{'，'.join(per)}；第一次用{used[0]}，最近一次{used[-1]}")
         return out
 
     def rank_on(self, day: str) -> Optional[Tuple[int, int]]:
@@ -215,17 +215,21 @@ class GameLedger:
             return f"（与系统记录不符：{label}）"
         return None
 
-    def event_dates(self, query: str, now: datetime) -> List[str]:
-        """Dates a question anchors to by a game event, e.g. 第一次上钻石那天 / 连输最多那次."""
-        dates = []
+    def event_facts(self, query: str, now: datetime) -> List[Tuple[str, str]]:
+        """(date, record line) for game events a question is anchored by,
+        e.g. 第一次上钻石那天 / 连输最多那次 / S40赛季末."""
+        out = []
         for tier, day in self.first_reached(now):
             if tier in query and any(w in query for w in ("上", "到", "升", "打到")):
-                dates.append(day)
+                out.append((day, f"第一次升到{tier}：{day}"))
         if any(w in query for w in ("连输", "连败", "连跪")):
-            _, day = self.losing_streak(now)
+            n, day = self.losing_streak(now)
             if day:
-                dates.append(day)
+                out.append((day, f"最长排位连败：{n}把（{day}）"))
         for s in SEASONS:
-            if s.name in query or ("赛季末" in query or "赛季结束" in query) and s.end <= now.date() < s.end + timedelta(days=90):
-                dates.append(s.end.isoformat())
-        return sorted(set(dates))
+            if s.name in query and s.end <= now.date():
+                out.append((s.end.isoformat(), f"{s.name}赛季最后一天：{s.end}"))
+        return sorted(set(out))
+
+    def event_dates(self, query: str, now: datetime) -> List[str]:
+        return [d for d, _ in self.event_facts(query, now)]
