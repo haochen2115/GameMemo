@@ -225,6 +225,8 @@ def main(argv=None):
     ap.add_argument("--mem0-build", action="store_true")
     ap.add_argument("--mem0", default=None, help="Mem0 search results (json), from --mem0-build")
     ap.add_argument("--show", action="store_true")
+    ap.add_argument("--sample", type=int, default=0,
+                    help="per player, only this many positive and this many primary-negative moments (seeded)")
     args = ap.parse_args(argv)
     data = json.load(open(args.data, encoding="utf-8"))
     players = [p for p in data["players"] if args.split == "all" or p["split"] == args.split]
@@ -236,6 +238,14 @@ def main(argv=None):
     llm = OllamaClient(model=args.model, timeout=1800, seed=0, num_ctx=args.num_ctx)
     if args.llm_cache:
         LLMCache(args.llm_cache).wrap(llm)
+    if args.sample:
+        import random
+        for p in players:
+            rng = random.Random(p["id"])
+            pos = [x for x in p["moments"] if x["gold"]]
+            neg = [x for x in p["moments"] if not x["gold"] and x["category"] in PRIMARY_NEG]
+            keep = {x["id"] for x in rng.sample(pos, args.sample) + rng.sample(neg, args.sample)}
+            p["moments"] = [x for x in p["moments"] if x["id"] in keep]
     built = [Player(p, tempfile.mkdtemp(prefix="g2_"), mem0) for p in players]
     items = {(pl.p["id"], it["id"]): it for pl in built for it in pl.p["items"]}
     out = json.load(open(args.out)) if args.out and os.path.exists(args.out) else {}
