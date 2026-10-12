@@ -361,6 +361,8 @@ def assemble(args) -> None:
         chats = {p["id"]: p for p in json.load(f)["players"]}
     players = []
     for spec in _players():
+        if spec.id not in chats:
+            continue
         p, chat = plans[spec.id], chats[spec.id]
         keys = chat.get("items", {})
         ms = simulate(spec)

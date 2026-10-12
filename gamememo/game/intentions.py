@@ -89,15 +89,22 @@ def _streak_n(text: str) -> Optional[int]:
     return _CN_NUM.get(s[-1]) if len(s) == 1 else None
 
 
+_GOAL_TIER = re.compile(r"(上|到|冲|进|升)了?\s*(青铜|白银|黄金|铂金|钻石|星耀|王者)")
+
+
 def _own_goal_tiers(text: str) -> List[str]:
+    """Tiers the player sets out to reach ("上星耀就…"), not the one they are in ("我现在钻石二")."""
     tiers = []
     for clause in _CLAUSE.split(text):
         if _OTHERS.search(clause):
             continue
-        for tier, _ in parse_ranks(clause):
-            if tier not in tiers:
-                tiers.append(tier)
+        for m in _GOAL_TIER.finditer(clause):
+            if m.group(2) not in tiers:
+                tiers.append(m.group(2))
     return tiers
+
+
+_DUO = re.compile(r"双排|开黑|组队|一起打|一起排|一块打|一块排")
 
 
 class IntentionIndex:
@@ -152,8 +159,14 @@ class IntentionIndex:
             put("streak", n)
         for t in _own_goal_tiers(said):
             put("tier", t)
-        for p in {m["duo"] for m in self.ledger.matches if m["duo"] and m["time"] < said_at}:
-            if p in said and not _OTHERS.search(said):
+        partners = {m["duo"] for m in self.ledger.matches if m["duo"] and m["time"] < said_at}
+        named = [p for p in partners if p in said and not _OTHERS.search(said)]
+        for p in named:
+            put("duo", p)
+        if not named and _DUO.search(said):
+            # "下次双排他…": the friend is the one the player queued with tonight
+            tonight = {m["duo"] for m in self.ledger.night(self.anchor(said_at))} if self.anchor(said_at) else set()
+            for p in sorted(tonight - {None}):
                 put("duo", p)
         if found and found[0].cue == "hero" and (n or any(i.cue in ("tier", "duo") for i in found)) \
                 and not _self_heroes(said):
