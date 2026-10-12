@@ -233,3 +233,48 @@ class GameLedger:
 
     def event_dates(self, query: str, now: datetime) -> List[str]:
         return [d for d, _ in self.event_facts(query, now)]
+
+    # ---------------------------------------------------------------- the moment after a match
+
+    def night(self, m: Dict) -> List[Dict]:
+        """The matches of the evening ``m`` belongs to, up to and including ``m``."""
+        key = night_of(m["time"])
+        return [x for x in self.matches if night_of(x["time"]) == key and x["time"] <= m["time"]]
+
+    def night_losses(self, m: Dict) -> int:
+        """Ranked games lost in a row this evening, ending with ``m``."""
+        n = 0
+        for x in reversed([x for x in self.night(m) if x["mode"] == "排位"]):
+            if x["win"]:
+                break
+            n += 1
+        return n if m["mode"] == "排位" else 0
+
+    def situation(self, m: Dict) -> str:
+        """What the companion sees right after match ``m``: the match, the rank move, the evening so far."""
+        res = "胜" if m["win"] else "负"
+        line = (f"{m['time']} 玩家刚打完一局{m['mode']}：{m['hero']}（{m['position']}）{res}，"
+                f"{m['k']}/{m['d']}/{m['a']}{'，MVP' if m['mvp'] else ''}{'，和' + m['duo'] + '双排' if m['duo'] else ''}。")
+        if m["mode"] == "排位":
+            line += f"段位{rank_name(m['rank_before'])}→{rank_name(m['rank_after'])}"
+            up = entered_tier(m)
+            line += f"（升到了{up}）。" if up else "。"
+        ms = self.night(m)
+        w = sum(x["win"] for x in ms)
+        line += f"今晚第{len(ms)}局，{w}胜{len(ms) - w}负"
+        n = self.night_losses(m)
+        line += f"，排位已经连输{n}把。" if n >= 2 else "。"
+        return line
+
+
+def night_of(stamp: str) -> str:
+    """The evening a match belongs to: games after midnight count for the day before."""
+    return (datetime.fromisoformat(stamp) - timedelta(hours=5)).date().isoformat()
+
+
+def entered_tier(m: Dict) -> Optional[str]:
+    """The tier a ranked match promoted the player into, if it crossed one."""
+    if m["mode"] != "排位":
+        return None
+    a, b = TIER_NAMES.index(tier_of(m["rank_before"])), TIER_NAMES.index(tier_of(m["rank_after"]))
+    return TIER_NAMES[b] if b > a else None

@@ -100,3 +100,40 @@ def test_simulation_is_deterministic_and_rank_moves_by_stars():
             assert x["rank_before"] == x["rank_after"]
         elif x["rank_before"] > 0:
             assert x["rank_after"] - x["rank_before"] == (1 if x["win"] else -1)
+
+
+def test_intentions_fire_on_the_first_cue_since_they_were_said(tmp_path):
+    from gamememo.game.ontology import level_start
+    d = level_start("钻石", 5)
+    clock = {"now": datetime(2026, 6, 1, 22, 30)}
+    gm = GameMemory("p", storage_dir=str(tmp_path), clock=lambda: clock["now"])
+    ms = [m("2026-06-01 21:00", hero="韩信", win=False, before=d - 3, after=d - 4, pos="打野"),
+          m("2026-06-03 21:00", hero="后羿", win=True, before=d - 4, after=d - 3),
+          m("2026-06-05 21:00", hero="韩信", win=True, before=d - 3, after=d - 2, pos="打野"),     # first 韩信 since
+          m("2026-06-06 21:00", hero="韩信", win=True, before=d - 2, after=d - 1, pos="打野"),     # repeat
+          m("2026-06-07 21:00", hero="后羿", win=True, before=d - 1, after=d),                    # enters 钻石
+          ]
+    gm.ingest_matches(ms)
+    gm.ingest_chat("玩家: 这英雄我再也不碰了，太坑\n助手: 好，冷静一下")       # deictic: the 韩信 just played
+    gm.ingest_chat("玩家: 对面后羿太烦了\n助手: 确实")                         # opponent's hero: no intention
+    gm.ingest_chat("玩家: 等我上钻石就去吃那家日料\n助手: 加油")
+    gm.ingest_chat("玩家: 阿杰说他上钻石就请客\n助手: 哈哈")                     # a friend's goal
+    by = {x["time"]: x for x in ms}
+    assert "这英雄我再也不碰了" in gm.moment(by["2026-06-05 21:00"]) and "刚用韩信" in gm.moment(by["2026-06-05 21:00"])
+    assert gm.moment(by["2026-06-03 21:00"]) is None
+    assert gm.moment(by["2026-06-06 21:00"]) is None                          # already due once
+    due = gm.moment(by["2026-06-07 21:00"])
+    assert "日料" in due and "阿杰" not in due
+
+
+def test_streak_rule_fires_at_the_nth_loss_of_an_evening(tmp_path):
+    clock = {"now": datetime(2026, 6, 1, 23, 30)}
+    gm = GameMemory("p", storage_dir=str(tmp_path), clock=lambda: clock["now"])
+    ms = [m("2026-06-03 21:00", win=False, before=50, after=49), m("2026-06-03 21:20", win=False, before=49, after=48),
+          m("2026-06-04 21:00", win=False, before=48, after=47), m("2026-06-04 21:20", win=False, before=47, after=46),
+          m("2026-06-04 21:40", win=False, before=46, after=45)]
+    gm.ingest_matches(ms)
+    gm.ingest_chat("玩家: 以后一晚上连输三把我就下线，你提醒我\n助手: 好，到时候提醒你")
+    assert gm.moment(ms[1]) is None                                           # two losses: not yet
+    assert gm.moment(ms[2]) is None                                           # a new evening starts the count again
+    assert "下线" in gm.moment(ms[4])

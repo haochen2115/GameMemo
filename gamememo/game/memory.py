@@ -20,6 +20,7 @@ from typing import Callable, Dict, Iterable, List, Optional
 
 from ..personal.model import MemoryRecord
 from ..personal.raw import RawMemory
+from .intentions import IntentionIndex
 from .ledger import GameLedger
 from .ontology import is_game_talk
 
@@ -34,6 +35,8 @@ class GameMemory:
         raw_opts.setdefault("attribute_index", False)
         self.chat = RawMemory(user_id, storage_dir=storage_dir, embedder=embedder, clock=clock, **raw_opts)
         self.ledger = GameLedger()
+        self.intentions = IntentionIndex(self.ledger)
+        self._indexed: set = set()
 
     # ---------------------------------------------------------------- write
 
@@ -58,6 +61,29 @@ class GameMemory:
             if note:
                 text += note
         return text
+
+    def _index(self) -> None:
+        """Index exchanges for intentions once their match context is known (matches may arrive after chat)."""
+        for r in sorted(self.chat.store.active(), key=lambda r: r.created_at):
+            if r.kind == "turn" and r.id not in self._indexed:
+                self._indexed.add(r.id)
+                self.intentions.add(r.id, r.created_at[:16], r.content)
+
+    def moment(self, match: Dict) -> Optional[str]:
+        """Right after ``match``: what the player said before that this game is the cue for, or None.
+
+        Speaking first is the companion's choice; this only says what is due. Each exchange is
+        shown with the game it was said after, and the note says why it is due now."""
+        self._index()
+        due = self.intentions.due(match)
+        if not due:
+            return None
+        seen, lines = set(), []
+        for it in due:
+            if it.record_id not in seen:
+                seen.add(it.record_id)
+                lines.append(self.intentions.describe(it))
+        return "【他以前说过的、和刚才这局有关的话】\n" + "\n".join(lines)
 
     def context(self, query: str, top_k: int = 8) -> str:
         now = self.clock()
