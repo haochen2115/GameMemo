@@ -20,6 +20,11 @@ they differ in what memory comes with it:
     gamememo      the intentions this game is the cue for (GameMemory.moment); nothing due -> stays quiet, no LLM call
     gm_noground   same exchanges, without the game they were said after and the cue note
     gm_nofirst    cue fires on every matching game, not only the first since it was said
+    gm_decide     GameMemory's exchanges, but the reply model decides whether to speak (as the others do)
+
+GameMemory decides when to speak (an intention is due) and the reply model
+only words it (``COMPOSE``); every other context leaves the decision to the
+reply model, with the same game description and instruction (``SYSTEM``).
 
 Scoring: at a positive moment the companion must speak and name the planted
 intention (any of the author's answer_any words); at a negative moment it must
@@ -54,21 +59,31 @@ SYSTEM = """你是一位《王者荣耀》玩家的游戏陪伴助手，平时�
 {context}
 
 只有当你记得的某件事和刚才这局直接相关、现在提起正合适时（比如他以前说过的话、定下的目标或规矩、你答应过要提醒他的事），才主动跟他说，用一两句话，并且要说出那件事的具体内容。没有这样的事就不说；不要只是普通地夸他或安慰他。"""
+# GameMemory decides *when* (an intention is due); the reply model only says it
+COMPOSE = """你是一位《王者荣耀》玩家的游戏陪伴助手，平时陪他聊天。他刚打完一局，你要主动跟他说一句话。
+
+现在是{now}。
+【刚才这局】
+{situation}
+
+{context}
+
+这件事正好和刚才这局对上了。用一两句话主动跟他提起，要说出那件事的具体内容（他当时说的关键内容），语气自然。"""
 SCHEMA = {"type": "object", "properties": {"say": {"type": "boolean"}, "message": {"type": "string"}},
           "required": ["say", "message"]}
 NOTHING = "关于这位玩家，你没有任何记录。"
 PRIMARY_NEG = ("opp_hero", "friend_goal", "near_rank", "short_streak", "random")
 
 
-def speak(llm, now: str, situation: str, context: str) -> Tuple[bool, str]:
-    system = SYSTEM.format(now=now[:16], situation=situation, context=context)
+def speak(llm, now: str, situation: str, context: str, compose: bool = False) -> Tuple[bool, str]:
+    system = (COMPOSE if compose else SYSTEM).format(now=now[:16], situation=situation, context=context)
     raw = llm.chat(system=system, messages=[{"role": "user", "content": "（刚打完一局。要主动说点什么吗？）"}],
                    temperature=0.0, max_tokens=200, json_schema=SCHEMA)
     data = parse_json(raw)
     if not isinstance(data, dict):
         return False, str(raw)
     msg = str(data.get("message", "")).strip()
-    said = bool(data.get("say")) and bool(msg) and msg not in ("无", "不说", "无。")
+    said = (compose or bool(data.get("say"))) and bool(msg) and msg not in ("无", "不说", "无。")
     return said, msg if said else ""
 
 
@@ -135,7 +150,7 @@ class Player:
             if res is None:
                 raise SystemExit(f"no Mem0 search for {x['id']}: run --mem0-build first")
             return "你记得关于这位玩家的这些事：\n" + "\n".join(f"- {r}" for r in res) if res else NOTHING
-        if kind in ("gamememo", "gm_noground", "gm_nofirst"):
+        if kind in ("gamememo", "gm_noground", "gm_nofirst", "gm_decide"):
             index = self.nofirst if kind == "gm_nofirst" else self.gm.intentions
             due = index.due(m)
             if not due:
@@ -233,7 +248,8 @@ def main(argv=None):
                 if ctx is None:
                     said, msg, calls = False, "", 0
                 else:
-                    said, msg = speak(llm, x["now"], x["situation"], ctx)
+                    said, msg = speak(llm, x["now"], x["situation"], ctx,
+                                      compose=kind in ("gamememo", "gm_noground", "gm_nofirst"))
                     calls = 1
                 it = items.get((pl.p["id"], x["item"])) if x["item"] else None
                 rows.append({"id": x["id"], "player": pl.p["id"], "category": x["category"], "gold": x["gold"],
