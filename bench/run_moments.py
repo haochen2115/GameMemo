@@ -96,12 +96,13 @@ def judge(x: Dict, said: bool, msg: str) -> float:
 # ---------------------------------------------------------------- one player's memories
 
 class Player:
-    def __init__(self, p: Dict, workdir: str, mem0: Optional[Dict] = None):
+    def __init__(self, p: Dict, workdir: str, mem0: Optional[Dict] = None, extractor=None):
         self.p = p
         self.by_time = {m["time"]: m for m in p["matches"]}
         self.clock = {"now": datetime(2026, 1, 1)}
         self.gm = GameMemory(p["id"], storage_dir=workdir, embedder=jina(), clock=lambda: self.clock["now"])
         self.gm.ingest_matches(p["matches"])
+        self.gm.intentions.extractor = extractor
         self.sessions = sorted(p["sessions"], key=lambda s: s["date"])
         for s in self.sessions:
             self.clock["now"] = parse_time(s["date"])
@@ -225,6 +226,9 @@ def main(argv=None):
     ap.add_argument("--mem0-build", action="store_true")
     ap.add_argument("--mem0", default=None, help="Mem0 search results (json), from --mem0-build")
     ap.add_argument("--show", action="store_true")
+    ap.add_argument("--extractor", default="rules", choices=["rules", "llm"],
+                    help="how GameMemory finds intentions: the rules, or one LLM call per exchange")
+    ap.add_argument("--extractor-model", default="qwen2.5:3b")
     ap.add_argument("--sample", type=int, default=0,
                     help="per player, only this many positive and this many primary-negative moments (seeded)")
     args = ap.parse_args(argv)
@@ -246,7 +250,14 @@ def main(argv=None):
             neg = [x for x in p["moments"] if not x["gold"] and x["category"] in PRIMARY_NEG]
             keep = {x["id"] for x in rng.sample(pos, args.sample) + rng.sample(neg, args.sample)}
             p["moments"] = [x for x in p["moments"] if x["id"] in keep]
-    built = [Player(p, tempfile.mkdtemp(prefix="g2_"), mem0) for p in players]
+    extractor = None
+    if args.extractor == "llm":
+        from gamememo.game.intentions import LLMIntentExtractor
+        ex_llm = OllamaClient(model=args.extractor_model, timeout=1800, seed=0, num_ctx=args.num_ctx)
+        if args.llm_cache:
+            LLMCache(args.llm_cache).wrap(ex_llm)
+        extractor = LLMIntentExtractor(ex_llm)
+    built = [Player(p, tempfile.mkdtemp(prefix="g2_"), mem0, extractor) for p in players]
     items = {(pl.p["id"], it["id"]): it for pl in built for it in pl.p["items"]}
     out = json.load(open(args.out)) if args.out and os.path.exists(args.out) else {}
     out = out.get("results", {})
