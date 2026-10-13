@@ -2,34 +2,37 @@
 
 ## 原则
 
-**`main` 只放当前最强（SOTA）的版本。** 任何改动想进 `main`，必须在固定评测集上证明自己比 `main` 上现有的系统更好，并且不能在任何守护指标上明显变差。其余工作都在语义清晰的分支上进行。
+**正式分支只放当前最强（SOTA）的版本。** 任何改动想进 `main`，必须在固定评测集上证明自己比 `main` 上现有的系统更好，并且不能在任何守护指标上明显变差。其余工作都在语义清晰的分支上进行。
 
-## 分支命名
+## 分支结构
 
-| 前缀 | 用途 | 生命周期 | 例子 |
-|---|---|---|---|
-| `main` | 当前 SOTA，默认分支 | 永久 | `main` |
-| `research/<方向>-<里程碑>` | 一个研究方向上的一个里程碑，在这里开发、跑评测 | 合入 main 或放弃后归档 | `research/personal-memory-foundation` |
-| `exp/<想法>` | 一次性小实验，不保证质量 | 用完即删 | `exp/bge-m3-embedder` |
-| `archive/<内容>` | 冻结的历史快照，只读 | 永久 | `archive/v0-keyword-baseline` |
-
-分支名要说清楚"这是什么"，不用工具生成的随机名（如 `claude/stoic-feynman-xxxx`、`codex/xxx`）。
-
-## 当前分支
+本仓库按**研究创新点**分成两个正式分支，其余都是历史实验分支。
 
 | 分支 | 内容 | 状态 |
 |---|---|---|
-| `main` | 个人记忆 P6b：P5b + 规则承诺、按话题回答承诺题、一行轨迹 | 当前 SOTA（retrieval_v2 0.922；e2e_v10 test 0.536） |
-| `claude/elegant-maxwell-1sehni` | 回答层评测（E11）、长历史评测（E13）、P7 原始记录为主的记忆（E14） | P7 通过回答层门禁（e2e_v11 test 0.633 → 0.781），待维护者合入 |
-| `archive/v0-keyword-baseline` | v0 的冻结快照（旧 main @ `3a866ba`） | 只读 |
-| `research/personal-memory-foundation` | v2 检索与写入重构 | 已合入（PR #1） |
-| `research/personal-memory-write-path` | 写入链路 + P1 | 已合入（PR #2） |
-| `research/personal-memory-consolidation` | P2：按属性回忆、偏好门槛、接地检查 | 已合入（PR #3） |
-| `research/personal-memory-facts` | P3：概念标签、情景兜底 | 已合入（PR #4） |
-| `research/personal-memory-extraction` | P4：无损更新、按概念找回 | 已合入（PR #5） |
-| `research/personal-memory-subjects` | P5 / P5b：按主语回忆、按概念取最新 | P5 未通过（e2e_v7）；P5b 已合入（PR #6） |
-| `research/personal-memory-promises` | P6 / P6b：承诺、轨迹 | P6 未通过（e2e_v9）；P6b 已合入（PR #7） |
-| `research/shared-memory-quorum` | 多租户共享记忆（QUORUM / COMMONS） | 研究预览，尚无模型评测 |
+| `main` | **GameMemory**：面向游戏陪伴的事件触发记忆（对局账本 + 原话日志 + 意图索引），以及它所依赖的原话记忆（P7 / P8）。论文 `docs/PAPER.md`，主页 https://haochen2115.github.io/GameMemo/game-memory/ | 正式版，默认分支 |
+| `shared-memory` | **Shared Memory Is Harder**：多租户客服智能体的共享记忆（QUORUM 机制、COMMONS 基准、威胁模型）。主页 https://haochen2115.github.io/GameMemo/shared-memory/ | 正式版（研究预览：机制和基准规范已可执行，模型实验待做） |
+| `gh-pages` | 项目主页的发布内容，由 `main` 上的 `site/` 生成 | 自动 |
+| `archive/v0-keyword-baseline` | v0 的冻结快照 | 只读 |
+| `exp/personal-memory-v2-foundation` | v2 检索与写入重构（原 `research/personal-memory-foundation`） | 历史，已合入 |
+| `exp/personal-memory-p1-write-path` | 写入链路 + P1 | 历史，已合入 |
+| `exp/personal-memory-p2-consolidation` | P2：按属性回忆、偏好门槛、接地检查 | 历史，已合入 |
+| `exp/personal-memory-p3-facts` | P3：概念标签、情景兜底 | 历史，已合入 |
+| `exp/personal-memory-p4-extraction` | P4：无损更新、按概念找回 | 历史，已合入 |
+| `exp/personal-memory-p5-subjects` | P5 / P5b：按主语回忆 | 历史，P5b 已合入 |
+| `exp/personal-memory-p6-promises` | P6 / P6b：承诺、轨迹 | 历史，P6b 已合入 |
+| `exp/raw-memory-and-game-memory` | 回答层评测、原话记忆 P7–P10、LoCoMo + Mem0、GameMemory（E11–E21）的开发记录 | 历史，已合入 `main` |
+| `exp/shared-memory-preview` | 共享记忆最初的研究预览（原 `research/shared-memory-quorum`） | 历史，已并入 `shared-memory` |
+
+## 新分支命名
+
+| 前缀 | 用途 | 生命周期 |
+|---|---|---|
+| `main` / `shared-memory` | 两个研究方向的正式版 | 永久 |
+| `exp/<想法>` | 实验和开发分支 | 合入正式分支后保留作记录，或删除 |
+| `archive/<内容>` | 冻结的历史快照 | 永久 |
+
+分支名要说清楚"这是什么"，不用工具生成的随机名。
 
 ## SOTA 门禁（进入 main 的条件）
 

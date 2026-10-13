@@ -1,0 +1,126 @@
+:root {
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --ink: #1d1f24;
+  --muted: #5c6270;
+  --line: #e4e1da;
+  --accent: #2f5bd3;
+  --accent-soft: #e8eefc;
+  --good: #1f7a4d;
+  --good-soft: #e3f3ea;
+  --warn: #9a5b00;
+  --warn-soft: #fbf0dd;
+  --bar-base: #c9ccd3;
+  --code-bg: #f3f1ec;
+  --radius: 10px;
+  --maxw: 880px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161b;
+    --surface: #1b1e24;
+    --ink: #e8e9ec;
+    --muted: #a3a8b3;
+    --line: #2c3038;
+    --accent: #7ea2ff;
+    --accent-soft: #1f2a44;
+    --good: #5fd39a;
+    --good-soft: #17342a;
+    --warn: #f0b660;
+    --warn-soft: #3a2c15;
+    --bar-base: #464b56;
+    --code-bg: #22252c;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB",
+        "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 16px; }
+header.top {
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+header.top .wrap { display: flex; gap: 20px; align-items: center; height: 56px; flex-wrap: wrap; }
+header.top .brand { font-weight: 700; color: var(--ink); }
+header.top nav { display: flex; gap: 16px; font-size: 15px; }
+.hero { padding: 56px 0 28px; }
+.eyebrow { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; }
+h1 { font-size: clamp(28px, 5vw, 40px); line-height: 1.25; margin: 0 0 8px; letter-spacing: -.01em; }
+h1 .sub { display: block; font-size: .6em; font-weight: 500; color: var(--muted); margin-top: 8px; letter-spacing: 0; }
+h2 { font-size: 24px; margin: 48px 0 12px; padding-top: 8px; border-top: 1px solid var(--line); }
+h3 { font-size: 18px; margin: 28px 0 8px; }
+p { margin: 0 0 14px; }
+.meta { color: var(--muted); font-size: 15px; }
+.buttons { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 0; }
+.btn {
+  display: inline-block; padding: 8px 14px; border-radius: 999px; font-size: 14px; font-weight: 600;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+}
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+@media (prefers-color-scheme: dark) { .btn.primary { color: #0e1320; } }
+.tldr {
+  background: var(--accent-soft); border-radius: var(--radius); padding: 18px 20px; margin: 24px 0;
+}
+.tldr strong { color: var(--accent); }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 24px 0; }
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px;
+  display: flex; flex-direction: column;
+}
+.card h3 { margin-top: 0; }
+.card .tag { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 8px; }
+.tag.formal { color: var(--good); }
+.tag.preview { color: var(--warn); }
+.card p { color: var(--muted); font-size: 15px; }
+.card .more { margin-top: auto; font-weight: 600; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 20px 0; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
+.stat .n { font-size: 28px; font-weight: 700; line-height: 1.2; font-variant-numeric: tabular-nums; }
+.stat .l { font-size: 13px; color: var(--muted); }
+.table-scroll { overflow-x: auto; margin: 12px 0 18px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 14.5px; font-variant-numeric: tabular-nums; }
+th, td { padding: 9px 12px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+td.num, th.num { white-space: nowrap; }
+th, td { min-width: 5.5em; }
+th { font-weight: 600; color: var(--muted); font-size: 13px; }
+tr:last-child td { border-bottom: 0; }
+td.num, th.num { text-align: right; }
+tr.ours td { background: var(--good-soft); font-weight: 600; }
+.caption { font-size: 14px; color: var(--muted); margin-top: -8px; }
+.bars { margin: 16px 0 8px; }
+.bar-row { display: grid; grid-template-columns: 170px 1fr 52px; gap: 10px; align-items: center; margin: 7px 0; font-size: 14px; }
+.bar-track { height: 14px; background: var(--line); border-radius: 7px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--bar-base); border-radius: 7px; }
+.bar-row.ours .bar-fill { background: var(--good); }
+.bar-row.ours { font-weight: 700; }
+.bar-val { text-align: right; font-variant-numeric: tabular-nums; }
+@media (max-width: 520px) { .bar-row { grid-template-columns: 110px 1fr 44px; font-size: 13px; } }
+.quote { border-left: 3px solid var(--accent); padding: 4px 0 4px 14px; margin: 14px 0; color: var(--muted); }
+.figure { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; margin: 18px 0; }
+.figure svg, .figure img { width: 100%; height: auto; display: block; }
+.note { background: var(--warn-soft); border-radius: var(--radius); padding: 14px 18px; margin: 18px 0; font-size: 15px; }
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13.5px; }
+code { background: var(--code-bg); padding: 1px 5px; border-radius: 4px; }
+pre { background: var(--code-bg); padding: 14px 16px; border-radius: var(--radius); overflow-x: auto; line-height: 1.55; }
+pre code { background: none; padding: 0; }
+ol.contrib li, ul.tight li { margin-bottom: 6px; }
+footer { border-top: 1px solid var(--line); margin-top: 64px; padding: 24px 0 48px; color: var(--muted); font-size: 14px; }
+.svg-ink { fill: var(--ink); }
+.svg-muted { fill: var(--muted); }
+.svg-box { fill: var(--surface); stroke: var(--line); stroke-width: 1.5; }
+.svg-box-accent { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; }
+.svg-box-good { fill: var(--good-soft); stroke: var(--good); stroke-width: 1.5; }
+.svg-line { stroke: var(--muted); stroke-width: 1.5; fill: none; }
+.svg-arrow { fill: var(--muted); }
+.figure.wide { overflow-x: auto; }
+.figure.wide svg { min-width: 640px; }

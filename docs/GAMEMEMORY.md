@@ -1,5 +1,7 @@
 # GameMemory：给游戏陪伴设计的记忆
 
+> 论文版（含 E21 主动回忆）见 [PAPER.md](PAPER.md)，项目主页见 https://haochen2115.github.io/GameMemo/game-memory/ 。
+
 通用的记忆系统（Mem0、MemGPT 一类）只看聊天。游戏陪伴不一样：它同时能看到**玩家说了什么**和**玩家实际打了什么**。这两个来源性质相反，游戏本身又是一个封闭、有结构、有自己时间轴的世界。GameMemory 就是按这些特点设计的。
 
 ## 游戏记忆和通用聊天记忆有什么不同
