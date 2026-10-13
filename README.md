@@ -1,11 +1,12 @@
 <div align="center">
 
-# 🧠 GameMemo 2.0
+# 🧠 GameMemo · Shared Memory
 
 ### Shared Memory Is Harder
 
 **Benchmarking and improving memory for multi-tenant customer-service agents**
 
+[![Project page](https://img.shields.io/badge/project-page-2f5bd3)](https://haochen2115.github.io/GameMemo/shared-memory/)
 [![Research Preview](https://img.shields.io/badge/status-research_preview-7c3aed)](#research-status)
 [![Python](https://img.shields.io/badge/python-3.10%2B-2563eb)](pyproject.toml)
 [![Tests](https://img.shields.io/badge/tests-deterministic-16a34a)](#quick-start)
@@ -14,11 +15,13 @@
 
 *Serving many, remembering once — without making customers bleed into one another.*
 
-[Quick start](#quick-start) · [COMMONS](#commons-benchmark) · [QUORUM](#quorum-framework) · [中文](#中文简介)
+[项目主页](https://haochen2115.github.io/GameMemo/shared-memory/) · [Quick start](#quick-start) · [COMMONS](#commons-benchmark) · [QUORUM](#quorum-framework) · [中文](#中文简介) · [GameMemory（main 分支）](https://github.com/haochen2115/GameMemo)
 
 </div>
 
 ---
+
+> 这是 GameMemo 的两个正式研究方向之一。另一个是 [`main`](https://github.com/haochen2115/GameMemo) 上的 **GameMemory**：面向游戏陪伴的事件触发记忆。两个方向的介绍见 [项目主页](https://haochen2115.github.io/GameMemo/)。
 
 GameMemo began as a single-player JSON memory demo. Version 2.0 turns it into an executable research preview for a harder setting: one long-running agent learns from many customers through the same shared memory.
 
