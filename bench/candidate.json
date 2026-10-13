@@ -1,12 +1,8 @@
 {
-  "_note": "P6b: rule-based promises (wider patterns) + one-line trajectories + topic-aware promise answers (E10, E10b) on top of P5b. P6 failed on e2e_v9 (Abstain -0.125) and is not re-tested; P6b is a new candidate on a new sealed set. Baseline: main @ b8f0ab9 (P5b, system p5b) on e2e_v10 test, same seeds, shared LLM reply cache.",
-  "retrieval": {
-    "system": "memory-default",
-    "mode": "hold"
-  },
-  "e2e": {
-    "system": "p6b",
+  "_note": "P8: P7 + attribute index + state line for change questions (RawMemory defaults, E15). Pre-registered in efc00ce before the e2e_v12 test run. Baseline: P7 on sealed e2e_v12 test (bench/baseline_answer.json). Later candidates that did not pass: P9 (bench/results/candidate_p9_e2e_v13.json), P10 (bench/results/candidate_p10_e2e_v14.json).",
+  "answer": {
+    "system": "chatbot:p8",
     "mode": "improve",
-    "results": "bench/results/e2e_v10_test.json"
+    "results": "bench/results/answer_v12_test_p78.json"
   }
 }

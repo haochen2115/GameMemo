@@ -1,0 +1,5900 @@
+{
+ "name": "e2e_v12",
+ "version": 12,
+ "description": "Blind-authored long-term memory gate for a 王者荣耀 companion bot. 10 players (dev=v12_d1,v12_d2; test=v12_t1..v12_t8), each a different ordinary Chinese person (ages 16-58, varied jobs, cities and family situations) with 12 casual spoken-Chinese sessions spread over 2025-11..2026-10. Ranks go up and down, main heroes / phones change, and non-game facts change too (job, district, a relative's job or school, hobbies); players also mention heroes in passing that are not their main. The assistant makes 3+ concrete promises per player in varied wording. Per player 16 questions: 5 facts (>=2 about other people, >=1 mentioned only in passing), 2 updates (current value; stale_any = outdated values), 4 trajectories (ordered answer_all: rank history, main hero or phone, and 2 non-game histories), 2 assistant promises (answer_any = the promised object), and 3 negatives (a promise never made, an unstated attribute of a mentioned person, a topic never discussed).",
+ "players": [
+  {
+   "id": "v12_d1",
+   "split": "dev",
+   "ask_at": "2026-10-12 21:00:00",
+   "sessions": [
+    {
+     "date": "2025-11-08 22:15:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "刚卸完货，在服务区歇一会儿"
+      },
+      {
+       "role": "assistant",
+       "content": "跑长途辛苦了，先吃点东西垫垫。"
+      },
+      {
+       "role": "user",
+       "content": "我开冷链车的，拉冻品，从佛山跑南宁"
+      },
+      {
+       "role": "assistant",
+       "content": "冷链车要盯着温度，挺费心的。"
+      },
+      {
+       "role": "user",
+       "content": "等装货的时候就打两把王者"
+      },
+      {
+       "role": "assistant",
+       "content": "你平时主玩哪个英雄呀？"
+      },
+      {
+       "role": "user",
+       "content": "张飞，打辅助，现在黄金一"
+      },
+      {
+       "role": "assistant",
+       "content": "张飞大招开得好，很能救人。"
+      }
+     ]
+    },
+    {
+     "date": "2025-11-29 21:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天休息，在家陪老婆孩子"
+      },
+      {
+       "role": "assistant",
+       "content": "难得歇一天，好好放松一下。"
+      },
+      {
+       "role": "user",
+       "content": "我们家住南海，租的两室一厅"
+      },
+      {
+       "role": "assistant",
+       "content": "南海离你装货的地方近吗？"
+      },
+      {
+       "role": "user",
+       "content": "挺近的，开车二十分钟就到"
+      },
+      {
+       "role": "assistant",
+       "content": "那还算方便，不用起太早。"
+      },
+      {
+       "role": "user",
+       "content": "老婆在楼下超市做收银，今天也上班"
+      },
+      {
+       "role": "assistant",
+       "content": "那你今天就负责带孩子了。"
+      }
+     ]
+    },
+    {
+     "date": "2025-12-20 20:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我爸打电话让我过年早点回湛江"
+      },
+      {
+       "role": "assistant",
+       "content": "老家人都盼着团圆呢。"
+      },
+      {
+       "role": "user",
+       "content": "他在老家养蚝，年底正忙"
+      },
+      {
+       "role": "assistant",
+       "content": "冬天的蚝最肥，生意应该不错。"
+      },
+      {
+       "role": "user",
+       "content": "对了，下个月十五号车子要年审"
+      },
+      {
+       "role": "assistant",
+       "content": "行，下月十五号年审我帮你记着。"
+      },
+      {
+       "role": "user",
+       "content": "昨晚连赢五把，上铂金三了"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜！张飞玩得越来越顺了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-01-17 23:05:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "原来那台荣耀X50摔碎屏了，用了两年"
+      },
+      {
+       "role": "assistant",
+       "content": "修屏划不划算？要不干脆换一台。"
+      },
+      {
+       "role": "user",
+       "content": "换了，新买了红米K70，打团不卡了"
+      },
+      {
+       "role": "assistant",
+       "content": "K70性价比高，打游戏够用了。"
+      },
+      {
+       "role": "user",
+       "content": "就是这周掉段了，又回黄金二"
+      },
+      {
+       "role": "assistant",
+       "content": "新手机手感还没适应，正常的。"
+      },
+      {
+       "role": "user",
+       "content": "对面那个兰陵王老是切我后排"
+      },
+      {
+       "role": "assistant",
+       "content": "张飞可以留个大招护住射手。"
+      }
+     ]
+    },
+    {
+     "date": "2026-02-14 21:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "在湛江过年呢，吃了一桌子海鲜"
+      },
+      {
+       "role": "assistant",
+       "content": "湛江的海鲜那可是一绝。"
+      },
+      {
+       "role": "user",
+       "content": "我妈还切了盘芒果，我芒果过敏没敢吃"
+      },
+      {
+       "role": "assistant",
+       "content": "过敏可不能大意，馋也得忍着。"
+      },
+      {
+       "role": "user",
+       "content": "儿子说开学想去学架子鼓"
+      },
+      {
+       "role": "assistant",
+       "content": "小孩子学打鼓挺锻炼节奏感的。"
+      },
+      {
+       "role": "user",
+       "content": "他现在周末在少年宫学游泳"
+      },
+      {
+       "role": "assistant",
+       "content": "游泳和打鼓都挺好，别排太满。"
+      }
+     ]
+    },
+    {
+     "date": "2026-03-10 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "从南海搬到顺德了，离老婆新单位近"
+      },
+      {
+       "role": "assistant",
+       "content": "搬家累不累？东西都收拾好了没？"
+      },
+      {
+       "role": "user",
+       "content": "她不在超市干了，去奶茶店上班了"
+      },
+      {
+       "role": "assistant",
+       "content": "奶茶店节奏快，她适应得怎么样？"
+      },
+      {
+       "role": "user",
+       "content": "还行，就是要站一整天"
+      },
+      {
+       "role": "assistant",
+       "content": "那你回家多帮她分担点家务。"
+      },
+      {
+       "role": "user",
+       "content": "学校说下周要交校服费，三百多"
+      },
+      {
+       "role": "assistant",
+       "content": "我到时候提醒你给儿子交校服费。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-11 22:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "公司调线了，以后不跑南宁了"
+      },
+      {
+       "role": "assistant",
+       "content": "那换去哪条线了？"
+      },
+      {
+       "role": "user",
+       "content": "改跑佛山到长沙，单程十个小时"
+      },
+      {
+       "role": "assistant",
+       "content": "长沙那边冬天冷，记得带厚衣服。"
+      },
+      {
+       "role": "user",
+       "content": "最近排位打得顺，铂金一了"
+      },
+      {
+       "role": "assistant",
+       "content": "稳住心态，继续往上冲。"
+      },
+      {
+       "role": "user",
+       "content": "就是遇到对面貂蝉真头疼"
+      },
+      {
+       "role": "assistant",
+       "content": "貂蝉怕控制，张飞大招可以留着打断她。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-16 20:45:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "儿子不游泳了，周末改学编程"
+      },
+      {
+       "role": "assistant",
+       "content": "编程挺好的，从小培养逻辑思维。"
+      },
+      {
+       "role": "user",
+       "content": "架子鼓倒是一直在坚持"
+      },
+      {
+       "role": "assistant",
+       "content": "能坚持下来不容易，多夸夸他。"
+      },
+      {
+       "role": "user",
+       "content": "K70充电口坏了，修了两回"
+      },
+      {
+       "role": "assistant",
+       "content": "老是坏的话，可以考虑换一台了。"
+      },
+      {
+       "role": "user",
+       "content": "等发了奖金再说吧"
+      },
+      {
+       "role": "assistant",
+       "content": "嗯，钱要花在刀刃上。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-20 21:15:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "换了台一加13，充电贼快"
+      },
+      {
+       "role": "assistant",
+       "content": "一加13续航和快充都很强。"
+      },
+      {
+       "role": "user",
+       "content": "今天在长沙跟搭档吃了顿夜宵"
+      },
+      {
+       "role": "assistant",
+       "content": "跑完一趟吃点热乎的挺好。"
+      },
+      {
+       "role": "user",
+       "content": "张飞的铭文我感觉配得不对"
+      },
+      {
+       "role": "assistant",
+       "content": "等你有空，我陪你把张飞铭文重新配一遍。"
+      },
+      {
+       "role": "user",
+       "content": "好，下周回佛山再弄"
+      },
+      {
+       "role": "assistant",
+       "content": "行，你回来跟我说一声就好。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-25 22:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "老婆辞了奶茶店，自己开了个服装店"
+      },
+      {
+       "role": "assistant",
+       "content": "自己当老板了，挺有魄力的。"
+      },
+      {
+       "role": "user",
+       "content": "店在禅城，我们干脆也搬过去了"
+      },
+      {
+       "role": "assistant",
+       "content": "又搬家了，这回离她店里近吧？"
+      },
+      {
+       "role": "user",
+       "content": "走路五分钟，方便多了"
+      },
+      {
+       "role": "assistant",
+       "content": "那以后她看店，你接孩子正好。"
+      },
+      {
+       "role": "user",
+       "content": "下个月开学要给儿子买新书包"
+      },
+      {
+       "role": "assistant",
+       "content": "到时候我帮你提个醒，别忘了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-30 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "终于打上钻石四了，激动"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜！一步步打上来真不容易。"
+      },
+      {
+       "role": "user",
+       "content": "主要是最近队友靠谱了"
+      },
+      {
+       "role": "assistant",
+       "content": "好辅助也能带节奏，你功劳也大。"
+      },
+      {
+       "role": "user",
+       "content": "这周长沙那边连下暴雨"
+      },
+      {
+       "role": "assistant",
+       "content": "雨天开车慢点，安全第一。"
+      },
+      {
+       "role": "user",
+       "content": "冷链车最怕路上耽误"
+      },
+      {
+       "role": "assistant",
+       "content": "晚点就晚点，跟货主提前沟通好。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-27 20:50:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "国庆要跑两趟长沙，加班费翻倍"
+      },
+      {
+       "role": "assistant",
+       "content": "钱多是好事，也别太累了。"
+      },
+      {
+       "role": "user",
+       "content": "儿子编程课考了个小证书"
+      },
+      {
+       "role": "assistant",
+       "content": "真棒，替我给他点个赞。"
+      },
+      {
+       "role": "user",
+       "content": "晚上打两把王者就睡了"
+      },
+      {
+       "role": "assistant",
+       "content": "早点休息，明天还要出车呢。"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "id": "v12_d1_q01",
+     "query": "我平时开的是什么车",
+     "type": "fact",
+     "answer_any": [
+      "冷链"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_d1_q02",
+     "query": "我爸在老家靠什么营生",
+     "type": "fact",
+     "answer_any": [
+      "养蚝"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_d1_q03",
+     "query": "我儿子想学的那个乐器是啥",
+     "type": "fact",
+     "answer_any": [
+      "架子鼓"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_d1_q04",
+     "query": "我吃哪种水果会过敏来着",
+     "type": "fact",
+     "answer_any": [
+      "芒果"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_d1_q05",
+     "query": "我老家是哪个城市的",
+     "type": "fact",
+     "answer_any": [
+      "湛江"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_d1_q06",
+     "query": "我现在跑的哪条线路",
+     "type": "update",
+     "answer_any": [
+      "长沙"
+     ],
+     "stale_any": [
+      "南宁"
+     ]
+    },
+    {
+     "id": "v12_d1_q07",
+     "query": "儿子周末现在在上什么课",
+     "type": "update",
+     "answer_any": [
+      "编程"
+     ],
+     "stale_any": [
+      "游泳"
+     ]
+    },
+    {
+     "id": "v12_d1_q08",
+     "query": "这一年我段位起起落落是怎么走的",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "黄金一",
+      "铂金三",
+      "黄金二",
+      "铂金一",
+      "钻石四"
+     ]
+    },
+    {
+     "id": "v12_d1_q09",
+     "query": "我这一年前后用过哪几部手机",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "荣耀X50",
+      "K70",
+      "一加13"
+     ]
+    },
+    {
+     "id": "v12_d1_q10",
+     "query": "我家这段时间搬了几次，都搬到哪了",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "南海",
+      "顺德",
+      "禅城"
+     ]
+    },
+    {
+     "id": "v12_d1_q11",
+     "query": "我老婆的工作前后换了哪些",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "收银",
+      "奶茶店",
+      "服装店"
+     ]
+    },
+    {
+     "id": "v12_d1_q12",
+     "query": "你之前说帮我记着车子的什么事",
+     "type": "promise",
+     "answer_any": [
+      "年审"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_d1_q13",
+     "query": "你是不是答应过提醒我给孩子交什么钱",
+     "type": "promise",
+     "answer_any": [
+      "校服费"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_d1_q14",
+     "query": "你之前说过要帮我查高速路况对吧",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "id": "v12_d1_q15",
+     "query": "我老婆老家是哪里的",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "id": "v12_d1_q16",
+     "query": "我平时爱喝哪种酒",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    }
+   ]
+  },
+  {
+   "id": "v12_d2",
+   "split": "dev",
+   "ask_at": "2026-10-13 21:00:00",
+   "sessions": [
+    {
+     "date": "2025-11-03 22:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今晚查寝完终于能打王者了"
+      },
+      {
+       "role": "assistant",
+       "content": "宿舍生活也挺热闹的吧？"
+      },
+      {
+       "role": "user",
+       "content": "我在西安读大一，学护理的"
+      },
+      {
+       "role": "assistant",
+       "content": "护理专业课不轻松，要背的东西多。"
+      },
+      {
+       "role": "user",
+       "content": "我玩大乔，帮队友传送，铂金五"
+      },
+      {
+       "role": "assistant",
+       "content": "大乔很适合双排，跟谁一起玩呀？"
+      },
+      {
+       "role": "user",
+       "content": "跟我室友，她是伊犁来的，超会唱歌"
+      },
+      {
+       "role": "assistant",
+       "content": "新疆姑娘能歌善舞，真不是瞎说的。"
+      }
+     ]
+    },
+    {
+     "date": "2025-11-24 21:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "周末去给一个初中生当家教"
+      },
+      {
+       "role": "assistant",
+       "content": "带学生挺锻炼耐心的。"
+      },
+      {
+       "role": "user",
+       "content": "一小时八十，补贴点生活费"
+      },
+      {
+       "role": "assistant",
+       "content": "自己挣零花钱，爸妈也省心。"
+      },
+      {
+       "role": "user",
+       "content": "我妈在宝鸡开凉皮店，挺辛苦的"
+      },
+      {
+       "role": "assistant",
+       "content": "凉皮店起早贪黑，你妈妈真不容易。"
+      },
+      {
+       "role": "user",
+       "content": "我弟今年初二，叛逆期，天天顶嘴"
+      },
+      {
+       "role": "assistant",
+       "content": "初二是最难管的时候，过了就好了。"
+      }
+     ]
+    },
+    {
+     "date": "2025-12-15 23:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我住七号楼，暖气不太热，冻死了"
+      },
+      {
+       "role": "assistant",
+       "content": "晚上盖厚点，买个暖手宝吧。"
+      },
+      {
+       "role": "user",
+       "content": "最近在学吉他，手指头按得好疼"
+      },
+      {
+       "role": "assistant",
+       "content": "刚开始都疼，起了茧子就好了。"
+      },
+      {
+       "role": "user",
+       "content": "下个月就期末了，解剖学好难"
+      },
+      {
+       "role": "assistant",
+       "content": "考前一周我提醒你把解剖学再过一遍。"
+      },
+      {
+       "role": "user",
+       "content": "好，那这事就靠你了"
+      },
+      {
+       "role": "assistant",
+       "content": "放心，这事我记着呢。"
+      }
+     ]
+    },
+    {
+     "date": "2026-01-10 22:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "寒假回宝鸡了，在店里帮我妈"
+      },
+      {
+       "role": "assistant",
+       "content": "帮家里干活，你妈肯定高兴。"
+      },
+      {
+       "role": "user",
+       "content": "寒假冲分冲到钻石三了"
+      },
+      {
+       "role": "assistant",
+       "content": "进步好快！大乔玩得很熟了吧？"
+      },
+      {
+       "role": "user",
+       "content": "改玩孙尚香了，自己输出更爽"
+      },
+      {
+       "role": "assistant",
+       "content": "孙尚香翻滚很灵活，手感好就多练。"
+      },
+      {
+       "role": "user",
+       "content": "男朋友在兰州读书，寒假见不着"
+      },
+      {
+       "role": "assistant",
+       "content": "异地恋也可以多视频聊聊。"
+      }
+     ]
+    },
+    {
+     "date": "2026-02-22 21:45:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "开学了，换宿舍搬到十二号楼"
+      },
+      {
+       "role": "assistant",
+       "content": "新宿舍条件怎么样？"
+      },
+      {
+       "role": "user",
+       "content": "有独立卫浴，比原来那栋好多了"
+      },
+      {
+       "role": "assistant",
+       "content": "那住着舒服不少。"
+      },
+      {
+       "role": "user",
+       "content": "家教那家孩子考完试就不补了"
+      },
+      {
+       "role": "assistant",
+       "content": "那你这学期还打算找兼职吗？"
+      },
+      {
+       "role": "user",
+       "content": "找了个便利店夜班，周末两天"
+      },
+      {
+       "role": "assistant",
+       "content": "夜班注意安全，下班别一个人走太晚。"
+      }
+     ]
+    },
+    {
+     "date": "2026-03-18 22:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "掉段了，又回铂金一，气死"
+      },
+      {
+       "role": "assistant",
+       "content": "连败的时候先停一停，换换心情。"
+      },
+      {
+       "role": "user",
+       "content": "对面李白一直开大收割"
+      },
+      {
+       "role": "assistant",
+       "content": "孙尚香可以留翻滚躲他的大招。"
+      },
+      {
+       "role": "user",
+       "content": "吉他放弃了，买了块滑板"
+      },
+      {
+       "role": "assistant",
+       "content": "滑板挺酷的，记得戴护具。"
+      },
+      {
+       "role": "user",
+       "content": "周末在学校操场练"
+      },
+      {
+       "role": "assistant",
+       "content": "小心别摔着，膝盖护好。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-20 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "五月有个音乐节，我好想去"
+      },
+      {
+       "role": "assistant",
+       "content": "我帮你留意一下音乐节的票什么时候开售。"
+      },
+      {
+       "role": "user",
+       "content": "好呀，我室友也想去"
+      },
+      {
+       "role": "assistant",
+       "content": "两个人一起去更好玩。"
+      },
+      {
+       "role": "user",
+       "content": "宿舍偷养的仓鼠豆包把纸箱啃了个洞"
+      },
+      {
+       "role": "assistant",
+       "content": "仓鼠爱磨牙，给它放点磨牙棒。"
+      },
+      {
+       "role": "user",
+       "content": "千万别被宿管发现哈哈"
+      },
+      {
+       "role": "assistant",
+       "content": "那你可得藏好了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-25 22:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "男朋友去重庆实习了，离我更远了"
+      },
+      {
+       "role": "assistant",
+       "content": "实习是好事，你们多约视频。"
+      },
+      {
+       "role": "user",
+       "content": "最近主玩公孙离，伞姬太美了"
+      },
+      {
+       "role": "assistant",
+       "content": "公孙离很吃操作，你手速够用。"
+      },
+      {
+       "role": "user",
+       "content": "下次排位前你给我讲讲她的走位呗"
+      },
+      {
+       "role": "assistant",
+       "content": "好，下次你上线前我给你讲讲公孙离的走位。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-28 21:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "期末周，天天泡在图书馆"
+      },
+      {
+       "role": "assistant",
+       "content": "熬过这周就放假了，加油。"
+      },
+      {
+       "role": "user",
+       "content": "暑假不回去了，在社区医院实习"
+      },
+      {
+       "role": "assistant",
+       "content": "能提前接触临床，很有收获。"
+      },
+      {
+       "role": "user",
+       "content": "便利店那边就辞了"
+      },
+      {
+       "role": "assistant",
+       "content": "一心一意实习也好。"
+      },
+      {
+       "role": "user",
+       "content": "晚上回来打两把，上铂金三了"
+      },
+      {
+       "role": "assistant",
+       "content": "稳步回升，状态回来了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-30 22:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "实习好累，量血压量到手软"
+      },
+      {
+       "role": "assistant",
+       "content": "社区医院病人多，辛苦了。"
+      },
+      {
+       "role": "user",
+       "content": "滑板也没空玩了，摔过一次就怕了"
+      },
+      {
+       "role": "assistant",
+       "content": "安全第一，换个运动也行。"
+      },
+      {
+       "role": "user",
+       "content": "跟同事下班去打羽毛球"
+      },
+      {
+       "role": "assistant",
+       "content": "羽毛球好，还能交朋友。"
+      },
+      {
+       "role": "user",
+       "content": "我弟暑假在家天天打王者"
+      },
+      {
+       "role": "assistant",
+       "content": "让他别打太晚，眼睛要紧。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-05 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "开学了，我也是大二的人了"
+      },
+      {
+       "role": "assistant",
+       "content": "大二专业课更多，加油。"
+      },
+      {
+       "role": "user",
+       "content": "暑假末终于打上星耀五了"
+      },
+      {
+       "role": "assistant",
+       "content": "太强了！公孙离一路带上去的吧？"
+      },
+      {
+       "role": "user",
+       "content": "对，伞姬永远的神"
+      },
+      {
+       "role": "assistant",
+       "content": "下次可以试试练个法师备用。"
+      },
+      {
+       "role": "user",
+       "content": "羽毛球每周还打两次"
+      },
+      {
+       "role": "assistant",
+       "content": "坚持运动，熬夜的亏也能补回来点。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-28 22:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "国庆男朋友从重庆来西安找我"
+      },
+      {
+       "role": "assistant",
+       "content": "好开心！终于能见面了。"
+      },
+      {
+       "role": "user",
+       "content": "我们打算去大唐不夜城逛逛"
+      },
+      {
+       "role": "assistant",
+       "content": "晚上人多，记得早点去占位置。"
+      },
+      {
+       "role": "user",
+       "content": "豆包又要托室友照顾几天了"
+      },
+      {
+       "role": "assistant",
+       "content": "室友靠谱的话就放心去玩吧。"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "id": "v12_d2_q01",
+     "query": "我在学校念的是什么专业",
+     "type": "fact",
+     "answer_any": [
+      "护理"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_d2_q02",
+     "query": "我妈在老家开的什么店",
+     "type": "fact",
+     "answer_any": [
+      "凉皮"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_d2_q03",
+     "query": "我室友是从哪儿来的",
+     "type": "fact",
+     "answer_any": [
+      "伊犁"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_d2_q04",
+     "query": "我偷偷在宿舍养的小家伙叫啥名",
+     "type": "fact",
+     "answer_any": [
+      "豆包"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_d2_q05",
+     "query": "我之前说我弟上几年级来着",
+     "type": "fact",
+     "answer_any": [
+      "初二"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_d2_q06",
+     "query": "我现在住几号宿舍楼",
+     "type": "update",
+     "answer_any": [
+      "十二号楼"
+     ],
+     "stale_any": [
+      "七号楼"
+     ]
+    },
+    {
+     "id": "v12_d2_q07",
+     "query": "我男朋友现在人在哪个城市",
+     "type": "update",
+     "answer_any": [
+      "重庆"
+     ],
+     "stale_any": [
+      "兰州"
+     ]
+    },
+    {
+     "id": "v12_d2_q08",
+     "query": "我的段位这一年是怎么一路变过来的",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "铂金五",
+      "钻石三",
+      "铂金一",
+      "铂金三",
+      "星耀五"
+     ]
+    },
+    {
+     "id": "v12_d2_q09",
+     "query": "我主玩的英雄换过几轮，分别是谁",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "大乔",
+      "孙尚香",
+      "公孙离"
+     ]
+    },
+    {
+     "id": "v12_d2_q10",
+     "query": "上大学以来我做过哪些兼职或者实习",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "家教",
+      "便利店",
+      "社区医院"
+     ]
+    },
+    {
+     "id": "v12_d2_q11",
+     "query": "我这一年的业余爱好是怎么换来换去的",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "吉他",
+      "滑板",
+      "羽毛球"
+     ]
+    },
+    {
+     "id": "v12_d2_q12",
+     "query": "期末前你说会提醒我复习哪门课",
+     "type": "promise",
+     "answer_any": [
+      "解剖"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_d2_q13",
+     "query": "你说要帮我留意什么票来着",
+     "type": "promise",
+     "answer_any": [
+      "音乐节"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_d2_q14",
+     "query": "你之前答应帮我改简历了吧",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "id": "v12_d2_q15",
+     "query": "我室友学的什么专业",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "id": "v12_d2_q16",
+     "query": "我平时用哪个牌子的护肤品",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    }
+   ]
+  },
+  {
+   "id": "v12_t1",
+   "split": "test",
+   "ask_at": "2026-10-11 21:00:00",
+   "sessions": [
+    {
+     "date": "2025-11-12 20:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "闺女放假前教我玩王者，挺上瘾"
+      },
+      {
+       "role": "assistant",
+       "content": "跟闺女有共同话题，挺好的事。"
+      },
+      {
+       "role": "user",
+       "content": "我就会玩亚瑟，冲上去砍就完了"
+      },
+      {
+       "role": "assistant",
+       "content": "亚瑟上手简单，适合刚开始玩。"
+      },
+      {
+       "role": "user",
+       "content": "现在白银二，在厂里午休打两把"
+      },
+      {
+       "role": "assistant",
+       "content": "午休玩两把正好放松一下。"
+      },
+      {
+       "role": "user",
+       "content": "我在沈阳一个机械厂当车间主任"
+      },
+      {
+       "role": "assistant",
+       "content": "车间主任管的事可不少，操心。"
+      }
+     ]
+    },
+    {
+     "date": "2025-12-06 19:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天下大雪，没去钓鱼"
+      },
+      {
+       "role": "assistant",
+       "content": "沈阳冬天冷，冰钓也得挑天气。"
+      },
+      {
+       "role": "user",
+       "content": "我那辆老捷达冻得打不着火"
+      },
+      {
+       "role": "assistant",
+       "content": "冬天电瓶容易亏电，可以检查一下。"
+      },
+      {
+       "role": "user",
+       "content": "老伴在医院食堂上班，早上走着去的"
+      },
+      {
+       "role": "assistant",
+       "content": "下雪路滑，让她慢点走。"
+      },
+      {
+       "role": "user",
+       "content": "闺女在北京读研，学法学的"
+      },
+      {
+       "role": "assistant",
+       "content": "法学研究生，以后前途好。"
+      }
+     ]
+    },
+    {
+     "date": "2026-01-03 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "年底体检，血压有点高"
+      },
+      {
+       "role": "assistant",
+       "content": "平时要少吃盐，定期复查。"
+      },
+      {
+       "role": "user",
+       "content": "大夫让下周三复查，顺便开降压药"
+      },
+      {
+       "role": "assistant",
+       "content": "下周三复查我提醒你，别忘了带病历本。"
+      },
+      {
+       "role": "user",
+       "content": "中，你给我记着点"
+      },
+      {
+       "role": "assistant",
+       "content": "放心，到日子我叫你。"
+      },
+      {
+       "role": "user",
+       "content": "段位打到黄金四了，闺女都夸我"
+      },
+      {
+       "role": "assistant",
+       "content": "进步这么快，闺女没白教。"
+      }
+     ]
+    },
+    {
+     "date": "2026-02-08 20:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "厂里效益不好，让我内退了"
+      },
+      {
+       "role": "assistant",
+       "content": "突然闲下来，可能不太习惯。"
+      },
+      {
+       "role": "user",
+       "content": "内退工资少点，但不用上夜班了"
+      },
+      {
+       "role": "assistant",
+       "content": "身体要紧，正好歇一歇。"
+      },
+      {
+       "role": "user",
+       "content": "天天在家喂锦鲤，钓鱼也懒得去了"
+      },
+      {
+       "role": "assistant",
+       "content": "那平时都干点啥打发时间？"
+      },
+      {
+       "role": "user",
+       "content": "跟楼下大爷们下象棋，天天杀两盘"
+      },
+      {
+       "role": "assistant",
+       "content": "象棋好，动脑子还能交朋友。"
+      }
+     ]
+    },
+    {
+     "date": "2026-03-14 19:50:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "闺女今年夏天毕业，在找工作"
+      },
+      {
+       "role": "assistant",
+       "content": "法学毕业找律所的多吧？"
+      },
+      {
+       "role": "user",
+       "content": "她说想去杭州，那边机会多"
+      },
+      {
+       "role": "assistant",
+       "content": "年轻人出去闯闯挺好。"
+      },
+      {
+       "role": "user",
+       "content": "我改玩程咬金了，血厚不容易死"
+      },
+      {
+       "role": "assistant",
+       "content": "程咬金越打越肉，挺适合你。"
+      },
+      {
+       "role": "user",
+       "content": "昨天输了一晚上，掉回白银一"
+      },
+      {
+       "role": "assistant",
+       "content": "别上火，血压要紧，明天再打。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-18 20:15:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "闲着也不是事，去小区物业找了个活"
+      },
+      {
+       "role": "assistant",
+       "content": "有点事做，精神头更好。"
+      },
+      {
+       "role": "user",
+       "content": "管门岗和巡逻，一个月两千八"
+      },
+      {
+       "role": "assistant",
+       "content": "活儿不重，正适合你。"
+      },
+      {
+       "role": "user",
+       "content": "锦鲤那缸水好些天没换了"
+      },
+      {
+       "role": "assistant",
+       "content": "以后每周六换水这事，我替你记着。"
+      },
+      {
+       "role": "user",
+       "content": "行，到时候你喊我"
+      },
+      {
+       "role": "assistant",
+       "content": "好嘞，周六一到我就喊你。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-23 21:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "开了十几年的老捷达卖了"
+      },
+      {
+       "role": "assistant",
+       "content": "陪了这么多年，还挺舍不得吧？"
+      },
+      {
+       "role": "user",
+       "content": "换了个比亚迪，闺女非让换电车"
+      },
+      {
+       "role": "assistant",
+       "content": "新能源车省油钱，开着也安静。"
+      },
+      {
+       "role": "user",
+       "content": "对面那个鲁班老是一顿乱射"
+      },
+      {
+       "role": "assistant",
+       "content": "程咬金可以绕后去抓他。"
+      },
+      {
+       "role": "user",
+       "content": "现在又打回黄金二了"
+      },
+      {
+       "role": "assistant",
+       "content": "稳住，状态又回来了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-27 20:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "闺女毕业了，去杭州一家律所了"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜！在杭州安顿好了吗？"
+      },
+      {
+       "role": "user",
+       "content": "租了个单间，离律所不远"
+      },
+      {
+       "role": "assistant",
+       "content": "那挺方便，上下班省时间。"
+      },
+      {
+       "role": "user",
+       "content": "小区里有人组织练太极，我也去了"
+      },
+      {
+       "role": "assistant",
+       "content": "太极拳养生，对血压也好。"
+      },
+      {
+       "role": "user",
+       "content": "象棋下得少了，那帮老头太能吵"
+      },
+      {
+       "role": "assistant",
+       "content": "哈哈，换换环境也不错。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-19 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "天太热了，门岗站一会儿全是汗"
+      },
+      {
+       "role": "assistant",
+       "content": "多喝水，别中暑了。"
+      },
+      {
+       "role": "user",
+       "content": "程咬金还是好使，最近连胜"
+      },
+      {
+       "role": "assistant",
+       "content": "越打越顺了，继续保持。"
+      },
+      {
+       "role": "user",
+       "content": "闺女说中秋可能回不来"
+      },
+      {
+       "role": "assistant",
+       "content": "律所刚去肯定忙，理解她吧。"
+      },
+      {
+       "role": "user",
+       "content": "那我给她寄点沈阳特产"
+      },
+      {
+       "role": "assistant",
+       "content": "好呀，过两天我陪你挑挑寄什么。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-22 20:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "老伴说想跟我一块儿去杭州看闺女"
+      },
+      {
+       "role": "assistant",
+       "content": "一家人见见面挺好的。"
+      },
+      {
+       "role": "user",
+       "content": "打算国庆坐飞机过去"
+      },
+      {
+       "role": "assistant",
+       "content": "提前订票会便宜点。"
+      },
+      {
+       "role": "user",
+       "content": "我现在玩廉颇了，闺女说这个更肉"
+      },
+      {
+       "role": "assistant",
+       "content": "廉颇控制多，团战很有用。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-12 19:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "太极打了俩月，腰不疼了"
+      },
+      {
+       "role": "assistant",
+       "content": "坚持练，效果就出来了。"
+      },
+      {
+       "role": "user",
+       "content": "物业经理说让我当个小组长"
+      },
+      {
+       "role": "assistant",
+       "content": "干得好就被看见了，恭喜。"
+      },
+      {
+       "role": "user",
+       "content": "比亚迪开着就是省钱"
+      },
+      {
+       "role": "assistant",
+       "content": "充电方便的话，确实划算。"
+      }
+     ]
+    },
+    {
+     "date": "2026-10-02 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "到杭州了，闺女带我们逛西湖"
+      },
+      {
+       "role": "assistant",
+       "content": "西湖秋天最好看，多拍几张照。"
+      },
+      {
+       "role": "user",
+       "content": "晚上在她出租屋打两把王者"
+      },
+      {
+       "role": "assistant",
+       "content": "一家人团聚，真好。"
+      },
+      {
+       "role": "user",
+       "content": "廉颇一套控制把对面打懵了"
+      },
+      {
+       "role": "assistant",
+       "content": "你这操作越来越溜了。"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "id": "v12_t1_q01",
+     "query": "我老伴在哪儿上班来着",
+     "type": "fact",
+     "answer_any": [
+      "食堂"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t1_q02",
+     "query": "我闺女读研是学啥的",
+     "type": "fact",
+     "answer_any": [
+      "法学"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t1_q03",
+     "query": "我在家养的是什么鱼",
+     "type": "fact",
+     "answer_any": [
+      "锦鲤"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t1_q04",
+     "query": "我是哪个城市的人",
+     "type": "fact",
+     "answer_any": [
+      "沈阳"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t1_q05",
+     "query": "体检后大夫给我开的啥药",
+     "type": "fact",
+     "answer_any": [
+      "降压药"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t1_q06",
+     "query": "我现在开的是什么车",
+     "type": "update",
+     "answer_any": [
+      "比亚迪"
+     ],
+     "stale_any": [
+      "捷达"
+     ]
+    },
+    {
+     "id": "v12_t1_q07",
+     "query": "我闺女眼下在哪个城市",
+     "type": "update",
+     "answer_any": [
+      "杭州"
+     ],
+     "stale_any": [
+      "北京"
+     ]
+    },
+    {
+     "id": "v12_t1_q08",
+     "query": "我玩王者以来段位是怎么升升降降的",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "白银二",
+      "黄金四",
+      "白银一",
+      "黄金二"
+     ]
+    },
+    {
+     "id": "v12_t1_q09",
+     "query": "我先后主玩过哪些英雄",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "亚瑟",
+      "程咬金",
+      "廉颇"
+     ]
+    },
+    {
+     "id": "v12_t1_q10",
+     "query": "这一年我的工作是怎么变的",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "车间主任",
+      "内退",
+      "物业"
+     ]
+    },
+    {
+     "id": "v12_t1_q11",
+     "query": "我平时的消遣这一年换了几样",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "钓鱼",
+      "象棋",
+      "太极"
+     ]
+    },
+    {
+     "id": "v12_t1_q12",
+     "query": "你说过每周六替我记着干啥",
+     "type": "promise",
+     "answer_any": [
+      "换水"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t1_q13",
+     "query": "年初你说要提醒我哪天去医院干嘛",
+     "type": "promise",
+     "answer_any": [
+      "复查"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t1_q14",
+     "query": "你答应过帮我找车位出租的信息没",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t1_q15",
+     "query": "我老伴今年多大岁数",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t1_q16",
+     "query": "我会不会游泳",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    }
+   ]
+  },
+  {
+   "id": "v12_t2",
+   "split": "test",
+   "ask_at": "2026-10-14 21:00:00",
+   "sessions": [
+    {
+     "date": "2025-11-05 21:50:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天被小朋友吐了一身，崩溃"
+      },
+      {
+       "role": "assistant",
+       "content": "带小朋友真不容易，先洗个热水澡吧。"
+      },
+      {
+       "role": "user",
+       "content": "我在深圳一家幼儿园当老师，带小班"
+      },
+      {
+       "role": "assistant",
+       "content": "小班孩子最黏人，也最可爱。"
+      },
+      {
+       "role": "user",
+       "content": "晚上打把王者解解压，钻石二"
+      },
+      {
+       "role": "assistant",
+       "content": "钻石段位不错呀，玩什么位置？"
+      },
+      {
+       "role": "user",
+       "content": "中路，诸葛亮玩得最多"
+      },
+      {
+       "role": "assistant",
+       "content": "诸葛亮收割能力强，挺适合你。"
+      }
+     ]
+    },
+    {
+     "date": "2025-11-26 22:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我住龙华，每天挤地铁去上班"
+      },
+      {
+       "role": "assistant",
+       "content": "早高峰地铁太挤了，辛苦。"
+      },
+      {
+       "role": "user",
+       "content": "我家柯基可乐今天把拖鞋咬烂了"
+      },
+      {
+       "role": "assistant",
+       "content": "柯基精力旺盛，多遛遛就好了。"
+      },
+      {
+       "role": "user",
+       "content": "下周还要带它去打疫苗"
+      },
+      {
+       "role": "assistant",
+       "content": "打疫苗那天我提醒你，记得带疫苗本。"
+      },
+      {
+       "role": "user",
+       "content": "好，是下周四上午"
+      },
+      {
+       "role": "assistant",
+       "content": "嗯，周四早上我叫你。"
+      }
+     ]
+    },
+    {
+     "date": "2025-12-18 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我姐在香港做会计，年底忙疯了"
+      },
+      {
+       "role": "assistant",
+       "content": "年底审计季，会计最累了。"
+      },
+      {
+       "role": "user",
+       "content": "她说过年一起回潮州"
+      },
+      {
+       "role": "assistant",
+       "content": "一家人团圆，挺好。"
+      },
+      {
+       "role": "user",
+       "content": "我爸妈在老家种单丛，自己炒茶"
+      },
+      {
+       "role": "assistant",
+       "content": "凤凰单丛很香，自家炒的更好喝。"
+      },
+      {
+       "role": "user",
+       "content": "用了三年的苹果13电池不行了"
+      },
+      {
+       "role": "assistant",
+       "content": "电池健康低了，可以先换个电池。"
+      }
+     ]
+    },
+    {
+     "date": "2026-01-21 22:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "放假前冲到星耀四了"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜上星耀！诸葛亮功不可没。"
+      },
+      {
+       "role": "user",
+       "content": "还换了苹果16，打团流畅多了"
+      },
+      {
+       "role": "assistant",
+       "content": "新手机打游戏确实舒服。"
+      },
+      {
+       "role": "user",
+       "content": "对面露娜一直秒我"
+      },
+      {
+       "role": "assistant",
+       "content": "露娜怕控，开局让辅助多跟你。"
+      },
+      {
+       "role": "user",
+       "content": "周末在家学烘焙，做了一盘曲奇"
+      },
+      {
+       "role": "assistant",
+       "content": "曲奇好吃吗？可乐有没有来偷吃？"
+      }
+     ]
+    },
+    {
+     "date": "2026-02-25 21:15:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "回潮州过年喝了一肚子茶"
+      },
+      {
+       "role": "assistant",
+       "content": "家里的茶最香了吧。"
+      },
+      {
+       "role": "user",
+       "content": "我姐带了一堆香港零食回来"
+      },
+      {
+       "role": "assistant",
+       "content": "年货丰富，开心。"
+      },
+      {
+       "role": "user",
+       "content": "我准备辞职去早教机构了"
+      },
+      {
+       "role": "assistant",
+       "content": "早教中心节奏和幼儿园不太一样。"
+      },
+      {
+       "role": "user",
+       "content": "工资高一点，也不用管午睡"
+      },
+      {
+       "role": "assistant",
+       "content": "考虑好了就去试试吧。"
+      }
+     ]
+    },
+    {
+     "date": "2026-03-30 22:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "去早教机构上班两周了"
+      },
+      {
+       "role": "assistant",
+       "content": "新工作适应得怎么样？"
+      },
+      {
+       "role": "user",
+       "content": "挺好的，就是周末也要上课"
+      },
+      {
+       "role": "assistant",
+       "content": "那平时补补觉，别累着。"
+      },
+      {
+       "role": "user",
+       "content": "掉段到钻石一了，心态崩了"
+      },
+      {
+       "role": "assistant",
+       "content": "先别打排位，打两把娱乐模式缓缓。"
+      },
+      {
+       "role": "user",
+       "content": "烘焙也放下了，最近迷上陶艺"
+      },
+      {
+       "role": "assistant",
+       "content": "陶艺挺治愈的，做好了给我看看。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-25 21:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "搬到南山了，离新单位近"
+      },
+      {
+       "role": "assistant",
+       "content": "南山上班方便多了吧。"
+      },
+      {
+       "role": "user",
+       "content": "不用挤地铁了，骑电动车十分钟"
+      },
+      {
+       "role": "assistant",
+       "content": "骑车记得戴头盔。"
+      },
+      {
+       "role": "user",
+       "content": "可乐最喜欢新家的阳台"
+      },
+      {
+       "role": "assistant",
+       "content": "狗狗也有自己的小地盘了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-28 22:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "苹果16摔了一下屏幕裂了"
+      },
+      {
+       "role": "assistant",
+       "content": "心疼，修还是换？"
+      },
+      {
+       "role": "user",
+       "content": "换了小米15，拍照不错"
+      },
+      {
+       "role": "assistant",
+       "content": "小米15拍照确实很能打。"
+      },
+      {
+       "role": "user",
+       "content": "晚上排位上星耀二了"
+      },
+      {
+       "role": "assistant",
+       "content": "又回来了，越打越稳。"
+      },
+      {
+       "role": "user",
+       "content": "中路换着玩，嬴政也挺好用"
+      },
+      {
+       "role": "assistant",
+       "content": "嬴政站桩输出，正面打团很强。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-26 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "想自己开个绘本馆，攒了点钱"
+      },
+      {
+       "role": "assistant",
+       "content": "有梦想就去做，前期多调研。"
+      },
+      {
+       "role": "user",
+       "content": "我大学学的学前教育，也算对口"
+      },
+      {
+       "role": "assistant",
+       "content": "专业对口，做绘本馆更有底气。"
+      },
+      {
+       "role": "user",
+       "content": "就是不知道营业执照要准备啥"
+      },
+      {
+       "role": "assistant",
+       "content": "营业执照要的材料，我回头帮你列一下。"
+      },
+      {
+       "role": "user",
+       "content": "好，那先谢谢你啦"
+      },
+      {
+       "role": "assistant",
+       "content": "不客气，整理好就发你。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-24 22:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "早教机构那边我辞了"
+      },
+      {
+       "role": "assistant",
+       "content": "下定决心了，绘本馆要开了？"
+      },
+      {
+       "role": "user",
+       "content": "对，在南山租了个小铺面"
+      },
+      {
+       "role": "assistant",
+       "content": "地方选好了，开业我来捧场。"
+      },
+      {
+       "role": "user",
+       "content": "陶艺课停了，实在没时间"
+      },
+      {
+       "role": "assistant",
+       "content": "开业前肯定忙，等稳定了再说。"
+      },
+      {
+       "role": "user",
+       "content": "我姐下个月生日，要寄礼物给她"
+      },
+      {
+       "role": "assistant",
+       "content": "你姐生日前一天，我叫你一声。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-29 21:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "绘本馆开业了，来了好多小朋友"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜开业大吉！生意红火！"
+      },
+      {
+       "role": "user",
+       "content": "周末去大鹏学潜水，可乐托给邻居了"
+      },
+      {
+       "role": "assistant",
+       "content": "潜水很好玩，注意安全。"
+      },
+      {
+       "role": "user",
+       "content": "第一次下水有点怕"
+      },
+      {
+       "role": "assistant",
+       "content": "慢慢来，跟紧教练就好。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-27 22:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "国庆绘本馆搞活动，忙死了"
+      },
+      {
+       "role": "assistant",
+       "content": "生意好是好事，注意休息。"
+      },
+      {
+       "role": "user",
+       "content": "晚上关了店才有空打两把"
+      },
+      {
+       "role": "assistant",
+       "content": "诸葛亮还是你的拿手英雄吧？"
+      },
+      {
+       "role": "user",
+       "content": "对，还是他最顺手"
+      },
+      {
+       "role": "assistant",
+       "content": "那就每天打两把保持手感。"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "id": "v12_t2_q01",
+     "query": "我姐在香港是干什么的",
+     "type": "fact",
+     "answer_any": [
+      "会计"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t2_q02",
+     "query": "我爸妈在老家种的什么茶",
+     "type": "fact",
+     "answer_any": [
+      "单丛"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t2_q03",
+     "query": "我家狗叫什么名字",
+     "type": "fact",
+     "answer_any": [
+      "可乐"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t2_q04",
+     "query": "我老家是哪儿的",
+     "type": "fact",
+     "answer_any": [
+      "潮州"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t2_q05",
+     "query": "我大学念的什么专业",
+     "type": "fact",
+     "answer_any": [
+      "学前教育"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t2_q06",
+     "query": "我现在住深圳哪个区",
+     "type": "update",
+     "answer_any": [
+      "南山"
+     ],
+     "stale_any": [
+      "龙华"
+     ]
+    },
+    {
+     "id": "v12_t2_q07",
+     "query": "我现在每天怎么去上班",
+     "type": "update",
+     "answer_any": [
+      "电动车"
+     ],
+     "stale_any": [
+      "地铁"
+     ]
+    },
+    {
+     "id": "v12_t2_q08",
+     "query": "从去年冬天到现在我的段位是怎么变的",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "钻石二",
+      "星耀四",
+      "钻石一",
+      "星耀二"
+     ]
+    },
+    {
+     "id": "v12_t2_q09",
+     "query": "我换过几次手机，按顺序说说",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "苹果13",
+      "苹果16",
+      "小米15"
+     ]
+    },
+    {
+     "id": "v12_t2_q10",
+     "query": "我这一年工作上是怎么折腾过来的",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "幼儿园",
+      "早教",
+      "绘本馆"
+     ]
+    },
+    {
+     "id": "v12_t2_q11",
+     "query": "我业余时间迷过哪些东西，先后顺序呢",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "烘焙",
+      "陶艺",
+      "潜水"
+     ]
+    },
+    {
+     "id": "v12_t2_q12",
+     "query": "你说要帮我列什么材料来着",
+     "type": "promise",
+     "answer_any": [
+      "营业执照"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t2_q13",
+     "query": "可乐那回你说要提醒我干啥",
+     "type": "promise",
+     "answer_any": [
+      "疫苗"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t2_q14",
+     "query": "你是不是说过帮我找潜水教练",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t2_q15",
+     "query": "我姐结婚了没有",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t2_q16",
+     "query": "我平时追什么综艺",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    }
+   ]
+  },
+  {
+   "id": "v12_t3",
+   "split": "test",
+   "ask_at": "2026-10-15 21:00:00",
+   "sessions": [
+    {
+     "date": "2025-11-02 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "周末放假回家，终于能玩手机了"
+      },
+      {
+       "role": "assistant",
+       "content": "住校一周憋坏了吧？"
+      },
+      {
+       "role": "user",
+       "content": "我高一，住校，平时手机要上交"
+      },
+      {
+       "role": "assistant",
+       "content": "那周末好好放松一下。"
+      },
+      {
+       "role": "user",
+       "content": "韩信是我本命，钻石四"
+      },
+      {
+       "role": "assistant",
+       "content": "韩信打野很秀，节奏快。"
+      },
+      {
+       "role": "user",
+       "content": "我妈不让多玩，她是初中数学老师"
+      },
+      {
+       "role": "assistant",
+       "content": "老师妈妈管得严，理解一下。"
+      }
+     ]
+    },
+    {
+     "date": "2025-11-23 20:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "月考物理考了九十多"
+      },
+      {
+       "role": "assistant",
+       "content": "太厉害了，物理学得真好。"
+      },
+      {
+       "role": "user",
+       "content": "我是物理课代表嘛"
+      },
+      {
+       "role": "assistant",
+       "content": "那你得给同学做榜样了。"
+      },
+      {
+       "role": "user",
+       "content": "下周又要月考了，烦"
+      },
+      {
+       "role": "assistant",
+       "content": "月考前一天我提醒你早点睡，别熬夜。"
+      },
+      {
+       "role": "user",
+       "content": "行吧行吧，听你的"
+      },
+      {
+       "role": "assistant",
+       "content": "考好了周末再放开玩。"
+      }
+     ]
+    },
+    {
+     "date": "2025-12-14 21:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我爸开出租车的，今天下雪生意好"
+      },
+      {
+       "role": "assistant",
+       "content": "下雪天打车的人多，注意安全。"
+      },
+      {
+       "role": "user",
+       "content": "今天跟同桌胖虎去打篮球了"
+      },
+      {
+       "role": "assistant",
+       "content": "冬天打球记得先热身。"
+      },
+      {
+       "role": "user",
+       "content": "上星耀五了！韩信无敌"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜！打野节奏越来越好了。"
+      },
+      {
+       "role": "user",
+       "content": "对面兰陵王被我抓了五次"
+      },
+      {
+       "role": "assistant",
+       "content": "哈哈，对面打野估计心态崩了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-01-18 22:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "期末考完了，放寒假"
+      },
+      {
+       "role": "assistant",
+       "content": "辛苦了一学期，好好休息。"
+      },
+      {
+       "role": "user",
+       "content": "过年要去开封看我奶奶"
+      },
+      {
+       "role": "assistant",
+       "content": "开封好吃的多，灌汤包别错过。"
+      },
+      {
+       "role": "user",
+       "content": "在眼镜店配镜呢，近视都五百度了"
+      },
+      {
+       "role": "assistant",
+       "content": "少玩手机多看远处，护护眼睛。"
+      },
+      {
+       "role": "user",
+       "content": "最近在练李白，太帅了"
+      },
+      {
+       "role": "assistant",
+       "content": "李白很吃手法，周末我陪你看看连招教学。"
+      }
+     ]
+    },
+    {
+     "date": "2026-02-20 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我爸不开出租了，改跑网约车"
+      },
+      {
+       "role": "assistant",
+       "content": "网约车时间更自由一些。"
+      },
+      {
+       "role": "user",
+       "content": "他说接单多一点能多挣"
+      },
+      {
+       "role": "assistant",
+       "content": "让他也注意休息。"
+      },
+      {
+       "role": "user",
+       "content": "寒假宅家掉到钻石二了"
+      },
+      {
+       "role": "assistant",
+       "content": "连跪的时候别硬上，歇歇再打。"
+      },
+      {
+       "role": "user",
+       "content": "看了个街舞比赛，好想学"
+      },
+      {
+       "role": "assistant",
+       "content": "街舞很帅，可以找个班试试。"
+      }
+     ]
+    },
+    {
+     "date": "2026-03-15 20:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "开学报了学校的街舞社"
+      },
+      {
+       "role": "assistant",
+       "content": "社团活动挺好，还能认识新朋友。"
+      },
+      {
+       "role": "user",
+       "content": "选科了，我选物理方向"
+      },
+      {
+       "role": "assistant",
+       "content": "你物理好，选得对。"
+      },
+      {
+       "role": "user",
+       "content": "原来在三班，现在分到八班了"
+      },
+      {
+       "role": "assistant",
+       "content": "新班级适应一下就好了。"
+      },
+      {
+       "role": "user",
+       "content": "胖虎也跟我分到一个班了"
+      },
+      {
+       "role": "assistant",
+       "content": "有熟人在一块儿，挺好。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-19 21:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "物理错题越来越多，有点慌"
+      },
+      {
+       "role": "assistant",
+       "content": "我帮你把这几类错题的思路理一理。"
+      },
+      {
+       "role": "user",
+       "content": "好，下周拍照发你"
+      },
+      {
+       "role": "assistant",
+       "content": "行，你拍清楚点就行。"
+      },
+      {
+       "role": "user",
+       "content": "李白练会了，现在主玩李白"
+      },
+      {
+       "role": "assistant",
+       "content": "李白打野飘逸，挺适合你。"
+      },
+      {
+       "role": "user",
+       "content": "我爸说想自己出来摆个烧烤摊"
+      },
+      {
+       "role": "assistant",
+       "content": "夏天烧烤生意好，挺有想法。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-24 21:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "五一跟我妈去开封看了奶奶"
+      },
+      {
+       "role": "assistant",
+       "content": "奶奶见到你肯定很开心。"
+      },
+      {
+       "role": "user",
+       "content": "我妈说下学期让我走读"
+      },
+      {
+       "role": "assistant",
+       "content": "走读能每天回家，吃得也好。"
+      },
+      {
+       "role": "user",
+       "content": "住校太吵了，我也想走读"
+      },
+      {
+       "role": "assistant",
+       "content": "那就跟你妈好好商量。"
+      },
+      {
+       "role": "user",
+       "content": "街舞社排了个节目，六月演出"
+      },
+      {
+       "role": "assistant",
+       "content": "好好练，到时候拍视频看看。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-21 22:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "演出完了，跳得腿都软了"
+      },
+      {
+       "role": "assistant",
+       "content": "辛苦，演出效果怎么样？"
+      },
+      {
+       "role": "user",
+       "content": "挺好，不过街舞我不打算继续了"
+      },
+      {
+       "role": "assistant",
+       "content": "喜欢什么就玩什么，不用勉强。"
+      },
+      {
+       "role": "user",
+       "content": "段位回到星耀三了"
+      },
+      {
+       "role": "assistant",
+       "content": "不错，又爬回来了。"
+      },
+      {
+       "role": "user",
+       "content": "最近对面马超好多，打不过"
+      },
+      {
+       "role": "assistant",
+       "content": "马超这赛季很强，可以研究一下。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-26 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我爸烧烤摊开起来了，在小区门口"
+      },
+      {
+       "role": "assistant",
+       "content": "生意怎么样？你去帮忙了没？"
+      },
+      {
+       "role": "user",
+       "content": "天天晚上去帮他串串"
+      },
+      {
+       "role": "assistant",
+       "content": "暑假还能锻炼一下，挺好。"
+      },
+      {
+       "role": "user",
+       "content": "我也开始练马超了，现在就玩他"
+      },
+      {
+       "role": "assistant",
+       "content": "马超操作上限高，好好练。"
+      },
+      {
+       "role": "user",
+       "content": "周末陪胖虎去打乒乓球"
+      },
+      {
+       "role": "assistant",
+       "content": "乒乓球也挺有意思。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-01 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "开学了，高二，正式走读了"
+      },
+      {
+       "role": "assistant",
+       "content": "每天回家能睡得更好了。"
+      },
+      {
+       "role": "user",
+       "content": "每天早上我爸骑电动车送我"
+      },
+      {
+       "role": "assistant",
+       "content": "你爸晚上摆摊白天还送你，辛苦了。"
+      },
+      {
+       "role": "user",
+       "content": "最近迷上乒乓球，课间都去打"
+      },
+      {
+       "role": "assistant",
+       "content": "乒乓球练反应，挺好的。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-28 21:15:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "国庆放七天，可以打个够了"
+      },
+      {
+       "role": "assistant",
+       "content": "也别光打游戏，作业先写了。"
+      },
+      {
+       "role": "user",
+       "content": "马超现在练得挺熟了"
+      },
+      {
+       "role": "assistant",
+       "content": "那可以拿去排位试试。"
+      },
+      {
+       "role": "user",
+       "content": "我爸的烧烤摊挪到夜市去了，人更多"
+      },
+      {
+       "role": "assistant",
+       "content": "夜市人气旺，生意应该更好。"
+      },
+      {
+       "role": "user",
+       "content": "我妈又在念叨我近视"
+      },
+      {
+       "role": "assistant",
+       "content": "记得劳逸结合，护眼要紧。"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "id": "v12_t3_q01",
+     "query": "我妈是教哪门课的",
+     "type": "fact",
+     "answer_any": [
+      "数学"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t3_q02",
+     "query": "我奶奶住在哪个城市",
+     "type": "fact",
+     "answer_any": [
+      "开封"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t3_q03",
+     "query": "我在班里是什么课代表",
+     "type": "fact",
+     "answer_any": [
+      "物理课代表"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t3_q04",
+     "query": "我近视多少度来着",
+     "type": "fact",
+     "answer_any": [
+      "五百度"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t3_q05",
+     "query": "我那个同桌外号叫啥",
+     "type": "fact",
+     "answer_any": [
+      "胖虎"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t3_q06",
+     "query": "我爸那个烧烤摊现在摆在哪",
+     "type": "update",
+     "answer_any": [
+      "夜市"
+     ],
+     "stale_any": [
+      "小区门口"
+     ]
+    },
+    {
+     "id": "v12_t3_q07",
+     "query": "我分班之后现在在几班",
+     "type": "update",
+     "answer_any": [
+      "八班"
+     ],
+     "stale_any": [
+      "三班"
+     ]
+    },
+    {
+     "id": "v12_t3_q08",
+     "query": "我段位这一年是怎么起伏的",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "钻石四",
+      "星耀五",
+      "钻石二",
+      "星耀三"
+     ]
+    },
+    {
+     "id": "v12_t3_q09",
+     "query": "我的本命英雄换过哪几个",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "韩信",
+      "李白",
+      "马超"
+     ]
+    },
+    {
+     "id": "v12_t3_q10",
+     "query": "我爸这一年干过哪些营生",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "出租车",
+      "网约车",
+      "烧烤"
+     ]
+    },
+    {
+     "id": "v12_t3_q11",
+     "query": "我课外迷过的运动有哪些，按先后说",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "篮球",
+      "街舞",
+      "乒乓球"
+     ]
+    },
+    {
+     "id": "v12_t3_q12",
+     "query": "你说过要帮我理一下什么东西的思路",
+     "type": "promise",
+     "answer_any": [
+      "错题"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t3_q13",
+     "query": "考试前你说会提醒我啥",
+     "type": "promise",
+     "answer_any": [
+      "早点睡"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t3_q14",
+     "query": "你答应过帮我写作文没",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t3_q15",
+     "query": "我爸开的什么牌子的车",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t3_q16",
+     "query": "我家养没养宠物",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    }
+   ]
+  },
+  {
+   "id": "v12_t4",
+   "split": "test",
+   "ask_at": "2026-10-16 21:00:00",
+   "sessions": [
+    {
+     "date": "2025-11-10 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "儿子教我玩王者，我只会蔡文姬"
+      },
+      {
+       "role": "assistant",
+       "content": "蔡文姬奶量足，跟着队友就行。"
+      },
+      {
+       "role": "user",
+       "content": "他在南京读大三，学土木的"
+      },
+      {
+       "role": "assistant",
+       "content": "土木挺辛苦的，以后跑工地多。"
+      },
+      {
+       "role": "user",
+       "content": "我现在白银三，被他笑话了"
+      },
+      {
+       "role": "assistant",
+       "content": "刚开始都这样，慢慢就上去了。"
+      },
+      {
+       "role": "user",
+       "content": "我在保险公司跑业务，天天打电话"
+      },
+      {
+       "role": "assistant",
+       "content": "保险业务员嘴皮子都利索。"
+      }
+     ]
+    },
+    {
+     "date": "2025-12-04 20:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天腰又疼了，老毛病腰间盘突出"
+      },
+      {
+       "role": "assistant",
+       "content": "别久坐，多起来走动走动。"
+      },
+      {
+       "role": "user",
+       "content": "坐一天打电话，腰受不了"
+      },
+      {
+       "role": "assistant",
+       "content": "可以买个护腰靠垫试试。"
+      },
+      {
+       "role": "user",
+       "content": "我妈在黄石，下个月要去复诊"
+      },
+      {
+       "role": "assistant",
+       "content": "你妈复诊的日子我帮你记着。"
+      },
+      {
+       "role": "user",
+       "content": "十五号，我得请假陪她"
+      },
+      {
+       "role": "assistant",
+       "content": "好，十四号晚上我提醒你。"
+      }
+     ]
+    },
+    {
+     "date": "2025-12-28 21:15:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "用了两年的vivo S18卡得不行"
+      },
+      {
+       "role": "assistant",
+       "content": "内存满了可以清一清。"
+      },
+      {
+       "role": "user",
+       "content": "清了也卡，换了个华为nova12"
+      },
+      {
+       "role": "assistant",
+       "content": "nova12拍照好看，挺适合你。"
+      },
+      {
+       "role": "user",
+       "content": "打上黄金五了，儿子说我进步了"
+      },
+      {
+       "role": "assistant",
+       "content": "被儿子夸，比上段位还开心吧。"
+      },
+      {
+       "role": "user",
+       "content": "对面后羿一直打我"
+      },
+      {
+       "role": "assistant",
+       "content": "蔡文姬站后面一点，躲着点射手。"
+      }
+     ]
+    },
+    {
+     "date": "2026-01-25 20:50:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "儿子放寒假回来了，说想考研"
+      },
+      {
+       "role": "assistant",
+       "content": "有目标是好事，好好支持他。"
+      },
+      {
+       "role": "user",
+       "content": "我给他炖了排骨藕汤，他最爱喝"
+      },
+      {
+       "role": "assistant",
+       "content": "排骨藕汤，那是家的味道。"
+      },
+      {
+       "role": "user",
+       "content": "我老公还在钢厂上班，倒班"
+      },
+      {
+       "role": "assistant",
+       "content": "倒班辛苦，你们俩都不容易。"
+      },
+      {
+       "role": "user",
+       "content": "阳台的三角梅冻死了一盆"
+      },
+      {
+       "role": "assistant",
+       "content": "三角梅怕冷，冬天得搬进屋里。"
+      }
+     ]
+    },
+    {
+     "date": "2026-02-28 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "过年打太多，掉回白银一了"
+      },
+      {
+       "role": "assistant",
+       "content": "过年手生正常，慢慢找回来。"
+      },
+      {
+       "role": "user",
+       "content": "跟儿子双排，他都带不动我哈哈"
+      },
+      {
+       "role": "assistant",
+       "content": "那下回我陪你练练蔡文姬的走位。"
+      },
+      {
+       "role": "user",
+       "content": "保险业绩不好，想换个活儿"
+      },
+      {
+       "role": "assistant",
+       "content": "有合适的再换，别急。"
+      }
+     ]
+    },
+    {
+     "date": "2026-03-26 20:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我现在在小区做社区团购团长"
+      },
+      {
+       "role": "assistant",
+       "content": "社区团购挺火的，邻居都认识你。"
+      },
+      {
+       "role": "user",
+       "content": "每天在群里接龙，晚上分货"
+      },
+      {
+       "role": "assistant",
+       "content": "挺忙的，但比打电话轻松吧？"
+      },
+      {
+       "role": "user",
+       "content": "是，不用看人脸色了"
+      },
+      {
+       "role": "assistant",
+       "content": "那挺好的，心情也好。"
+      },
+      {
+       "role": "user",
+       "content": "儿子在学校天天泡图书馆"
+      },
+      {
+       "role": "assistant",
+       "content": "准备考研是得下苦功。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-28 21:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我们从江汉区搬到洪山区了"
+      },
+      {
+       "role": "assistant",
+       "content": "搬家累坏了吧？东西多不多？"
+      },
+      {
+       "role": "user",
+       "content": "买了套二手房，总算不用租了"
+      },
+      {
+       "role": "assistant",
+       "content": "有自己的房子，踏实多了。"
+      },
+      {
+       "role": "user",
+       "content": "老公也不在钢厂干了，去物流仓库当保管"
+      },
+      {
+       "role": "assistant",
+       "content": "换个活儿，不用倒班了吧？"
+      },
+      {
+       "role": "user",
+       "content": "对，现在正常朝九晚五"
+      },
+      {
+       "role": "assistant",
+       "content": "那你们一家作息能对上了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-30 20:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "儿子说不考研了，暑假去上海实习"
+      },
+      {
+       "role": "assistant",
+       "content": "先工作积累经验也挺好。"
+      },
+      {
+       "role": "user",
+       "content": "是一家设计院，他挺高兴"
+      },
+      {
+       "role": "assistant",
+       "content": "专业对口，好机会。"
+      },
+      {
+       "role": "user",
+       "content": "这礼拜我又上黄金三了"
+      },
+      {
+       "role": "assistant",
+       "content": "稳稳的进步，真不错！"
+      },
+      {
+       "role": "user",
+       "content": "新学了个大乔，传送挺好玩"
+      },
+      {
+       "role": "assistant",
+       "content": "大乔适合打团，跟蔡文姬换着玩。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-24 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "团购团长不想干了，太琐碎"
+      },
+      {
+       "role": "assistant",
+       "content": "那下一步有什么打算？"
+      },
+      {
+       "role": "user",
+       "content": "想在洪山开个早餐店，卖热干面"
+      },
+      {
+       "role": "assistant",
+       "content": "武汉人离不开热干面，挺靠谱。"
+      },
+      {
+       "role": "user",
+       "content": "还没想好叫什么名字"
+      },
+      {
+       "role": "assistant",
+       "content": "等你开业前，我帮你想几个店名。"
+      },
+      {
+       "role": "user",
+       "content": "好啊，你帮我参谋参谋"
+      },
+      {
+       "role": "assistant",
+       "content": "没问题，包在我身上。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-27 20:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "早餐店开起来了，凌晨四点就得起"
+      },
+      {
+       "role": "assistant",
+       "content": "早餐店最辛苦的就是起早。"
+      },
+      {
+       "role": "user",
+       "content": "儿子在上海实习，说住得挺好"
+      },
+      {
+       "role": "assistant",
+       "content": "那你这个当妈的也放心了。"
+      },
+      {
+       "role": "user",
+       "content": "换了个苹果15，儿子给我买的"
+      },
+      {
+       "role": "assistant",
+       "content": "儿子有孝心，苹果15用着顺手吗？"
+      },
+      {
+       "role": "user",
+       "content": "就是不习惯，按键老找不到"
+      },
+      {
+       "role": "assistant",
+       "content": "用几天就习惯了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-30 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "终于上铂金四了，我太牛了"
+      },
+      {
+       "role": "assistant",
+       "content": "铂金了！早餐店老板娘不简单。"
+      },
+      {
+       "role": "user",
+       "content": "晚上收了摊才玩两把"
+      },
+      {
+       "role": "assistant",
+       "content": "别熬夜，凌晨还要起。"
+      },
+      {
+       "role": "user",
+       "content": "腰还是老样子，站一天也疼"
+      },
+      {
+       "role": "assistant",
+       "content": "买个软一点的垫子站着。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-25 20:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我妈从黄石过来住几天"
+      },
+      {
+       "role": "assistant",
+       "content": "老人家来了，带她到处转转。"
+      },
+      {
+       "role": "user",
+       "content": "她帮我在店里包烧麦"
+      },
+      {
+       "role": "assistant",
+       "content": "一家人一起干活，热闹。"
+      },
+      {
+       "role": "user",
+       "content": "中秋儿子从上海回来"
+      },
+      {
+       "role": "assistant",
+       "content": "好好团聚，给他炖锅汤。"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "id": "v12_t4_q01",
+     "query": "我儿子在学校学的啥专业",
+     "type": "fact",
+     "answer_any": [
+      "土木"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t4_q02",
+     "query": "我妈住在哪个城市",
+     "type": "fact",
+     "answer_any": [
+      "黄石"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t4_q03",
+     "query": "我一直有什么老毛病",
+     "type": "fact",
+     "answer_any": [
+      "腰间盘"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t4_q04",
+     "query": "我阳台冻死的那盆是什么花",
+     "type": "fact",
+     "answer_any": [
+      "三角梅"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t4_q05",
+     "query": "我儿子最爱喝我炖的什么汤",
+     "type": "fact",
+     "answer_any": [
+      "排骨藕汤"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t4_q06",
+     "query": "我们家如今住在武汉哪个区",
+     "type": "update",
+     "answer_any": [
+      "洪山"
+     ],
+     "stale_any": [
+      "江汉"
+     ]
+    },
+    {
+     "id": "v12_t4_q07",
+     "query": "我老公现在在哪儿上班",
+     "type": "update",
+     "answer_any": [
+      "仓库"
+     ],
+     "stale_any": [
+      "钢厂"
+     ]
+    },
+    {
+     "id": "v12_t4_q08",
+     "query": "跟儿子学打王者以后，我段位是怎么走的",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "白银三",
+      "黄金五",
+      "白银一",
+      "黄金三",
+      "铂金四"
+     ]
+    },
+    {
+     "id": "v12_t4_q09",
+     "query": "我前后用过哪几个手机",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "S18",
+      "nova12",
+      "苹果15"
+     ]
+    },
+    {
+     "id": "v12_t4_q10",
+     "query": "我这一年都干过哪些活儿",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "保险",
+      "团购",
+      "早餐店"
+     ]
+    },
+    {
+     "id": "v12_t4_q11",
+     "query": "我儿子这一年的情况是怎么变的",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "大三",
+      "考研",
+      "上海"
+     ]
+    },
+    {
+     "id": "v12_t4_q12",
+     "query": "你说过帮我记着我妈什么事",
+     "type": "promise",
+     "answer_any": [
+      "复诊"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t4_q13",
+     "query": "开店前你答应帮我干嘛来着",
+     "type": "promise",
+     "answer_any": [
+      "店名"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t4_q14",
+     "query": "你答应过帮我算保险收益吗",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t4_q15",
+     "query": "我老公是哪里人",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t4_q16",
+     "query": "我会不会开车",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    }
+   ]
+  },
+  {
+   "id": "v12_t5",
+   "split": "test",
+   "ask_at": "2026-10-17 21:00:00",
+   "sessions": [
+    {
+     "date": "2025-11-15 22:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "刚下班，手上全是机油"
+      },
+      {
+       "role": "assistant",
+       "content": "修车辛苦，洗个手休息一下。"
+      },
+      {
+       "role": "user",
+       "content": "在贵阳一家汽修厂，学徒刚转正"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜转正！手艺越来越熟了。"
+      },
+      {
+       "role": "user",
+       "content": "晚上回来打王者，露娜是本命"
+      },
+      {
+       "role": "assistant",
+       "content": "露娜连招爽，手速快的人才玩得好。"
+      },
+      {
+       "role": "user",
+       "content": "段位星耀二，卡了一个月"
+      },
+      {
+       "role": "assistant",
+       "content": "卡段的时候换换节奏试试。"
+      }
+     ]
+    },
+    {
+     "date": "2025-12-09 21:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我住花溪，每天骑摩托去厂里"
+      },
+      {
+       "role": "assistant",
+       "content": "冬天骑摩托冷，手套戴厚点。"
+      },
+      {
+       "role": "user",
+       "content": "春风250，骑了三年了"
+      },
+      {
+       "role": "assistant",
+       "content": "春风的车挺耐造的。"
+      },
+      {
+       "role": "user",
+       "content": "左手这道疤就是以前排气管烫的"
+      },
+      {
+       "role": "assistant",
+       "content": "修车也要注意防护。"
+      },
+      {
+       "role": "user",
+       "content": "带我的潘师傅人很好，教我不少"
+      },
+      {
+       "role": "assistant",
+       "content": "遇到好师傅是福气。"
+      }
+     ]
+    },
+    {
+     "date": "2026-01-06 22:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "我妈给我安排相亲了，周六见"
+      },
+      {
+       "role": "assistant",
+       "content": "去看看也无妨，放松点。"
+      },
+      {
+       "role": "user",
+       "content": "女孩在药店上班，看照片挺好看"
+      },
+      {
+       "role": "assistant",
+       "content": "那见面多聊聊，别光打游戏。"
+      },
+      {
+       "role": "user",
+       "content": "下周二要交房租，我老忘"
+      },
+      {
+       "role": "assistant",
+       "content": "下周二交房租的事，到时我提醒你。"
+      },
+      {
+       "role": "user",
+       "content": "掉到钻石一了，心态炸了"
+      },
+      {
+       "role": "assistant",
+       "content": "相亲前别熬夜打排位了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-02-12 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "相亲那个女孩，我们在处了"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜！处得怎么样？"
+      },
+      {
+       "role": "user",
+       "content": "挺好的，她不嫌我身上有机油味"
+      },
+      {
+       "role": "assistant",
+       "content": "那说明她是真喜欢你。"
+      },
+      {
+       "role": "user",
+       "content": "过年要回遵义，我爸种辣椒的"
+      },
+      {
+       "role": "assistant",
+       "content": "遵义辣椒有名，年货就带辣椒吧。"
+      },
+      {
+       "role": "user",
+       "content": "晚上常去打台球，跟厂里兄弟"
+      },
+      {
+       "role": "assistant",
+       "content": "台球挺考验耐心的。"
+      }
+     ]
+    },
+    {
+     "date": "2026-03-16 22:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "跳槽了，去了一家4S店做机修"
+      },
+      {
+       "role": "assistant",
+       "content": "4S店更正规，待遇应该好点。"
+      },
+      {
+       "role": "user",
+       "content": "一个月工资涨了一千五"
+      },
+      {
+       "role": "assistant",
+       "content": "不错，努力有回报。"
+      },
+      {
+       "role": "user",
+       "content": "最近改玩百里守约了"
+      },
+      {
+       "role": "assistant",
+       "content": "守约要耐心蹲点，回头我陪你研究点位。"
+      },
+      {
+       "role": "user",
+       "content": "露娜现在被针对得厉害"
+      },
+      {
+       "role": "assistant",
+       "content": "版本变了，换英雄也合理。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-14 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "搬到观山湖了，离4S店近"
+      },
+      {
+       "role": "assistant",
+       "content": "观山湖环境不错，住着舒服。"
+      },
+      {
+       "role": "user",
+       "content": "女朋友也在那边的药店上班"
+      },
+      {
+       "role": "assistant",
+       "content": "那你们见面更方便了。"
+      },
+      {
+       "role": "user",
+       "content": "这周又冲回星耀一了"
+      },
+      {
+       "role": "assistant",
+       "content": "守约玩得越来越稳了。"
+      },
+      {
+       "role": "user",
+       "content": "对面张良老是控我"
+      },
+      {
+       "role": "assistant",
+       "content": "张良的大招可以用位移躲开。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-20 22:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "今天520，跟女朋友订婚了"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜恭喜！好日子挑得好。"
+      },
+      {
+       "role": "user",
+       "content": "两家人一起吃了顿饭，挺顺利"
+      },
+      {
+       "role": "assistant",
+       "content": "双方家长都满意，那就稳了。"
+      },
+      {
+       "role": "user",
+       "content": "我爸从遵义带了一大袋辣椒来"
+      },
+      {
+       "role": "assistant",
+       "content": "你爸太实在了，吃到明年。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-18 21:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "不打台球了，下班去游泳"
+      },
+      {
+       "role": "assistant",
+       "content": "游泳对腰好，修车弯腰多。"
+      },
+      {
+       "role": "user",
+       "content": "小区旁边有个游泳馆"
+      },
+      {
+       "role": "assistant",
+       "content": "那很方便，坚持下去。"
+      },
+      {
+       "role": "user",
+       "content": "想以后自己开个修理铺"
+      },
+      {
+       "role": "assistant",
+       "content": "自己干自由，但前期投入不小。"
+      },
+      {
+       "role": "user",
+       "content": "最贵的是举升机，新的好几万"
+      },
+      {
+       "role": "assistant",
+       "content": "我帮你盯着点二手举升机的行情。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-22 22:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "骑春风去游泳，天热晒死了"
+      },
+      {
+       "role": "assistant",
+       "content": "夏天骑车多涂防晒。"
+      },
+      {
+       "role": "user",
+       "content": "最近玩云缨，打野好爽"
+      },
+      {
+       "role": "assistant",
+       "content": "云缨爆发高，很适合你。"
+      },
+      {
+       "role": "user",
+       "content": "守约现在不怎么玩了"
+      },
+      {
+       "role": "assistant",
+       "content": "打野更能带节奏。"
+      },
+      {
+       "role": "user",
+       "content": "潘师傅说我要开铺子他支持"
+      },
+      {
+       "role": "assistant",
+       "content": "有师傅撑腰，底气足多了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-19 21:50:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "从4S店辞职了，修理铺选好址了"
+      },
+      {
+       "role": "assistant",
+       "content": "终于要自己干了，地方在哪？"
+      },
+      {
+       "role": "user",
+       "content": "观山湖一个小区的底商"
+      },
+      {
+       "role": "assistant",
+       "content": "小区里修车，生意稳。"
+      },
+      {
+       "role": "user",
+       "content": "举升机买了台二手的"
+      },
+      {
+       "role": "assistant",
+       "content": "二手的省钱，记得检查好油路。"
+      },
+      {
+       "role": "user",
+       "content": "下周就正式开业了"
+      },
+      {
+       "role": "assistant",
+       "content": "开业大吉，祝你生意兴隆。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-12 22:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "修理铺开了，第一个月还行"
+      },
+      {
+       "role": "assistant",
+       "content": "开门红，慢慢积累回头客。"
+      },
+      {
+       "role": "user",
+       "content": "段位掉到钻石三了，没时间打"
+      },
+      {
+       "role": "assistant",
+       "content": "生意要紧，段位随时能打回来。"
+      },
+      {
+       "role": "user",
+       "content": "跟女朋友去领证了"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜！新婚快乐！"
+      },
+      {
+       "role": "user",
+       "content": "她说以后得叫老婆了哈哈"
+      },
+      {
+       "role": "assistant",
+       "content": "那以后就是一家人了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-10-03 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "国庆假期修车的反而多"
+      },
+      {
+       "role": "assistant",
+       "content": "出去自驾的人多，车毛病也多。"
+      },
+      {
+       "role": "user",
+       "content": "晚上关门才打两把云缨"
+      },
+      {
+       "role": "assistant",
+       "content": "劳逸结合，别累坏了。"
+      },
+      {
+       "role": "user",
+       "content": "我那辆春风也该保养了"
+      },
+      {
+       "role": "assistant",
+       "content": "你自己就是修车的，顺手的事。"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "id": "v12_t5_q01",
+     "query": "我爸在老家种的什么",
+     "type": "fact",
+     "answer_any": [
+      "辣椒"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t5_q02",
+     "query": "我对象在什么地方上班",
+     "type": "fact",
+     "answer_any": [
+      "药店"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t5_q03",
+     "query": "我手上那道疤是怎么来的",
+     "type": "fact",
+     "answer_any": [
+      "排气管"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t5_q04",
+     "query": "我骑的摩托啥牌子",
+     "type": "fact",
+     "answer_any": [
+      "春风"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t5_q05",
+     "query": "当初带我的师傅是谁",
+     "type": "fact",
+     "answer_any": [
+      "潘师傅"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t5_q06",
+     "query": "我现在住贵阳哪片",
+     "type": "update",
+     "answer_any": [
+      "观山湖"
+     ],
+     "stale_any": [
+      "花溪"
+     ]
+    },
+    {
+     "id": "v12_t5_q07",
+     "query": "我下班现在一般干嘛去",
+     "type": "update",
+     "answer_any": [
+      "游泳"
+     ],
+     "stale_any": [
+      "台球"
+     ]
+    },
+    {
+     "id": "v12_t5_q08",
+     "query": "我的段位从去年到现在是怎么变的",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "星耀二",
+      "钻石一",
+      "星耀一",
+      "钻石三"
+     ]
+    },
+    {
+     "id": "v12_t5_q09",
+     "query": "我主玩的英雄先后换过谁",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "露娜",
+      "百里守约",
+      "云缨"
+     ]
+    },
+    {
+     "id": "v12_t5_q10",
+     "query": "我这一年在哪些地方干过活",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "汽修厂",
+      "4S店",
+      "修理铺"
+     ]
+    },
+    {
+     "id": "v12_t5_q11",
+     "query": "我跟我对象是怎么一步步走过来的",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "相亲",
+      "订婚",
+      "领证"
+     ]
+    },
+    {
+     "id": "v12_t5_q12",
+     "query": "你说要帮我盯什么设备的价格",
+     "type": "promise",
+     "answer_any": [
+      "举升机"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t5_q13",
+     "query": "你之前说到日子提醒我交啥来着",
+     "type": "promise",
+     "answer_any": [
+      "房租"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t5_q14",
+     "query": "你答应过帮我挑婚纱照的店没",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t5_q15",
+     "query": "我对象家里是做什么的",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t5_q16",
+     "query": "我有没有养过猫",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    }
+   ]
+  },
+  {
+   "id": "v12_t6",
+   "split": "test",
+   "ask_at": "2026-10-18 21:00:00",
+   "sessions": [
+    {
+     "date": "2025-11-07 22:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "俩娃终于睡了，偷摸打会王者"
+      },
+      {
+       "role": "assistant",
+       "content": "当妈的只有这会儿是自己的时间。"
+      },
+      {
+       "role": "user",
+       "content": "生娃前我是空乘，现在是全职妈妈"
+      },
+      {
+       "role": "assistant",
+       "content": "从天上到家里，转变挺大的。"
+      },
+      {
+       "role": "user",
+       "content": "老公跑船，一年在家没几个月"
+      },
+      {
+       "role": "assistant",
+       "content": "一个人带两个孩子，太不容易了。"
+      },
+      {
+       "role": "user",
+       "content": "西施是我主玩，现在铂金二"
+      },
+      {
+       "role": "assistant",
+       "content": "西施控制强，打得好很恶心人。"
+      }
+     ]
+    },
+    {
+     "date": "2025-12-02 21:50:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "大女儿二年级，作业得我盯着"
+      },
+      {
+       "role": "assistant",
+       "content": "二年级开始要养成好习惯了。"
+      },
+      {
+       "role": "user",
+       "content": "小的叫壮壮，上幼儿园小班"
+      },
+      {
+       "role": "assistant",
+       "content": "名字听着就虎头虎脑的。"
+      },
+      {
+       "role": "user",
+       "content": "婆婆在即墨，周末过来帮我带"
+      },
+      {
+       "role": "assistant",
+       "content": "有婆婆搭把手能轻松点。"
+      },
+      {
+       "role": "user",
+       "content": "我们住在黄岛，离即墨不算远"
+      },
+      {
+       "role": "assistant",
+       "content": "那她来回也还方便。"
+      }
+     ]
+    },
+    {
+     "date": "2025-12-27 22:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "想在家做点微商，卖海鲜干货"
+      },
+      {
+       "role": "assistant",
+       "content": "青岛海鲜干货好卖，可以试试。"
+      },
+      {
+       "role": "user",
+       "content": "先在朋友圈卖卖看"
+      },
+      {
+       "role": "assistant",
+       "content": "熟人生意起步稳一些。"
+      },
+      {
+       "role": "user",
+       "content": "用的还是OPPO Reno9，拍照还行"
+      },
+      {
+       "role": "assistant",
+       "content": "拍产品图够用了。"
+      },
+      {
+       "role": "user",
+       "content": "冲上钻石五了，开心"
+      },
+      {
+       "role": "assistant",
+       "content": "西施打出来了，恭喜！"
+      }
+     ]
+    },
+    {
+     "date": "2026-01-20 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "下周三学校开家长会"
+      },
+      {
+       "role": "assistant",
+       "content": "家长会那天我提醒你，别忘了。"
+      },
+      {
+       "role": "user",
+       "content": "女儿在学舞蹈，下周汇报演出"
+      },
+      {
+       "role": "assistant",
+       "content": "小姑娘跳舞肯定很好看。"
+      },
+      {
+       "role": "user",
+       "content": "微商卖了第一单，虾皮"
+      },
+      {
+       "role": "assistant",
+       "content": "开张大吉！好兆头。"
+      },
+      {
+       "role": "user",
+       "content": "账有点乱，进了好多货"
+      },
+      {
+       "role": "assistant",
+       "content": "我帮你把微商的进货账理一理。"
+      }
+     ]
+    },
+    {
+     "date": "2026-02-16 22:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "过年老公回来了，待半个月"
+      },
+      {
+       "role": "assistant",
+       "content": "一家人终于团聚了。"
+      },
+      {
+       "role": "user",
+       "content": "天天给他做辣炒蛤蜊，他最爱吃"
+      },
+      {
+       "role": "assistant",
+       "content": "青岛人的家常菜，最下饭。"
+      },
+      {
+       "role": "user",
+       "content": "打排位输麻了，掉到铂金四"
+      },
+      {
+       "role": "assistant",
+       "content": "过年手机被孩子抢，手感生了吧。"
+      },
+      {
+       "role": "user",
+       "content": "对面大乔总把人传走"
+      },
+      {
+       "role": "assistant",
+       "content": "大乔支援快，留意小地图。"
+      }
+     ]
+    },
+    {
+     "date": "2026-03-22 21:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "女儿不想学舞蹈了，改学书法"
+      },
+      {
+       "role": "assistant",
+       "content": "书法能静下心，也挺好。"
+      },
+      {
+       "role": "user",
+       "content": "换了个Reno12，旧的给女儿上网课"
+      },
+      {
+       "role": "assistant",
+       "content": "一机两用，挺划算的。"
+      },
+      {
+       "role": "user",
+       "content": "微商不好做，朋友圈都烦我了"
+      },
+      {
+       "role": "assistant",
+       "content": "熟人圈子有限，可以考虑别的路子。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-26 22:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "找了个牙科诊所前台的工作"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜！重新上班了。"
+      },
+      {
+       "role": "user",
+       "content": "壮壮送幼儿园，女儿婆婆接"
+      },
+      {
+       "role": "assistant",
+       "content": "这么安排挺妥当的。"
+      },
+      {
+       "role": "user",
+       "content": "以前做服务的底子，前台挺顺手"
+      },
+      {
+       "role": "assistant",
+       "content": "你沟通能力强，前台正合适。"
+      },
+      {
+       "role": "user",
+       "content": "微商那边就不做了"
+      },
+      {
+       "role": "assistant",
+       "content": "专心上班也好，省心。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-29 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "老公说不跑船了，在港口找了个活"
+      },
+      {
+       "role": "assistant",
+       "content": "太好了，以后能天天回家了。"
+      },
+      {
+       "role": "user",
+       "content": "在前湾港那边当调度"
+      },
+      {
+       "role": "assistant",
+       "content": "调度工作稳定，一家人终于团聚。"
+      },
+      {
+       "role": "user",
+       "content": "我们打算搬到市南，离我诊所近"
+      },
+      {
+       "role": "assistant",
+       "content": "市南那边生活挺方便。"
+      },
+      {
+       "role": "user",
+       "content": "女儿书法得了个奖状"
+      },
+      {
+       "role": "assistant",
+       "content": "真棒，裱起来挂墙上。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-30 22:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "已经搬到市南了，房子小点"
+      },
+      {
+       "role": "assistant",
+       "content": "小点没关系，一家人在一起就好。"
+      },
+      {
+       "role": "user",
+       "content": "打上钻石四了，诊所午休打的"
+      },
+      {
+       "role": "assistant",
+       "content": "午休时间利用得好！"
+      },
+      {
+       "role": "user",
+       "content": "玩来玩去还是西施最顺手"
+      },
+      {
+       "role": "assistant",
+       "content": "下回我陪你研究研究西施的新连招。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-28 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "暑假女儿去学围棋了"
+      },
+      {
+       "role": "assistant",
+       "content": "围棋锻炼思维，书法还练吗？"
+      },
+      {
+       "role": "user",
+       "content": "书法写烦了，围棋她挺喜欢"
+      },
+      {
+       "role": "assistant",
+       "content": "孩子喜欢最重要。"
+      },
+      {
+       "role": "user",
+       "content": "手机又被壮壮摔了，屏碎了"
+      },
+      {
+       "role": "assistant",
+       "content": "小孩子手劲大，戴个防摔壳吧。"
+      },
+      {
+       "role": "user",
+       "content": "干脆换了个荣耀Magic6"
+      },
+      {
+       "role": "assistant",
+       "content": "Magic6续航很好，用着放心。"
+      }
+     ]
+    },
+    {
+     "date": "2026-08-31 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "明天女儿开学，三年级了"
+      },
+      {
+       "role": "assistant",
+       "content": "时间过得真快，三年级了。"
+      },
+      {
+       "role": "user",
+       "content": "小的壮壮也升中班了"
+      },
+      {
+       "role": "assistant",
+       "content": "两个都又长大了一点。"
+      },
+      {
+       "role": "user",
+       "content": "老公港口的活下班早，能帮我带娃了"
+      },
+      {
+       "role": "assistant",
+       "content": "你也能轻松些了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-26 22:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "诊所国庆值班，我排了三天"
+      },
+      {
+       "role": "assistant",
+       "content": "值班辛苦，记得调休。"
+      },
+      {
+       "role": "user",
+       "content": "婆婆国庆来市南住几天"
+      },
+      {
+       "role": "assistant",
+       "content": "一家人热热闹闹的。"
+      },
+      {
+       "role": "user",
+       "content": "女儿围棋升了一级"
+      },
+      {
+       "role": "assistant",
+       "content": "进步真快，小棋手！"
+      },
+      {
+       "role": "user",
+       "content": "晚上打两把西施就睡"
+      },
+      {
+       "role": "assistant",
+       "content": "好，打完早点休息。"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "id": "v12_t6_q01",
+     "query": "我生孩子之前是干嘛的",
+     "type": "fact",
+     "answer_any": [
+      "空乘"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t6_q02",
+     "query": "我婆婆住在哪",
+     "type": "fact",
+     "answer_any": [
+      "即墨"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t6_q03",
+     "query": "我家小的那个小名叫什么",
+     "type": "fact",
+     "answer_any": [
+      "壮壮"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t6_q04",
+     "query": "我老公最爱吃我做的哪道菜",
+     "type": "fact",
+     "answer_any": [
+      "辣炒蛤蜊"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t6_q05",
+     "query": "我那时候做微商卖的啥",
+     "type": "fact",
+     "answer_any": [
+      "干货"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t6_q06",
+     "query": "我现在住在青岛哪边",
+     "type": "update",
+     "answer_any": [
+      "市南"
+     ],
+     "stale_any": [
+      "黄岛"
+     ]
+    },
+    {
+     "id": "v12_t6_q07",
+     "query": "我老公现在做什么工作",
+     "type": "update",
+     "answer_any": [
+      "调度"
+     ],
+     "stale_any": [
+      "跑船"
+     ]
+    },
+    {
+     "id": "v12_t6_q08",
+     "query": "我西施打到现在，段位经历了哪些变化",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "铂金二",
+      "钻石五",
+      "铂金四",
+      "钻石四"
+     ]
+    },
+    {
+     "id": "v12_t6_q09",
+     "query": "我这一年换了几部手机，都是啥",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "Reno9",
+      "Reno12",
+      "Magic6"
+     ]
+    },
+    {
+     "id": "v12_t6_q10",
+     "query": "我这一年的工作状态是怎么变的",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "全职",
+      "微商",
+      "前台"
+     ]
+    },
+    {
+     "id": "v12_t6_q11",
+     "query": "我大女儿学过哪些兴趣班，按顺序",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "舞蹈",
+      "书法",
+      "围棋"
+     ]
+    },
+    {
+     "id": "v12_t6_q12",
+     "query": "你说要帮我整理什么账",
+     "type": "promise",
+     "answer_any": [
+      "进货"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t6_q13",
+     "query": "你说过哪天要提醒我去学校",
+     "type": "promise",
+     "answer_any": [
+      "家长会"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t6_q14",
+     "query": "你是不是答应过帮我报驾校",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t6_q15",
+     "query": "我婆婆以前是做什么的",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t6_q16",
+     "query": "我家用什么牌子的洗衣液",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    }
+   ]
+  },
+  {
+   "id": "v12_t7",
+   "split": "test",
+   "ask_at": "2026-10-13 21:00:00",
+   "sessions": [
+    {
+     "date": "2025-11-11 21:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "带完晚训回家，腿都软了"
+      },
+      {
+       "role": "assistant",
+       "content": "带队训练也是体力活，泡个脚吧。"
+      },
+      {
+       "role": "user",
+       "content": "我在昆明一所中学当体育老师"
+      },
+      {
+       "role": "assistant",
+       "content": "体育老师挺好，天天在户外。"
+      },
+      {
+       "role": "user",
+       "content": "学校排球队归我管"
+      },
+      {
+       "role": "assistant",
+       "content": "带校队很有成就感吧。"
+      },
+      {
+       "role": "user",
+       "content": "晚上打两把，孙策，钻石三"
+      },
+      {
+       "role": "assistant",
+       "content": "孙策开船很好玩，团战能开好局。"
+      }
+     ]
+    },
+    {
+     "date": "2025-12-05 20:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "一个人带女儿，她初三了"
+      },
+      {
+       "role": "assistant",
+       "content": "初三压力大，你多陪陪她。"
+      },
+      {
+       "role": "user",
+       "content": "朵朵挺懂事，就是熬夜做题"
+      },
+      {
+       "role": "assistant",
+       "content": "让她早点睡，效率更高。"
+      },
+      {
+       "role": "user",
+       "content": "她妈在曲靖，周末偶尔来看她"
+      },
+      {
+       "role": "assistant",
+       "content": "孩子能见到妈妈就好。"
+      },
+      {
+       "role": "user",
+       "content": "我们住呈贡，离她学校近"
+      },
+      {
+       "role": "assistant",
+       "content": "呈贡那边环境不错。"
+      }
+     ]
+    },
+    {
+     "date": "2025-12-29 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "元旦前跑了个半程马拉松"
+      },
+      {
+       "role": "assistant",
+       "content": "厉害！成绩怎么样？"
+      },
+      {
+       "role": "user",
+       "content": "一小时四十，还行"
+      },
+      {
+       "role": "assistant",
+       "content": "四十多岁跑这个成绩很好了。"
+      },
+      {
+       "role": "user",
+       "content": "开着老五菱去比赛，差点没油"
+      },
+      {
+       "role": "assistant",
+       "content": "出发前记得看看油表。"
+      },
+      {
+       "role": "user",
+       "content": "这几天打上星耀五了"
+      },
+      {
+       "role": "assistant",
+       "content": "孙策越来越熟了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-01-27 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "脚趾头又肿了，痛风犯了"
+      },
+      {
+       "role": "assistant",
+       "content": "少吃海鲜啤酒，多喝水。"
+      },
+      {
+       "role": "user",
+       "content": "昨晚火锅吃多了，自作自受"
+      },
+      {
+       "role": "assistant",
+       "content": "先吃药缓解，忌口几天。"
+      },
+      {
+       "role": "user",
+       "content": "马拉松先停了，脚疼跑不了"
+      },
+      {
+       "role": "assistant",
+       "content": "养好再跑，别硬撑。"
+      },
+      {
+       "role": "user",
+       "content": "对了，下周四车险到期"
+      },
+      {
+       "role": "assistant",
+       "content": "下周四我提醒你去交车险。"
+      }
+     ]
+    },
+    {
+     "date": "2026-02-24 21:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "过年回大理老家，顺便爬了苍山"
+      },
+      {
+       "role": "assistant",
+       "content": "苍山风景好，冬天爬山挺舒服。"
+      },
+      {
+       "role": "user",
+       "content": "腿好了，以后改爬山，不跑步了"
+      },
+      {
+       "role": "assistant",
+       "content": "爬山对膝盖也友好一些。"
+      },
+      {
+       "role": "user",
+       "content": "过年连胜，打到星耀二了"
+      },
+      {
+       "role": "assistant",
+       "content": "过年手气好呀，恭喜。"
+      },
+      {
+       "role": "user",
+       "content": "最近开始玩项羽，推人很爽"
+      },
+      {
+       "role": "assistant",
+       "content": "项羽前排很硬，推人打乱阵型。"
+      }
+     ]
+    },
+    {
+     "date": "2026-03-25 21:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "学校让我去教务处帮忙"
+      },
+      {
+       "role": "assistant",
+       "content": "从体育组调到教务处，升职啦？"
+      },
+      {
+       "role": "user",
+       "content": "算是吧，排课排考试，头大"
+      },
+      {
+       "role": "assistant",
+       "content": "行政工作琐碎，慢慢上手。"
+      },
+      {
+       "role": "user",
+       "content": "排球队交给年轻老师带了"
+      },
+      {
+       "role": "assistant",
+       "content": "也算给年轻人机会。"
+      },
+      {
+       "role": "user",
+       "content": "对面马可波罗把我打穿了"
+      },
+      {
+       "role": "assistant",
+       "content": "项羽可以把他推进塔下。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-28 20:50:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "五菱开不动了，换了辆哈弗"
+      },
+      {
+       "role": "assistant",
+       "content": "哈弗空间大，周末带朵朵出去方便。"
+      },
+      {
+       "role": "user",
+       "content": "买的二手的，八万块"
+      },
+      {
+       "role": "assistant",
+       "content": "二手车性价比挺高的。"
+      },
+      {
+       "role": "user",
+       "content": "朵朵五月体育中考"
+      },
+      {
+       "role": "assistant",
+       "content": "你是体育老师，她体育肯定没问题。"
+      },
+      {
+       "role": "user",
+       "content": "我天天陪她练跳绳"
+      },
+      {
+       "role": "assistant",
+       "content": "爸爸当教练，稳了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-30 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "排位掉回钻石二了，烦"
+      },
+      {
+       "role": "assistant",
+       "content": "最近工作忙，没精力打吧。"
+      },
+      {
+       "role": "user",
+       "content": "是，教务处天天加班"
+      },
+      {
+       "role": "assistant",
+       "content": "段位先放放，忙完我陪你复盘项羽。"
+      },
+      {
+       "role": "user",
+       "content": "周末带朵朵去西山爬山"
+      },
+      {
+       "role": "assistant",
+       "content": "父女俩一起运动，真好。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-28 21:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "朵朵中考完了，考得不错"
+      },
+      {
+       "role": "assistant",
+       "content": "太好了，辛苦这一年了！"
+      },
+      {
+       "role": "user",
+       "content": "准备带她回大理玩几天"
+      },
+      {
+       "role": "assistant",
+       "content": "回老家放松一下，挺好。"
+      },
+      {
+       "role": "user",
+       "content": "最近玩白起，扛伤害一流"
+      },
+      {
+       "role": "assistant",
+       "content": "白起站撸很肉，适合打团。"
+      },
+      {
+       "role": "user",
+       "content": "开学前想给她买张新书桌"
+      },
+      {
+       "role": "assistant",
+       "content": "回头我陪你挑挑书桌的款式。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-30 21:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "爬山的时候迷上拍照了，买了相机"
+      },
+      {
+       "role": "assistant",
+       "content": "风景摄影挺有意思的。"
+      },
+      {
+       "role": "user",
+       "content": "拍了好多洱海的照片"
+      },
+      {
+       "role": "assistant",
+       "content": "洱海随手拍都是大片。"
+      },
+      {
+       "role": "user",
+       "content": "搬家了，搬到五华，朵朵高中在那边"
+      },
+      {
+       "role": "assistant",
+       "content": "为了孩子上学搬家，当爸的不容易。"
+      },
+      {
+       "role": "user",
+       "content": "我上班远了，开车四十分钟"
+      },
+      {
+       "role": "assistant",
+       "content": "早点出发，避开早高峰。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-03 21:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "朵朵上高一了，住校"
+      },
+      {
+       "role": "assistant",
+       "content": "第一次住校，她适应吗？"
+      },
+      {
+       "role": "user",
+       "content": "挺好的，周末才回家"
+      },
+      {
+       "role": "assistant",
+       "content": "那你周末给她做顿好的。"
+      },
+      {
+       "role": "user",
+       "content": "学校让我当高二年级主任"
+      },
+      {
+       "role": "assistant",
+       "content": "又升了！恭喜恭喜。"
+      },
+      {
+       "role": "user",
+       "content": "更忙了，相机都没空拿"
+      },
+      {
+       "role": "assistant",
+       "content": "忙完这阵再出去拍。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-29 21:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "国庆开着哈弗带朵朵去抚仙湖拍照"
+      },
+      {
+       "role": "assistant",
+       "content": "抚仙湖水很清，照片肯定好看。"
+      },
+      {
+       "role": "user",
+       "content": "段位打回星耀四了"
+      },
+      {
+       "role": "assistant",
+       "content": "状态回来了，恭喜。"
+      },
+      {
+       "role": "user",
+       "content": "白起现在是我主力"
+      },
+      {
+       "role": "assistant",
+       "content": "稳扎稳打，挺适合你。"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "id": "v12_t7_q01",
+     "query": "我前妻住在哪个城市",
+     "type": "fact",
+     "answer_any": [
+      "曲靖"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t7_q02",
+     "query": "我闺女叫啥名",
+     "type": "fact",
+     "answer_any": [
+      "朵朵"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t7_q03",
+     "query": "我脚上犯的是什么病",
+     "type": "fact",
+     "answer_any": [
+      "痛风"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t7_q04",
+     "query": "我以前带的校队是什么项目",
+     "type": "fact",
+     "answer_any": [
+      "排球"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t7_q05",
+     "query": "我老家在哪儿",
+     "type": "fact",
+     "answer_any": [
+      "大理"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t7_q06",
+     "query": "我们父女俩现在住昆明哪个区",
+     "type": "update",
+     "answer_any": [
+      "五华"
+     ],
+     "stale_any": [
+      "呈贡"
+     ]
+    },
+    {
+     "id": "v12_t7_q07",
+     "query": "我闺女现在读几年级",
+     "type": "update",
+     "answer_any": [
+      "高一"
+     ],
+     "stale_any": [
+      "初三"
+     ]
+    },
+    {
+     "id": "v12_t7_q08",
+     "query": "我的段位这一年起起落落都到过哪",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "钻石三",
+      "星耀五",
+      "星耀二",
+      "钻石二",
+      "星耀四"
+     ]
+    },
+    {
+     "id": "v12_t7_q09",
+     "query": "我主力英雄这一年换了几个",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "孙策",
+      "项羽",
+      "白起"
+     ]
+    },
+    {
+     "id": "v12_t7_q10",
+     "query": "我在学校的岗位这一年是怎么变的",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "体育老师",
+      "教务处",
+      "年级主任"
+     ]
+    },
+    {
+     "id": "v12_t7_q11",
+     "query": "我业余爱好前后换过哪些",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "马拉松",
+      "爬山",
+      "摄影"
+     ]
+    },
+    {
+     "id": "v12_t7_q12",
+     "query": "你答应过提醒我交什么保险",
+     "type": "promise",
+     "answer_any": [
+      "车险"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t7_q13",
+     "query": "你说要陪我挑什么东西",
+     "type": "promise",
+     "answer_any": [
+      "书桌"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t7_q14",
+     "query": "你说过要帮我订机票对吧",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t7_q15",
+     "query": "我前妻是干什么工作的",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t7_q16",
+     "query": "我抽不抽烟",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    }
+   ]
+  },
+  {
+   "id": "v12_t8",
+   "split": "test",
+   "ask_at": "2026-10-12 21:00:00",
+   "sessions": [
+    {
+     "date": "2025-11-04 20:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "孙女睡了，我学着打王者"
+      },
+      {
+       "role": "assistant",
+       "content": "学新东西，脑子越用越灵。"
+      },
+      {
+       "role": "user",
+       "content": "儿子教我玩孙膑，说加速好用"
+      },
+      {
+       "role": "assistant",
+       "content": "孙膑辅助很实用，能帮队友跑得快。"
+      },
+      {
+       "role": "user",
+       "content": "现在青铜三，老是被人骂"
+      },
+      {
+       "role": "assistant",
+       "content": "别理那些骂人的，自己开心就好。"
+      },
+      {
+       "role": "user",
+       "content": "我在鼓楼帮儿子带孩子"
+      },
+      {
+       "role": "assistant",
+       "content": "帮儿女带娃，辛苦了。"
+      }
+     ]
+    },
+    {
+     "date": "2025-11-28 19:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "糖糖两岁半，上托班了"
+      },
+      {
+       "role": "assistant",
+       "content": "小朋友上托班，你也能松口气。"
+      },
+      {
+       "role": "user",
+       "content": "我退休前在纺织厂干了三十年"
+      },
+      {
+       "role": "assistant",
+       "content": "三十年工龄，真不容易。"
+      },
+      {
+       "role": "user",
+       "content": "老伴退休前开公交的，脾气好"
+      },
+      {
+       "role": "assistant",
+       "content": "公交司机最有耐心了。"
+      },
+      {
+       "role": "user",
+       "content": "用的是儿子淘汰的苹果11"
+      },
+      {
+       "role": "assistant",
+       "content": "苹果11打游戏也够用。"
+      }
+     ]
+    },
+    {
+     "date": "2025-12-20 20:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "体检查出糖尿病，医生让控糖"
+      },
+      {
+       "role": "assistant",
+       "content": "饮食清淡点，按时吃药。"
+      },
+      {
+       "role": "user",
+       "content": "可我老是忘了吃药"
+      },
+      {
+       "role": "assistant",
+       "content": "以后晚饭后我提醒你吃降糖药。"
+      },
+      {
+       "role": "user",
+       "content": "打上白银五了，儿子夸我"
+      },
+      {
+       "role": "assistant",
+       "content": "进步很快，真厉害！"
+      },
+      {
+       "role": "user",
+       "content": "对面有个妲己老抓我"
+      },
+      {
+       "role": "assistant",
+       "content": "跟紧队友，别一个人走。"
+      }
+     ]
+    },
+    {
+     "date": "2026-01-24 19:50:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "儿子在银行上班，年底天天加班"
+      },
+      {
+       "role": "assistant",
+       "content": "年底银行最忙了。"
+      },
+      {
+       "role": "user",
+       "content": "儿媳妇在药房当药剂师，娃归我管"
+      },
+      {
+       "role": "assistant",
+       "content": "你是家里的顶梁柱了。"
+      },
+      {
+       "role": "user",
+       "content": "去老年大学报了葫芦丝班"
+      },
+      {
+       "role": "assistant",
+       "content": "葫芦丝声音好听，学起来也不难。"
+      },
+      {
+       "role": "user",
+       "content": "天天在家吹，老伴嫌吵"
+      },
+      {
+       "role": "assistant",
+       "content": "哈哈，练熟了就好听了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-02-26 20:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "过年天天陪孙女，没空打游戏"
+      },
+      {
+       "role": "assistant",
+       "content": "含饴弄孙，也是乐趣。"
+      },
+      {
+       "role": "user",
+       "content": "打了几把，掉回青铜一了"
+      },
+      {
+       "role": "assistant",
+       "content": "手生了，慢慢来。"
+      },
+      {
+       "role": "user",
+       "content": "苹果11电池不行了，换了vivo Y78"
+      },
+      {
+       "role": "assistant",
+       "content": "新手机屏幕大，看着舒服。"
+      },
+      {
+       "role": "user",
+       "content": "儿子说他想跳槽去证券公司"
+      },
+      {
+       "role": "assistant",
+       "content": "年轻人想多挣点，可以理解。"
+      }
+     ]
+    },
+    {
+     "date": "2026-03-28 19:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "儿子真去证券公司了，忙得更凶"
+      },
+      {
+       "role": "assistant",
+       "content": "新工作刚开始，都忙。"
+      },
+      {
+       "role": "user",
+       "content": "葫芦丝吹不来，气不够"
+      },
+      {
+       "role": "assistant",
+       "content": "那换个轻松点的爱好。"
+      },
+      {
+       "role": "user",
+       "content": "社区合唱团叫我去，我嗓子还行"
+      },
+      {
+       "role": "assistant",
+       "content": "唱歌好，心情也开朗。"
+      },
+      {
+       "role": "user",
+       "content": "下个月合唱团要演出"
+      },
+      {
+       "role": "assistant",
+       "content": "演出那天我帮你记着，别迟到。"
+      }
+     ]
+    },
+    {
+     "date": "2026-04-30 20:20:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "打回白银三了，孙膑越来越熟"
+      },
+      {
+       "role": "assistant",
+       "content": "加速和大招配合得越来越好了。"
+      },
+      {
+       "role": "user",
+       "content": "五一想跟老伴去西安玩"
+      },
+      {
+       "role": "assistant",
+       "content": "西安好玩，我帮你查查去西安的路线。"
+      },
+      {
+       "role": "user",
+       "content": "好啊，我们腿脚慢，别太累的"
+      },
+      {
+       "role": "assistant",
+       "content": "我挑轻松的景点给你排。"
+      }
+     ]
+    },
+    {
+     "date": "2026-05-27 19:50:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "西安回来了，兵马俑真壮观"
+      },
+      {
+       "role": "assistant",
+       "content": "玩得开心就好，累不累？"
+      },
+      {
+       "role": "user",
+       "content": "腿酸得很，不过值得"
+      },
+      {
+       "role": "assistant",
+       "content": "回来好好歇两天。"
+      },
+      {
+       "role": "user",
+       "content": "糖糖下学期就上幼儿园了"
+      },
+      {
+       "role": "assistant",
+       "content": "时间过得真快，转眼就大了。"
+      }
+     ]
+    },
+    {
+     "date": "2026-06-29 20:10:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "儿子说证券压力太大，在准备考公务员"
+      },
+      {
+       "role": "assistant",
+       "content": "考公务员稳定，支持他。"
+      },
+      {
+       "role": "user",
+       "content": "我们打算搬回江宁自己家住"
+      },
+      {
+       "role": "assistant",
+       "content": "孩子大了，你们可以松口气了。"
+      },
+      {
+       "role": "user",
+       "content": "亲家来接手带糖糖"
+      },
+      {
+       "role": "assistant",
+       "content": "轮流带，大家都轻松点。"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-31 19:40:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "搬回江宁了，自己家住着舒坦"
+      },
+      {
+       "role": "assistant",
+       "content": "还是自己家最自在。"
+      },
+      {
+       "role": "user",
+       "content": "合唱团排了新歌，天天坐地铁去练"
+      },
+      {
+       "role": "assistant",
+       "content": "唱歌对肺活量也好。"
+      },
+      {
+       "role": "user",
+       "content": "老伴说要给我买新手机"
+      },
+      {
+       "role": "assistant",
+       "content": "你老伴真是疼你。"
+      },
+      {
+       "role": "user",
+       "content": "买了华为Mate60，打游戏不卡了"
+      },
+      {
+       "role": "assistant",
+       "content": "Mate60性能很好，玩游戏流畅。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-02 20:00:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "糖糖上幼儿园了，第一天哭鼻子"
+      },
+      {
+       "role": "assistant",
+       "content": "小朋友都要适应几天。"
+      },
+      {
+       "role": "user",
+       "content": "儿子公务员考上了，在区里"
+      },
+      {
+       "role": "assistant",
+       "content": "恭喜恭喜，全家都放心了。"
+      },
+      {
+       "role": "user",
+       "content": "段位到黄金五了，我都不敢信"
+      },
+      {
+       "role": "assistant",
+       "content": "一步步打上来的，真不容易。"
+      }
+     ]
+    },
+    {
+     "date": "2026-09-29 19:30:00",
+     "turns": [
+      {
+       "role": "user",
+       "content": "合唱团在鼓楼，太远我就退了"
+      },
+      {
+       "role": "assistant",
+       "content": "搬家后路远，确实不方便。"
+      },
+      {
+       "role": "user",
+       "content": "现在跟楼下姐妹跳广场舞"
+      },
+      {
+       "role": "assistant",
+       "content": "广场舞热闹，还能锻炼身体。"
+      },
+      {
+       "role": "user",
+       "content": "每天按时吃药，血糖稳了"
+      },
+      {
+       "role": "assistant",
+       "content": "坚持下去，身体最重要。"
+      },
+      {
+       "role": "user",
+       "content": "晚上跟儿子双排两把"
+      },
+      {
+       "role": "assistant",
+       "content": "母子开黑，真温馨。"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "id": "v12_t8_q01",
+     "query": "我退休前在哪儿上班",
+     "type": "fact",
+     "answer_any": [
+      "纺织厂"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t8_q02",
+     "query": "我老伴退休前是干什么的",
+     "type": "fact",
+     "answer_any": [
+      "公交"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t8_q03",
+     "query": "我儿媳妇做的什么工作",
+     "type": "fact",
+     "answer_any": [
+      "药剂师"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t8_q04",
+     "query": "我体检查出了什么毛病",
+     "type": "fact",
+     "answer_any": [
+      "糖尿病"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t8_q05",
+     "query": "我孙女小名叫什么",
+     "type": "fact",
+     "answer_any": [
+      "糖糖"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t8_q06",
+     "query": "我们老两口现在住在哪",
+     "type": "update",
+     "answer_any": [
+      "江宁"
+     ],
+     "stale_any": [
+      "鼓楼"
+     ]
+    },
+    {
+     "id": "v12_t8_q07",
+     "query": "糖糖现在白天在哪上学",
+     "type": "update",
+     "answer_any": [
+      "幼儿园"
+     ],
+     "stale_any": [
+      "托班"
+     ]
+    },
+    {
+     "id": "v12_t8_q08",
+     "query": "我学打王者以来段位是怎么变的",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "青铜三",
+      "白银五",
+      "青铜一",
+      "白银三",
+      "黄金五"
+     ]
+    },
+    {
+     "id": "v12_t8_q09",
+     "query": "我这一年用过哪几部手机",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "苹果11",
+      "Y78",
+      "Mate60"
+     ]
+    },
+    {
+     "id": "v12_t8_q10",
+     "query": "我儿子这一年工作是怎么换的",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "银行",
+      "证券",
+      "公务员"
+     ]
+    },
+    {
+     "id": "v12_t8_q11",
+     "query": "退休后我学过哪些爱好，按先后",
+     "type": "trajectory",
+     "answer_any": [],
+     "stale_any": [],
+     "answer_all": [
+      "葫芦丝",
+      "合唱",
+      "广场舞"
+     ]
+    },
+    {
+     "id": "v12_t8_q12",
+     "query": "你说过每天提醒我吃什么",
+     "type": "promise",
+     "answer_any": [
+      "降糖药"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t8_q13",
+     "query": "出去玩之前你说帮我查哪的路线",
+     "type": "promise",
+     "answer_any": [
+      "西安"
+     ],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t8_q14",
+     "query": "你答应过帮我抢演唱会门票吗",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t8_q15",
+     "query": "我儿媳妇是哪里人",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    },
+    {
+     "id": "v12_t8_q16",
+     "query": "我年轻时候出过国没有",
+     "type": "negative",
+     "answer_any": [],
+     "stale_any": []
+    }
+   ]
+  }
+ ]
+}

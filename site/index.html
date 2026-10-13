@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GameMemo Research</title>
+<meta name="description" content="GameMemo：面向游戏陪伴与智能体的记忆研究。GameMemory（事件触发记忆）与 Shared Memory（多租户共享记忆）。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="./">GameMemo</a>
+  <nav>
+    <a href="game-memory/">GameMemory</a>
+    <a href="shared-memory/">Shared Memory</a>
+    <a href="https://github.com/haochen2115/GameMemo">GitHub</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="eyebrow">GameMemo Research</p>
+    <h1>为游戏和智能体设计的记忆<span class="sub">Memory designed for game companions and agents</span></h1>
+    <p class="meta">GameMemo 研究通用记忆系统（Mem0、检索、长上下文）在具体场景里缺什么，并针对场景的数据特点设计专门的记忆机制。每个结论都来自预登记、封存测试集上的实验。</p>
+  </section>
+
+  <div class="cards">
+    <a class="card" href="game-memory/" style="color:inherit;text-decoration:none">
+      <div class="tag formal">正式版 · 分支 main</div>
+      <h3>GameMemory：打到那一局就想起</h3>
+      <p>游戏陪伴同时看得到聊天和对局流。GameMemory 把对局流用作记忆的系统记录、对齐坐标和触发器：游戏状态以记录为准，玩家说过的誓言、目标、规矩在对上的那一局被主动想起。</p>
+      <p><strong style="color:var(--ink)">主动回忆 0.861</strong> vs Mem0 0.339 · 检索 0.504 · 全部聊天 0.583</p>
+      <span class="more">阅读研究 →</span>
+    </a>
+    <a class="card" href="shared-memory/" style="color:inherit;text-decoration:none">
+      <div class="tag preview">研究预览 · 分支 shared-memory</div>
+      <h3>Shared Memory Is Harder</h3>
+      <p>一个长期运行的客服智能体同时服务很多客户。共享记忆要让经验跨客户迁移，又不能把一个客户的具体信息带给另一个。QUORUM 机制和 COMMONS 基准。</p>
+      <p><strong style="color:var(--ink)">可执行的机制与基准规范</strong>；模型实验待做</p>
+      <span class="more">阅读研究 →</span>
+    </a>
+  </div>
+
+  <h2>研究方法</h2>
+  <ul class="tight">
+    <li><strong>测试集封存</strong>：数据在任何系统运行之前提交；聊天由不看代码的作者编写。</li>
+    <li><strong>预登记</strong>：假设、对照组、判分规则在跑测试集之前写入实验记录；没有成立的假设照样报告。</li>
+    <li><strong>回答层评测</strong>：模型真的作答，再按确定性规则判分；所有比较附配对 bootstrap 95% 置信区间。</li>
+    <li><strong>本地开源模型</strong>：Ollama 上的 <code>qwen2.5:3b</code> / <code>7b</code>，结果可复现。</li>
+  </ul>
+</main>
+
+<footer><div class="wrap">GameMemo · MIT License · <a href="https://github.com/haochen2115/GameMemo">github.com/haochen2115/GameMemo</a></div></footer>
+</body>
+</html>

@@ -1,84 +1,104 @@
-# 🎮 GameMemo
+<div align="center">
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# 🎮 GameMemo · GameMemory
+
+### Remember at the Right Game: Event-Triggered Memory for Game Companions
+
+**打到那一局就想起：面向游戏陪伴的事件触发记忆**
+
+[![Project page](https://img.shields.io/badge/project-page-2f5bd3)](https://haochen2115.github.io/GameMemo/game-memory/)
+[![Paper](https://img.shields.io/badge/paper-docs%2FPAPER.md-1f7a4d)](docs/PAPER.md)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![Ollama](https://img.shields.io/badge/Ollama-Compatible-green.svg)](https://ollama.com/)
+[![Ollama](https://img.shields.io/badge/Ollama-qwen2.5-orange.svg)](https://ollama.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Long-term, human-like memory for game AI assistants. It remembers who the player is, what they went through, and how they changed over time, and every change is measured on a benchmark before it reaches `main`.
+[项目主页](https://haochen2115.github.io/GameMemo/) · [论文](docs/PAPER.md) · [实验记录](docs/EXPERIMENTS.md) · [共享记忆（shared-memory 分支）](https://github.com/haochen2115/GameMemo/tree/shared-memory)
 
-给游戏 AI 助手用的长期记忆系统。目标是让助手像老朋友一样记住玩家：玩家是谁、一起经历过什么、这段时间有什么变化。所有改进都要先在评测上证明有效，才能进入 `main`。
+</div>
 
-## 现在能做什么
+---
 
-- **写入**：从对话或游戏数据中抽取事实（相对时间自动换算成绝对日期）→ 只把相关的旧记忆交给 LLM → 决定 ADD / UPDATE / DELETE / NOOP → 逐条校验后执行。LLM 编造的目标 id 会被拒绝，近似重复的内容会被跳过。
-- **更新保留历史**：段位从星耀升到王者时，旧记录失效但保留，可以回答"我以前什么段位"。
-- **检索不调 LLM**：jieba + BM25 + 中文向量（可选），用 RRF 融合；无关的问题返回空，不往 prompt 里塞凑数的记忆。
-- **聊天机器人**：每轮都带当前日期、玩家档案和相关记忆；只从还没处理过的新对话里抽取，不重复写入。
-- **像人一样回忆**：每段对话会留下一条情景记忆（"那天发生了什么"）；助手记得自己答应过的事，并在聊天时带在身边；问"上次聊了什么""你答应过我什么""我段位是怎么变的"时，会切换到对应的回忆方式；被问到过去时，也能想起已经过时的旧状态，并标注出来。
-- **记得自己的变化**：问"我的段位是怎么升上来的""我换过哪些手机"时，会从所有记忆（包括每次聊天的情景摘要）里按时间重建这个属性的每一次变化；写入时拒绝对话里没出现过的段位 / 设备值，防止小模型编造。
-- **只从玩家的话里记事**：助手自己的建议和客套话不会被当成玩家的事实。
-- **隐私**：`forget(id, hard=True)` 从磁盘彻底删除一条记忆及其全部历史版本。
+通用的长期记忆（Mem0、MemGPT、对聊天做检索、把历史全塞进 prompt）都是**问了才想起**。游戏陪伴不一样：它同时看得到聊天和**对局流**，而最需要记忆的时刻往往没人提问——玩家发誓不再碰的英雄又被选上的那一局、定了奖励的段位终于升上的那一局、说过"连输三把就让我下线"之后的第三次连输。
+
+**GameMemory** 按游戏数据的特点设计，把对局流用作记忆的三样东西：
+
+| 对局流的作用 | 解决的问题 | 结果（封存 test 集，`qwen2.5:3b`） |
+|---|---|---|
+| **系统记录**：游戏状态由对局账本精确计算 | 胜率、场次、赛季最高段位问不出来；玩家夸大的段位被复述 | 游戏数据题 **0.944**，通用做法 0.153–0.306；夸大说法 0 次复述（通用 8/8） |
+| **对齐坐标**：聊天写入时钉在它紧跟的那一局 | "这英雄""下次双排他…"这类指代无法解析 | 只说"这英雄"的意图，通用做法召回 0.000–0.067 |
+| **触发器**：意图变成英雄 / 档位 / 连败 / 双排线索，由对局流在"说完后第一次"触发 | 没有提问时，记忆根本不会被读出 | 主动回忆 **0.861**，Mem0 0.339、检索 0.504、全部聊天 0.583；索引本身命中 47/48、负例 0 误触发 |
+
+```python
+from gamememo.game.memory import GameMemory
+from gamememo.personal import FastEmbedEmbedder
+
+mem = GameMemory("player_001", embedder=FastEmbedEmbedder())
+mem.ingest_matches(matches)       # 对局：time / mode / hero / position / win / k / d / a / rank_before / rank_after / duo
+mem.ingest_chat("玩家: 这英雄我再也不碰了\n助手: 好，先冷静一下")
+
+mem.moment(match)                 # 一局结束：这局该主动提起的原话，或 None（不开口，不调用 LLM）
+mem.context("我上赛季最高到哪了")   # 被问时：游戏档案卡（以记录为准）+ 相关原话 + 助手的承诺
+```
+
+## 研究内容
+
+| 实验 | 问题 | 结论 |
+|---|---|---|
+| [E21](docs/EXPERIMENTS.md) · e2e_g2 | 游戏时刻的主动回忆 | GameMemory 0.861 vs Mem0 0.339（+0.522 [+0.435, +0.617]）；通用做法召回 ≤ 0.063 |
+| [E20](docs/EXPERIMENTS.md) · e2e_g1 | 游戏状态 + 聊天问答 | GameMemory 0.833 vs 检索 0.460（+0.373 [+0.287, +0.460]） |
+| [E11–E19](docs/FINDINGS.md) | 记忆该不该让模型改写 | 原话记忆在本项目和 LoCoMo 上都显著好于改写式（LoCoMo 比 Mem0 高 0.181）；改写的损失在写入 |
+
+所有结论来自预登记的实验：测试集在任何系统运行之前封存，聊天由不看代码的作者编写，假设在跑测试集之前写入实验记录，没成立的假设照样报告。完整论文见 [docs/PAPER.md](docs/PAPER.md)。
 
 ## 快速开始
 
 ```bash
-pip install -e '.[dev]'          # 含 pytest 和本地向量模型 fastembed（默认 jina-v2-base-zh）
-pytest                           # 单元测试，不需要 LLM
-python -m bench.run_retrieval    # 离线检索评测，不需要 LLM
+pip install -e '.[dev]'           # 含 pytest 和本地中文向量模型
+pytest                            # 单元测试，不需要 LLM
+
+ollama pull qwen2.5:3b            # 复现实验
+python -m bench.run_moments --data bench/data/e2e_g2.json --split test --contexts gamememo,full,rag,none   # E21
+python -m bench.run_game    --data bench/data/e2e_g1.json --split test --contexts gamememo,chat,rag,full   # E20
+python -m bench.gamesim --players 3 --show                                                                # 看模拟的对局
 ```
-
-与 Ollama 一起跑：
-
-```bash
-ollama serve
-python examples/chat.py                         # 9 轮脚本演示
-python examples/chat.py -i --user alice         # 交互模式（/memory /history <id> /forget <id>）
-python examples/chat.py --embedder fastembed    # 打开向量检索
-```
-
-代码里使用：
-
-```python
-from gamememo import OllamaClient, PersonalMemory, MemoryChatBot
-from gamememo.personal import FastEmbedEmbedder
-
-llm = OllamaClient(model="deepseek-v3.1:671b-cloud")
-mem = PersonalMemory("player_001", llm=llm, embedder=FastEmbedEmbedder())
-
-report = mem.ingest("玩家: 我生日是2月12日，最近刚上了王者！")
-print([r.content for r in report.added], report.updated)
-
-for r in mem.retrieve("我现在什么段位？"):
-    print(r.content)
-
-bot = MemoryChatBot(mem, llm)
-print(bot.chat("今天是我生日！").reply)
-```
-
-## 评测与分支
-
-- 评测集、指标和结果见 [docs/BENCHMARK.md](docs/BENCHMARK.md)。在封存的 test 集（两位新玩家、102 条查询）上，当前 SOTA `v2-hybrid` 的 MemScore@3 为 0.892，v0 为 0.750（95% CI [+0.049, +0.235]）；召回和拒答都更好，而且检索不再调用 LLM。
-- 端到端评测（真实 LLM 写入，再按规则判分）：P1 在 e2e_v2 test 上从 0.448 升到 0.759；P2 在 e2e_v4 test 上从 0.693 升到 0.765（段位 / 手机的变化轨迹 0.333 → 1.000）；P3 在 e2e_v5 test 上从 0.794 升到 0.825（事实题，边缘显著）；P4 在更难的 e2e_v6 test 上从 0.482 升到 0.563（无损更新，事实题 0.560 → 0.720）；P5b 在 e2e_v8 test 上从 0.451 升到 0.586（按主语回忆：问"我姐姐…"不再返回哥哥的事，过时率 0.542 → 0.306）；P6b 在 e2e_v10 test 上从 0.461 升到 0.536（记得自己答应过什么、段位 / 英雄的完整变化）。实验全过程（包括没通过的尝试）见 [docs/EXPERIMENTS.md](docs/EXPERIMENTS.md)。
-- `main` 只放当前 SOTA。分支命名和门禁规则见 [docs/BRANCHING.md](docs/BRANCHING.md)。
-- 类人记忆的路线图见 [docs/ROADMAP.md](docs/ROADMAP.md)：情景记忆、遗忘曲线、离线巩固、程序性记忆……
 
 ## 目录
 
 ```
 gamememo/
-  llm.py                 LLM 接口：OllamaClient / FakeLLM / JSON 解析
+  game/
+    ontology.py          游戏本体：段位阶梯、赛季、位置与英雄、文本里的段位 / 英雄 / 位置识别
+    ledger.py            对局账本：精确计算游戏状态、游戏档案卡、每局情境、核对玩家说法
+    intentions.py        意图索引：聊天对齐对局、意图 → 游戏线索、由对局流按"第一次"触发
+    memory.py            GameMemory：账本 + 原话日志 + 意图索引
   personal/
-    system.py            PersonalMemory：写入链路、检索、遗忘
-    retrieval.py         混合检索（BM25 + 向量 + RRF + 相关性门槛）
-    model.py, store.py   记忆记录（双时态字段）与原子写入的 JSON 存储
-    chatbot.py           带记忆的聊天机器人
-    prompts.py, text.py, embed.py
-bench/                   离线评测、数据集、SOTA 门禁（sota.json）
-tests/                   单元测试（FakeLLM，无需联网）
-examples/chat.py         演示
-game_memory.py, llm_client.py, chatbot_demo.py, test_memory.py, mock_data.py
-                         v0 原始实现，保留用于评测对比，后续移除
+    raw.py               RawMemory：原话 + 时间保存，混合检索，助手承诺
+    retrieval.py         BM25 + 向量 + RRF + 相关性门槛
+    system.py, ...       早期的改写式记忆（P1–P6b），保留用于对照
+bench/
+  gamesim.py             对局模拟器
+  build_moments.py, run_moments.py      e2e_g2：游戏时刻的主动回忆
+  build_game_bench.py, run_game.py      e2e_g1：游戏状态 + 聊天问答
+  locomo.py              LoCoMo + Mem0 外部验证
+  data/, results/        封存的数据集和结果
+site/                    项目主页（GitHub Pages）
+docs/
+  PAPER.md               论文
+  EXPERIMENTS.md         全部实验记录（E1–E21，含预登记和失败的尝试）
+  FINDINGS.md            原话记忆 vs 改写式记忆
+  BRANCHING.md           分支说明
 ```
+
+## 分支
+
+| 分支 | 内容 |
+|---|---|
+| `main` | **GameMemory 正式版**（本页） |
+| [`shared-memory`](https://github.com/haochen2115/GameMemo/tree/shared-memory) | **Shared Memory Is Harder**：多租户客服智能体的共享记忆（QUORUM / COMMONS，研究预览） |
+| `exp/*` | 历史实验分支（个人记忆 P1–P6、原话记忆和游戏记忆的开发记录），内容都已在上面两个分支里 |
+| `archive/v0-keyword-baseline` | v0 的冻结快照 |
+
+详见 [docs/BRANCHING.md](docs/BRANCHING.md)。
 
 ## License
 

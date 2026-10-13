@@ -42,14 +42,18 @@ jobs:
       - name: SOTA records on the base branch
         run: |
           mkdir -p /tmp/base
-          for f in sota.json sota_e2e.json; do
+          for f in sota.json sota_e2e.json sota_answer.json sota_answer_long.json; do
             git show "origin/${{ github.base_ref }}:bench/$f" > "/tmp/base/$f" 2>/dev/null || rm -f "/tmp/base/$f"
           done
           ls -l /tmp/base
-      - name: Retrieval benchmark for the declared candidate
+      - name: Retrieval benchmark for the declared candidate (if it declares one)
         run: |
-          SYSTEM=$(python -c "import json; print(json.load(open('bench/candidate.json'))['retrieval']['system'])")
-          python -m bench.run_retrieval --split test --systems "$SYSTEM" --out bench/results/candidate.json
+          SYSTEM=$(python -c "import json; print(json.load(open('bench/candidate.json')).get('retrieval', {}).get('system', ''))")
+          if [ -n "$SYSTEM" ]; then
+            python -m bench.run_retrieval --split test --systems "$SYSTEM" --out bench/results/candidate.json
+          else
+            echo "candidate declares no retrieval benchmark; the gate rescores its committed results"
+          fi
         env:
           FASTEMBED_CACHE_PATH: /home/runner/.cache/fastembed
       - run: python -m bench.gate --candidate bench/candidate.json --base-dir /tmp/base

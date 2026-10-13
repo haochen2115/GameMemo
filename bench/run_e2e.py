@@ -29,7 +29,7 @@ import tempfile
 import time
 from collections import defaultdict
 from datetime import datetime
-from typing import Callable, Dict, List, Tuple
+from typing import Callable, Dict, List, Optional, Tuple
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
@@ -129,6 +129,31 @@ class V2System:
         return [r.to_dict() for r in self.mem.store.all()]
 
 
+class RawSystem:
+    """P7: raw-first memory (no LLM on the write path)."""
+
+    def __init__(self, workdir: str, reader: Optional[str] = None, **opts):
+        from gamememo.personal.raw import RawMemory
+
+        self.now = datetime.now()
+        if reader:  # read-time LLM (P11); a fixed model so replays are comparable
+            opts["llm"] = OllamaClient(model=reader, base_url="http://localhost:11434", timeout=600, seed=0)
+            if _CACHE:
+                _CACHE[0].wrap(opts["llm"])
+        self.mem = RawMemory("e2e", storage_dir=workdir, embedder=jina(), clock=lambda: self.now, **opts)
+
+    def ingest(self, text: str, when: datetime) -> None:
+        self.now = when
+        self.mem.ingest(text, source="chat")
+
+    def evidence(self, query: str, when: datetime) -> List[str]:
+        self.now = when
+        return [self.mem.describe(r) for r in self.mem.retrieve(query, top_k=K, touch=False)]
+
+    def dump(self) -> List[Dict]:
+        return [r.to_dict() for r in self.mem.store.all()]
+
+
 _JINA = []
 
 
@@ -207,6 +232,19 @@ SYSTEMS: Dict[str, Callable[..., object]] = {
                                            concept_fallback=True, retrieval_config=_p4_read(),
                                            subject_recall=True, interleave_fallback=True, current_latest=True,
                                            rule_promises=True, trajectory_summary=True, promise_topic=True),
+    # P7: raw-first memory -- exchanges stored verbatim, rule promises, change-aware window
+    "p7": lambda model, url, wd: RawSystem(wd, attribute_index=False, current=False, recency=False),
+    "p7-notimeline": lambda model, url, wd: RawSystem(wd, timeline=False, attribute_index=False, current=False, recency=False),
+    # P8 candidate: P7 + attribute index for change questions
+    "p8": lambda model, url, wd: RawSystem(wd, attribute_index=True, current=False, recency=False),
+    # P9 candidate: P8 + "现在…" handling
+    "p9": lambda model, url, wd: RawSystem(wd, current=True, recency=False),
+    # P10 candidate: P8 + recency without reading the question's tense
+    "p10": lambda model, url, wd: RawSystem(wd, attribute_index=True, current=False, recency=True),
+    # P11 candidate: P8 + read-time state listing for change questions the patterns cannot answer
+    "p11": lambda model, url, wd: RawSystem(wd, attribute_index=True, current=False, recency=False,
+                                            read_states=True, reader="qwen2.5:3b"),
+    "p8-noline": lambda model, url, wd: RawSystem(wd, attribute_index=True, state_line=False, current=False, recency=False),
     "p3+safe-updates": lambda model, url, wd: V2System(model, url, wd, embedder=jina(), player_only=True,
                                                        history_recall=True, episodes=True, promises=True,
                                                        recall_modes=True, attribute_recall=True,

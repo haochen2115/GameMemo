@@ -1,0 +1,2563 @@
+{
+ "conv-26:1": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 53.2
+ },
+ "conv-26:2": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 88.1
+ },
+ "conv-26:3": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 62.0
+ },
+ "conv-26:4": {
+  "events": [
+   "ADD"
+  ],
+  "seconds": 50.1
+ },
+ "conv-26:5": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 49.7
+ },
+ "conv-26:6": {
+  "error": "'str' object has no attribute 'get'",
+  "seconds": 48.8
+ },
+ "conv-26:7": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 55.6
+ },
+ "conv-26:8": {
+  "events": [],
+  "seconds": 28.8
+ },
+ "conv-26:9": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 46.1
+ },
+ "conv-26:10": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 141.9
+ },
+ "conv-26:11": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 50.4
+ },
+ "conv-26:12": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 127.3
+ },
+ "conv-26:13": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 74.2
+ },
+ "conv-26:14": {
+  "events": [],
+  "seconds": 236.5
+ },
+ "conv-26:15": {
+  "events": [],
+  "seconds": 232.1
+ },
+ "conv-26:16": {
+  "events": [],
+  "seconds": 224.8
+ },
+ "conv-26:17": {
+  "events": [],
+  "seconds": 222.3
+ },
+ "conv-26:18": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 66.1
+ },
+ "conv-26:19": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 58.8
+ },
+ "conv-30:1": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 63.1
+ },
+ "conv-30:2": {
+  "events": [
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 34.7
+ },
+ "conv-30:3": {
+  "events": [],
+  "seconds": 47.9
+ },
+ "conv-30:4": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 44.6
+ },
+ "conv-30:5": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 91.3
+ },
+ "conv-30:6": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 76.0
+ },
+ "conv-30:7": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 53.6
+ },
+ "conv-30:8": {
+  "events": [],
+  "seconds": 231.6
+ },
+ "conv-30:9": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 74.9
+ },
+ "conv-30:10": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 72.4
+ },
+ "conv-30:11": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 89.6
+ },
+ "conv-30:12": {
+  "events": [],
+  "seconds": 233.9
+ },
+ "conv-30:13": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 66.3
+ },
+ "conv-30:14": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 57.0
+ },
+ "conv-30:15": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 58.9
+ },
+ "conv-30:16": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 41.0
+ },
+ "conv-30:17": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 84.8
+ },
+ "conv-30:18": {
+  "events": [],
+  "seconds": 25.6
+ },
+ "conv-30:19": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 62.7
+ },
+ "conv-41:1": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 68.9
+ },
+ "conv-41:2": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 48.1
+ },
+ "conv-41:3": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 63.0
+ },
+ "conv-41:4": {
+  "events": [],
+  "seconds": 226.8
+ },
+ "conv-41:5": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 59.6
+ },
+ "conv-41:6": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 104.7
+ },
+ "conv-41:7": {
+  "events": [],
+  "seconds": 225.9
+ },
+ "conv-41:8": {
+  "events": [],
+  "seconds": 223.1
+ },
+ "conv-41:9": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 64.6
+ },
+ "conv-41:10": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 73.0
+ },
+ "conv-41:11": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 68.1
+ },
+ "conv-41:12": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 55.7
+ },
+ "conv-41:13": {
+  "error": "LLM extraction failed: prediction aborted, token repeat limit reached (status code: 500)",
+  "seconds": 64.8
+ },
+ "conv-41:14": {
+  "events": [],
+  "seconds": 237.7
+ },
+ "conv-41:15": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 58.0
+ },
+ "conv-41:16": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 71.1
+ },
+ "conv-41:17": {
+  "events": [
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 34.2
+ },
+ "conv-41:18": {
+  "events": [],
+  "seconds": 78.6
+ },
+ "conv-41:19": {
+  "events": [],
+  "seconds": 224.5
+ },
+ "conv-41:20": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 53.6
+ },
+ "conv-41:21": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 125.8
+ },
+ "conv-41:22": {
+  "error": "LLM extraction failed: prediction aborted, token repeat limit reached (status code: 500)",
+  "seconds": 81.0
+ },
+ "conv-41:23": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 56.9
+ },
+ "conv-41:24": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 53.1
+ },
+ "conv-41:25": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 79.1
+ },
+ "conv-41:26": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 112.3
+ },
+ "conv-41:27": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 49.5
+ },
+ "conv-41:28": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 53.5
+ },
+ "conv-41:29": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 74.3
+ },
+ "conv-41:30": {
+  "events": [],
+  "seconds": 24.3
+ },
+ "conv-41:31": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 82.1
+ },
+ "conv-41:32": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 64.8
+ },
+ "conv-42:1": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 46.1
+ },
+ "conv-42:2": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 51.9
+ },
+ "conv-42:3": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 70.6
+ },
+ "conv-42:4": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 100.5
+ },
+ "conv-42:5": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 69.7
+ },
+ "conv-42:6": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 65.1
+ },
+ "conv-42:7": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 52.9
+ },
+ "conv-42:8": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 51.3
+ },
+ "conv-42:9": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 67.1
+ },
+ "conv-42:10": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 62.9
+ },
+ "conv-42:11": {
+  "events": [
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 82.8
+ },
+ "conv-42:12": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 44.2
+ },
+ "conv-42:13": {
+  "events": [
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 34.8
+ },
+ "conv-42:14": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 54.0
+ },
+ "conv-42:15": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 62.0
+ },
+ "conv-42:16": {
+  "events": [
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 34.3
+ },
+ "conv-42:17": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 62.1
+ },
+ "conv-42:18": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 118.7
+ },
+ "conv-42:19": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 137.9
+ },
+ "conv-42:20": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 70.6
+ },
+ "conv-42:21": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 111.5
+ },
+ "conv-42:22": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 52.9
+ },
+ "conv-42:23": {
+  "events": [],
+  "seconds": 30.4
+ },
+ "conv-42:24": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 86.0
+ },
+ "conv-42:25": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 108.8
+ },
+ "conv-42:26": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 113.4
+ },
+ "conv-42:27": {
+  "events": [],
+  "seconds": 43.1
+ },
+ "conv-42:28": {
+  "events": [],
+  "seconds": 227.8
+ },
+ "conv-42:29": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 44.8
+ },
+ "conv-43:1": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 56.7
+ },
+ "conv-43:2": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 62.0
+ },
+ "conv-43:3": {
+  "events": [],
+  "seconds": 24.2
+ },
+ "conv-43:4": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 41.6
+ },
+ "conv-43:5": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 69.6
+ },
+ "conv-43:6": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 112.6
+ },
+ "conv-43:7": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 62.4
+ },
+ "conv-43:8": {
+  "events": [],
+  "seconds": 26.9
+ },
+ "conv-43:9": {
+  "events": [],
+  "seconds": 229.8
+ },
+ "conv-43:10": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 63.1
+ },
+ "conv-43:11": {
+  "events": [],
+  "seconds": 27.1
+ },
+ "conv-43:12": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 71.4
+ },
+ "conv-43:13": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 50.3
+ },
+ "conv-43:14": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 78.2
+ },
+ "conv-43:15": {
+  "events": [],
+  "seconds": 32.4
+ },
+ "conv-43:16": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 52.1
+ },
+ "conv-43:17": {
+  "events": [
+   "ADD"
+  ],
+  "seconds": 79.6
+ },
+ "conv-43:18": {
+  "events": [
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 33.5
+ },
+ "conv-43:19": {
+  "events": [],
+  "seconds": 209.9
+ },
+ "conv-43:20": {
+  "error": "LLM extraction failed: prediction aborted, token repeat limit reached (status code: 500)",
+  "seconds": 132.4
+ },
+ "conv-43:21": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 54.5
+ },
+ "conv-43:22": {
+  "events": [],
+  "seconds": 209.2
+ },
+ "conv-43:23": {
+  "events": [],
+  "seconds": 209.8
+ },
+ "conv-43:24": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 65.6
+ },
+ "conv-43:25": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 51.8
+ },
+ "conv-43:26": {
+  "events": [],
+  "seconds": 30.7
+ },
+ "conv-43:27": {
+  "events": [],
+  "seconds": 25.6
+ },
+ "conv-43:28": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 51.2
+ },
+ "conv-43:29": {
+  "events": [
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 32.7
+ },
+ "conv-44:1": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 60.6
+ },
+ "conv-44:2": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 58.6
+ },
+ "conv-44:3": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 53.6
+ },
+ "conv-44:4": {
+  "events": [],
+  "seconds": 212.1
+ },
+ "conv-44:5": {
+  "events": [
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 76.5
+ },
+ "conv-44:6": {
+  "events": [
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 33.6
+ },
+ "conv-44:7": {
+  "events": [
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 36.0
+ },
+ "conv-44:8": {
+  "events": [],
+  "seconds": 24.1
+ },
+ "conv-44:9": {
+  "events": [],
+  "seconds": 213.8
+ },
+ "conv-44:10": {
+  "events": [],
+  "seconds": 26.6
+ },
+ "conv-44:11": {
+  "events": [],
+  "seconds": 27.9
+ },
+ "conv-44:12": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 41.7
+ },
+ "conv-44:13": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 77.8
+ },
+ "conv-44:14": {
+  "events": [],
+  "seconds": 39.0
+ },
+ "conv-44:15": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 78.3
+ },
+ "conv-44:16": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 79.4
+ },
+ "conv-44:17": {
+  "events": [],
+  "seconds": 216.9
+ },
+ "conv-44:18": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 45.0
+ },
+ "conv-44:19": {
+  "events": [],
+  "seconds": 139.5
+ },
+ "conv-44:20": {
+  "events": [],
+  "seconds": 152.2
+ },
+ "conv-44:21": {
+  "events": [
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 35.2
+ },
+ "conv-44:22": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 43.1
+ },
+ "conv-44:23": {
+  "events": [],
+  "seconds": 27.5
+ },
+ "conv-44:24": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 62.4
+ },
+ "conv-44:25": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 94.6
+ },
+ "conv-44:26": {
+  "events": [],
+  "seconds": 28.6
+ },
+ "conv-44:27": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 54.8
+ },
+ "conv-44:28": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 70.9
+ },
+ "conv-47:1": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 69.4
+ },
+ "conv-47:2": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 64.5
+ },
+ "conv-47:3": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 65.3
+ },
+ "conv-47:4": {
+  "events": [],
+  "seconds": 218.1
+ },
+ "conv-47:5": {
+  "events": [
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 33.4
+ },
+ "conv-47:6": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 54.6
+ },
+ "conv-47:7": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 43.7
+ },
+ "conv-47:8": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 50.3
+ },
+ "conv-47:9": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 47.4
+ },
+ "conv-47:10": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 75.5
+ },
+ "conv-47:11": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 61.0
+ },
+ "conv-47:12": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 44.4
+ },
+ "conv-47:13": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 43.4
+ },
+ "conv-47:14": {
+  "events": [],
+  "seconds": 24.7
+ },
+ "conv-47:15": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 86.5
+ },
+ "conv-47:16": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 53.1
+ },
+ "conv-47:17": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 77.3
+ },
+ "conv-47:18": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 81.4
+ },
+ "conv-47:19": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 55.1
+ },
+ "conv-47:20": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 63.1
+ },
+ "conv-47:21": {
+  "events": [],
+  "seconds": 245.6
+ },
+ "conv-47:22": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 83.1
+ },
+ "conv-47:23": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 68.2
+ },
+ "conv-47:24": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 76.2
+ },
+ "conv-47:25": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 95.3
+ },
+ "conv-47:26": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 53.7
+ },
+ "conv-47:27": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 59.0
+ },
+ "conv-47:28": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 63.0
+ },
+ "conv-47:29": {
+  "events": [
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 33.6
+ },
+ "conv-47:30": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 43.9
+ },
+ "conv-47:31": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 46.0
+ },
+ "conv-48:1": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 59.3
+ },
+ "conv-48:2": {
+  "error": "'str' object has no attribute 'get'",
+  "seconds": 75.6
+ },
+ "conv-48:3": {
+  "events": [
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 38.6
+ },
+ "conv-48:4": {
+  "events": [],
+  "seconds": 28.1
+ },
+ "conv-48:5": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 44.4
+ },
+ "conv-48:6": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 75.7
+ },
+ "conv-48:7": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 51.6
+ },
+ "conv-48:8": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 52.7
+ },
+ "conv-48:9": {
+  "events": [
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 33.0
+ },
+ "conv-48:10": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 61.8
+ },
+ "conv-48:11": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 79.1
+ },
+ "conv-48:12": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 42.1
+ },
+ "conv-48:13": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 57.4
+ },
+ "conv-48:14": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 55.2
+ },
+ "conv-48:15": {
+  "events": [],
+  "seconds": 31.7
+ },
+ "conv-48:16": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 49.4
+ },
+ "conv-48:17": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 39.4
+ },
+ "conv-48:18": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 46.4
+ },
+ "conv-48:19": {
+  "events": [],
+  "seconds": 208.1
+ },
+ "conv-48:20": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 60.1
+ },
+ "conv-48:21": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 60.4
+ },
+ "conv-48:22": {
+  "error": "LLM extraction failed: prediction aborted, token repeat limit reached (status code: 500)",
+  "seconds": 70.6
+ },
+ "conv-48:23": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 98.5
+ },
+ "conv-48:24": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 49.5
+ },
+ "conv-48:25": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 59.8
+ },
+ "conv-48:26": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 82.8
+ },
+ "conv-48:27": {
+  "events": [
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 35.6
+ },
+ "conv-48:28": {
+  "events": [],
+  "seconds": 22.8
+ },
+ "conv-48:29": {
+  "events": [],
+  "seconds": 212.7
+ },
+ "conv-48:30": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 84.2
+ },
+ "conv-49:1": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 52.1
+ },
+ "conv-49:2": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 65.3
+ },
+ "conv-49:3": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 112.2
+ },
+ "conv-49:4": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 61.4
+ },
+ "conv-49:5": {
+  "events": [
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 104.1
+ },
+ "conv-49:6": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 129.8
+ },
+ "conv-49:7": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 52.4
+ },
+ "conv-49:8": {
+  "error": "LLM extraction failed: prediction aborted, token repeat limit reached (status code: 500)",
+  "seconds": 73.0
+ },
+ "conv-49:9": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 107.3
+ },
+ "conv-49:10": {
+  "events": [],
+  "seconds": 210.6
+ },
+ "conv-49:11": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 114.5
+ },
+ "conv-49:12": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 64.0
+ },
+ "conv-49:13": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 37.9
+ },
+ "conv-49:14": {
+  "events": [
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 106.5
+ },
+ "conv-49:15": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 49.5
+ },
+ "conv-49:16": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 86.5
+ },
+ "conv-49:17": {
+  "events": [],
+  "seconds": 33.0
+ },
+ "conv-49:18": {
+  "events": [
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 32.3
+ },
+ "conv-49:19": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 50.7
+ },
+ "conv-49:20": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 46.0
+ },
+ "conv-49:21": {
+  "events": [],
+  "seconds": 207.7
+ },
+ "conv-49:22": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 48.5
+ },
+ "conv-49:23": {
+  "events": [],
+  "seconds": 24.0
+ },
+ "conv-49:24": {
+  "events": [],
+  "seconds": 208.1
+ },
+ "conv-49:25": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 81.3
+ },
+ "conv-50:1": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 52.9
+ },
+ "conv-50:2": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 40.9
+ },
+ "conv-50:3": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 52.7
+ },
+ "conv-50:4": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 65.9
+ },
+ "conv-50:5": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 74.1
+ },
+ "conv-50:6": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 51.4
+ },
+ "conv-50:7": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 51.8
+ },
+ "conv-50:8": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 58.5
+ },
+ "conv-50:9": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 61.7
+ },
+ "conv-50:10": {
+  "events": [
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 104.0
+ },
+ "conv-50:11": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 61.0
+ },
+ "conv-50:12": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 54.3
+ },
+ "conv-50:13": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 71.2
+ },
+ "conv-50:14": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 73.3
+ },
+ "conv-50:15": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 48.4
+ },
+ "conv-50:16": {
+  "events": [
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 77.8
+ },
+ "conv-50:17": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 40.6
+ },
+ "conv-50:18": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 71.4
+ },
+ "conv-50:19": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 44.2
+ },
+ "conv-50:20": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 58.5
+ },
+ "conv-50:21": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 42.4
+ },
+ "conv-50:22": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 54.8
+ },
+ "conv-50:23": {
+  "events": [],
+  "seconds": 24.0
+ },
+ "conv-50:24": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 85.9
+ },
+ "conv-50:25": {
+  "events": [],
+  "seconds": 25.2
+ },
+ "conv-50:26": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 61.0
+ },
+ "conv-50:27": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 54.0
+ },
+ "conv-50:28": {
+  "events": [],
+  "seconds": 34.0
+ },
+ "conv-50:29": {
+  "events": [
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD",
+   "ADD"
+  ],
+  "seconds": 65.1
+ },
+ "conv-50:30": {
+  "events": [],
+  "seconds": 210.8
+ }
+}
