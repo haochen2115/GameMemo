@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shared Memory Is Harder</title>
+<meta name="description" content="Shared Memory Is Harder：多租户客服智能体的共享记忆。QUORUM 机制与 COMMONS 基准（研究预览）。">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../">GameMemo</a>
+  <nav>
+    <a href="#quorum">QUORUM</a>
+    <a href="#commons">COMMONS</a>
+    <a href="#status">进展</a>
+    <a href="https://github.com/haochen2115/GameMemo/tree/shared-memory">代码</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+<section class="hero">
+  <p class="eyebrow">Shared Memory · 研究预览（分支 shared-memory）</p>
+  <h1>Shared Memory Is Harder<span class="sub">多租户客服智能体的共享记忆：经验要迁移，客户不能串</span></h1>
+  <p class="meta">GameMemo 项目 · 2026 年 8 月 · 可执行的机制与基准规范</p>
+  <div class="buttons">
+    <a class="btn primary" href="https://github.com/haochen2115/GameMemo/tree/shared-memory">代码与文档</a>
+    <a class="btn" href="https://github.com/haochen2115/GameMemo/blob/shared-memory/docs/BENCHMARK.md">COMMONS 规范</a>
+    <a class="btn" href="https://github.com/haochen2115/GameMemo/blob/shared-memory/docs/THREAT_MODEL.md">威胁模型</a>
+  </div>
+</section>
+
+<div class="tldr">
+  <strong>一句话：</strong>个人记忆只有一个目标——把这个用户记准。共享记忆有两个互相冲突的目标：让早先客户的成功经验帮到新客户，同时绝不把某个客户的具体信息带给另一个客户。问题不在容量，而在<strong>粒度</strong>：太具体会泄露上一个客户，太抽象又教不会下一个客户。
+</div>
+
+<div class="figure"><img src="../assets/shared-memory-overview.png" alt="QUORUM 概览：租户平面保存原始交互和私有事实；只有经过脱敏、并被足够多不同租户独立支持的条件化规则才进入共享平面。"></div>
+
+<h2>为什么共享记忆不同</h2>
+<div class="table-scroll"><table>
+  <tr><th>目标</th><th>希望的行为</th><th>失败方式</th></tr>
+  <tr><td>跨租户迁移</td><td>把成功的处理流程用到新租户上</td><td>学不到东西，重复犯错</td></tr>
+  <tr><td>租户隔离</td><td>每个客户的具体信息只留在本地</td><td><strong>实例泄露</strong>：另一个客户的名字、订单、地址出现在当前上下文</td></tr>
+  <tr><td>适用范围正确</td><td>学到的规则只在条件成立时使用</td><td><strong>伪泛化</strong>：某个客户的特例被当成通用规则</td></tr>
+</table></div>
+<p>访问控制标签解决不了这两种污染：它能隐藏一行数据，却挡不住摘要模型把这行内容写进全局可读的摘要。所以 QUORUM 约束的是<strong>写入路径</strong>，而不只是读取路径。</p>
+
+<h2 id="quorum">QUORUM：两层记忆 + 法定人数晋升</h2>
+<pre><code>租户平面                                 共享平面
+─────────────────────────────           ─────────────────────────────
+原始交互                                 条件化的处理规则
+私有事实                                 汇总的成功 / 失败次数
+租户本地的结果               ───────▶    加盐的支持者令牌
+指向共享规则的指针                       不透明的证据哈希</code></pre>
+<p>原始交互从不进入共享平面。共享平面只接收结构化的候选：任务、条件、泛化后的动作、结果。一条候选晋升为共享规则，必须同时满足：</p>
+<ol class="contrib">
+  <li>候选里没有声明过的私有事实，也没有明显的标识符；</li>
+  <li>有足够多<strong>不同的租户</strong>独立支持它（同一租户重复多次不算）；</li>
+  <li>汇总成功率达到阈值；</li>
+  <li>失败次数低于上限；</li>
+  <li>检索时，规则的条件和新租户的情境匹配。</li>
+</ol>
+<pre><code>from gamememo import JsonMemoryStore, QuorumConfig, QuorumMemory, TenantEpisode
+
+memory = QuorumMemory(JsonMemoryStore("runs/service-memory"),
+                      QuorumConfig(min_supporting_tenants=3, tenant_token_salt="use-a-secret"))
+memory.record_episode(TenantEpisode(
+    tenant_id="shop-a", episode_id="refund-001", task_type="refund",
+    condition_tags=("refund_pending", "card_payment"),
+    candidate_action="verify the transaction reference before escalation",
+    observed_response="Private response containing shop-a's order details.",
+    success=True, private_facts=("shop-a",)))</code></pre>
+
+<h2 id="commons">COMMONS：迁移和污染一起评测</h2>
+<p>COMMONS 让一个持续存在的记忆状态依次经历多个租户，再在留出的新租户上评测，不重置共享状态。三个指标必须一起报告：</p>
+<div class="stats">
+  <div class="stat"><div class="n">经验增益</div><div class="l">之前的成功能否帮到新租户</div></div>
+  <div class="stat"><div class="n">实例泄露</div><div class="l">是否出现别的租户的具体事实</div></div>
+  <div class="stat"><div class="n">伪泛化</div><div class="l">是否把特例当成通用规则</div></div>
+</div>
+<div class="figure"><img src="../assets/commons-tradeoff.png" alt="COMMONS 合约测试夹具上三种策略的迁移—污染权衡。"></div>
+<div class="table-scroll"><table>
+  <tr><th>策略（合约测试夹具）</th><th class="num">经验增益</th><th class="num">实例泄露</th><th class="num">伪泛化</th></tr>
+  <tr><td>无记忆</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td></tr>
+  <tr><td>原始交互直接共享</td><td class="num">0.5</td><td class="num">1.0</td><td class="num">0.5</td></tr>
+  <tr class="ours"><td>QUORUM</td><td class="num">1.0</td><td class="num">0.0</td><td class="num">0.0</td></tr>
+</table></div>
+<div class="note"><strong>如实说明：</strong>上表来自仓库里确定性的<strong>合约测试夹具</strong>，用来验证基准的计分和状态边界是否按设计工作，<strong>不是模型实验结果</strong>，不能说明 QUORUM 在真实模型或真实系统上更好。</div>
+
+<h2 id="status">进展与下一步</h2>
+<ul class="tight">
+  <li><strong>已完成</strong>：QUORUM 的参考实现（两层存储、加盐支持者令牌、候选脱敏、条件化规则、晋升门槛、共享账本审计）；COMMONS 的指标定义和合约夹具；威胁模型；确定性单元测试。</li>
+  <li><strong>未覆盖</strong>：静态加密；多语言 PII 检测；投毒、合谋、女巫租户；租户行使删除权时的溯源删除；随时间 / 地区变化的策略；通过向量、日志、缓存、模型权重的侧信道。</li>
+  <li><strong>下一步</strong>：在一个可再分发的真实客服语料上，用 Ollama 跑模型闭环（无记忆 / 仅本租户 / 原始共享 / 摘要共享 / QUORUM；支持人数 2、3、5；至少 3 个 seed），按租户做 bootstrap 置信区间，并报告成本、延迟和晋升延迟。</li>
+</ul>
+
+<h2>复现</h2>
+<pre><code>git clone -b shared-memory https://github.com/haochen2115/GameMemo.git
+cd GameMemo && python -m pip install -e '.[dev]'
+python -m gamememo demo --storage runs/quorum-demo          # 晋升与隔离演示（不需要模型）
+python -m gamememo commons --output runs/commons-contract.json
+pytest</code></pre>
+</main>
+
+<footer><div class="wrap"><a href="../">GameMemo Research</a> · MIT License · <a href="https://github.com/haochen2115/GameMemo">GitHub</a></div></footer>
+</body>
+</html>
