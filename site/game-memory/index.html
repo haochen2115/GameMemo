@@ -147,6 +147,16 @@
 </table></div>
 <p class="caption">召回 = 正例上开口并说出那条意图；主分 = 正例和负例的平均。不经过 LLM，意图索引本身命中 47/48 个线索局，67 个负例 0 次误触发。</p>
 
+<h3>更强的对手、更强的模型</h3>
+<div class="table-scroll"><table>
+  <tr><th>对照</th><th class="num">GameMemory</th><th class="num">通用做法</th><th>说明</th></tr>
+  <tr><td>全部聊天 + 全部对局记录（1.1 万字，16 个时刻）</td><td class="num">召回 7/8</td><td class="num">召回 0/8</td><td>信息全在 prompt 里，模型仍一次都没在对的那一局开口（+0.500 [+0.250, +0.750]）</td></tr>
+  <tr><td>7B 回复模型 · Mem0</td><td class="num">0.930</td><td class="num">0.548</td><td>Mem0 召回仍为 0</td></tr>
+  <tr><td>7B 回复模型 · 检索</td><td class="num">0.930</td><td class="num">0.522</td><td>召回 0.104</td></tr>
+  <tr><td>7B 回复模型 · 全部聊天</td><td class="num">0.930</td><td class="num">0.470</td><td>开口更多，误报也更多（沉默 0.701）</td></tr>
+</table></div>
+<p class="caption">换成 7B 后 GameMemory 召回 0.667 → 0.833，通用做法没有变好：更强的回复模型补不上"在哪一局该想起哪句话"，这一步属于记忆。</p>
+
 <h3>消融</h3>
 <div class="table-scroll"><table>
   <tr><th>变体</th><th class="num">主分</th><th class="num">召回</th><th class="num">重复时沉默</th><th>结论</th></tr>
@@ -175,7 +185,7 @@
 
 <h2>局限</h2>
 <ul class="tight">
-  <li><strong>回复一步仍丢分</strong>：索引命中 47 次，3B 模型最终说对 32 次；"发誓不玩"一类 0/8，模型不愿提玩家发过的誓。</li>
+  <li><strong>回复一步仍丢分</strong>：索引命中 47 次，3B 模型最终说对 32 次、7B 40 次；"发誓不玩"一类两个模型都几乎不复述玩家的誓言，只提那局的失败。</li>
   <li><strong>意图识别是规则</strong>：对齐和线索判断依赖游戏结构；"是不是意图"用词表，test 上漏了 1/48（"上星耀我就把马克笔买了"）。</li>
   <li><strong>数据是模拟的</strong>：对局规则简化；意图的种类和点名比例由计划指定。真实玩家的分布需要真实数据检验。</li>
   <li><strong>游戏状态题的高分部分来自题目设计</strong>：只给档案卡就有 0.986；有信息量的对比是和"拿到全部对局但当文本处理"的做法比。</li>

@@ -137,3 +137,18 @@ def test_streak_rule_fires_at_the_nth_loss_of_an_evening(tmp_path):
     assert gm.moment(ms[1]) is None                                           # two losses: not yet
     assert gm.moment(ms[2]) is None                                           # a new evening starts the count again
     assert "下线" in gm.moment(ms[4])
+
+
+def test_an_llm_extractor_plugs_into_the_same_grounding(tmp_path):
+    from gamememo.game.intentions import IntentionIndex
+
+    class Fake:
+        def extract(self, content, anchor_line):
+            assert "刚用韩信" in anchor_line
+            return [("hero", "刚才那局的英雄"), ("tier", "星耀"), ("hero", "不是英雄")]
+
+    ms = [m("2026-06-01 21:00", hero="韩信", win=False, pos="打野"), m("2026-06-03 21:00", hero="韩信", pos="打野")]
+    idx = IntentionIndex(GameLedger(ms), extractor=Fake())
+    found = idx.add("r1", "2026-06-01 21:30", "玩家: 这英雄不玩了\n助手: 好")
+    assert [(i.cue, i.key) for i in found] == [("hero", "韩信"), ("tier", "星耀")]
+    assert idx.due(ms[1]) and idx.due(ms[1])[0].key == "韩信"

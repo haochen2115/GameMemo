@@ -1,8 +1,9 @@
 {
-  "_note": "P8: P7 + attribute index + state line for change questions (RawMemory defaults, E15). Pre-registered in efc00ce before the e2e_v12 test run. Baseline: P7 on sealed e2e_v12 test (bench/baseline_answer.json). Later candidates that did not pass: P9 (bench/results/candidate_p9_e2e_v13.json), P10 (bench/results/candidate_p10_e2e_v14.json).",
+  "_note": "Maintenance (E21 follow-ups: 7B and full-log results, opt-in LLM intention extractor, docs): the SOTA system is still P8 (RawMemory defaults), so the answer record must hold. P8 was promoted in #8; P8: P7 + attribute index + state line for change questions (RawMemory defaults, E15). Pre-registered in efc00ce before the e2e_v12 test run. Baseline: P7 on sealed e2e_v12 test (bench/baseline_answer.json). Later candidates that did not pass: P9 (bench/results/candidate_p9_e2e_v13.json), P10 (bench/results/candidate_p10_e2e_v14.json).",
   "answer": {
     "system": "chatbot:p8",
-    "mode": "improve",
+    "mode": "hold",
     "results": "bench/results/answer_v12_test_p78.json"
-  }
+  },
+  "_maintenance": true
 }
