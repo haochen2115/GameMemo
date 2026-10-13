@@ -149,6 +149,15 @@ def test_gate_hold_mode_and_candidate_file(tmp_path):
                                                  "results": {"sys": {"S": 0.6}}}))
     assert main(argv) == 0
 
+    # A maintenance change (SOTA system unchanged) must hold, but needs no improvement.
+    (tmp_path / "c.json").write_text(json.dumps({"_maintenance": True, "retrieval": {"system": "sys", "mode": "hold"}}))
+    (tmp_path / "r.json").write_text(json.dumps({"dataset": "d.json", "split": "test",
+                                                 "results": {"sys": {"S": 0.5}}}))
+    assert main(argv) == 0
+    (tmp_path / "r.json").write_text(json.dumps({"dataset": "d.json", "split": "test",
+                                                 "results": {"sys": {"S": 0.4}}}))
+    assert main(argv) == 1
+
 
 def test_retrieval_v2_test_split_is_unchanged_since_sealing():
     """Test queries and test players as sealed in e2d9bce (dev may grow)."""

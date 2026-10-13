@@ -22,6 +22,10 @@ Rules per benchmark record:
 - hold: primary metric >= SOTA - ``hold_tol``;
 - always: no guard metric worse than its tolerance.
 Exit code 0 = promotable, 1 = not.
+
+A change that does not replace the SOTA system (docs, results, opt-in code)
+declares ``"_maintenance": true``: it must still hold every declared
+benchmark, but needs no improvement.
 """
 
 from __future__ import annotations
@@ -156,9 +160,12 @@ def main(argv=None):
         print("\n".join("  " + l for l in lines))
         all_ok &= ok
         improved |= ok and entry["mode"] == "improve"
-    if not improved:
+    maintenance = bool(cand.get("_maintenance"))
+    if not improved and not maintenance:
         print("no benchmark is marked 'improve' and passing")
-    ok = all_ok and improved
+    if maintenance:
+        print("maintenance change: the SOTA system is unchanged; every declared benchmark must hold")
+    ok = all_ok and (improved or maintenance)
     print("=> PROMOTABLE" if ok else "=> NOT PROMOTABLE")
     return 0 if ok else 1
 
