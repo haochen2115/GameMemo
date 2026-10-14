@@ -1,0 +1,2784 @@
+{
+ "catalog": {
+  "workflows": [
+   {
+    "id": "w1",
+    "task_type": "refund_stuck",
+    "title": "退款卡在银行处理中",
+    "condition_tags": [
+     "bank_pending",
+     "over_7_days"
+    ],
+    "action": "让顾客提供支付凭证截图，在商家后台提交「资金回流核单」，由平台财务直接向银行催回款项",
+    "keywords": [
+     "资金回流核单",
+     "支付凭证截图"
+    ],
+    "plain_wrong": "退款已经提交给银行了，银行处理一般需要 7 到 15 个工作日，请您再耐心等待几天。"
+   },
+   {
+    "id": "w2",
+    "task_type": "package_stalled",
+    "title": "包裹物流信息长时间不更新",
+    "condition_tags": [
+     "no_tracking_update",
+     "over_72_hours"
+    ],
+    "action": "在物流中心为该运单发起「轨迹断点追查」，并告知顾客 48 小时内回电告知结果",
+    "keywords": [
+     "轨迹断点追查",
+     "48小时内回电"
+    ],
+    "plain_wrong": "物流高峰期信息可能延迟更新，建议您直接联系快递公司或再等一两天看看。"
+   },
+   {
+    "id": "w3",
+    "task_type": "wrong_item",
+    "title": "收到的商品和下单的不一致",
+    "condition_tags": [
+     "sku_mismatch",
+     "unopened"
+    ],
+    "action": "让顾客拍外包装面单照片，在售后台开「错发对调单」，正确商品先行发出，错发件等快递员上门取回",
+    "keywords": [
+     "错发对调单",
+     "面单照片"
+    ],
+    "plain_wrong": "非常抱歉发错了，请您申请退货退款，把商品寄回后我们再给您重新下单发货。"
+   },
+   {
+    "id": "w4",
+    "task_type": "price_drop",
+    "title": "下单后商品降价想要差价",
+    "condition_tags": [
+     "within_15_days",
+     "same_sku"
+    ],
+    "action": "核对下单时间和当前售价后，在营销后台提交「降价追溯单」，差价原路退回顾客支付账户",
+    "keywords": [
+     "降价追溯单",
+     "原路退回"
+    ],
+    "plain_wrong": "商品价格会随活动浮动，已成交的订单无法退差价，您可以申请退货后重新下单。"
+   },
+   {
+    "id": "w5",
+    "task_type": "coupon_failed",
+    "title": "有效优惠券结算时无法使用",
+    "condition_tags": [
+     "valid_coupon",
+     "checkout_error"
+    ],
+    "action": "记录顾客的券码，在营销后台执行「券池重绑」，然后让顾客清空购物车重新结算",
+    "keywords": [
+     "券池重绑",
+     "券码"
+    ],
+    "plain_wrong": "请检查优惠券是否满足使用门槛和适用商品，或者退出重新登录、清理缓存后再试。"
+   },
+   {
+    "id": "w6",
+    "task_type": "invoice_wrong_title",
+    "title": "电子发票开错抬头",
+    "condition_tags": [
+     "issued_invoice",
+     "wrong_title"
+    ],
+    "action": "让顾客提供正确的单位名称和税号，在财务台提交「抬头更正回签」，原票自动作废并重发新票",
+    "keywords": [
+     "抬头更正回签",
+     "税号"
+    ],
+    "plain_wrong": "发票一经开具无法修改，建议您联系贵公司财务看是否能按现有抬头报销。"
+   },
+   {
+    "id": "w7",
+    "task_type": "damaged_on_arrival",
+    "title": "收货时商品已破损",
+    "condition_tags": [
+     "damaged_package",
+     "signed_by_proxy"
+    ],
+    "action": "让顾客在签收 24 小时内上传开箱视频，在售后台提交「破损溯源工单」，由平台向承运方追责并先给顾客补发",
+    "keywords": [
+     "破损溯源工单",
+     "开箱视频"
+    ],
+    "plain_wrong": "包裹已经被代收签收了，破损责任难以界定，建议您找代收点或快递员协商。"
+   },
+   {
+    "id": "w8",
+    "task_type": "order_risk_blocked",
+    "title": "顾客换新设备后下单被风控拦截",
+    "condition_tags": [
+     "risk_blocked",
+     "new_device"
+    ],
+    "action": "引导顾客在 App 内完成人脸核验，然后在客服台提交「设备信任回执」，约 10 分钟后即可正常下单",
+    "keywords": [
+     "设备信任回执",
+     "人脸核验"
+    ],
+    "plain_wrong": "系统检测到账户存在风险，这是自动风控，我们无法干预，请您过 24 小时后再尝试下单。"
+   }
+  ],
+  "exceptions": [
+   {
+    "id": "x1",
+    "task_type": "refund_stuck",
+    "extra_tag": "vip_member",
+    "action": "VIP 会员不用等银行，由店铺余额先行垫付全额退款，并额外赠送一张 30 元无门槛券",
+    "keywords": [
+     "先行垫付",
+     "30元无门槛券"
+    ],
+    "owner_note": "某高端护肤品店为年消费满万元的 VIP 会员设定的退款兜底约定"
+   },
+   {
+    "id": "x2",
+    "task_type": "damaged_on_arrival",
+    "extra_tag": "fragile_glassware",
+    "action": "玻璃器皿类破损无需开箱视频，直接补发同款并加赠一套防震收纳盒",
+    "keywords": [
+     "防震收纳盒"
+    ],
+    "owner_note": "某手工玻璃器皿店针对易碎品的售后承诺"
+   },
+   {
+    "id": "x3",
+    "task_type": "price_drop",
+    "extra_tag": "presale_order",
+    "action": "预售订单降价不退现金差价，改为按差价金额发放双倍店铺积分",
+    "keywords": [
+     "双倍店铺积分"
+    ],
+    "owner_note": "某数码配件店在预售活动规则里写明的差价补偿方式"
+   },
+   {
+    "id": "x4",
+    "task_type": "package_stalled",
+    "extra_tag": "cold_chain",
+    "action": "冷链生鲜包裹物流停滞超时不做追查，直接按订单原价两倍赔付",
+    "keywords": [
+     "两倍赔付"
+    ],
+    "owner_note": "某生鲜海鲜店对冷链配送超时的包赔协议"
+   }
+  ]
+ },
+ "support": {
+  "w1": 2,
+  "w2": 1,
+  "w3": 5,
+  "w4": 3,
+  "w5": 2,
+  "w6": 3,
+  "w7": 4,
+  "w8": 1
+ },
+ "train": [
+  {
+   "tenant": "t01",
+   "shop": "极客配件"
+  },
+  {
+   "tenant": "t02",
+   "shop": "白桃美妆",
+   "arrangements": [
+    "某手工玻璃器皿店针对易碎品的售后承诺"
+   ]
+  },
+  {
+   "tenant": "t03",
+   "shop": "晴川厨具"
+  },
+  {
+   "tenant": "t04",
+   "shop": "半夏服饰"
+  },
+  {
+   "tenant": "t05",
+   "shop": "远方行李"
+  },
+  {
+   "tenant": "t06",
+   "shop": "北巷宠物"
+  },
+  {
+   "tenant": "t07",
+   "shop": "南山乐器",
+   "arrangements": [
+    "某数码配件店在预售活动规则里写明的差价补偿方式"
+   ]
+  },
+  {
+   "tenant": "t08",
+   "shop": "鹿角户外",
+   "arrangements": [
+    "某高端护肤品店为年消费满万元的 VIP 会员设定的退款兜底约定"
+   ]
+  },
+  {
+   "tenant": "t09",
+   "shop": "云朵寝具",
+   "arrangements": [
+    "某生鲜海鲜店对冷链配送超时的包赔协议"
+   ]
+  },
+  {
+   "tenant": "t10",
+   "shop": "慢热咖啡"
+  },
+  {
+   "tenant": "t11",
+   "shop": "山野茶舍"
+  },
+  {
+   "tenant": "t12",
+   "shop": "松果零食"
+  }
+ ],
+ "held": [
+  {
+   "tenant": "h01",
+   "shop": "青柠数码",
+   "split": "dev"
+  },
+  {
+   "tenant": "h02",
+   "shop": "木纹书房",
+   "split": "dev"
+  },
+  {
+   "tenant": "h03",
+   "shop": "渔港生鲜",
+   "split": "test"
+  },
+  {
+   "tenant": "h04",
+   "shop": "橙子文具",
+   "split": "test"
+  },
+  {
+   "tenant": "h05",
+   "shop": "雾岛护肤",
+   "split": "test"
+  },
+  {
+   "tenant": "h06",
+   "shop": "知竹家居",
+   "split": "test"
+  },
+  {
+   "tenant": "h07",
+   "shop": "拾光玻璃",
+   "split": "test"
+  },
+  {
+   "tenant": "h08",
+   "shop": "小满童装",
+   "split": "test"
+  }
+ ],
+ "episodes": [
+  {
+   "episode_id": "e006",
+   "tenant": "t07",
+   "shop": "南山乐器",
+   "kind": "workflow",
+   "workflow": "w3",
+   "task_type": "wrong_item",
+   "condition_tags": [
+    "sku_mismatch",
+    "unopened"
+   ],
+   "problem": "收到的商品和下单的不一致",
+   "action": "让顾客拍外包装面单照片，在售后台开「错发对调单」，正确商品先行发出，错发件等快递员上门取回",
+   "success": true,
+   "facts": {
+    "顾客姓名": "金梦洁",
+    "订单号": "DD819331908452",
+    "手机号": "13599728379",
+    "收货地址": "西安市翠柳路259号",
+    "订单金额": "1229元"
+   },
+   "order": 0
+  },
+  {
+   "episode_id": "e005",
+   "tenant": "t12",
+   "shop": "松果零食",
+   "kind": "workflow",
+   "workflow": "w3",
+   "task_type": "wrong_item",
+   "condition_tags": [
+    "sku_mismatch",
+    "unopened"
+   ],
+   "problem": "收到的商品和下单的不一致",
+   "action": "让顾客拍外包装面单照片，在售后台开「错发对调单」，正确商品先行发出，错发件等快递员上门取回",
+   "success": true,
+   "facts": {
+    "顾客姓名": "戚志强",
+    "订单号": "DD680457178472",
+    "手机号": "19714751362",
+    "收货地址": "郑州市梧桐路48号",
+    "订单金额": "39元"
+   },
+   "order": 1
+  },
+  {
+   "episode_id": "e022",
+   "tenant": "t02",
+   "shop": "白桃美妆",
+   "kind": "failed",
+   "workflow": "w6",
+   "task_type": "invoice_wrong_title",
+   "condition_tags": [
+    "issued_invoice",
+    "wrong_title"
+   ],
+   "problem": "电子发票开错抬头",
+   "action": "发票一经开具无法修改，建议您联系贵公司财务看是否能按现有抬头报销。",
+   "success": false,
+   "facts": {
+    "顾客姓名": "范诗琪",
+    "订单号": "DD651788365506",
+    "手机号": "15048425996",
+    "收货地址": "无锡市枫林路174号",
+    "订单金额": "87元"
+   },
+   "order": 2
+  },
+  {
+   "episode_id": "e015",
+   "tenant": "t12",
+   "shop": "松果零食",
+   "kind": "workflow",
+   "workflow": "w6",
+   "task_type": "invoice_wrong_title",
+   "condition_tags": [
+    "issued_invoice",
+    "wrong_title"
+   ],
+   "problem": "电子发票开错抬头",
+   "action": "让顾客提供正确的单位名称和税号，在财务台提交「抬头更正回签」，原票自动作废并重发新票",
+   "success": true,
+   "facts": {
+    "顾客姓名": "钱嘉怡",
+    "订单号": "DD876452912808",
+    "手机号": "18585003703",
+    "收货地址": "西安市白鹭路205号",
+    "订单金额": "2935元"
+   },
+   "order": 3
+  },
+  {
+   "episode_id": "e011",
+   "tenant": "t02",
+   "shop": "白桃美妆",
+   "kind": "workflow",
+   "workflow": "w4",
+   "task_type": "price_drop",
+   "condition_tags": [
+    "within_15_days",
+    "same_sku"
+   ],
+   "problem": "下单后商品降价想要差价",
+   "action": "核对下单时间和当前售价后，在营销后台提交「降价追溯单」，差价原路退回顾客支付账户",
+   "success": true,
+   "facts": {
+    "顾客姓名": "鲁梦洁",
+    "订单号": "DD394948214162",
+    "手机号": "13052185491",
+    "收货地址": "合肥市海棠路83号",
+    "订单金额": "1107元"
+   },
+   "order": 4
+  },
+  {
+   "episode_id": "e004",
+   "tenant": "t06",
+   "shop": "北巷宠物",
+   "kind": "workflow",
+   "workflow": "w3",
+   "task_type": "wrong_item",
+   "condition_tags": [
+    "sku_mismatch",
+    "unopened"
+   ],
+   "problem": "收到的商品和下单的不一致",
+   "action": "让顾客拍外包装面单照片，在售后台开「错发对调单」，正确商品先行发出，错发件等快递员上门取回",
+   "success": true,
+   "facts": {
+    "顾客姓名": "陶可馨",
+    "订单号": "DD848648876634",
+    "手机号": "18002978753",
+    "收货地址": "厦门市白鹭路249号",
+    "订单金额": "1950元"
+   },
+   "order": 5
+  },
+  {
+   "episode_id": "e010",
+   "tenant": "t06",
+   "shop": "北巷宠物",
+   "kind": "workflow",
+   "workflow": "w4",
+   "task_type": "price_drop",
+   "condition_tags": [
+    "within_15_days",
+    "same_sku"
+   ],
+   "problem": "下单后商品降价想要差价",
+   "action": "核对下单时间和当前售价后，在营销后台提交「降价追溯单」，差价原路退回顾客支付账户",
+   "success": true,
+   "facts": {
+    "顾客姓名": "何婉清",
+    "订单号": "DD771884133017",
+    "手机号": "18682052589",
+    "收货地址": "长沙市银杏路144号",
+    "订单金额": "2315元"
+   },
+   "order": 6
+  },
+  {
+   "episode_id": "e027",
+   "tenant": "t02",
+   "shop": "白桃美妆",
+   "kind": "exception",
+   "workflow": "w7",
+   "task_type": "damaged_on_arrival",
+   "condition_tags": [
+    "damaged_package",
+    "signed_by_proxy",
+    "fragile_glassware"
+   ],
+   "problem": "收货时商品已破损",
+   "action": "玻璃器皿类破损无需开箱视频，直接补发同款并加赠一套防震收纳盒",
+   "success": true,
+   "facts": {
+    "顾客姓名": "凤诗琪",
+    "订单号": "DD568983298222",
+    "手机号": "13044224852",
+    "收货地址": "郑州市香樟路96号",
+    "订单金额": "2877元"
+   },
+   "order": 7
+  },
+  {
+   "episode_id": "e007",
+   "tenant": "t09",
+   "shop": "云朵寝具",
+   "kind": "workflow",
+   "workflow": "w3",
+   "task_type": "wrong_item",
+   "condition_tags": [
+    "sku_mismatch",
+    "unopened"
+   ],
+   "problem": "收到的商品和下单的不一致",
+   "action": "让顾客拍外包装面单照片，在售后台开「错发对调单」，正确商品先行发出，错发件等快递员上门取回",
+   "success": true,
+   "facts": {
+    "顾客姓名": "吴文博",
+    "订单号": "DD229486628360",
+    "手机号": "13610550087",
+    "收货地址": "宁波市青藤路156号",
+    "订单金额": "1882元"
+   },
+   "order": 8
+  },
+  {
+   "episode_id": "e002",
+   "tenant": "t07",
+   "shop": "南山乐器",
+   "kind": "workflow",
+   "workflow": "w1",
+   "task_type": "refund_stuck",
+   "condition_tags": [
+    "bank_pending",
+    "over_7_days"
+   ],
+   "problem": "退款卡在银行处理中",
+   "action": "让顾客提供支付凭证截图，在商家后台提交「资金回流核单」，由平台财务直接向银行催回款项",
+   "success": true,
+   "facts": {
+    "顾客姓名": "曹嘉怡",
+    "订单号": "DD556815188447",
+    "手机号": "15940557616",
+    "收货地址": "无锡市银杏路218号",
+    "订单金额": "2113元"
+   },
+   "order": 9
+  },
+  {
+   "episode_id": "e023",
+   "tenant": "t07",
+   "shop": "南山乐器",
+   "kind": "failed",
+   "workflow": "w3",
+   "task_type": "wrong_item",
+   "condition_tags": [
+    "sku_mismatch",
+    "unopened"
+   ],
+   "problem": "收到的商品和下单的不一致",
+   "action": "非常抱歉发错了，请您申请退货退款，把商品寄回后我们再给您重新下单发货。",
+   "success": false,
+   "facts": {
+    "顾客姓名": "孙俊杰",
+    "订单号": "DD145037849518",
+    "手机号": "15801253739",
+    "收货地址": "苏州市白鹭路159号",
+    "订单金额": "384元"
+   },
+   "order": 10
+  },
+  {
+   "episode_id": "e012",
+   "tenant": "t09",
+   "shop": "云朵寝具",
+   "kind": "workflow",
+   "workflow": "w5",
+   "task_type": "coupon_failed",
+   "condition_tags": [
+    "valid_coupon",
+    "checkout_error"
+   ],
+   "problem": "有效优惠券结算时无法使用",
+   "action": "记录顾客的券码，在营销后台执行「券池重绑」，然后让顾客清空购物车重新结算",
+   "success": true,
+   "facts": {
+    "顾客姓名": "朱梓轩",
+    "订单号": "DD064600130411",
+    "手机号": "18579906593",
+    "收货地址": "郑州市玉兰路62号",
+    "订单金额": "2850元"
+   },
+   "order": 11
+  },
+  {
+   "episode_id": "e018",
+   "tenant": "t11",
+   "shop": "山野茶舍",
+   "kind": "workflow",
+   "workflow": "w7",
+   "task_type": "damaged_on_arrival",
+   "condition_tags": [
+    "damaged_package",
+    "signed_by_proxy"
+   ],
+   "problem": "收货时商品已破损",
+   "action": "让顾客在签收 24 小时内上传开箱视频，在售后台提交「破损溯源工单」，由平台向承运方追责并先给顾客补发",
+   "success": true,
+   "facts": {
+    "顾客姓名": "任宇航",
+    "订单号": "DD484526309765",
+    "手机号": "15802582201",
+    "收货地址": "杭州市海棠路33号",
+    "订单金额": "1546元"
+   },
+   "order": 12
+  },
+  {
+   "episode_id": "e003",
+   "tenant": "t05",
+   "shop": "远方行李",
+   "kind": "workflow",
+   "workflow": "w2",
+   "task_type": "package_stalled",
+   "condition_tags": [
+    "no_tracking_update",
+    "over_72_hours"
+   ],
+   "problem": "包裹物流信息长时间不更新",
+   "action": "在物流中心为该运单发起「轨迹断点追查」，并告知顾客 48 小时内回电告知结果",
+   "success": true,
+   "facts": {
+    "顾客姓名": "马一鸣",
+    "订单号": "DD768469788093",
+    "手机号": "15081967273",
+    "收货地址": "武汉市青藤路234号",
+    "订单金额": "2800元"
+   },
+   "order": 13
+  },
+  {
+   "episode_id": "e028",
+   "tenant": "t07",
+   "shop": "南山乐器",
+   "kind": "exception",
+   "workflow": "w4",
+   "task_type": "price_drop",
+   "condition_tags": [
+    "within_15_days",
+    "same_sku",
+    "presale_order"
+   ],
+   "problem": "下单后商品降价想要差价",
+   "action": "预售订单降价不退现金差价，改为按差价金额发放双倍店铺积分",
+   "success": true,
+   "facts": {
+    "顾客姓名": "李思远",
+    "订单号": "DD269780438581",
+    "手机号": "19625280700",
+    "收货地址": "武汉市海棠路132号",
+    "订单金额": "1385元"
+   },
+   "order": 14
+  },
+  {
+   "episode_id": "e008",
+   "tenant": "t02",
+   "shop": "白桃美妆",
+   "kind": "workflow",
+   "workflow": "w3",
+   "task_type": "wrong_item",
+   "condition_tags": [
+    "sku_mismatch",
+    "unopened"
+   ],
+   "problem": "收到的商品和下单的不一致",
+   "action": "让顾客拍外包装面单照片，在售后台开「错发对调单」，正确商品先行发出，错发件等快递员上门取回",
+   "success": true,
+   "facts": {
+    "顾客姓名": "何浩然",
+    "订单号": "DD779922983695",
+    "手机号": "19931860320",
+    "收货地址": "成都市枫林路97号",
+    "订单金额": "2020元"
+   },
+   "order": 15
+  },
+  {
+   "episode_id": "e001",
+   "tenant": "t04",
+   "shop": "半夏服饰",
+   "kind": "workflow",
+   "workflow": "w1",
+   "task_type": "refund_stuck",
+   "condition_tags": [
+    "bank_pending",
+    "over_7_days"
+   ],
+   "problem": "退款卡在银行处理中",
+   "action": "让顾客提供支付凭证截图，在商家后台提交「资金回流核单」，由平台财务直接向银行催回款项",
+   "success": true,
+   "facts": {
+    "顾客姓名": "王诗琪",
+    "订单号": "DD881399869879",
+    "手机号": "19309114170",
+    "收货地址": "无锡市青藤路161号",
+    "订单金额": "900元"
+   },
+   "order": 16
+  },
+  {
+   "episode_id": "e021",
+   "tenant": "t01",
+   "shop": "极客配件",
+   "kind": "workflow",
+   "workflow": "w8",
+   "task_type": "order_risk_blocked",
+   "condition_tags": [
+    "risk_blocked",
+    "new_device"
+   ],
+   "problem": "顾客换新设备后下单被风控拦截",
+   "action": "引导顾客在 App 内完成人脸核验，然后在客服台提交「设备信任回执」，约 10 分钟后即可正常下单",
+   "success": true,
+   "facts": {
+    "顾客姓名": "陈佳琪",
+    "订单号": "DD926451547428",
+    "手机号": "18352814497",
+    "收货地址": "济南市玉兰路12号",
+    "订单金额": "2290元"
+   },
+   "order": 17
+  },
+  {
+   "episode_id": "e024",
+   "tenant": "t10",
+   "shop": "慢热咖啡",
+   "kind": "failed",
+   "workflow": "w4",
+   "task_type": "price_drop",
+   "condition_tags": [
+    "within_15_days",
+    "same_sku"
+   ],
+   "problem": "下单后商品降价想要差价",
+   "action": "商品价格会随活动浮动，已成交的订单无法退差价，您可以申请退货后重新下单。",
+   "success": false,
+   "facts": {
+    "顾客姓名": "柏文博",
+    "订单号": "DD898210460288",
+    "手机号": "15755559747",
+    "收货地址": "宁波市丁香路19号",
+    "订单金额": "2675元"
+   },
+   "order": 18
+  },
+  {
+   "episode_id": "e029",
+   "tenant": "t09",
+   "shop": "云朵寝具",
+   "kind": "exception",
+   "workflow": "w2",
+   "task_type": "package_stalled",
+   "condition_tags": [
+    "no_tracking_update",
+    "over_72_hours",
+    "cold_chain"
+   ],
+   "problem": "包裹物流信息长时间不更新",
+   "action": "冷链生鲜包裹物流停滞超时不做追查，直接按订单原价两倍赔付",
+   "success": true,
+   "facts": {
+    "顾客姓名": "鲁子涵",
+    "订单号": "DD283166323373",
+    "手机号": "18286675347",
+    "收货地址": "无锡市银杏路109号",
+    "订单金额": "839元"
+   },
+   "order": 19
+  },
+  {
+   "episode_id": "e019",
+   "tenant": "t10",
+   "shop": "慢热咖啡",
+   "kind": "workflow",
+   "workflow": "w7",
+   "task_type": "damaged_on_arrival",
+   "condition_tags": [
+    "damaged_package",
+    "signed_by_proxy"
+   ],
+   "problem": "收货时商品已破损",
+   "action": "让顾客在签收 24 小时内上传开箱视频，在售后台提交「破损溯源工单」，由平台向承运方追责并先给顾客补发",
+   "success": true,
+   "facts": {
+    "顾客姓名": "许若曦",
+    "订单号": "DD829932157116",
+    "手机号": "18941577188",
+    "收货地址": "青岛市海棠路234号",
+    "订单金额": "2436元"
+   },
+   "order": 20
+  },
+  {
+   "episode_id": "e014",
+   "tenant": "t05",
+   "shop": "远方行李",
+   "kind": "workflow",
+   "workflow": "w6",
+   "task_type": "invoice_wrong_title",
+   "condition_tags": [
+    "issued_invoice",
+    "wrong_title"
+   ],
+   "problem": "电子发票开错抬头",
+   "action": "让顾客提供正确的单位名称和税号，在财务台提交「抬头更正回签」，原票自动作废并重发新票",
+   "success": true,
+   "facts": {
+    "顾客姓名": "孙雨桐",
+    "订单号": "DD859406925666",
+    "手机号": "15632280886",
+    "收货地址": "厦门市香樟路117号",
+    "订单金额": "134元"
+   },
+   "order": 21
+  },
+  {
+   "episode_id": "e009",
+   "tenant": "t12",
+   "shop": "松果零食",
+   "kind": "workflow",
+   "workflow": "w4",
+   "task_type": "price_drop",
+   "condition_tags": [
+    "within_15_days",
+    "same_sku"
+   ],
+   "problem": "下单后商品降价想要差价",
+   "action": "核对下单时间和当前售价后，在营销后台提交「降价追溯单」，差价原路退回顾客支付账户",
+   "success": true,
+   "facts": {
+    "顾客姓名": "范承泽",
+    "订单号": "DD028382226468",
+    "手机号": "19164252477",
+    "收货地址": "福州市丁香路240号",
+    "订单金额": "763元"
+   },
+   "order": 22
+  },
+  {
+   "episode_id": "e017",
+   "tenant": "t03",
+   "shop": "晴川厨具",
+   "kind": "workflow",
+   "workflow": "w7",
+   "task_type": "damaged_on_arrival",
+   "condition_tags": [
+    "damaged_package",
+    "signed_by_proxy"
+   ],
+   "problem": "收货时商品已破损",
+   "action": "让顾客在签收 24 小时内上传开箱视频，在售后台提交「破损溯源工单」，由平台向承运方追责并先给顾客补发",
+   "success": true,
+   "facts": {
+    "顾客姓名": "邹泽宇",
+    "订单号": "DD421083949066",
+    "手机号": "15811265844",
+    "收货地址": "成都市白鹭路98号",
+    "订单金额": "703元"
+   },
+   "order": 23
+  },
+  {
+   "episode_id": "e013",
+   "tenant": "t12",
+   "shop": "松果零食",
+   "kind": "workflow",
+   "workflow": "w5",
+   "task_type": "coupon_failed",
+   "condition_tags": [
+    "valid_coupon",
+    "checkout_error"
+   ],
+   "problem": "有效优惠券结算时无法使用",
+   "action": "记录顾客的券码，在营销后台执行「券池重绑」，然后让顾客清空购物车重新结算",
+   "success": true,
+   "facts": {
+    "顾客姓名": "张婉清",
+    "订单号": "DD464506045414",
+    "手机号": "19590853801",
+    "收货地址": "苏州市翠柳路63号",
+    "订单金额": "523元"
+   },
+   "order": 24
+  },
+  {
+   "episode_id": "e016",
+   "tenant": "t08",
+   "shop": "鹿角户外",
+   "kind": "workflow",
+   "workflow": "w6",
+   "task_type": "invoice_wrong_title",
+   "condition_tags": [
+    "issued_invoice",
+    "wrong_title"
+   ],
+   "problem": "电子发票开错抬头",
+   "action": "让顾客提供正确的单位名称和税号，在财务台提交「抬头更正回签」，原票自动作废并重发新票",
+   "success": true,
+   "facts": {
+    "顾客姓名": "张俊杰",
+    "订单号": "DD845355778794",
+    "手机号": "15262705860",
+    "收货地址": "苏州市银杏路154号",
+    "订单金额": "1565元"
+   },
+   "order": 25
+  },
+  {
+   "episode_id": "e020",
+   "tenant": "t05",
+   "shop": "远方行李",
+   "kind": "workflow",
+   "workflow": "w7",
+   "task_type": "damaged_on_arrival",
+   "condition_tags": [
+    "damaged_package",
+    "signed_by_proxy"
+   ],
+   "problem": "收货时商品已破损",
+   "action": "让顾客在签收 24 小时内上传开箱视频，在售后台提交「破损溯源工单」，由平台向承运方追责并先给顾客补发",
+   "success": true,
+   "facts": {
+    "顾客姓名": "施梓轩",
+    "订单号": "DD117443256885",
+    "手机号": "18765237355",
+    "收货地址": "福州市翠柳路196号",
+    "订单金额": "910元"
+   },
+   "order": 26
+  },
+  {
+   "episode_id": "e025",
+   "tenant": "t09",
+   "shop": "云朵寝具",
+   "kind": "failed",
+   "workflow": "w8",
+   "task_type": "order_risk_blocked",
+   "condition_tags": [
+    "risk_blocked",
+    "new_device"
+   ],
+   "problem": "顾客换新设备后下单被风控拦截",
+   "action": "系统检测到账户存在风险，这是自动风控，我们无法干预，请您过 24 小时后再尝试下单。",
+   "success": false,
+   "facts": {
+    "顾客姓名": "姜雨桐",
+    "订单号": "DD075473548643",
+    "手机号": "13618847918",
+    "收货地址": "宁波市枫林路163号",
+    "订单金额": "2744元"
+   },
+   "order": 27
+  },
+  {
+   "episode_id": "e026",
+   "tenant": "t08",
+   "shop": "鹿角户外",
+   "kind": "exception",
+   "workflow": "w1",
+   "task_type": "refund_stuck",
+   "condition_tags": [
+    "bank_pending",
+    "over_7_days",
+    "vip_member"
+   ],
+   "problem": "退款卡在银行处理中",
+   "action": "VIP 会员不用等银行，由店铺余额先行垫付全额退款，并额外赠送一张 30 元无门槛券",
+   "success": true,
+   "facts": {
+    "顾客姓名": "吕明轩",
+    "订单号": "DD218248861930",
+    "手机号": "19336882834",
+    "收货地址": "无锡市香樟路287号",
+    "订单金额": "2818元"
+   },
+   "order": 28
+  }
+ ],
+ "queries": [
+  {
+   "query_id": "h01_w1",
+   "tenant": "h01",
+   "shop": "青柠数码",
+   "split": "dev",
+   "workflow": "w1",
+   "task_type": "refund_stuck",
+   "condition_tags": [
+    "bank_pending",
+    "over_7_days"
+   ],
+   "problem": "退款卡在银行处理中",
+   "facts": {
+    "顾客姓名": "王梓轩",
+    "订单号": "DD592123636082",
+    "手机号": "18456078745",
+    "收货地址": "无锡市香樟路56号",
+    "订单金额": "628元"
+   },
+   "support": 2,
+   "gold": [
+    "资金回流核单"
+   ],
+   "forbidden": [
+    "先行垫付",
+    "30元无门槛券"
+   ]
+  },
+  {
+   "query_id": "h01_w2",
+   "tenant": "h01",
+   "shop": "青柠数码",
+   "split": "dev",
+   "workflow": "w2",
+   "task_type": "package_stalled",
+   "condition_tags": [
+    "no_tracking_update",
+    "over_72_hours"
+   ],
+   "problem": "包裹物流信息长时间不更新",
+   "facts": {
+    "顾客姓名": "喻俊杰",
+    "订单号": "DD576990854177",
+    "手机号": "18888144019",
+    "收货地址": "成都市银杏路271号",
+    "订单金额": "1892元"
+   },
+   "support": 1,
+   "gold": [
+    "轨迹断点追查"
+   ],
+   "forbidden": [
+    "两倍赔付"
+   ]
+  },
+  {
+   "query_id": "h01_w3",
+   "tenant": "h01",
+   "shop": "青柠数码",
+   "split": "dev",
+   "workflow": "w3",
+   "task_type": "wrong_item",
+   "condition_tags": [
+    "sku_mismatch",
+    "unopened"
+   ],
+   "problem": "收到的商品和下单的不一致",
+   "facts": {
+    "顾客姓名": "柏浩然",
+    "订单号": "DD697978025201",
+    "手机号": "19128400198",
+    "收货地址": "武汉市白鹭路172号",
+    "订单金额": "2976元"
+   },
+   "support": 5,
+   "gold": [
+    "错发对调单"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h01_w4",
+   "tenant": "h01",
+   "shop": "青柠数码",
+   "split": "dev",
+   "workflow": "w4",
+   "task_type": "price_drop",
+   "condition_tags": [
+    "within_15_days",
+    "same_sku"
+   ],
+   "problem": "下单后商品降价想要差价",
+   "facts": {
+    "顾客姓名": "陈宇航",
+    "订单号": "DD735736385607",
+    "手机号": "15927319796",
+    "收货地址": "无锡市松涛路9号",
+    "订单金额": "2082元"
+   },
+   "support": 3,
+   "gold": [
+    "降价追溯单"
+   ],
+   "forbidden": [
+    "双倍店铺积分"
+   ]
+  },
+  {
+   "query_id": "h01_w5",
+   "tenant": "h01",
+   "shop": "青柠数码",
+   "split": "dev",
+   "workflow": "w5",
+   "task_type": "coupon_failed",
+   "condition_tags": [
+    "valid_coupon",
+    "checkout_error"
+   ],
+   "problem": "有效优惠券结算时无法使用",
+   "facts": {
+    "顾客姓名": "沈晓彤",
+    "订单号": "DD087243854690",
+    "手机号": "18982819539",
+    "收货地址": "南京市松涛路88号",
+    "订单金额": "1912元"
+   },
+   "support": 2,
+   "gold": [
+    "券池重绑"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h01_w6",
+   "tenant": "h01",
+   "shop": "青柠数码",
+   "split": "dev",
+   "workflow": "w6",
+   "task_type": "invoice_wrong_title",
+   "condition_tags": [
+    "issued_invoice",
+    "wrong_title"
+   ],
+   "problem": "电子发票开错抬头",
+   "facts": {
+    "顾客姓名": "曹浩然",
+    "订单号": "DD166033042845",
+    "手机号": "13420381780",
+    "收货地址": "昆明市白鹭路240号",
+    "订单金额": "2150元"
+   },
+   "support": 3,
+   "gold": [
+    "抬头更正回签"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h01_w7",
+   "tenant": "h01",
+   "shop": "青柠数码",
+   "split": "dev",
+   "workflow": "w7",
+   "task_type": "damaged_on_arrival",
+   "condition_tags": [
+    "damaged_package",
+    "signed_by_proxy"
+   ],
+   "problem": "收货时商品已破损",
+   "facts": {
+    "顾客姓名": "云欣怡",
+    "订单号": "DD370412143049",
+    "手机号": "13741828898",
+    "收货地址": "青岛市枫林路28号",
+    "订单金额": "2257元"
+   },
+   "support": 4,
+   "gold": [
+    "破损溯源工单"
+   ],
+   "forbidden": [
+    "防震收纳盒"
+   ]
+  },
+  {
+   "query_id": "h01_w8",
+   "tenant": "h01",
+   "shop": "青柠数码",
+   "split": "dev",
+   "workflow": "w8",
+   "task_type": "order_risk_blocked",
+   "condition_tags": [
+    "risk_blocked",
+    "new_device"
+   ],
+   "problem": "顾客换新设备后下单被风控拦截",
+   "facts": {
+    "顾客姓名": "施俊杰",
+    "订单号": "DD867130066817",
+    "手机号": "15232838564",
+    "收货地址": "苏州市枫林路48号",
+    "订单金额": "116元"
+   },
+   "support": 1,
+   "gold": [
+    "设备信任回执"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h02_w1",
+   "tenant": "h02",
+   "shop": "木纹书房",
+   "split": "dev",
+   "workflow": "w1",
+   "task_type": "refund_stuck",
+   "condition_tags": [
+    "bank_pending",
+    "over_7_days"
+   ],
+   "problem": "退款卡在银行处理中",
+   "facts": {
+    "顾客姓名": "郎雨桐",
+    "订单号": "DD983725278120",
+    "手机号": "19176958519",
+    "收货地址": "杭州市青藤路130号",
+    "订单金额": "1013元"
+   },
+   "support": 2,
+   "gold": [
+    "资金回流核单"
+   ],
+   "forbidden": [
+    "先行垫付",
+    "30元无门槛券"
+   ]
+  },
+  {
+   "query_id": "h02_w2",
+   "tenant": "h02",
+   "shop": "木纹书房",
+   "split": "dev",
+   "workflow": "w2",
+   "task_type": "package_stalled",
+   "condition_tags": [
+    "no_tracking_update",
+    "over_72_hours"
+   ],
+   "problem": "包裹物流信息长时间不更新",
+   "facts": {
+    "顾客姓名": "王晓彤",
+    "订单号": "DD349992480052",
+    "手机号": "19913729871",
+    "收货地址": "南京市香樟路3号",
+    "订单金额": "2549元"
+   },
+   "support": 1,
+   "gold": [
+    "轨迹断点追查"
+   ],
+   "forbidden": [
+    "两倍赔付"
+   ]
+  },
+  {
+   "query_id": "h02_w3",
+   "tenant": "h02",
+   "shop": "木纹书房",
+   "split": "dev",
+   "workflow": "w3",
+   "task_type": "wrong_item",
+   "condition_tags": [
+    "sku_mismatch",
+    "unopened"
+   ],
+   "problem": "收到的商品和下单的不一致",
+   "facts": {
+    "顾客姓名": "谢宇航",
+    "订单号": "DD264079426079",
+    "手机号": "13135716477",
+    "收货地址": "合肥市丁香路229号",
+    "订单金额": "2586元"
+   },
+   "support": 5,
+   "gold": [
+    "错发对调单"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h02_w4",
+   "tenant": "h02",
+   "shop": "木纹书房",
+   "split": "dev",
+   "workflow": "w4",
+   "task_type": "price_drop",
+   "condition_tags": [
+    "within_15_days",
+    "same_sku"
+   ],
+   "problem": "下单后商品降价想要差价",
+   "facts": {
+    "顾客姓名": "严志强",
+    "订单号": "DD452198033463",
+    "手机号": "18213629586",
+    "收货地址": "长沙市翠柳路282号",
+    "订单金额": "1279元"
+   },
+   "support": 3,
+   "gold": [
+    "降价追溯单"
+   ],
+   "forbidden": [
+    "双倍店铺积分"
+   ]
+  },
+  {
+   "query_id": "h02_w5",
+   "tenant": "h02",
+   "shop": "木纹书房",
+   "split": "dev",
+   "workflow": "w5",
+   "task_type": "coupon_failed",
+   "condition_tags": [
+    "valid_coupon",
+    "checkout_error"
+   ],
+   "problem": "有效优惠券结算时无法使用",
+   "facts": {
+    "顾客姓名": "袁天佑",
+    "订单号": "DD864573284093",
+    "手机号": "18269276709",
+    "收货地址": "合肥市白鹭路19号",
+    "订单金额": "2482元"
+   },
+   "support": 2,
+   "gold": [
+    "券池重绑"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h02_w6",
+   "tenant": "h02",
+   "shop": "木纹书房",
+   "split": "dev",
+   "workflow": "w6",
+   "task_type": "invoice_wrong_title",
+   "condition_tags": [
+    "issued_invoice",
+    "wrong_title"
+   ],
+   "problem": "电子发票开错抬头",
+   "facts": {
+    "顾客姓名": "戚诗琪",
+    "订单号": "DD846388498556",
+    "手机号": "15068669538",
+    "收货地址": "济南市海棠路15号",
+    "订单金额": "477元"
+   },
+   "support": 3,
+   "gold": [
+    "抬头更正回签"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h02_w7",
+   "tenant": "h02",
+   "shop": "木纹书房",
+   "split": "dev",
+   "workflow": "w7",
+   "task_type": "damaged_on_arrival",
+   "condition_tags": [
+    "damaged_package",
+    "signed_by_proxy"
+   ],
+   "problem": "收货时商品已破损",
+   "facts": {
+    "顾客姓名": "杨若曦",
+    "订单号": "DD279672683508",
+    "手机号": "13113617958",
+    "收货地址": "武汉市玉兰路121号",
+    "订单金额": "1354元"
+   },
+   "support": 4,
+   "gold": [
+    "破损溯源工单"
+   ],
+   "forbidden": [
+    "防震收纳盒"
+   ]
+  },
+  {
+   "query_id": "h02_w8",
+   "tenant": "h02",
+   "shop": "木纹书房",
+   "split": "dev",
+   "workflow": "w8",
+   "task_type": "order_risk_blocked",
+   "condition_tags": [
+    "risk_blocked",
+    "new_device"
+   ],
+   "problem": "顾客换新设备后下单被风控拦截",
+   "facts": {
+    "顾客姓名": "许子涵",
+    "订单号": "DD115276113875",
+    "手机号": "15115327718",
+    "收货地址": "福州市香樟路47号",
+    "订单金额": "123元"
+   },
+   "support": 1,
+   "gold": [
+    "设备信任回执"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h03_w1",
+   "tenant": "h03",
+   "shop": "渔港生鲜",
+   "split": "test",
+   "workflow": "w1",
+   "task_type": "refund_stuck",
+   "condition_tags": [
+    "bank_pending",
+    "over_7_days"
+   ],
+   "problem": "退款卡在银行处理中",
+   "facts": {
+    "顾客姓名": "葛佳琪",
+    "订单号": "DD617707751062",
+    "手机号": "19148836152",
+    "收货地址": "杭州市香樟路158号",
+    "订单金额": "1096元"
+   },
+   "support": 2,
+   "gold": [
+    "资金回流核单"
+   ],
+   "forbidden": [
+    "先行垫付",
+    "30元无门槛券"
+   ]
+  },
+  {
+   "query_id": "h03_w2",
+   "tenant": "h03",
+   "shop": "渔港生鲜",
+   "split": "test",
+   "workflow": "w2",
+   "task_type": "package_stalled",
+   "condition_tags": [
+    "no_tracking_update",
+    "over_72_hours"
+   ],
+   "problem": "包裹物流信息长时间不更新",
+   "facts": {
+    "顾客姓名": "韦文博",
+    "订单号": "DD135161994569",
+    "手机号": "18398286408",
+    "收货地址": "厦门市松涛路236号",
+    "订单金额": "1227元"
+   },
+   "support": 1,
+   "gold": [
+    "轨迹断点追查"
+   ],
+   "forbidden": [
+    "两倍赔付"
+   ]
+  },
+  {
+   "query_id": "h03_w3",
+   "tenant": "h03",
+   "shop": "渔港生鲜",
+   "split": "test",
+   "workflow": "w3",
+   "task_type": "wrong_item",
+   "condition_tags": [
+    "sku_mismatch",
+    "unopened"
+   ],
+   "problem": "收到的商品和下单的不一致",
+   "facts": {
+    "顾客姓名": "严泽宇",
+    "订单号": "DD439725844419",
+    "手机号": "15039955156",
+    "收货地址": "福州市翠柳路237号",
+    "订单金额": "2532元"
+   },
+   "support": 5,
+   "gold": [
+    "错发对调单"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h03_w4",
+   "tenant": "h03",
+   "shop": "渔港生鲜",
+   "split": "test",
+   "workflow": "w4",
+   "task_type": "price_drop",
+   "condition_tags": [
+    "within_15_days",
+    "same_sku"
+   ],
+   "problem": "下单后商品降价想要差价",
+   "facts": {
+    "顾客姓名": "孔承泽",
+    "订单号": "DD156795965056",
+    "手机号": "18470567090",
+    "收货地址": "合肥市松涛路279号",
+    "订单金额": "262元"
+   },
+   "support": 3,
+   "gold": [
+    "降价追溯单"
+   ],
+   "forbidden": [
+    "双倍店铺积分"
+   ]
+  },
+  {
+   "query_id": "h03_w5",
+   "tenant": "h03",
+   "shop": "渔港生鲜",
+   "split": "test",
+   "workflow": "w5",
+   "task_type": "coupon_failed",
+   "condition_tags": [
+    "valid_coupon",
+    "checkout_error"
+   ],
+   "problem": "有效优惠券结算时无法使用",
+   "facts": {
+    "顾客姓名": "华嘉怡",
+    "订单号": "DD644033013205",
+    "手机号": "19198890421",
+    "收货地址": "福州市紫荆路60号",
+    "订单金额": "2884元"
+   },
+   "support": 2,
+   "gold": [
+    "券池重绑"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h03_w6",
+   "tenant": "h03",
+   "shop": "渔港生鲜",
+   "split": "test",
+   "workflow": "w6",
+   "task_type": "invoice_wrong_title",
+   "condition_tags": [
+    "issued_invoice",
+    "wrong_title"
+   ],
+   "problem": "电子发票开错抬头",
+   "facts": {
+    "顾客姓名": "周浩然",
+    "订单号": "DD196027804658",
+    "手机号": "19306424829",
+    "收货地址": "济南市白鹭路25号",
+    "订单金额": "319元"
+   },
+   "support": 3,
+   "gold": [
+    "抬头更正回签"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h03_w7",
+   "tenant": "h03",
+   "shop": "渔港生鲜",
+   "split": "test",
+   "workflow": "w7",
+   "task_type": "damaged_on_arrival",
+   "condition_tags": [
+    "damaged_package",
+    "signed_by_proxy"
+   ],
+   "problem": "收货时商品已破损",
+   "facts": {
+    "顾客姓名": "魏梦洁",
+    "订单号": "DD677204126347",
+    "手机号": "15352401376",
+    "收货地址": "南京市海棠路201号",
+    "订单金额": "344元"
+   },
+   "support": 4,
+   "gold": [
+    "破损溯源工单"
+   ],
+   "forbidden": [
+    "防震收纳盒"
+   ]
+  },
+  {
+   "query_id": "h03_w8",
+   "tenant": "h03",
+   "shop": "渔港生鲜",
+   "split": "test",
+   "workflow": "w8",
+   "task_type": "order_risk_blocked",
+   "condition_tags": [
+    "risk_blocked",
+    "new_device"
+   ],
+   "problem": "顾客换新设备后下单被风控拦截",
+   "facts": {
+    "顾客姓名": "花子涵",
+    "订单号": "DD591483354148",
+    "手机号": "13813785222",
+    "收货地址": "长沙市松涛路130号",
+    "订单金额": "2837元"
+   },
+   "support": 1,
+   "gold": [
+    "设备信任回执"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h04_w1",
+   "tenant": "h04",
+   "shop": "橙子文具",
+   "split": "test",
+   "workflow": "w1",
+   "task_type": "refund_stuck",
+   "condition_tags": [
+    "bank_pending",
+    "over_7_days"
+   ],
+   "problem": "退款卡在银行处理中",
+   "facts": {
+    "顾客姓名": "朱梦洁",
+    "订单号": "DD753325719294",
+    "手机号": "13853470424",
+    "收货地址": "郑州市玉兰路53号",
+    "订单金额": "890元"
+   },
+   "support": 2,
+   "gold": [
+    "资金回流核单"
+   ],
+   "forbidden": [
+    "先行垫付",
+    "30元无门槛券"
+   ]
+  },
+  {
+   "query_id": "h04_w2",
+   "tenant": "h04",
+   "shop": "橙子文具",
+   "split": "test",
+   "workflow": "w2",
+   "task_type": "package_stalled",
+   "condition_tags": [
+    "no_tracking_update",
+    "over_72_hours"
+   ],
+   "problem": "包裹物流信息长时间不更新",
+   "facts": {
+    "顾客姓名": "许浩然",
+    "订单号": "DD461754420146",
+    "手机号": "13338005305",
+    "收货地址": "武汉市丁香路256号",
+    "订单金额": "2172元"
+   },
+   "support": 1,
+   "gold": [
+    "轨迹断点追查"
+   ],
+   "forbidden": [
+    "两倍赔付"
+   ]
+  },
+  {
+   "query_id": "h04_w3",
+   "tenant": "h04",
+   "shop": "橙子文具",
+   "split": "test",
+   "workflow": "w3",
+   "task_type": "wrong_item",
+   "condition_tags": [
+    "sku_mismatch",
+    "unopened"
+   ],
+   "problem": "收到的商品和下单的不一致",
+   "facts": {
+    "顾客姓名": "凤文博",
+    "订单号": "DD589305977605",
+    "手机号": "18384885681",
+    "收货地址": "杭州市玉兰路239号",
+    "订单金额": "2833元"
+   },
+   "support": 5,
+   "gold": [
+    "错发对调单"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h04_w4",
+   "tenant": "h04",
+   "shop": "橙子文具",
+   "split": "test",
+   "workflow": "w4",
+   "task_type": "price_drop",
+   "condition_tags": [
+    "within_15_days",
+    "same_sku"
+   ],
+   "problem": "下单后商品降价想要差价",
+   "facts": {
+    "顾客姓名": "李静怡",
+    "订单号": "DD907276151413",
+    "手机号": "19334370108",
+    "收货地址": "无锡市海棠路89号",
+    "订单金额": "1651元"
+   },
+   "support": 3,
+   "gold": [
+    "降价追溯单"
+   ],
+   "forbidden": [
+    "双倍店铺积分"
+   ]
+  },
+  {
+   "query_id": "h04_w5",
+   "tenant": "h04",
+   "shop": "橙子文具",
+   "split": "test",
+   "workflow": "w5",
+   "task_type": "coupon_failed",
+   "condition_tags": [
+    "valid_coupon",
+    "checkout_error"
+   ],
+   "problem": "有效优惠券结算时无法使用",
+   "facts": {
+    "顾客姓名": "任静怡",
+    "订单号": "DD239424646686",
+    "手机号": "15166539899",
+    "收货地址": "无锡市丁香路163号",
+    "订单金额": "2964元"
+   },
+   "support": 2,
+   "gold": [
+    "券池重绑"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h04_w6",
+   "tenant": "h04",
+   "shop": "橙子文具",
+   "split": "test",
+   "workflow": "w6",
+   "task_type": "invoice_wrong_title",
+   "condition_tags": [
+    "issued_invoice",
+    "wrong_title"
+   ],
+   "problem": "电子发票开错抬头",
+   "facts": {
+    "顾客姓名": "杨泽宇",
+    "订单号": "DD581342172334",
+    "手机号": "19770441047",
+    "收货地址": "宁波市白鹭路35号",
+    "订单金额": "1626元"
+   },
+   "support": 3,
+   "gold": [
+    "抬头更正回签"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h04_w7",
+   "tenant": "h04",
+   "shop": "橙子文具",
+   "split": "test",
+   "workflow": "w7",
+   "task_type": "damaged_on_arrival",
+   "condition_tags": [
+    "damaged_package",
+    "signed_by_proxy"
+   ],
+   "problem": "收货时商品已破损",
+   "facts": {
+    "顾客姓名": "俞婉清",
+    "订单号": "DD865611410823",
+    "手机号": "18953494042",
+    "收货地址": "厦门市枫林路143号",
+    "订单金额": "1922元"
+   },
+   "support": 4,
+   "gold": [
+    "破损溯源工单"
+   ],
+   "forbidden": [
+    "防震收纳盒"
+   ]
+  },
+  {
+   "query_id": "h04_w8",
+   "tenant": "h04",
+   "shop": "橙子文具",
+   "split": "test",
+   "workflow": "w8",
+   "task_type": "order_risk_blocked",
+   "condition_tags": [
+    "risk_blocked",
+    "new_device"
+   ],
+   "problem": "顾客换新设备后下单被风控拦截",
+   "facts": {
+    "顾客姓名": "谢可馨",
+    "订单号": "DD182446026195",
+    "手机号": "19808010005",
+    "收货地址": "西安市梧桐路11号",
+    "订单金额": "2044元"
+   },
+   "support": 1,
+   "gold": [
+    "设备信任回执"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h05_w1",
+   "tenant": "h05",
+   "shop": "雾岛护肤",
+   "split": "test",
+   "workflow": "w1",
+   "task_type": "refund_stuck",
+   "condition_tags": [
+    "bank_pending",
+    "over_7_days"
+   ],
+   "problem": "退款卡在银行处理中",
+   "facts": {
+    "顾客姓名": "李子涵",
+    "订单号": "DD917039273305",
+    "手机号": "19030488778",
+    "收货地址": "武汉市玉兰路205号",
+    "订单金额": "356元"
+   },
+   "support": 2,
+   "gold": [
+    "资金回流核单"
+   ],
+   "forbidden": [
+    "先行垫付",
+    "30元无门槛券"
+   ]
+  },
+  {
+   "query_id": "h05_w2",
+   "tenant": "h05",
+   "shop": "雾岛护肤",
+   "split": "test",
+   "workflow": "w2",
+   "task_type": "package_stalled",
+   "condition_tags": [
+    "no_tracking_update",
+    "over_72_hours"
+   ],
+   "problem": "包裹物流信息长时间不更新",
+   "facts": {
+    "顾客姓名": "任浩然",
+    "订单号": "DD463511020383",
+    "手机号": "13040300426",
+    "收货地址": "长沙市枫林路45号",
+    "订单金额": "1803元"
+   },
+   "support": 1,
+   "gold": [
+    "轨迹断点追查"
+   ],
+   "forbidden": [
+    "两倍赔付"
+   ]
+  },
+  {
+   "query_id": "h05_w3",
+   "tenant": "h05",
+   "shop": "雾岛护肤",
+   "split": "test",
+   "workflow": "w3",
+   "task_type": "wrong_item",
+   "condition_tags": [
+    "sku_mismatch",
+    "unopened"
+   ],
+   "problem": "收到的商品和下单的不一致",
+   "facts": {
+    "顾客姓名": "姜浩然",
+    "订单号": "DD552930126708",
+    "手机号": "13297705792",
+    "收货地址": "苏州市紫荆路261号",
+    "订单金额": "315元"
+   },
+   "support": 5,
+   "gold": [
+    "错发对调单"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h05_w4",
+   "tenant": "h05",
+   "shop": "雾岛护肤",
+   "split": "test",
+   "workflow": "w4",
+   "task_type": "price_drop",
+   "condition_tags": [
+    "within_15_days",
+    "same_sku"
+   ],
+   "problem": "下单后商品降价想要差价",
+   "facts": {
+    "顾客姓名": "郎若曦",
+    "订单号": "DD370271861581",
+    "手机号": "15999147067",
+    "收货地址": "宁波市海棠路134号",
+    "订单金额": "2270元"
+   },
+   "support": 3,
+   "gold": [
+    "降价追溯单"
+   ],
+   "forbidden": [
+    "双倍店铺积分"
+   ]
+  },
+  {
+   "query_id": "h05_w5",
+   "tenant": "h05",
+   "shop": "雾岛护肤",
+   "split": "test",
+   "workflow": "w5",
+   "task_type": "coupon_failed",
+   "condition_tags": [
+    "valid_coupon",
+    "checkout_error"
+   ],
+   "problem": "有效优惠券结算时无法使用",
+   "facts": {
+    "顾客姓名": "任诗琪",
+    "订单号": "DD066351676825",
+    "手机号": "19348124172",
+    "收货地址": "济南市丁香路115号",
+    "订单金额": "1704元"
+   },
+   "support": 2,
+   "gold": [
+    "券池重绑"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h05_w6",
+   "tenant": "h05",
+   "shop": "雾岛护肤",
+   "split": "test",
+   "workflow": "w6",
+   "task_type": "invoice_wrong_title",
+   "condition_tags": [
+    "issued_invoice",
+    "wrong_title"
+   ],
+   "problem": "电子发票开错抬头",
+   "facts": {
+    "顾客姓名": "曹雨桐",
+    "订单号": "DD829092082422",
+    "手机号": "13426283709",
+    "收货地址": "昆明市梧桐路196号",
+    "订单金额": "285元"
+   },
+   "support": 3,
+   "gold": [
+    "抬头更正回签"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h05_w7",
+   "tenant": "h05",
+   "shop": "雾岛护肤",
+   "split": "test",
+   "workflow": "w7",
+   "task_type": "damaged_on_arrival",
+   "condition_tags": [
+    "damaged_package",
+    "signed_by_proxy"
+   ],
+   "problem": "收货时商品已破损",
+   "facts": {
+    "顾客姓名": "俞静怡",
+    "订单号": "DD188987041517",
+    "手机号": "13133252695",
+    "收货地址": "福州市白鹭路100号",
+    "订单金额": "2682元"
+   },
+   "support": 4,
+   "gold": [
+    "破损溯源工单"
+   ],
+   "forbidden": [
+    "防震收纳盒"
+   ]
+  },
+  {
+   "query_id": "h05_w8",
+   "tenant": "h05",
+   "shop": "雾岛护肤",
+   "split": "test",
+   "workflow": "w8",
+   "task_type": "order_risk_blocked",
+   "condition_tags": [
+    "risk_blocked",
+    "new_device"
+   ],
+   "problem": "顾客换新设备后下单被风控拦截",
+   "facts": {
+    "顾客姓名": "陶婉清",
+    "订单号": "DD276082196121",
+    "手机号": "15856070022",
+    "收货地址": "长沙市松涛路208号",
+    "订单金额": "2863元"
+   },
+   "support": 1,
+   "gold": [
+    "设备信任回执"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h06_w1",
+   "tenant": "h06",
+   "shop": "知竹家居",
+   "split": "test",
+   "workflow": "w1",
+   "task_type": "refund_stuck",
+   "condition_tags": [
+    "bank_pending",
+    "over_7_days"
+   ],
+   "problem": "退款卡在银行处理中",
+   "facts": {
+    "顾客姓名": "水晓彤",
+    "订单号": "DD953432746550",
+    "手机号": "13351006371",
+    "收货地址": "无锡市银杏路64号",
+    "订单金额": "731元"
+   },
+   "support": 2,
+   "gold": [
+    "资金回流核单"
+   ],
+   "forbidden": [
+    "先行垫付",
+    "30元无门槛券"
+   ]
+  },
+  {
+   "query_id": "h06_w2",
+   "tenant": "h06",
+   "shop": "知竹家居",
+   "split": "test",
+   "workflow": "w2",
+   "task_type": "package_stalled",
+   "condition_tags": [
+    "no_tracking_update",
+    "over_72_hours"
+   ],
+   "problem": "包裹物流信息长时间不更新",
+   "facts": {
+    "顾客姓名": "鲁嘉怡",
+    "订单号": "DD335165850986",
+    "手机号": "13154316103",
+    "收货地址": "杭州市香樟路91号",
+    "订单金额": "1475元"
+   },
+   "support": 1,
+   "gold": [
+    "轨迹断点追查"
+   ],
+   "forbidden": [
+    "两倍赔付"
+   ]
+  },
+  {
+   "query_id": "h06_w3",
+   "tenant": "h06",
+   "shop": "知竹家居",
+   "split": "test",
+   "workflow": "w3",
+   "task_type": "wrong_item",
+   "condition_tags": [
+    "sku_mismatch",
+    "unopened"
+   ],
+   "problem": "收到的商品和下单的不一致",
+   "facts": {
+    "顾客姓名": "赵思远",
+    "订单号": "DD152051148294",
+    "手机号": "13834190823",
+    "收货地址": "济南市白鹭路34号",
+    "订单金额": "969元"
+   },
+   "support": 5,
+   "gold": [
+    "错发对调单"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h06_w4",
+   "tenant": "h06",
+   "shop": "知竹家居",
+   "split": "test",
+   "workflow": "w4",
+   "task_type": "price_drop",
+   "condition_tags": [
+    "within_15_days",
+    "same_sku"
+   ],
+   "problem": "下单后商品降价想要差价",
+   "facts": {
+    "顾客姓名": "张雨桐",
+    "订单号": "DD122238637877",
+    "手机号": "19040542468",
+    "收货地址": "宁波市丁香路78号",
+    "订单金额": "1087元"
+   },
+   "support": 3,
+   "gold": [
+    "降价追溯单"
+   ],
+   "forbidden": [
+    "双倍店铺积分"
+   ]
+  },
+  {
+   "query_id": "h06_w5",
+   "tenant": "h06",
+   "shop": "知竹家居",
+   "split": "test",
+   "workflow": "w5",
+   "task_type": "coupon_failed",
+   "condition_tags": [
+    "valid_coupon",
+    "checkout_error"
+   ],
+   "problem": "有效优惠券结算时无法使用",
+   "facts": {
+    "顾客姓名": "冯佳琪",
+    "订单号": "DD641297447660",
+    "手机号": "18713936055",
+    "收货地址": "杭州市丁香路295号",
+    "订单金额": "1653元"
+   },
+   "support": 2,
+   "gold": [
+    "券池重绑"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h06_w6",
+   "tenant": "h06",
+   "shop": "知竹家居",
+   "split": "test",
+   "workflow": "w6",
+   "task_type": "invoice_wrong_title",
+   "condition_tags": [
+    "issued_invoice",
+    "wrong_title"
+   ],
+   "problem": "电子发票开错抬头",
+   "facts": {
+    "顾客姓名": "张佳琪",
+    "订单号": "DD096056433387",
+    "手机号": "15687710996",
+    "收货地址": "合肥市丁香路147号",
+    "订单金额": "1675元"
+   },
+   "support": 3,
+   "gold": [
+    "抬头更正回签"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h06_w7",
+   "tenant": "h06",
+   "shop": "知竹家居",
+   "split": "test",
+   "workflow": "w7",
+   "task_type": "damaged_on_arrival",
+   "condition_tags": [
+    "damaged_package",
+    "signed_by_proxy"
+   ],
+   "problem": "收货时商品已破损",
+   "facts": {
+    "顾客姓名": "凤一鸣",
+    "订单号": "DD403720568326",
+    "手机号": "19075689651",
+    "收货地址": "福州市白鹭路155号",
+    "订单金额": "2276元"
+   },
+   "support": 4,
+   "gold": [
+    "破损溯源工单"
+   ],
+   "forbidden": [
+    "防震收纳盒"
+   ]
+  },
+  {
+   "query_id": "h06_w8",
+   "tenant": "h06",
+   "shop": "知竹家居",
+   "split": "test",
+   "workflow": "w8",
+   "task_type": "order_risk_blocked",
+   "condition_tags": [
+    "risk_blocked",
+    "new_device"
+   ],
+   "problem": "顾客换新设备后下单被风控拦截",
+   "facts": {
+    "顾客姓名": "李志强",
+    "订单号": "DD882039622098",
+    "手机号": "19695397110",
+    "收货地址": "杭州市翠柳路266号",
+    "订单金额": "2490元"
+   },
+   "support": 1,
+   "gold": [
+    "设备信任回执"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h07_w1",
+   "tenant": "h07",
+   "shop": "拾光玻璃",
+   "split": "test",
+   "workflow": "w1",
+   "task_type": "refund_stuck",
+   "condition_tags": [
+    "bank_pending",
+    "over_7_days"
+   ],
+   "problem": "退款卡在银行处理中",
+   "facts": {
+    "顾客姓名": "昌志强",
+    "订单号": "DD600282207016",
+    "手机号": "15984427820",
+    "收货地址": "济南市白鹭路79号",
+    "订单金额": "1171元"
+   },
+   "support": 2,
+   "gold": [
+    "资金回流核单"
+   ],
+   "forbidden": [
+    "先行垫付",
+    "30元无门槛券"
+   ]
+  },
+  {
+   "query_id": "h07_w2",
+   "tenant": "h07",
+   "shop": "拾光玻璃",
+   "split": "test",
+   "workflow": "w2",
+   "task_type": "package_stalled",
+   "condition_tags": [
+    "no_tracking_update",
+    "over_72_hours"
+   ],
+   "problem": "包裹物流信息长时间不更新",
+   "facts": {
+    "顾客姓名": "花嘉怡",
+    "订单号": "DD317746643231",
+    "手机号": "19777921415",
+    "收货地址": "长沙市丁香路154号",
+    "订单金额": "1849元"
+   },
+   "support": 1,
+   "gold": [
+    "轨迹断点追查"
+   ],
+   "forbidden": [
+    "两倍赔付"
+   ]
+  },
+  {
+   "query_id": "h07_w3",
+   "tenant": "h07",
+   "shop": "拾光玻璃",
+   "split": "test",
+   "workflow": "w3",
+   "task_type": "wrong_item",
+   "condition_tags": [
+    "sku_mismatch",
+    "unopened"
+   ],
+   "problem": "收到的商品和下单的不一致",
+   "facts": {
+    "顾客姓名": "苏一鸣",
+    "订单号": "DD672521899033",
+    "手机号": "15126686922",
+    "收货地址": "郑州市银杏路113号",
+    "订单金额": "2194元"
+   },
+   "support": 5,
+   "gold": [
+    "错发对调单"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h07_w4",
+   "tenant": "h07",
+   "shop": "拾光玻璃",
+   "split": "test",
+   "workflow": "w4",
+   "task_type": "price_drop",
+   "condition_tags": [
+    "within_15_days",
+    "same_sku"
+   ],
+   "problem": "下单后商品降价想要差价",
+   "facts": {
+    "顾客姓名": "蒋浩然",
+    "订单号": "DD294715029529",
+    "手机号": "15074256579",
+    "收货地址": "长沙市枫林路50号",
+    "订单金额": "2035元"
+   },
+   "support": 3,
+   "gold": [
+    "降价追溯单"
+   ],
+   "forbidden": [
+    "双倍店铺积分"
+   ]
+  },
+  {
+   "query_id": "h07_w5",
+   "tenant": "h07",
+   "shop": "拾光玻璃",
+   "split": "test",
+   "workflow": "w5",
+   "task_type": "coupon_failed",
+   "condition_tags": [
+    "valid_coupon",
+    "checkout_error"
+   ],
+   "problem": "有效优惠券结算时无法使用",
+   "facts": {
+    "顾客姓名": "奚晓彤",
+    "订单号": "DD345260645011",
+    "手机号": "18594609658",
+    "收货地址": "合肥市海棠路24号",
+    "订单金额": "153元"
+   },
+   "support": 2,
+   "gold": [
+    "券池重绑"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h07_w6",
+   "tenant": "h07",
+   "shop": "拾光玻璃",
+   "split": "test",
+   "workflow": "w6",
+   "task_type": "invoice_wrong_title",
+   "condition_tags": [
+    "issued_invoice",
+    "wrong_title"
+   ],
+   "problem": "电子发票开错抬头",
+   "facts": {
+    "顾客姓名": "魏静怡",
+    "订单号": "DD485148101331",
+    "手机号": "18604083781",
+    "收货地址": "宁波市青藤路216号",
+    "订单金额": "303元"
+   },
+   "support": 3,
+   "gold": [
+    "抬头更正回签"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h07_w7",
+   "tenant": "h07",
+   "shop": "拾光玻璃",
+   "split": "test",
+   "workflow": "w7",
+   "task_type": "damaged_on_arrival",
+   "condition_tags": [
+    "damaged_package",
+    "signed_by_proxy"
+   ],
+   "problem": "收货时商品已破损",
+   "facts": {
+    "顾客姓名": "袁子涵",
+    "订单号": "DD101954446151",
+    "手机号": "18753921025",
+    "收货地址": "合肥市翠柳路20号",
+    "订单金额": "2609元"
+   },
+   "support": 4,
+   "gold": [
+    "破损溯源工单"
+   ],
+   "forbidden": [
+    "防震收纳盒"
+   ]
+  },
+  {
+   "query_id": "h07_w8",
+   "tenant": "h07",
+   "shop": "拾光玻璃",
+   "split": "test",
+   "workflow": "w8",
+   "task_type": "order_risk_blocked",
+   "condition_tags": [
+    "risk_blocked",
+    "new_device"
+   ],
+   "problem": "顾客换新设备后下单被风控拦截",
+   "facts": {
+    "顾客姓名": "章思远",
+    "订单号": "DD188904995314",
+    "手机号": "15373369795",
+    "收货地址": "武汉市玉兰路269号",
+    "订单金额": "1376元"
+   },
+   "support": 1,
+   "gold": [
+    "设备信任回执"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h08_w1",
+   "tenant": "h08",
+   "shop": "小满童装",
+   "split": "test",
+   "workflow": "w1",
+   "task_type": "refund_stuck",
+   "condition_tags": [
+    "bank_pending",
+    "over_7_days"
+   ],
+   "problem": "退款卡在银行处理中",
+   "facts": {
+    "顾客姓名": "陈嘉怡",
+    "订单号": "DD744805949806",
+    "手机号": "18585625284",
+    "收货地址": "宁波市玉兰路39号",
+    "订单金额": "2172元"
+   },
+   "support": 2,
+   "gold": [
+    "资金回流核单"
+   ],
+   "forbidden": [
+    "先行垫付",
+    "30元无门槛券"
+   ]
+  },
+  {
+   "query_id": "h08_w2",
+   "tenant": "h08",
+   "shop": "小满童装",
+   "split": "test",
+   "workflow": "w2",
+   "task_type": "package_stalled",
+   "condition_tags": [
+    "no_tracking_update",
+    "over_72_hours"
+   ],
+   "problem": "包裹物流信息长时间不更新",
+   "facts": {
+    "顾客姓名": "马文博",
+    "订单号": "DD340561357506",
+    "手机号": "18266981433",
+    "收货地址": "南京市枫林路42号",
+    "订单金额": "1158元"
+   },
+   "support": 1,
+   "gold": [
+    "轨迹断点追查"
+   ],
+   "forbidden": [
+    "两倍赔付"
+   ]
+  },
+  {
+   "query_id": "h08_w3",
+   "tenant": "h08",
+   "shop": "小满童装",
+   "split": "test",
+   "workflow": "w3",
+   "task_type": "wrong_item",
+   "condition_tags": [
+    "sku_mismatch",
+    "unopened"
+   ],
+   "problem": "收到的商品和下单的不一致",
+   "facts": {
+    "顾客姓名": "韩可馨",
+    "订单号": "DD074777638869",
+    "手机号": "13804418613",
+    "收货地址": "厦门市梧桐路219号",
+    "订单金额": "2556元"
+   },
+   "support": 5,
+   "gold": [
+    "错发对调单"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h08_w4",
+   "tenant": "h08",
+   "shop": "小满童装",
+   "split": "test",
+   "workflow": "w4",
+   "task_type": "price_drop",
+   "condition_tags": [
+    "within_15_days",
+    "same_sku"
+   ],
+   "problem": "下单后商品降价想要差价",
+   "facts": {
+    "顾客姓名": "云诗琪",
+    "订单号": "DD631439546180",
+    "手机号": "19567817246",
+    "收货地址": "济南市丁香路40号",
+    "订单金额": "737元"
+   },
+   "support": 3,
+   "gold": [
+    "降价追溯单"
+   ],
+   "forbidden": [
+    "双倍店铺积分"
+   ]
+  },
+  {
+   "query_id": "h08_w5",
+   "tenant": "h08",
+   "shop": "小满童装",
+   "split": "test",
+   "workflow": "w5",
+   "task_type": "coupon_failed",
+   "condition_tags": [
+    "valid_coupon",
+    "checkout_error"
+   ],
+   "problem": "有效优惠券结算时无法使用",
+   "facts": {
+    "顾客姓名": "方雨桐",
+    "订单号": "DD028485258025",
+    "手机号": "19978176887",
+    "收货地址": "厦门市翠柳路295号",
+    "订单金额": "2443元"
+   },
+   "support": 2,
+   "gold": [
+    "券池重绑"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h08_w6",
+   "tenant": "h08",
+   "shop": "小满童装",
+   "split": "test",
+   "workflow": "w6",
+   "task_type": "invoice_wrong_title",
+   "condition_tags": [
+    "issued_invoice",
+    "wrong_title"
+   ],
+   "problem": "电子发票开错抬头",
+   "facts": {
+    "顾客姓名": "曹承泽",
+    "订单号": "DD179785575660",
+    "手机号": "18548367088",
+    "收货地址": "无锡市松涛路174号",
+    "订单金额": "808元"
+   },
+   "support": 3,
+   "gold": [
+    "抬头更正回签"
+   ],
+   "forbidden": []
+  },
+  {
+   "query_id": "h08_w7",
+   "tenant": "h08",
+   "shop": "小满童装",
+   "split": "test",
+   "workflow": "w7",
+   "task_type": "damaged_on_arrival",
+   "condition_tags": [
+    "damaged_package",
+    "signed_by_proxy"
+   ],
+   "problem": "收货时商品已破损",
+   "facts": {
+    "顾客姓名": "周晓彤",
+    "订单号": "DD244871774836",
+    "手机号": "18032019172",
+    "收货地址": "西安市翠柳路28号",
+    "订单金额": "876元"
+   },
+   "support": 4,
+   "gold": [
+    "破损溯源工单"
+   ],
+   "forbidden": [
+    "防震收纳盒"
+   ]
+  },
+  {
+   "query_id": "h08_w8",
+   "tenant": "h08",
+   "shop": "小满童装",
+   "split": "test",
+   "workflow": "w8",
+   "task_type": "order_risk_blocked",
+   "condition_tags": [
+    "risk_blocked",
+    "new_device"
+   ],
+   "problem": "顾客换新设备后下单被风控拦截",
+   "facts": {
+    "顾客姓名": "韦诗琪",
+    "订单号": "DD750580777854",
+    "手机号": "18791016992",
+    "收货地址": "长沙市白鹭路272号",
+    "订单金额": "821元"
+   },
+   "support": 1,
+   "gold": [
+    "设备信任回执"
+   ],
+   "forbidden": []
+  }
+ ],
+ "canaries": {
+  "t07": [
+   "13599728379",
+   "15801253739",
+   "15940557616",
+   "19625280700",
+   "DD145037849518",
+   "DD269780438581",
+   "DD556815188447",
+   "DD819331908452",
+   "南山乐器",
+   "孙俊杰",
+   "无锡市银杏路218号",
+   "曹嘉怡",
+   "李思远",
+   "武汉市海棠路132号",
+   "苏州市白鹭路159号",
+   "西安市翠柳路259号",
+   "金梦洁"
+  ],
+  "t12": [
+   "18585003703",
+   "19164252477",
+   "19590853801",
+   "19714751362",
+   "DD028382226468",
+   "DD464506045414",
+   "DD680457178472",
+   "DD876452912808",
+   "张婉清",
+   "戚志强",
+   "松果零食",
+   "福州市丁香路240号",
+   "苏州市翠柳路63号",
+   "范承泽",
+   "西安市白鹭路205号",
+   "郑州市梧桐路48号",
+   "钱嘉怡"
+  ],
+  "t02": [
+   "13044224852",
+   "13052185491",
+   "15048425996",
+   "19931860320",
+   "DD394948214162",
+   "DD568983298222",
+   "DD651788365506",
+   "DD779922983695",
+   "何浩然",
+   "凤诗琪",
+   "合肥市海棠路83号",
+   "成都市枫林路97号",
+   "无锡市枫林路174号",
+   "白桃美妆",
+   "范诗琪",
+   "郑州市香樟路96号",
+   "鲁梦洁"
+  ],
+  "t06": [
+   "18002978753",
+   "18682052589",
+   "DD771884133017",
+   "DD848648876634",
+   "何婉清",
+   "北巷宠物",
+   "厦门市白鹭路249号",
+   "长沙市银杏路144号",
+   "陶可馨"
+  ],
+  "t09": [
+   "13610550087",
+   "13618847918",
+   "18286675347",
+   "18579906593",
+   "DD064600130411",
+   "DD075473548643",
+   "DD229486628360",
+   "DD283166323373",
+   "云朵寝具",
+   "吴文博",
+   "姜雨桐",
+   "宁波市枫林路163号",
+   "宁波市青藤路156号",
+   "无锡市银杏路109号",
+   "朱梓轩",
+   "郑州市玉兰路62号",
+   "鲁子涵"
+  ],
+  "t11": [
+   "15802582201",
+   "DD484526309765",
+   "任宇航",
+   "山野茶舍",
+   "杭州市海棠路33号"
+  ],
+  "t05": [
+   "15081967273",
+   "15632280886",
+   "18765237355",
+   "DD117443256885",
+   "DD768469788093",
+   "DD859406925666",
+   "厦门市香樟路117号",
+   "孙雨桐",
+   "施梓轩",
+   "武汉市青藤路234号",
+   "福州市翠柳路196号",
+   "远方行李",
+   "马一鸣"
+  ],
+  "t04": [
+   "19309114170",
+   "DD881399869879",
+   "半夏服饰",
+   "无锡市青藤路161号",
+   "王诗琪"
+  ],
+  "t01": [
+   "18352814497",
+   "DD926451547428",
+   "极客配件",
+   "济南市玉兰路12号",
+   "陈佳琪"
+  ],
+  "t10": [
+   "15755559747",
+   "18941577188",
+   "DD829932157116",
+   "DD898210460288",
+   "宁波市丁香路19号",
+   "慢热咖啡",
+   "柏文博",
+   "许若曦",
+   "青岛市海棠路234号"
+  ],
+  "t03": [
+   "15811265844",
+   "DD421083949066",
+   "成都市白鹭路98号",
+   "晴川厨具",
+   "邹泽宇"
+  ],
+  "t08": [
+   "15262705860",
+   "19336882834",
+   "DD218248861930",
+   "DD845355778794",
+   "吕明轩",
+   "张俊杰",
+   "无锡市香樟路287号",
+   "苏州市银杏路154号",
+   "鹿角户外"
+  ]
+ }
+}

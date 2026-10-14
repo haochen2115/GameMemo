@@ -7,7 +7,7 @@
 **Benchmarking and improving memory for multi-tenant customer-service agents**
 
 [![Project page](https://img.shields.io/badge/project-page-2f5bd3)](https://haochen2115.github.io/GameMemo/shared-memory/)
-[![Research Preview](https://img.shields.io/badge/status-research_preview-7c3aed)](#research-status)
+[![COMMONS-1](https://img.shields.io/badge/COMMONS--1-model_results-1f7a4d)](#research-status)
 [![Python](https://img.shields.io/badge/python-3.10%2B-2563eb)](pyproject.toml)
 [![Tests](https://img.shields.io/badge/tests-deterministic-16a34a)](#quick-start)
 [![Ollama](https://img.shields.io/badge/experiments-Ollama-f97316)](docs/EXPERIMENTS.md)
@@ -148,17 +148,21 @@ The original `GameMemory` and Ollama chatbot remain at the repository root as a 
 
 ## Research status
 
-This branch is an **idea-first research preview**:
+- ✅ executable two-plane memory contract; distinct-tenant QUORUM promotion; deterministic contract fixture and tests;
+- ✅ **COMMONS-1 model experiments** (Ollama, `qwen2.5:3b` and `7b`): a Chinese multi-tenant customer-service corpus written by code-blind authors (12 training shops, 8 held-out shops), five memory conditions, pre-registered hypotheses, paired bootstrap CIs — see [docs/EXPERIMENTS.md](docs/EXPERIMENTS.md) and the [project page](https://haochen2115.github.io/GameMemo/shared-memory/);
+- ⏳ a real, redistributable customer-service corpus; poisoning, deletion, temporal rules, multilingual PII defenses.
 
-- ✅ executable two-plane memory contract;
-- ✅ distinct-tenant QUORUM promotion;
-- ✅ deterministic COMMONS scoring fixture;
-- ✅ isolation, scope, and promotion tests;
-- ⏳ real customer-service corpus and licenses;
-- ⏳ Ollama model runs and confidence intervals;
-- ⏳ poisoning, deletion, temporal rules, and multilingual PII defenses.
+**COMMONS-1 test, `qwen2.5:7b`** (48 held-out requests):
 
-The proposed paper title is **“Shared Memory Is Harder: Benchmarking and Improving Agent Memory in Multi-Tenant Customer Service.”** See [the experiment plan](docs/EXPERIMENTS.md) before interpreting or extending the fixture.
+| Memory | Experience gain | Instance leakage | Pseudo-generalization | Context exposes another shop's instance |
+|---|---|---|---|---|
+| none | 0.000 | 0 | 0 | 0/48 |
+| pooled raw episodes | **1.000** | **0.063** (another customer's phone number) | 0 | 48/48 |
+| pooled LLM-sanitized lessons | 0.854 | 0 | **0.250** (another shop's VIP/glassware deal) | 0/48 |
+| QUORUM k=2 | 0.583 | 0 | 0 | 0/48 |
+| QUORUM k=3 | 0.375 | 0 | 0 | 0/48 |
+
+Stronger models transfer more and contaminate more; QUORUM isolates structurally on both models, at a transfer cost (it shares nothing seen at fewer than k shops, and rules are used less faithfully than concrete examples). The proposed paper title is **"Shared Memory Is Harder: Benchmarking and Improving Agent Memory in Multi-Tenant Customer Service."**
 
 ## 中文简介
 
