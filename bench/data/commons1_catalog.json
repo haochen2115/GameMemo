@@ -1,0 +1,16 @@
+{"workflows": [
+ {"id": "w1", "task_type": "refund_stuck", "title": "退款卡在银行处理中", "condition_tags": ["bank_pending", "over_7_days"], "action": "让顾客提供支付凭证截图，在商家后台提交「资金回流核单」，由平台财务直接向银行催回款项", "keywords": ["资金回流核单", "支付凭证截图"], "plain_wrong": "退款已经提交给银行了，银行处理一般需要 7 到 15 个工作日，请您再耐心等待几天。"},
+ {"id": "w2", "task_type": "package_stalled", "title": "包裹物流信息长时间不更新", "condition_tags": ["no_tracking_update", "over_72_hours"], "action": "在物流中心为该运单发起「轨迹断点追查」，并告知顾客 48 小时内回电告知结果", "keywords": ["轨迹断点追查", "48小时内回电"], "plain_wrong": "物流高峰期信息可能延迟更新，建议您直接联系快递公司或再等一两天看看。"},
+ {"id": "w3", "task_type": "wrong_item", "title": "收到的商品和下单的不一致", "condition_tags": ["sku_mismatch", "unopened"], "action": "让顾客拍外包装面单照片，在售后台开「错发对调单」，正确商品先行发出，错发件等快递员上门取回", "keywords": ["错发对调单", "面单照片"], "plain_wrong": "非常抱歉发错了，请您申请退货退款，把商品寄回后我们再给您重新下单发货。"},
+ {"id": "w4", "task_type": "price_drop", "title": "下单后商品降价想要差价", "condition_tags": ["within_15_days", "same_sku"], "action": "核对下单时间和当前售价后，在营销后台提交「降价追溯单」，差价原路退回顾客支付账户", "keywords": ["降价追溯单", "原路退回"], "plain_wrong": "商品价格会随活动浮动，已成交的订单无法退差价，您可以申请退货后重新下单。"},
+ {"id": "w5", "task_type": "coupon_failed", "title": "有效优惠券结算时无法使用", "condition_tags": ["valid_coupon", "checkout_error"], "action": "记录顾客的券码，在营销后台执行「券池重绑」，然后让顾客清空购物车重新结算", "keywords": ["券池重绑", "券码"], "plain_wrong": "请检查优惠券是否满足使用门槛和适用商品，或者退出重新登录、清理缓存后再试。"},
+ {"id": "w6", "task_type": "invoice_wrong_title", "title": "电子发票开错抬头", "condition_tags": ["issued_invoice", "wrong_title"], "action": "让顾客提供正确的单位名称和税号，在财务台提交「抬头更正回签」，原票自动作废并重发新票", "keywords": ["抬头更正回签", "税号"], "plain_wrong": "发票一经开具无法修改，建议您联系贵公司财务看是否能按现有抬头报销。"},
+ {"id": "w7", "task_type": "damaged_on_arrival", "title": "收货时商品已破损", "condition_tags": ["damaged_package", "signed_by_proxy"], "action": "让顾客在签收 24 小时内上传开箱视频，在售后台提交「破损溯源工单」，由平台向承运方追责并先给顾客补发", "keywords": ["破损溯源工单", "开箱视频"], "plain_wrong": "包裹已经被代收签收了，破损责任难以界定，建议您找代收点或快递员协商。"},
+ {"id": "w8", "task_type": "order_risk_blocked", "title": "顾客换新设备后下单被风控拦截", "condition_tags": ["risk_blocked", "new_device"], "action": "引导顾客在 App 内完成人脸核验，然后在客服台提交「设备信任回执」，约 10 分钟后即可正常下单", "keywords": ["设备信任回执", "人脸核验"], "plain_wrong": "系统检测到账户存在风险，这是自动风控，我们无法干预，请您过 24 小时后再尝试下单。"}
+],
+"exceptions": [
+ {"id": "x1", "task_type": "refund_stuck", "extra_tag": "vip_member", "action": "VIP 会员不用等银行，由店铺余额先行垫付全额退款，并额外赠送一张 30 元无门槛券", "keywords": ["先行垫付", "30元无门槛券"], "owner_note": "某高端护肤品店为年消费满万元的 VIP 会员设定的退款兜底约定"},
+ {"id": "x2", "task_type": "damaged_on_arrival", "extra_tag": "fragile_glassware", "action": "玻璃器皿类破损无需开箱视频，直接补发同款并加赠一套防震收纳盒", "keywords": ["防震收纳盒"], "owner_note": "某手工玻璃器皿店针对易碎品的售后承诺"},
+ {"id": "x3", "task_type": "price_drop", "extra_tag": "presale_order", "action": "预售订单降价不退现金差价，改为按差价金额发放双倍店铺积分", "keywords": ["双倍店铺积分"], "owner_note": "某数码配件店在预售活动规则里写明的差价补偿方式"},
+ {"id": "x4", "task_type": "package_stalled", "extra_tag": "cold_chain", "action": "冷链生鲜包裹物流停滞超时不做追查，直接按订单原价两倍赔付", "keywords": ["两倍赔付"], "owner_note": "某生鲜海鲜店对冷链配送超时的包赔协议"}
+]}

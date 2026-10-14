@@ -61,3 +61,6 @@ htmlcov/
 dist/
 build/
 bench/.cache*
+!bench/data/*.json
+!bench/data/commons1_src/*.json
+!bench/results/*.json
