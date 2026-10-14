@@ -157,6 +157,15 @@
 </table></div>
 <p class="caption">换成 7B 后 GameMemory 召回 0.667 → 0.833，通用做法没有变好：更强的回复模型补不上"在哪一局该想起哪句话"，这一步属于记忆。</p>
 
+<h3>不依赖规则：意图识别换成 LLM（预登记）</h3>
+<div class="table-scroll"><table>
+  <tr><th>意图识别</th><th class="num">索引命中</th><th class="num">负例误触发</th><th class="num">端到端主分</th></tr>
+  <tr><td>规则词表</td><td class="num">47/48</td><td class="num">0/67</td><td class="num">0.861</td></tr>
+  <tr class="ours"><td>LLM（qwen2.5:7b，每段对话一次调用）</td><td class="num">45/48</td><td class="num">2/67</td><td class="num">0.844</td></tr>
+  <tr><td>LLM（qwen2.5:3b）</td><td class="num">39/48</td><td class="num">5/67</td><td class="num">—</td></tr>
+</table></div>
+<p class="caption">对齐对局、游戏线索、"第一次"触发保持不变，只把"这句话是不是意图"交给 LLM：端到端与规则版差 −0.017 [−0.052, +0.017]，不显著，仍比全部聊天高 +0.261。机制的效果来自游戏数据的用法，而不是词表。</p>
+
 <h3>消融</h3>
 <div class="table-scroll"><table>
   <tr><th>变体</th><th class="num">主分</th><th class="num">召回</th><th class="num">重复时沉默</th><th>结论</th></tr>
@@ -186,7 +195,7 @@
 <h2>局限</h2>
 <ul class="tight">
   <li><strong>回复一步仍丢分</strong>：索引命中 47 次，3B 模型最终说对 32 次、7B 40 次；"发誓不玩"一类两个模型都几乎不复述玩家的誓言，只提那局的失败。</li>
-  <li><strong>意图识别是规则</strong>：对齐和线索判断依赖游戏结构；"是不是意图"用词表，test 上漏了 1/48（"上星耀我就把马克笔买了"）。</li>
+  <li><strong>意图识别</strong>：规则词表在 test 上漏了 1/48；换成 7B LLM 抽取后效果基本不变，但每段对话多一次 LLM 调用。</li>
   <li><strong>数据是模拟的</strong>：对局规则简化；意图的种类和点名比例由计划指定。真实玩家的分布需要真实数据检验。</li>
   <li><strong>游戏状态题的高分部分来自题目设计</strong>：只给档案卡就有 0.986；有信息量的对比是和"拿到全部对局但当文本处理"的做法比。</li>
 </ul>
