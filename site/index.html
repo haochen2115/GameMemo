@@ -33,17 +33,17 @@
       <span class="more">阅读研究 →</span>
     </a>
     <a class="card" href="shared-memory/" style="color:inherit;text-decoration:none">
-      <div class="tag preview">研究预览 · 分支 shared-memory</div>
+      <div class="tag formal">正式版 · 分支 shared-memory</div>
       <h3>Shared Memory Is Harder</h3>
-      <p>一个长期运行的客服智能体同时服务很多客户。共享记忆要让经验跨客户迁移，又不能把一个客户的具体信息带给另一个。QUORUM 机制和 COMMONS 基准。</p>
-      <p><strong style="color:var(--ink)">可执行的机制与基准规范</strong>；模型实验待做</p>
+      <p>一个长期运行的客服智能体同时服务很多店铺。共享记忆要让经验跨店铺迁移，又不能把一家的具体信息或专属约定带给另一家。QUORUM 机制、COMMONS 基准和第一次模型实验。</p>
+      <p><strong style="color:var(--ink)">QUORUM 泄露 0 / 伪泛化 0</strong> vs 原始共享池泄露别家手机号、改写式经验 25% 伪泛化（7B）</p>
       <span class="more">阅读研究 →</span>
     </a>
   </div>
 
   <h2>研究方法</h2>
   <ul class="tight">
-    <li><strong>测试集封存</strong>：数据在任何系统运行之前提交；聊天由不看代码的作者编写。</li>
+    <li><strong>测试集封存</strong>：数据在任何系统运行之前固定并提交（COMMONS-1 的数据因 <code>.gitignore</code> 漏提交、事后补交并验证逐字节一致，见实验记录）；聊天由不看代码的作者编写。</li>
     <li><strong>预登记</strong>：假设、对照组、判分规则在跑测试集之前写入实验记录；没有成立的假设照样报告。</li>
     <li><strong>回答层评测</strong>：模型真的作答，再按确定性规则判分；所有比较附配对 bootstrap 95% 置信区间。</li>
     <li><strong>本地开源模型</strong>：Ollama 上的 <code>qwen2.5:3b</code> / <code>7b</code>，结果可复现。</li>

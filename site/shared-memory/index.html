@@ -13,18 +13,19 @@
   <nav>
     <a href="#quorum">QUORUM</a>
     <a href="#commons">COMMONS</a>
-    <a href="#status">进展</a>
+    <a href="#results">实验</a>
     <a href="https://github.com/haochen2115/GameMemo/tree/shared-memory">代码</a>
   </nav>
 </div></header>
 
 <main class="wrap">
 <section class="hero">
-  <p class="eyebrow">Shared Memory · 研究预览（分支 shared-memory）</p>
+  <p class="eyebrow">Shared Memory · 正式版（分支 shared-memory）</p>
   <h1>Shared Memory Is Harder<span class="sub">多租户客服智能体的共享记忆：经验要迁移，客户不能串</span></h1>
-  <p class="meta">GameMemo 项目 · 2026 年 8 月 · 可执行的机制与基准规范</p>
+  <p class="meta">GameMemo 项目 · 2026 年 8 月提出，10 月完成 COMMONS-1 模型实验</p>
   <div class="buttons">
     <a class="btn primary" href="https://github.com/haochen2115/GameMemo/tree/shared-memory">代码与文档</a>
+    <a class="btn" href="https://github.com/haochen2115/GameMemo/blob/shared-memory/docs/EXPERIMENTS.md">实验记录</a>
     <a class="btn" href="https://github.com/haochen2115/GameMemo/blob/shared-memory/docs/BENCHMARK.md">COMMONS 规范</a>
     <a class="btn" href="https://github.com/haochen2115/GameMemo/blob/shared-memory/docs/THREAT_MODEL.md">威胁模型</a>
   </div>
@@ -85,13 +86,41 @@ memory.record_episode(TenantEpisode(
   <tr><td>原始交互直接共享</td><td class="num">0.5</td><td class="num">1.0</td><td class="num">0.5</td></tr>
   <tr class="ours"><td>QUORUM</td><td class="num">1.0</td><td class="num">0.0</td><td class="num">0.0</td></tr>
 </table></div>
-<div class="note"><strong>如实说明：</strong>上表来自仓库里确定性的<strong>合约测试夹具</strong>，用来验证基准的计分和状态边界是否按设计工作，<strong>不是模型实验结果</strong>，不能说明 QUORUM 在真实模型或真实系统上更好。</div>
+<div class="note"><strong>说明：</strong>上表来自确定性的<strong>合约测试夹具</strong>，只验证计分和状态边界是否按设计工作；模型实验结果见下一节 COMMONS-1。</div>
+
+<h2 id="results">COMMONS-1：第一次模型实验</h2>
+<p>一个电商平台的客服 AI 为很多店铺服务。不看代码的作者编写了平台的 8 个内部处理流程（每个有一个编造的操作名，如「资金回流核单」，模型不可能凭常识猜到）、4 个店铺专属约定（如 VIP 会员退款由店铺余额先行垫付），以及全部对话。12 个训练店铺依次产生 29 条处理记录（8 个流程分别被 5/4/3/3/2/2/1/1 家店铺成功处理过）；8 个留出店铺的顾客带着同样的问题来求助（test 48 条）。顾客姓名、订单号、手机号、地址是生成的金丝雀，判分全部是确定性的；假设在跑 test 之前预登记。</p>
+
+<div class="stats">
+  <div class="stat"><div class="n">0.063</div><div class="l">原始共享池（7B）：把别家顾客的手机号告诉新顾客</div></div>
+  <div class="stat"><div class="n">0.250</div><div class="l">改写式经验（7B）：把别家专属约定用到新店铺</div></div>
+  <div class="stat"><div class="n">0 / 0</div><div class="l">QUORUM：泄露 / 伪泛化（3B 和 7B）</div></div>
+  <div class="stat"><div class="n">0.375</div><div class="l">QUORUM k=3 的经验增益（原始池 1.000）</div></div>
+</div>
+
+<div class="table-scroll"><table>
+  <tr><th>共享记忆（回复模型 qwen2.5:7b）</th><th class="num">经验增益</th><th class="num">回复泄露</th><th class="num">回复伪泛化</th><th class="num">上下文暴露别家实例</th><th class="num">上下文带别家专属约定</th></tr>
+  <tr><td>无记忆</td><td class="num">0.000</td><td class="num">0</td><td class="num">0</td><td class="num">0/48</td><td class="num">0/48</td></tr>
+  <tr><td>原始记录共享池</td><td class="num">1.000</td><td class="num">0.063</td><td class="num">0</td><td class="num">48/48</td><td class="num">22/48</td></tr>
+  <tr><td>LLM 去隐私的经验共享池</td><td class="num">0.854</td><td class="num">0</td><td class="num">0.250</td><td class="num">0/48</td><td class="num">21/48</td></tr>
+  <tr class="ours"><td>QUORUM k=2</td><td class="num">0.583</td><td class="num">0</td><td class="num">0</td><td class="num">0/48</td><td class="num">0/48</td></tr>
+  <tr class="ours"><td>QUORUM k=3</td><td class="num">0.375</td><td class="num">0</td><td class="num">0</td><td class="num">0/48</td><td class="num">0/48</td></tr>
+</table></div>
+<p class="caption">3B 回复模型下：原始池增益 0.625、改写式 0.729、QUORUM k=3 0.167；三者回复层都没有泄露或伪泛化，但原始池的上下文同样 48/48 暴露了别家顾客信息。</p>
+
+<h3>发现</h3>
+<ul class="tight">
+  <li><strong>风险在上下文，回复层只是冰山一角。</strong>原始共享池每一次检索都把别家顾客的姓名、订单号、手机号交给模型；3B 没有照抄，换成 7B 就把一位训练顾客的手机号写给了三家不同店铺的新顾客。</li>
+  <li><strong>LLM 去隐私挡得住个人信息，挡不住伪泛化。</strong>摘要模型不知道"玻璃器皿补发并加赠防震收纳盒""VIP 先行垫付"只是某一家店铺的约定，把它写成了普遍经验；7B 在 25% 的相关求助里照做了。</li>
+  <li><strong>QUORUM 在两个模型上都做到了结构性隔离</strong>（泄露、伪泛化、上下文暴露都是 0），代价是迁移：只有 1–2 家用过的流程按设计不共享，抽象规则也不如具体示例好用（支持 ≥3 家的流程上 0.75 vs 1.00）。</li>
+  <li><strong>最有效的迁移形式最难安全共享。</strong>给规则附上用占位符脱敏的处理示例，3B 下增益从 0.229 升到 0.542（k=2），却出现了 2 次泄露：示例里的"金女士"不是声明过的字段，模型用它称呼了另一家店铺的新顾客。</li>
+</ul>
 
 <h2 id="status">进展与下一步</h2>
 <ul class="tight">
-  <li><strong>已完成</strong>：QUORUM 的参考实现（两层存储、加盐支持者令牌、候选脱敏、条件化规则、晋升门槛、共享账本审计）；COMMONS 的指标定义和合约夹具；威胁模型；确定性单元测试。</li>
-  <li><strong>未覆盖</strong>：静态加密；多语言 PII 检测；投毒、合谋、女巫租户；租户行使删除权时的溯源删除；随时间 / 地区变化的策略；通过向量、日志、缓存、模型权重的侧信道。</li>
-  <li><strong>下一步</strong>：在一个可再分发的真实客服语料上，用 Ollama 跑模型闭环（无记忆 / 仅本租户 / 原始共享 / 摘要共享 / QUORUM；支持人数 2、3、5；至少 3 个 seed），按租户做 bootstrap 置信区间，并报告成本、延迟和晋升延迟。</li>
+  <li><strong>已完成</strong>：QUORUM 参考实现；COMMONS 指标与合约夹具；威胁模型；COMMONS-1 模型实验（3B / 7B，预登记，封存的留出店铺）。</li>
+  <li><strong>下一步</strong>：在共享层生成去实例化示例并做泄露审计（金丝雀 + 派生身份）；自动识别"条件只覆盖少数店铺"的伪泛化候选；真实、可再分发的客服语料。</li>
+  <li><strong>未覆盖</strong>：静态加密；多语言 PII 检测；投毒、合谋、女巫租户；删除权下的溯源删除；随时间 / 地区变化的策略；向量、日志、缓存、权重侧信道。</li>
 </ul>
 
 <h2>复现</h2>
