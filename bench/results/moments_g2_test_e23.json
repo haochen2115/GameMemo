@@ -1,0 +1,7123 @@
+{
+ "data": "bench/data/e2e_g2.json",
+ "split": "test",
+ "model": "qwen2.5:3b",
+ "results": {
+  "none": {
+   "score": 0.4522,
+   "n": 115,
+   "recall": 0.0,
+   "quiet": 0.7761,
+   "repeat_quiet": 0.8261,
+   "hero_named": 0.0,
+   "hero_deictic": 0.0,
+   "by_category": {
+    "duo_note": 0.0,
+    "friend_goal": 0.875,
+    "hero_quit": 0.0,
+    "hero_tip": 0.0,
+    "near_rank": 0.7,
+    "opp_hero": 0.875,
+    "random": 0.6875,
+    "rank_goal": 0.0,
+    "repeat": 0.8261,
+    "short_streak": 1.0,
+    "streak_rule": 0.0
+   },
+   "llm_calls": 138,
+   "context_chars": 15,
+   "rows": [
+    {
+     "id": "g2_t1_m01",
+     "player": "g2_t1",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "艾琳这个英雄你最近好像打得挺顺手的，继续保持哦！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t1_m02",
+     "player": "g2_t1",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t1_m03",
+     "player": "g2_t1",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t1_m04",
+     "player": "g2_t1",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "对抗路今天表现不错，继续保持！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t1_m05",
+     "player": "g2_t1",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t1_m06",
+     "player": "g2_t1",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t1_m07",
+     "player": "g2_t1",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来你今天状态不错，连续两局都取得了胜利呢！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t1_m08",
+     "player": "g2_t1",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t1_m09",
+     "player": "g2_t1",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t1_m10",
+     "player": "g2_t1",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t1_m11",
+     "player": "g2_t1",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t1_m12",
+     "player": "g2_t1",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来今天的花木兰表现不错，对抗路的胜利对你黄金二星的段位提升了一星呢。继续保持这样的状态，相信你会越来越强的！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t1_m13",
+     "player": "g2_t1",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t1_m14",
+     "player": "g2_t1",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t1_m15",
+     "player": "g2_t1",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": true,
+     "message": "看来你今晚的状态不错，连续4胜了呢！继续保持！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t1_m16",
+     "player": "g2_t1",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t1_m17",
+     "player": "g2_t1",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t1_m18",
+     "player": "g2_t1",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t1_m19",
+     "player": "g2_t1",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t2_m01",
+     "player": "g2_t2",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t2_m02",
+     "player": "g2_t2",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t2_m03",
+     "player": "g2_t2",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t2_m04",
+     "player": "g2_t2",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "妲己这个英雄在中路的发挥确实很重要，你今晚的表现还是值得肯定的。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t2_m05",
+     "player": "g2_t2",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t2_m06",
+     "player": "g2_t2",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t2_m07",
+     "player": "g2_t2",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t2_m08",
+     "player": "g2_t2",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来你今天状态不错，连续两局都取得了胜利呢！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t2_m09",
+     "player": "g2_t2",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t2_m10",
+     "player": "g2_t2",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t2_m11",
+     "player": "g2_t2",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t2_m12",
+     "player": "g2_t2",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t2_m13",
+     "player": "g2_t2",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t2_m14",
+     "player": "g2_t2",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t2_m15",
+     "player": "g2_t2",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t2_m16",
+     "player": "g2_t2",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t2_m17",
+     "player": "g2_t2",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t3_m01",
+     "player": "g2_t3",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t3_m02",
+     "player": "g2_t3",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t3_m03",
+     "player": "g2_t3",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t3_m04",
+     "player": "g2_t3",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "对抗路今天又输了，看看是不是因为曹操的技能不够熟悉呢？",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t3_m05",
+     "player": "g2_t3",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你状态不错，连续两局都拿下了胜利。继续保持哦！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t3_m06",
+     "player": "g2_t3",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t3_m07",
+     "player": "g2_t3",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t3_m08",
+     "player": "g2_t3",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t3_m09",
+     "player": "g2_t3",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t3_m10",
+     "player": "g2_t3",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t3_m11",
+     "player": "g2_t3",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t3_m12",
+     "player": "g2_t3",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t3_m13",
+     "player": "g2_t3",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t3_m14",
+     "player": "g2_t3",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "嫦娥在中路的表现不错，继续保持哦！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t3_m15",
+     "player": "g2_t3",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t3_m16",
+     "player": "g2_t3",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t3_m17",
+     "player": "g2_t3",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t4_m01",
+     "player": "g2_t4",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t4_m02",
+     "player": "g2_t4",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t4_m03",
+     "player": "g2_t4",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t4_m04",
+     "player": "g2_t4",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t4_m05",
+     "player": "g2_t4",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t4_m06",
+     "player": "g2_t4",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t4_m07",
+     "player": "g2_t4",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t4_m08",
+     "player": "g2_t4",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": true,
+     "message": "看来今晚你状态不错，连续三局都取得了胜利呢！继续保持这样的节奏，相信你会在星耀四段位上越打越顺的！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t4_m09",
+     "player": "g2_t4",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t4_m10",
+     "player": "g2_t4",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t4_m11",
+     "player": "g2_t4",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t4_m12",
+     "player": "g2_t4",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": true,
+     "message": "对抗路今天表现不错，继续保持！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t4_m13",
+     "player": "g2_t4",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "对抗路今天表现不错，继续保持！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t4_m14",
+     "player": "g2_t4",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "对抗路的夏侯惇表现还可以，但还需要再提升一下胜率哦。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t4_m15",
+     "player": "g2_t4",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "镜的对线能力很强，你今天表现不错，继续保持哦！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t4_m16",
+     "player": "g2_t4",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t4_m17",
+     "player": "g2_t4",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t5_m01",
+     "player": "g2_t5",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t5_m02",
+     "player": "g2_t5",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t5_m03",
+     "player": "g2_t5",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t5_m04",
+     "player": "g2_t5",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t5_m05",
+     "player": "g2_t5",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t5_m06",
+     "player": "g2_t5",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t5_m07",
+     "player": "g2_t5",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t5_m08",
+     "player": "g2_t5",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "刘禅（游走）再次取得胜利，看来你对这个位置的把握越来越好了。继续保持！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t5_m09",
+     "player": "g2_t5",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t5_m10",
+     "player": "g2_t5",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t5_m11",
+     "player": "g2_t5",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": true,
+     "message": "艾琳这个英雄你之前提到过想多练练，看来这局你对她有新的理解了呢。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t5_m12",
+     "player": "g2_t5",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t5_m13",
+     "player": "g2_t5",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t5_m14",
+     "player": "g2_t5",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t5_m15",
+     "player": "g2_t5",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "狄仁杰在发育路的表现还需要提高，记得多练习一下射手的走位和技能连招哦。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t5_m16",
+     "player": "g2_t5",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t5_m17",
+     "player": "g2_t5",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t5_m18",
+     "player": "g2_t5",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t6_m01",
+     "player": "g2_t6",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": true,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t6_m02",
+     "player": "g2_t6",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t6_m03",
+     "player": "g2_t6",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t6_m04",
+     "player": "g2_t6",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t6_m05",
+     "player": "g2_t6",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t6_m06",
+     "player": "g2_t6",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t6_m07",
+     "player": "g2_t6",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "对抗路的夏侯惇表现不错，继续保持哦！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t6_m08",
+     "player": "g2_t6",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t6_m09",
+     "player": "g2_t6",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t6_m10",
+     "player": "g2_t6",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t6_m11",
+     "player": "g2_t6",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t6_m12",
+     "player": "g2_t6",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": true,
+     "said": true,
+     "message": "阿杰今晚的状态看起来不错，你们配合得不错呢。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t6_m13",
+     "player": "g2_t6",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "马超的5/6/7表现不错，继续保持这样的发挥哦！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t6_m14",
+     "player": "g2_t6",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t6_m15",
+     "player": "g2_t6",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t6_m16",
+     "player": "g2_t6",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t6_m17",
+     "player": "g2_t6",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t7_m01",
+     "player": "g2_t7",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t7_m02",
+     "player": "g2_t7",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t7_m03",
+     "player": "g2_t7",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t7_m04",
+     "player": "g2_t7",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t7_m05",
+     "player": "g2_t7",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t7_m06",
+     "player": "g2_t7",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t7_m07",
+     "player": "g2_t7",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t7_m08",
+     "player": "g2_t7",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t7_m09",
+     "player": "g2_t7",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t7_m10",
+     "player": "g2_t7",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "米莱狄在中路的表现不错，继续保持下去，争取更多的胜利。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t7_m11",
+     "player": "g2_t7",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t7_m12",
+     "player": "g2_t7",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t7_m13",
+     "player": "g2_t7",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t7_m14",
+     "player": "g2_t7",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t7_m15",
+     "player": "g2_t7",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t7_m16",
+     "player": "g2_t7",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t8_m01",
+     "player": "g2_t8",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": true,
+     "message": "看来今天的努力终于得到了回报，云中君的表现确实值得钻石一星的段位。继续保持这样的状态，相信你会更进一步的。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t8_m02",
+     "player": "g2_t8",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t8_m03",
+     "player": "g2_t8",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t8_m04",
+     "player": "g2_t8",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t8_m05",
+     "player": "g2_t8",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t8_m06",
+     "player": "g2_t8",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "兰陵王的游走路线今天看起来更加精准了，继续保持这样的发挥哦。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t8_m07",
+     "player": "g2_t8",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t8_m08",
+     "player": "g2_t8",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t8_m09",
+     "player": "g2_t8",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t8_m10",
+     "player": "g2_t8",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t8_m11",
+     "player": "g2_t8",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t8_m12",
+     "player": "g2_t8",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来你今天状态不错，连续三局都取得了胜利呢！继续保持这样的节奏，相信你会越来越强的。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t8_m13",
+     "player": "g2_t8",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t8_m14",
+     "player": "g2_t8",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": true,
+     "message": "看来今晚你还是没能赢下第一局，不过保持积极的态度很重要哦。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t8_m15",
+     "player": "g2_t8",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t8_m16",
+     "player": "g2_t8",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15
+    },
+    {
+     "id": "g2_t8_m17",
+     "player": "g2_t8",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15
+    }
+   ],
+   "minutes": 15.5
+  },
+  "gamememo": {
+   "score": 0.7652,
+   "n": 115,
+   "recall": 0.4375,
+   "quiet": 1.0,
+   "repeat_quiet": 1.0,
+   "hero_named": 0.3333,
+   "hero_deictic": 0.5333,
+   "by_category": {
+    "duo_note": 0.625,
+    "friend_goal": 1.0,
+    "hero_quit": 0.0,
+    "hero_tip": 0.6875,
+    "near_rank": 1.0,
+    "opp_hero": 1.0,
+    "random": 1.0,
+    "rank_goal": 0.25,
+    "repeat": 1.0,
+    "short_streak": 1.0,
+    "streak_rule": 0.375
+   },
+   "llm_calls": 47,
+   "context_chars": 60,
+   "rows": [
+    {
+     "id": "g2_t1_m01",
+     "player": "g2_t1",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t1_m02",
+     "player": "g2_t1",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t1_m03",
+     "player": "g2_t1",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t1_m04",
+     "player": "g2_t1",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t1_m05",
+     "player": "g2_t1",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t1_m06",
+     "player": "g2_t1",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t1_m07",
+     "player": "g2_t1",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t1_m08",
+     "player": "g2_t1",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "我记得你之前说过，一晚上连输三把就想下线洗澡睡觉，看来今晚你做到了呢！",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 163
+    },
+    {
+     "id": "g2_t1_m09",
+     "player": "g2_t1",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": true,
+     "message": "看来你又在马超这个英雄上遇到了问题，不过没关系，我注意到你上次提到的那句话，下次我提醒你先出暗影战斧再切后排，希望这次能帮到你。",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 183
+    },
+    {
+     "id": "g2_t1_m10",
+     "player": "g2_t1",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "好的，刚刚那局你用花木兰打对抗路，虽然输了，但表现不错，小周也说你打得很稳。看来今晚你俩配合得不错呢！",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 198
+    },
+    {
+     "id": "g2_t1_m11",
+     "player": "g2_t1",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t1_m12",
+     "player": "g2_t1",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t1_m13",
+     "player": "g2_t1",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "关羽又拿MVP了，今晚已经是连胜两局了，状态真是火热！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 155
+    },
+    {
+     "id": "g2_t1_m14",
+     "player": "g2_t1",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t1_m15",
+     "player": "g2_t1",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": true,
+     "message": "好的，看来你用曹操又赢了！之前我提醒你的技巧确实有效，希望你能继续保持哦。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 173
+    },
+    {
+     "id": "g2_t1_m16",
+     "player": "g2_t1",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t1_m17",
+     "player": "g2_t1",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t1_m18",
+     "player": "g2_t1",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": true,
+     "message": "看来你这把又打出了亮眼的表现，花木兰5/1/12，MVP呢！希望你能继续保持这样的状态，继续前进。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 175
+    },
+    {
+     "id": "g2_t1_m19",
+     "player": "g2_t1",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t2_m01",
+     "player": "g2_t2",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": true,
+     "message": "好的，小乔这局打得很不错，6/1/7，还拿了个MVP呢。看来你之前的建议确实有效，以后继续这样玩，保持下去哦！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 193
+    },
+    {
+     "id": "g2_t2_m02",
+     "player": "g2_t2",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t2_m03",
+     "player": "g2_t2",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": true,
+     "message": "看来你这次用妲己打的不错，四级有大招后去抓人确实效果很好。",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 181
+    },
+    {
+     "id": "g2_t2_m04",
+     "player": "g2_t2",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t2_m05",
+     "player": "g2_t2",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t2_m06",
+     "player": "g2_t2",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t2_m07",
+     "player": "g2_t2",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "妲己（中路）又输了，0胜3负，感觉排位赛有点难啊。不过今晚你表现不错，至少只输了6个人头。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 166
+    },
+    {
+     "id": "g2_t2_m08",
+     "player": "g2_t2",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t2_m09",
+     "player": "g2_t2",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t2_m10",
+     "player": "g2_t2",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t2_m11",
+     "player": "g2_t2",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "看来你今晚状态不错，赢了四局呢！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 162
+    },
+    {
+     "id": "g2_t2_m12",
+     "player": "g2_t2",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "刚刚那局你赢了，我还提醒你们输了谁都不许甩锅，谁甩锅谁请奶茶呢。",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 200
+    },
+    {
+     "id": "g2_t2_m13",
+     "player": "g2_t2",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t2_m14",
+     "player": "g2_t2",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t2_m15",
+     "player": "g2_t2",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": true,
+     "message": "看来你这把又赢了，真是状态不错呢！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 171
+    },
+    {
+     "id": "g2_t2_m16",
+     "player": "g2_t2",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t2_m17",
+     "player": "g2_t2",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t3_m01",
+     "player": "g2_t3",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t3_m02",
+     "player": "g2_t3",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "看来这次和胖虎双排，张良又在中路了。不过这次你赢了，4/4/4，感觉状态不错呢！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 176
+    },
+    {
+     "id": "g2_t3_m03",
+     "player": "g2_t3",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t3_m04",
+     "player": "g2_t3",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t3_m05",
+     "player": "g2_t3",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t3_m06",
+     "player": "g2_t3",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t3_m07",
+     "player": "g2_t3",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "看来你今晚状态不错，6/3/12的战绩确实值得庆祝。对了，上次你说要买球鞋，现在离目标又近了一步呢！",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 170
+    },
+    {
+     "id": "g2_t3_m08",
+     "player": "g2_t3",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t3_m09",
+     "player": "g2_t3",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": true,
+     "message": "好的，刚才那把老夫子你带线时多看小地图，对面一抱团就赶紧回来跟团，效果不错，对方只拿到了一个助攻。希望这次能帮到你，今晚第二局加油！",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 218
+    },
+    {
+     "id": "g2_t3_m10",
+     "player": "g2_t3",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t3_m11",
+     "player": "g2_t3",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": true,
+     "message": "好的，刚才那局你用狂铁（对抗路）输了，四级前就因为想赢想快点换血，结果被对面打残了，经济全崩了。我提醒你，前期别急着换血，先稳住吃线，等四级有大招再找机会打。这次你记住了吗？",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 219
+    },
+    {
+     "id": "g2_t3_m12",
+     "player": "g2_t3",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": true,
+     "message": "吕布这局打得好不错啊，之前你跟我说过，这英雄打得好不容易，能赢下来不容易。看来你已经掌握了窍门，继续保持哦！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 165
+    },
+    {
+     "id": "g2_t3_m13",
+     "player": "g2_t3",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t3_m14",
+     "player": "g2_t3",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t3_m15",
+     "player": "g2_t3",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t3_m16",
+     "player": "g2_t3",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t3_m17",
+     "player": "g2_t3",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "吕布你又输了，这次是2/3/3，感觉你可能需要调整一下对线策略了。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 175
+    },
+    {
+     "id": "g2_t4_m01",
+     "player": "g2_t4",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t4_m02",
+     "player": "g2_t4",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t4_m03",
+     "player": "g2_t4",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t4_m04",
+     "player": "g2_t4",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t4_m05",
+     "player": "g2_t4",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t4_m06",
+     "player": "g2_t4",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": true,
+     "message": "好的，关羽那局你没跑起来就硬冲进去，结果被控死了。下次提醒你先跑动把势攒起来，有冲锋状态再进场，别站桩硬冲。",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 218
+    },
+    {
+     "id": "g2_t4_m07",
+     "player": "g2_t4",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t4_m08",
+     "player": "g2_t4",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": true,
+     "message": "看来这局你用镜打野又找回了手感，恭喜你拿下MVP，星耀五的段位也更进一步了呢！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 160
+    },
+    {
+     "id": "g2_t4_m09",
+     "player": "g2_t4",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "看来这次你们又输了，不过还好没有升级失败。不过下次输了记得谁都不许甩锅，打完就翻篇，这样吧，我到时候提醒你们。",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 191
+    },
+    {
+     "id": "g2_t4_m10",
+     "player": "g2_t4",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t4_m11",
+     "player": "g2_t4",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "看来你今晚的状态还是挺不错的，虽然排位连输三把，但还是取得了3胜3负的成绩呢。继续保持！",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 190
+    },
+    {
+     "id": "g2_t4_m12",
+     "player": "g2_t4",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": true,
+     "message": "刘备这局又打得好厉害了，5/2/10，还拿了MVP呢！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 192
+    },
+    {
+     "id": "g2_t4_m13",
+     "player": "g2_t4",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t4_m14",
+     "player": "g2_t4",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t4_m15",
+     "player": "g2_t4",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t4_m16",
+     "player": "g2_t4",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t4_m17",
+     "player": "g2_t4",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "看来你又在星耀的道路上前进了一步呢！上星耀的感觉怎么样？",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 160
+    },
+    {
+     "id": "g2_t5_m01",
+     "player": "g2_t5",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t5_m02",
+     "player": "g2_t5",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t5_m03",
+     "player": "g2_t5",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t5_m04",
+     "player": "g2_t5",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": true,
+     "message": "看来你对虞姬的输出装搭配有了新的理解，挺好的。今晚这局你又赢了，真是太棒了！",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 180
+    },
+    {
+     "id": "g2_t5_m05",
+     "player": "g2_t5",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t5_m06",
+     "player": "g2_t5",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你又打出了亮眼的表现，钻石段位又前进了一步呢！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 147
+    },
+    {
+     "id": "g2_t5_m07",
+     "player": "g2_t5",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t5_m08",
+     "player": "g2_t5",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t5_m09",
+     "player": "g2_t5",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "我记得上次我们双排之后，你跟我约好了输了不甩锅，谁先打字怪对方谁请奶茶。这次你赢了，要不要再试试这个规矩？",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 178
+    },
+    {
+     "id": "g2_t5_m10",
+     "player": "g2_t5",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": true,
+     "message": "看来黄忠这英雄你还是不太适应啊，那晚你输得挺难受的。今晚又是负局，看来还得再磨练一下了。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 162
+    },
+    {
+     "id": "g2_t5_m11",
+     "player": "g2_t5",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": true,
+     "message": "艾琳这局你又输了，不过我记得你之前说过，等对面控制交了再进场会好一些。这次你是不是也这么做了？",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 176
+    },
+    {
+     "id": "g2_t5_m12",
+     "player": "g2_t5",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t5_m13",
+     "player": "g2_t5",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t5_m14",
+     "player": "g2_t5",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t5_m15",
+     "player": "g2_t5",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t5_m16",
+     "player": "g2_t5",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t5_m17",
+     "player": "g2_t5",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你又坚持到了最后一把，不过看来还是有些疲惫呢。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 169
+    },
+    {
+     "id": "g2_t5_m18",
+     "player": "g2_t5",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t6_m01",
+     "player": "g2_t6",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": true,
+     "said": true,
+     "message": "看来这把老夫子又找回了手感，6/4/7，恭喜你升星了！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 175
+    },
+    {
+     "id": "g2_t6_m02",
+     "player": "g2_t6",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t6_m03",
+     "player": "g2_t6",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t6_m04",
+     "player": "g2_t6",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t6_m05",
+     "player": "g2_t6",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t6_m06",
+     "player": "g2_t6",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t6_m07",
+     "player": "g2_t6",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t6_m08",
+     "player": "g2_t6",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "我记得你之前说过，一晚上连输三把就打算退游戏去画画，正好今晚就是第3局了呢。",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 168
+    },
+    {
+     "id": "g2_t6_m09",
+     "player": "g2_t6",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "阿杰，你还记得我们上次双排时约定的分路规则吗？单数局你走中路，双数局我走中路。这次双排你提醒一下我们，这样下次双排也能顺利进行。",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 175
+    },
+    {
+     "id": "g2_t6_m10",
+     "player": "g2_t6",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t6_m11",
+     "player": "g2_t6",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": false,
+     "said": true,
+     "message": "还记得上次用马超的时候吗？我提醒你先把枪捡好再进场，别没枪硬冲。这次又犯了这个毛病，希望这次能改掉。",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 170
+    },
+    {
+     "id": "g2_t6_m12",
+     "player": "g2_t6",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": true,
+     "said": true,
+     "message": "好的，刚刚那局你用甄姬（中路）输了，5/5/4，对吧？阿杰那个辅助挺稳的，你下次再玩甄姬记得留着二技能控住敌人哦。",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 185
+    },
+    {
+     "id": "g2_t6_m13",
+     "player": "g2_t6",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t6_m14",
+     "player": "g2_t6",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t6_m15",
+     "player": "g2_t6",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t6_m16",
+     "player": "g2_t6",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t6_m17",
+     "player": "g2_t6",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t7_m01",
+     "player": "g2_t7",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t7_m02",
+     "player": "g2_t7",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你又坚持下来了，不过排位连输三把确实有点艰难。希望你能够调整好状态，继续加油哦！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 188
+    },
+    {
+     "id": "g2_t7_m03",
+     "player": "g2_t7",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": true,
+     "message": "看来你这次用嫦娥打的不错，MVP了呢！之前你说过，先发育把蓝量装备出起来，别急着进团，这次看来你是这么做的。继续保持！",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 184
+    },
+    {
+     "id": "g2_t7_m04",
+     "player": "g2_t7",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "看来你和阿杰双排又取得了胜利，恭喜恭喜！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 186
+    },
+    {
+     "id": "g2_t7_m05",
+     "player": "g2_t7",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t7_m06",
+     "player": "g2_t7",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": true,
+     "message": "看来李信这英雄你还是不太适应啊，那把你对线被压得挺厉害的。不过没关系，慢慢来，今晚第1局输了也没关系，调整好心态，再接再厉！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 166
+    },
+    {
+     "id": "g2_t7_m07",
+     "player": "g2_t7",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t7_m08",
+     "player": "g2_t7",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": true,
+     "message": "好的，刚刚那局你用海月赢了，6/6/11，恭喜你！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 197
+    },
+    {
+     "id": "g2_t7_m09",
+     "player": "g2_t7",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t7_m10",
+     "player": "g2_t7",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t7_m11",
+     "player": "g2_t7",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t7_m12",
+     "player": "g2_t7",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t7_m13",
+     "player": "g2_t7",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t7_m14",
+     "player": "g2_t7",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t7_m15",
+     "player": "g2_t7",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你又打到了钻石，离那台二手宾得胶片机又近了一步呢！",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 163
+    },
+    {
+     "id": "g2_t7_m16",
+     "player": "g2_t7",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t8_m01",
+     "player": "g2_t8",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": true,
+     "message": "看来你今天用云中君打野表现不错，拿到了MVP呢！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 164
+    },
+    {
+     "id": "g2_t8_m02",
+     "player": "g2_t8",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t8_m03",
+     "player": "g2_t8",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "你看，你之前说过一晚上连输三把就去休息，正好今晚就是这种情况了。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 171
+    },
+    {
+     "id": "g2_t8_m04",
+     "player": "g2_t8",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t8_m05",
+     "player": "g2_t8",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t8_m06",
+     "player": "g2_t8",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t8_m07",
+     "player": "g2_t8",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t8_m08",
+     "player": "g2_t8",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t8_m09",
+     "player": "g2_t8",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": true,
+     "message": "看来你这次用诸葛亮打的不错，8/2/11的战绩真是值得庆祝！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 192
+    },
+    {
+     "id": "g2_t8_m10",
+     "player": "g2_t8",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t8_m11",
+     "player": "g2_t8",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t8_m12",
+     "player": "g2_t8",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t8_m13",
+     "player": "g2_t8",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "看来你对这次升到星耀五星五分之一特别满意呢！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 151
+    },
+    {
+     "id": "g2_t8_m14",
+     "player": "g2_t8",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": true,
+     "message": "看来你还在琢磨怎么用武则天的大招。那晚我们聊过，你当时说大招放太早，对面还没进场你就开了，结果全空。下次再用这英雄时，我提醒你等对面先手进场再开大，别提前放空。你觉得怎么样？",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 178
+    },
+    {
+     "id": "g2_t8_m15",
+     "player": "g2_t8",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t8_m16",
+     "player": "g2_t8",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 0,
+     "context_chars": 0
+    },
+    {
+     "id": "g2_t8_m17",
+     "player": "g2_t8",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "看来你最近和胖虎双排打得不错，看来你们的约定效果挺好的呢。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 170
+    }
+   ],
+   "minutes": 8.1
+  },
+  "rag_all": {
+   "score": 0.4522,
+   "n": 115,
+   "recall": 0.0,
+   "quiet": 0.7761,
+   "repeat_quiet": 0.8696,
+   "hero_named": 0.0,
+   "hero_deictic": 0.0,
+   "by_category": {
+    "duo_note": 0.0,
+    "friend_goal": 0.875,
+    "hero_quit": 0.0,
+    "hero_tip": 0.0,
+    "near_rank": 0.7,
+    "opp_hero": 0.75,
+    "random": 0.7188,
+    "rank_goal": 0.0,
+    "repeat": 0.8696,
+    "short_streak": 1.0,
+    "streak_rule": 0.0
+   },
+   "llm_calls": 138,
+   "context_chars": 730,
+   "rows": [
+    {
+     "id": "g2_t1_m01",
+     "player": "g2_t1",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 729
+    },
+    {
+     "id": "g2_t1_m02",
+     "player": "g2_t1",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 708
+    },
+    {
+     "id": "g2_t1_m03",
+     "player": "g2_t1",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 724
+    },
+    {
+     "id": "g2_t1_m04",
+     "player": "g2_t1",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 704
+    },
+    {
+     "id": "g2_t1_m05",
+     "player": "g2_t1",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 738
+    },
+    {
+     "id": "g2_t1_m06",
+     "player": "g2_t1",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 719
+    },
+    {
+     "id": "g2_t1_m07",
+     "player": "g2_t1",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 789
+    },
+    {
+     "id": "g2_t1_m08",
+     "player": "g2_t1",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你的状态有些起伏，上一局虽然输了，但还是有MVP的表现，希望你能尽快调整好状态，争取明天的连胜。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 743
+    },
+    {
+     "id": "g2_t1_m09",
+     "player": "g2_t1",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 726
+    },
+    {
+     "id": "g2_t1_m10",
+     "player": "g2_t1",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 759
+    },
+    {
+     "id": "g2_t1_m11",
+     "player": "g2_t1",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 739
+    },
+    {
+     "id": "g2_t1_m12",
+     "player": "g2_t1",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 731
+    },
+    {
+     "id": "g2_t1_m13",
+     "player": "g2_t1",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 796
+    },
+    {
+     "id": "g2_t1_m14",
+     "player": "g2_t1",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 726
+    },
+    {
+     "id": "g2_t1_m15",
+     "player": "g2_t1",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 714
+    },
+    {
+     "id": "g2_t1_m16",
+     "player": "g2_t1",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 710
+    },
+    {
+     "id": "g2_t1_m17",
+     "player": "g2_t1",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来今天的李信状态不错，连续两局都取得了胜利呢！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 721
+    },
+    {
+     "id": "g2_t1_m18",
+     "player": "g2_t1",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": true,
+     "message": "看来今晚你状态不错，连续两场胜利了呢！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 753
+    },
+    {
+     "id": "g2_t1_m19",
+     "player": "g2_t1",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 730
+    },
+    {
+     "id": "g2_t2_m01",
+     "player": "g2_t2",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 720
+    },
+    {
+     "id": "g2_t2_m02",
+     "player": "g2_t2",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 732
+    },
+    {
+     "id": "g2_t2_m03",
+     "player": "g2_t2",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 724
+    },
+    {
+     "id": "g2_t2_m04",
+     "player": "g2_t2",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 713
+    },
+    {
+     "id": "g2_t2_m05",
+     "player": "g2_t2",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 741
+    },
+    {
+     "id": "g2_t2_m06",
+     "player": "g2_t2",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 710
+    },
+    {
+     "id": "g2_t2_m07",
+     "player": "g2_t2",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 711
+    },
+    {
+     "id": "g2_t2_m08",
+     "player": "g2_t2",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 723
+    },
+    {
+     "id": "g2_t2_m09",
+     "player": "g2_t2",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "妲己最近状态不错，你这局对局中选择了中路，表现得很稳健。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 716
+    },
+    {
+     "id": "g2_t2_m10",
+     "player": "g2_t2",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 766
+    },
+    {
+     "id": "g2_t2_m11",
+     "player": "g2_t2",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 741
+    },
+    {
+     "id": "g2_t2_m12",
+     "player": "g2_t2",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 756
+    },
+    {
+     "id": "g2_t2_m13",
+     "player": "g2_t2",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 710
+    },
+    {
+     "id": "g2_t2_m14",
+     "player": "g2_t2",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "嬴政在今天的第三局比赛中再次取得了胜利，继续保持了良好的状态。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 721
+    },
+    {
+     "id": "g2_t2_m15",
+     "player": "g2_t2",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 777
+    },
+    {
+     "id": "g2_t2_m16",
+     "player": "g2_t2",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 766
+    },
+    {
+     "id": "g2_t2_m17",
+     "player": "g2_t2",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "嬴政最近的状态不错，今天的胜利是连续的第3场胜利呢！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 717
+    },
+    {
+     "id": "g2_t3_m01",
+     "player": "g2_t3",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 724
+    },
+    {
+     "id": "g2_t3_m02",
+     "player": "g2_t3",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 772
+    },
+    {
+     "id": "g2_t3_m03",
+     "player": "g2_t3",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "曹操，最近几局对抗路的表现有些起伏，你是不是在某个方面需要调整一下呢？",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 726
+    },
+    {
+     "id": "g2_t3_m04",
+     "player": "g2_t3",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 629
+    },
+    {
+     "id": "g2_t3_m05",
+     "player": "g2_t3",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 791
+    },
+    {
+     "id": "g2_t3_m06",
+     "player": "g2_t3",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 748
+    },
+    {
+     "id": "g2_t3_m07",
+     "player": "g2_t3",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 778
+    },
+    {
+     "id": "g2_t3_m08",
+     "player": "g2_t3",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 761
+    },
+    {
+     "id": "g2_t3_m09",
+     "player": "g2_t3",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 795
+    },
+    {
+     "id": "g2_t3_m10",
+     "player": "g2_t3",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 737
+    },
+    {
+     "id": "g2_t3_m11",
+     "player": "g2_t3",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 738
+    },
+    {
+     "id": "g2_t3_m12",
+     "player": "g2_t3",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 720
+    },
+    {
+     "id": "g2_t3_m13",
+     "player": "g2_t3",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "吕布，今晚连续两局胜利，继续保持这样的状态，你的段位很快就能达到更高的档次了！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 743
+    },
+    {
+     "id": "g2_t3_m14",
+     "player": "g2_t3",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 614
+    },
+    {
+     "id": "g2_t3_m15",
+     "player": "g2_t3",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 726
+    },
+    {
+     "id": "g2_t3_m16",
+     "player": "g2_t3",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 785
+    },
+    {
+     "id": "g2_t3_m17",
+     "player": "g2_t3",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 720
+    },
+    {
+     "id": "g2_t4_m01",
+     "player": "g2_t4",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 737
+    },
+    {
+     "id": "g2_t4_m02",
+     "player": "g2_t4",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 763
+    },
+    {
+     "id": "g2_t4_m03",
+     "player": "g2_t4",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 737
+    },
+    {
+     "id": "g2_t4_m04",
+     "player": "g2_t4",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 717
+    },
+    {
+     "id": "g2_t4_m05",
+     "player": "g2_t4",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 757
+    },
+    {
+     "id": "g2_t4_m06",
+     "player": "g2_t4",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": true,
+     "message": "关羽最近状态有些起伏，希望你能注意调整，争取早日重回连胜。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 741
+    },
+    {
+     "id": "g2_t4_m07",
+     "player": "g2_t4",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 716
+    },
+    {
+     "id": "g2_t4_m08",
+     "player": "g2_t4",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": true,
+     "message": "看来你今晚状态不错，连续三场胜利了呢！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 743
+    },
+    {
+     "id": "g2_t4_m09",
+     "player": "g2_t4",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 749
+    },
+    {
+     "id": "g2_t4_m10",
+     "player": "g2_t4",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 745
+    },
+    {
+     "id": "g2_t4_m11",
+     "player": "g2_t4",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 773
+    },
+    {
+     "id": "g2_t4_m12",
+     "player": "g2_t4",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 736
+    },
+    {
+     "id": "g2_t4_m13",
+     "player": "g2_t4",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 671
+    },
+    {
+     "id": "g2_t4_m14",
+     "player": "g2_t4",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 737
+    },
+    {
+     "id": "g2_t4_m15",
+     "player": "g2_t4",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 656
+    },
+    {
+     "id": "g2_t4_m16",
+     "player": "g2_t4",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 748
+    },
+    {
+     "id": "g2_t4_m17",
+     "player": "g2_t4",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "看来你今晚状态不错，连续5胜了呢！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 732
+    },
+    {
+     "id": "g2_t5_m01",
+     "player": "g2_t5",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 745
+    },
+    {
+     "id": "g2_t5_m02",
+     "player": "g2_t5",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 736
+    },
+    {
+     "id": "g2_t5_m03",
+     "player": "g2_t5",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 741
+    },
+    {
+     "id": "g2_t5_m04",
+     "player": "g2_t5",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": true,
+     "message": "虞姬在发育路的表现还是挺稳定的，今晚第三局再次获胜，恭喜你！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 720
+    },
+    {
+     "id": "g2_t5_m05",
+     "player": "g2_t5",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你状态不错，连续两场胜利提升了你的铂金二段位呢！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 730
+    },
+    {
+     "id": "g2_t5_m06",
+     "player": "g2_t5",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 738
+    },
+    {
+     "id": "g2_t5_m07",
+     "player": "g2_t5",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 643
+    },
+    {
+     "id": "g2_t5_m08",
+     "player": "g2_t5",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 659
+    },
+    {
+     "id": "g2_t5_m09",
+     "player": "g2_t5",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 712
+    },
+    {
+     "id": "g2_t5_m10",
+     "player": "g2_t5",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 702
+    },
+    {
+     "id": "g2_t5_m11",
+     "player": "g2_t5",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 704
+    },
+    {
+     "id": "g2_t5_m12",
+     "player": "g2_t5",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 720
+    },
+    {
+     "id": "g2_t5_m13",
+     "player": "g2_t5",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来你今晚状态不错，连续两局都取得了胜利呢！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 733
+    },
+    {
+     "id": "g2_t5_m14",
+     "player": "g2_t5",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 750
+    },
+    {
+     "id": "g2_t5_m15",
+     "player": "g2_t5",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 694
+    },
+    {
+     "id": "g2_t5_m16",
+     "player": "g2_t5",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 748
+    },
+    {
+     "id": "g2_t5_m17",
+     "player": "g2_t5",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 721
+    },
+    {
+     "id": "g2_t5_m18",
+     "player": "g2_t5",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 745
+    },
+    {
+     "id": "g2_t6_m01",
+     "player": "g2_t6",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": true,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 733
+    },
+    {
+     "id": "g2_t6_m02",
+     "player": "g2_t6",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 766
+    },
+    {
+     "id": "g2_t6_m03",
+     "player": "g2_t6",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 699
+    },
+    {
+     "id": "g2_t6_m04",
+     "player": "g2_t6",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 719
+    },
+    {
+     "id": "g2_t6_m05",
+     "player": "g2_t6",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 778
+    },
+    {
+     "id": "g2_t6_m06",
+     "player": "g2_t6",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 751
+    },
+    {
+     "id": "g2_t6_m07",
+     "player": "g2_t6",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 733
+    },
+    {
+     "id": "g2_t6_m08",
+     "player": "g2_t6",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 720
+    },
+    {
+     "id": "g2_t6_m09",
+     "player": "g2_t6",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 780
+    },
+    {
+     "id": "g2_t6_m10",
+     "player": "g2_t6",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你状态不错，连续两局都赢了，继续保持哦！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 728
+    },
+    {
+     "id": "g2_t6_m11",
+     "player": "g2_t6",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 721
+    },
+    {
+     "id": "g2_t6_m12",
+     "player": "g2_t6",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": true,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 676
+    },
+    {
+     "id": "g2_t6_m13",
+     "player": "g2_t6",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 676
+    },
+    {
+     "id": "g2_t6_m14",
+     "player": "g2_t6",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 721
+    },
+    {
+     "id": "g2_t6_m15",
+     "player": "g2_t6",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 724
+    },
+    {
+     "id": "g2_t6_m16",
+     "player": "g2_t6",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 718
+    },
+    {
+     "id": "g2_t6_m17",
+     "player": "g2_t6",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 717
+    },
+    {
+     "id": "g2_t7_m01",
+     "player": "g2_t7",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 760
+    },
+    {
+     "id": "g2_t7_m02",
+     "player": "g2_t7",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 748
+    },
+    {
+     "id": "g2_t7_m03",
+     "player": "g2_t7",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": true,
+     "message": "看来今晚你状态不错，连续两场都拿下了MVP，继续保持！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 734
+    },
+    {
+     "id": "g2_t7_m04",
+     "player": "g2_t7",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 747
+    },
+    {
+     "id": "g2_t7_m05",
+     "player": "g2_t7",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "吕布和上官婉儿这波连胜，看来你对这两名英雄的了解越来越深入了呢。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 736
+    },
+    {
+     "id": "g2_t7_m06",
+     "player": "g2_t7",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": true,
+     "message": "看来今晚你状态不错，上一局还拿下了李信，取得了胜利呢！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 622
+    },
+    {
+     "id": "g2_t7_m07",
+     "player": "g2_t7",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "上官婉儿最近状态不错，你这波胜利是她连续胜利的一部分呢！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 748
+    },
+    {
+     "id": "g2_t7_m08",
+     "player": "g2_t7",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": true,
+     "message": "看来今晚你状态不错，连续三场胜利了呢！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 732
+    },
+    {
+     "id": "g2_t7_m09",
+     "player": "g2_t7",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你中路的表现有些起伏，希望下次能调整得更好一些。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 610
+    },
+    {
+     "id": "g2_t7_m10",
+     "player": "g2_t7",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你状态不错，连续两场都赢了，继续保持！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 723
+    },
+    {
+     "id": "g2_t7_m11",
+     "player": "g2_t7",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来你对程咬金的胜率不错，继续保持哦！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 721
+    },
+    {
+     "id": "g2_t7_m12",
+     "player": "g2_t7",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 740
+    },
+    {
+     "id": "g2_t7_m13",
+     "player": "g2_t7",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你状态有些起伏，不过每局都有进步，继续加油！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 731
+    },
+    {
+     "id": "g2_t7_m14",
+     "player": "g2_t7",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你状态不错，连续6局都取得了胜利呢！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 734
+    },
+    {
+     "id": "g2_t7_m15",
+     "player": "g2_t7",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 737
+    },
+    {
+     "id": "g2_t7_m16",
+     "player": "g2_t7",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 717
+    },
+    {
+     "id": "g2_t8_m01",
+     "player": "g2_t8",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 737
+    },
+    {
+     "id": "g2_t8_m02",
+     "player": "g2_t8",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 725
+    },
+    {
+     "id": "g2_t8_m03",
+     "player": "g2_t8",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 718
+    },
+    {
+     "id": "g2_t8_m04",
+     "player": "g2_t8",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 703
+    },
+    {
+     "id": "g2_t8_m05",
+     "player": "g2_t8",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 758
+    },
+    {
+     "id": "g2_t8_m06",
+     "player": "g2_t8",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 719
+    },
+    {
+     "id": "g2_t8_m07",
+     "player": "g2_t8",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 744
+    },
+    {
+     "id": "g2_t8_m08",
+     "player": "g2_t8",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你状态不错，连续5场胜利，继续保持哦！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 745
+    },
+    {
+     "id": "g2_t8_m09",
+     "player": "g2_t8",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 730
+    },
+    {
+     "id": "g2_t8_m10",
+     "player": "g2_t8",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 723
+    },
+    {
+     "id": "g2_t8_m11",
+     "player": "g2_t8",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 718
+    },
+    {
+     "id": "g2_t8_m12",
+     "player": "g2_t8",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你状态不错，连续三场胜利了呢！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 764
+    },
+    {
+     "id": "g2_t8_m13",
+     "player": "g2_t8",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 773
+    },
+    {
+     "id": "g2_t8_m14",
+     "player": "g2_t8",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": true,
+     "message": "看来今晚你对阵武则天的胜率不高呢，希望明天能调整一下策略，看看能否有所改善。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 675
+    },
+    {
+     "id": "g2_t8_m15",
+     "player": "g2_t8",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 771
+    },
+    {
+     "id": "g2_t8_m16",
+     "player": "g2_t8",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 742
+    },
+    {
+     "id": "g2_t8_m17",
+     "player": "g2_t8",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 777
+    }
+   ],
+   "minutes": 47.8
+  },
+  "full_all": {
+   "score": 0.4174,
+   "n": 115,
+   "recall": 0.0833,
+   "quiet": 0.6567,
+   "repeat_quiet": 0.7391,
+   "hero_named": 0.1111,
+   "hero_deictic": 0.0667,
+   "by_category": {
+    "duo_note": 0.125,
+    "friend_goal": 0.5,
+    "hero_quit": 0.0,
+    "hero_tip": 0.125,
+    "near_rank": 0.6,
+    "opp_hero": 0.875,
+    "random": 0.5938,
+    "rank_goal": 0.0,
+    "repeat": 0.7391,
+    "short_streak": 0.8889,
+    "streak_rule": 0.125
+   },
+   "llm_calls": 138,
+   "context_chars": 12753,
+   "rows": [
+    {
+     "id": "g2_t1_m01",
+     "player": "g2_t1",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "艾琳的高输出确实很考验你的应对，今晚状态不错啊",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 4665
+    },
+    {
+     "id": "g2_t1_m02",
+     "player": "g2_t1",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 6117
+    },
+    {
+     "id": "g2_t1_m03",
+     "player": "g2_t1",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 9070
+    },
+    {
+     "id": "g2_t1_m04",
+     "player": "g2_t1",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 9976
+    },
+    {
+     "id": "g2_t1_m05",
+     "player": "g2_t1",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 10174
+    },
+    {
+     "id": "g2_t1_m06",
+     "player": "g2_t1",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 10835
+    },
+    {
+     "id": "g2_t1_m07",
+     "player": "g2_t1",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 11296
+    },
+    {
+     "id": "g2_t1_m08",
+     "player": "g2_t1",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 12542
+    },
+    {
+     "id": "g2_t1_m09",
+     "player": "g2_t1",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 14356
+    },
+    {
+     "id": "g2_t1_m10",
+     "player": "g2_t1",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15678
+    },
+    {
+     "id": "g2_t1_m11",
+     "player": "g2_t1",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 17211
+    },
+    {
+     "id": "g2_t1_m12",
+     "player": "g2_t1",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 17747
+    },
+    {
+     "id": "g2_t1_m13",
+     "player": "g2_t1",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "关羽这局表现不错，MVP真是实至名归。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 18163
+    },
+    {
+     "id": "g2_t1_m14",
+     "player": "g2_t1",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 20043
+    },
+    {
+     "id": "g2_t1_m15",
+     "player": "g2_t1",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 20893
+    },
+    {
+     "id": "g2_t1_m16",
+     "player": "g2_t1",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 21630
+    },
+    {
+     "id": "g2_t1_m17",
+     "player": "g2_t1",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "记得上次说的，曹操你先等对面控制交了再开大进场，这次又输了。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 22622
+    },
+    {
+     "id": "g2_t1_m18",
+     "player": "g2_t1",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 23589
+    },
+    {
+     "id": "g2_t1_m19",
+     "player": "g2_t1",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 23640
+    },
+    {
+     "id": "g2_t2_m01",
+     "player": "g2_t2",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": true,
+     "message": "上次我们讨论过，你下次要记得别站太前，躲在辅助后面，等对面刺客露头再放技能。",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 4333
+    },
+    {
+     "id": "g2_t2_m02",
+     "player": "g2_t2",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来你今天状态不错，连续三胜了呢。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 4471
+    },
+    {
+     "id": "g2_t2_m03",
+     "player": "g2_t2",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 6674
+    },
+    {
+     "id": "g2_t2_m04",
+     "player": "g2_t2",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 6723
+    },
+    {
+     "id": "g2_t2_m05",
+     "player": "g2_t2",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 7188
+    },
+    {
+     "id": "g2_t2_m06",
+     "player": "g2_t2",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 8439
+    },
+    {
+     "id": "g2_t2_m07",
+     "player": "g2_t2",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 8488
+    },
+    {
+     "id": "g2_t2_m08",
+     "player": "g2_t2",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "嬴政这局表现不错，继续保持！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 9537
+    },
+    {
+     "id": "g2_t2_m09",
+     "player": "g2_t2",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "嬴政这局赢了，看来你今晚的状态不错呢。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 10247
+    },
+    {
+     "id": "g2_t2_m10",
+     "player": "g2_t2",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "嬴政这局又拿MVP了，真是状态在线。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 10852
+    },
+    {
+     "id": "g2_t2_m11",
+     "player": "g2_t2",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "嬴政这局表现不错，又赢了，继续保持！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 11335
+    },
+    {
+     "id": "g2_t2_m12",
+     "player": "g2_t2",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "嬴政这局表现不错，升到了铂金，继续保持！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 11478
+    },
+    {
+     "id": "g2_t2_m13",
+     "player": "g2_t2",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你又打出了不错的成绩，继续保持！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 12445
+    },
+    {
+     "id": "g2_t2_m14",
+     "player": "g2_t2",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "嬴政你这局表现不错，连续三局两胜一负，继续保持！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15424
+    },
+    {
+     "id": "g2_t2_m15",
+     "player": "g2_t2",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15889
+    },
+    {
+     "id": "g2_t2_m16",
+     "player": "g2_t2",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 17914
+    },
+    {
+     "id": "g2_t2_m17",
+     "player": "g2_t2",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 19313
+    },
+    {
+     "id": "g2_t3_m01",
+     "player": "g2_t3",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 6397
+    },
+    {
+     "id": "g2_t3_m02",
+     "player": "g2_t3",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 7995
+    },
+    {
+     "id": "g2_t3_m03",
+     "player": "g2_t3",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 8489
+    },
+    {
+     "id": "g2_t3_m04",
+     "player": "g2_t3",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 9302
+    },
+    {
+     "id": "g2_t3_m05",
+     "player": "g2_t3",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 10760
+    },
+    {
+     "id": "g2_t3_m06",
+     "player": "g2_t3",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 10971
+    },
+    {
+     "id": "g2_t3_m07",
+     "player": "g2_t3",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 11186
+    },
+    {
+     "id": "g2_t3_m08",
+     "player": "g2_t3",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 12956
+    },
+    {
+     "id": "g2_t3_m09",
+     "player": "g2_t3",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 14433
+    },
+    {
+     "id": "g2_t3_m10",
+     "player": "g2_t3",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 14484
+    },
+    {
+     "id": "g2_t3_m11",
+     "player": "g2_t3",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 16359
+    },
+    {
+     "id": "g2_t3_m12",
+     "player": "g2_t3",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 17858
+    },
+    {
+     "id": "g2_t3_m13",
+     "player": "g2_t3",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 17912
+    },
+    {
+     "id": "g2_t3_m14",
+     "player": "g2_t3",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 18137
+    },
+    {
+     "id": "g2_t3_m15",
+     "player": "g2_t3",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 19384
+    },
+    {
+     "id": "g2_t3_m16",
+     "player": "g2_t3",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 22449
+    },
+    {
+     "id": "g2_t3_m17",
+     "player": "g2_t3",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 23931
+    },
+    {
+     "id": "g2_t4_m01",
+     "player": "g2_t4",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 3279
+    },
+    {
+     "id": "g2_t4_m02",
+     "player": "g2_t4",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 6371
+    },
+    {
+     "id": "g2_t4_m03",
+     "player": "g2_t4",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 6905
+    },
+    {
+     "id": "g2_t4_m04",
+     "player": "g2_t4",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 8666
+    },
+    {
+     "id": "g2_t4_m05",
+     "player": "g2_t4",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 8761
+    },
+    {
+     "id": "g2_t4_m06",
+     "player": "g2_t4",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 10071
+    },
+    {
+     "id": "g2_t4_m07",
+     "player": "g2_t4",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 10309
+    },
+    {
+     "id": "g2_t4_m08",
+     "player": "g2_t4",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": true,
+     "message": "看来你今晚状态不错，连续三场胜利了呢。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 10517
+    },
+    {
+     "id": "g2_t4_m09",
+     "player": "g2_t4",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "你今晚的对局表现不错，继续保持。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 12954
+    },
+    {
+     "id": "g2_t4_m10",
+     "player": "g2_t4",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "老三双排赢了，看来你们配合得不错。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 13064
+    },
+    {
+     "id": "g2_t4_m11",
+     "player": "g2_t4",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 13321
+    },
+    {
+     "id": "g2_t4_m12",
+     "player": "g2_t4",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 14860
+    },
+    {
+     "id": "g2_t4_m13",
+     "player": "g2_t4",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 14898
+    },
+    {
+     "id": "g2_t4_m14",
+     "player": "g2_t4",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15381
+    },
+    {
+     "id": "g2_t4_m15",
+     "player": "g2_t4",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 15665
+    },
+    {
+     "id": "g2_t4_m16",
+     "player": "g2_t4",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 16633
+    },
+    {
+     "id": "g2_t4_m17",
+     "player": "g2_t4",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 16683
+    },
+    {
+     "id": "g2_t5_m01",
+     "player": "g2_t5",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 4005
+    },
+    {
+     "id": "g2_t5_m02",
+     "player": "g2_t5",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 4521
+    },
+    {
+     "id": "g2_t5_m03",
+     "player": "g2_t5",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 6934
+    },
+    {
+     "id": "g2_t5_m04",
+     "player": "g2_t5",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 7126
+    },
+    {
+     "id": "g2_t5_m05",
+     "player": "g2_t5",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 7540
+    },
+    {
+     "id": "g2_t5_m06",
+     "player": "g2_t5",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 8239
+    },
+    {
+     "id": "g2_t5_m07",
+     "player": "g2_t5",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 8409
+    },
+    {
+     "id": "g2_t5_m08",
+     "player": "g2_t5",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 11478
+    },
+    {
+     "id": "g2_t5_m09",
+     "player": "g2_t5",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 13272
+    },
+    {
+     "id": "g2_t5_m10",
+     "player": "g2_t5",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": true,
+     "message": "上次我们聊到你打算五一去黑龙滩钓鱼，这次正好有黄忠这样的对局，你感觉如何？",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 16788
+    },
+    {
+     "id": "g2_t5_m11",
+     "player": "g2_t5",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 17477
+    },
+    {
+     "id": "g2_t5_m12",
+     "player": "g2_t5",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 17527
+    },
+    {
+     "id": "g2_t5_m13",
+     "player": "g2_t5",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "上次我们聊到你打算五一去黑龙滩钓鱼，这次正好有黄忠这样的对局机会，下次记得提前准备。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 18147
+    },
+    {
+     "id": "g2_t5_m14",
+     "player": "g2_t5",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 21057
+    },
+    {
+     "id": "g2_t5_m15",
+     "player": "g2_t5",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "上次我们聊到你打算五一去黑龙滩钓鱼，这次正好可以试试。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 22048
+    },
+    {
+     "id": "g2_t5_m16",
+     "player": "g2_t5",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 24530
+    },
+    {
+     "id": "g2_t5_m17",
+     "player": "g2_t5",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你又遇到了挑战，记得之前我们说过，一晚上连输三把就下线去楼下跑两圈吗？",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 24934
+    },
+    {
+     "id": "g2_t5_m18",
+     "player": "g2_t5",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "记得我们之前约定，你一晚上连输三把就下线去楼下跑两圈，你记得吗？",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 25867
+    },
+    {
+     "id": "g2_t6_m01",
+     "player": "g2_t6",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": true,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 4255
+    },
+    {
+     "id": "g2_t6_m02",
+     "player": "g2_t6",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 4312
+    },
+    {
+     "id": "g2_t6_m03",
+     "player": "g2_t6",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 5066
+    },
+    {
+     "id": "g2_t6_m04",
+     "player": "g2_t6",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 7147
+    },
+    {
+     "id": "g2_t6_m05",
+     "player": "g2_t6",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 7356
+    },
+    {
+     "id": "g2_t6_m06",
+     "player": "g2_t6",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 9491
+    },
+    {
+     "id": "g2_t6_m07",
+     "player": "g2_t6",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你又打出了连胜，继续保持！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 9542
+    },
+    {
+     "id": "g2_t6_m08",
+     "player": "g2_t6",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 11524
+    },
+    {
+     "id": "g2_t6_m09",
+     "player": "g2_t6",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 11991
+    },
+    {
+     "id": "g2_t6_m10",
+     "player": "g2_t6",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 12179
+    },
+    {
+     "id": "g2_t6_m11",
+     "player": "g2_t6",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 12886
+    },
+    {
+     "id": "g2_t6_m12",
+     "player": "g2_t6",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": true,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 13581
+    },
+    {
+     "id": "g2_t6_m13",
+     "player": "g2_t6",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "老夫子这局表现不错，5/6/7，继续保持！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 14366
+    },
+    {
+     "id": "g2_t6_m14",
+     "player": "g2_t6",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 16845
+    },
+    {
+     "id": "g2_t6_m15",
+     "player": "g2_t6",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 16995
+    },
+    {
+     "id": "g2_t6_m16",
+     "player": "g2_t6",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 17285
+    },
+    {
+     "id": "g2_t6_m17",
+     "player": "g2_t6",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "老夫子这局表现不错，钻石一4星稳住了。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 17931
+    },
+    {
+     "id": "g2_t7_m01",
+     "player": "g2_t7",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "我注意到你今天晚上已经连输两把了，上一次也是连输两把。希望你调整好心态，休息一下，明天再继续努力。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 4929
+    },
+    {
+     "id": "g2_t7_m02",
+     "player": "g2_t7",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 5132
+    },
+    {
+     "id": "g2_t7_m03",
+     "player": "g2_t7",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 8375
+    },
+    {
+     "id": "g2_t7_m04",
+     "player": "g2_t7",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 8430
+    },
+    {
+     "id": "g2_t7_m05",
+     "player": "g2_t7",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 10760
+    },
+    {
+     "id": "g2_t7_m06",
+     "player": "g2_t7",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": true,
+     "message": "我记得你之前说，一晚上连输三把就下线去打羽毛球，到时候提醒你一下。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 13274
+    },
+    {
+     "id": "g2_t7_m07",
+     "player": "g2_t7",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "上次我们聊到你定下的规矩，一晚上连输三把就下线打羽毛球，记得提醒一下。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 13324
+    },
+    {
+     "id": "g2_t7_m08",
+     "player": "g2_t7",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": true,
+     "message": "看来你今晚状态不错，3胜0负，继续保持！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 13827
+    },
+    {
+     "id": "g2_t7_m09",
+     "player": "g2_t7",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "上次我们说过，等对面关键控制交了再进，你记得了吗？",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 14224
+    },
+    {
+     "id": "g2_t7_m10",
+     "player": "g2_t7",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你状态不错，上一局赢了。希望今晚能继续保持好的状态。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15906
+    },
+    {
+     "id": "g2_t7_m11",
+     "player": "g2_t7",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "今晚你又赢了一局，状态不错。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 16007
+    },
+    {
+     "id": "g2_t7_m12",
+     "player": "g2_t7",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来你今晚状态不错，连续两局都赢了。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 17355
+    },
+    {
+     "id": "g2_t7_m13",
+     "player": "g2_t7",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你又打出了不错的成绩，3胜2负挺不错的。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 17914
+    },
+    {
+     "id": "g2_t7_m14",
+     "player": "g2_t7",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来你今晚状态不错，又赢了一把。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 17966
+    },
+    {
+     "id": "g2_t7_m15",
+     "player": "g2_t7",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你又打了一场钻石局，真是越来越厉害了。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 18253
+    },
+    {
+     "id": "g2_t7_m16",
+     "player": "g2_t7",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你又遇到了挑战，希望你调整好心态，继续加油。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 18354
+    },
+    {
+     "id": "g2_t8_m01",
+     "player": "g2_t8",
+     "category": "hero_quit",
+     "gold": [
+      "hero_quit1"
+     ],
+     "named": false,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 2298
+    },
+    {
+     "id": "g2_t8_m02",
+     "player": "g2_t8",
+     "category": "short_streak",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 3645
+    },
+    {
+     "id": "g2_t8_m03",
+     "player": "g2_t8",
+     "category": "streak_rule",
+     "gold": [
+      "streak_rule1"
+     ],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 4026
+    },
+    {
+     "id": "g2_t8_m04",
+     "player": "g2_t8",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 6693
+    },
+    {
+     "id": "g2_t8_m05",
+     "player": "g2_t8",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 6749
+    },
+    {
+     "id": "g2_t8_m06",
+     "player": "g2_t8",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 8446
+    },
+    {
+     "id": "g2_t8_m07",
+     "player": "g2_t8",
+     "category": "opp_hero",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 8498
+    },
+    {
+     "id": "g2_t8_m08",
+     "player": "g2_t8",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来今天状态不错，连续5胜了呢。继续保持！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 8654
+    },
+    {
+     "id": "g2_t8_m09",
+     "player": "g2_t8",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip1"
+     ],
+     "named": true,
+     "said": false,
+     "message": "",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 10012
+    },
+    {
+     "id": "g2_t8_m10",
+     "player": "g2_t8",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": false,
+     "message": "",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 10062
+    },
+    {
+     "id": "g2_t8_m11",
+     "player": "g2_t8",
+     "category": "random",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你状态不错，连续两局都赢了。继续保持！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 12744
+    },
+    {
+     "id": "g2_t8_m12",
+     "player": "g2_t8",
+     "category": "near_rank",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你又在中路拿出了出色的表现，干将莫邪的胜率真是越来越高了。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 14848
+    },
+    {
+     "id": "g2_t8_m13",
+     "player": "g2_t8",
+     "category": "rank_goal",
+     "gold": [
+      "rank_goal1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你状态不错，连续两场都赢了呢！",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 15409
+    },
+    {
+     "id": "g2_t8_m14",
+     "player": "g2_t8",
+     "category": "hero_tip",
+     "gold": [
+      "hero_tip2"
+     ],
+     "named": false,
+     "said": true,
+     "message": "阿哲，下次记得等对面先手进场再开大招，这样成功率会高一些。",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 16248
+    },
+    {
+     "id": "g2_t8_m15",
+     "player": "g2_t8",
+     "category": "repeat",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来今天状态不错，连续两局都赢了呢。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 16304
+    },
+    {
+     "id": "g2_t8_m16",
+     "player": "g2_t8",
+     "category": "friend_goal",
+     "gold": [],
+     "named": null,
+     "said": true,
+     "message": "看来今晚你又赢了一场，继续保持这样的状态。",
+     "success": 0.0,
+     "llm": 1,
+     "context_chars": 17525
+    },
+    {
+     "id": "g2_t8_m17",
+     "player": "g2_t8",
+     "category": "duo_note",
+     "gold": [
+      "duo_note1"
+     ],
+     "named": null,
+     "said": true,
+     "message": "记得我们之前说好的，下次跟胖虎双排时提醒你们开局前先说好谁拿射手，一把一换，不许抢。",
+     "success": 1.0,
+     "llm": 1,
+     "context_chars": 18731
+    }
+   ],
+   "minutes": 132.2
+  }
+ }
+}
