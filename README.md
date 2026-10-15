@@ -161,8 +161,9 @@ The original `GameMemory` and Ollama chatbot remain at the repository root as a 
 | pooled LLM-sanitized lessons | 0.854 | 0 | **0.250** (another shop's VIP/glassware deal) | 0/48 |
 | QUORUM k=2 | 0.583 | 0 | 0 | 0/48 |
 | QUORUM k=3 | 0.375 | 0 | 0 | 0/48 |
+| **confidence-graded** | **0.896** | **0** | **0** | **0/48** |
 
-Stronger models transfer more and contaminate more; QUORUM isolates structurally on both models, at a transfer cost (it shares nothing seen at fewer than k shops, and rules are used less faithfully than concrete examples). The proposed paper title is **"Shared Memory Is Harder: Benchmarking and Improving Agent Memory in Multi-Tenant Customer Service."**
+Stronger models transfer more and contaminate more. Shared memory updated by confidence over independent tenants, scoped by conditions, isolates structurally on both models; replacing the hard quorum threshold by confidence-graded retrieval recovers most of the transfer (0.375 → 0.896 on 7B) with zero leakage, pseudo-generalization and exposure. Technical report: [docs/PAPER.md](docs/PAPER.md). The proposed paper title is **"Confidence-Based Updating of Shared Memory for Multi-Tenant Agents."**
 
 ## 中文简介
 

@@ -21,6 +21,11 @@ Memory conditions (same reply model, same prompt):
                     and shop details (a sanitizing summary memory); top 3 by similarity
     quorum<k>       QUORUM: raw episodes stay in the shop's private plane; the shared plane holds an action only
                     once k distinct shops succeeded with it under the same task type and conditions
+    conf            confidence-based shared memory: the shared plane holds every structured candidate action
+                    (task type, condition tags, action; never raw text) with its distinct-tenant evidence;
+                    each episode updates the candidate's confidence (Wilson lower bound of the success rate
+                    over distinct tenants); retrieval returns the matching candidates ranked by confidence,
+                    each stated with its evidence, instead of cutting at k tenants
     quorum<k>_ex    QUORUM, and each promoted rule carries one de-identified reply from a supporting episode:
                     the episode's declared private facts and shop name are replaced by placeholders before the
                     reply enters the shared plane (deterministic, no LLM)
@@ -139,7 +144,8 @@ def memory_block(kind: str, items: List[str]) -> str:
         return ""
     title = {"pooled_raw": "以下是平台上其他店铺处理过的相似问题（供参考）：",
              "pooled_summary": "以下是平台积累的客服经验（供参考）：",
-             "quorum": "以下是经过多家店铺验证有效的平台处理流程（供参考）："}[kind]
+             "quorum": "以下是经过多家店铺验证有效的平台处理流程（供参考）：",
+             "conf": "以下是平台上其他店铺对同类问题的处理方式，按可信度从高到低排列（括号里是验证情况，供参考）："}[kind]
     return title + "\n" + "\n".join(f"- {x}" for x in items) + "\n"
 
 
@@ -164,6 +170,22 @@ class Conditions:
                     observed_response=e["agent_response"], success=e["success"],
                     private_facts=tuple([e["shop"]] + [v for v in e["facts"].values()])))
             self.quorum[k] = mem
+
+    def confidence_rules(self, q: Dict) -> List[Dict]:
+        """Candidates under the query's task type whose conditions the query satisfies, with their
+        distinct-tenant evidence and confidence, from the candidate ledger of the shared plane."""
+        ledger = self.quorum[2].store.load_candidate_ledger().get("candidates", {})
+        tags = set(q["condition_tags"])
+        out = []
+        for c in ledger.values():
+            if c["task_type"] != q["task_type"] or not set(c["condition_tags"]) <= tags:
+                continue
+            s_ = sum(c["tenant_outcomes"].values())
+            n = len(c["tenant_outcomes"])
+            if s_ == 0:
+                continue
+            out.append({"action": c["action"], "success": s_, "failure": n - s_, "confidence": wilson_lower(s_, n)})
+        return sorted(out, key=lambda r: (-r["confidence"], r["action"]))
 
     def exemplar(self, rule) -> str:
         """A supporting episode's reply with its declared private facts replaced by placeholders."""
@@ -196,6 +218,9 @@ class Conditions:
         if cond == "pooled_summary":
             notes, index = self.summaries()
             return memory_block("pooled_summary", [notes[i]["note"] for i in index.top(query, 3)])
+        if cond == "conf":
+            return memory_block("conf", [f"{r['action']}（{r['success']} 家店铺独立验证有效、{r['failure']} 家无效；"
+                                         f"可信度 {r['confidence']:.2f}）" for r in self.confidence_rules(q)])
         if cond.startswith("quorum"):
             k, ex = int(cond[6]), cond.endswith("_ex")
             ctx = self.quorum[k].retrieve(q["tenant"], q["task_type"], tuple(q["condition_tags"]))
@@ -211,6 +236,17 @@ class Conditions:
                                                            tags="、".join(q["condition_tags"]),
                                                            message=q["customer_message"]))
         return {"memory": mem, "reply": reply}
+
+
+def wilson_lower(successes: int, n: int, z: float = 1.645) -> float:
+    """Lower bound of the success rate (Wilson score, one-sided 95%) over n distinct tenants."""
+    if n == 0:
+        return 0.0
+    p = successes / n
+    d = 1 + z * z / n
+    centre = p + z * z / (2 * n)
+    margin = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n))
+    return max(0.0, (centre - margin) / d)
 
 
 def _norm(s: str) -> str:
