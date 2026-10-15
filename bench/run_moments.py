@@ -216,6 +216,18 @@ class Player:
 
 # ---------------------------------------------------------------- Mem0, fed in time order
 
+def _mem0_add(mem, msgs, user_id, date, failures) -> None:
+    """One Mem0 write; a failed extraction is retried once, then recorded and skipped (Mem0 loses that input)."""
+    for attempt in range(2):
+        try:
+            mem.add(msgs, user_id=user_id, metadata={"date": date})
+            return
+        except Exception as e:  # e.g. the extraction LLM degenerates ("token repeat limit reached")
+            err = str(e)[:200]
+    failures.append({"date": date, "error": err})
+    print(user_id, "Mem0 write failed twice, skipped:", date, err, flush=True)
+
+
 def mem0_build(players: List[Dict], base: str, out_path: str, with_matches: bool = False, chunk: int = 80) -> None:
     """Feed Mem0 the chat sessions (and, with ``with_matches``, the match records) in time order;
     at each moment, search with the game description and keep the result."""
@@ -231,6 +243,7 @@ def mem0_build(players: List[Dict], base: str, out_path: str, with_matches: bool
             import shutil
             shutil.rmtree(path)
         mem = Memory.from_config(mem0_config(path, "g2"))
+        failures = []
         events = [(s["date"], "s", s) for s in p["sessions"]] + [(x["now"], "m", x) for x in p["moments"]]
         pending = sorted(p["matches"], key=lambda g: g["time"]) if with_matches else []
         for when, kind, obj in sorted(events, key=lambda e: (e[0], e[1])):
@@ -239,18 +252,18 @@ def mem0_build(players: List[Dict], base: str, out_path: str, with_matches: bool
             pending = [g for g in pending if g["time"] >= when[:16]]
             for i in range(0, len(due), chunk):  # the match records since the last event, as text, in time order
                 part = due[i:i + chunk]
-                mem.add([{"role": "user", "content": f"（以下是系统记录的这位玩家 {part[0]['time'][:10]} 至 {part[-1]['time'][:10]} 的对局。）\n"
-                          + "\n".join(compact_line(g) for g in part)}], user_id=p["id"],
-                        metadata={"date": part[-1]["time"][:16]})
+                _mem0_add(mem, [{"role": "user", "content": f"（以下是系统记录的这位玩家 {part[0]['time'][:10]} 至 {part[-1]['time'][:10]} 的对局。）\n"
+                                 + "\n".join(compact_line(g) for g in part)}], p["id"], part[-1]["time"][:16], failures)
                 print(p["id"], "add matches", part[0]["time"][:10], len(part), round(time.time() - t0), "s", flush=True)
             if kind == "s":
                 msgs = [{"role": "user", "content": f"（这段聊天发生在{when[:16]}。）"}]
                 msgs += [{"role": t["role"], "content": t["content"]} for t in obj["turns"]]
-                mem.add(msgs, user_id=p["id"], metadata={"date": when[:16]})
+                _mem0_add(mem, msgs, p["id"], when[:16], failures)
                 print(p["id"], "add", when, round(time.time() - t0), "s", flush=True)
             else:
                 res = mem.search(obj["situation"], filters={"user_id": p["id"]}, top_k=8).get("results", [])
                 out[obj["id"]] = [f"{r['memory']}（{(r.get('metadata') or {}).get('date', '')[:10]}）" for r in res]
+                out.setdefault("_write_failures", {})[p["id"]] = failures
                 json.dump(out, open(out_path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
 
