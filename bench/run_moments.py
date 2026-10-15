@@ -15,6 +15,9 @@ they differ in what memory comes with it:
     full_ground   every exchange before now, each with the game it was said after
     full_log      every chat session and every match record before now, interleaved in time order
                   (all the information is there; nothing is indexed)
+    full_all      the same in a compact record format (E23)
+    rag_all       the 10 chat exchanges or match records before now that best match the game description (E23)
+    mem0_all      Mem0 fed the chat sessions and the match records in time order (E23, --mem0-build --mem0-matches)
     rag           the 8 exchanges before now that best match the game description (hybrid retrieval)
     mem0          the 8 Mem0 memories that best match the game description (Mem0 fed sessions in time order)
     gamememo      the intentions this game is the cue for (GameMemory.moment); nothing due -> stays quiet, no LLM call
@@ -69,14 +72,36 @@ COMPOSE = """你是一位《王者荣耀》玩家的游戏陪伴助手，平时�
 {context}
 
 这件事正好和刚才这局对上了。用一两句话主动跟他提起，要说出那件事的具体内容（他当时说的关键内容），语气自然。"""
+# E23: the same instructions with the memory first, so a long history is a shared prefix across the
+# moments of one player (the server reuses its cache); every context uses the same template
+SYSTEM_CF = """你是一位《王者荣耀》玩家的游戏陪伴助手，平时陪他聊天。他每打完一局，你可以主动跟他说一句话，也可以不说。
+
+{context}
+
+现在是{now}。
+【刚才这局】
+{situation}
+
+只有当你记得的某件事和刚才这局直接相关、现在提起正合适时（比如他以前说过的话、定下的目标或规矩、你答应过要提醒他的事），才主动跟他说，用一两句话，并且要说出那件事的具体内容。没有这样的事就不说；不要只是普通地夸他或安慰他。"""
+COMPOSE_CF = """你是一位《王者荣耀》玩家的游戏陪伴助手，平时陪他聊天。他刚打完一局，你要主动跟他说一句话。
+
+{context}
+
+现在是{now}。
+【刚才这局】
+{situation}
+
+这件事正好和刚才这局对上了。用一两句话主动跟他提起，要说出那件事的具体内容（他当时说的关键内容），语气自然。"""
 SCHEMA = {"type": "object", "properties": {"say": {"type": "boolean"}, "message": {"type": "string"}},
           "required": ["say", "message"]}
 NOTHING = "关于这位玩家，你没有任何记录。"
 PRIMARY_NEG = ("opp_hero", "friend_goal", "near_rank", "short_streak", "random")
 
 
-def speak(llm, now: str, situation: str, context: str, compose: bool = False) -> Tuple[bool, str]:
-    system = (COMPOSE if compose else SYSTEM).format(now=now[:16], situation=situation, context=context)
+def speak(llm, now: str, situation: str, context: str, compose: bool = False,
+          context_first: bool = False) -> Tuple[bool, str]:
+    templates = (COMPOSE_CF, SYSTEM_CF) if context_first else (COMPOSE, SYSTEM)
+    system = (templates[0] if compose else templates[1]).format(now=now[:16], situation=situation, context=context)
     raw = llm.chat(system=system, messages=[{"role": "user", "content": "（刚打完一局。要主动说点什么吗？）"}],
                    temperature=0.0, max_tokens=200, json_schema=SCHEMA)
     data = parse_json(raw)
@@ -91,6 +116,14 @@ def judge(x: Dict, said: bool, msg: str) -> float:
     if not x["gold"]:
         return 0.0 if said else 1.0
     return 1.0 if said and any(k in msg for k in x["answer_any"]) else 0.0
+
+
+def compact_line(m: Dict) -> str:
+    """A match record, short: every field a player-facing record has."""
+    from gamememo.game.ontology import rank_name
+    rank = f" {rank_name(m['rank_before'])}→{rank_name(m['rank_after'])}" if m["mode"] == "排位" else ""
+    return (f"{m['time']} {m['mode']} {m['hero']}（{m['position']}）{'胜' if m['win'] else '负'} "
+            f"{m['k']}/{m['d']}/{m['a']}{' MVP' if m['mvp'] else ''}{' 和' + m['duo'] + '双排' if m['duo'] else ''}{rank}")
 
 
 # ---------------------------------------------------------------- one player's memories
@@ -134,6 +167,22 @@ class Player:
             events += [(g["time"], "对局：" + match_line(g)) for g in self.p["matches"] if g["time"] <= m["time"]]
             return ("下面是这位玩家过去所有的对局记录和你们的聊天，按时间排列：\n" +
                     "\n".join(e for _, e in sorted(events, key=lambda e: e[0])))
+        if kind == "full_all":
+            events = [(s["date"][:16], f"【{s['date'][:16]} 的聊天】\n{transcript(s)}") for s in self.sessions if s["date"] < now]
+            events += [(g["time"], "对局 " + compact_line(g)) for g in self.p["matches"] if g["time"] <= m["time"]]
+            return ("下面是这位玩家过去所有的对局记录（时间 模式 英雄（位置）胜负 击杀/死亡/助攻 段位变化）和你们的聊天，"
+                    "按时间排列：\n" + "\n".join(e for _, e in sorted(events, key=lambda e: e[0])))
+        if kind == "rag_all":
+            from gamememo.personal.model import MemoryRecord
+            from gamememo.personal.retrieval import HybridRetriever, RetrievalConfig
+            if self._rag is None:
+                self._rag = HybridRetriever(jina(), RetrievalConfig.for_embedder(jina()).for_candidates())
+            docs = list(before) + [MemoryRecord(content="对局记录：" + compact_line(g), kind="turn", created_at=g["time"])
+                                   for g in self.p["matches"] if g["time"] <= m["time"]]
+            hits = sorted((h.record for h in self._rag.search(x["situation"], docs, top_k=10, now=parse_time(now))),
+                          key=lambda r: r.created_at)
+            return "下面是和刚才这局最相关的聊天和对局记录：\n" + "\n".join(
+                f"【{r.created_at[:16]}】" + r.content.replace("\n", " ") for r in hits)
         if kind == "full_ground":
             lines = [f"【{self.gm.intentions.grounding(r.created_at[:16])}】" + r.content.replace("\n", " ") for r in before]
             return "下面是你和这位玩家过去所有的聊天（每句前面是说这话时刚打完的那局）：\n" + "\n".join(lines) if lines else NOTHING
@@ -146,7 +195,7 @@ class Player:
             hits = sorted((h.record for h in self._rag.search(x["situation"], before, top_k=8, now=parse_time(now))),
                           key=lambda r: r.created_at)
             return "你想起了和这位玩家的这些聊天：\n" + "\n".join(self.gm.chat.describe(r) for r in hits)
-        if kind == "mem0":
+        if kind in ("mem0", "mem0_all"):
             res = self.mem0.get(x["id"])
             if res is None:
                 raise SystemExit(f"no Mem0 search for {x['id']}: run --mem0-build first")
@@ -167,7 +216,9 @@ class Player:
 
 # ---------------------------------------------------------------- Mem0, fed in time order
 
-def mem0_build(players: List[Dict], base: str, out_path: str) -> None:
+def mem0_build(players: List[Dict], base: str, out_path: str, with_matches: bool = False, chunk: int = 80) -> None:
+    """Feed Mem0 the chat sessions (and, with ``with_matches``, the match records) in time order;
+    at each moment, search with the game description and keep the result."""
     from bench.locomo import mem0_config
     os.environ.setdefault("MEM0_TELEMETRY", "False")
     from mem0 import Memory
@@ -181,8 +232,17 @@ def mem0_build(players: List[Dict], base: str, out_path: str) -> None:
             shutil.rmtree(path)
         mem = Memory.from_config(mem0_config(path, "g2"))
         events = [(s["date"], "s", s) for s in p["sessions"]] + [(x["now"], "m", x) for x in p["moments"]]
+        pending = sorted(p["matches"], key=lambda g: g["time"]) if with_matches else []
         for when, kind, obj in sorted(events, key=lambda e: (e[0], e[1])):
             t0 = time.time()
+            due = [g for g in pending if g["time"] < when[:16]]
+            pending = [g for g in pending if g["time"] >= when[:16]]
+            for i in range(0, len(due), chunk):  # the match records since the last event, as text, in time order
+                part = due[i:i + chunk]
+                mem.add([{"role": "user", "content": f"（以下是系统记录的这位玩家 {part[0]['time'][:10]} 至 {part[-1]['time'][:10]} 的对局。）\n"
+                          + "\n".join(compact_line(g) for g in part)}], user_id=p["id"],
+                        metadata={"date": part[-1]["time"][:16]})
+                print(p["id"], "add matches", part[0]["time"][:10], len(part), round(time.time() - t0), "s", flush=True)
             if kind == "s":
                 msgs = [{"role": "user", "content": f"（这段聊天发生在{when[:16]}。）"}]
                 msgs += [{"role": t["role"], "content": t["content"]} for t in obj["turns"]]
@@ -224,6 +284,8 @@ def main(argv=None):
     ap.add_argument("--llm-cache", default=None)
     ap.add_argument("--out", default=None)
     ap.add_argument("--mem0-build", action="store_true")
+    ap.add_argument("--mem0-matches", action="store_true", help="with --mem0-build: also feed Mem0 the match records")
+    ap.add_argument("--context-first", action="store_true", help="E23 prompt: memory before the game description")
     ap.add_argument("--mem0", default=None, help="Mem0 search results (json), from --mem0-build")
     ap.add_argument("--show", action="store_true")
     ap.add_argument("--extractor", default="rules", choices=["rules", "llm"],
@@ -236,7 +298,8 @@ def main(argv=None):
     players = [p for p in data["players"] if args.split == "all" or p["split"] == args.split]
     mem0_path = args.mem0 or f"bench/results/mem0_g2_{args.split}.json"
     if args.mem0_build:
-        mem0_build(players, "bench/.mem0_g2", mem0_path)
+        mem0_build(players, "bench/.mem0_g2_all" if args.mem0_matches else "bench/.mem0_g2", mem0_path,
+                   with_matches=args.mem0_matches)
         return
     mem0 = json.load(open(mem0_path)) if os.path.exists(mem0_path) else {}
     llm = OllamaClient(model=args.model, timeout=1800, seed=0, num_ctx=args.num_ctx)
@@ -270,7 +333,8 @@ def main(argv=None):
                     said, msg, calls = False, "", 0
                 else:
                     said, msg = speak(llm, x["now"], x["situation"], ctx,
-                                      compose=kind in ("gamememo", "gm_noground", "gm_nofirst"))
+                                      compose=kind in ("gamememo", "gm_noground", "gm_nofirst"),
+                                      context_first=args.context_first)
                     calls = 1
                 it = items.get((pl.p["id"], x["item"])) if x["item"] else None
                 rows.append({"id": x["id"], "player": pl.p["id"], "category": x["category"], "gold": x["gold"],
