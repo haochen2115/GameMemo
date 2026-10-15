@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GameMemory · Event-Triggered Memory</title>
-<meta name="description" content="Remember at the Right Game: Event-Triggered Memory for Game Companions. 打到那一局就想起：面向游戏陪伴的事件触发记忆。">
+<title>Event-Grounded Memory</title>
+<meta name="description" content="Event-Grounded Memory for Game Companions. 面向游戏陪伴的事件流记忆：GameMemo 项目技术报告。">
 <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -12,207 +12,174 @@
   <a class="brand" href="../">GameMemo</a>
   <nav>
     <a href="#method">方法</a>
+    <a href="#setup">实验设置</a>
     <a href="#results">结果</a>
-    <a href="#analysis">分析</a>
-    <a href="https://github.com/haochen2115/GameMemo/blob/main/docs/PAPER.md">论文全文</a>
+    <a href="https://github.com/haochen2115/GameMemo/blob/main/docs/PAPER.md">全文</a>
   </nav>
 </div></header>
 
-<main class="wrap">
+<main class="wrap paper">
 <section class="hero">
-  <p class="eyebrow">GameMemory · 正式版（main）</p>
-  <h1>Remember at the Right Game<span class="sub">打到那一局就想起：面向游戏陪伴的事件触发记忆</span></h1>
-  <p class="meta">GameMemo 项目 · 2026 年 10 月 · 中文游戏陪伴场景（王者荣耀）</p>
+  <p class="eyebrow">GameMemo 项目技术报告 · 2026 年 10 月 · 分支 main</p>
+  <h1>Event-Grounded Memory for Game Companions<span class="sub">面向游戏陪伴的事件流记忆</span></h1>
   <div class="buttons">
-    <a class="btn primary" href="https://github.com/haochen2115/GameMemo/blob/main/docs/PAPER.md">论文全文</a>
+    <a class="btn primary" href="https://github.com/haochen2115/GameMemo/blob/main/docs/PAPER.md">报告全文</a>
     <a class="btn" href="https://github.com/haochen2115/GameMemo/tree/main/gamememo/game">代码</a>
     <a class="btn" href="https://github.com/haochen2115/GameMemo/tree/main/bench/data">数据</a>
     <a class="btn" href="https://github.com/haochen2115/GameMemo/blob/main/docs/EXPERIMENTS.md">实验记录</a>
   </div>
 </section>
 
-<div class="tldr">
-  <strong>一句话：</strong>通用记忆是"问了才想起"；游戏陪伴需要"打到那一局就想起"。GameMemory 把对局流当作记忆的<strong>系统记录</strong>、聊天的<strong>对齐坐标</strong>和意图的<strong>触发器</strong>，在没有人提问的时刻，主动提起玩家说过的誓言、目标和规矩，并在不该开口时保持沉默。
-</div>
+<section class="abstract">
+  <h2 class="plain">摘要</h2>
+  <p>现有的大语言模型智能体长期记忆（以 Mem0、MemGPT 和对话检索为代表）把交互历史视为文本集合：写入时存储或改写文本，读取时以用户查询为线索检索文本。我们认为这一假设与游戏陪伴场景的数据结构不相符。在游戏陪伴中，智能体同时观察到主观、稀疏的对话流与客观、稠密、带精确时间戳的对局流；对话往往紧随对局发生，并以指代形式引用对局中的实体；而最需要调用记忆的时刻常由对局事件而非用户提问界定。基于这些特点，本文提出<strong>事件流记忆</strong>（Event-Grounded Memory）：由对局流构造事件流并以其作为游戏状态的系统记录；把每条对话锚定到其紧随的事件上以解析指代；把对话中表达的意图编译为事件流上的触发条件，使记忆既能被查询读取，也能被事件触发。我们在两个预登记、测试集封存的中文基准上评估该结构，所有基线获得与本方法完全相同的输入。在游戏状态问答上，事件流记忆的游戏数据题得分为 0.944，以文本方式处理同样对局记录的基线为 0.236–0.306；在无提问的事件触发回忆上，事件流记忆综合得分 0.861、误触发为零，通用记忆在获得全部对局记录后召回为 <span class="pending" data-e23="recall_range">【E23 待补】</span>。更换更强的回复模型或以语言模型替代规则进行意图识别，结论均不变。</p>
+</section>
 
-<div class="stats">
-  <div class="stat"><div class="n">0.861</div><div class="l">主动回忆主分（Mem0 0.339）</div></div>
-  <div class="stat"><div class="n">47 / 48</div><div class="l">不用 LLM，意图索引命中的线索局</div></div>
-  <div class="stat"><div class="n">0 / 67</div><div class="l">负例上的误触发</div></div>
-  <div class="stat"><div class="n">0.944</div><div class="l">游戏状态题（通用做法 ≤ 0.306）</div></div>
-</div>
-
-<h2>问题：没有人提问的时刻</h2>
-<p>现有的长期记忆（Mem0、MemGPT、对聊天记录做检索、把历史全塞进 prompt）都假设<strong>记忆由查询驱动</strong>：有一句提问，记忆才被读出来。游戏陪伴里最需要记忆的时刻却常常没有人提问。玩家说过的很多话是对未来某个游戏情境的<strong>意图</strong>：</p>
-<div class="quote">"这英雄我再也不碰了。" · "上星耀就买那根海竿。" · "以后一晚上连输三把就下线，你提醒我。" · "下次跟小周双排先说好分路。"</div>
-<p>该想起它们的时机是一局游戏：发誓不碰的英雄又被选上的那一局、升上星耀的那一局、当晚第三次连输的那一局、下一次和小周双排的那一局。认知心理学把这叫<strong>基于事件的前瞻记忆</strong>（event-based prospective memory）。通用记忆系统没有这个入口。</p>
-
-<h3>一个例子（dev 玩家，真实运行）</h3>
+<h2 id="intro">1 引言</h2>
+<p>大语言模型智能体的长期记忆主要有三类实现：改写式记忆在写入时把对话抽取为事实并维护增删改 [1, 2]；检索式记忆保存原始对话片段并按查询相似度召回；长上下文方法把全部历史放入提示。三者共享两个假设：记忆的内容是<strong>文本</strong>，记忆的读取由<strong>查询</strong>驱动。表 1 列出了游戏陪伴场景与这两个假设的错配。</p>
+<p class="caption"><strong>表 1</strong> 通用对话助手与游戏陪伴的输入对比</p>
 <div class="table-scroll"><table>
-  <tr><th>时间</th><th>发生了什么</th></tr>
-  <tr><td>7 月 13 日 22:17</td><td>刚用百里守约 4/7/3 输了一局。玩家："这英雄我是真玩不明白，蹲草半天打不中人……我发誓再也不碰这英雄了"</td></tr>
-  <tr><td>7 月 15 日 21:46</td><td>玩家又用百里守约打完一局（这是那次之后第一次）</td></tr>
-  <tr><td>Mem0</td><td>沉默。它的记忆里这段对话只剩一条与事实不符的"连输了四把"，誓言没有了</td></tr>
-  <tr><td>全部聊天</td><td>沉默。誓言就在 prompt 里，但原话里没有英雄名</td></tr>
-  <tr class="ours"><td>GameMemory</td><td>"这英雄"在写入时被解析为百里守约；这局是誓言之后第一次用它 → 触发。助手："刚才你用百里守约打了一局，结果确实挺艰难的……不过你已经下定决心不再碰这个英雄了"</td></tr>
+  <tr><th></th><th>通用对话助手</th><th>游戏陪伴</th></tr>
+  <tr><td>数据来源</td><td>对话</td><td>对话（主观、稀疏、可能夸大）+ 对局记录（客观、稠密、带时间戳）</td></tr>
+  <tr><td>对话与事件</td><td>无显式关联</td><td>对话紧随对局；玩家默认助手了解刚结束的对局，频繁使用指代（"这英雄""下次双排他"）</td></tr>
+  <tr><td>时间结构</td><td>日历时间</td><td>赛季、段位进程、对局序列；以事件指称时间（"第一次上钻石那天"）</td></tr>
+  <tr><td>实体结构</td><td>开放</td><td>封闭：段位为全序阶梯；英雄区分自己与对手；连败可精确计数</td></tr>
+  <tr><td>调用记忆的时刻</td><td>用户提问时</td><td>亦由对局事件界定：曾发誓不再使用的英雄被再次选用、设定奖励的段位被达到、约定的连败次数被触及</td></tr>
 </table></div>
+<p>玩家在对话中表达的大量内容是<strong>意图</strong>，例如"这英雄我再也不碰了""上星耀就买那根海竿""以后一晚上连输三把就下线，你提醒我"。这些内容应当在相应的对局结束时被回忆，而不是在提问时。认知心理学将其称为基于事件的前瞻记忆 [4]。以查询为驱动的记忆没有这一读取入口。</p>
+<p><strong>贡献。</strong>(1) 形式化游戏陪伴记忆的两个任务：以系统记录为准的游戏状态问答与无查询的事件触发回忆；(2) 提出事件流记忆结构；(3) 构建两个测试集封存、对话由不接触代码的作者编写的中文基准，并在信息对等条件下比较；(4) 证明差距来自记忆结构而非信息量，且对回复模型规模与意图识别方式稳健。</p>
 
-<h2>游戏数据的特点 → 设计</h2>
-<div class="table-scroll"><table>
-  <tr><th>游戏数据的特点</th><th>通用记忆的处理</th><th>GameMemory 的设计</th></tr>
-  <tr><td>两个来源：聊天主观稀疏，对局客观密集</td><td>只看聊天，或把对局当文本</td><td>对局账本是系统记录，精确计算</td></tr>
-  <tr><td>聊天紧跟对局，玩家说"这英雄""他"</td><td>按文字存，指代无法解析</td><td>写入时对齐对局时间线，解析指代</td></tr>
-  <tr><td>意图挂在游戏事件上</td><td>等提问</td><td>意图 → 游戏线索，由对局流触发</td></tr>
-  <tr><td>世界封闭：段位阶梯、自己 / 对面、连败计数</td><td>当普通文本</td><td>用游戏规则判断线索的归属和条件</td></tr>
-  <tr><td>对局流记录了之后发生的事</td><td>不知道</td><td>只在说完之后第一次对上时触发</td></tr>
-</table></div>
-
-<h2 id="method">方法</h2>
+<h2 id="method">2 方法</h2>
 <div class="figure wide">
-<svg viewBox="0 0 860 300" role="img" aria-label="GameMemory 架构：对局流进入对局账本，聊天流进入原话日志；意图索引用对局账本对齐聊天、用对局流触发意图；输出游戏状态回答和这一局该提起的话。">
+<svg viewBox="0 0 860 300" role="img" aria-label="事件流记忆结构：对局流转换为事件流（系统记录）；对话写入原话日志并锚定到事件；意图编译为事件谓词并由事件流触发。">
   <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="svg-arrow"/></marker></defs>
   <rect x="10" y="40" width="130" height="56" rx="8" class="svg-box"/>
-  <text x="75" y="66" text-anchor="middle" class="svg-ink" font-size="15" font-weight="600">对局流</text>
-  <text x="75" y="86" text-anchor="middle" class="svg-muted" font-size="12">客观 · 密集 · 带时间</text>
+  <text x="75" y="66" text-anchor="middle" class="svg-ink" font-size="15" font-weight="600">对局流 M</text>
+  <text x="75" y="86" text-anchor="middle" class="svg-muted" font-size="12">客观 · 稠密 · 带时间</text>
   <rect x="10" y="196" width="130" height="56" rx="8" class="svg-box"/>
-  <text x="75" y="222" text-anchor="middle" class="svg-ink" font-size="15" font-weight="600">聊天流</text>
-  <text x="75" y="242" text-anchor="middle" class="svg-muted" font-size="12">主观 · 稀疏 · 有指代</text>
+  <text x="75" y="222" text-anchor="middle" class="svg-ink" font-size="15" font-weight="600">对话流 D</text>
+  <text x="75" y="242" text-anchor="middle" class="svg-muted" font-size="12">主观 · 稀疏 · 含指代</text>
   <rect x="190" y="32" width="200" height="72" rx="8" class="svg-box-accent"/>
-  <text x="290" y="60" text-anchor="middle" class="svg-ink" font-size="15" font-weight="600">GameLedger 对局账本</text>
-  <text x="290" y="82" text-anchor="middle" class="svg-muted" font-size="12">系统记录 · 精确计算 · 每局情境</text>
+  <text x="290" y="60" text-anchor="middle" class="svg-ink" font-size="15" font-weight="600">事件流 E = φ(M)</text>
+  <text x="290" y="82" text-anchor="middle" class="svg-muted" font-size="12">系统记录 · 状态事件</text>
   <rect x="190" y="188" width="200" height="72" rx="8" class="svg-box-accent"/>
-  <text x="290" y="216" text-anchor="middle" class="svg-ink" font-size="15" font-weight="600">RawMemory 原话日志</text>
-  <text x="290" y="238" text-anchor="middle" class="svg-muted" font-size="12">原话 + 时间 · 不改写</text>
+  <text x="290" y="216" text-anchor="middle" class="svg-ink" font-size="15" font-weight="600">原话日志</text>
+  <text x="290" y="238" text-anchor="middle" class="svg-muted" font-size="12">原文 + 时间 + 锚点 a(u)</text>
   <rect x="440" y="110" width="200" height="80" rx="8" class="svg-box-good"/>
-  <text x="540" y="140" text-anchor="middle" class="svg-ink" font-size="15" font-weight="600">IntentionIndex 意图索引</text>
-  <text x="540" y="161" text-anchor="middle" class="svg-muted" font-size="12">意图 → 英雄 / 档位 / 连败 / 双排</text>
-  <text x="540" y="178" text-anchor="middle" class="svg-muted" font-size="12">说完后第一次对上才触发</text>
+  <text x="540" y="140" text-anchor="middle" class="svg-ink" font-size="15" font-weight="600">意图索引</text>
+  <text x="540" y="161" text-anchor="middle" class="svg-muted" font-size="12">意图 u → 事件谓词 κ_u</text>
+  <text x="540" y="178" text-anchor="middle" class="svg-muted" font-size="12">首次满足时触发</text>
   <rect x="690" y="32" width="160" height="72" rx="8" class="svg-box"/>
-  <text x="770" y="60" text-anchor="middle" class="svg-ink" font-size="14" font-weight="600">游戏状态回答</text>
-  <text x="770" y="82" text-anchor="middle" class="svg-muted" font-size="12">以记录为准</text>
+  <text x="770" y="60" text-anchor="middle" class="svg-ink" font-size="14" font-weight="600">查询读取</text>
+  <text x="770" y="82" text-anchor="middle" class="svg-muted" font-size="12">游戏状态问答</text>
   <rect x="690" y="188" width="160" height="72" rx="8" class="svg-box"/>
-  <text x="770" y="216" text-anchor="middle" class="svg-ink" font-size="14" font-weight="600">这一局该提起的话</text>
-  <text x="770" y="238" text-anchor="middle" class="svg-muted" font-size="12">没触发就不开口</text>
+  <text x="770" y="216" text-anchor="middle" class="svg-ink" font-size="14" font-weight="600">事件读取</text>
+  <text x="770" y="238" text-anchor="middle" class="svg-muted" font-size="12">事件触发回忆</text>
   <line x1="140" y1="68" x2="186" y2="68" class="svg-line" marker-end="url(#arr)"/>
   <line x1="140" y1="224" x2="186" y2="224" class="svg-line" marker-end="url(#arr)"/>
+  <path d="M290 104 L290 184" class="svg-line" marker-end="url(#arr)"/>
+  <text x="298" y="150" class="svg-muted" font-size="12">锚定</text>
   <path d="M390 82 C 420 82, 420 128, 436 132" class="svg-line" marker-end="url(#arr)"/>
-  <text x="420" y="104" class="svg-muted" font-size="12">对齐 · 触发</text>
+  <text x="404" y="104" class="svg-muted" font-size="12">触发</text>
   <path d="M390 210 C 420 210, 420 172, 436 168" class="svg-line" marker-end="url(#arr)"/>
-  <text x="404" y="198" class="svg-muted" font-size="12">意图</text>
   <line x1="390" y1="68" x2="686" y2="68" class="svg-line" marker-end="url(#arr)"/>
   <path d="M640 150 C 665 150, 665 220, 686 222" class="svg-line" marker-end="url(#arr)"/>
 </svg>
 </div>
+<p class="caption"><strong>图 1</strong> 事件流记忆的结构。对局流被转换为事件流并作为系统记录；每条对话锚定到其紧随的事件；意图被编译为事件谓词，在事件流上首次满足时触发。</p>
 
-<h3>1 · 对局账本：对局数据是系统记录</h3>
-<p>账本保存全部对局，精确计算当前段位、各赛季最高段位和场次胜率、每个英雄的记录、最长连败、第一次到达每个档位的日期，以及每局结束时的情境。游戏属性只来自账本；玩家夸大的段位会被标注"与系统记录不符"。</p>
+<h3>2.1 事件流与系统记录</h3>
+<p>对局流 M 被转换为事件流 E = φ(M)。除每局对局本身外，φ 还派生出状态事件：升入新的段位档位、本晚排位连败计数、赛季切换、某英雄自某时刻以来首次被使用、与某朋友双排等。所有游戏状态由事件流精确计算，构成系统记录；游戏属性只来自系统记录，不从对话中抽取；玩家声称的段位若高于记录，原话后附注"与系统记录不符"。</p>
+<h3>2.2 对话锚定</h3>
+<p>每条对话 u 被锚定到其紧随的事件 a(u)，即同一晚、u 之前的最后一局对局。锚定提供指代解析（"这英雄"指 a(u) 的英雄；未点名的"下次双排他"指当晚的双排对象）与事件化的时间（"第一次上钻石那天"由系统记录换算为日期）。</p>
+<h3>2.3 意图编译与事件触发</h3>
+<p>表达意图的对话被编译为事件谓词 κ<sub>u</sub>，类型取自游戏本体：英雄（排除对手英雄）、段位档位（排除现状陈述与他人目标）、本晚连败局数、双排对象。意图识别可由规则或每段对话一次语言模型调用实现，二者共用锚定、本体校验与触发逻辑。对局 m 结束时，意图 u 被触发，当且仅当 m 满足 κ<sub>u</sub>，且自 u 表达以来没有其他对局已满足 κ<sub>u</sub>。</p>
+<h3>2.4 读取</h3>
+<p>查询读取返回由系统记录生成的游戏档案卡、涉及英雄的精确战绩、按查询检索的原话与待办承诺。事件读取在每局结束时返回被触发的意图原文及其锚点；无意图触发时不调用语言模型并保持沉默；有意图触发时由记忆决定开口，回复模型只负责措辞。检索路径不调用语言模型，原始对话不被改写。</p>
 
-<h3>2 · 写入时把聊天对齐到对局</h3>
-<p>每段对话找到它紧跟的那一局。玩家说"这英雄 / 这把"，指的是那局的英雄；说"下次双排他…"而没点名，指的是当晚一起双排的朋友。</p>
-
-<h3>3 · 用游戏规则把意图变成线索</h3>
+<h2 id="setup">3 实验设置</h2>
+<p><strong>基准。</strong>e2e_g2（事件触发回忆）：10 名模拟玩家（2 开发 / 8 测试），每人约 6 个月、300–520 局对局与 12 段对话；每人嵌入 6 条意图（其中英雄类一半点名、一半仅用指代）与 2 条干扰；测试集 48 个正例、67 个负例、23 个重复。e2e_g1（游戏状态问答）：测试集 150 题，答案由对局记录精确计算或来自对话原文。对局由模拟器生成；对话由不接触被测代码的作者编写。</p>
+<p><strong>基线与信息对等。</strong>所有方法使用同一回复模型与同一提示，并获得完全相同的输入：全部对话与截至当前对局的全部对局记录（表 2）。</p>
+<p class="caption"><strong>表 2</strong> 比较的记忆方法</p>
 <div class="table-scroll"><table>
-  <tr><th>线索</th><th>例子</th><th>游戏规则排除</th></tr>
-  <tr><td>英雄</td><td>"这英雄我再也不碰了"</td><td>"对面的后羿太烦了"（对手的英雄）</td></tr>
-  <tr><td>段位档位</td><td>"上星耀就买海竿"</td><td>"我现在钻石二"（现状）；"胖虎说他上星耀就…"（别人的目标）</td></tr>
-  <tr><td>一晚连败把数</td><td>"连输三把就下线，你提醒我"</td><td>只连输两把的晚上</td></tr>
-  <tr><td>双排朋友</td><td>"下次双排先说好分路"</td><td>单排</td></tr>
+  <tr><th>方法</th><th>存储</th><th>读取</th></tr>
+  <tr><td>检索</td><td>对话片段与对局记录（文本），同一索引</td><td>以本局描述 / 问题为查询，混合检索 top-k</td></tr>
+  <tr><td>Mem0 [1]</td><td>按时间顺序写入对话与对局记录，由模型抽取事实</td><td>以本局描述 / 问题为查询，检索 top-k</td></tr>
+  <tr><td>长上下文</td><td>全部对话与全部对局记录，按时间交错</td><td>全部放入提示</td></tr>
+  <tr class="ours"><td>事件流记忆</td><td>事件流 + 锚定的原话 + 意图索引</td><td>查询读取 / 事件读取</td></tr>
+</table></div>
+<p><strong>指标与协议。</strong>事件触发回忆：正例要求开口并包含作者给出的关键词之一（召回），负例要求沉默（沉默率），主分为二者平均；游戏状态问答按答案类型确定性判分。比较使用按题配对的 bootstrap 95% 置信区间。测试集在任何系统运行之前封存，假设在测试前登记，未成立的假设照常报告。回复模型为 qwen2.5:3b（温度 0），并以 qwen2.5:7b 重复。</p>
+
+<h2 id="results">4 结果</h2>
+<h3>4.1 事件触发回忆（信息对等）</h3>
+<p class="caption"><strong>表 3</strong> e2e_g2 测试集，所有方法获得全部对话与全部对局记录（qwen2.5:3b）</p>
+<div class="table-scroll" id="e23-table"><table>
+  <tr><th>方法</th><th class="num">主分</th><th class="num">召回</th><th class="num">沉默率</th><th class="num">重复时沉默</th><th class="num">事件流记忆领先</th></tr>
+  <tr><td colspan="6" class="pending">E23 运行中，结果待补</td></tr>
 </table></div>
 
-<h3>4 · 由对局流触发，只在第一次</h3>
-<p>一局结束时，意图被触发当且仅当这局满足它的线索，<strong>并且</strong>从说出这句话到这局之间，没有别的对局已经满足过它。对局记录知道玩家期间是否已经用过这个英雄。</p>
-
-<h3>5 · 记忆决定何时说，模型只负责怎么说</h3>
-<p>有意图触发时，把原话交给回复模型去说；没有触发时直接不开口，不调用 LLM。整个索引不调用 LLM、不改写原话，每次触发都能追溯到一句原话和一局对局。</p>
-
-<h2 id="results">结果</h2>
-<p class="meta">两个预登记、封存的中文基准；对局由模拟器生成、答案由对局计算；聊天由不看代码的作者编写；回复模型 <code>qwen2.5:3b</code>（所有方法相同）；括号内为配对 bootstrap 95% 置信区间。</p>
-
-<h3>游戏时刻的主动回忆（e2e_g2 test：8 位玩家，48 个正例、67 个负例）</h3>
-<div class="bars" role="img" aria-label="主分：GameMemory 0.861，全部聊天 0.583，检索 0.504，无记忆 0.496，Mem0 0.339">
-  <div class="bar-row ours"><span>GameMemory</span><div class="bar-track"><div class="bar-fill" style="width:86.1%"></div></div><span class="bar-val">0.861</span></div>
-  <div class="bar-row"><span>全部聊天</span><div class="bar-track"><div class="bar-fill" style="width:58.3%"></div></div><span class="bar-val">0.583</span></div>
-  <div class="bar-row"><span>标注版全部聊天</span><div class="bar-track"><div class="bar-fill" style="width:53.9%"></div></div><span class="bar-val">0.539</span></div>
-  <div class="bar-row"><span>检索（RAG）</span><div class="bar-track"><div class="bar-fill" style="width:50.4%"></div></div><span class="bar-val">0.504</span></div>
-  <div class="bar-row"><span>无记忆</span><div class="bar-track"><div class="bar-fill" style="width:49.6%"></div></div><span class="bar-val">0.496</span></div>
-  <div class="bar-row"><span>Mem0</span><div class="bar-track"><div class="bar-fill" style="width:33.9%"></div></div><span class="bar-val">0.339</span></div>
-</div>
+<h3>4.2 事件触发回忆（基线仅获得对话）</h3>
+<p class="caption"><strong>表 4</strong> e2e_g2 测试集，检索、Mem0 与长上下文仅获得对话（qwen2.5:3b）；表 3 去除了这一信息差</p>
 <div class="table-scroll"><table>
-  <tr><th>记忆</th><th class="num">主分</th><th class="num">召回</th><th class="num">该沉默时沉默</th><th class="num">重复时沉默</th><th class="num">GameMemory 领先</th></tr>
-  <tr><td>Mem0</td><td class="num">0.339</td><td class="num">0.000</td><td class="num">0.582</td><td class="num">0.609</td><td class="num">+0.522 [+0.435, +0.617]</td></tr>
-  <tr><td>检索（按本局描述取 8 段）</td><td class="num">0.504</td><td class="num">0.063</td><td class="num">0.821</td><td class="num">0.826</td><td class="num">+0.357 [+0.270, +0.444]</td></tr>
-  <tr><td>全部聊天</td><td class="num">0.583</td><td class="num">0.021</td><td class="num">0.985</td><td class="num">1.000</td><td class="num">+0.278 [+0.200, +0.357]</td></tr>
-  <tr><td>全部聊天，每句标注当时那局</td><td class="num">0.539</td><td class="num">0.042</td><td class="num">0.896</td><td class="num">0.783</td><td class="num">+0.322 [+0.235, +0.409]</td></tr>
-  <tr class="ours"><td>GameMemory</td><td class="num">0.861</td><td class="num">0.667</td><td class="num">1.000</td><td class="num">1.000</td><td class="num">—</td></tr>
+  <tr><th>方法</th><th class="num">主分</th><th class="num">召回</th><th class="num">沉默率</th><th class="num">重复时沉默</th></tr>
+  <tr><td>无记忆</td><td class="num">0.496</td><td class="num">0.000</td><td class="num">0.851</td><td class="num">0.913</td></tr>
+  <tr><td>Mem0（对话）</td><td class="num">0.339</td><td class="num">0.000</td><td class="num">0.582</td><td class="num">0.609</td></tr>
+  <tr><td>检索（对话）</td><td class="num">0.504</td><td class="num">0.063</td><td class="num">0.821</td><td class="num">0.826</td></tr>
+  <tr><td>长上下文（对话）</td><td class="num">0.583</td><td class="num">0.021</td><td class="num">0.985</td><td class="num">1.000</td></tr>
+  <tr class="ours"><td>事件流记忆</td><td class="num">0.861</td><td class="num">0.667</td><td class="num">1.000</td><td class="num">1.000</td></tr>
 </table></div>
-<p class="caption">召回 = 正例上开口并说出那条意图；主分 = 正例和负例的平均。不经过 LLM，意图索引本身命中 47/48 个线索局，67 个负例 0 次误触发。</p>
+<p>不经过任何语言模型，意图索引本身在 48 个正例中触发 47 个，在 67 个负例上触发 0 次。</p>
 
-<h3>更强的对手、更强的模型</h3>
+<h3>4.3 消融</h3>
+<p class="caption"><strong>表 5</strong> 事件流记忆的消融（e2e_g2 测试集，qwen2.5:3b）</p>
 <div class="table-scroll"><table>
-  <tr><th>对照</th><th class="num">GameMemory</th><th class="num">通用做法</th><th>说明</th></tr>
-  <tr><td>全部聊天 + 全部对局记录（1.1 万字，16 个时刻）</td><td class="num">召回 7/8</td><td class="num">召回 0/8</td><td>信息全在 prompt 里，模型仍一次都没在对的那一局开口（+0.500 [+0.250, +0.750]）</td></tr>
-  <tr><td>7B 回复模型 · Mem0</td><td class="num">0.930</td><td class="num">0.548</td><td>Mem0 召回仍为 0</td></tr>
-  <tr><td>7B 回复模型 · 检索</td><td class="num">0.930</td><td class="num">0.522</td><td>召回 0.104</td></tr>
-  <tr><td>7B 回复模型 · 全部聊天</td><td class="num">0.930</td><td class="num">0.470</td><td>开口更多，误报也更多（沉默 0.701）</td></tr>
-</table></div>
-<p class="caption">换成 7B 后 GameMemory 召回 0.667 → 0.833，通用做法没有变好：更强的回复模型补不上"在哪一局该想起哪句话"，这一步属于记忆。</p>
-
-<h3>不依赖规则：意图识别换成 LLM（预登记）</h3>
-<div class="table-scroll"><table>
-  <tr><th>意图识别</th><th class="num">索引命中</th><th class="num">负例误触发</th><th class="num">端到端主分</th></tr>
-  <tr><td>规则词表</td><td class="num">47/48</td><td class="num">0/67</td><td class="num">0.861</td></tr>
-  <tr class="ours"><td>LLM（qwen2.5:7b，每段对话一次调用）</td><td class="num">45/48</td><td class="num">2/67</td><td class="num">0.844</td></tr>
-  <tr><td>LLM（qwen2.5:3b）</td><td class="num">39/48</td><td class="num">5/67</td><td class="num">—</td></tr>
-</table></div>
-<p class="caption">对齐对局、游戏线索、"第一次"触发保持不变，只把"这句话是不是意图"交给 LLM：端到端与规则版差 −0.017 [−0.052, +0.017]，不显著，仍比全部聊天高 +0.261。机制的效果来自游戏数据的用法，而不是词表。</p>
-
-<h3>消融</h3>
-<div class="table-scroll"><table>
-  <tr><th>变体</th><th class="num">主分</th><th class="num">召回</th><th class="num">重复时沉默</th><th>结论</th></tr>
-  <tr class="ours"><td>GameMemory</td><td class="num">0.861</td><td class="num">0.667</td><td class="num">1.000</td><td></td></tr>
-  <tr><td>线索交给模型决定说不说</td><td class="num">0.739</td><td class="num">0.375</td><td class="num">1.000</td><td>何时说应由记忆决定（−0.122 [−0.191, −0.052]）</td></tr>
-  <tr><td>不限"第一次"</td><td class="num">0.817</td><td class="num">0.688</td><td class="num">0.000</td><td>每局都提醒；朋友目标误报</td></tr>
-  <tr><td>prompt 里不标当时那局</td><td class="num">0.896</td><td class="num">0.750</td><td class="num">1.000</td><td>差异不显著：对齐的作用在索引，不在 prompt</td></tr>
+  <tr><th>变体</th><th class="num">主分</th><th class="num">召回</th><th class="num">重复时沉默</th><th class="num">相对完整方法（95% CI）</th></tr>
+  <tr class="ours"><td>完整方法</td><td class="num">0.861</td><td class="num">0.667</td><td class="num">1.000</td><td class="num">—</td></tr>
+  <tr><td>由回复模型决定是否开口</td><td class="num">0.739</td><td class="num">0.375</td><td class="num">1.000</td><td class="num">−0.122 [−0.191, −0.052]</td></tr>
+  <tr><td>取消"首次满足"约束</td><td class="num">0.817</td><td class="num">0.688</td><td class="num">0.000</td><td class="num">−0.043 [−0.113, +0.026]</td></tr>
+  <tr><td>提示中不呈现锚点对局</td><td class="num">0.896</td><td class="num">0.750</td><td class="num">1.000</td><td class="num">+0.035 [−0.009, +0.087]</td></tr>
 </table></div>
 
-<h3>游戏状态问答（e2e_g1 test：150 题）</h3>
+<h3>4.4 稳健性</h3>
+<p class="caption"><strong>表 6</strong> 稳健性检验（e2e_g2 测试集）</p>
 <div class="table-scroll"><table>
-  <tr><th>记忆</th><th class="num">总分</th><th class="num">游戏数据题</th><th class="num">生活事实</th><th class="num">承诺</th><th class="num">prompt 字数</th></tr>
-  <tr><td>只有聊天记忆</td><td class="num">0.447</td><td class="num">0.153</td><td class="num">0.844</td><td class="num">0.938</td><td class="num">369</td></tr>
-  <tr><td>检索（聊天 + 对局当文本）</td><td class="num">0.460</td><td class="num">0.236</td><td class="num">0.781</td><td class="num">1.000</td><td class="num">570</td></tr>
-  <tr><td>全部聊天 + 全部对局</td><td class="num">0.467</td><td class="num">0.306</td><td class="num">0.625</td><td class="num">0.875</td><td class="num">20711</td></tr>
-  <tr class="ours"><td>GameMemory</td><td class="num">0.833</td><td class="num">0.944</td><td class="num">0.813</td><td class="num">1.000</td><td class="num">817</td></tr>
+  <tr><th>设置</th><th class="num">事件流记忆</th><th class="num">对照</th><th class="num">差值（95% CI）</th></tr>
+  <tr><td>回复模型 qwen2.5:7b（基线仅对话）</td><td class="num">0.930</td><td class="num">Mem0 0.548</td><td class="num">+0.383 [+0.296, +0.470]</td></tr>
+  <tr><td>意图识别改用 qwen2.5:7b（预登记）</td><td class="num">0.844</td><td class="num">长上下文 0.583</td><td class="num">+0.261 [+0.174, +0.348]</td></tr>
+  <tr><td>意图识别：语言模型 vs 规则</td><td class="num">0.844</td><td class="num">规则 0.861</td><td class="num">−0.017 [−0.052, +0.017]</td></tr>
 </table></div>
-<p class="caption">英雄胜率、英雄场次、上赛季场数三类题，通用做法全部为 0。玩家夸大上赛季段位的 8 题：聊天记忆和检索 8 次复述了夸大的段位；GameMemory 8 次答对、0 次复述。</p>
 
-<h2 id="analysis">分析：通用记忆为什么做不到</h2>
-<div class="cards">
-  <div class="card"><h3>没有提问，就没有检索线索</h3><p>检索只能拿"刚才这局"的描述去找。"刚用百里守约打完一局"和"我发誓再也不碰这英雄了"文字上几乎不相似，取回的是别的聊天，于是在错的时间说错的事。</p></div>
-  <div class="card"><h3>改写丢掉了意图</h3><p>Mem0 写入时把聊天改写成事实，"再也不碰这英雄"这类话被丢弃或改错，召回为 0。与我们在 LoCoMo 上测到的写入损失一致。</p></div>
-  <div class="card"><h3>信息都在，模型也不开口</h3><p>把全部聊天交给模型，它几乎从不开口（召回 0.021）；标上当时那局后开始开口，但多是不相关的事。"是不是这个英雄、是不是第一次"需要对照对局流精确判断。</p></div>
-</div>
+<h3>4.5 游戏状态问答（信息对等）</h3>
+<p class="caption"><strong>表 7</strong> e2e_g1 测试集，基线获得全部对局记录（qwen2.5:3b）</p>
+<div class="table-scroll"><table>
+  <tr><th>方法</th><th class="num">总分</th><th class="num">游戏数据题</th><th class="num">生活事实</th><th class="num">承诺</th></tr>
+  <tr><td>检索（对话 + 对局记录）</td><td class="num">0.460</td><td class="num">0.236</td><td class="num">0.781</td><td class="num">1.000</td></tr>
+  <tr><td>长上下文（全部对话 + 全部对局）</td><td class="num">0.467</td><td class="num">0.306</td><td class="num">0.625</td><td class="num">0.875</td></tr>
+  <tr class="ours"><td>事件流记忆</td><td class="num">0.833</td><td class="num">0.944</td><td class="num">0.813</td><td class="num">1.000</td></tr>
+</table></div>
+<p>事件流记忆相对检索 +0.373 [+0.287, +0.460]，相对长上下文 +0.367 [+0.273, +0.460]。英雄胜率、英雄场次、上赛季场数三类题基线得分均为 0。</p>
 
-<h2>局限</h2>
-<ul class="tight">
-  <li><strong>回复一步仍丢分</strong>：索引命中 47 次，3B 模型最终说对 32 次、7B 40 次；"发誓不玩"一类两个模型都几乎不复述玩家的誓言，只提那局的失败。</li>
-  <li><strong>意图识别</strong>：规则词表在 test 上漏了 1/48；换成 7B LLM 抽取后效果基本不变，但每段对话多一次 LLM 调用。</li>
-  <li><strong>数据是模拟的</strong>：对局规则简化；意图的种类和点名比例由计划指定。真实玩家的分布需要真实数据检验。</li>
-  <li><strong>游戏状态题的高分部分来自题目设计</strong>：只给档案卡就有 0.986；有信息量的对比是和"拿到全部对局但当文本处理"的做法比。</li>
-</ul>
+<h2 id="analysis">5 分析</h2>
+<p><strong>文本化存储丢失了事件结构。</strong>"刚用百里守约打完一局"与"这英雄我是真玩不明白，我发誓再也不碰了"在文本上几乎不相似，后者的指代对象只能通过与对局的时间对齐确定；把对局记录作为文本加入检索库并不能恢复这种对齐。</p>
+<p><strong>改写丢失了意图。</strong>Mem0 在写入时将对话改写为事实，"再也不碰这英雄"等意图被丢弃或改写为不实陈述。</p>
+<p><strong>信息完备不等于可用。</strong>判断"本局是否满足某意图的触发条件、是否为首次满足"需要在数百条对局记录上做精确的条件判断；长上下文中 3B 模型几乎从不开口，7B 模型开口增多但误触发同步增多。在事件流上，这一判断是常数时间的谓词求值。</p>
 
-<h2>复现</h2>
-<pre><code>pip install -e '.[dev]' &amp;&amp; pytest tests/test_game.py
-ollama pull qwen2.5:3b
-python -m bench.run_moments --data bench/data/e2e_g2.json --split test \
-    --contexts gamememo,full,rag,full_ground,none
-python -m bench.run_game --data bench/data/e2e_g1.json --split test \
-    --contexts none,chat,card,gamememo,rag,full</code></pre>
-<pre><code>from gamememo.game.memory import GameMemory
-mem = GameMemory("player_001", embedder=FastEmbedEmbedder())
-mem.ingest_matches(matches)                    # 对局记录
-mem.ingest_chat("玩家: 这英雄我再也不碰了\n助手: 好，冷静一下")
-mem.moment(match)        # 一局结束：返回这局该提起的原话，或 None（不开口）
-mem.context("我上赛季最高到哪了")   # 被问时：游戏档案卡 + 相关原话 + 承诺</code></pre>
+<h2>6 局限</h2>
+<ol class="contrib">
+  <li>意图索引触发 47 次，3B 回复模型最终正确表述 32 次（7B 为 40 次）；"发誓不再使用某英雄"一类几乎均未复述誓言本身。</li>
+  <li>数据为模拟；意图的类型与点名比例由计划指定，真实分布需以真实数据检验。</li>
+  <li>触发谓词类型取自四种本体类型，更一般的条件（时间、队友组合、战绩趋势）尚未覆盖。</li>
+  <li>游戏状态问答的题型与档案卡对应，有信息量的比较是与获得相同对局记录的文本基线之间的比较。</li>
+</ol>
+
+<h2>参考文献</h2>
+<ol class="refs">
+  <li>P. Chhikara et al. Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory. 2025.</li>
+  <li>C. Packer et al. MemGPT: Towards LLMs as Operating Systems. 2023.</li>
+  <li>A. Maharana et al. Evaluating Very Long-Term Conversational Memory of LLM Agents. ACL 2024.</li>
+  <li>G. O. Einstein and M. A. McDaniel. Normal Aging and Prospective Memory. Journal of Experimental Psychology: Learning, Memory, and Cognition, 1990.</li>
+  <li>J. S. Park et al. Generative Agents: Interactive Simulacra of Human Behavior. UIST 2023.</li>
+</ol>
 </main>
 
 <footer><div class="wrap"><a href="../">GameMemo Research</a> · MIT License · <a href="https://github.com/haochen2115/GameMemo">GitHub</a></div></footer>

@@ -124,3 +124,15 @@ footer { border-top: 1px solid var(--line); margin-top: 64px; padding: 24px 0 48
 .svg-arrow { fill: var(--muted); }
 .figure.wide { overflow-x: auto; }
 .figure.wide svg { min-width: 640px; }
+/* academic report layout */
+.paper p { text-align: justify; }
+.abstract { background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--accent);
+  border-radius: var(--radius); padding: 18px 22px; margin: 24px 0 8px; }
+.abstract h2.plain, h2.plain { border: 0; margin: 0 0 8px; padding: 0; font-size: 17px; letter-spacing: .04em; }
+.paper h2 { font-size: 22px; }
+.paper h3 { font-size: 17px; }
+.caption strong { color: var(--ink); }
+.pending { color: var(--warn); font-weight: 600; }
+td.pending { text-align: center; padding: 16px; }
+ol.refs { font-size: 14px; color: var(--muted); padding-left: 22px; }
+ol.refs li { margin-bottom: 6px; }

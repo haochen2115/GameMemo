@@ -4,49 +4,48 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GameMemo Research</title>
-<meta name="description" content="GameMemo：面向游戏陪伴与智能体的记忆研究。GameMemory（事件触发记忆）与 Shared Memory（多租户共享记忆）。">
+<meta name="description" content="GameMemo 项目：面向游戏陪伴的事件流记忆，以及多租户智能体共享记忆的置信度更新。">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 <header class="top"><div class="wrap">
   <a class="brand" href="./">GameMemo</a>
   <nav>
-    <a href="game-memory/">GameMemory</a>
-    <a href="shared-memory/">Shared Memory</a>
+    <a href="game-memory/">事件流记忆</a>
+    <a href="shared-memory/">共享记忆</a>
     <a href="https://github.com/haochen2115/GameMemo">GitHub</a>
   </nav>
 </div></header>
 
-<main class="wrap">
+<main class="wrap paper">
   <section class="hero">
     <p class="eyebrow">GameMemo Research</p>
-    <h1>为游戏和智能体设计的记忆<span class="sub">Memory designed for game companions and agents</span></h1>
-    <p class="meta">GameMemo 研究通用记忆系统（Mem0、检索、长上下文）在具体场景里缺什么，并针对场景的数据特点设计专门的记忆机制。每个结论都来自预登记、封存测试集上的实验。</p>
+    <h1>面向场景结构的智能体记忆<span class="sub">Memory structures for agents, derived from the structure of their data</span></h1>
+    <p class="meta">通用的智能体记忆把交互历史当作文本，按查询检索。GameMemo 研究两类场景中这一假设的失效，并针对场景的数据结构提出相应的记忆结构。所有结论来自预登记、测试集封存的实验。</p>
   </section>
 
   <div class="cards">
     <a class="card" href="game-memory/" style="color:inherit;text-decoration:none">
-      <div class="tag formal">正式版 · 分支 main</div>
-      <h3>GameMemory：打到那一局就想起</h3>
-      <p>游戏陪伴同时看得到聊天和对局流。GameMemory 把对局流用作记忆的系统记录、对齐坐标和触发器：游戏状态以记录为准，玩家说过的誓言、目标、规矩在对上的那一局被主动想起。</p>
-      <p><strong style="color:var(--ink)">主动回忆 0.861</strong> vs Mem0 0.339 · 检索 0.504 · 全部聊天 0.583</p>
-      <span class="more">阅读研究 →</span>
+      <div class="tag formal">技术报告 · 分支 main</div>
+      <h3>Event-Grounded Memory for Game Companions</h3>
+      <p>游戏陪伴同时观察对话流与对局流。我们提出事件流记忆：由对局流构造事件流作为系统记录，把对话锚定到事件以解析指代，把意图编译为事件触发条件。在信息对等的比较中，事件流记忆在游戏状态问答与事件触发回忆两项任务上显著优于改写式、检索式与长上下文记忆。</p>
+      <span class="more">阅读报告 →</span>
     </a>
     <a class="card" href="shared-memory/" style="color:inherit;text-decoration:none">
-      <div class="tag formal">正式版 · 分支 shared-memory</div>
-      <h3>Shared Memory Is Harder</h3>
-      <p>一个长期运行的客服智能体同时服务很多店铺。共享记忆要让经验跨店铺迁移，又不能把一家的具体信息或专属约定带给另一家。QUORUM 机制、COMMONS 基准和第一次模型实验。</p>
-      <p><strong style="color:var(--ink)">QUORUM 泄露 0 / 伪泛化 0</strong> vs 原始共享池泄露别家手机号、改写式经验 25% 伪泛化（7B）</p>
-      <span class="more">阅读研究 →</span>
+      <div class="tag formal">技术报告 · 分支 shared-memory</div>
+      <h3>Confidence-Based Updating of Shared Memory for Multi-Tenant Agents</h3>
+      <p>多租户智能体的共享记忆需要在经验迁移与租户隔离之间取舍。我们主张共享记忆应基于独立租户证据的置信度更新，并以条件限定适用范围。在 COMMONS-1 上，原始记录共享与改写式共享分别出现实例泄露与伪泛化，基于置信度的结构化共享在两个模型上均为零污染。</p>
+      <span class="more">阅读报告 →</span>
     </a>
   </div>
 
   <h2>研究方法</h2>
   <ul class="tight">
-    <li><strong>测试集封存</strong>：数据在任何系统运行之前固定并提交（COMMONS-1 的数据因 <code>.gitignore</code> 漏提交、事后补交并验证逐字节一致，见实验记录）；聊天由不看代码的作者编写。</li>
-    <li><strong>预登记</strong>：假设、对照组、判分规则在跑测试集之前写入实验记录；没有成立的假设照样报告。</li>
-    <li><strong>回答层评测</strong>：模型真的作答，再按确定性规则判分；所有比较附配对 bootstrap 95% 置信区间。</li>
-    <li><strong>本地开源模型</strong>：Ollama 上的 <code>qwen2.5:3b</code> / <code>7b</code>，结果可复现。</li>
+    <li><strong>测试集封存。</strong>数据在任何系统运行之前固定并提交；对话文本由不接触被测代码的作者编写。COMMONS-1 的数据文件因 <code>.gitignore</code> 规则在测试后才进入仓库，已验证与运行所用文件逐字节一致，详见其实验记录。</li>
+    <li><strong>预登记。</strong>假设、对照与判分规则在测试前写入实验记录；未成立的假设照常报告。</li>
+    <li><strong>信息对等。</strong>基线与所提方法获得相同的输入，差别仅在记忆结构。</li>
+    <li><strong>回答层评测。</strong>模型实际作答，按确定性规则判分；比较附配对 bootstrap 95% 置信区间。</li>
+    <li><strong>可复现。</strong>本地开源模型（Ollama 上的 qwen2.5:3b / 7b），温度 0，代码、数据与结果文件随仓库发布。</li>
   </ul>
 </main>
 
